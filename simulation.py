@@ -461,20 +461,27 @@ class Simulation:
 
 	def get_distinct(self):
 		distinct_hists = []
+		distinct_avg_radii = []
 		new_frames = []
 
 		for frame in self.frames:
-			new_hist = np.histogram(frame.stats["avg_radius"], bins=10)[0]
+			if np.var(frame.stats["avg_radius"]) <= 1e-8:
+				avg_radii = np.average(frame.stats["avg_radius"])
+				if not np.any(np.isclose(avg_radii, distinct_avg_radii, atol=1e-5)):
+					distinct_avg_radii.append(avg_radii)
+					new_frames.append(frame)
+			else:
+				new_hist = np.histogram(frame.stats["avg_radius"], bins=8)[0]
 
-			is_in = False
-			for hist in distinct_hists:
-				if np.allclose(new_hist, hist, atol=1e-8):
-					is_in = True
-					break
+				is_in = False
+				for hist in distinct_hists:
+					if np.all(hist == new_hist):
+						is_in = True
+						break
 
-			if not is_in:
-				distinct_hists.append(new_hist)
-				new_frames.append(frame)
+				if not is_in:
+					distinct_hists.append(new_hist)
+					new_frames.append(frame)
 
 		self.frames = new_frames
 
