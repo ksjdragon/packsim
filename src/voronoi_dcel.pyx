@@ -622,10 +622,10 @@ cdef class VoronoiContainer:
 		cache = self.site_cache[:self.n, :]
 
 		self.stats["site_areas"] = np.asarray(cache[:, SITE_CACHE_MAP.iarea])
-		edge_count = np.empty((self.n,))
-		for i in range(self.n):
-			edge_count[i] = len(self.vor_data.regions[self.vor_data.point_region[i]])
-		self.stats["site_edge_count"] = edge_count
+		#edge_count = self.sites[:, 2]np.empty((self.n,))
+		# for i in range(self.n):
+		# 	edge_count[i] = len(self.vor_data.regions[self.vor_data.point_region[i]])
+		self.stats["site_edge_count"] = self.sites[:self.n, 2]
 
 		self.stats["site_isos"] = np.asarray(cache[:, SITE_CACHE_MAP.iisoparam])
 		self.stats["site_energies"] = np.asarray(cache[:, SITE_CACHE_MAP.ienergy])

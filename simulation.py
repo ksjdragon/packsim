@@ -735,5 +735,3 @@ class Shrink(Simulation):
 			self.w -= self.w_change
 
 		del self.frames[0]
-
-TravelEQ = Search

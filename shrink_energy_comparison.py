@@ -67,13 +67,20 @@ def get_equilibria_data(filepath: Path):
 		sim = Simulation.load(file)
 		data["all"][sim.w] = []
 		for frame in sim.frames:
-			data["all"][sim.w].append([frame.energy, np.var(frame.stats["avg_radius"]) <= 1e-8])
+			data["all"][sim.w].append([
+				frame.energy,
+				np.var(frame.stats["avg_radius"]) <= 1e-8,
+				np.count_nonzero(frame.stats["site_edge_count"] != 6)
+			])
 
 		sim.get_distinct()
 		data["distinct"][sim.w] = []
 		for frame in sim.frames:
-			data["distinct"][sim.w].append([frame.energy,
-							np.var(frame.stats["avg_radius"]) <= 1e-8])
+			data["distinct"][sim.w].append([
+				frame.energy,
+				np.var(frame.stats["avg_radius"]) <= 1e-8,
+				np.count_nonzero(frame.stats["site_edge_count"] != 6)
+			])
 
 		hashes = int(21*i/len(files))
 		print(f'Loading simulations... |{"#"*hashes}{" "*(20-hashes)}|' + \
@@ -95,7 +102,7 @@ def axis_settings(ax, widths):
 	ax.grid(zorder=0)
 	ax.set_xticks([round(w,2) for w in widths[::-2]])
 	ax.set_xticklabels(ax.get_xticks(), rotation = 90)
-	plt.subplots_adjust(.05, .12, .97, .9)
+	plt.subplots_adjust(.07, .12, .97, .9)
 
 
 def main():
@@ -119,7 +126,7 @@ def main():
 
 	# Torus minimum energies used as reference.
 
-	# Basin of attraction diagram.
+	# Probability of disorder diagram.
 	fig, ax = plt.subplots(figsize=(16, 8))
 	all_disorder_count = []
 	for width in widths:
@@ -129,12 +136,12 @@ def main():
 	ax.plot(widths, all_disorder_count)
 	axis_settings(ax, widths)
 	ax.yaxis.set_major_formatter(mtick.PercentFormatter())
-	ax.title.set_text('Basin of Attraction')
+	ax.title.set_text('Probability of Disorder')
 	ax.set_xlabel("Width")
 	ax.set_ylabel("Disordered Equilibria")
 	boa_y_min = round(min(all_disorder_count)/20)*20 - 5
 	ax.set_yticks(np.arange(boa_y_min, 100.01, 2.5))
-	fig.savefig(fig_folder / "Basin of Attraction.png")
+	fig.savefig(fig_folder / "Probability of Disorder.png")
 
 
 	# Density of States diagram.
@@ -155,6 +162,21 @@ def main():
 	dos_y_max = 1.05*max(distinct_ordered + distinct_unordered)
 	ax.set_yticks(np.arange(0, dos_y_max, round(dos_y_max/200, 1)*10))
 	fig.savefig(fig_folder / "Density Of States.png")
+
+	# Defect density diagram
+	fig, ax = plt.subplots(figsize=(16, 8))
+
+	defects = []
+	for width in widths:
+		defects.append(sum([c[2] for c in data["all"][width] if not c[1]])/len(data["all"][width]))
+
+	ax.plot(widths, defects)
+	axis_settings(ax, widths)
+	ax.title.set_text('Average Defects')
+	ax.set_xlabel("Width")
+	ax.set_ylabel("Defects")
+	ax.set_yticks(np.arange(0, 1+max(defects), 0.5))
+	fig.savefig(fig_folder / "Defects.png")
 
 
 	# Bifurcation diagram
@@ -215,8 +237,8 @@ def main():
 	ax.set_xlabel("Width")
 	ax.set_ylabel("Reduced Energy")
 	bif_y_max = np.max(np.abs(np.concatenate((min_unorder_off, max_unorder_off))))
-	ax.set_yticks(np.arange(-bif_y_max, bif_y_max, round(bif_y_max/20, \
-											-math.floor(math.log10(bif_y_max/20)))))
+	bif_top = np.arange(0, bif_y_max, round(bif_y_max/20, -math.floor(math.log10(bif_y_max/20))))
+	ax.set_yticks(np.concatenate((-bif_top[1:][::-1], bif_top)))
 	fig.savefig(fig_folder / "Bifurcation.png")
 
 	print(f"Wrote to {fig_folder}.")
