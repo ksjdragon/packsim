@@ -28,7 +28,7 @@ The primary usage is to run `packsim.py` to output simulation results. There are
 
 The 'domain' section defines the basic setup. The `n_objects` parameter represents the number of objects in the domain of `width` by  `height`. The `natural_radius` parameter is the radius of the circle that represents the natural 'zero energy' state of the object. Lastly, the `energy` parameter is just the type of energy to simulate with. There are currently three: `'area', 'radial-al', 'radial-t'`. These parameters can also be overridden by a command line argument.
 
-
+You can also set the initial sites/points with an array or the file path to a NumPy binary (.npy) file.
 
 ```jsonc
 {
@@ -142,4 +142,4 @@ where `my_sim.json` is your configuration file.
 This project welcomes contributors, so feel free to make a pull request!
 
 ## License
-[GNU GPLv3.0](https://choosealicense.com/licenses/gpl-3.0/)
+[GNU AGPLv3.0](https://choosealicense.com/licenses/agpl-3.0/)
