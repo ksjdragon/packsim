@@ -123,6 +123,7 @@ While it's possible to customize the figures that are drawn and outputted, there
 
 ```jsonc
 {
+  //...
   "diagram": {
     "filetype": "mp4",
     "figures": "animate",
