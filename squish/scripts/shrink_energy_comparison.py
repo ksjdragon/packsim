@@ -6,7 +6,7 @@ import matplotlib.ticker as mtick
 from pathlib import Path
 
 from simulation import Diagram, Simulation
-from packsim_core import AreaEnergy, RadialALEnergy, RadialTEnergy
+from _squish import AreaEnergy, RadialALEnergy, RadialTEnergy
 
 ENERGY_R_STR = {AreaEnergy: "Area", RadialALEnergy: "Radial[AL]", RadialTEnergy: "Radial[T]"}
 ENERGY_I_STR = {AreaEnergy: "area", RadialALEnergy: "radial-al", RadialTEnergy: "radial-t"}

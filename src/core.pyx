@@ -6,7 +6,7 @@ from cpython cimport array
 from libc.stdlib cimport malloc, realloc, calloc, free
 from libc.math cimport isnan, NAN, pi as PI, M_PI_2 as PI_2, \
 				sqrt, log, sin, cos, tan, acos, fabs
-from _packsim cimport INT_T, FLOAT_T, Init, IArray, FArray, BitSet, Vector2D, Matrix2x2, \
+from _squish cimport INT_T, FLOAT_T, Init, IArray, FArray, BitSet, Vector2D, Matrix2x2, \
 					VectorSelfOps, VectorCopyOps, MatrixSelfOps, MatrixCopyOps, \
 					SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
 

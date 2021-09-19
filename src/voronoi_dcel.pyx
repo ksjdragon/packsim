@@ -1,4 +1,4 @@
-from _packsim cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
+from _squish cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
 
 #### Constants ####
 

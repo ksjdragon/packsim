@@ -5,7 +5,7 @@ from shutil import which
 from pathlib import Path
 from simulation import Diagram, Flow, Search, Shrink
 
-from _packsim import RadialTEnergy
+from _squish import RadialTEnergy
 
 dia_presets = {
 	"animate": [["voronoi"]],

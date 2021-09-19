@@ -4,15 +4,15 @@ import numpy
 
 ext_modules = [
     Extension(
-        "_packsim",
-        ["src/_packsim.pyx"],
+        "_squish",
+        ["src/_squish.pyx"],
         extra_compile_args=['-fopenmp'],
         extra_link_args=['-fopenmp']
     )
 ]
 
 setup(
-    name="packsim",
+    name="squish",
     ext_modules = cythonize(ext_modules, compiler_directives={
         'language_level': 3, 'boundscheck' : False, 'wraparound': False, 'cdivision' : True
     }),
