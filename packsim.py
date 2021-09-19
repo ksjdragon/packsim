@@ -100,9 +100,11 @@ def config_sim(args):
 	if mode == "flow":
 		sim = Flow(n, w, h, r, energy, thres, step)
 	elif mode == "search":
-		check_params(sim_params, ["manifold_step_size"], {"manifold_step_size": "positive"})
-		sim = Search(n, w, h, r, energy, thres, step, sim_params["manifold_step"], 
-						sim_params["count"])
+		check_params(sim_params, ["manifold_step_size", "eq_stop_count"], {
+			"manifold_step_size": "positive", "eq_stop_count": "positive"
+		})
+		sim = Search(n, w, h, r, energy, thres, step, sim_params["manifold_step_size"],
+						sim_params["eq_stop_count"])
 	elif mode == "shrink":
 		check_params(sim_params, ["width_change", "width_stop"], {
 			"width_change": "positive", "width_stop": "positive"
