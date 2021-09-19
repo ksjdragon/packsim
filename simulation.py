@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator, FormatStrFormatter
 import os, math, random, time, pickle, scipy, numpy as np
 
-from packsim import VoronoiContainer, AreaEnergy, RadialALEnergy, RadialTEnergy
+from packsim_core import VoronoiContainer, AreaEnergy, RadialALEnergy, RadialTEnergy
 from timeit import default_timer as timer
 
 
@@ -25,7 +25,7 @@ def gen_filepath(sim: Simulation, ext: str, parent_dir='figures') -> str:
 				RadialTEnergy: "Radial[T]"}[sim.energy]
 	mode = {Flow: "F", Search: "T", Shrink: "S"}[type(sim)]
 
-	base_filename = f'{energy}{mode} - N{sim[0].n}R{sim[0].r} - {round(sim[0].w, 2):.2f}x{sim[0].h}'
+	base_filename = f'{energy}{mode} - N{sim[0].n}R{round(sim[0].r, 1) :.1f} - {round(sim[0].w, 2):.2f}x{round(sim[0].h, 2):.2f}'
 	base_path = f'{parent_dir}/{base_filename}'
 	
 	i = 1
@@ -275,12 +275,16 @@ class Diagram():
 			os.mkdir(path)
 			for frame in range(i, j+1):
 				self.generate_frame(frame)
-				if frame % 20 == 0:
-					print(f'Rendered frame {frame}/{length} : {100*frame/length:.2f}%')
+
+				hashes = int(21*i/(j+1))
+				print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
+					f' {i+1}/{j+1} frames rendered.', flush=True, end='\r')
+
 				plt.savefig(f'{path}/img{frame:03}.png')
 				plt.close()
 
-			print(f'Wrote to folder \"{path}\"')
+			print(flush=True)
+			print(f'Wrote to folder \"{path}\"', flush=True)
 			
 
 	def render_video(self, time = 30, fps = None, filename = None):
@@ -305,14 +309,17 @@ class Diagram():
 		except FileExistsError: 
 			pass
 
-		print("Generating frames...")
 		frames = min(len(self.sim), int(fps * time))
 		for j in range(frames):
 			self.generate_frame(int(j*step))
-			if j % 20 == 0:
-				print(f'Rendered frame {j}/{frames} : {100*j/frames:.2f}%')
+			hashes = int(21*j/frames)
+			print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
+					f' {j+1}/{frames} frames rendered.', flush=True, end='\r')
+
 			plt.savefig(f'figures/temp/img{j:03}.png')
 			plt.close()
+
+		print(flush=True)
 
 
 		if filename is None:
@@ -321,7 +328,7 @@ class Diagram():
 			path = f'figures/{filename}.mp4'
 
 		# Convert to gif.
-		print("Assembling MP4...")
+		print("Assembling MP4...", flush=True)
 		os.system(f'ffmpeg -hide_banner -loglevel error -r {fps} -i figures/temp/img%03d.png' + \
 				  f' -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -vf' + \
 				  f' "scale=trunc(iw/2)*2:trunc(ih/2)*2" -f mp4 "{path}"')
@@ -331,7 +338,7 @@ class Diagram():
 			os.remove(f'figures/temp/img{j:03}.png')
 
 		os.rmdir("figures/temp")
-		print(f'Wrote to \"{path}\".')
+		print(f'Wrote to \"{path}\".', flush=True)
 
 
 class Simulation:
@@ -428,7 +435,7 @@ class Simulation:
 		else:
 			values = self.frames[i].stats[stat]
 
-		bins = 9
+		#bins = 9
 		if np.var(values) <= 1e-8:
 			hist = np.zeros((bins,))
 			val = np.average(values)
@@ -452,26 +459,24 @@ class Simulation:
 		# return (labels, count, colors)
 
 
-	def get_distinct(self) -> Simulation:
-		distinct_eigs = []
+	def get_distinct(self):
+		distinct_hists = []
 		new_frames = []
 
 		for frame in self.frames:
-			new_eigs = frame.stats["eigs"]
+			new_hist = np.histogram(frame.stats["avg_radius"], bins=10)[0]
 
 			is_in = False
-			for eigs in distinct_eigs:
-				if np.allclose(new_eigs, eigs, atol=1e-4):
+			for hist in distinct_hists:
+				if np.allclose(new_hist, hist, atol=1e-8):
 					is_in = True
+					break
 
 			if not is_in:
-				distinct_eigs.append(new_eigs)
+				distinct_hists.append(new_hist)
 				new_frames.append(frame)
-				continue
 
-		new_sim = self.__class__(self.n, self.w, self.h, self.r, self.energy)
-		new_sim.frames = new_frames
-		return new_sim
+		self.frames = new_frames
 
 
 	def save(self, filename: str = None):
@@ -482,25 +487,22 @@ class Simulation:
 		if filename is None:
 			path = gen_filepath(self, "sim", "simulations")
 		else:
-			path = f'simulations/{filename}.sim'
-
-		# Convert sites to NumPy array.
-		arr = np.zeros((len(self.frames), self.n, 2))
-		arr = np.stack([frame.site_arr for frame in self.frames])
-		#stats = [frame.stats for frame in self.frames]
+			path = f'new_simulations/{filename}.sim'
 
 		all_info = []
 		for frame in self.frames:
 			frame_info = dict()
 			frame_info["arr"] = frame.site_arr
-			frame_info["energy"] = {AreaEnergy: "Area", RadialALEnergy: "Radial[AL]", 
-									RadialTEnergy: "Radial[T]"}[sim.energy]
+			frame_info["energy"] = {AreaEnergy: "area", RadialALEnergy: "radial-al",
+									RadialTEnergy: "radial-t"}[self.energy]
 			frame_info["params"] = (frame.n, frame.w, frame.h, frame.r)
 			all_info.append(frame_info)
 
+		class_name = {Flow: "flow", Search: "search", Shrink: "shrink"}[self.__class__]
+
 		with open(path, 'wb') as output:
-			pickle.dump((all_info, self.__class__), output, pickle.HIGHEST_PROTOCOL)
-		print("Wrote to " + path)
+			pickle.dump((all_info, class_name), output, pickle.HIGHEST_PROTOCOL)
+		print("Wrote to " + path, flush=True)
 
 
 	@staticmethod
@@ -512,10 +514,11 @@ class Simulation:
 		frames = []
 		with open(filename, 'rb') as data:
 			all_info, sim_class = pickle.load(data)
-			sim = sim_class(*all_info[0]["params"], all_info[0]["energy"], 0, 0, 0, 0)
+
+			sim = sim_class(*all_info[0]["params"], all_info[0]["energy"], 0,0,0,0)
 			for frame_info in all_info:
-				frames.append(frame_info["energy"](*frame_info["params"], frame_info["arr"]))
-				frames[-1].stats = frame_info["stats"]
+				frames.append(sim.energy(*frame_info["params"], frame_info["arr"]))
+				#frames[-1].stats = frame_info["stats"]
 
 			sim.frames = frames
 		return sim	
@@ -563,50 +566,46 @@ class Flow(Simulation):
 		"""
 		if log:
 			print(f'Find - N = {self.n}, R = {self.r}, {self.w} X {self.h}', flush=True)
-		i, grad_mag = 0, float('inf')
-
-		## Replace with adaptive step size eventually!!!!!!
+		i, grad_norm = 0, float('inf')
 
 		trial = 2
-		while grad_mag > self.thres:	# Get to threshold.
-			# Iterate and generate next frame using Euler method. 
+		while grad_norm > self.thres:	# Get to threshold.
+			# Iterate and generate next frame using RK-3
 			start = timer()
-			new_sites, DE = self.frames[i].iterate(self.step_size)
-			orig_step = self.energy(self.n, self.w, self.h, self.r, new_sites)
-			grad_mag = np.linalg.norm(DE)
+			change, grad = self.frames[i].iterate(self.step_size)
+			new_frame = self.energy(self.n, self.w, self.h, self.r,
+							self.frames[i].add_sites(change))
+			grad_norm = np.sum(np.absolute(grad))/self.n
 			end = timer()
 
-
-			if orig_step.energy < self.frames[i].energy:	# If energy decreases.
+			if new_frame.energy < self.frames[i].energy:	# If energy decreases.
 				if trial < 20:	# Try increasing step size for 10 times.
 					factor = 1 + .1**trial
 
-					test_step = self.energy(self.n, self.w, self.h, self.r, 
-											self.frames[i].add_sites(self.step_size*factor*DE))
+					test_frame = self.energy(self.n, self.w, self.h, self.r,
+											self.frames[i].add_sites(change*factor))
 					# If increased step has less energy than original step.
-					if test_step.energy < orig_step.energy:
+					if test_frame.energy < new_frame.energy:
 						self.step_size *= factor
 						trial = max(2, trial-1)
-						grad_mag = np.linalg.norm(DE)
-						new_step = test_step
+						new_frame = test_frame
 					else:	# Otherwise, increases trials, and use original.
 						trial += 1
-						new_step = orig_step
-				else:
-					new_step = orig_step
 			else:	# Step size too large, decrease and reset trial counter.
-				self.step_size /= (1 + .1**(trial-1))
-				trial = 1
-				new_sites, DE = self.frames[i].iterate(self.step_size)
-				new_step = self.energy(self.n, self.w, self.h, self.r, new_sites)
-			self.frames.append(new_step)
+				trial = 2
+				shrink_factor = 1.5
+				new_frame = self.energy(self.n, self.w, self.h, self.r,
+								self.frames[i].add_sites(change/shrink_factor))
+				self.step_size /= shrink_factor
 
-			self.step_size = max(10e-4, self.step_size)
+			#self.step_size *= abs(.01/np.linalg.norm(error))**(1/3)
+			#self.step_size = max(10e-4, self.step_size)
+			self.frames.append(new_frame)
+
 			i += 1
-
 			if(log and i % log_steps == 0): 
 				print(f'Iteration: {i:05} | Energy: {self.frames[i].energy: .5f}' + \
-				 	  f' | Gradient: {grad_mag:.8f} | Step: {self.step_size: .5f} | ' + \
+				 	  f' | Gradient: {grad_norm:.8f} | Step: {self.step_size: .5f} | ' + \
 				 	  f'Time: {end-start: .3f}', flush=True)
 
 
@@ -656,7 +655,7 @@ class Search(Simulation):
 
 			self.frames[i] = sim[-1] # Replace frame with equilibrium frame.
 			if log:
-				print(f'Equilibrium: {i:04}\n')
+				print(f'Equilibrium: {i:04}\n', flush=True)
 			# Calculate kernel, and travel in some direction.
 
 			hess = self.frames[i].hessian(10e-5)
@@ -731,4 +730,3 @@ class Shrink(Simulation):
 		del self.frames[0]
 
 TravelEQ = Search
-

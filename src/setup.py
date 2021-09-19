@@ -2,7 +2,7 @@ from setuptools import Extension, setup
 from Cython.Build import cythonize
 import numpy
 
-MODULE_NAME = "packsim"
+MODULE_NAME = "packsim_core"
 
 ext_modules = [
     Extension(

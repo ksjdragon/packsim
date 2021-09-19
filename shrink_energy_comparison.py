@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
-
 from __future__ import annotations
 from typing import List
 from simulation import Diagram, Simulation
-import argparse, numpy as np
+import os, argparse, numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
@@ -13,62 +11,30 @@ def get_torus_config_energies(n: int, widths: np.ndarray, h: float, r: float,
 	torus_min_energies, torus_max_energies = np.empty(widths.shape), np.empty(widths.shape)
 	for i, w in enumerate(widths):
 		sim = Simulation(n, w, h, r, energy)
+		configs = []
 
-		for c in range(1,n):	# Ignore 0, tends to error.
-			sim.add_frame(torus=(1,c))
-			sim.add_frame(torus=(c,1))
+		for j in range(1):
+			for c in range(1,n):	# Ignore 0, tends to error.
+				config = (1,c) if j == 0 else (c,1)
+				sim.add_frame(torus=config)
+				configs.append(config)
 
-			hashes = int(21*i/len(widths))
-			print(f'Generating at width {w:.02f}... ' + \
-					f'|{"#"*hashes}{" "*(20-hashes)}| {i+1}/{len(widths)}, {2*c}/{2*(n-1)}' + \
-					f' completed.', flush=True, end='\r')
+				eigs = np.sort(np.linalg.eig(sim.frames[-1].hessian(10e-5))[0])
+				zero_eigs = np.count_nonzero(np.isclose(eigs, np.zeros((len(eigs),)), atol=1e-4))
+				if zero_eigs != 2:
+					del sim.frames[-1]
+					del config[-1]
+
+				hashes = int(21*i/len(widths))
+				print(f'Generating at width {w:.02f}... ' + \
+						f'|{"#"*hashes}{" "*(20-hashes)}| {i+1}/{len(widths)}, {2*c}/{2*(n-1)}' + \
+						f' completed.', flush=True, end='\r')
 
 		torus_min_energies[i] = min([frame.energy for frame in sim.frames])
 		torus_max_energies[i] = max([frame.energy for frame in sim.frames])
 
 	print(flush=True)
 	return torus_min_energies, torus_max_energies
-
-
-# def equal_shape_eigs(n, widths, h, r):
-# 	n,w,h,r = 57, 10, 10, 4	# Domain settings
-# 	thres, step_size = 10e-5, 5e-2	# Simulation settings
-# 	log_steps = 50
-# 	energy = "radial-t"
-
-# 	sims = [None]*n*2
-# 	energies = {}
-
-# 	for x in range(1,n):
-# 		sim = TravelEQ(n, w, h, r, energy, thres, step_size, log_steps)
-# 		sim2 = TravelEQ(n, w, h, r, energy, thres, step_size, log_steps)
-# 		#frame = FindEQ(n, w, h, r, "radial-t", POOL, thres, step_size, log_steps)
-# 		for j in range(141):
-# 			sim.w = 10-j*.05
-# 			sim2.w = 10-j*.05
-# 			sim.add_frame(None, (1,x), 0)
-# 			sim2.add_frame(None, (x, 1), 0)
-# 		#sim.initialize(torus=(1,x))
-
-# 		energies[(1,x)] = sim[0].energy
-# 		energies[(x,1)] = sim2[0].energy
-
-# 		sims[x] = list([y.energy for y in sim.frames])
-# 		sims[x+n] = list([y.energy for y in sim2.frames])
-# 		#k1 = np.concatenate(sim.frames[0].process(sim.frames[0].grad, sim.frames[0].get_ranges()))
-# 		#print(np.linalg.norm(k1))
-
-# 		# hess = sim.frames[0].hessian(10e-5)
-# 		# eigs = np.sort(np.linalg.eig(hess)[0])
-# 		# sim.frames[0].stats["eigs"] = eigs
-		
-# 		# diagram = Diagram(sim, np.array([["voronoi", "eigs"]]))
-# 		#diagram = Diagram(sim, np.array([["voronoi"]]))
-# 		#diagram.render_static(0, filename=f'EqualShape/EqualShapeN{n}/{str((1, x))}')
-
-# 	print(min(energies, key=energies.get))
-	
-# 	return sims
 
 
 def main():
@@ -94,6 +60,11 @@ def main():
 	print(flush=True)
 	sims.sort(key=lambda x: x.w)
 
+	sim_folder = Path(f"simulations/ShrinkEnergyComparison")
+	fig_folder = Path(f"figures/ShrinkEnergyComparison - N{sims[0].n}")
+	sim_folder.mkdir(exist_ok=True)
+	fig_folder.mkdir(exist_ok=True)
+
 	widths = np.asarray([sim.w for sim in sims])
 
 	min_frames = [min(sim.frames, key=lambda x: x.energy) for sim in sims]
@@ -106,22 +77,17 @@ def main():
 		sims[0].n, widths, sims[0].h, sims[0].r, sims[0].energy
 	)
 
-	min_markers = [np.var(frame.stats["site_areas"]) <= 1e-8 for frame in min_frames]
-	max_markers = [np.var(frame.stats["site_areas"]) <= 1e-8 for frame in max_frames]
+	min_markers = [np.var(frame.stats["avg_radius"]) <= 1e-8 for frame in min_frames]
+	max_markers = [np.var(frame.stats["avg_radius"]) <= 1e-8 for frame in max_frames]
 
 	# Torus minimum energies used as reference.
 
 	fig, ax = plt.subplots(figsize=(16, 8))
 	#ax.plot(widths, nums)
-	# for i, equal_sim in enumerate(equal_sims):
-	# 	if i in [0, n]:
-	# 		continue
+	ax.plot(widths, [len(sim.frames) for sim in sims])
+	fig.savefig(folder / "")
 
-	# 	ax.plot(widths, 
-	# 		np.asarray(equal_sims[i]) - reference,
-	# 		color="orange", alpha=0.5, linewidth=0.5, zorder=3
-	# 	)
-
+	fig, ax = plt.subplots(figsize=(16, 8))
 	ax.plot(widths, torus_min_energies - torus_min_energies, color='C1')
 	ax.plot(widths, min_energies - torus_min_energies, color='C0')
 	ax.plot(widths, max_energies - torus_min_energies, color='C0', linestyle='dotted')
@@ -150,15 +116,16 @@ def main():
 	ax.set_ylabel("Reduced Energy")
 	ax.grid(zorder=0)
 
-	#ax.set_xticks([round(w,2) for w in widths[::-2]])
+	ax.set_xticks([round(w,2) for w in widths[::-2]])
 	#ax.set_yticks(np.arange(-920, 1120, 40))
-	#ax.set_xticklabels(ax.get_xticks(), rotation = 90)
+	ax.set_xticklabels(ax.get_xticks(), rotation = 90)
 
 	plt.tight_layout()
 
 	fig.savefig(f"figures/WidthsEnergyComparison - N{sims[0].n}.png")
 
 if __name__ == "__main__":
+	os.environ["QT_LOGGING_RULES"] = "*=false"
 	try:
 		main()
 	except KeyboardInterrupt:

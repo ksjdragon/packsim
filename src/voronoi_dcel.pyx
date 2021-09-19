@@ -1,4 +1,4 @@
-from packsim cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
+from packsim_core cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
 
 #### Constants ####
 
@@ -687,11 +687,16 @@ cdef class VoronoiContainer:
 				self.add_sites(step*k1/2)
 		).gradient
 
+		lower = step*(-k1+ 2*k2)
 		k3 = self.__class__(self.n, self.w, self.h, self.r, 
-				self.add_sites(step*(-k1+ 2*k2))
+				self.add_sites(lower)
 		).gradient
+
+		higher = (step/6)*(k1+2*k2+k3)
+		#new_sites = self.add_sites(higher)
+		#error = higher - lower
 		
-		return self.add_sites((step/6)*(k1+2*k2+k3)), k1
+		return higher, k1
 
 	def hessian(self, d: float) -> np.ndarray:
 		"""
