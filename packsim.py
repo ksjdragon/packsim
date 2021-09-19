@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Dict
 import argparse, json, numpy as np, os
 from shutil import which
+from pathlib import Path
 from simulation import Diagram, Flow, Search, Shrink
 
 from packsim_core import RadialTEnergy
@@ -41,6 +42,9 @@ def check_params(container: Dict, needed: List[str], valid: Dict):
 
 def main():
 	# Loading configuration and settings.
+	Path('simulations').mkdir(exist_ok=True)
+	Path('figures').mkdir(exist_ok=True)
+
 	parser = argparse.ArgumentParser("PackSim")
 	parser.add_argument('sim_conf', metavar='/path/to/config.json',
 						help="configuration file for a simulation")
