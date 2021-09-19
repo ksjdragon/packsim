@@ -5,7 +5,7 @@ from shutil import which
 from pathlib import Path
 from simulation import Diagram, Flow, Search, Shrink
 
-from packsim_core import RadialTEnergy
+from _packsim import RadialTEnergy
 
 dia_presets = {
 	"animate": [["voronoi"]],
@@ -91,7 +91,11 @@ def config_sim(args):
 
 	points = None
 	if "points" in dmn_params:
-		points = np.asarray(dmn_params["points"])
+		if type(dmn_params["points"]) is str:
+			with open(Path(dmn_params["points"]), 'rb') as f:
+				points = np.load(f)
+		else:
+			points = np.asarray(dmn_params["points"])
 
 	check_params(sim_params, ["mode", "step_size", "threshold", "save_sim"], {
 		"mode": ["flow", "search", "shrink"], "step_size": "positive", "threshold": "positive"

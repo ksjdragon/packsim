@@ -122,8 +122,8 @@ class Diagram():
 		ax.title.set_text('Energy vs. Time')
 		max_value = round(self.sim[0].energy)
 		min_value = round(self.sim[-1].energy)
-		diff = max_value-min_value
-		ax.set_yticks(np.arange(int(min_value-diff/5), int(max_value+diff/5), diff/25))
+		#diff = max_value-min_value
+		#ax.set_yticks(np.arange(int(min_value-diff/5), int(max_value+diff/5), diff/25))
 		ax.set_xlabel("Iterations")
 		ax.set_ylabel("Energy")
 		ax.grid()
@@ -494,7 +494,7 @@ class Simulation:
 		if filename is None:
 			path = gen_filepath(self, "sim", "simulations")
 		else:
-			path = f'new_simulations/{filename}.sim'
+			path = f'simulations/{filename}.sim'
 
 		all_info = []
 		for frame in self.frames:
@@ -521,8 +521,11 @@ class Simulation:
 		frames = []
 		with open(filename, 'rb') as data:
 			all_info, sim_class = pickle.load(data)
-			sim_class = {"flow": Flow, "search": Search, "shrink": Shrink}[sim_class]
-			sim = sim_class(*all_info[0]["params"], all_info[0]["energy"], 0,0,0,0)
+			if type(sim_class) == str:
+				sim_class = {"flow": Flow, "search": Search, "shrink": Shrink}[sim_class]
+
+
+			sim = sim_class(*all_info[0]["params"], "radial-t", 0,0)
 			for frame_info in all_info:
 				frames.append(sim.energy(*frame_info["params"], frame_info["arr"]))
 				#frames[-1].stats = frame_info["stats"]
@@ -575,35 +578,37 @@ class Flow(Simulation):
 			print(f'Find - N = {self.n}, R = {self.r}, {self.w} X {self.h}', flush=True)
 		i, grad_norm = 0, float('inf')
 
-		trial = 2
-		while grad_norm > self.thres:	# Get to threshold.
-			# Iterate and generate next frame using RK-3
+		#trial = 2
+		j = 1
+		while i*self.step_size <= 500:
+		#while grad_norm > self.thres:	# Get to threshold.
+			# Iterate and generate next frame using RK-2
 			start = timer()
-			change, grad = self.frames[i].iterate(self.step_size)
+			change, grad = self.frames[-1].iterate(self.step_size)
 			new_frame = self.energy(self.n, self.w, self.h, self.r,
-							self.frames[i].add_sites(change))
-			grad_norm = np.sum(np.absolute(grad))/self.n
+							self.frames[-1].add_sites(change))
+			grad_norm = np.linalg.norm(grad)
 			end = timer()
 
-			if new_frame.energy < self.frames[i].energy:	# If energy decreases.
-				if trial < 20:	# Try increasing step size for 10 times.
-					factor = 1 + .1**trial
+			# if new_frame.energy < self.frames[i].energy:	# If energy decreases.
+			# 	if trial < 20:	# Try increasing step size for 10 times.
+			# 		factor = 1 + .1**trial
 
-					test_frame = self.energy(self.n, self.w, self.h, self.r,
-											self.frames[i].add_sites(change*factor))
-					# If increased step has less energy than original step.
-					if test_frame.energy < new_frame.energy:
-						self.step_size *= factor
-						trial = max(2, trial-1)
-						new_frame = test_frame
-					else:	# Otherwise, increases trials, and use original.
-						trial += 1
-			else:	# Step size too large, decrease and reset trial counter.
-				trial = 2
-				shrink_factor = 1.5
-				new_frame = self.energy(self.n, self.w, self.h, self.r,
-								self.frames[i].add_sites(change/shrink_factor))
-				self.step_size /= shrink_factor
+			# 		test_frame = self.energy(self.n, self.w, self.h, self.r,
+			# 								self.frames[i].add_sites(change*factor))
+			# 		# If increased step has less energy than original step.
+			# 		if test_frame.energy < new_frame.energy:
+			# 			self.step_size *= factor
+			# 			trial = max(2, trial-1)
+			# 			new_frame = test_frame
+			# 		else:	# Otherwise, increases trials, and use original.
+			# 			trial += 1
+			# else:	# Step size too large, decrease and reset trial counter.
+			# 	trial = 2
+			# 	shrink_factor = 1.5
+			# 	new_frame = self.energy(self.n, self.w, self.h, self.r,
+			# 					self.frames[i].add_sites(change/shrink_factor))
+			# 	self.step_size /= shrink_factor
 
 			#self.step_size *= abs(.01/np.linalg.norm(error))**(1/3)
 			#self.step_size = max(10e-4, self.step_size)
@@ -611,9 +616,16 @@ class Flow(Simulation):
 
 			i += 1
 			if(log and i % log_steps == 0): 
-				print(f'Iteration: {i:05} | Energy: {self.frames[i].energy: .5f}' + \
+				print(f'Iteration: {i:05} | Energy: {self.frames[-1].energy: .5f}' + \
 				 	  f' | Gradient: {grad_norm:.8f} | Step: {self.step_size: .5f} | ' + \
 				 	  f'Time: {end-start: .3f}', flush=True)
+
+			if i % 5000 == 0:
+				new_frames = [self.frames[-1]]
+				self.frames = self.frames[:-1]
+				self.save(f"N200-{self.step_size}-part{j}")
+				j += 1
+				self.frames = new_frames
 
 
 class Search(Simulation):
@@ -677,8 +689,6 @@ class Search(Simulation):
 				if zero_eigs != 2:
 					print("WARNING, 0 EIGS NOT 2", zero_eigs)
 
-				if i == self.iter-1:
-					break
 
 				if len(ns) <= 2:
 					new_sites = dim * np.random.random_sample((self.n, 2))
@@ -687,7 +697,10 @@ class Search(Simulation):
 					new_sites = self.frames[i].add_sites(self.kernel_step*vec.reshape((self.n, 2)))
 			
 				new_sites += (center - new_sites[fixed]) % 	dim # Offset
-			self.frames.append(None)
+
+			if i < self.iter-1:
+				self.frames.append(None)
+
 
 
 class Shrink(Simulation):

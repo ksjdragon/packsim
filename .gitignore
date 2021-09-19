@@ -1,12 +1,10 @@
-.venv
-__pycache__
-src/build
-src/packsim.c
+.venv/
+__pycache__/
+build/
+dist/
+*.egg-info
 
+src/packsim.c
 *.so
 
-figures
-simulations
-old_simulations
 
-*.json

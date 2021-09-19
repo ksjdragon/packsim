@@ -1,4 +1,4 @@
-from packsim_core cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
+from _packsim cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
 
 #### Constants ####
 
@@ -405,12 +405,6 @@ cdef class VoronoiContainer:
 		self.common_cache()
 		self.precompute()
 		self.calc_grad()
-		self.get_statistics()
-
-		# #print(np.asarray(self.site_cache[0]))
-		# print(np.asarray(self.edges[:6]))
-		# #print(np.asarray(self.edge_cache[:6]))
-		# print(self.gradient)
 
 
 	cdef void calculate_voronoi(VoronoiContainer self, 
@@ -622,10 +616,7 @@ cdef class VoronoiContainer:
 		cache = self.site_cache[:self.n, :]
 
 		self.stats["site_areas"] = np.asarray(cache[:, SITE_CACHE_MAP.iarea])
-		#edge_count = self.sites[:, 2]np.empty((self.n,))
-		# for i in range(self.n):
-		# 	edge_count[i] = len(self.vor_data.regions[self.vor_data.point_region[i]])
-		self.stats["site_edge_count"] = self.sites[:self.n, 2]
+		self.stats["site_edge_count"] = np.asarray(self.sites[:self.n, 2])
 
 		self.stats["site_isos"] = np.asarray(cache[:, SITE_CACHE_MAP.iisoparam])
 		self.stats["site_energies"] = np.asarray(cache[:, SITE_CACHE_MAP.ienergy])
@@ -661,21 +652,29 @@ cdef class VoronoiContainer:
 	
 	def iterate(self, FLOAT_T step):
 		k1 = self.gradient
-
-		k2 = self.__class__(self.n, self.w, self.h, self.r, 
-				self.add_sites(step*k1/2)
+		k2 = self.__class__(self.n, self.w, self.h, self.r,
+				self.add_sites(step*k1)
 		).gradient
 
-		lower = step*(-k1+ 2*k2)
-		k3 = self.__class__(self.n, self.w, self.h, self.r, 
-				self.add_sites(lower)
-		).gradient
+		return (step/2)*(k1+k2), k1
+		# k1 = self.gradient
 
-		higher = (step/6)*(k1+2*k2+k3)
+		# k2 = self.__class__(self.n, self.w, self.h, self.r,
+		# 		self.add_sites(step*k1/2)
+		# ).gradient
+
+		# lower = step*(-k1+ 2*k2)
+		# k3 = self.__class__(self.n, self.w, self.h, self.r,
+		# 		self.add_sites(lower)
+		# ).gradient
+
+		# higher = (step/6)*(k1+2*k2+k3)
+
+
 		#new_sites = self.add_sites(higher)
 		#error = higher - lower
 		
-		return higher, k1
+		#return higher, k1
 
 	def hessian(self, d: float) -> np.ndarray:
 		"""
