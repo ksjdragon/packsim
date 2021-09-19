@@ -665,27 +665,28 @@ class Search(Simulation):
 				print(f'Equilibrium: {i:04}\n', flush=True)
 			# Calculate kernel, and travel in some direction.
 
-			hess = self.frames[i].hessian(10e-5)
-			ns = scipy.linalg.null_space(hess, 10e-4).T
+			if self.kernel_step > 0:
+				hess = self.frames[i].hessian(10e-5)
+				ns = scipy.linalg.null_space(hess, 10e-4).T
 
-			#self.frames[i].get_statistics()
-			eigs = np.sort(np.linalg.eig(hess)[0])
-			self.frames[i].stats["eigs"] = eigs
+				#self.frames[i].get_statistics()
+				eigs = np.sort(np.linalg.eig(hess)[0])
+				self.frames[i].stats["eigs"] = eigs
 
-			zero_eigs = np.count_nonzero(np.isclose(eigs, np.zeros((len(eigs),)), atol=1e-4))
-			if zero_eigs != 2:
-				print("WARNING, 0 EIGS NOT 2", zero_eigs)
+				zero_eigs = np.count_nonzero(np.isclose(eigs, np.zeros((len(eigs),)), atol=1e-4))
+				if zero_eigs != 2:
+					print("WARNING, 0 EIGS NOT 2", zero_eigs)
 
-			if i == self.iter-1:
-				break
+				if i == self.iter-1:
+					break
 
-			if len(ns) <= 2:
-				new_sites = dim * np.random.random_sample((self.n, 2))
-			else:
-				vec = ns[random.randint(0, len(ns)-1)]	# Choose random vector
-				new_sites = self.frames[i].add_sites(self.kernel_step*vec.reshape((self.n, 2)))
+				if len(ns) <= 2:
+					new_sites = dim * np.random.random_sample((self.n, 2))
+				else:
+					vec = ns[random.randint(0, len(ns)-1)]	# Choose random vector
+					new_sites = self.frames[i].add_sites(self.kernel_step*vec.reshape((self.n, 2)))
 			
-			new_sites += (center - new_sites[fixed]) % 	dim # Offset
+				new_sites += (center - new_sites[fixed]) % 	dim # Offset
 			self.frames.append(None)
 
 
