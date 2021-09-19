@@ -8,3 +8,5 @@ src/packsim.c
 figures
 simulations
 old_simulations
+
+*.json

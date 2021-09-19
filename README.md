@@ -69,7 +69,7 @@ This mode simulates the relaxing of the objects to its equilibrium. The threshol
 ```
 
 #### Search
-This mode searches for equilibrium until `eq_stop_count` equilibria are found. Additionally, if the nullity of the Hessian at the equilibrium is greater than 2. (This is due to periodicity, as any translation is another equilibrium.) In this case, the `manifold_step_size` parameter is used to traverse along it.
+This mode searches for equilibrium until `eq_stop_count` equilibria are found. Additionally, the nullity of the Hessian at the equilibrium may be greater than 2. (2 is guaranteed by periodicity, as any translation is another equilibrium.) In this case, the `manifold_step_size` parameter is used to traverse along it.
 
 ```jsonc
 {

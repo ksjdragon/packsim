@@ -26,7 +26,7 @@ def get_torus_config_energies(n: int, widths: np.ndarray, h: float, r: float,
 		sim = Simulation(n, w, h, r, energy)
 		configs = []
 
-		for j in range(1):
+		for j in range(2):
 			for c in range(1,n):	# Ignore 0, tends to error.
 				config = (1,c) if j == 0 else (c,1)
 				sim.add_frame(torus=config)
@@ -132,7 +132,8 @@ def main():
 	ax.title.set_text('Basin of Attraction')
 	ax.set_xlabel("Width")
 	ax.set_ylabel("Disordered Equilibria")
-	ax.set_yticks(np.arange(0,105, 5))
+	boa_y_min = round(min(all_disorder_count)/20)*20 - 5
+	ax.set_yticks(np.arange(boa_y_min, 100.01, 2.5))
 	fig.savefig(fig_folder / "Basin of Attraction.png")
 
 
