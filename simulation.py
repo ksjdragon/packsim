@@ -514,7 +514,7 @@ class Simulation:
 		frames = []
 		with open(filename, 'rb') as data:
 			all_info, sim_class = pickle.load(data)
-
+			sim_class = {"flow": Flow, "search": Search, "shrink": Shrink}[sim_class]
 			sim = sim_class(*all_info[0]["params"], all_info[0]["energy"], 0,0,0,0)
 			for frame_info in all_info:
 				frames.append(sim.energy(*frame_info["params"], frame_info["arr"]))

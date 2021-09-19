@@ -14,7 +14,7 @@ cdef struct Init:
 	Matrix2x2 (*Matrix2x2)(FLOAT_T, FLOAT_T, FLOAT_T, FLOAT_T) nogil
 	SiteCacheMap (*SiteCacheMap)(INT_T, INT_T, INT_T, INT_T, INT_T) nogil
 	EdgeCacheMap (*EdgeCacheMap)(INT_T, INT_T, INT_T, INT_T, INT_T, INT_T, INT_T, INT_T,
-					INT_T, INT_T, INT_T, INT_T, INT_T, INT_T, INT_T, INT_T) nogil
+					INT_T, INT_T, INT_T, INT_T, INT_T, INT_T) nogil
 	VoronoiInfo (*VoronoiInfo)(INT_T [:, ::1], INT_T[:, ::1], FLOAT_T[:, ::1], 
 								FLOAT_T[:, ::1], FLOAT_T[:, ::1], FLOAT_T[:, ::1],
 								EdgeCacheMap*) nogil
@@ -156,7 +156,7 @@ ctypedef struct SiteCacheMap:
 # Psuedo-class that handles caching for edges.
 ctypedef struct EdgeCacheMap:
 	INT_T iH, ila, ila_mag, ida, ida_mag, ixij, idVdv, iphi, iB, iF, ii2p,\
-			ilntan, icot, icsc, icsc2, size
+			ilntan, icsc, size
 
 	Matrix2x2 (*H)(HalfEdge*, Matrix2x2) nogil
 
@@ -172,9 +172,7 @@ ctypedef struct EdgeCacheMap:
 	FLOAT_T (*B)(HalfEdge*, FLOAT_T) nogil
 	FLOAT_T (*F)(HalfEdge*, FLOAT_T) nogil	
 	FLOAT_T (*lntan)(HalfEdge*, FLOAT_T) nogil
-	FLOAT_T (*cot)(HalfEdge*, FLOAT_T) nogil
 	FLOAT_T (*csc)(HalfEdge*, FLOAT_T) nogil
-	FLOAT_T (*csc2)(HalfEdge*, FLOAT_T) nogil
 
 # Psuedo-class to just contain all pertaining info for sites and edges.
 ctypedef struct VoronoiInfo:

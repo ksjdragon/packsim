@@ -142,12 +142,12 @@ cdef class RadialTEnergy(VoronoiContainer):
 
 		cdef Site xi
 		cdef HalfEdge em, e
-		cdef Vector2D Rnla, i2p
+		cdef Vector2D Rnla
 
 		# All energy has a 2pir_0 term.
 		cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], TAU*self.r**2)
 		cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])
-		cdef FLOAT_T energy, r0, t, tp, B, lntan, cot, cscm, cscp, FA, int_r2d, int_rd
+		cdef FLOAT_T energy, r0, t, tp, B, lntan, csc
 		energy, r0 = 0, self.r
 
 		cdef INT_T i, j
@@ -169,10 +169,9 @@ cdef class RadialTEnergy(VoronoiContainer):
 				else:
 					e.cache.B(&e, <FLOAT_T>acos(<double>(Rnla.y/e.cache.la_mag(&e, NAN))))		
 				
-				i2p = Calc.I2(e, r0, t)
-				e.cache.i2p(&e, i2p)
+				e.cache.i2p(&e, Calc.I2(e, r0, t))
 				e = e.next(&e)
-			
+
 			# For looping again to calculate integrals.
 			em = xi.edge(&xi)
 			for j in prange(xi.edge_num(&xi)):
@@ -183,24 +182,17 @@ cdef class RadialTEnergy(VoronoiContainer):
 				lntan = <FLOAT_T>(log(fabs(tan(<double>((tp+B)/2))))) - \
 							<FLOAT_T>(log(fabs(tan(<double>((t+B)/2)))))
 
-				cot = -1/(<FLOAT_T>(tan(<double>(tp+B)))) + \
-						1/(<FLOAT_T>(tan(<double>(t+B))))	
-
-				cscm, cscp = 1/(<FLOAT_T>(sin(<double>(t+B)))), \
-								1/(<FLOAT_T>(sin(<double>(tp+B))))
+				csc = 1/(<FLOAT_T>(sin(<double>(tp+B)))) - \
+						1/(<FLOAT_T>(sin(<double>(t+B))))
 				
 				em.cache.lntan(&em, lntan)
-				em.cache.cot(&em, cot)
-				em.cache.csc(&em, cscp-cscm)
-				em.cache.csc2(&em, cscp**2 - cscm**2)
-				FA = (em.cache.F(&em, NAN)/em.cache.la_mag(&em, NAN))
+				em.cache.csc(&em, csc)
 
-				int_r2d, int_rd = FA**2*cot, FA*lntan
-
-				avg_radii[i] += int_rd
-				site_energy[i] += int_r2d - 2*r0*int_rd
+				avg_radii[i] += (em.cache.F(&em, NAN)/em.cache.la_mag(&em, NAN))*lntan
 
 				em = em.next(&em)
+
+			site_energy[i] += 2*(xi.cache.area(&xi, NAN) - r0*avg_radii[i])
 
 			xi.cache.avg_radius(&xi, avg_radii[i]/TAU)
 			xi.cache.energy(&xi, site_energy[i])
@@ -266,13 +258,7 @@ cdef class Calc:
 	cdef inline Vector2D I2(HalfEdge e, FLOAT_T r0, FLOAT_T t) nogil:
 		cdef Vector2D Rda = e.cache.da(&e, NAN_VECTOR)
 		Rda = Rda.rot(&Rda)
-
-		cdef Vector2D Rcircle = init.Vector2D(
-			-<FLOAT_T>sin(<double>t), <FLOAT_T>cos(<double>t)
-		)
-		cdef FLOAT_T p = e.cache.F(&e, NAN) / Rcircle.dot(&Rcircle, e.cache.la(&e, NAN_VECTOR))
-		p = ((p - r0)**2)/(Rda.dot(&Rda, Rda))
-		Rda.self.smul(&Rda, p)
+		Rda.self.sdiv(&Rda, e.cache.da_mag(&e, NAN))
 
 		return Rda
 
@@ -283,20 +269,19 @@ cdef class Calc:
 		cdef Vector2D Rda, i2ps, fp, gterms, q
 		cdef Matrix2x2 ha, hap, hdiff
 
-		cdef FLOAT_T t1, t2, lntan, cot, csc, csc2, sinB, cosB, sinBp, cosBp, F, A, B
+		cdef FLOAT_T t1, t2, lntan, csc, sinB, cosB, sinBp, cosBp, F, A, B
 
 		xe = e.face(&e)
 		ep = e.next(&e)
 		F, A, B = e.cache.F(&e, NAN), e.cache.la_mag(&e, NAN), e.cache.B(&e, NAN)
 		t1, t2 = e.cache.phi(&e, NAN), ep.cache.phi(&ep, NAN)
-		lntan, cot, csc, csc2 = e.cache.lntan(&e, NAN), e.cache.cot(&e, NAN), \
-								e.cache.csc(&e, NAN), e.cache.csc2(&e, NAN)
+
+		lntan, csc = e.cache.lntan(&e, NAN), e.cache.csc(&e, NAN)
 
 		sinB, cosB = <FLOAT_T>(sin(<double>(B))), <FLOAT_T>(cos(<double>(B)))
 		sinBp, cosBp = <FLOAT_T>(sin(<double>(B-PI_2))), \
 						<FLOAT_T>(cos(<double>(B-PI_2)))
 
-		
 
 		ha, hap = e.get_H(&e, xi), ep.get_H(&ep, xi)
 		hdiff = hap.copy.msub(&hap, ha)
@@ -319,25 +304,20 @@ cdef class Calc:
 		fp = e.cache.la(&e, NAN_VECTOR)
 		fp.self.matmul(&fp, R.copy.matmul(&R, ha))
 		fp.self.vadd(&fp, Rda.copy.matmul(&Rda, hdiff))
-		fp.self.smul(&fp, (F/A**2)*cot - (r0/A)*lntan)
+		fp.self.smul(&fp, lntan/A)
 		
 		gterms = init.Vector2D(
 			cosBp*lntan + sinBp*csc,
 			cosB*lntan + sinB*csc
 		)
-		gterms.self.smul(&gterms, r0*F/A**2)
+		gterms.self.smul(&gterms, -F/A**2)
 
-		q = init.Vector2D(
-			0.5*sinBp*csc2 + cosBp*cot,
-			0.5*sinB*csc2 + cosB*cot
-		)
-		q.self.smul(&q, -F**2/A**3)
-
-		gterms.self.vadd(&gterms, q)
 		gterms = gterms.rot(&gterms)
 		gterms.self.matmul(&gterms, hdiff)
 
 		fp.self.vadd(&fp, gterms)
-		fp.self.smul(&fp, 2)
 
-		return i2ps.copy.vadd(&i2ps, fp)
+		i2ps.self.vadd(&i2ps, fp)
+		i2ps.self.smul(&i2ps, -2*r0)
+
+		return i2ps

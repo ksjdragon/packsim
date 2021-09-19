@@ -8,9 +8,9 @@ init.SiteCacheMap, init.EdgeCacheMap, init.VoronoiInfo, init.Site, init.HalfEdge
 cdef SiteCacheMap SITE_CACHE_MAP = init.SiteCacheMap(0, 1, 2, 3, 4)
 
 cdef EdgeCacheMap AREA_EDGE_CACHE_MAP = init.EdgeCacheMap(0, 4, 6, 8, 10, -1, 12, 13,
-															-1, -1, -1, -1, -1, -1, -1, 14)
+															-1, -1, -1, -1, -1, 14)
 cdef EdgeCacheMap RADIALT_EDGE_CACHE_MAP = init.EdgeCacheMap(0, 4, 6, 8, -1, 10, 12, 13,
-																14, 15, 16, 17, 18, 19, 20, 21)
+																14, 15, 16, 17, 18, 19)
 
 #### SiteCacheMap Methods ####
 
@@ -81,16 +81,15 @@ cdef inline FLOAT_T avg_radius(Site* self, FLOAT_T val) nogil:
 
 cdef inline EdgeCacheMap init_edgecachemap(INT_T iH, INT_T ila, INT_T ida, INT_T ixij, 
 				INT_T idVdv, INT_T ii2p, INT_T ila_mag, INT_T ida_mag, INT_T iphi, INT_T iB,
-				INT_T iF, INT_T ilntan, INT_T icot, INT_T icsc, INT_T icsc2, INT_T size) nogil:
+				INT_T iF, INT_T ilntan, INT_T icsc, INT_T size) nogil:
 	cdef EdgeCacheMap ec
 	ec.iH, ec.ila, ec.ida, ec.ixij, ec.idVdv, ec.ii2p, ec.ila_mag, ec.ida_mag, ec.iphi, \
-		ec.iB, ec.iF, ec.ilntan, ec.icot, ec.icsc, ec.icsc2 = iH, ila, ida, ixij, idVdv, ii2p, \
-					 ila_mag, ida_mag, iphi, iB, iF, ilntan, icot, icsc, icsc2
+		ec.iB, ec.iF, ec.ilntan, ec.icsc = iH, ila, ida, ixij, idVdv, ii2p, \
+					 ila_mag, ida_mag, iphi, iB, iF, ilntan, icsc
 	ec.size = size
 
 	ec.H, ec.la, ec.da, ec.xij, ec.dVdv, ec.i2p, ec.la_mag, ec.da_mag, ec.phi, ec.B, ec.F, \
-		 ec.lntan, ec.cot, ec.csc, ec.csc2 = H, la, da, xij, dVdv, i2p, la_mag, da_mag, phi, \
-		 										B, F, lntan, cot, csc, csc2
+		 ec.lntan, ec.csc = H, la, da, xij, dVdv, i2p, la_mag, da_mag, phi, B, F, lntan, csc
 
 	return ec
 
@@ -267,16 +266,6 @@ cdef inline FLOAT_T lntan(HalfEdge* self, FLOAT_T val) nogil:
 			(self.arr_index, self.cache.ilntan), val)
 		return val
 
-cdef inline FLOAT_T cot(HalfEdge* self, FLOAT_T val) nogil:
-	if isnan(<double>val):
-		return self.info.edge_cache.get(&self.info.edge_cache,
-			(self.arr_index, self.cache.icot)
-		)
-	else:
-		self.info.edge_cache.set(&self.info.edge_cache,
-			(self.arr_index, self.cache.icot), val)
-		return val
-
 cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:
 	if isnan(<double>val):
 		return self.info.edge_cache.get(&self.info.edge_cache,
@@ -285,16 +274,6 @@ cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:
 	else:
 		self.info.edge_cache.set(&self.info.edge_cache,
 			(self.arr_index, self.cache.icsc), val)
-		return val
-
-cdef inline FLOAT_T csc2(HalfEdge* self, FLOAT_T val) nogil:
-	if isnan(<double>val):
-		return self.info.edge_cache.get(&self.info.edge_cache,
-			(self.arr_index, self.cache.icsc2)
-		)
-	else:
-		self.info.edge_cache.set(&self.info.edge_cache,
-			(self.arr_index, self.cache.icsc2), val)
 		return val
 
 
