@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Squish'
+copyright = '2021, ksjdragon'
+author = 'ksjdragon'
 
 release = '0.1'
 version = '0.1.0'
@@ -29,7 +29,11 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
+html_static_path= ['_static']
 html_theme = 'sphinx_rtd_theme'
+html_css_files = [
+    "ellipses.css"
+]
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'

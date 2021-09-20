@@ -1,0 +1,19 @@
+{
+  "domain": {
+    "n_objects": 15,
+    "width": 10.0,
+    "height": 10.0,
+    "natural_radius": 4.0,
+    "energy": "radial-t"
+  },
+  "simulation": {
+    "mode": "flow",
+    "step_size": 0.05,
+    "threshold": 0.00001,
+    "save_sim": true
+  },
+  "diagram": {
+    "filetype": "mp4",
+    "figures": "energy"
+  }
+}

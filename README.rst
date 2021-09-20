@@ -29,12 +29,3 @@ This project uses `GNU AGPLv3.0 <https://choosealicense.com/licenses/agpl-3.0/>`
 Support and Contribution
 ------------------------
 Feel free to visit our repository on `GitHub <https://github.com/ksjdragon/squish>`_ for source code of this library. Any issues or bugs may be reported at  the `issue tracker <https://github.com/ksjdragon/squish/issues>`_. All contributions to **Squish** are welcome!
-
-.. toctree::
-   :hidden:
-   :maxdepth: 4
-   :caption: Getting Started
-
-   installation
-   usage
-   api
