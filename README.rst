@@ -9,7 +9,7 @@ Fast parallelized Cython code is used to compute the simulations efficienctly. A
 Resources
 ---------
 
-- `Documentation <https://squish.readthedocs.io>`_: Examples, guides, and Squish API.
+- `Documentation <https://squish.readthedocs.io>`_: Examples, guides, and **Squish** API.
 - `GitHub repository <https://github.com/ksjdragon/squish>`_: View and download the **Squish** source code.
 - `Issue tracker <https://github.com/ksjdragon/squish/issues>`_: Report issues or request features for **Squish**.
 
