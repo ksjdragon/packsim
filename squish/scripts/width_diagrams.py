@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 from pathlib import Path
 
-from simulation import Diagram, Simulation
-from _squish import AreaEnergy, RadialALEnergy, RadialTEnergy
+from ..simulation import Diagram, Simulation
+from .._squish import AreaEnergy, RadialALEnergy, RadialTEnergy
 
 ENERGY_R_STR = {AreaEnergy: "Area", RadialALEnergy: "Radial[AL]", RadialTEnergy: "Radial[T]"}
 ENERGY_I_STR = {AreaEnergy: "area", RadialALEnergy: "radial-al", RadialTEnergy: "radial-t"}
@@ -243,7 +243,7 @@ def main():
 
 	print(f"Wrote to {fig_folder}.")
 
-if __name__ == "__main__":
+def pre():
 	os.environ["QT_LOGGING_RULES"] = "*=false"
 	SIM_FOLDER = Path(f"simulations/ShrinkEnergyComparison")
 	SIM_FOLDER.mkdir(exist_ok=True)

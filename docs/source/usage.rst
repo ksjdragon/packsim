@@ -1,24 +1,17 @@
 Usage
 *****
 
-If using the library is all that is needed, then a few scripts are provided to easily access the main functionalities, without needing to write code at all! Otherwise, there are further examples here.
-
-These scripts are simple simple command line utilities. Currently, the following are available:
-
-- :ref:`Simulate`
-- :ref:`Width Diagrams`
+If all you need is to run the simulation, then you need not write at code. You can simply use the command line tool provided tool for you, ``squish``! Of course, it's also possible to use the library to do whatever you may need.
 
 .. note::
 
 	**Squish** will automatically create a ``figures`` and ``simulations`` folder in the directory you run it from.
 
 
-.. _Simulate:
+Squish Utility
+==============
 
-Simulate
-========
-
-This script outputs simulation results given the input parameters. There are many input parameters, so it's necessary to create a config ``.json`` file.
+The command line utility ``squish`` outputs simulation results given the input parameters. There are many input parameters, so it's necessary to create a config ``.json`` file.
 
 
 Configuration
@@ -176,21 +169,6 @@ With the config to run and saved, you can run
 
 .. code-block:: bash
 
-	(.venv) /path/to/squish: simulate my_test_sim.json
+	(.venv): squish my_test_sim.json
 
-
-.. _Width Diagrams:
-
-Width Diagrams
-==============
-
-This script compiles the simulation results into their relevant diagrams. Specifically, given *Search* simulation files at desired widths, it will compile the data and output the diagrams.
-
-To run it, you need only provide the folder of *Search* simulations:
-
-.. code-block:: bash
-
-	(.venv) /path/to/squish: width_diagrams /path/to/my/searches
-
-Then, it will process and generate diagrams in the `figures` folder.
 

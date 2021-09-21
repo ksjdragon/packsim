@@ -4,9 +4,9 @@ from typing import Tuple, List
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator, FormatStrFormatter
 import os, math, random, time, pickle, scipy, numpy as np
-
-from packsim_core import VoronoiContainer, AreaEnergy, RadialALEnergy, RadialTEnergy
 from timeit import default_timer as timer
+
+from _squish import VoronoiContainer, AreaEnergy, RadialALEnergy, RadialTEnergy
 
 
 INT = np.int64

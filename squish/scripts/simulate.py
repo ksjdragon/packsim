@@ -3,9 +3,9 @@ from typing import Dict
 import argparse, json, numpy as np, os
 from shutil import which
 from pathlib import Path
-from simulation import Diagram, Flow, Search, Shrink
 
-from _squish import RadialTEnergy
+from ..simulation import Diagram, Flow, Search, Shrink
+from .._squish import RadialTEnergy
 
 dia_presets = {
 	"animate": [["voronoi"]],
@@ -151,8 +151,7 @@ def config_sim(args):
 def loaded_sim(args):
 	pass
 
-
-if __name__ == '__main__':
+def pre():
 	os.environ["QT_LOGGING_RULES"] = "*=false"
 	try:
 		main()
