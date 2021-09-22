@@ -405,6 +405,7 @@ cdef class VoronoiContainer:
 		self.common_cache()
 		self.precompute()
 		self.calc_grad()
+		self.get_statistics()
 
 
 	cdef void calculate_voronoi(VoronoiContainer self, 

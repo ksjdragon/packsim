@@ -1,11 +1,11 @@
 from __future__ import annotations
-from typing import Dict
+from typing import List, Dict
 import argparse, json, numpy as np, os
 from shutil import which
 from pathlib import Path
 
-from ..simulation import Diagram, Flow, Search, Shrink
-from .._squish import RadialTEnergy
+from .common import DomainParams, Energy
+from .simulation import Flow, Search, Shrink
 
 dia_presets = {
 	"animate": [["voronoi"]],
@@ -17,15 +17,17 @@ dia_presets = {
 	"eigs": [["voronoi", "eigs"]]
 }
 
-def check_params(container: Dict, needed: List[str], valid: Dict):
-	"""
-	Checks container for the necessary items, and raises
+def check_params(container: Dict, needed: List[str], valid: Dict) -> None:
+	"""Checks container for the necessary items, and raises
 	an error if the parameter is not found.
-	:param container: [Dict] contains the submitted parameters.
-	:param needed: [List[str]] contains the needed parameters.
-	:param valid: [Dict] if there are specific valid parameters,
-	will also check for those.
+
+	Args:
+		container (Dict): contains the submitted parameters.
+		needed (List[str]): contains the needed paramters.
+		valid: (Dict): if there are specific valid parameters, it will also check for these.
+
 	"""
+
 	for need in needed:
 		if need not in container:
 			raise ValueError(f"Parameter \'{need}\' is required.")
@@ -84,10 +86,9 @@ def config_sim(args):
 		"n_objects": "positive", "width": "positive", "height": "positive",
 		"natural_radius": "positive", "energy": ["area", "radial-al", "radial-t"]
 	})
-	n, w, h, r, energy = dmn_params["n_objects"], dmn_params["width"], dmn_params["height"], \
-				dmn_params["natural_radius"], dmn_params["energy"]
-
-
+	domain = DomainParams(dmn_params["n_objects"], dmn_params["width"], \
+							dmn_params["height"], dmn_params["natural_radius"])
+	energy = Energy(dmn_params["energy"])
 
 	points = None
 	if "points" in dmn_params:
@@ -97,28 +98,29 @@ def config_sim(args):
 		else:
 			points = np.asarray(dmn_params["points"])
 
-	check_params(sim_params, ["mode", "step_size", "threshold", "save_sim"], {
-		"mode": ["flow", "search", "shrink"], "step_size": "positive", "threshold": "positive"
+	check_params(sim_params, ["mode", "step_size", "threshold", "save_sim", "accel"], {
+		"mode": ["flow", "search", "shrink"], "step_size": "positive", "threshold": "positive",
 	})
-	mode, step, thres, save_sim = sim_params["mode"], sim_params["step_size"], \
-									sim_params["threshold"], sim_params["save_sim"]
+	mode, step, thres, accel, save_sim = sim_params["mode"], sim_params["step_size"], \
+									sim_params["threshold"], sim_params["accel"], \
+									sim_params["save_sim"]
 
 	name = sim_params.get("name")
 
 	if mode == "flow":
-		sim = Flow(n, w, h, r, energy, thres, step)
+		sim = Flow(domain, energy, step, thres, accel, name=name)
 	elif mode == "search":
 		check_params(sim_params, ["manifold_step_size", "eq_stop_count"], {
 			"manifold_step_size": "positive", "eq_stop_count": "positive"
 		})
-		sim = Search(n, w, h, r, energy, thres, step, sim_params["manifold_step_size"],
-						sim_params["eq_stop_count"])
+		sim = Search(domain, energy, step, thres, accel, sim_params["manifold_step_size"],
+						sim_params["eq_stop_count"], name=name)
 	elif mode == "shrink":
 		check_params(sim_params, ["width_change", "width_stop"], {
 			"width_change": "positive", "width_stop": "positive"
 		})
-		sim = Shrink(n, w, h, r, energy, thres, step, sim_params["width_change"],
-						sim_params["width_stop"])
+		sim = Shrink(domain, energy, step, thres, accel, sim_params["width_change"],
+						sim_params["width_stop"], name=name)
 
 	save_diagram = False
 	if "diagram" in params:
@@ -136,9 +138,8 @@ def config_sim(args):
 		else:
 			dia_params["figures"] = np.asarray(dia_params["figures"])
 
-	sim.initialize(points)
-	sim.run(not args.quiet, args.log_steps)
-	if save_sim: sim.save(filename=name)
+	sim.add_frame(points)
+	sim.run(save_sim, not args.quiet, args.log_steps)
 
 	if save_diagram:
 		diagram = Diagram(sim, dia_params["figures"])

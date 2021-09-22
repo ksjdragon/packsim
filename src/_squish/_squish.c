@@ -12,7 +12,7 @@
         ],
         "name": "_squish",
         "sources": [
-            "src/_squish.pyx"
+            "src/_squish/_squish.pyx"
         ]
     },
     "module_name": "_squish"
@@ -878,14 +878,14 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/core.pyx",
-  "src/voronoi_dcel.pyx",
+  "src/_squish/core.pyx",
+  "src/_squish/voronoi_dcel.pyx",
   "stringsource",
-  "src/energy.pyx",
-  "src/_squish.pxd",
+  "src/_squish/energy.pyx",
+  "src/_squish/_squish.pxd",
   "__init__.pxd",
   "array.pxd",
-  "src/_squish.pyx",
+  "src/_squish/_squish.pyx",
   "type.pxd",
   "bool.pxd",
   "complex.pxd",
@@ -999,7 +999,7 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
 #endif
 
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":690
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":690
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -1008,7 +1008,7 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":691
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":691
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -1017,7 +1017,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":692
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":692
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -1026,7 +1026,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":693
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":693
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -1035,7 +1035,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":697
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":697
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -1044,7 +1044,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":698
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":698
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -1053,7 +1053,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":699
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":699
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -1062,7 +1062,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":700
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":700
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -1071,7 +1071,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":704
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":704
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -1080,7 +1080,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":705
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":705
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -1089,7 +1089,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":714
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":714
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -1098,7 +1098,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":715
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":715
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -1107,7 +1107,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":716
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":716
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -1116,7 +1116,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":718
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":718
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -1125,7 +1125,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":719
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":719
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -1134,7 +1134,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":720
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":720
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -1143,7 +1143,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":722
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":722
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -1152,7 +1152,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":723
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":723
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -1161,7 +1161,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":725
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":725
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -1170,7 +1170,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":726
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":726
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -1179,7 +1179,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":727
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":727
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -1245,7 +1245,7 @@ struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":729
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":729
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -1254,7 +1254,7 @@ struct __pyx_memoryviewslice_obj;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":730
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":730
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -1263,7 +1263,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":731
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":731
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -1272,7 +1272,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":733
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":733
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1840,7 +1840,7 @@ struct __pyx_memoryviewslice_obj {
 
 
 
-/* "src/voronoi_dcel.pyx":388
+/* "src/_squish/voronoi_dcel.pyx":388
  * 
  * 
  * cdef class VoronoiContainer:             # <<<<<<<<<<<<<<
@@ -1863,7 +1863,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
 static CYTHON_INLINE int __pyx_f_7_squish_16VoronoiContainer_sign(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice);
 
 
-/* "src/energy.pyx":1
+/* "src/_squish/energy.pyx":1
  * cdef class AreaEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
  * 	"""
  * 	Class for formulas relevant to the Area energy.
@@ -1875,7 +1875,7 @@ struct __pyx_vtabstruct_7_squish_AreaEnergy {
 static struct __pyx_vtabstruct_7_squish_AreaEnergy *__pyx_vtabptr_7_squish_AreaEnergy;
 
 
-/* "src/energy.pyx":91
+/* "src/_squish/energy.pyx":95
  * 
  * 
  * cdef class RadialALEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
@@ -1889,7 +1889,7 @@ struct __pyx_vtabstruct_7_squish_RadialALEnergy {
 static struct __pyx_vtabstruct_7_squish_RadialALEnergy *__pyx_vtabptr_7_squish_RadialALEnergy;
 
 
-/* "src/energy.pyx":122
+/* "src/_squish/energy.pyx":131
  * 
  * 
  * cdef class RadialTEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
@@ -1903,7 +1903,7 @@ struct __pyx_vtabstruct_7_squish_RadialTEnergy {
 static struct __pyx_vtabstruct_7_squish_RadialTEnergy *__pyx_vtabptr_7_squish_RadialTEnergy;
 
 
-/* "src/energy.pyx":250
+/* "src/_squish/energy.pyx":263
  * 
  * 
  * cdef class Calc:             # <<<<<<<<<<<<<<
@@ -3289,7 +3289,9 @@ static const char __pyx_k_INT[] = "INT";
 static const char __pyx_k_get[] = "get";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
+static const char __pyx_k_Area[] = "Area";
 static const char __pyx_k_Calc[] = "Calc";
+static const char __pyx_k_area[] = "area";
 static const char __pyx_k_base[] = "base";
 static const char __pyx_k_copy[] = "copy";
 static const char __pyx_k_dict[] = "__dict__";
@@ -3351,20 +3353,26 @@ static const char __pyx_k_regions[] = "regions";
 static const char __pyx_k_reshape[] = "reshape";
 static const char __pyx_k_spatial[] = "spatial";
 static const char __pyx_k_Ellipsis[] = "Ellipsis";
+static const char __pyx_k_Radial_T[] = "Radial[T]";
+static const char __pyx_k_attr_str[] = "attr_str";
 static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_gradient[] = "gradient";
 static const char __pyx_k_itemsize[] = "itemsize";
 static const char __pyx_k_pyx_type[] = "__pyx_type";
+static const char __pyx_k_radial_t[] = "radial-t";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_site_arr[] = "site_arr";
 static const char __pyx_k_vertices[] = "vertices";
+static const char __pyx_k_Radial_AL[] = "Radial[AL]";
 static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_add_sites[] = "add_sites";
 static const char __pyx_k_enumerate[] = "enumerate";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
+static const char __pyx_k_radial_al[] = "radial-al";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_scipy_vor[] = "scipy_vor";
 static const char __pyx_k_site_isos[] = "site_isos";
+static const char __pyx_k_title_str[] = "title_str";
 static const char __pyx_k_AreaEnergy[] = "AreaEnergy";
 static const char __pyx_k_IndexError[] = "IndexError";
 static const char __pyx_k_ValueError[] = "ValueError";
@@ -3428,6 +3436,7 @@ static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath
 static const char __pyx_k_self_edge_cache_map_cannot_be_co[] = "self.edge_cache_map cannot be converted to a Python object for pickling";
 static const char __pyx_k_unable_to_allocate_shape_and_str[] = "unable to allocate shape and strides.";
 static PyObject *__pyx_n_s_ASCII;
+static PyObject *__pyx_n_u_Area;
 static PyObject *__pyx_n_s_AreaEnergy;
 static PyObject *__pyx_kp_s_Buffer_view_does_not_expose_stri;
 static PyObject *__pyx_n_s_Calc;
@@ -3456,6 +3465,8 @@ static PyObject *__pyx_kp_s_Out_of_bounds_on_buffer_access_a;
 static PyObject *__pyx_n_s_PickleError;
 static PyObject *__pyx_n_s_RadialALEnergy;
 static PyObject *__pyx_n_s_RadialTEnergy;
+static PyObject *__pyx_kp_u_Radial_AL;
+static PyObject *__pyx_kp_u_Radial_T;
 static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_kp_s_Unable_to_convert_item_to_object;
 static PyObject *__pyx_n_s_ValueError;
@@ -3465,9 +3476,11 @@ static PyObject *__pyx_n_s_VoronoiContainer;
 static PyObject *__pyx_n_s_add_sites;
 static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_s_arange;
+static PyObject *__pyx_n_u_area;
 static PyObject *__pyx_n_s_array;
 static PyObject *__pyx_n_s_asarray;
 static PyObject *__pyx_n_s_astype;
+static PyObject *__pyx_n_s_attr_str;
 static PyObject *__pyx_n_u_avg_radius;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_c;
@@ -3537,6 +3550,8 @@ static PyObject *__pyx_n_s_pyx_unpickle_Enum;
 static PyObject *__pyx_n_s_pyx_vtable;
 static PyObject *__pyx_n_u_q;
 static PyObject *__pyx_n_s_r;
+static PyObject *__pyx_kp_u_radial_al;
+static PyObject *__pyx_kp_u_radial_t;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
@@ -3572,6 +3587,7 @@ static PyObject *__pyx_kp_s_stringsource;
 static PyObject *__pyx_n_s_struct;
 static PyObject *__pyx_n_s_super;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_title_str;
 static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unique;
@@ -3712,7 +3728,7 @@ static PyObject *__pyx_codeobj__32;
 static PyObject *__pyx_codeobj__39;
 /* Late includes */
 
-/* "src/core.pyx":61
+/* "src/_squish/core.pyx":61
  * #### IArray Methods ####
  * 
  * cdef inline IArray init_iarray(INT_T* arr, (INT_T, INT_T) shape) nogil:             # <<<<<<<<<<<<<<
@@ -3726,7 +3742,7 @@ static CYTHON_INLINE struct __pyx_t_7_squish_IArray __pyx_f_7_squish_init_iarray
   __pyx_t_7_squish_INT_T *__pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/core.pyx":63
+  /* "src/_squish/core.pyx":63
  * cdef inline IArray init_iarray(INT_T* arr, (INT_T, INT_T) shape) nogil:
  * 	cdef IArray iarray
  * 	iarray.arr, iarray.shape = arr, shape             # <<<<<<<<<<<<<<
@@ -3738,7 +3754,7 @@ static CYTHON_INLINE struct __pyx_t_7_squish_IArray __pyx_f_7_squish_init_iarray
   __pyx_v_iarray.arr = __pyx_t_1;
   __pyx_v_iarray.shape = __pyx_t_2;
 
-  /* "src/core.pyx":65
+  /* "src/_squish/core.pyx":65
  * 	iarray.arr, iarray.shape = arr, shape
  * 
  * 	iarray.get = iarray_get             # <<<<<<<<<<<<<<
@@ -3747,7 +3763,7 @@ static CYTHON_INLINE struct __pyx_t_7_squish_IArray __pyx_f_7_squish_init_iarray
  */
   __pyx_v_iarray.get = __pyx_f_7_squish_iarray_get;
 
-  /* "src/core.pyx":66
+  /* "src/_squish/core.pyx":66
  * 
  * 	iarray.get = iarray_get
  * 	iarray.set = iarray_set             # <<<<<<<<<<<<<<
@@ -3756,7 +3772,7 @@ static CYTHON_INLINE struct __pyx_t_7_squish_IArray __pyx_f_7_squish_init_iarray
  */
   __pyx_v_iarray.set = __pyx_f_7_squish_iarray_set;
 
-  /* "src/core.pyx":67
+  /* "src/_squish/core.pyx":67
  * 	iarray.get = iarray_get
  * 	iarray.set = iarray_set
  * 	return iarray             # <<<<<<<<<<<<<<
@@ -3766,7 +3782,7 @@ static CYTHON_INLINE struct __pyx_t_7_squish_IArray __pyx_f_7_squish_init_iarray
   __pyx_r = __pyx_v_iarray;
   goto __pyx_L0;
 
-  /* "src/core.pyx":61
+  /* "src/_squish/core.pyx":61
  * #### IArray Methods ####
  * 
  * cdef inline IArray init_iarray(INT_T* arr, (INT_T, INT_T) shape) nogil:             # <<<<<<<<<<<<<<
@@ -3779,7 +3795,7 @@ static CYTHON_INLINE struct __pyx_t_7_squish_IArray __pyx_f_7_squish_init_iarray
   return __pyx_r;
 }
 
-/* "src/core.pyx":69
+/* "src/_squish/core.pyx":69
  * 	return iarray
  * 
  * cdef inline bint iarray_valid_indices(IArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -3802,7 +3818,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
   #endif
   __Pyx_RefNannySetupContext("iarray_valid_indices", 1);
 
-  /* "src/core.pyx":70
+  /* "src/_squish/core.pyx":70
  * 
  * cdef inline bint iarray_valid_indices(IArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:             # <<<<<<<<<<<<<<
@@ -3821,7 +3837,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "src/core.pyx":71
+      /* "src/_squish/core.pyx":71
  * cdef inline bint iarray_valid_indices(IArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:
  * 		with gil:             # <<<<<<<<<<<<<<
@@ -3834,7 +3850,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
           #endif
           /*try:*/ {
 
-            /* "src/core.pyx":72
+            /* "src/_squish/core.pyx":72
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:
  * 		with gil:
  * 			raise IndexError(f"Index out of range for IArray with shape {self.shape}")             # <<<<<<<<<<<<<<
@@ -3857,7 +3873,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
             __PYX_ERR(0, 72, __pyx_L10_error)
           }
 
-          /* "src/core.pyx":71
+          /* "src/_squish/core.pyx":71
  * cdef inline bint iarray_valid_indices(IArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:
  * 		with gil:             # <<<<<<<<<<<<<<
@@ -3874,7 +3890,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
           }
       }
 
-      /* "src/core.pyx":70
+      /* "src/_squish/core.pyx":70
  * 
  * cdef inline bint iarray_valid_indices(IArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:             # <<<<<<<<<<<<<<
@@ -3899,7 +3915,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
     __pyx_L5:;
   }
 
-  /* "src/core.pyx":69
+  /* "src/_squish/core.pyx":69
  * 	return iarray
  * 
  * cdef inline bint iarray_valid_indices(IArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -3922,7 +3938,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
   return __pyx_r;
 }
 
-/* "src/core.pyx":74
+/* "src/_squish/core.pyx":74
  * 			raise IndexError(f"Index out of range for IArray with shape {self.shape}")
  * 
  * cdef inline INT_T iarray_get(IArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -3933,7 +3949,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_iarray_valid_indices(struct __pyx_t_7_
 static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_iarray_get(struct __pyx_t_7_squish_IArray *__pyx_v_self, __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_v_index) {
   __pyx_t_7_squish_INT_T __pyx_r;
 
-  /* "src/core.pyx":76
+  /* "src/_squish/core.pyx":76
  * cdef inline INT_T iarray_get(IArray* self, (INT_T, INT_T) index) nogil:
  * 	#iarray_valid_indices(&self, index)
  * 	return self.arr[index[0]*self.shape[1] + index[1]]             # <<<<<<<<<<<<<<
@@ -3943,7 +3959,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_iarray_get(struct _
   __pyx_r = (__pyx_v_self->arr[((__pyx_v_index.f0 * __pyx_v_self->shape.f1) + __pyx_v_index.f1)]);
   goto __pyx_L0;
 
-  /* "src/core.pyx":74
+  /* "src/_squish/core.pyx":74
  * 			raise IndexError(f"Index out of range for IArray with shape {self.shape}")
  * 
  * cdef inline INT_T iarray_get(IArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -3956,7 +3972,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_iarray_get(struct _
   return __pyx_r;
 }
 
-/* "src/core.pyx":78
+/* "src/_squish/core.pyx":78
  * 	return self.arr[index[0]*self.shape[1] + index[1]]
  * 
  * cdef inline void iarray_set(IArray* self, (INT_T, INT_T) index, INT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -3966,7 +3982,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_iarray_get(struct _
 
 static CYTHON_INLINE void __pyx_f_7_squish_iarray_set(struct __pyx_t_7_squish_IArray *__pyx_v_self, __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_v_index, __pyx_t_7_squish_INT_T __pyx_v_val) {
 
-  /* "src/core.pyx":80
+  /* "src/_squish/core.pyx":80
  * cdef inline void iarray_set(IArray* self, (INT_T, INT_T) index, INT_T val) nogil:
  * 	#iarray_valid_indices(&self, index)
  * 	self.arr[index[0]*self.shape[1] + index[1]] = val             # <<<<<<<<<<<<<<
@@ -3975,7 +3991,7 @@ static CYTHON_INLINE void __pyx_f_7_squish_iarray_set(struct __pyx_t_7_squish_IA
  */
   (__pyx_v_self->arr[((__pyx_v_index.f0 * __pyx_v_self->shape.f1) + __pyx_v_index.f1)]) = __pyx_v_val;
 
-  /* "src/core.pyx":78
+  /* "src/_squish/core.pyx":78
  * 	return self.arr[index[0]*self.shape[1] + index[1]]
  * 
  * cdef inline void iarray_set(IArray* self, (INT_T, INT_T) index, INT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -3986,7 +4002,7 @@ static CYTHON_INLINE void __pyx_f_7_squish_iarray_set(struct __pyx_t_7_squish_IA
   /* function exit code */
 }
 
-/* "src/core.pyx":85
+/* "src/_squish/core.pyx":85
  * #### FArray Methods ####
  * 
  * cdef inline FArray init_farray(FLOAT_T* arr, (INT_T, INT_T) shape) nogil:             # <<<<<<<<<<<<<<
@@ -4000,7 +4016,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FArray __pyx_f_7_squish_init_farray(__pyx_
   __pyx_t_7_squish_FLOAT_T *__pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/core.pyx":87
+  /* "src/_squish/core.pyx":87
  * cdef inline FArray init_farray(FLOAT_T* arr, (INT_T, INT_T) shape) nogil:
  * 	cdef FArray farray
  * 	farray.arr, farray.shape = arr, shape             # <<<<<<<<<<<<<<
@@ -4012,7 +4028,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FArray __pyx_f_7_squish_init_farray(__pyx_
   __pyx_v_farray.arr = __pyx_t_1;
   __pyx_v_farray.shape = __pyx_t_2;
 
-  /* "src/core.pyx":89
+  /* "src/_squish/core.pyx":89
  * 	farray.arr, farray.shape = arr, shape
  * 
  * 	farray.get = farray_get             # <<<<<<<<<<<<<<
@@ -4021,7 +4037,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FArray __pyx_f_7_squish_init_farray(__pyx_
  */
   __pyx_v_farray.get = __pyx_f_7_squish_farray_get;
 
-  /* "src/core.pyx":90
+  /* "src/_squish/core.pyx":90
  * 
  * 	farray.get = farray_get
  * 	farray.set = farray_set             # <<<<<<<<<<<<<<
@@ -4030,7 +4046,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FArray __pyx_f_7_squish_init_farray(__pyx_
  */
   __pyx_v_farray.set = __pyx_f_7_squish_farray_set;
 
-  /* "src/core.pyx":91
+  /* "src/_squish/core.pyx":91
  * 	farray.get = farray_get
  * 	farray.set = farray_set
  * 	return farray             # <<<<<<<<<<<<<<
@@ -4040,7 +4056,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FArray __pyx_f_7_squish_init_farray(__pyx_
   __pyx_r = __pyx_v_farray;
   goto __pyx_L0;
 
-  /* "src/core.pyx":85
+  /* "src/_squish/core.pyx":85
  * #### FArray Methods ####
  * 
  * cdef inline FArray init_farray(FLOAT_T* arr, (INT_T, INT_T) shape) nogil:             # <<<<<<<<<<<<<<
@@ -4053,7 +4069,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FArray __pyx_f_7_squish_init_farray(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":93
+/* "src/_squish/core.pyx":93
  * 	return farray
  * 
  * cdef inline bint farray_valid_indices(FArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -4076,7 +4092,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
   #endif
   __Pyx_RefNannySetupContext("farray_valid_indices", 1);
 
-  /* "src/core.pyx":94
+  /* "src/_squish/core.pyx":94
  * 
  * cdef inline bint farray_valid_indices(FArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:             # <<<<<<<<<<<<<<
@@ -4095,7 +4111,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "src/core.pyx":95
+      /* "src/_squish/core.pyx":95
  * cdef inline bint farray_valid_indices(FArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:
  * 		with gil:             # <<<<<<<<<<<<<<
@@ -4108,7 +4124,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
           #endif
           /*try:*/ {
 
-            /* "src/core.pyx":96
+            /* "src/_squish/core.pyx":96
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:
  * 		with gil:
  * 			raise IndexError(f"Index out of range for FArray with shape {self.shape}")             # <<<<<<<<<<<<<<
@@ -4131,7 +4147,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
             __PYX_ERR(0, 96, __pyx_L10_error)
           }
 
-          /* "src/core.pyx":95
+          /* "src/_squish/core.pyx":95
  * cdef inline bint farray_valid_indices(FArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:
  * 		with gil:             # <<<<<<<<<<<<<<
@@ -4148,7 +4164,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
           }
       }
 
-      /* "src/core.pyx":94
+      /* "src/_squish/core.pyx":94
  * 
  * cdef inline bint farray_valid_indices(FArray* self, (INT_T, INT_T) index) nogil:
  * 	if index[0] > self.shape[0] or index[1] > self.shape[1]:             # <<<<<<<<<<<<<<
@@ -4173,7 +4189,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
     __pyx_L5:;
   }
 
-  /* "src/core.pyx":93
+  /* "src/_squish/core.pyx":93
  * 	return farray
  * 
  * cdef inline bint farray_valid_indices(FArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -4196,7 +4212,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
   return __pyx_r;
 }
 
-/* "src/core.pyx":98
+/* "src/_squish/core.pyx":98
  * 			raise IndexError(f"Index out of range for FArray with shape {self.shape}")
  * 
  * cdef inline FLOAT_T farray_get(FArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -4207,7 +4223,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_farray_valid_indices(__pyx_t_7_squish_
 static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_farray_get(__pyx_t_7_squish_FArray *__pyx_v_self, __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_v_index) {
   __pyx_t_7_squish_FLOAT_T __pyx_r;
 
-  /* "src/core.pyx":100
+  /* "src/_squish/core.pyx":100
  * cdef inline FLOAT_T farray_get(FArray* self, (INT_T, INT_T) index) nogil:
  * 	#iarray_valid_indices(&self, index)
  * 	return self.arr[index[0]*self.shape[1] + index[1]]             # <<<<<<<<<<<<<<
@@ -4217,7 +4233,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_farray_get(__pyx_
   __pyx_r = (__pyx_v_self->arr[((__pyx_v_index.f0 * __pyx_v_self->shape.f1) + __pyx_v_index.f1)]);
   goto __pyx_L0;
 
-  /* "src/core.pyx":98
+  /* "src/_squish/core.pyx":98
  * 			raise IndexError(f"Index out of range for FArray with shape {self.shape}")
  * 
  * cdef inline FLOAT_T farray_get(FArray* self, (INT_T, INT_T) index) nogil:             # <<<<<<<<<<<<<<
@@ -4230,7 +4246,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_farray_get(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":102
+/* "src/_squish/core.pyx":102
  * 	return self.arr[index[0]*self.shape[1] + index[1]]
  * 
  * cdef inline void farray_set(FArray* self, (INT_T, INT_T) index, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -4240,7 +4256,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_farray_get(__pyx_
 
 static CYTHON_INLINE void __pyx_f_7_squish_farray_set(__pyx_t_7_squish_FArray *__pyx_v_self, __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_v_index, __pyx_t_7_squish_FLOAT_T __pyx_v_val) {
 
-  /* "src/core.pyx":104
+  /* "src/_squish/core.pyx":104
  * cdef inline void farray_set(FArray* self, (INT_T, INT_T) index, FLOAT_T val) nogil:
  * 	#iarray_valid_indices(&self, index)
  * 	self.arr[index[0]*self.shape[1] + index[1]] = val             # <<<<<<<<<<<<<<
@@ -4249,7 +4265,7 @@ static CYTHON_INLINE void __pyx_f_7_squish_farray_set(__pyx_t_7_squish_FArray *_
  */
   (__pyx_v_self->arr[((__pyx_v_index.f0 * __pyx_v_self->shape.f1) + __pyx_v_index.f1)]) = __pyx_v_val;
 
-  /* "src/core.pyx":102
+  /* "src/_squish/core.pyx":102
  * 	return self.arr[index[0]*self.shape[1] + index[1]]
  * 
  * cdef inline void farray_set(FArray* self, (INT_T, INT_T) index, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -4260,7 +4276,7 @@ static CYTHON_INLINE void __pyx_f_7_squish_farray_set(__pyx_t_7_squish_FArray *_
   /* function exit code */
 }
 
-/* "src/core.pyx":132
+/* "src/_squish/core.pyx":132
  * #### BitSet Methods ####
  * 
  * cdef inline BitSet init_bitset(INT_T elements) nogil:             # <<<<<<<<<<<<<<
@@ -4274,7 +4290,7 @@ static CYTHON_INLINE __pyx_t_7_squish_BitSet __pyx_f_7_squish_init_bitset(__pyx_
   int (*__pyx_t_1)(__pyx_t_7_squish_BitSet *, __pyx_t_7_squish_INT_T);
   void (*__pyx_t_2)(__pyx_t_7_squish_BitSet *);
 
-  /* "src/core.pyx":134
+  /* "src/_squish/core.pyx":134
  * cdef inline BitSet init_bitset(INT_T elements) nogil:
  * 	cdef BitSet bitset
  * 	bitset.bits = <INT_T*> calloc(((elements/sizeof(INT_T))+1), sizeof(INT_T))             # <<<<<<<<<<<<<<
@@ -4283,7 +4299,7 @@ static CYTHON_INLINE __pyx_t_7_squish_BitSet __pyx_f_7_squish_init_bitset(__pyx_
  */
   __pyx_v_bitset.bits = ((__pyx_t_7_squish_INT_T *)calloc(((__pyx_v_elements / ((__pyx_t_7_squish_INT_T)(sizeof(__pyx_t_7_squish_INT_T)))) + 1), (sizeof(__pyx_t_7_squish_INT_T))));
 
-  /* "src/core.pyx":136
+  /* "src/_squish/core.pyx":136
  * 	bitset.bits = <INT_T*> calloc(((elements/sizeof(INT_T))+1), sizeof(INT_T))
  * 
  * 	bitset.add, bitset.free = bitset_add, bitset_free             # <<<<<<<<<<<<<<
@@ -4295,7 +4311,7 @@ static CYTHON_INLINE __pyx_t_7_squish_BitSet __pyx_f_7_squish_init_bitset(__pyx_
   __pyx_v_bitset.add = __pyx_t_1;
   __pyx_v_bitset.free = __pyx_t_2;
 
-  /* "src/core.pyx":137
+  /* "src/_squish/core.pyx":137
  * 
  * 	bitset.add, bitset.free = bitset_add, bitset_free
  * 	return bitset             # <<<<<<<<<<<<<<
@@ -4305,7 +4321,7 @@ static CYTHON_INLINE __pyx_t_7_squish_BitSet __pyx_f_7_squish_init_bitset(__pyx_
   __pyx_r = __pyx_v_bitset;
   goto __pyx_L0;
 
-  /* "src/core.pyx":132
+  /* "src/_squish/core.pyx":132
  * #### BitSet Methods ####
  * 
  * cdef inline BitSet init_bitset(INT_T elements) nogil:             # <<<<<<<<<<<<<<
@@ -4318,7 +4334,7 @@ static CYTHON_INLINE __pyx_t_7_squish_BitSet __pyx_f_7_squish_init_bitset(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":139
+/* "src/_squish/core.pyx":139
  * 	return bitset
  * 
  * cdef inline bint bitset_add(BitSet* self, INT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -4332,7 +4348,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
   __pyx_t_7_squish_INT_T __pyx_v_old;
   int __pyx_r;
 
-  /* "src/core.pyx":141
+  /* "src/_squish/core.pyx":141
  * cdef inline bint bitset_add(BitSet* self, INT_T val) nogil:
  * 	cdef INT_T index, rel_index, old
  * 	index = val/sizeof(INT_T)             # <<<<<<<<<<<<<<
@@ -4341,7 +4357,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
  */
   __pyx_v_index = (__pyx_v_val / ((__pyx_t_7_squish_INT_T)(sizeof(__pyx_t_7_squish_INT_T))));
 
-  /* "src/core.pyx":142
+  /* "src/_squish/core.pyx":142
  * 	cdef INT_T index, rel_index, old
  * 	index = val/sizeof(INT_T)
  * 	old = self.bits[index]             # <<<<<<<<<<<<<<
@@ -4350,7 +4366,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
  */
   __pyx_v_old = (__pyx_v_self->bits[__pyx_v_index]);
 
-  /* "src/core.pyx":143
+  /* "src/_squish/core.pyx":143
  * 	index = val/sizeof(INT_T)
  * 	old = self.bits[index]
  * 	rel_index = val - index*sizeof(INT_T)             # <<<<<<<<<<<<<<
@@ -4359,7 +4375,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
  */
   __pyx_v_rel_index = (__pyx_v_val - (__pyx_v_index * (sizeof(__pyx_t_7_squish_INT_T))));
 
-  /* "src/core.pyx":145
+  /* "src/_squish/core.pyx":145
  * 	rel_index = val - index*sizeof(INT_T)
  * 
  * 	self.bits[index] = (1 << rel_index) | old	# New value.             # <<<<<<<<<<<<<<
@@ -4368,7 +4384,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
  */
   (__pyx_v_self->bits[__pyx_v_index]) = ((1 << __pyx_v_rel_index) | __pyx_v_old);
 
-  /* "src/core.pyx":147
+  /* "src/_squish/core.pyx":147
  * 	self.bits[index] = (1 << rel_index) | old	# New value.
  * 
  * 	return old == self.bits[index]	# Means 1 was already there.             # <<<<<<<<<<<<<<
@@ -4378,7 +4394,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
   __pyx_r = (__pyx_v_old == (__pyx_v_self->bits[__pyx_v_index]));
   goto __pyx_L0;
 
-  /* "src/core.pyx":139
+  /* "src/_squish/core.pyx":139
  * 	return bitset
  * 
  * cdef inline bint bitset_add(BitSet* self, INT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -4391,7 +4407,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
   return __pyx_r;
 }
 
-/* "src/core.pyx":149
+/* "src/_squish/core.pyx":149
  * 	return old == self.bits[index]	# Means 1 was already there.
  * 
  * cdef inline void bitset_free(BitSet* self) nogil:             # <<<<<<<<<<<<<<
@@ -4401,7 +4417,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_bitset_add(__pyx_t_7_squish_BitSet *__
 
 static CYTHON_INLINE void __pyx_f_7_squish_bitset_free(__pyx_t_7_squish_BitSet *__pyx_v_self) {
 
-  /* "src/core.pyx":150
+  /* "src/_squish/core.pyx":150
  * 
  * cdef inline void bitset_free(BitSet* self) nogil:
  * 	free(self.bits)             # <<<<<<<<<<<<<<
@@ -4410,7 +4426,7 @@ static CYTHON_INLINE void __pyx_f_7_squish_bitset_free(__pyx_t_7_squish_BitSet *
  */
   free(__pyx_v_self->bits);
 
-  /* "src/core.pyx":149
+  /* "src/_squish/core.pyx":149
  * 	return old == self.bits[index]	# Means 1 was already there.
  * 
  * cdef inline void bitset_free(BitSet* self) nogil:             # <<<<<<<<<<<<<<
@@ -4421,7 +4437,7 @@ static CYTHON_INLINE void __pyx_f_7_squish_bitset_free(__pyx_t_7_squish_BitSet *
   /* function exit code */
 }
 
-/* "src/core.pyx":163
+/* "src/_squish/core.pyx":163
  * """
  * 
  * cdef inline Vector2D init_vector2d(FLOAT_T x, FLOAT_T y) nogil:             # <<<<<<<<<<<<<<
@@ -4441,7 +4457,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_init_vector2d(__
   __pyx_t_7_squish_FLOAT_T (*__pyx_t_7)(__pyx_t_7_squish_Vector2D *, __pyx_t_7_squish_Vector2D);
   __pyx_t_7_squish_FLOAT_T (*__pyx_t_8)(__pyx_t_7_squish_Vector2D *);
 
-  /* "src/core.pyx":165
+  /* "src/_squish/core.pyx":165
  * cdef inline Vector2D init_vector2d(FLOAT_T x, FLOAT_T y) nogil:
  * 	cdef Vector2D vec
  * 	vec.x, vec.y = x, y             # <<<<<<<<<<<<<<
@@ -4453,7 +4469,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_init_vector2d(__
   __pyx_v_vec.x = __pyx_t_1;
   __pyx_v_vec.y = __pyx_t_2;
 
-  /* "src/core.pyx":166
+  /* "src/_squish/core.pyx":166
  * 	cdef Vector2D vec
  * 	vec.x, vec.y = x, y
  * 	vec.self, vec.copy = VSO, VCO             # <<<<<<<<<<<<<<
@@ -4465,7 +4481,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_init_vector2d(__
   __pyx_v_vec.self = __pyx_t_3;
   __pyx_v_vec.copy = __pyx_t_4;
 
-  /* "src/core.pyx":168
+  /* "src/_squish/core.pyx":168
  * 	vec.self, vec.copy = VSO, VCO
  * 
  * 	vec.equals, vec.rot, vec.dot, vec.mag = v_equals, rot, dot, mag             # <<<<<<<<<<<<<<
@@ -4481,7 +4497,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_init_vector2d(__
   __pyx_v_vec.dot = __pyx_t_7;
   __pyx_v_vec.mag = __pyx_t_8;
 
-  /* "src/core.pyx":170
+  /* "src/_squish/core.pyx":170
  * 	vec.equals, vec.rot, vec.dot, vec.mag = v_equals, rot, dot, mag
  * 
  * 	return vec             # <<<<<<<<<<<<<<
@@ -4491,7 +4507,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_init_vector2d(__
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "src/core.pyx":163
+  /* "src/_squish/core.pyx":163
  * """
  * 
  * cdef inline Vector2D init_vector2d(FLOAT_T x, FLOAT_T y) nogil:             # <<<<<<<<<<<<<<
@@ -4504,7 +4520,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_init_vector2d(__
   return __pyx_r;
 }
 
-/* "src/core.pyx":173
+/* "src/_squish/core.pyx":173
  * 
  * 
  * cdef inline bint v_equals(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4517,7 +4533,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_v_equals(__pyx_t_7_squish_Vector2D *__
   int __pyx_t_1;
   int __pyx_t_2;
 
-  /* "src/core.pyx":174
+  /* "src/_squish/core.pyx":174
  * 
  * cdef inline bint v_equals(Vector2D* self, Vector2D w) nogil:
  * 	return ((self.x == w.x) and (self.y == w.y))             # <<<<<<<<<<<<<<
@@ -4536,7 +4552,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_v_equals(__pyx_t_7_squish_Vector2D *__
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
-  /* "src/core.pyx":173
+  /* "src/_squish/core.pyx":173
  * 
  * 
  * cdef inline bint v_equals(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4549,7 +4565,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_v_equals(__pyx_t_7_squish_Vector2D *__
   return __pyx_r;
 }
 
-/* "src/core.pyx":176
+/* "src/_squish/core.pyx":176
  * 	return ((self.x == w.x) and (self.y == w.y))
  * 
  * cdef inline Vector2D* v_neg_s(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -4560,7 +4576,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_v_equals(__pyx_t_7_squish_Vector2D *__
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_neg_s(__pyx_t_7_squish_Vector2D *__pyx_v_self) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":177
+  /* "src/_squish/core.pyx":177
  * 
  * cdef inline Vector2D* v_neg_s(Vector2D* self) nogil:
  * 	self.x = -self.x             # <<<<<<<<<<<<<<
@@ -4569,7 +4585,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_neg_s(__pyx_t
  */
   __pyx_v_self->x = (-__pyx_v_self->x);
 
-  /* "src/core.pyx":178
+  /* "src/_squish/core.pyx":178
  * cdef inline Vector2D* v_neg_s(Vector2D* self) nogil:
  * 	self.x = -self.x
  * 	self.y = -self.y             # <<<<<<<<<<<<<<
@@ -4578,7 +4594,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_neg_s(__pyx_t
  */
   __pyx_v_self->y = (-__pyx_v_self->y);
 
-  /* "src/core.pyx":179
+  /* "src/_squish/core.pyx":179
  * 	self.x = -self.x
  * 	self.y = -self.y
  * 	return self             # <<<<<<<<<<<<<<
@@ -4588,7 +4604,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_neg_s(__pyx_t
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":176
+  /* "src/_squish/core.pyx":176
  * 	return ((self.x == w.x) and (self.y == w.y))
  * 
  * cdef inline Vector2D* v_neg_s(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -4601,7 +4617,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_neg_s(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":181
+/* "src/_squish/core.pyx":181
  * 	return self
  * 
  * cdef inline Vector2D* v_vadd_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4612,7 +4628,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_neg_s(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vadd_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":182
+  /* "src/_squish/core.pyx":182
  * 
  * cdef inline Vector2D* v_vadd_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x += w.x             # <<<<<<<<<<<<<<
@@ -4621,7 +4637,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vadd_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x + __pyx_v_w.x);
 
-  /* "src/core.pyx":183
+  /* "src/_squish/core.pyx":183
  * cdef inline Vector2D* v_vadd_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x += w.x
  * 	self.y += w.y             # <<<<<<<<<<<<<<
@@ -4630,7 +4646,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vadd_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y + __pyx_v_w.y);
 
-  /* "src/core.pyx":184
+  /* "src/_squish/core.pyx":184
  * 	self.x += w.x
  * 	self.y += w.y
  * 	return self             # <<<<<<<<<<<<<<
@@ -4640,7 +4656,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vadd_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":181
+  /* "src/_squish/core.pyx":181
  * 	return self
  * 
  * cdef inline Vector2D* v_vadd_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4653,7 +4669,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vadd_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":186
+/* "src/_squish/core.pyx":186
  * 	return self
  * 
  * cdef inline Vector2D* v_vsub_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4664,7 +4680,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vadd_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vsub_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":187
+  /* "src/_squish/core.pyx":187
  * 
  * cdef inline Vector2D* v_vsub_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x -= w.x             # <<<<<<<<<<<<<<
@@ -4673,7 +4689,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vsub_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x - __pyx_v_w.x);
 
-  /* "src/core.pyx":188
+  /* "src/_squish/core.pyx":188
  * cdef inline Vector2D* v_vsub_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x -= w.x
  * 	self.y -= w.y             # <<<<<<<<<<<<<<
@@ -4682,7 +4698,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vsub_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y - __pyx_v_w.y);
 
-  /* "src/core.pyx":189
+  /* "src/_squish/core.pyx":189
  * 	self.x -= w.x
  * 	self.y -= w.y
  * 	return self             # <<<<<<<<<<<<<<
@@ -4692,7 +4708,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vsub_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":186
+  /* "src/_squish/core.pyx":186
  * 	return self
  * 
  * cdef inline Vector2D* v_vsub_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4705,7 +4721,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vsub_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":191
+/* "src/_squish/core.pyx":191
  * 	return self
  * 
  * cdef inline Vector2D* v_vmul_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4716,7 +4732,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vsub_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vmul_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":192
+  /* "src/_squish/core.pyx":192
  * 
  * cdef inline Vector2D* v_vmul_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x *= w.x             # <<<<<<<<<<<<<<
@@ -4725,7 +4741,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vmul_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x * __pyx_v_w.x);
 
-  /* "src/core.pyx":193
+  /* "src/_squish/core.pyx":193
  * cdef inline Vector2D* v_vmul_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x *= w.x
  * 	self.y *= w.y             # <<<<<<<<<<<<<<
@@ -4734,7 +4750,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vmul_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y * __pyx_v_w.y);
 
-  /* "src/core.pyx":194
+  /* "src/_squish/core.pyx":194
  * 	self.x *= w.x
  * 	self.y *= w.y
  * 	return self             # <<<<<<<<<<<<<<
@@ -4744,7 +4760,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vmul_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":191
+  /* "src/_squish/core.pyx":191
  * 	return self
  * 
  * cdef inline Vector2D* v_vmul_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4757,7 +4773,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vmul_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":196
+/* "src/_squish/core.pyx":196
  * 	return self
  * 
  * cdef inline Vector2D* v_vdiv_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4768,7 +4784,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vmul_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vdiv_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":197
+  /* "src/_squish/core.pyx":197
  * 
  * cdef inline Vector2D* v_vdiv_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x /= w.x             # <<<<<<<<<<<<<<
@@ -4777,7 +4793,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vdiv_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x / __pyx_v_w.x);
 
-  /* "src/core.pyx":198
+  /* "src/_squish/core.pyx":198
  * cdef inline Vector2D* v_vdiv_s(Vector2D* self, Vector2D w) nogil:
  * 	self.x /= w.x
  * 	self.y /= w.y             # <<<<<<<<<<<<<<
@@ -4786,7 +4802,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vdiv_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y / __pyx_v_w.y);
 
-  /* "src/core.pyx":199
+  /* "src/_squish/core.pyx":199
  * 	self.x /= w.x
  * 	self.y /= w.y
  * 	return self             # <<<<<<<<<<<<<<
@@ -4796,7 +4812,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vdiv_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":196
+  /* "src/_squish/core.pyx":196
  * 	return self
  * 
  * cdef inline Vector2D* v_vdiv_s(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -4809,7 +4825,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vdiv_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":201
+/* "src/_squish/core.pyx":201
  * 	return self
  * 
  * cdef inline Vector2D* v_sadd_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4820,7 +4836,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_vdiv_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sadd_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":202
+  /* "src/_squish/core.pyx":202
  * 
  * cdef inline Vector2D* v_sadd_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x += s             # <<<<<<<<<<<<<<
@@ -4829,7 +4845,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sadd_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x + __pyx_v_s);
 
-  /* "src/core.pyx":203
+  /* "src/_squish/core.pyx":203
  * cdef inline Vector2D* v_sadd_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x += s
  * 	self.y += s             # <<<<<<<<<<<<<<
@@ -4838,7 +4854,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sadd_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y + __pyx_v_s);
 
-  /* "src/core.pyx":204
+  /* "src/_squish/core.pyx":204
  * 	self.x += s
  * 	self.y += s
  * 	return self             # <<<<<<<<<<<<<<
@@ -4848,7 +4864,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sadd_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":201
+  /* "src/_squish/core.pyx":201
  * 	return self
  * 
  * cdef inline Vector2D* v_sadd_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4861,7 +4877,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sadd_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":206
+/* "src/_squish/core.pyx":206
  * 	return self
  * 
  * cdef inline Vector2D* v_ssub_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4872,7 +4888,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sadd_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_ssub_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":207
+  /* "src/_squish/core.pyx":207
  * 
  * cdef inline Vector2D* v_ssub_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x -= s             # <<<<<<<<<<<<<<
@@ -4881,7 +4897,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_ssub_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x - __pyx_v_s);
 
-  /* "src/core.pyx":208
+  /* "src/_squish/core.pyx":208
  * cdef inline Vector2D* v_ssub_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x -= s
  * 	self.y -= s             # <<<<<<<<<<<<<<
@@ -4890,7 +4906,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_ssub_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y - __pyx_v_s);
 
-  /* "src/core.pyx":209
+  /* "src/_squish/core.pyx":209
  * 	self.x -= s
  * 	self.y -= s
  * 	return self             # <<<<<<<<<<<<<<
@@ -4900,7 +4916,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_ssub_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":206
+  /* "src/_squish/core.pyx":206
  * 	return self
  * 
  * cdef inline Vector2D* v_ssub_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4913,7 +4929,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_ssub_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":211
+/* "src/_squish/core.pyx":211
  * 	return self
  * 
  * cdef inline Vector2D* v_smul_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4924,7 +4940,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_ssub_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_smul_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":212
+  /* "src/_squish/core.pyx":212
  * 
  * cdef inline Vector2D* v_smul_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x *= s             # <<<<<<<<<<<<<<
@@ -4933,7 +4949,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_smul_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x * __pyx_v_s);
 
-  /* "src/core.pyx":213
+  /* "src/_squish/core.pyx":213
  * cdef inline Vector2D* v_smul_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x *= s
  * 	self.y *= s             # <<<<<<<<<<<<<<
@@ -4942,7 +4958,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_smul_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y * __pyx_v_s);
 
-  /* "src/core.pyx":214
+  /* "src/_squish/core.pyx":214
  * 	self.x *= s
  * 	self.y *= s
  * 	return self             # <<<<<<<<<<<<<<
@@ -4952,7 +4968,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_smul_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":211
+  /* "src/_squish/core.pyx":211
  * 	return self
  * 
  * cdef inline Vector2D* v_smul_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4965,7 +4981,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_smul_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":216
+/* "src/_squish/core.pyx":216
  * 	return self
  * 
  * cdef inline Vector2D* v_sdiv_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4976,7 +4992,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_smul_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sdiv_s(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D *__pyx_r;
 
-  /* "src/core.pyx":217
+  /* "src/_squish/core.pyx":217
  * 
  * cdef inline Vector2D* v_sdiv_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x /= s             # <<<<<<<<<<<<<<
@@ -4985,7 +5001,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sdiv_s(__pyx_
  */
   __pyx_v_self->x = (__pyx_v_self->x / __pyx_v_s);
 
-  /* "src/core.pyx":218
+  /* "src/_squish/core.pyx":218
  * cdef inline Vector2D* v_sdiv_s(Vector2D* self, FLOAT_T s) nogil:
  * 	self.x /= s
  * 	self.y /= s             # <<<<<<<<<<<<<<
@@ -4994,7 +5010,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sdiv_s(__pyx_
  */
   __pyx_v_self->y = (__pyx_v_self->y / __pyx_v_s);
 
-  /* "src/core.pyx":219
+  /* "src/_squish/core.pyx":219
  * 	self.x /= s
  * 	self.y /= s
  * 	return self             # <<<<<<<<<<<<<<
@@ -5004,7 +5020,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sdiv_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":216
+  /* "src/_squish/core.pyx":216
  * 	return self
  * 
  * cdef inline Vector2D* v_sdiv_s(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5017,7 +5033,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_sdiv_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":221
+/* "src/_squish/core.pyx":221
  * 	return self
  * 
  * cdef inline Vector2D* v_matmul_s(Vector2D* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5030,7 +5046,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_matmul_s(__py
   __pyx_t_7_squish_FLOAT_T __pyx_t_1;
   __pyx_t_7_squish_FLOAT_T __pyx_t_2;
 
-  /* "src/core.pyx":222
+  /* "src/_squish/core.pyx":222
  * 
  * cdef inline Vector2D* v_matmul_s(Vector2D* self, Matrix2x2 m) nogil:
  * 	self.x, self.y = self.x*m.a + self.y*m.c, self.x*m.b + self.y*m.d             # <<<<<<<<<<<<<<
@@ -5042,7 +5058,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_matmul_s(__py
   __pyx_v_self->x = __pyx_t_1;
   __pyx_v_self->y = __pyx_t_2;
 
-  /* "src/core.pyx":223
+  /* "src/_squish/core.pyx":223
  * cdef inline Vector2D* v_matmul_s(Vector2D* self, Matrix2x2 m) nogil:
  * 	self.x, self.y = self.x*m.a + self.y*m.c, self.x*m.b + self.y*m.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -5052,7 +5068,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_matmul_s(__py
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":221
+  /* "src/_squish/core.pyx":221
  * 	return self
  * 
  * cdef inline Vector2D* v_matmul_s(Vector2D* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5065,7 +5081,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_matmul_s(__py
   return __pyx_r;
 }
 
-/* "src/core.pyx":225
+/* "src/_squish/core.pyx":225
  * 	return self
  * 
  * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -5076,7 +5092,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D *__pyx_f_7_squish_v_matmul_s(__py
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_neg_c(__pyx_t_7_squish_Vector2D *__pyx_v_self) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":226
+  /* "src/_squish/core.pyx":226
  * 
  * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:
  * 	return init.Vector2D(-self.x, -self.y)             # <<<<<<<<<<<<<<
@@ -5086,7 +5102,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_neg_c(__pyx_t_
   __pyx_r = __pyx_v_7_squish_init.Vector2D((-__pyx_v_self->x), (-__pyx_v_self->y));
   goto __pyx_L0;
 
-  /* "src/core.pyx":225
+  /* "src/_squish/core.pyx":225
  * 	return self
  * 
  * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -5099,7 +5115,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_neg_c(__pyx_t_
   return __pyx_r;
 }
 
-/* "src/core.pyx":228
+/* "src/_squish/core.pyx":228
  * 	return init.Vector2D(-self.x, -self.y)
  * 
  * cdef inline Vector2D v_vadd_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5110,7 +5126,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_neg_c(__pyx_t_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vadd_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":229
+  /* "src/_squish/core.pyx":229
  * 
  * cdef inline Vector2D v_vadd_c(Vector2D* self, Vector2D w) nogil:
  * 	return init.Vector2D(self.x + w.x, self.y + w.y)             # <<<<<<<<<<<<<<
@@ -5120,7 +5136,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vadd_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x + __pyx_v_w.x), (__pyx_v_self->y + __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "src/core.pyx":228
+  /* "src/_squish/core.pyx":228
  * 	return init.Vector2D(-self.x, -self.y)
  * 
  * cdef inline Vector2D v_vadd_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5133,7 +5149,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vadd_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":231
+/* "src/_squish/core.pyx":231
  * 	return init.Vector2D(self.x + w.x, self.y + w.y)
  * 
  * cdef inline Vector2D v_vsub_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5144,7 +5160,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vadd_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vsub_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":232
+  /* "src/_squish/core.pyx":232
  * 
  * cdef inline Vector2D v_vsub_c(Vector2D* self, Vector2D w) nogil:
  * 	return init.Vector2D(self.x - w.x, self.y - w.y)             # <<<<<<<<<<<<<<
@@ -5154,7 +5170,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vsub_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x - __pyx_v_w.x), (__pyx_v_self->y - __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "src/core.pyx":231
+  /* "src/_squish/core.pyx":231
  * 	return init.Vector2D(self.x + w.x, self.y + w.y)
  * 
  * cdef inline Vector2D v_vsub_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5167,7 +5183,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vsub_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":234
+/* "src/_squish/core.pyx":234
  * 	return init.Vector2D(self.x - w.x, self.y - w.y)
  * 
  * cdef inline Vector2D v_vmul_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5178,7 +5194,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vsub_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vmul_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":235
+  /* "src/_squish/core.pyx":235
  * 
  * cdef inline Vector2D v_vmul_c(Vector2D* self, Vector2D w) nogil:
  * 	return init.Vector2D(self.x * w.x, self.y * w.y)             # <<<<<<<<<<<<<<
@@ -5188,7 +5204,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vmul_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x * __pyx_v_w.x), (__pyx_v_self->y * __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "src/core.pyx":234
+  /* "src/_squish/core.pyx":234
  * 	return init.Vector2D(self.x - w.x, self.y - w.y)
  * 
  * cdef inline Vector2D v_vmul_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5201,7 +5217,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vmul_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":237
+/* "src/_squish/core.pyx":237
  * 	return init.Vector2D(self.x * w.x, self.y * w.y)
  * 
  * cdef inline Vector2D v_vdiv_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5212,7 +5228,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vmul_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vdiv_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":238
+  /* "src/_squish/core.pyx":238
  * 
  * cdef inline Vector2D v_vdiv_c(Vector2D* self, Vector2D w) nogil:
  * 	return init.Vector2D(self.x / w.x, self.y / w.y)             # <<<<<<<<<<<<<<
@@ -5222,7 +5238,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vdiv_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x / __pyx_v_w.x), (__pyx_v_self->y / __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "src/core.pyx":237
+  /* "src/_squish/core.pyx":237
  * 	return init.Vector2D(self.x * w.x, self.y * w.y)
  * 
  * cdef inline Vector2D v_vdiv_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5235,7 +5251,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vdiv_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":240
+/* "src/_squish/core.pyx":240
  * 	return init.Vector2D(self.x / w.x, self.y / w.y)
  * 
  * cdef inline Vector2D v_sadd_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5246,7 +5262,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_vdiv_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sadd_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":241
+  /* "src/_squish/core.pyx":241
  * 
  * cdef inline Vector2D v_sadd_c(Vector2D* self, FLOAT_T s) nogil:
  * 	return init.Vector2D(self.x + s, self.y + s)             # <<<<<<<<<<<<<<
@@ -5256,7 +5272,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sadd_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x + __pyx_v_s), (__pyx_v_self->y + __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":240
+  /* "src/_squish/core.pyx":240
  * 	return init.Vector2D(self.x / w.x, self.y / w.y)
  * 
  * cdef inline Vector2D v_sadd_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5269,7 +5285,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sadd_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":243
+/* "src/_squish/core.pyx":243
  * 	return init.Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_ssub_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5280,7 +5296,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sadd_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_ssub_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":244
+  /* "src/_squish/core.pyx":244
  * 
  * cdef inline Vector2D v_ssub_c(Vector2D* self, FLOAT_T s) nogil:
  * 	return init.Vector2D(self.x + s, self.y + s)             # <<<<<<<<<<<<<<
@@ -5290,7 +5306,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_ssub_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x + __pyx_v_s), (__pyx_v_self->y + __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":243
+  /* "src/_squish/core.pyx":243
  * 	return init.Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_ssub_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5303,7 +5319,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_ssub_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":246
+/* "src/_squish/core.pyx":246
  * 	return init.Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_smul_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5314,7 +5330,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_ssub_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_smul_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":247
+  /* "src/_squish/core.pyx":247
  * 
  * cdef inline Vector2D v_smul_c(Vector2D* self, FLOAT_T s) nogil:
  * 	return init.Vector2D(self.x * s, self.y * s)             # <<<<<<<<<<<<<<
@@ -5324,7 +5340,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_smul_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x * __pyx_v_s), (__pyx_v_self->y * __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":246
+  /* "src/_squish/core.pyx":246
  * 	return init.Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_smul_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5337,7 +5353,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_smul_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":249
+/* "src/_squish/core.pyx":249
  * 	return init.Vector2D(self.x * s, self.y * s)
  * 
  * cdef inline Vector2D v_sdiv_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5348,7 +5364,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_smul_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sdiv_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":250
+  /* "src/_squish/core.pyx":250
  * 
  * cdef inline Vector2D v_sdiv_c(Vector2D* self, FLOAT_T s) nogil:
  * 	return init.Vector2D(self.x / s, self.y / s)             # <<<<<<<<<<<<<<
@@ -5358,7 +5374,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sdiv_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D((__pyx_v_self->x / __pyx_v_s), (__pyx_v_self->y / __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":249
+  /* "src/_squish/core.pyx":249
  * 	return init.Vector2D(self.x * s, self.y * s)
  * 
  * cdef inline Vector2D v_sdiv_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -5371,7 +5387,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sdiv_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":252
+/* "src/_squish/core.pyx":252
  * 	return init.Vector2D(self.x / s, self.y / s)
  * 
  * cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5382,7 +5398,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_sdiv_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_matmul_c(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":253
+  /* "src/_squish/core.pyx":253
  * 
  * cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:
  * 	return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -5392,7 +5408,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_matmul_c(__pyx
   __pyx_r = __pyx_v_7_squish_init.Vector2D(((__pyx_v_self->x * __pyx_v_m.a) + (__pyx_v_self->y * __pyx_v_m.c)), ((__pyx_v_self->x * __pyx_v_m.b) + (__pyx_v_self->y * __pyx_v_m.d)));
   goto __pyx_L0;
 
-  /* "src/core.pyx":252
+  /* "src/_squish/core.pyx":252
  * 	return init.Vector2D(self.x / s, self.y / s)
  * 
  * cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5405,7 +5421,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_matmul_c(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":257
+/* "src/_squish/core.pyx":257
  * 	)
  * 
  * cdef inline Vector2D rot(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -5416,7 +5432,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_v_matmul_c(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_rot(__pyx_t_7_squish_Vector2D *__pyx_v_self) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":258
+  /* "src/_squish/core.pyx":258
  * 
  * cdef inline Vector2D rot(Vector2D* self) nogil:
  * 	return init.Vector2D(-self.y, self.x)             # <<<<<<<<<<<<<<
@@ -5426,7 +5442,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_rot(__pyx_t_7_sq
   __pyx_r = __pyx_v_7_squish_init.Vector2D((-__pyx_v_self->y), __pyx_v_self->x);
   goto __pyx_L0;
 
-  /* "src/core.pyx":257
+  /* "src/_squish/core.pyx":257
  * 	)
  * 
  * cdef inline Vector2D rot(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -5439,7 +5455,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_rot(__pyx_t_7_sq
   return __pyx_r;
 }
 
-/* "src/core.pyx":260
+/* "src/_squish/core.pyx":260
  * 	return init.Vector2D(-self.y, self.x)
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5450,7 +5466,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_rot(__pyx_t_7_sq
 static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_dot(__pyx_t_7_squish_Vector2D *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_w) {
   __pyx_t_7_squish_FLOAT_T __pyx_r;
 
-  /* "src/core.pyx":261
+  /* "src/_squish/core.pyx":261
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:
  * 	return self.x*w.x + self.y*w.y             # <<<<<<<<<<<<<<
@@ -5460,7 +5476,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_dot(__pyx_t_7_squ
   __pyx_r = ((__pyx_v_self->x * __pyx_v_w.x) + (__pyx_v_self->y * __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "src/core.pyx":260
+  /* "src/_squish/core.pyx":260
  * 	return init.Vector2D(-self.y, self.x)
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -5473,7 +5489,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_dot(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/core.pyx":263
+/* "src/_squish/core.pyx":263
  * 	return self.x*w.x + self.y*w.y
  * 
  * cdef inline FLOAT_T mag(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -5484,7 +5500,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_dot(__pyx_t_7_squ
 static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_mag(__pyx_t_7_squish_Vector2D *__pyx_v_self) {
   __pyx_t_7_squish_FLOAT_T __pyx_r;
 
-  /* "src/core.pyx":264
+  /* "src/_squish/core.pyx":264
  * 
  * cdef inline FLOAT_T mag(Vector2D* self) nogil:
  * 	return <FLOAT_T>sqrt(<double>(self.x*self.x + self.y*self.y))             # <<<<<<<<<<<<<<
@@ -5494,7 +5510,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_mag(__pyx_t_7_squ
   __pyx_r = ((__pyx_t_7_squish_FLOAT_T)sqrt(((double)((__pyx_v_self->x * __pyx_v_self->x) + (__pyx_v_self->y * __pyx_v_self->y)))));
   goto __pyx_L0;
 
-  /* "src/core.pyx":263
+  /* "src/_squish/core.pyx":263
  * 	return self.x*w.x + self.y*w.y
  * 
  * cdef inline FLOAT_T mag(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -5507,7 +5523,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_mag(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/core.pyx":269
+/* "src/_squish/core.pyx":269
  * #### Matrix2x2 Methods ####
  * 
  * cdef inline Matrix2x2 init_matrix2x2(FLOAT_T a, FLOAT_T b, FLOAT_T c, FLOAT_T d) nogil:             # <<<<<<<<<<<<<<
@@ -5527,7 +5543,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_init_matrix2x2(
   int (*__pyx_t_7)(__pyx_t_7_squish_Matrix2x2 *, __pyx_t_7_squish_Matrix2x2);
   __pyx_t_7_squish_Vector2D (*__pyx_t_8)(__pyx_t_7_squish_Matrix2x2 *, __pyx_t_7_squish_Vector2D);
 
-  /* "src/core.pyx":271
+  /* "src/_squish/core.pyx":271
  * cdef inline Matrix2x2 init_matrix2x2(FLOAT_T a, FLOAT_T b, FLOAT_T c, FLOAT_T d) nogil:
  * 	cdef Matrix2x2 matrix
  * 	matrix.a, matrix.b, matrix.c, matrix.d = a, b, c, d             # <<<<<<<<<<<<<<
@@ -5543,7 +5559,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_init_matrix2x2(
   __pyx_v_matrix.c = __pyx_t_3;
   __pyx_v_matrix.d = __pyx_t_4;
 
-  /* "src/core.pyx":272
+  /* "src/_squish/core.pyx":272
  * 	cdef Matrix2x2 matrix
  * 	matrix.a, matrix.b, matrix.c, matrix.d = a, b, c, d
  * 	matrix.self, matrix.copy = MSO, MCO             # <<<<<<<<<<<<<<
@@ -5555,7 +5571,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_init_matrix2x2(
   __pyx_v_matrix.self = __pyx_t_5;
   __pyx_v_matrix.copy = __pyx_t_6;
 
-  /* "src/core.pyx":274
+  /* "src/_squish/core.pyx":274
  * 	matrix.self, matrix.copy = MSO, MCO
  * 
  * 	matrix.equals, matrix.vecmul = m_equals, m_vecmul             # <<<<<<<<<<<<<<
@@ -5567,7 +5583,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_init_matrix2x2(
   __pyx_v_matrix.equals = __pyx_t_7;
   __pyx_v_matrix.vecmul = __pyx_t_8;
 
-  /* "src/core.pyx":276
+  /* "src/_squish/core.pyx":276
  * 	matrix.equals, matrix.vecmul = m_equals, m_vecmul
  * 
  * 	return matrix             # <<<<<<<<<<<<<<
@@ -5577,7 +5593,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_init_matrix2x2(
   __pyx_r = __pyx_v_matrix;
   goto __pyx_L0;
 
-  /* "src/core.pyx":269
+  /* "src/_squish/core.pyx":269
  * #### Matrix2x2 Methods ####
  * 
  * cdef inline Matrix2x2 init_matrix2x2(FLOAT_T a, FLOAT_T b, FLOAT_T c, FLOAT_T d) nogil:             # <<<<<<<<<<<<<<
@@ -5590,7 +5606,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_init_matrix2x2(
   return __pyx_r;
 }
 
-/* "src/core.pyx":278
+/* "src/_squish/core.pyx":278
  * 	return matrix
  * 
  * cdef inline bint m_equals(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5603,7 +5619,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_m_equals(__pyx_t_7_squish_Matrix2x2 *_
   int __pyx_t_1;
   int __pyx_t_2;
 
-  /* "src/core.pyx":280
+  /* "src/_squish/core.pyx":280
  * cdef inline bint m_equals(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	return (
  * 		(self.a == m.a) and (self.b == m.b) and (self.c == m.c) and (self.d == m.d)             # <<<<<<<<<<<<<<
@@ -5634,7 +5650,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_m_equals(__pyx_t_7_squish_Matrix2x2 *_
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
-  /* "src/core.pyx":278
+  /* "src/_squish/core.pyx":278
  * 	return matrix
  * 
  * cdef inline bint m_equals(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5647,7 +5663,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_m_equals(__pyx_t_7_squish_Matrix2x2 *_
   return __pyx_r;
 }
 
-/* "src/core.pyx":283
+/* "src/_squish/core.pyx":283
  * 	)
  * 
  * cdef inline Vector2D m_vecmul(Matrix2x2* self, Vector2D v) nogil:             # <<<<<<<<<<<<<<
@@ -5658,7 +5674,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_m_equals(__pyx_t_7_squish_Matrix2x2 *_
 static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_m_vecmul(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Vector2D __pyx_v_v) {
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/core.pyx":284
+  /* "src/_squish/core.pyx":284
  * 
  * cdef inline Vector2D m_vecmul(Matrix2x2* self, Vector2D v) nogil:
  * 	return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -5668,7 +5684,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_m_vecmul(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Vector2D(((__pyx_v_self->a * __pyx_v_v.x) + (__pyx_v_self->b * __pyx_v_v.y)), ((__pyx_v_self->c * __pyx_v_v.x) + (__pyx_v_self->d * __pyx_v_v.y)));
   goto __pyx_L0;
 
-  /* "src/core.pyx":283
+  /* "src/_squish/core.pyx":283
  * 	)
  * 
  * cdef inline Vector2D m_vecmul(Matrix2x2* self, Vector2D v) nogil:             # <<<<<<<<<<<<<<
@@ -5681,7 +5697,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_m_vecmul(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":288
+/* "src/_squish/core.pyx":288
  * 	)
  * 
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -5696,7 +5712,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_neg_s(__pyx_
   __pyx_t_7_squish_FLOAT_T __pyx_t_3;
   __pyx_t_7_squish_FLOAT_T __pyx_t_4;
 
-  /* "src/core.pyx":289
+  /* "src/_squish/core.pyx":289
  * 
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:
  * 	self.a, self.b, self.c, self.d = -self.a, -self.b, -self.c, -self.d             # <<<<<<<<<<<<<<
@@ -5712,7 +5728,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_neg_s(__pyx_
   __pyx_v_self->c = __pyx_t_3;
   __pyx_v_self->d = __pyx_t_4;
 
-  /* "src/core.pyx":290
+  /* "src/_squish/core.pyx":290
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:
  * 	self.a, self.b, self.c, self.d = -self.a, -self.b, -self.c, -self.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -5722,7 +5738,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_neg_s(__pyx_
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":288
+  /* "src/_squish/core.pyx":288
  * 	)
  * 
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -5735,7 +5751,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_neg_s(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":292
+/* "src/_squish/core.pyx":292
  * 	return self
  * 
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5746,7 +5762,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_neg_s(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":293
+  /* "src/_squish/core.pyx":293
  * 
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a += m.a             # <<<<<<<<<<<<<<
@@ -5755,7 +5771,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a + __pyx_v_m.a);
 
-  /* "src/core.pyx":294
+  /* "src/_squish/core.pyx":294
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a += m.a
  * 	self.b += m.b             # <<<<<<<<<<<<<<
@@ -5764,7 +5780,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b + __pyx_v_m.b);
 
-  /* "src/core.pyx":295
+  /* "src/_squish/core.pyx":295
  * 	self.a += m.a
  * 	self.b += m.b
  * 	self.c += m.c             # <<<<<<<<<<<<<<
@@ -5773,7 +5789,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c + __pyx_v_m.c);
 
-  /* "src/core.pyx":296
+  /* "src/_squish/core.pyx":296
  * 	self.b += m.b
  * 	self.c += m.c
  * 	self.d += m.d             # <<<<<<<<<<<<<<
@@ -5782,7 +5798,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d + __pyx_v_m.d);
 
-  /* "src/core.pyx":297
+  /* "src/_squish/core.pyx":297
  * 	self.c += m.c
  * 	self.d += m.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -5792,7 +5808,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":292
+  /* "src/_squish/core.pyx":292
  * 	return self
  * 
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5805,7 +5821,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":299
+/* "src/_squish/core.pyx":299
  * 	return self
  * 
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5816,7 +5832,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_madd_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":300
+  /* "src/_squish/core.pyx":300
  * 
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a -= m.a             # <<<<<<<<<<<<<<
@@ -5825,7 +5841,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a - __pyx_v_m.a);
 
-  /* "src/core.pyx":301
+  /* "src/_squish/core.pyx":301
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a -= m.a
  * 	self.b -= m.b             # <<<<<<<<<<<<<<
@@ -5834,7 +5850,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b - __pyx_v_m.b);
 
-  /* "src/core.pyx":302
+  /* "src/_squish/core.pyx":302
  * 	self.a -= m.a
  * 	self.b -= m.b
  * 	self.c -= m.c             # <<<<<<<<<<<<<<
@@ -5843,7 +5859,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c - __pyx_v_m.c);
 
-  /* "src/core.pyx":303
+  /* "src/_squish/core.pyx":303
  * 	self.b -= m.b
  * 	self.c -= m.c
  * 	self.d -= m.d             # <<<<<<<<<<<<<<
@@ -5852,7 +5868,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d - __pyx_v_m.d);
 
-  /* "src/core.pyx":304
+  /* "src/_squish/core.pyx":304
  * 	self.c -= m.c
  * 	self.d -= m.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -5862,7 +5878,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":299
+  /* "src/_squish/core.pyx":299
  * 	return self
  * 
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5875,7 +5891,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":306
+/* "src/_squish/core.pyx":306
  * 	return self
  * 
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5886,7 +5902,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_msub_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":307
+  /* "src/_squish/core.pyx":307
  * 
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a *= m.a             # <<<<<<<<<<<<<<
@@ -5895,7 +5911,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a * __pyx_v_m.a);
 
-  /* "src/core.pyx":308
+  /* "src/_squish/core.pyx":308
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a *= m.a
  * 	self.b *= m.b             # <<<<<<<<<<<<<<
@@ -5904,7 +5920,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b * __pyx_v_m.b);
 
-  /* "src/core.pyx":309
+  /* "src/_squish/core.pyx":309
  * 	self.a *= m.a
  * 	self.b *= m.b
  * 	self.c *= m.c             # <<<<<<<<<<<<<<
@@ -5913,7 +5929,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c * __pyx_v_m.c);
 
-  /* "src/core.pyx":310
+  /* "src/_squish/core.pyx":310
  * 	self.b *= m.b
  * 	self.c *= m.c
  * 	self.d *= m.d             # <<<<<<<<<<<<<<
@@ -5922,7 +5938,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d * __pyx_v_m.d);
 
-  /* "src/core.pyx":311
+  /* "src/_squish/core.pyx":311
  * 	self.c *= m.c
  * 	self.d *= m.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -5932,7 +5948,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":306
+  /* "src/_squish/core.pyx":306
  * 	return self
  * 
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5945,7 +5961,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":313
+/* "src/_squish/core.pyx":313
  * 	return self
  * 
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -5956,7 +5972,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mmul_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":314
+  /* "src/_squish/core.pyx":314
  * 
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a /= m.a             # <<<<<<<<<<<<<<
@@ -5965,7 +5981,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a / __pyx_v_m.a);
 
-  /* "src/core.pyx":315
+  /* "src/_squish/core.pyx":315
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a /= m.a
  * 	self.b /= m.b             # <<<<<<<<<<<<<<
@@ -5974,7 +5990,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b / __pyx_v_m.b);
 
-  /* "src/core.pyx":316
+  /* "src/_squish/core.pyx":316
  * 	self.a /= m.a
  * 	self.b /= m.b
  * 	self.c /= m.c             # <<<<<<<<<<<<<<
@@ -5983,7 +5999,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c / __pyx_v_m.c);
 
-  /* "src/core.pyx":317
+  /* "src/_squish/core.pyx":317
  * 	self.b /= m.b
  * 	self.c /= m.c
  * 	self.d /= m.d             # <<<<<<<<<<<<<<
@@ -5992,7 +6008,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d / __pyx_v_m.d);
 
-  /* "src/core.pyx":318
+  /* "src/_squish/core.pyx":318
  * 	self.c /= m.c
  * 	self.d /= m.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -6002,7 +6018,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":313
+  /* "src/_squish/core.pyx":313
  * 	return self
  * 
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6015,7 +6031,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":320
+/* "src/_squish/core.pyx":320
  * 	return self
  * 
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6026,7 +6042,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_mdiv_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":321
+  /* "src/_squish/core.pyx":321
  * 
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a += s             # <<<<<<<<<<<<<<
@@ -6035,7 +6051,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a + __pyx_v_s);
 
-  /* "src/core.pyx":322
+  /* "src/_squish/core.pyx":322
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a += s
  * 	self.b += s             # <<<<<<<<<<<<<<
@@ -6044,7 +6060,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b + __pyx_v_s);
 
-  /* "src/core.pyx":323
+  /* "src/_squish/core.pyx":323
  * 	self.a += s
  * 	self.b += s
  * 	self.c += s             # <<<<<<<<<<<<<<
@@ -6053,7 +6069,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c + __pyx_v_s);
 
-  /* "src/core.pyx":324
+  /* "src/_squish/core.pyx":324
  * 	self.b += s
  * 	self.c += s
  * 	self.d += s             # <<<<<<<<<<<<<<
@@ -6062,7 +6078,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d + __pyx_v_s);
 
-  /* "src/core.pyx":325
+  /* "src/_squish/core.pyx":325
  * 	self.c += s
  * 	self.d += s
  * 	return self             # <<<<<<<<<<<<<<
@@ -6072,7 +6088,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":320
+  /* "src/_squish/core.pyx":320
  * 	return self
  * 
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6085,7 +6101,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":327
+/* "src/_squish/core.pyx":327
  * 	return self
  * 
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6096,7 +6112,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sadd_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":328
+  /* "src/_squish/core.pyx":328
  * 
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a -= s             # <<<<<<<<<<<<<<
@@ -6105,7 +6121,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a - __pyx_v_s);
 
-  /* "src/core.pyx":329
+  /* "src/_squish/core.pyx":329
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a -= s
  * 	self.b -= s             # <<<<<<<<<<<<<<
@@ -6114,7 +6130,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b - __pyx_v_s);
 
-  /* "src/core.pyx":330
+  /* "src/_squish/core.pyx":330
  * 	self.a -= s
  * 	self.b -= s
  * 	self.c -= s             # <<<<<<<<<<<<<<
@@ -6123,7 +6139,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c - __pyx_v_s);
 
-  /* "src/core.pyx":331
+  /* "src/_squish/core.pyx":331
  * 	self.b -= s
  * 	self.c -= s
  * 	self.d -= s             # <<<<<<<<<<<<<<
@@ -6132,7 +6148,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d - __pyx_v_s);
 
-  /* "src/core.pyx":332
+  /* "src/_squish/core.pyx":332
  * 	self.c -= s
  * 	self.d -= s
  * 	return self             # <<<<<<<<<<<<<<
@@ -6142,7 +6158,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":327
+  /* "src/_squish/core.pyx":327
  * 	return self
  * 
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6155,7 +6171,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":334
+/* "src/_squish/core.pyx":334
  * 	return self
  * 
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6166,7 +6182,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_ssub_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":335
+  /* "src/_squish/core.pyx":335
  * 
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a *= s             # <<<<<<<<<<<<<<
@@ -6175,7 +6191,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a * __pyx_v_s);
 
-  /* "src/core.pyx":336
+  /* "src/_squish/core.pyx":336
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a *= s
  * 	self.b *= s             # <<<<<<<<<<<<<<
@@ -6184,7 +6200,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b * __pyx_v_s);
 
-  /* "src/core.pyx":337
+  /* "src/_squish/core.pyx":337
  * 	self.a *= s
  * 	self.b *= s
  * 	self.c *= s             # <<<<<<<<<<<<<<
@@ -6193,7 +6209,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c * __pyx_v_s);
 
-  /* "src/core.pyx":338
+  /* "src/_squish/core.pyx":338
  * 	self.b *= s
  * 	self.c *= s
  * 	self.d *= s             # <<<<<<<<<<<<<<
@@ -6202,7 +6218,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d * __pyx_v_s);
 
-  /* "src/core.pyx":339
+  /* "src/_squish/core.pyx":339
  * 	self.c *= s
  * 	self.d *= s
  * 	return self             # <<<<<<<<<<<<<<
@@ -6212,7 +6228,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":334
+  /* "src/_squish/core.pyx":334
  * 	return self
  * 
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6225,7 +6241,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":341
+/* "src/_squish/core.pyx":341
  * 	return self
  * 
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6236,7 +6252,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_smul_s(__pyx
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 *__pyx_r;
 
-  /* "src/core.pyx":342
+  /* "src/_squish/core.pyx":342
  * 
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a /= s             # <<<<<<<<<<<<<<
@@ -6245,7 +6261,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx
  */
   __pyx_v_self->a = (__pyx_v_self->a / __pyx_v_s);
 
-  /* "src/core.pyx":343
+  /* "src/_squish/core.pyx":343
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:
  * 	self.a /= s
  * 	self.b /= s             # <<<<<<<<<<<<<<
@@ -6254,7 +6270,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx
  */
   __pyx_v_self->b = (__pyx_v_self->b / __pyx_v_s);
 
-  /* "src/core.pyx":344
+  /* "src/_squish/core.pyx":344
  * 	self.a /= s
  * 	self.b /= s
  * 	self.c /= s             # <<<<<<<<<<<<<<
@@ -6263,7 +6279,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx
  */
   __pyx_v_self->c = (__pyx_v_self->c / __pyx_v_s);
 
-  /* "src/core.pyx":345
+  /* "src/_squish/core.pyx":345
  * 	self.b /= s
  * 	self.c /= s
  * 	self.d /= s             # <<<<<<<<<<<<<<
@@ -6272,7 +6288,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx
  */
   __pyx_v_self->d = (__pyx_v_self->d / __pyx_v_s);
 
-  /* "src/core.pyx":346
+  /* "src/_squish/core.pyx":346
  * 	self.c /= s
  * 	self.d /= s
  * 	return self             # <<<<<<<<<<<<<<
@@ -6282,7 +6298,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":341
+  /* "src/_squish/core.pyx":341
  * 	return self
  * 
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6295,7 +6311,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_sdiv_s(__pyx
   return __pyx_r;
 }
 
-/* "src/core.pyx":348
+/* "src/_squish/core.pyx":348
  * 	return self
  * 
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6310,7 +6326,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
   __pyx_t_7_squish_FLOAT_T __pyx_t_3;
   __pyx_t_7_squish_FLOAT_T __pyx_t_4;
 
-  /* "src/core.pyx":350
+  /* "src/_squish/core.pyx":350
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a, self.b, self.c, self.d = \
  * 		self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d, \             # <<<<<<<<<<<<<<
@@ -6320,7 +6336,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
   __pyx_t_1 = ((__pyx_v_self->a * __pyx_v_m.a) + (__pyx_v_self->b * __pyx_v_m.c));
   __pyx_t_2 = ((__pyx_v_self->a * __pyx_v_m.b) + (__pyx_v_self->b * __pyx_v_m.d));
 
-  /* "src/core.pyx":351
+  /* "src/_squish/core.pyx":351
  * 	self.a, self.b, self.c, self.d = \
  * 		self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d, \
  * 		self.c*m.a + self.d*m.c, self.c*m.b + self.d*m.d             # <<<<<<<<<<<<<<
@@ -6330,7 +6346,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
   __pyx_t_3 = ((__pyx_v_self->c * __pyx_v_m.a) + (__pyx_v_self->d * __pyx_v_m.c));
   __pyx_t_4 = ((__pyx_v_self->c * __pyx_v_m.b) + (__pyx_v_self->d * __pyx_v_m.d));
 
-  /* "src/core.pyx":349
+  /* "src/_squish/core.pyx":349
  * 
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	self.a, self.b, self.c, self.d = \             # <<<<<<<<<<<<<<
@@ -6342,7 +6358,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
   __pyx_v_self->c = __pyx_t_3;
   __pyx_v_self->d = __pyx_t_4;
 
-  /* "src/core.pyx":352
+  /* "src/_squish/core.pyx":352
  * 		self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d, \
  * 		self.c*m.a + self.d*m.c, self.c*m.b + self.d*m.d
  * 	return self             # <<<<<<<<<<<<<<
@@ -6352,7 +6368,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "src/core.pyx":348
+  /* "src/_squish/core.pyx":348
  * 	return self
  * 
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6365,7 +6381,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
   return __pyx_r;
 }
 
-/* "src/core.pyx":354
+/* "src/_squish/core.pyx":354
  * 	return self
  * 
  * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -6376,7 +6392,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 *__pyx_f_7_squish_m_matmul_s(__p
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_neg_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":355
+  /* "src/_squish/core.pyx":355
  * 
  * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:
  * 	return init.Matrix2x2(-self.a, -self.b, -self.c, -self.d)             # <<<<<<<<<<<<<<
@@ -6386,7 +6402,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_neg_c(__pyx_t
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((-__pyx_v_self->a), (-__pyx_v_self->b), (-__pyx_v_self->c), (-__pyx_v_self->d));
   goto __pyx_L0;
 
-  /* "src/core.pyx":354
+  /* "src/_squish/core.pyx":354
  * 	return self
  * 
  * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -6399,7 +6415,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_neg_c(__pyx_t
   return __pyx_r;
 }
 
-/* "src/core.pyx":357
+/* "src/_squish/core.pyx":357
  * 	return init.Matrix2x2(-self.a, -self.b, -self.c, -self.d)
  * 
  * cdef inline Matrix2x2 m_madd_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6410,7 +6426,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_neg_c(__pyx_t
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_madd_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":358
+  /* "src/_squish/core.pyx":358
  * 
  * cdef inline Matrix2x2 m_madd_c(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	return init.Matrix2x2(self.a+m.a, self.b+m.b, self.c+m.c, self.d+m.d)             # <<<<<<<<<<<<<<
@@ -6420,7 +6436,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_madd_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a + __pyx_v_m.a), (__pyx_v_self->b + __pyx_v_m.b), (__pyx_v_self->c + __pyx_v_m.c), (__pyx_v_self->d + __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "src/core.pyx":357
+  /* "src/_squish/core.pyx":357
  * 	return init.Matrix2x2(-self.a, -self.b, -self.c, -self.d)
  * 
  * cdef inline Matrix2x2 m_madd_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6433,7 +6449,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_madd_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":360
+/* "src/_squish/core.pyx":360
  * 	return init.Matrix2x2(self.a+m.a, self.b+m.b, self.c+m.c, self.d+m.d)
  * 
  * cdef inline Matrix2x2 m_msub_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6444,7 +6460,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_madd_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_msub_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":361
+  /* "src/_squish/core.pyx":361
  * 
  * cdef inline Matrix2x2 m_msub_c(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	return init.Matrix2x2(self.a-m.a, self.b-m.b, self.c-m.c, self.d-m.d)             # <<<<<<<<<<<<<<
@@ -6454,7 +6470,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_msub_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a - __pyx_v_m.a), (__pyx_v_self->b - __pyx_v_m.b), (__pyx_v_self->c - __pyx_v_m.c), (__pyx_v_self->d - __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "src/core.pyx":360
+  /* "src/_squish/core.pyx":360
  * 	return init.Matrix2x2(self.a+m.a, self.b+m.b, self.c+m.c, self.d+m.d)
  * 
  * cdef inline Matrix2x2 m_msub_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6467,7 +6483,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_msub_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":363
+/* "src/_squish/core.pyx":363
  * 	return init.Matrix2x2(self.a-m.a, self.b-m.b, self.c-m.c, self.d-m.d)
  * 
  * cdef inline Matrix2x2 m_mmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6478,7 +6494,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_msub_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mmul_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":364
+  /* "src/_squish/core.pyx":364
  * 
  * cdef inline Matrix2x2 m_mmul_c(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	return init.Matrix2x2(self.a*m.a, self.b*m.b, self.c*m.c, self.d*m.d)             # <<<<<<<<<<<<<<
@@ -6488,7 +6504,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mmul_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a * __pyx_v_m.a), (__pyx_v_self->b * __pyx_v_m.b), (__pyx_v_self->c * __pyx_v_m.c), (__pyx_v_self->d * __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "src/core.pyx":363
+  /* "src/_squish/core.pyx":363
  * 	return init.Matrix2x2(self.a-m.a, self.b-m.b, self.c-m.c, self.d-m.d)
  * 
  * cdef inline Matrix2x2 m_mmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6501,7 +6517,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mmul_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":366
+/* "src/_squish/core.pyx":366
  * 	return init.Matrix2x2(self.a*m.a, self.b*m.b, self.c*m.c, self.d*m.d)
  * 
  * cdef inline Matrix2x2 m_mdiv_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6512,7 +6528,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mmul_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mdiv_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":367
+  /* "src/_squish/core.pyx":367
  * 
  * cdef inline Matrix2x2 m_mdiv_c(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	return init.Matrix2x2(self.a/m.a, self.b/m.b, self.c/m.c, self.d/m.d)             # <<<<<<<<<<<<<<
@@ -6522,7 +6538,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mdiv_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a / __pyx_v_m.a), (__pyx_v_self->b / __pyx_v_m.b), (__pyx_v_self->c / __pyx_v_m.c), (__pyx_v_self->d / __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "src/core.pyx":366
+  /* "src/_squish/core.pyx":366
  * 	return init.Matrix2x2(self.a*m.a, self.b*m.b, self.c*m.c, self.d*m.d)
  * 
  * cdef inline Matrix2x2 m_mdiv_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6535,7 +6551,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mdiv_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":369
+/* "src/_squish/core.pyx":369
  * 	return init.Matrix2x2(self.a/m.a, self.b/m.b, self.c/m.c, self.d/m.d)
  * 
  * cdef inline Matrix2x2 m_sadd_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6546,7 +6562,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_mdiv_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sadd_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":370
+  /* "src/_squish/core.pyx":370
  * 
  * cdef inline Matrix2x2 m_sadd_c(Matrix2x2* self, FLOAT_T s) nogil:
  * 	return init.Matrix2x2(self.a+s, self.b+s, self.c+s, self.d+s)             # <<<<<<<<<<<<<<
@@ -6556,7 +6572,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sadd_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a + __pyx_v_s), (__pyx_v_self->b + __pyx_v_s), (__pyx_v_self->c + __pyx_v_s), (__pyx_v_self->d + __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":369
+  /* "src/_squish/core.pyx":369
  * 	return init.Matrix2x2(self.a/m.a, self.b/m.b, self.c/m.c, self.d/m.d)
  * 
  * cdef inline Matrix2x2 m_sadd_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6569,7 +6585,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sadd_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":372
+/* "src/_squish/core.pyx":372
  * 	return init.Matrix2x2(self.a+s, self.b+s, self.c+s, self.d+s)
  * 
  * cdef inline Matrix2x2 m_ssub_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6580,7 +6596,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sadd_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_ssub_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":373
+  /* "src/_squish/core.pyx":373
  * 
  * cdef inline Matrix2x2 m_ssub_c(Matrix2x2* self, FLOAT_T s) nogil:
  * 	return init.Matrix2x2(self.a-s, self.b-s, self.c-s, self.d-s)             # <<<<<<<<<<<<<<
@@ -6590,7 +6606,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_ssub_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a - __pyx_v_s), (__pyx_v_self->b - __pyx_v_s), (__pyx_v_self->c - __pyx_v_s), (__pyx_v_self->d - __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":372
+  /* "src/_squish/core.pyx":372
  * 	return init.Matrix2x2(self.a+s, self.b+s, self.c+s, self.d+s)
  * 
  * cdef inline Matrix2x2 m_ssub_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6603,7 +6619,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_ssub_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":375
+/* "src/_squish/core.pyx":375
  * 	return init.Matrix2x2(self.a-s, self.b-s, self.c-s, self.d-s)
  * 
  * cdef inline Matrix2x2 m_smul_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6614,7 +6630,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_ssub_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_smul_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":376
+  /* "src/_squish/core.pyx":376
  * 
  * cdef inline Matrix2x2 m_smul_c(Matrix2x2* self, FLOAT_T s) nogil:
  * 	return init.Matrix2x2(self.a*s, self.b*s, self.c*s, self.d*s)             # <<<<<<<<<<<<<<
@@ -6624,7 +6640,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_smul_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a * __pyx_v_s), (__pyx_v_self->b * __pyx_v_s), (__pyx_v_self->c * __pyx_v_s), (__pyx_v_self->d * __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":375
+  /* "src/_squish/core.pyx":375
  * 	return init.Matrix2x2(self.a-s, self.b-s, self.c-s, self.d-s)
  * 
  * cdef inline Matrix2x2 m_smul_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6637,7 +6653,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_smul_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":378
+/* "src/_squish/core.pyx":378
  * 	return init.Matrix2x2(self.a*s, self.b*s, self.c*s, self.d*s)
  * 
  * cdef inline Matrix2x2 m_sdiv_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6648,7 +6664,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_smul_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sdiv_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_FLOAT_T __pyx_v_s) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":379
+  /* "src/_squish/core.pyx":379
  * 
  * cdef inline Matrix2x2 m_sdiv_c(Matrix2x2* self, FLOAT_T s) nogil:
  * 	return init.Matrix2x2(self.a/s, self.b/s, self.c/s, self.d/s)             # <<<<<<<<<<<<<<
@@ -6658,7 +6674,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sdiv_c(__pyx_
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2((__pyx_v_self->a / __pyx_v_s), (__pyx_v_self->b / __pyx_v_s), (__pyx_v_self->c / __pyx_v_s), (__pyx_v_self->d / __pyx_v_s));
   goto __pyx_L0;
 
-  /* "src/core.pyx":378
+  /* "src/_squish/core.pyx":378
  * 	return init.Matrix2x2(self.a*s, self.b*s, self.c*s, self.d*s)
  * 
  * cdef inline Matrix2x2 m_sdiv_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -6671,7 +6687,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sdiv_c(__pyx_
   return __pyx_r;
 }
 
-/* "src/core.pyx":381
+/* "src/_squish/core.pyx":381
  * 	return init.Matrix2x2(self.a/s, self.b/s, self.c/s, self.d/s)
  * 
  * cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6682,7 +6698,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_sdiv_c(__pyx_
 static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_matmul_c(__pyx_t_7_squish_Matrix2x2 *__pyx_v_self, __pyx_t_7_squish_Matrix2x2 __pyx_v_m) {
   __pyx_t_7_squish_Matrix2x2 __pyx_r;
 
-  /* "src/core.pyx":382
+  /* "src/_squish/core.pyx":382
  * 
  * cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:
  * 	return init.Matrix2x2(             # <<<<<<<<<<<<<<
@@ -6692,7 +6708,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_matmul_c(__py
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2(((__pyx_v_self->a * __pyx_v_m.a) + (__pyx_v_self->b * __pyx_v_m.c)), ((__pyx_v_self->a * __pyx_v_m.b) + (__pyx_v_self->b * __pyx_v_m.d)), ((__pyx_v_self->c * __pyx_v_m.a) + (__pyx_v_self->d * __pyx_v_m.c)), ((__pyx_v_self->c * __pyx_v_m.b) + (__pyx_v_self->d * __pyx_v_m.d)));
   goto __pyx_L0;
 
-  /* "src/core.pyx":381
+  /* "src/_squish/core.pyx":381
  * 	return init.Matrix2x2(self.a/s, self.b/s, self.c/s, self.d/s)
  * 
  * cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -6705,7 +6721,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_m_matmul_c(__py
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":17
+/* "src/_squish/voronoi_dcel.pyx":17
  * #### SiteCacheMap Methods ####
  * 
  * cdef inline SiteCacheMap init_sitecachemap(INT_T iarea, INT_T iperim, INT_T iisoparam,             # <<<<<<<<<<<<<<
@@ -6727,7 +6743,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   __pyx_t_7_squish_FLOAT_T (*__pyx_t_9)(__pyx_t_7_squish_Site *, __pyx_t_7_squish_FLOAT_T);
   __pyx_t_7_squish_FLOAT_T (*__pyx_t_10)(__pyx_t_7_squish_Site *, __pyx_t_7_squish_FLOAT_T);
 
-  /* "src/voronoi_dcel.pyx":21
+  /* "src/_squish/voronoi_dcel.pyx":21
  * 	cdef SiteCacheMap sc
  * 	sc.iarea, sc.iperim, sc.iisoparam, sc.ienergy, sc.iavg_radius = \
  * 		iarea, iperim, iisoparam, ienergy, iavg_radius             # <<<<<<<<<<<<<<
@@ -6740,7 +6756,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   __pyx_t_4 = __pyx_v_ienergy;
   __pyx_t_5 = __pyx_v_iavg_radius;
 
-  /* "src/voronoi_dcel.pyx":20
+  /* "src/_squish/voronoi_dcel.pyx":20
  * 						INT_T ienergy, INT_T iavg_radius) nogil:
  * 	cdef SiteCacheMap sc
  * 	sc.iarea, sc.iperim, sc.iisoparam, sc.ienergy, sc.iavg_radius = \             # <<<<<<<<<<<<<<
@@ -6753,7 +6769,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   __pyx_v_sc.ienergy = __pyx_t_4;
   __pyx_v_sc.iavg_radius = __pyx_t_5;
 
-  /* "src/voronoi_dcel.pyx":24
+  /* "src/_squish/voronoi_dcel.pyx":24
  * 
  * 	sc.area, sc.perim, sc.isoparam, sc.energy, sc.avg_radius = \
  * 		area, perim, isoparam, energy, avg_radius             # <<<<<<<<<<<<<<
@@ -6766,7 +6782,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   __pyx_t_9 = __pyx_f_7_squish_energy;
   __pyx_t_10 = __pyx_f_7_squish_avg_radius;
 
-  /* "src/voronoi_dcel.pyx":23
+  /* "src/_squish/voronoi_dcel.pyx":23
  * 		iarea, iperim, iisoparam, ienergy, iavg_radius
  * 
  * 	sc.area, sc.perim, sc.isoparam, sc.energy, sc.avg_radius = \             # <<<<<<<<<<<<<<
@@ -6779,7 +6795,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   __pyx_v_sc.energy = __pyx_t_9;
   __pyx_v_sc.avg_radius = __pyx_t_10;
 
-  /* "src/voronoi_dcel.pyx":26
+  /* "src/_squish/voronoi_dcel.pyx":26
  * 		area, perim, isoparam, energy, avg_radius
  * 
  * 	return sc             # <<<<<<<<<<<<<<
@@ -6789,7 +6805,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   __pyx_r = __pyx_v_sc;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":17
+  /* "src/_squish/voronoi_dcel.pyx":17
  * #### SiteCacheMap Methods ####
  * 
  * cdef inline SiteCacheMap init_sitecachemap(INT_T iarea, INT_T iperim, INT_T iisoparam,             # <<<<<<<<<<<<<<
@@ -6802,7 +6818,7 @@ static CYTHON_INLINE __pyx_t_7_squish_SiteCacheMap __pyx_f_7_squish_init_sitecac
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":29
+/* "src/_squish/voronoi_dcel.pyx":29
  * 
  * 
  * cdef inline FLOAT_T area(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -6815,7 +6831,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":30
+  /* "src/_squish/voronoi_dcel.pyx":30
  * 
  * cdef inline FLOAT_T area(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -6825,7 +6841,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":32
+    /* "src/_squish/voronoi_dcel.pyx":32
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iarea)             # <<<<<<<<<<<<<<
@@ -6835,7 +6851,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iarea;
 
-    /* "src/voronoi_dcel.pyx":31
+    /* "src/_squish/voronoi_dcel.pyx":31
  * cdef inline FLOAT_T area(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -6845,7 +6861,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
     __pyx_r = __pyx_v_self->info->site_cache.get((&__pyx_v_self->info->site_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":30
+    /* "src/_squish/voronoi_dcel.pyx":30
  * 
  * cdef inline FLOAT_T area(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -6854,7 +6870,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
  */
   }
 
-  /* "src/voronoi_dcel.pyx":35
+  /* "src/_squish/voronoi_dcel.pyx":35
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -6863,7 +6879,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":36
+    /* "src/_squish/voronoi_dcel.pyx":36
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iarea), val)             # <<<<<<<<<<<<<<
@@ -6873,7 +6889,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iarea;
 
-    /* "src/voronoi_dcel.pyx":35
+    /* "src/_squish/voronoi_dcel.pyx":35
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -6882,7 +6898,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
  */
     __pyx_v_self->info->site_cache.set((&__pyx_v_self->info->site_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":37
+    /* "src/_squish/voronoi_dcel.pyx":37
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iarea), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -6893,7 +6909,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":29
+  /* "src/_squish/voronoi_dcel.pyx":29
  * 
  * 
  * cdef inline FLOAT_T area(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -6906,7 +6922,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_area(__pyx_t_7_sq
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":39
+/* "src/_squish/voronoi_dcel.pyx":39
  * 		return val
  * 
  * cdef inline FLOAT_T perim(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -6919,7 +6935,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":40
+  /* "src/_squish/voronoi_dcel.pyx":40
  * 
  * cdef inline FLOAT_T perim(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -6929,7 +6945,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":42
+    /* "src/_squish/voronoi_dcel.pyx":42
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iperim)             # <<<<<<<<<<<<<<
@@ -6939,7 +6955,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iperim;
 
-    /* "src/voronoi_dcel.pyx":41
+    /* "src/_squish/voronoi_dcel.pyx":41
  * cdef inline FLOAT_T perim(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -6949,7 +6965,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
     __pyx_r = __pyx_v_self->info->site_cache.get((&__pyx_v_self->info->site_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":40
+    /* "src/_squish/voronoi_dcel.pyx":40
  * 
  * cdef inline FLOAT_T perim(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -6958,7 +6974,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
  */
   }
 
-  /* "src/voronoi_dcel.pyx":45
+  /* "src/_squish/voronoi_dcel.pyx":45
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -6967,7 +6983,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":46
+    /* "src/_squish/voronoi_dcel.pyx":46
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iperim), val)             # <<<<<<<<<<<<<<
@@ -6977,7 +6993,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iperim;
 
-    /* "src/voronoi_dcel.pyx":45
+    /* "src/_squish/voronoi_dcel.pyx":45
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -6986,7 +7002,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
  */
     __pyx_v_self->info->site_cache.set((&__pyx_v_self->info->site_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":47
+    /* "src/_squish/voronoi_dcel.pyx":47
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iperim), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -6997,7 +7013,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":39
+  /* "src/_squish/voronoi_dcel.pyx":39
  * 		return val
  * 
  * cdef inline FLOAT_T perim(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7010,7 +7026,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_perim(__pyx_t_7_s
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":49
+/* "src/_squish/voronoi_dcel.pyx":49
  * 		return val
  * 
  * cdef inline FLOAT_T isoparam(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7023,7 +7039,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":50
+  /* "src/_squish/voronoi_dcel.pyx":50
  * 
  * cdef inline FLOAT_T isoparam(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -7033,7 +7049,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":52
+    /* "src/_squish/voronoi_dcel.pyx":52
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iisoparam)             # <<<<<<<<<<<<<<
@@ -7043,7 +7059,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iisoparam;
 
-    /* "src/voronoi_dcel.pyx":51
+    /* "src/_squish/voronoi_dcel.pyx":51
  * cdef inline FLOAT_T isoparam(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7053,7 +7069,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
     __pyx_r = __pyx_v_self->info->site_cache.get((&__pyx_v_self->info->site_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":50
+    /* "src/_squish/voronoi_dcel.pyx":50
  * 
  * cdef inline FLOAT_T isoparam(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -7062,7 +7078,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
  */
   }
 
-  /* "src/voronoi_dcel.pyx":55
+  /* "src/_squish/voronoi_dcel.pyx":55
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7071,7 +7087,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":56
+    /* "src/_squish/voronoi_dcel.pyx":56
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iisoparam), val)             # <<<<<<<<<<<<<<
@@ -7081,7 +7097,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iisoparam;
 
-    /* "src/voronoi_dcel.pyx":55
+    /* "src/_squish/voronoi_dcel.pyx":55
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7090,7 +7106,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
  */
     __pyx_v_self->info->site_cache.set((&__pyx_v_self->info->site_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":57
+    /* "src/_squish/voronoi_dcel.pyx":57
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iisoparam), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -7101,7 +7117,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":49
+  /* "src/_squish/voronoi_dcel.pyx":49
  * 		return val
  * 
  * cdef inline FLOAT_T isoparam(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7114,7 +7130,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_isoparam(__pyx_t_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":59
+/* "src/_squish/voronoi_dcel.pyx":59
  * 		return val
  * 
  * cdef inline FLOAT_T energy(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7127,7 +7143,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":60
+  /* "src/_squish/voronoi_dcel.pyx":60
  * 
  * cdef inline FLOAT_T energy(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -7137,7 +7153,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":62
+    /* "src/_squish/voronoi_dcel.pyx":62
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,
  * 			(self.arr_index, self.cache.ienergy)             # <<<<<<<<<<<<<<
@@ -7147,7 +7163,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ienergy;
 
-    /* "src/voronoi_dcel.pyx":61
+    /* "src/_squish/voronoi_dcel.pyx":61
  * cdef inline FLOAT_T energy(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7157,7 +7173,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
     __pyx_r = __pyx_v_self->info->site_cache.get((&__pyx_v_self->info->site_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":60
+    /* "src/_squish/voronoi_dcel.pyx":60
  * 
  * cdef inline FLOAT_T energy(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -7166,7 +7182,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
  */
   }
 
-  /* "src/voronoi_dcel.pyx":65
+  /* "src/_squish/voronoi_dcel.pyx":65
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7175,7 +7191,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":66
+    /* "src/_squish/voronoi_dcel.pyx":66
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.ienergy), val)             # <<<<<<<<<<<<<<
@@ -7185,7 +7201,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ienergy;
 
-    /* "src/voronoi_dcel.pyx":65
+    /* "src/_squish/voronoi_dcel.pyx":65
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7194,7 +7210,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
  */
     __pyx_v_self->info->site_cache.set((&__pyx_v_self->info->site_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":67
+    /* "src/_squish/voronoi_dcel.pyx":67
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.ienergy), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -7205,7 +7221,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":59
+  /* "src/_squish/voronoi_dcel.pyx":59
  * 		return val
  * 
  * cdef inline FLOAT_T energy(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7218,7 +7234,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_energy(__pyx_t_7_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":69
+/* "src/_squish/voronoi_dcel.pyx":69
  * 		return val
  * 
  * cdef inline FLOAT_T avg_radius(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7231,7 +7247,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":70
+  /* "src/_squish/voronoi_dcel.pyx":70
  * 
  * cdef inline FLOAT_T avg_radius(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -7241,7 +7257,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":72
+    /* "src/_squish/voronoi_dcel.pyx":72
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iavg_radius)             # <<<<<<<<<<<<<<
@@ -7251,7 +7267,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iavg_radius;
 
-    /* "src/voronoi_dcel.pyx":71
+    /* "src/_squish/voronoi_dcel.pyx":71
  * cdef inline FLOAT_T avg_radius(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.site_cache.get(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7261,7 +7277,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
     __pyx_r = __pyx_v_self->info->site_cache.get((&__pyx_v_self->info->site_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":70
+    /* "src/_squish/voronoi_dcel.pyx":70
  * 
  * cdef inline FLOAT_T avg_radius(Site* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -7270,7 +7286,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
  */
   }
 
-  /* "src/voronoi_dcel.pyx":75
+  /* "src/_squish/voronoi_dcel.pyx":75
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7279,7 +7295,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":76
+    /* "src/_squish/voronoi_dcel.pyx":76
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iavg_radius), val)             # <<<<<<<<<<<<<<
@@ -7289,7 +7305,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iavg_radius;
 
-    /* "src/voronoi_dcel.pyx":75
+    /* "src/_squish/voronoi_dcel.pyx":75
  * 		)
  * 	else:
  * 		self.info.site_cache.set(&self.info.site_cache,             # <<<<<<<<<<<<<<
@@ -7298,7 +7314,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
  */
     __pyx_v_self->info->site_cache.set((&__pyx_v_self->info->site_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":77
+    /* "src/_squish/voronoi_dcel.pyx":77
  * 		self.info.site_cache.set(&self.info.site_cache,
  * 			(self.arr_index, self.cache.iavg_radius), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -7309,7 +7325,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":69
+  /* "src/_squish/voronoi_dcel.pyx":69
  * 		return val
  * 
  * cdef inline FLOAT_T avg_radius(Site* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -7322,7 +7338,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_avg_radius(__pyx_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":82
+/* "src/_squish/voronoi_dcel.pyx":82
  * #### EdgeCacheMap Methods ####
  * 
  * cdef inline EdgeCacheMap init_edgecachemap(INT_T iH, INT_T ila, INT_T ida, INT_T ixij,             # <<<<<<<<<<<<<<
@@ -7360,7 +7376,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_t_7_squish_FLOAT_T (*__pyx_t_25)(__pyx_t_7_squish_HalfEdge *, __pyx_t_7_squish_FLOAT_T);
   __pyx_t_7_squish_FLOAT_T (*__pyx_t_26)(__pyx_t_7_squish_HalfEdge *, __pyx_t_7_squish_FLOAT_T);
 
-  /* "src/voronoi_dcel.pyx":87
+  /* "src/_squish/voronoi_dcel.pyx":87
  * 	cdef EdgeCacheMap ec
  * 	ec.iH, ec.ila, ec.ida, ec.ixij, ec.idVdv, ec.ii2p, ec.ila_mag, ec.ida_mag, ec.iphi, \
  * 		ec.iB, ec.iF, ec.ilntan, ec.icsc = iH, ila, ida, ixij, idVdv, ii2p, \             # <<<<<<<<<<<<<<
@@ -7374,7 +7390,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_t_5 = __pyx_v_idVdv;
   __pyx_t_6 = __pyx_v_ii2p;
 
-  /* "src/voronoi_dcel.pyx":88
+  /* "src/_squish/voronoi_dcel.pyx":88
  * 	ec.iH, ec.ila, ec.ida, ec.ixij, ec.idVdv, ec.ii2p, ec.ila_mag, ec.ida_mag, ec.iphi, \
  * 		ec.iB, ec.iF, ec.ilntan, ec.icsc = iH, ila, ida, ixij, idVdv, ii2p, \
  * 					 ila_mag, ida_mag, iphi, iB, iF, ilntan, icsc             # <<<<<<<<<<<<<<
@@ -7389,7 +7405,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_t_12 = __pyx_v_ilntan;
   __pyx_t_13 = __pyx_v_icsc;
 
-  /* "src/voronoi_dcel.pyx":86
+  /* "src/_squish/voronoi_dcel.pyx":86
  * 				INT_T iF, INT_T ilntan, INT_T icsc, INT_T size) nogil:
  * 	cdef EdgeCacheMap ec
  * 	ec.iH, ec.ila, ec.ida, ec.ixij, ec.idVdv, ec.ii2p, ec.ila_mag, ec.ida_mag, ec.iphi, \             # <<<<<<<<<<<<<<
@@ -7406,7 +7422,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_v_ec.ida_mag = __pyx_t_8;
   __pyx_v_ec.iphi = __pyx_t_9;
 
-  /* "src/voronoi_dcel.pyx":87
+  /* "src/_squish/voronoi_dcel.pyx":87
  * 	cdef EdgeCacheMap ec
  * 	ec.iH, ec.ila, ec.ida, ec.ixij, ec.idVdv, ec.ii2p, ec.ila_mag, ec.ida_mag, ec.iphi, \
  * 		ec.iB, ec.iF, ec.ilntan, ec.icsc = iH, ila, ida, ixij, idVdv, ii2p, \             # <<<<<<<<<<<<<<
@@ -7418,7 +7434,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_v_ec.ilntan = __pyx_t_12;
   __pyx_v_ec.icsc = __pyx_t_13;
 
-  /* "src/voronoi_dcel.pyx":89
+  /* "src/_squish/voronoi_dcel.pyx":89
  * 		ec.iB, ec.iF, ec.ilntan, ec.icsc = iH, ila, ida, ixij, idVdv, ii2p, \
  * 					 ila_mag, ida_mag, iphi, iB, iF, ilntan, icsc
  * 	ec.size = size             # <<<<<<<<<<<<<<
@@ -7427,7 +7443,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
  */
   __pyx_v_ec.size = __pyx_v_size;
 
-  /* "src/voronoi_dcel.pyx":92
+  /* "src/_squish/voronoi_dcel.pyx":92
  * 
  * 	ec.H, ec.la, ec.da, ec.xij, ec.dVdv, ec.i2p, ec.la_mag, ec.da_mag, ec.phi, ec.B, ec.F, \
  * 		 ec.lntan, ec.csc = H, la, da, xij, dVdv, i2p, la_mag, da_mag, phi, B, F, lntan, csc             # <<<<<<<<<<<<<<
@@ -7448,7 +7464,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_t_25 = __pyx_f_7_squish_lntan;
   __pyx_t_26 = __pyx_f_7_squish_csc;
 
-  /* "src/voronoi_dcel.pyx":91
+  /* "src/_squish/voronoi_dcel.pyx":91
  * 	ec.size = size
  * 
  * 	ec.H, ec.la, ec.da, ec.xij, ec.dVdv, ec.i2p, ec.la_mag, ec.da_mag, ec.phi, ec.B, ec.F, \             # <<<<<<<<<<<<<<
@@ -7467,7 +7483,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_v_ec.B = __pyx_t_23;
   __pyx_v_ec.F = __pyx_t_24;
 
-  /* "src/voronoi_dcel.pyx":92
+  /* "src/_squish/voronoi_dcel.pyx":92
  * 
  * 	ec.H, ec.la, ec.da, ec.xij, ec.dVdv, ec.i2p, ec.la_mag, ec.da_mag, ec.phi, ec.B, ec.F, \
  * 		 ec.lntan, ec.csc = H, la, da, xij, dVdv, i2p, la_mag, da_mag, phi, B, F, lntan, csc             # <<<<<<<<<<<<<<
@@ -7477,7 +7493,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_v_ec.lntan = __pyx_t_25;
   __pyx_v_ec.csc = __pyx_t_26;
 
-  /* "src/voronoi_dcel.pyx":94
+  /* "src/_squish/voronoi_dcel.pyx":94
  * 		 ec.lntan, ec.csc = H, la, da, xij, dVdv, i2p, la_mag, da_mag, phi, B, F, lntan, csc
  * 
  * 	return ec             # <<<<<<<<<<<<<<
@@ -7487,7 +7503,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   __pyx_r = __pyx_v_ec;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":82
+  /* "src/_squish/voronoi_dcel.pyx":82
  * #### EdgeCacheMap Methods ####
  * 
  * cdef inline EdgeCacheMap init_edgecachemap(INT_T iH, INT_T ila, INT_T ida, INT_T ixij,             # <<<<<<<<<<<<<<
@@ -7500,7 +7516,7 @@ static CYTHON_INLINE __pyx_t_7_squish_EdgeCacheMap __pyx_f_7_squish_init_edgecac
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":97
+/* "src/_squish/voronoi_dcel.pyx":97
  * 
  * 
  * cdef inline Matrix2x2 H(HalfEdge* self, Matrix2x2 val) nogil:             # <<<<<<<<<<<<<<
@@ -7516,7 +7532,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_4;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_5;
 
-  /* "src/voronoi_dcel.pyx":98
+  /* "src/_squish/voronoi_dcel.pyx":98
  * 
  * cdef inline Matrix2x2 H(HalfEdge* self, Matrix2x2 val) nogil:
  * 	if isnan(<double>val.a):             # <<<<<<<<<<<<<<
@@ -7526,7 +7542,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
   __pyx_t_1 = (isnan(((double)__pyx_v_val.a)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":101
+    /* "src/_squish/voronoi_dcel.pyx":101
  * 		return init.Matrix2x2(
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.iH)             # <<<<<<<<<<<<<<
@@ -7536,7 +7552,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iH;
 
-    /* "src/voronoi_dcel.pyx":104
+    /* "src/_squish/voronoi_dcel.pyx":104
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.iH+1)             # <<<<<<<<<<<<<<
@@ -7546,7 +7562,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->iH + 1);
 
-    /* "src/voronoi_dcel.pyx":107
+    /* "src/_squish/voronoi_dcel.pyx":107
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.iH+2)             # <<<<<<<<<<<<<<
@@ -7556,7 +7572,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_4.f0 = __pyx_v_self->arr_index;
     __pyx_t_4.f1 = (__pyx_v_self->cache->iH + 2);
 
-    /* "src/voronoi_dcel.pyx":110
+    /* "src/_squish/voronoi_dcel.pyx":110
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.iH+3)             # <<<<<<<<<<<<<<
@@ -7566,7 +7582,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_5.f0 = __pyx_v_self->arr_index;
     __pyx_t_5.f1 = (__pyx_v_self->cache->iH + 3);
 
-    /* "src/voronoi_dcel.pyx":99
+    /* "src/_squish/voronoi_dcel.pyx":99
  * cdef inline Matrix2x2 H(HalfEdge* self, Matrix2x2 val) nogil:
  * 	if isnan(<double>val.a):
  * 		return init.Matrix2x2(             # <<<<<<<<<<<<<<
@@ -7576,7 +7592,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_r = __pyx_v_7_squish_init.Matrix2x2(__pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_3), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_4), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_5));
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":98
+    /* "src/_squish/voronoi_dcel.pyx":98
  * 
  * cdef inline Matrix2x2 H(HalfEdge* self, Matrix2x2 val) nogil:
  * 	if isnan(<double>val.a):             # <<<<<<<<<<<<<<
@@ -7585,7 +7601,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
  */
   }
 
-  /* "src/voronoi_dcel.pyx":114
+  /* "src/_squish/voronoi_dcel.pyx":114
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7594,7 +7610,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":115
+    /* "src/_squish/voronoi_dcel.pyx":115
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH), val.a)             # <<<<<<<<<<<<<<
@@ -7604,7 +7620,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_5.f0 = __pyx_v_self->arr_index;
     __pyx_t_5.f1 = __pyx_v_self->cache->iH;
 
-    /* "src/voronoi_dcel.pyx":114
+    /* "src/_squish/voronoi_dcel.pyx":114
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7613,7 +7629,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_5, __pyx_v_val.a);
 
-    /* "src/voronoi_dcel.pyx":117
+    /* "src/_squish/voronoi_dcel.pyx":117
  * 			(self.arr_index, self.cache.iH), val.a)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH+1), val.b)             # <<<<<<<<<<<<<<
@@ -7623,7 +7639,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_5.f0 = __pyx_v_self->arr_index;
     __pyx_t_5.f1 = (__pyx_v_self->cache->iH + 1);
 
-    /* "src/voronoi_dcel.pyx":116
+    /* "src/_squish/voronoi_dcel.pyx":116
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH), val.a)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7632,7 +7648,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_5, __pyx_v_val.b);
 
-    /* "src/voronoi_dcel.pyx":119
+    /* "src/_squish/voronoi_dcel.pyx":119
  * 			(self.arr_index, self.cache.iH+1), val.b)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH+2), val.c)             # <<<<<<<<<<<<<<
@@ -7642,7 +7658,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_5.f0 = __pyx_v_self->arr_index;
     __pyx_t_5.f1 = (__pyx_v_self->cache->iH + 2);
 
-    /* "src/voronoi_dcel.pyx":118
+    /* "src/_squish/voronoi_dcel.pyx":118
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH+1), val.b)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7651,7 +7667,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_5, __pyx_v_val.c);
 
-    /* "src/voronoi_dcel.pyx":121
+    /* "src/_squish/voronoi_dcel.pyx":121
  * 			(self.arr_index, self.cache.iH+2), val.c)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH+3), val.d)             # <<<<<<<<<<<<<<
@@ -7661,7 +7677,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     __pyx_t_5.f0 = __pyx_v_self->arr_index;
     __pyx_t_5.f1 = (__pyx_v_self->cache->iH + 3);
 
-    /* "src/voronoi_dcel.pyx":120
+    /* "src/_squish/voronoi_dcel.pyx":120
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH+2), val.c)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7670,7 +7686,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_5, __pyx_v_val.d);
 
-    /* "src/voronoi_dcel.pyx":122
+    /* "src/_squish/voronoi_dcel.pyx":122
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iH+3), val.d)
  * 		return val             # <<<<<<<<<<<<<<
@@ -7681,7 +7697,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":97
+  /* "src/_squish/voronoi_dcel.pyx":97
  * 
  * 
  * cdef inline Matrix2x2 H(HalfEdge* self, Matrix2x2 val) nogil:             # <<<<<<<<<<<<<<
@@ -7694,7 +7710,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_H(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":124
+/* "src/_squish/voronoi_dcel.pyx":124
  * 		return val
  * 
  * cdef inline Vector2D la(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -7708,7 +7724,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":125
+  /* "src/_squish/voronoi_dcel.pyx":125
  * 
  * cdef inline Vector2D la(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -7718,7 +7734,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
   __pyx_t_1 = (isnan(((double)__pyx_v_val.x)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":128
+    /* "src/_squish/voronoi_dcel.pyx":128
  * 		return init.Vector2D(
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ila)             # <<<<<<<<<<<<<<
@@ -7728,7 +7744,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ila;
 
-    /* "src/voronoi_dcel.pyx":131
+    /* "src/_squish/voronoi_dcel.pyx":131
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ila+1)             # <<<<<<<<<<<<<<
@@ -7738,7 +7754,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ila + 1);
 
-    /* "src/voronoi_dcel.pyx":126
+    /* "src/_squish/voronoi_dcel.pyx":126
  * cdef inline Vector2D la(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):
  * 		return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -7748,7 +7764,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
     __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_3));
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":125
+    /* "src/_squish/voronoi_dcel.pyx":125
  * 
  * cdef inline Vector2D la(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -7757,7 +7773,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
  */
   }
 
-  /* "src/voronoi_dcel.pyx":135
+  /* "src/_squish/voronoi_dcel.pyx":135
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7766,7 +7782,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":136
+    /* "src/_squish/voronoi_dcel.pyx":136
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila), val.x)             # <<<<<<<<<<<<<<
@@ -7776,7 +7792,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = __pyx_v_self->cache->ila;
 
-    /* "src/voronoi_dcel.pyx":135
+    /* "src/_squish/voronoi_dcel.pyx":135
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7785,7 +7801,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.x);
 
-    /* "src/voronoi_dcel.pyx":138
+    /* "src/_squish/voronoi_dcel.pyx":138
  * 			(self.arr_index, self.cache.ila), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila+1), val.y)             # <<<<<<<<<<<<<<
@@ -7795,7 +7811,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ila + 1);
 
-    /* "src/voronoi_dcel.pyx":137
+    /* "src/_squish/voronoi_dcel.pyx":137
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7804,7 +7820,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.y);
 
-    /* "src/voronoi_dcel.pyx":139
+    /* "src/_squish/voronoi_dcel.pyx":139
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila+1), val.y)
  * 		return val             # <<<<<<<<<<<<<<
@@ -7815,7 +7831,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":124
+  /* "src/_squish/voronoi_dcel.pyx":124
  * 		return val
  * 
  * cdef inline Vector2D la(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -7828,7 +7844,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_la(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":141
+/* "src/_squish/voronoi_dcel.pyx":141
  * 		return val
  * 
  * cdef inline Vector2D da(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -7842,7 +7858,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":142
+  /* "src/_squish/voronoi_dcel.pyx":142
  * 
  * cdef inline Vector2D da(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -7852,7 +7868,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
   __pyx_t_1 = (isnan(((double)__pyx_v_val.x)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":145
+    /* "src/_squish/voronoi_dcel.pyx":145
  * 		return init.Vector2D(
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ida)             # <<<<<<<<<<<<<<
@@ -7862,7 +7878,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ida;
 
-    /* "src/voronoi_dcel.pyx":148
+    /* "src/_squish/voronoi_dcel.pyx":148
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ida+1)             # <<<<<<<<<<<<<<
@@ -7872,7 +7888,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ida + 1);
 
-    /* "src/voronoi_dcel.pyx":143
+    /* "src/_squish/voronoi_dcel.pyx":143
  * cdef inline Vector2D da(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):
  * 		return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -7882,7 +7898,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
     __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_3));
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":142
+    /* "src/_squish/voronoi_dcel.pyx":142
  * 
  * cdef inline Vector2D da(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -7891,7 +7907,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
  */
   }
 
-  /* "src/voronoi_dcel.pyx":152
+  /* "src/_squish/voronoi_dcel.pyx":152
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7900,7 +7916,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":153
+    /* "src/_squish/voronoi_dcel.pyx":153
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida), val.x)             # <<<<<<<<<<<<<<
@@ -7910,7 +7926,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = __pyx_v_self->cache->ida;
 
-    /* "src/voronoi_dcel.pyx":152
+    /* "src/_squish/voronoi_dcel.pyx":152
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7919,7 +7935,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.x);
 
-    /* "src/voronoi_dcel.pyx":155
+    /* "src/_squish/voronoi_dcel.pyx":155
  * 			(self.arr_index, self.cache.ida), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida+1), val.y)             # <<<<<<<<<<<<<<
@@ -7929,7 +7945,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ida + 1);
 
-    /* "src/voronoi_dcel.pyx":154
+    /* "src/_squish/voronoi_dcel.pyx":154
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -7938,7 +7954,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.y);
 
-    /* "src/voronoi_dcel.pyx":156
+    /* "src/_squish/voronoi_dcel.pyx":156
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida+1), val.y)
  * 		return val             # <<<<<<<<<<<<<<
@@ -7949,7 +7965,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":141
+  /* "src/_squish/voronoi_dcel.pyx":141
  * 		return val
  * 
  * cdef inline Vector2D da(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -7962,7 +7978,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_da(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":158
+/* "src/_squish/voronoi_dcel.pyx":158
  * 		return val
  * 
  * cdef inline Vector2D xij(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -7976,7 +7992,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":159
+  /* "src/_squish/voronoi_dcel.pyx":159
  * 
  * cdef inline Vector2D xij(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -7986,7 +8002,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
   __pyx_t_1 = (isnan(((double)__pyx_v_val.x)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":162
+    /* "src/_squish/voronoi_dcel.pyx":162
  * 		return init.Vector2D(
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ixij)             # <<<<<<<<<<<<<<
@@ -7996,7 +8012,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ixij;
 
-    /* "src/voronoi_dcel.pyx":165
+    /* "src/_squish/voronoi_dcel.pyx":165
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ixij+1)             # <<<<<<<<<<<<<<
@@ -8006,7 +8022,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ixij + 1);
 
-    /* "src/voronoi_dcel.pyx":160
+    /* "src/_squish/voronoi_dcel.pyx":160
  * cdef inline Vector2D xij(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):
  * 		return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -8016,7 +8032,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
     __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_3));
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":159
+    /* "src/_squish/voronoi_dcel.pyx":159
  * 
  * cdef inline Vector2D xij(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -8025,7 +8041,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
  */
   }
 
-  /* "src/voronoi_dcel.pyx":169
+  /* "src/_squish/voronoi_dcel.pyx":169
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8034,7 +8050,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":170
+    /* "src/_squish/voronoi_dcel.pyx":170
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ixij), val.x)             # <<<<<<<<<<<<<<
@@ -8044,7 +8060,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = __pyx_v_self->cache->ixij;
 
-    /* "src/voronoi_dcel.pyx":169
+    /* "src/_squish/voronoi_dcel.pyx":169
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8053,7 +8069,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.x);
 
-    /* "src/voronoi_dcel.pyx":172
+    /* "src/_squish/voronoi_dcel.pyx":172
  * 			(self.arr_index, self.cache.ixij), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ixij+1), val.y)             # <<<<<<<<<<<<<<
@@ -8063,7 +8079,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ixij + 1);
 
-    /* "src/voronoi_dcel.pyx":171
+    /* "src/_squish/voronoi_dcel.pyx":171
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ixij), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8072,7 +8088,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.y);
 
-    /* "src/voronoi_dcel.pyx":173
+    /* "src/_squish/voronoi_dcel.pyx":173
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ixij+1), val.y)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8083,7 +8099,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":158
+  /* "src/_squish/voronoi_dcel.pyx":158
  * 		return val
  * 
  * cdef inline Vector2D xij(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -8096,7 +8112,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_xij(__pyx_t_7_sq
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":175
+/* "src/_squish/voronoi_dcel.pyx":175
  * 		return val
  * 
  * cdef inline Vector2D dVdv(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -8110,7 +8126,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":176
+  /* "src/_squish/voronoi_dcel.pyx":176
  * 
  * cdef inline Vector2D dVdv(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -8120,7 +8136,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
   __pyx_t_1 = (isnan(((double)__pyx_v_val.x)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":179
+    /* "src/_squish/voronoi_dcel.pyx":179
  * 		return init.Vector2D(
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.idVdv)             # <<<<<<<<<<<<<<
@@ -8130,7 +8146,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->idVdv;
 
-    /* "src/voronoi_dcel.pyx":182
+    /* "src/_squish/voronoi_dcel.pyx":182
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.idVdv+1)             # <<<<<<<<<<<<<<
@@ -8140,7 +8156,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->idVdv + 1);
 
-    /* "src/voronoi_dcel.pyx":177
+    /* "src/_squish/voronoi_dcel.pyx":177
  * cdef inline Vector2D dVdv(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):
  * 		return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -8150,7 +8166,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
     __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_3));
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":176
+    /* "src/_squish/voronoi_dcel.pyx":176
  * 
  * cdef inline Vector2D dVdv(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -8159,7 +8175,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
  */
   }
 
-  /* "src/voronoi_dcel.pyx":186
+  /* "src/_squish/voronoi_dcel.pyx":186
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8168,7 +8184,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":187
+    /* "src/_squish/voronoi_dcel.pyx":187
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.idVdv), val.x)             # <<<<<<<<<<<<<<
@@ -8178,7 +8194,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = __pyx_v_self->cache->idVdv;
 
-    /* "src/voronoi_dcel.pyx":186
+    /* "src/_squish/voronoi_dcel.pyx":186
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8187,7 +8203,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.x);
 
-    /* "src/voronoi_dcel.pyx":189
+    /* "src/_squish/voronoi_dcel.pyx":189
  * 			(self.arr_index, self.cache.idVdv), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.idVdv+1), val.y)             # <<<<<<<<<<<<<<
@@ -8197,7 +8213,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->idVdv + 1);
 
-    /* "src/voronoi_dcel.pyx":188
+    /* "src/_squish/voronoi_dcel.pyx":188
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.idVdv), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8206,7 +8222,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.y);
 
-    /* "src/voronoi_dcel.pyx":190
+    /* "src/_squish/voronoi_dcel.pyx":190
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.idVdv+1), val.y)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8217,7 +8233,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":175
+  /* "src/_squish/voronoi_dcel.pyx":175
  * 		return val
  * 
  * cdef inline Vector2D dVdv(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -8230,7 +8246,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_dVdv(__pyx_t_7_s
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":192
+/* "src/_squish/voronoi_dcel.pyx":192
  * 		return val
  * 
  * cdef inline Vector2D i2p(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -8244,7 +8260,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":193
+  /* "src/_squish/voronoi_dcel.pyx":193
  * 
  * cdef inline Vector2D i2p(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -8254,7 +8270,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
   __pyx_t_1 = (isnan(((double)__pyx_v_val.x)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":196
+    /* "src/_squish/voronoi_dcel.pyx":196
  * 		return init.Vector2D(
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ii2p)             # <<<<<<<<<<<<<<
@@ -8264,7 +8280,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ii2p;
 
-    /* "src/voronoi_dcel.pyx":199
+    /* "src/_squish/voronoi_dcel.pyx":199
  * 			),
  * 			self.info.edge_cache.get(&self.info.edge_cache,
  * 				(self.arr_index, self.cache.ii2p+1)             # <<<<<<<<<<<<<<
@@ -8274,7 +8290,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ii2p + 1);
 
-    /* "src/voronoi_dcel.pyx":194
+    /* "src/_squish/voronoi_dcel.pyx":194
  * cdef inline Vector2D i2p(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):
  * 		return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -8284,7 +8300,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
     __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2), __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_3));
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":193
+    /* "src/_squish/voronoi_dcel.pyx":193
  * 
  * cdef inline Vector2D i2p(HalfEdge* self, Vector2D val) nogil:
  * 	if isnan(<double>val.x):             # <<<<<<<<<<<<<<
@@ -8293,7 +8309,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
  */
   }
 
-  /* "src/voronoi_dcel.pyx":203
+  /* "src/_squish/voronoi_dcel.pyx":203
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8302,7 +8318,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":204
+    /* "src/_squish/voronoi_dcel.pyx":204
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ii2p), val.x)             # <<<<<<<<<<<<<<
@@ -8312,7 +8328,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = __pyx_v_self->cache->ii2p;
 
-    /* "src/voronoi_dcel.pyx":203
+    /* "src/_squish/voronoi_dcel.pyx":203
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8321,7 +8337,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.x);
 
-    /* "src/voronoi_dcel.pyx":206
+    /* "src/_squish/voronoi_dcel.pyx":206
  * 			(self.arr_index, self.cache.ii2p), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ii2p+1), val.y)             # <<<<<<<<<<<<<<
@@ -8331,7 +8347,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
     __pyx_t_3.f0 = __pyx_v_self->arr_index;
     __pyx_t_3.f1 = (__pyx_v_self->cache->ii2p + 1);
 
-    /* "src/voronoi_dcel.pyx":205
+    /* "src/_squish/voronoi_dcel.pyx":205
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ii2p), val.x)
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8340,7 +8356,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_3, __pyx_v_val.y);
 
-    /* "src/voronoi_dcel.pyx":207
+    /* "src/_squish/voronoi_dcel.pyx":207
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ii2p+1), val.y)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8351,7 +8367,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":192
+  /* "src/_squish/voronoi_dcel.pyx":192
  * 		return val
  * 
  * cdef inline Vector2D i2p(HalfEdge* self, Vector2D val) nogil:             # <<<<<<<<<<<<<<
@@ -8364,7 +8380,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_i2p(__pyx_t_7_sq
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":209
+/* "src/_squish/voronoi_dcel.pyx":209
  * 		return val
  * 
  * cdef inline FLOAT_T la_mag(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8377,7 +8393,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":210
+  /* "src/_squish/voronoi_dcel.pyx":210
  * 
  * cdef inline FLOAT_T la_mag(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8387,7 +8403,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":212
+    /* "src/_squish/voronoi_dcel.pyx":212
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila_mag)             # <<<<<<<<<<<<<<
@@ -8397,7 +8413,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ila_mag;
 
-    /* "src/voronoi_dcel.pyx":211
+    /* "src/_squish/voronoi_dcel.pyx":211
  * cdef inline FLOAT_T la_mag(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8407,7 +8423,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":210
+    /* "src/_squish/voronoi_dcel.pyx":210
  * 
  * cdef inline FLOAT_T la_mag(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8416,7 +8432,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
  */
   }
 
-  /* "src/voronoi_dcel.pyx":215
+  /* "src/_squish/voronoi_dcel.pyx":215
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8425,7 +8441,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":216
+    /* "src/_squish/voronoi_dcel.pyx":216
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila_mag), val)             # <<<<<<<<<<<<<<
@@ -8435,7 +8451,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ila_mag;
 
-    /* "src/voronoi_dcel.pyx":215
+    /* "src/_squish/voronoi_dcel.pyx":215
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8444,7 +8460,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":217
+    /* "src/_squish/voronoi_dcel.pyx":217
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ila_mag), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8455,7 +8471,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":209
+  /* "src/_squish/voronoi_dcel.pyx":209
  * 		return val
  * 
  * cdef inline FLOAT_T la_mag(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8468,7 +8484,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_la_mag(__pyx_t_7_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":219
+/* "src/_squish/voronoi_dcel.pyx":219
  * 		return val
  * 
  * cdef inline FLOAT_T da_mag(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8481,7 +8497,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":220
+  /* "src/_squish/voronoi_dcel.pyx":220
  * 
  * cdef inline FLOAT_T da_mag(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8491,7 +8507,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":222
+    /* "src/_squish/voronoi_dcel.pyx":222
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida_mag)             # <<<<<<<<<<<<<<
@@ -8501,7 +8517,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ida_mag;
 
-    /* "src/voronoi_dcel.pyx":221
+    /* "src/_squish/voronoi_dcel.pyx":221
  * cdef inline FLOAT_T da_mag(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8511,7 +8527,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":220
+    /* "src/_squish/voronoi_dcel.pyx":220
  * 
  * cdef inline FLOAT_T da_mag(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8520,7 +8536,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
  */
   }
 
-  /* "src/voronoi_dcel.pyx":225
+  /* "src/_squish/voronoi_dcel.pyx":225
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8529,7 +8545,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":226
+    /* "src/_squish/voronoi_dcel.pyx":226
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida_mag), val)             # <<<<<<<<<<<<<<
@@ -8539,7 +8555,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ida_mag;
 
-    /* "src/voronoi_dcel.pyx":225
+    /* "src/_squish/voronoi_dcel.pyx":225
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8548,7 +8564,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":227
+    /* "src/_squish/voronoi_dcel.pyx":227
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ida_mag), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8559,7 +8575,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":219
+  /* "src/_squish/voronoi_dcel.pyx":219
  * 		return val
  * 
  * cdef inline FLOAT_T da_mag(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8572,7 +8588,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_da_mag(__pyx_t_7_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":229
+/* "src/_squish/voronoi_dcel.pyx":229
  * 		return val
  * 
  * cdef inline FLOAT_T phi(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8585,7 +8601,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":230
+  /* "src/_squish/voronoi_dcel.pyx":230
  * 
  * cdef inline FLOAT_T phi(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8595,7 +8611,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":232
+    /* "src/_squish/voronoi_dcel.pyx":232
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iphi)             # <<<<<<<<<<<<<<
@@ -8605,7 +8621,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iphi;
 
-    /* "src/voronoi_dcel.pyx":231
+    /* "src/_squish/voronoi_dcel.pyx":231
  * cdef inline FLOAT_T phi(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8615,7 +8631,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":230
+    /* "src/_squish/voronoi_dcel.pyx":230
  * 
  * cdef inline FLOAT_T phi(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8624,7 +8640,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
  */
   }
 
-  /* "src/voronoi_dcel.pyx":235
+  /* "src/_squish/voronoi_dcel.pyx":235
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8633,7 +8649,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":236
+    /* "src/_squish/voronoi_dcel.pyx":236
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iphi), val)             # <<<<<<<<<<<<<<
@@ -8643,7 +8659,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iphi;
 
-    /* "src/voronoi_dcel.pyx":235
+    /* "src/_squish/voronoi_dcel.pyx":235
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8652,7 +8668,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":237
+    /* "src/_squish/voronoi_dcel.pyx":237
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iphi), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8663,7 +8679,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":229
+  /* "src/_squish/voronoi_dcel.pyx":229
  * 		return val
  * 
  * cdef inline FLOAT_T phi(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8676,7 +8692,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_phi(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":239
+/* "src/_squish/voronoi_dcel.pyx":239
  * 		return val
  * 
  * cdef inline FLOAT_T B(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8689,7 +8705,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":240
+  /* "src/_squish/voronoi_dcel.pyx":240
  * 
  * cdef inline FLOAT_T B(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8699,7 +8715,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":242
+    /* "src/_squish/voronoi_dcel.pyx":242
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iB)             # <<<<<<<<<<<<<<
@@ -8709,7 +8725,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iB;
 
-    /* "src/voronoi_dcel.pyx":241
+    /* "src/_squish/voronoi_dcel.pyx":241
  * cdef inline FLOAT_T B(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8719,7 +8735,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":240
+    /* "src/_squish/voronoi_dcel.pyx":240
  * 
  * cdef inline FLOAT_T B(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8728,7 +8744,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
  */
   }
 
-  /* "src/voronoi_dcel.pyx":245
+  /* "src/_squish/voronoi_dcel.pyx":245
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8737,7 +8753,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":246
+    /* "src/_squish/voronoi_dcel.pyx":246
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iB), val)             # <<<<<<<<<<<<<<
@@ -8747,7 +8763,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iB;
 
-    /* "src/voronoi_dcel.pyx":245
+    /* "src/_squish/voronoi_dcel.pyx":245
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8756,7 +8772,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":247
+    /* "src/_squish/voronoi_dcel.pyx":247
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iB), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8767,7 +8783,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":239
+  /* "src/_squish/voronoi_dcel.pyx":239
  * 		return val
  * 
  * cdef inline FLOAT_T B(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8780,7 +8796,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_B(__pyx_t_7_squis
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":249
+/* "src/_squish/voronoi_dcel.pyx":249
  * 		return val
  * 
  * cdef inline FLOAT_T F(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8793,7 +8809,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":250
+  /* "src/_squish/voronoi_dcel.pyx":250
  * 
  * cdef inline FLOAT_T F(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8803,7 +8819,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":252
+    /* "src/_squish/voronoi_dcel.pyx":252
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iF)             # <<<<<<<<<<<<<<
@@ -8813,7 +8829,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iF;
 
-    /* "src/voronoi_dcel.pyx":251
+    /* "src/_squish/voronoi_dcel.pyx":251
  * cdef inline FLOAT_T F(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8823,7 +8839,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":250
+    /* "src/_squish/voronoi_dcel.pyx":250
  * 
  * cdef inline FLOAT_T F(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8832,7 +8848,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
  */
   }
 
-  /* "src/voronoi_dcel.pyx":255
+  /* "src/_squish/voronoi_dcel.pyx":255
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8841,7 +8857,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":256
+    /* "src/_squish/voronoi_dcel.pyx":256
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iF), val)             # <<<<<<<<<<<<<<
@@ -8851,7 +8867,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->iF;
 
-    /* "src/voronoi_dcel.pyx":255
+    /* "src/_squish/voronoi_dcel.pyx":255
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8860,7 +8876,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":257
+    /* "src/_squish/voronoi_dcel.pyx":257
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.iF), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8871,7 +8887,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":249
+  /* "src/_squish/voronoi_dcel.pyx":249
  * 		return val
  * 
  * cdef inline FLOAT_T F(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8884,7 +8900,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_F(__pyx_t_7_squis
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":259
+/* "src/_squish/voronoi_dcel.pyx":259
  * 		return val
  * 
  * cdef inline FLOAT_T lntan(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8897,7 +8913,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":260
+  /* "src/_squish/voronoi_dcel.pyx":260
  * 
  * cdef inline FLOAT_T lntan(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8907,7 +8923,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":262
+    /* "src/_squish/voronoi_dcel.pyx":262
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ilntan)             # <<<<<<<<<<<<<<
@@ -8917,7 +8933,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ilntan;
 
-    /* "src/voronoi_dcel.pyx":261
+    /* "src/_squish/voronoi_dcel.pyx":261
  * cdef inline FLOAT_T lntan(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8927,7 +8943,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":260
+    /* "src/_squish/voronoi_dcel.pyx":260
  * 
  * cdef inline FLOAT_T lntan(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -8936,7 +8952,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
  */
   }
 
-  /* "src/voronoi_dcel.pyx":265
+  /* "src/_squish/voronoi_dcel.pyx":265
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8945,7 +8961,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":266
+    /* "src/_squish/voronoi_dcel.pyx":266
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ilntan), val)             # <<<<<<<<<<<<<<
@@ -8955,7 +8971,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->ilntan;
 
-    /* "src/voronoi_dcel.pyx":265
+    /* "src/_squish/voronoi_dcel.pyx":265
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -8964,7 +8980,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":267
+    /* "src/_squish/voronoi_dcel.pyx":267
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.ilntan), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -8975,7 +8991,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":259
+  /* "src/_squish/voronoi_dcel.pyx":259
  * 		return val
  * 
  * cdef inline FLOAT_T lntan(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -8988,7 +9004,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_lntan(__pyx_t_7_s
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":269
+/* "src/_squish/voronoi_dcel.pyx":269
  * 		return val
  * 
  * cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -9001,7 +9017,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
   int __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":270
+  /* "src/_squish/voronoi_dcel.pyx":270
  * 
  * cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -9011,7 +9027,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
   __pyx_t_1 = (isnan(((double)__pyx_v_val)) != 0);
   if (__pyx_t_1) {
 
-    /* "src/voronoi_dcel.pyx":272
+    /* "src/_squish/voronoi_dcel.pyx":272
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.icsc)             # <<<<<<<<<<<<<<
@@ -9021,7 +9037,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->icsc;
 
-    /* "src/voronoi_dcel.pyx":271
+    /* "src/_squish/voronoi_dcel.pyx":271
  * cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):
  * 		return self.info.edge_cache.get(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -9031,7 +9047,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
     __pyx_r = __pyx_v_self->info->edge_cache.get((&__pyx_v_self->info->edge_cache), __pyx_t_2);
     goto __pyx_L0;
 
-    /* "src/voronoi_dcel.pyx":270
+    /* "src/_squish/voronoi_dcel.pyx":270
  * 
  * cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:
  * 	if isnan(<double>val):             # <<<<<<<<<<<<<<
@@ -9040,7 +9056,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
  */
   }
 
-  /* "src/voronoi_dcel.pyx":275
+  /* "src/_squish/voronoi_dcel.pyx":275
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -9049,7 +9065,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
  */
   /*else*/ {
 
-    /* "src/voronoi_dcel.pyx":276
+    /* "src/_squish/voronoi_dcel.pyx":276
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.icsc), val)             # <<<<<<<<<<<<<<
@@ -9059,7 +9075,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
     __pyx_t_2.f0 = __pyx_v_self->arr_index;
     __pyx_t_2.f1 = __pyx_v_self->cache->icsc;
 
-    /* "src/voronoi_dcel.pyx":275
+    /* "src/_squish/voronoi_dcel.pyx":275
  * 		)
  * 	else:
  * 		self.info.edge_cache.set(&self.info.edge_cache,             # <<<<<<<<<<<<<<
@@ -9068,7 +9084,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
  */
     __pyx_v_self->info->edge_cache.set((&__pyx_v_self->info->edge_cache), __pyx_t_2, __pyx_v_val);
 
-    /* "src/voronoi_dcel.pyx":277
+    /* "src/_squish/voronoi_dcel.pyx":277
  * 		self.info.edge_cache.set(&self.info.edge_cache,
  * 			(self.arr_index, self.cache.icsc), val)
  * 		return val             # <<<<<<<<<<<<<<
@@ -9079,7 +9095,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
     goto __pyx_L0;
   }
 
-  /* "src/voronoi_dcel.pyx":269
+  /* "src/_squish/voronoi_dcel.pyx":269
  * 		return val
  * 
  * cdef inline FLOAT_T csc(HalfEdge* self, FLOAT_T val) nogil:             # <<<<<<<<<<<<<<
@@ -9092,7 +9108,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_csc(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":282
+/* "src/_squish/voronoi_dcel.pyx":282
  * #### VoronoiInfo Methods ####
  * 
  * cdef inline VoronoiInfo init_voronoiinfo(INT_T [:, ::1] sites, INT_T [:, ::1] edges,             # <<<<<<<<<<<<<<
@@ -9107,7 +9123,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   Py_ssize_t __pyx_t_2;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":287
+  /* "src/_squish/voronoi_dcel.pyx":287
  * 		EdgeCacheMap* edge_cache_map) nogil:
  * 	cdef VoronoiInfo info
  * 	info.sites = init_iarray(&sites[0,0], (<INT_T>sites.shape[0], <INT_T>sites.shape[1]))             # <<<<<<<<<<<<<<
@@ -9120,7 +9136,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_3.f1 = ((__pyx_t_7_squish_INT_T)(__pyx_v_sites.shape[1]));
   __pyx_v_info.sites = __pyx_f_7_squish_init_iarray((&(*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_sites.data + __pyx_t_1 * __pyx_v_sites.strides[0]) )) + __pyx_t_2)) )))), __pyx_t_3);
 
-  /* "src/voronoi_dcel.pyx":288
+  /* "src/_squish/voronoi_dcel.pyx":288
  * 	cdef VoronoiInfo info
  * 	info.sites = init_iarray(&sites[0,0], (<INT_T>sites.shape[0], <INT_T>sites.shape[1]))
  * 	info.edges = init_iarray(&edges[0,0], (<INT_T>edges.shape[0], <INT_T>edges.shape[1]))             # <<<<<<<<<<<<<<
@@ -9133,7 +9149,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_3.f1 = ((__pyx_t_7_squish_INT_T)(__pyx_v_edges.shape[1]));
   __pyx_v_info.edges = __pyx_f_7_squish_init_iarray((&(*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_edges.data + __pyx_t_2 * __pyx_v_edges.strides[0]) )) + __pyx_t_1)) )))), __pyx_t_3);
 
-  /* "src/voronoi_dcel.pyx":289
+  /* "src/_squish/voronoi_dcel.pyx":289
  * 	info.sites = init_iarray(&sites[0,0], (<INT_T>sites.shape[0], <INT_T>sites.shape[1]))
  * 	info.edges = init_iarray(&edges[0,0], (<INT_T>edges.shape[0], <INT_T>edges.shape[1]))
  * 	info.points = init_farray(&points[0,0], (<INT_T>points.shape[0], <INT_T>points.shape[1]))             # <<<<<<<<<<<<<<
@@ -9146,7 +9162,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_3.f1 = ((__pyx_t_7_squish_INT_T)(__pyx_v_points.shape[1]));
   __pyx_v_info.points = __pyx_f_7_squish_init_farray((&(*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_points.data + __pyx_t_1 * __pyx_v_points.strides[0]) )) + __pyx_t_2)) )))), __pyx_t_3);
 
-  /* "src/voronoi_dcel.pyx":290
+  /* "src/_squish/voronoi_dcel.pyx":290
  * 	info.edges = init_iarray(&edges[0,0], (<INT_T>edges.shape[0], <INT_T>edges.shape[1]))
  * 	info.points = init_farray(&points[0,0], (<INT_T>points.shape[0], <INT_T>points.shape[1]))
  * 	info.vertices = init_farray(&vertices[0,0],             # <<<<<<<<<<<<<<
@@ -9156,7 +9172,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_2 = 0;
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":291
+  /* "src/_squish/voronoi_dcel.pyx":291
  * 	info.points = init_farray(&points[0,0], (<INT_T>points.shape[0], <INT_T>points.shape[1]))
  * 	info.vertices = init_farray(&vertices[0,0],
  * 		(<INT_T>vertices.shape[0], <INT_T>vertices.shape[1])             # <<<<<<<<<<<<<<
@@ -9166,7 +9182,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_3.f0 = ((__pyx_t_7_squish_INT_T)(__pyx_v_vertices.shape[0]));
   __pyx_t_3.f1 = ((__pyx_t_7_squish_INT_T)(__pyx_v_vertices.shape[1]));
 
-  /* "src/voronoi_dcel.pyx":290
+  /* "src/_squish/voronoi_dcel.pyx":290
  * 	info.edges = init_iarray(&edges[0,0], (<INT_T>edges.shape[0], <INT_T>edges.shape[1]))
  * 	info.points = init_farray(&points[0,0], (<INT_T>points.shape[0], <INT_T>points.shape[1]))
  * 	info.vertices = init_farray(&vertices[0,0],             # <<<<<<<<<<<<<<
@@ -9175,7 +9191,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
  */
   __pyx_v_info.vertices = __pyx_f_7_squish_init_farray((&(*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_vertices.data + __pyx_t_2 * __pyx_v_vertices.strides[0]) )) + __pyx_t_1)) )))), __pyx_t_3);
 
-  /* "src/voronoi_dcel.pyx":293
+  /* "src/_squish/voronoi_dcel.pyx":293
  * 		(<INT_T>vertices.shape[0], <INT_T>vertices.shape[1])
  * 	)
  * 	info.site_cache = init_farray(&site_cache[0,0],             # <<<<<<<<<<<<<<
@@ -9185,7 +9201,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
 
-  /* "src/voronoi_dcel.pyx":294
+  /* "src/_squish/voronoi_dcel.pyx":294
  * 	)
  * 	info.site_cache = init_farray(&site_cache[0,0],
  * 			(<INT_T>site_cache.shape[0], <INT_T>site_cache.shape[1])             # <<<<<<<<<<<<<<
@@ -9195,7 +9211,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_3.f0 = ((__pyx_t_7_squish_INT_T)(__pyx_v_site_cache.shape[0]));
   __pyx_t_3.f1 = ((__pyx_t_7_squish_INT_T)(__pyx_v_site_cache.shape[1]));
 
-  /* "src/voronoi_dcel.pyx":293
+  /* "src/_squish/voronoi_dcel.pyx":293
  * 		(<INT_T>vertices.shape[0], <INT_T>vertices.shape[1])
  * 	)
  * 	info.site_cache = init_farray(&site_cache[0,0],             # <<<<<<<<<<<<<<
@@ -9204,7 +9220,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
  */
   __pyx_v_info.site_cache = __pyx_f_7_squish_init_farray((&(*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_cache.data + __pyx_t_1 * __pyx_v_site_cache.strides[0]) )) + __pyx_t_2)) )))), __pyx_t_3);
 
-  /* "src/voronoi_dcel.pyx":296
+  /* "src/_squish/voronoi_dcel.pyx":296
  * 			(<INT_T>site_cache.shape[0], <INT_T>site_cache.shape[1])
  * 	)
  * 	info.edge_cache = init_farray(&edge_cache[0,0],             # <<<<<<<<<<<<<<
@@ -9214,7 +9230,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_2 = 0;
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":297
+  /* "src/_squish/voronoi_dcel.pyx":297
  * 	)
  * 	info.edge_cache = init_farray(&edge_cache[0,0],
  * 			(<INT_T>edge_cache.shape[0], <INT_T>edge_cache.shape[1])             # <<<<<<<<<<<<<<
@@ -9224,7 +9240,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_t_3.f0 = ((__pyx_t_7_squish_INT_T)(__pyx_v_edge_cache.shape[0]));
   __pyx_t_3.f1 = ((__pyx_t_7_squish_INT_T)(__pyx_v_edge_cache.shape[1]));
 
-  /* "src/voronoi_dcel.pyx":296
+  /* "src/_squish/voronoi_dcel.pyx":296
  * 			(<INT_T>site_cache.shape[0], <INT_T>site_cache.shape[1])
  * 	)
  * 	info.edge_cache = init_farray(&edge_cache[0,0],             # <<<<<<<<<<<<<<
@@ -9233,7 +9249,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
  */
   __pyx_v_info.edge_cache = __pyx_f_7_squish_init_farray((&(*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_edge_cache.data + __pyx_t_2 * __pyx_v_edge_cache.strides[0]) )) + __pyx_t_1)) )))), __pyx_t_3);
 
-  /* "src/voronoi_dcel.pyx":299
+  /* "src/_squish/voronoi_dcel.pyx":299
  * 			(<INT_T>edge_cache.shape[0], <INT_T>edge_cache.shape[1])
  * 	)
  * 	info.edge_cache_map = edge_cache_map             # <<<<<<<<<<<<<<
@@ -9242,7 +9258,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
  */
   __pyx_v_info.edge_cache_map = __pyx_v_edge_cache_map;
 
-  /* "src/voronoi_dcel.pyx":301
+  /* "src/_squish/voronoi_dcel.pyx":301
  * 	info.edge_cache_map = edge_cache_map
  * 
  * 	return info             # <<<<<<<<<<<<<<
@@ -9252,7 +9268,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   __pyx_r = __pyx_v_info;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":282
+  /* "src/_squish/voronoi_dcel.pyx":282
  * #### VoronoiInfo Methods ####
  * 
  * cdef inline VoronoiInfo init_voronoiinfo(INT_T [:, ::1] sites, INT_T [:, ::1] edges,             # <<<<<<<<<<<<<<
@@ -9265,7 +9281,7 @@ static CYTHON_INLINE __pyx_t_7_squish_VoronoiInfo __pyx_f_7_squish_init_voronoii
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":306
+/* "src/_squish/voronoi_dcel.pyx":306
  * #### Site Methods ####
  * 
  * cdef inline Site init_site(INT_T arr_index, VoronoiInfo* info) nogil:             # <<<<<<<<<<<<<<
@@ -9284,7 +9300,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_init_site(__pyx_t_7_
   __pyx_t_7_squish_HalfEdge (*__pyx_t_6)(__pyx_t_7_squish_Site *);
   __pyx_t_7_squish_INT_T (*__pyx_t_7)(__pyx_t_7_squish_Site *);
 
-  /* "src/voronoi_dcel.pyx":308
+  /* "src/_squish/voronoi_dcel.pyx":308
  * cdef inline Site init_site(INT_T arr_index, VoronoiInfo* info) nogil:
  * 	cdef Site site
  * 	site.arr_index, site.info, site.cache = arr_index, info, &SITE_CACHE_MAP             # <<<<<<<<<<<<<<
@@ -9298,7 +9314,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_init_site(__pyx_t_7_
   __pyx_v_site.info = __pyx_t_2;
   __pyx_v_site.cache = __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":310
+  /* "src/_squish/voronoi_dcel.pyx":310
  * 	site.arr_index, site.info, site.cache = arr_index, info, &SITE_CACHE_MAP
  * 
  * 	site.index, site.vec, site.edge, site.edge_num = index, vec, edge, edge_num             # <<<<<<<<<<<<<<
@@ -9314,7 +9330,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_init_site(__pyx_t_7_
   __pyx_v_site.edge = __pyx_t_6;
   __pyx_v_site.edge_num = __pyx_t_7;
 
-  /* "src/voronoi_dcel.pyx":312
+  /* "src/_squish/voronoi_dcel.pyx":312
  * 	site.index, site.vec, site.edge, site.edge_num = index, vec, edge, edge_num
  * 
  * 	return site             # <<<<<<<<<<<<<<
@@ -9324,7 +9340,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_init_site(__pyx_t_7_
   __pyx_r = __pyx_v_site;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":306
+  /* "src/_squish/voronoi_dcel.pyx":306
  * #### Site Methods ####
  * 
  * cdef inline Site init_site(INT_T arr_index, VoronoiInfo* info) nogil:             # <<<<<<<<<<<<<<
@@ -9337,7 +9353,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_init_site(__pyx_t_7_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":315
+/* "src/_squish/voronoi_dcel.pyx":315
  * 
  * 
  * cdef inline INT_T index(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9349,7 +9365,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_index(__pyx_t_7_squ
   __pyx_t_7_squish_INT_T __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":316
+  /* "src/_squish/voronoi_dcel.pyx":316
  * 
  * cdef inline INT_T index(Site* self) nogil:
  * 	return self.info.sites.get(&self.info.sites, (self.arr_index, 0))             # <<<<<<<<<<<<<<
@@ -9361,7 +9377,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_index(__pyx_t_7_squ
   __pyx_r = __pyx_v_self->info->sites.get((&__pyx_v_self->info->sites), __pyx_t_1);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":315
+  /* "src/_squish/voronoi_dcel.pyx":315
  * 
  * 
  * cdef inline INT_T index(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9374,7 +9390,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_index(__pyx_t_7_squ
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":318
+/* "src/_squish/voronoi_dcel.pyx":318
  * 	return self.info.sites.get(&self.info.sites, (self.arr_index, 0))
  * 
  * cdef inline Vector2D vec(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9387,7 +9403,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_vec(__pyx_t_7_sq
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":320
+  /* "src/_squish/voronoi_dcel.pyx":320
  * cdef inline Vector2D vec(Site* self) nogil:
  * 	return init.Vector2D(
  * 		self.info.points.get(&self.info.points, (self.index(self), 0)),             # <<<<<<<<<<<<<<
@@ -9397,7 +9413,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_vec(__pyx_t_7_sq
   __pyx_t_1.f0 = __pyx_v_self->index(__pyx_v_self);
   __pyx_t_1.f1 = 0;
 
-  /* "src/voronoi_dcel.pyx":321
+  /* "src/_squish/voronoi_dcel.pyx":321
  * 	return init.Vector2D(
  * 		self.info.points.get(&self.info.points, (self.index(self), 0)),
  * 		self.info.points.get(&self.info.points, (self.index(self), 1))             # <<<<<<<<<<<<<<
@@ -9407,7 +9423,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_vec(__pyx_t_7_sq
   __pyx_t_2.f0 = __pyx_v_self->index(__pyx_v_self);
   __pyx_t_2.f1 = 1;
 
-  /* "src/voronoi_dcel.pyx":319
+  /* "src/_squish/voronoi_dcel.pyx":319
  * 
  * cdef inline Vector2D vec(Site* self) nogil:
  * 	return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -9417,7 +9433,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_vec(__pyx_t_7_sq
   __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->points.get((&__pyx_v_self->info->points), __pyx_t_1), __pyx_v_self->info->points.get((&__pyx_v_self->info->points), __pyx_t_2));
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":318
+  /* "src/_squish/voronoi_dcel.pyx":318
  * 	return self.info.sites.get(&self.info.sites, (self.arr_index, 0))
  * 
  * cdef inline Vector2D vec(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9430,7 +9446,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_vec(__pyx_t_7_sq
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":324
+/* "src/_squish/voronoi_dcel.pyx":324
  * 	)
  * 
  * cdef inline HalfEdge edge(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9442,7 +9458,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge(__pyx_t_7_s
   __pyx_t_7_squish_HalfEdge __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":326
+  /* "src/_squish/voronoi_dcel.pyx":326
  * cdef inline HalfEdge edge(Site* self) nogil:
  * 	return init.HalfEdge(
  * 		self.info.sites.get(&self.info.sites, (self.arr_index, 1)), self.info             # <<<<<<<<<<<<<<
@@ -9452,7 +9468,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge(__pyx_t_7_s
   __pyx_t_1.f0 = __pyx_v_self->arr_index;
   __pyx_t_1.f1 = 1;
 
-  /* "src/voronoi_dcel.pyx":325
+  /* "src/_squish/voronoi_dcel.pyx":325
  * 
  * cdef inline HalfEdge edge(Site* self) nogil:
  * 	return init.HalfEdge(             # <<<<<<<<<<<<<<
@@ -9462,7 +9478,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge(__pyx_t_7_s
   __pyx_r = __pyx_v_7_squish_init.HalfEdge(__pyx_v_self->info->sites.get((&__pyx_v_self->info->sites), __pyx_t_1), __pyx_v_self->info);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":324
+  /* "src/_squish/voronoi_dcel.pyx":324
  * 	)
  * 
  * cdef inline HalfEdge edge(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9475,7 +9491,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge(__pyx_t_7_s
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":329
+/* "src/_squish/voronoi_dcel.pyx":329
  * 	)
  * 
  * cdef inline INT_T edge_num(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9487,7 +9503,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_edge_num(__pyx_t_7_
   __pyx_t_7_squish_INT_T __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":330
+  /* "src/_squish/voronoi_dcel.pyx":330
  * 
  * cdef inline INT_T edge_num(Site* self) nogil:
  * 	return self.info.sites.get(&self.info.sites, (self.arr_index, 2))             # <<<<<<<<<<<<<<
@@ -9499,7 +9515,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_edge_num(__pyx_t_7_
   __pyx_r = __pyx_v_self->info->sites.get((&__pyx_v_self->info->sites), __pyx_t_1);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":329
+  /* "src/_squish/voronoi_dcel.pyx":329
  * 	)
  * 
  * cdef inline INT_T edge_num(Site* self) nogil:             # <<<<<<<<<<<<<<
@@ -9512,7 +9528,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_edge_num(__pyx_t_7_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":335
+/* "src/_squish/voronoi_dcel.pyx":335
  * #### HalfEdge Methods ####
  * 
  * cdef inline HalfEdge init_halfedge(INT_T arr_index, VoronoiInfo* info) nogil:             # <<<<<<<<<<<<<<
@@ -9534,7 +9550,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
   __pyx_t_7_squish_HalfEdge (*__pyx_t_9)(__pyx_t_7_squish_HalfEdge *);
   __pyx_t_7_squish_Matrix2x2 (*__pyx_t_10)(__pyx_t_7_squish_HalfEdge *, __pyx_t_7_squish_Site);
 
-  /* "src/voronoi_dcel.pyx":337
+  /* "src/_squish/voronoi_dcel.pyx":337
  * cdef inline HalfEdge init_halfedge(INT_T arr_index, VoronoiInfo* info) nogil:
  * 	cdef HalfEdge edge
  * 	edge.arr_index, edge.info, edge.cache = arr_index, info, info.edge_cache_map             # <<<<<<<<<<<<<<
@@ -9548,7 +9564,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
   __pyx_v_edge.info = __pyx_t_2;
   __pyx_v_edge.cache = __pyx_t_3;
 
-  /* "src/voronoi_dcel.pyx":338
+  /* "src/_squish/voronoi_dcel.pyx":338
  * 	cdef HalfEdge edge
  * 	edge.arr_index, edge.info, edge.cache = arr_index, info, info.edge_cache_map
  * 	edge.orig_arr_index = arr_index             # <<<<<<<<<<<<<<
@@ -9557,7 +9573,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
  */
   __pyx_v_edge.orig_arr_index = __pyx_v_arr_index;
 
-  /* "src/voronoi_dcel.pyx":341
+  /* "src/_squish/voronoi_dcel.pyx":341
  * 
  * 	edge.origin_index, edge.origin, edge.face, edge.next, edge.prev, edge.twin, edge.get_H = \
  * 		origin_index, origin, face, edge_next, prev, twin, get_H             # <<<<<<<<<<<<<<
@@ -9572,7 +9588,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
   __pyx_t_9 = __pyx_f_7_squish_twin;
   __pyx_t_10 = __pyx_f_7_squish_get_H;
 
-  /* "src/voronoi_dcel.pyx":340
+  /* "src/_squish/voronoi_dcel.pyx":340
  * 	edge.orig_arr_index = arr_index
  * 
  * 	edge.origin_index, edge.origin, edge.face, edge.next, edge.prev, edge.twin, edge.get_H = \             # <<<<<<<<<<<<<<
@@ -9587,7 +9603,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
   __pyx_v_edge.twin = __pyx_t_9;
   __pyx_v_edge.get_H = __pyx_t_10;
 
-  /* "src/voronoi_dcel.pyx":343
+  /* "src/_squish/voronoi_dcel.pyx":343
  * 		origin_index, origin, face, edge_next, prev, twin, get_H
  * 
  * 	return edge             # <<<<<<<<<<<<<<
@@ -9597,7 +9613,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
   __pyx_r = __pyx_v_edge;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":335
+  /* "src/_squish/voronoi_dcel.pyx":335
  * #### HalfEdge Methods ####
  * 
  * cdef inline HalfEdge init_halfedge(INT_T arr_index, VoronoiInfo* info) nogil:             # <<<<<<<<<<<<<<
@@ -9610,7 +9626,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_init_halfedge(__
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":346
+/* "src/_squish/voronoi_dcel.pyx":346
  * 
  * 
  * cdef inline INT_T origin_index(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9622,7 +9638,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_origin_index(__pyx_
   __pyx_t_7_squish_INT_T __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":347
+  /* "src/_squish/voronoi_dcel.pyx":347
  * 
  * cdef inline INT_T origin_index(HalfEdge* self) nogil:
  * 	return self.info.edges.get(&self.info.edges, (self.arr_index, 0))             # <<<<<<<<<<<<<<
@@ -9634,7 +9650,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_origin_index(__pyx_
   __pyx_r = __pyx_v_self->info->edges.get((&__pyx_v_self->info->edges), __pyx_t_1);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":346
+  /* "src/_squish/voronoi_dcel.pyx":346
  * 
  * 
  * cdef inline INT_T origin_index(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9647,7 +9663,7 @@ static CYTHON_INLINE __pyx_t_7_squish_INT_T __pyx_f_7_squish_origin_index(__pyx_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":349
+/* "src/_squish/voronoi_dcel.pyx":349
  * 	return self.info.edges.get(&self.info.edges, (self.arr_index, 0))
  * 
  * cdef inline Vector2D origin(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9660,7 +9676,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_origin(__pyx_t_7
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":351
+  /* "src/_squish/voronoi_dcel.pyx":351
  * cdef inline Vector2D origin(HalfEdge* self) nogil:
  * 	return init.Vector2D(
  * 		self.info.vertices.get(&self.info.vertices, (self.origin_index(self), 0)),             # <<<<<<<<<<<<<<
@@ -9670,7 +9686,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_origin(__pyx_t_7
   __pyx_t_1.f0 = __pyx_v_self->origin_index(__pyx_v_self);
   __pyx_t_1.f1 = 0;
 
-  /* "src/voronoi_dcel.pyx":352
+  /* "src/_squish/voronoi_dcel.pyx":352
  * 	return init.Vector2D(
  * 		self.info.vertices.get(&self.info.vertices, (self.origin_index(self), 0)),
  * 		self.info.vertices.get(&self.info.vertices, (self.origin_index(self), 1))             # <<<<<<<<<<<<<<
@@ -9680,7 +9696,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_origin(__pyx_t_7
   __pyx_t_2.f0 = __pyx_v_self->origin_index(__pyx_v_self);
   __pyx_t_2.f1 = 1;
 
-  /* "src/voronoi_dcel.pyx":350
+  /* "src/_squish/voronoi_dcel.pyx":350
  * 
  * cdef inline Vector2D origin(HalfEdge* self) nogil:
  * 	return init.Vector2D(             # <<<<<<<<<<<<<<
@@ -9690,7 +9706,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_origin(__pyx_t_7
   __pyx_r = __pyx_v_7_squish_init.Vector2D(__pyx_v_self->info->vertices.get((&__pyx_v_self->info->vertices), __pyx_t_1), __pyx_v_self->info->vertices.get((&__pyx_v_self->info->vertices), __pyx_t_2));
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":349
+  /* "src/_squish/voronoi_dcel.pyx":349
  * 	return self.info.edges.get(&self.info.edges, (self.arr_index, 0))
  * 
  * cdef inline Vector2D origin(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9703,7 +9719,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_origin(__pyx_t_7
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":355
+/* "src/_squish/voronoi_dcel.pyx":355
  * 	)
  * 
  * cdef inline Site face(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9715,7 +9731,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_face(__pyx_t_7_squis
   __pyx_t_7_squish_Site __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":357
+  /* "src/_squish/voronoi_dcel.pyx":357
  * cdef inline Site face(HalfEdge* self) nogil:
  * 	return init.Site(
  * 		self.info.edges.get(&self.info.edges, (self.arr_index, 1)), self.info             # <<<<<<<<<<<<<<
@@ -9725,7 +9741,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_face(__pyx_t_7_squis
   __pyx_t_1.f0 = __pyx_v_self->arr_index;
   __pyx_t_1.f1 = 1;
 
-  /* "src/voronoi_dcel.pyx":356
+  /* "src/_squish/voronoi_dcel.pyx":356
  * 
  * cdef inline Site face(HalfEdge* self) nogil:
  * 	return init.Site(             # <<<<<<<<<<<<<<
@@ -9735,7 +9751,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_face(__pyx_t_7_squis
   __pyx_r = __pyx_v_7_squish_init.Site(__pyx_v_self->info->edges.get((&__pyx_v_self->info->edges), __pyx_t_1), __pyx_v_self->info);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":355
+  /* "src/_squish/voronoi_dcel.pyx":355
  * 	)
  * 
  * cdef inline Site face(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9748,7 +9764,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Site __pyx_f_7_squish_face(__pyx_t_7_squis
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":360
+/* "src/_squish/voronoi_dcel.pyx":360
  * 	)
  * 
  * cdef inline HalfEdge edge_next(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9760,7 +9776,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge_next(__pyx_
   __pyx_t_7_squish_HalfEdge __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":363
+  /* "src/_squish/voronoi_dcel.pyx":363
  * 
  * 	return init.HalfEdge(
  * 		self.info.edges.get(&self.info.edges, (self.arr_index, 2)), self.info             # <<<<<<<<<<<<<<
@@ -9770,7 +9786,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge_next(__pyx_
   __pyx_t_1.f0 = __pyx_v_self->arr_index;
   __pyx_t_1.f1 = 2;
 
-  /* "src/voronoi_dcel.pyx":362
+  /* "src/_squish/voronoi_dcel.pyx":362
  * cdef inline HalfEdge edge_next(HalfEdge* self) nogil:
  * 
  * 	return init.HalfEdge(             # <<<<<<<<<<<<<<
@@ -9780,7 +9796,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge_next(__pyx_
   __pyx_r = __pyx_v_7_squish_init.HalfEdge(__pyx_v_self->info->edges.get((&__pyx_v_self->info->edges), __pyx_t_1), __pyx_v_self->info);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":360
+  /* "src/_squish/voronoi_dcel.pyx":360
  * 	)
  * 
  * cdef inline HalfEdge edge_next(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9793,7 +9809,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_edge_next(__pyx_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":366
+/* "src/_squish/voronoi_dcel.pyx":366
  * 	)
  * 
  * cdef inline HalfEdge prev(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9805,7 +9821,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_prev(__pyx_t_7_s
   __pyx_t_7_squish_HalfEdge __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":368
+  /* "src/_squish/voronoi_dcel.pyx":368
  * cdef inline HalfEdge prev(HalfEdge* self) nogil:
  * 	return init.HalfEdge(
  * 		self.info.edges.get(&self.info.edges, (self.arr_index, 3)), self.info             # <<<<<<<<<<<<<<
@@ -9815,7 +9831,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_prev(__pyx_t_7_s
   __pyx_t_1.f0 = __pyx_v_self->arr_index;
   __pyx_t_1.f1 = 3;
 
-  /* "src/voronoi_dcel.pyx":367
+  /* "src/_squish/voronoi_dcel.pyx":367
  * 
  * cdef inline HalfEdge prev(HalfEdge* self) nogil:
  * 	return init.HalfEdge(             # <<<<<<<<<<<<<<
@@ -9825,7 +9841,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_prev(__pyx_t_7_s
   __pyx_r = __pyx_v_7_squish_init.HalfEdge(__pyx_v_self->info->edges.get((&__pyx_v_self->info->edges), __pyx_t_1), __pyx_v_self->info);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":366
+  /* "src/_squish/voronoi_dcel.pyx":366
  * 	)
  * 
  * cdef inline HalfEdge prev(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9838,7 +9854,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_prev(__pyx_t_7_s
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":371
+/* "src/_squish/voronoi_dcel.pyx":371
  * 	)
  * 
  * cdef inline HalfEdge twin(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9850,7 +9866,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_twin(__pyx_t_7_s
   __pyx_t_7_squish_HalfEdge __pyx_r;
   __pyx_ctuple___dunderpyx_t_7_squish_INT_T__and___dunderpyx_t_7_squish_INT_T __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":373
+  /* "src/_squish/voronoi_dcel.pyx":373
  * cdef inline HalfEdge twin(HalfEdge* self) nogil:
  * 	return init.HalfEdge(
  * 		self.info.edges.get(&self.info.edges, (self.arr_index, 4)), self.info             # <<<<<<<<<<<<<<
@@ -9860,7 +9876,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_twin(__pyx_t_7_s
   __pyx_t_1.f0 = __pyx_v_self->arr_index;
   __pyx_t_1.f1 = 4;
 
-  /* "src/voronoi_dcel.pyx":372
+  /* "src/_squish/voronoi_dcel.pyx":372
  * 
  * cdef inline HalfEdge twin(HalfEdge* self) nogil:
  * 	return init.HalfEdge(             # <<<<<<<<<<<<<<
@@ -9870,7 +9886,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_twin(__pyx_t_7_s
   __pyx_r = __pyx_v_7_squish_init.HalfEdge(__pyx_v_self->info->edges.get((&__pyx_v_self->info->edges), __pyx_t_1), __pyx_v_self->info);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":371
+  /* "src/_squish/voronoi_dcel.pyx":371
  * 	)
  * 
  * cdef inline HalfEdge twin(HalfEdge* self) nogil:             # <<<<<<<<<<<<<<
@@ -9883,7 +9899,7 @@ static CYTHON_INLINE __pyx_t_7_squish_HalfEdge __pyx_f_7_squish_twin(__pyx_t_7_s
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":376
+/* "src/_squish/voronoi_dcel.pyx":376
  * 	)
  * 
  * cdef inline Matrix2x2 get_H(HalfEdge* self, Site xi) nogil:             # <<<<<<<<<<<<<<
@@ -9901,7 +9917,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
   __pyx_t_7_squish_INT_T __pyx_t_3;
   int __pyx_t_4;
 
-  /* "src/voronoi_dcel.pyx":377
+  /* "src/_squish/voronoi_dcel.pyx":377
  * 
  * cdef inline Matrix2x2 get_H(HalfEdge* self, Site xi) nogil:
  * 	cdef INT_T this_e = self.origin_index(self)             # <<<<<<<<<<<<<<
@@ -9910,7 +9926,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
  */
   __pyx_v_this_e = __pyx_v_self->origin_index(__pyx_v_self);
 
-  /* "src/voronoi_dcel.pyx":378
+  /* "src/_squish/voronoi_dcel.pyx":378
  * cdef inline Matrix2x2 get_H(HalfEdge* self, Site xi) nogil:
  * 	cdef INT_T this_e = self.origin_index(self)
  * 	cdef HalfEdge s_e = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -9919,7 +9935,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
  */
   __pyx_v_s_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-  /* "src/voronoi_dcel.pyx":381
+  /* "src/_squish/voronoi_dcel.pyx":381
  * 	cdef INT_T i
  * 
  * 	for i in range(xi.edge_num(&xi)):             # <<<<<<<<<<<<<<
@@ -9931,7 +9947,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "src/voronoi_dcel.pyx":382
+    /* "src/_squish/voronoi_dcel.pyx":382
  * 
  * 	for i in range(xi.edge_num(&xi)):
  * 		if s_e.origin_index(&s_e) == this_e:             # <<<<<<<<<<<<<<
@@ -9941,7 +9957,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
     __pyx_t_4 = ((__pyx_v_s_e.origin_index((&__pyx_v_s_e)) == __pyx_v_this_e) != 0);
     if (__pyx_t_4) {
 
-      /* "src/voronoi_dcel.pyx":383
+      /* "src/_squish/voronoi_dcel.pyx":383
  * 	for i in range(xi.edge_num(&xi)):
  * 		if s_e.origin_index(&s_e) == this_e:
  * 			return s_e.cache.H(&s_e, NAN_MATRIX)             # <<<<<<<<<<<<<<
@@ -9951,7 +9967,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
       __pyx_r = __pyx_v_s_e.cache->H((&__pyx_v_s_e), __pyx_v_7_squish_NAN_MATRIX);
       goto __pyx_L0;
 
-      /* "src/voronoi_dcel.pyx":382
+      /* "src/_squish/voronoi_dcel.pyx":382
  * 
  * 	for i in range(xi.edge_num(&xi)):
  * 		if s_e.origin_index(&s_e) == this_e:             # <<<<<<<<<<<<<<
@@ -9960,7 +9976,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
  */
     }
 
-    /* "src/voronoi_dcel.pyx":384
+    /* "src/_squish/voronoi_dcel.pyx":384
  * 		if s_e.origin_index(&s_e) == this_e:
  * 			return s_e.cache.H(&s_e, NAN_MATRIX)
  * 		s_e = s_e.next(&s_e)             # <<<<<<<<<<<<<<
@@ -9970,7 +9986,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
     __pyx_v_s_e = __pyx_v_s_e.next((&__pyx_v_s_e));
   }
 
-  /* "src/voronoi_dcel.pyx":385
+  /* "src/_squish/voronoi_dcel.pyx":385
  * 			return s_e.cache.H(&s_e, NAN_MATRIX)
  * 		s_e = s_e.next(&s_e)
  * 	return init.Matrix2x2(0.0, 0.0, 0.0, 0.0)             # <<<<<<<<<<<<<<
@@ -9980,7 +9996,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
   __pyx_r = __pyx_v_7_squish_init.Matrix2x2(0.0, 0.0, 0.0, 0.0);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":376
+  /* "src/_squish/voronoi_dcel.pyx":376
  * 	)
  * 
  * cdef inline Matrix2x2 get_H(HalfEdge* self, Site xi) nogil:             # <<<<<<<<<<<<<<
@@ -9993,7 +10009,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_get_H(__pyx_t_7
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":398
+/* "src/_squish/voronoi_dcel.pyx":398
  * 	"""
  * 
  * 	def __init__(VoronoiContainer self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r, object site_arr):             # <<<<<<<<<<<<<<
@@ -10115,7 +10131,7 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "src/voronoi_dcel.pyx":399
+  /* "src/_squish/voronoi_dcel.pyx":399
  * 
  * 	def __init__(VoronoiContainer self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r, object site_arr):
  * 		self.n, self.w, self.h, self.r = n, w, h, r             # <<<<<<<<<<<<<<
@@ -10131,7 +10147,7 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
   __pyx_v_self->h = __pyx_t_3;
   __pyx_v_self->r = __pyx_t_4;
 
-  /* "src/voronoi_dcel.pyx":400
+  /* "src/_squish/voronoi_dcel.pyx":400
  * 	def __init__(VoronoiContainer self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r, object site_arr):
  * 		self.n, self.w, self.h, self.r = n, w, h, r
  * 		self.dim = [w, h]             # <<<<<<<<<<<<<<
@@ -10142,7 +10158,7 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
   __pyx_t_5[1] = __pyx_v_h;
   memcpy(&(__pyx_v_self->dim[0]), __pyx_t_5, sizeof(__pyx_v_self->dim[0]) * (2));
 
-  /* "src/voronoi_dcel.pyx":402
+  /* "src/_squish/voronoi_dcel.pyx":402
  * 		self.dim = [w, h]
  * 
  * 		self.calculate_voronoi(site_arr.astype(FLOAT))             # <<<<<<<<<<<<<<
@@ -10173,7 +10189,7 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
   ((struct __pyx_vtabstruct_7_squish_VoronoiContainer *)__pyx_v_self->__pyx_vtab)->calculate_voronoi(__pyx_v_self, ((PyArrayObject *)__pyx_t_6)); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 402, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/voronoi_dcel.pyx":403
+  /* "src/_squish/voronoi_dcel.pyx":403
  * 
  * 		self.calculate_voronoi(site_arr.astype(FLOAT))
  * 		self.generate_dcel()             # <<<<<<<<<<<<<<
@@ -10182,7 +10198,7 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
  */
   ((struct __pyx_vtabstruct_7_squish_VoronoiContainer *)__pyx_v_self->__pyx_vtab)->generate_dcel(__pyx_v_self); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 403, __pyx_L1_error)
 
-  /* "src/voronoi_dcel.pyx":405
+  /* "src/_squish/voronoi_dcel.pyx":405
  * 		self.generate_dcel()
  * 
  * 		self.common_cache()             # <<<<<<<<<<<<<<
@@ -10191,25 +10207,34 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
  */
   ((struct __pyx_vtabstruct_7_squish_VoronoiContainer *)__pyx_v_self->__pyx_vtab)->common_cache(__pyx_v_self); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 405, __pyx_L1_error)
 
-  /* "src/voronoi_dcel.pyx":406
+  /* "src/_squish/voronoi_dcel.pyx":406
  * 
  * 		self.common_cache()
  * 		self.precompute()             # <<<<<<<<<<<<<<
  * 		self.calc_grad()
- * 
+ * 		self.get_statistics()
  */
   ((struct __pyx_vtabstruct_7_squish_VoronoiContainer *)__pyx_v_self->__pyx_vtab)->precompute(__pyx_v_self); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 406, __pyx_L1_error)
 
-  /* "src/voronoi_dcel.pyx":407
+  /* "src/_squish/voronoi_dcel.pyx":407
  * 		self.common_cache()
  * 		self.precompute()
  * 		self.calc_grad()             # <<<<<<<<<<<<<<
- * 
+ * 		self.get_statistics()
  * 
  */
   ((struct __pyx_vtabstruct_7_squish_VoronoiContainer *)__pyx_v_self->__pyx_vtab)->calc_grad(__pyx_v_self); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 407, __pyx_L1_error)
 
-  /* "src/voronoi_dcel.pyx":398
+  /* "src/_squish/voronoi_dcel.pyx":408
+ * 		self.precompute()
+ * 		self.calc_grad()
+ * 		self.get_statistics()             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  ((struct __pyx_vtabstruct_7_squish_VoronoiContainer *)__pyx_v_self->__pyx_vtab)->get_statistics(__pyx_v_self); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 408, __pyx_L1_error)
+
+  /* "src/_squish/voronoi_dcel.pyx":398
  * 	"""
  * 
  * 	def __init__(VoronoiContainer self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r, object site_arr):             # <<<<<<<<<<<<<<
@@ -10232,7 +10257,7 @@ static int __pyx_pf_7_squish_16VoronoiContainer___init__(struct __pyx_obj_7_squi
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":410
+/* "src/_squish/voronoi_dcel.pyx":411
  * 
  * 
  * 	cdef void calculate_voronoi(VoronoiContainer self,             # <<<<<<<<<<<<<<
@@ -10287,23 +10312,23 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __pyx_pybuffernd_site_arr.rcbuffer = &__pyx_pybuffer_site_arr;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(1, 410, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(1, 411, __pyx_L1_error)
   }
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
-  /* "src/voronoi_dcel.pyx":417
+  /* "src/_squish/voronoi_dcel.pyx":418
  * 		"""
  * 		global SYMM
  * 		cdef np.ndarray[FLOAT_T, ndim=2] symm = np.asarray(SYMM).reshape(9,2)             # <<<<<<<<<<<<<<
  * 		cdef np.ndarray[FLOAT_T, ndim=1] dim = np.asarray(self.dim)
  * 		cdef np.ndarray[FLOAT_T, ndim=2] full_site_arr = np.empty((self.n*9+8, 2), dtype=FLOAT)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 417, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 417, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_carray_to_py___pyx_t_7_squish_FLOAT_T(__pyx_v_7_squish_SYMM, 18); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 417, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_carray_to_py___pyx_t_7_squish_FLOAT_T(__pyx_v_7_squish_SYMM, 18); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -10318,22 +10343,22 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 417, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_reshape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 417, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_reshape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 417, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 417, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 418, __pyx_L1_error)
   __pyx_t_5 = ((PyArrayObject *)__pyx_t_1);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_symm.rcbuffer->pybuffer, (PyObject*)__pyx_t_5, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) {
       __pyx_v_symm = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_symm.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 417, __pyx_L1_error)
+      __PYX_ERR(1, 418, __pyx_L1_error)
     } else {__pyx_pybuffernd_symm.diminfo[0].strides = __pyx_pybuffernd_symm.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_symm.diminfo[0].shape = __pyx_pybuffernd_symm.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_symm.diminfo[1].strides = __pyx_pybuffernd_symm.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_symm.diminfo[1].shape = __pyx_pybuffernd_symm.rcbuffer->pybuffer.shape[1];
     }
   }
@@ -10341,19 +10366,19 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __pyx_v_symm = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":418
+  /* "src/_squish/voronoi_dcel.pyx":419
  * 		global SYMM
  * 		cdef np.ndarray[FLOAT_T, ndim=2] symm = np.asarray(SYMM).reshape(9,2)
  * 		cdef np.ndarray[FLOAT_T, ndim=1] dim = np.asarray(self.dim)             # <<<<<<<<<<<<<<
  * 		cdef np.ndarray[FLOAT_T, ndim=2] full_site_arr = np.empty((self.n*9+8, 2), dtype=FLOAT)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_carray_to_py___pyx_t_7_squish_FLOAT_T(__pyx_v_self->dim, 2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_carray_to_py___pyx_t_7_squish_FLOAT_T(__pyx_v_self->dim, 2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -10368,16 +10393,16 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 418, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 418, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 419, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_1);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dim.rcbuffer->pybuffer, (PyObject*)__pyx_t_6, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) {
       __pyx_v_dim = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_dim.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 418, __pyx_L1_error)
+      __PYX_ERR(1, 419, __pyx_L1_error)
     } else {__pyx_pybuffernd_dim.diminfo[0].strides = __pyx_pybuffernd_dim.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dim.diminfo[0].shape = __pyx_pybuffernd_dim.rcbuffer->pybuffer.shape[0];
     }
   }
@@ -10385,21 +10410,21 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __pyx_v_dim = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":419
+  /* "src/_squish/voronoi_dcel.pyx":420
  * 		cdef np.ndarray[FLOAT_T, ndim=2] symm = np.asarray(SYMM).reshape(9,2)
  * 		cdef np.ndarray[FLOAT_T, ndim=1] dim = np.asarray(self.dim)
  * 		cdef np.ndarray[FLOAT_T, ndim=2] full_site_arr = np.empty((self.n*9+8, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
  * 		# Generate periodic sites and sites that bound periodic sites.
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(((__pyx_v_self->n * 9) + 8)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(((__pyx_v_self->n * 9) + 8)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -10407,29 +10432,29 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __Pyx_GIVEREF(__pyx_int_2);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_2);
   __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 419, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 420, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 419, __pyx_L1_error)
+  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 420, __pyx_L1_error)
   __pyx_t_7 = ((PyArrayObject *)__pyx_t_4);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_full_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_t_7, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) {
       __pyx_v_full_site_arr = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_full_site_arr.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 419, __pyx_L1_error)
+      __PYX_ERR(1, 420, __pyx_L1_error)
     } else {__pyx_pybuffernd_full_site_arr.diminfo[0].strides = __pyx_pybuffernd_full_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_full_site_arr.diminfo[0].shape = __pyx_pybuffernd_full_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_full_site_arr.diminfo[1].strides = __pyx_pybuffernd_full_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_full_site_arr.diminfo[1].shape = __pyx_pybuffernd_full_site_arr.rcbuffer->pybuffer.shape[1];
     }
   }
@@ -10437,7 +10462,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __pyx_v_full_site_arr = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":423
+  /* "src/_squish/voronoi_dcel.pyx":424
  * 		# Generate periodic sites and sites that bound periodic sites.
  * 		cdef INT_T i
  * 		for i in range(9):             # <<<<<<<<<<<<<<
@@ -10447,34 +10472,34 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   for (__pyx_t_8 = 0; __pyx_t_8 < 9; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
 
-    /* "src/voronoi_dcel.pyx":424
+    /* "src/_squish/voronoi_dcel.pyx":425
  * 		cdef INT_T i
  * 		for i in range(9):
  * 			full_site_arr[self.n*i:self.n*(i+1)] = site_arr + symm[i]*dim             # <<<<<<<<<<<<<<
  * 			if i > 0:
  * 				full_site_arr[9*self.n+i-1] = dim/2 + 2*dim*symm[i]
  */
-    __pyx_t_4 = __Pyx_GetItemInt(((PyObject *)__pyx_v_symm), __pyx_v_i, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 424, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(((PyObject *)__pyx_v_symm), __pyx_v_i, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_t_4, ((PyObject *)__pyx_v_dim)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 424, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_t_4, ((PyObject *)__pyx_v_dim)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyNumber_Add(((PyObject *)__pyx_v_site_arr), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 424, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_Add(((PyObject *)__pyx_v_site_arr), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n * __pyx_v_i)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 424, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n * __pyx_v_i)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n * (__pyx_v_i + 1))); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 424, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n * (__pyx_v_i + 1))); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PySlice_New(__pyx_t_3, __pyx_t_1, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 424, __pyx_L1_error)
+    __pyx_t_2 = PySlice_New(__pyx_t_3, __pyx_t_1, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_full_site_arr), __pyx_t_2, __pyx_t_4) < 0)) __PYX_ERR(1, 424, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_full_site_arr), __pyx_t_2, __pyx_t_4) < 0)) __PYX_ERR(1, 425, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "src/voronoi_dcel.pyx":425
+    /* "src/_squish/voronoi_dcel.pyx":426
  * 		for i in range(9):
  * 			full_site_arr[self.n*i:self.n*(i+1)] = site_arr + symm[i]*dim
  * 			if i > 0:             # <<<<<<<<<<<<<<
@@ -10484,32 +10509,32 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
     __pyx_t_9 = ((__pyx_v_i > 0) != 0);
     if (__pyx_t_9) {
 
-      /* "src/voronoi_dcel.pyx":426
+      /* "src/_squish/voronoi_dcel.pyx":427
  * 			full_site_arr[self.n*i:self.n*(i+1)] = site_arr + symm[i]*dim
  * 			if i > 0:
  * 				full_site_arr[9*self.n+i-1] = dim/2 + 2*dim*symm[i]             # <<<<<<<<<<<<<<
  * 
  * 		# Use SciPy to compute the Voronoi set.
  */
-      __pyx_t_4 = __Pyx_PyNumber_Divide(((PyObject *)__pyx_v_dim), __pyx_int_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 426, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyNumber_Divide(((PyObject *)__pyx_v_dim), __pyx_int_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_2 = PyNumber_Multiply(__pyx_int_2, ((PyObject *)__pyx_v_dim)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 426, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_Multiply(__pyx_int_2, ((PyObject *)__pyx_v_dim)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_GetItemInt(((PyObject *)__pyx_v_symm), __pyx_v_i, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 426, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(((PyObject *)__pyx_v_symm), __pyx_v_i, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 426, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = PyNumber_Add(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 426, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Add(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_10 = (((9 * __pyx_v_self->n) + __pyx_v_i) - 1);
-      if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_full_site_arr), __pyx_t_10, __pyx_t_1, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0) < 0)) __PYX_ERR(1, 426, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_full_site_arr), __pyx_t_10, __pyx_t_1, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0) < 0)) __PYX_ERR(1, 427, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "src/voronoi_dcel.pyx":425
+      /* "src/_squish/voronoi_dcel.pyx":426
  * 		for i in range(9):
  * 			full_site_arr[self.n*i:self.n*(i+1)] = site_arr + symm[i]*dim
  * 			if i > 0:             # <<<<<<<<<<<<<<
@@ -10519,19 +10544,19 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
     }
   }
 
-  /* "src/voronoi_dcel.pyx":429
+  /* "src/_squish/voronoi_dcel.pyx":430
  * 
  * 		# Use SciPy to compute the Voronoi set.
  * 		self.scipy_vor = scipy.spatial.Voronoi(full_site_arr)             # <<<<<<<<<<<<<<
  * 		self.points = self.scipy_vor.points
  * 		self.vertices = self.scipy_vor.vertices
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_scipy); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 429, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_scipy); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_spatial); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 429, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_spatial); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Voronoi); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 429, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Voronoi); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -10546,51 +10571,51 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   }
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject *)__pyx_v_full_site_arr)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_v_full_site_arr));
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 429, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor, __pyx_t_1) < 0) __PYX_ERR(1, 429, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor, __pyx_t_1) < 0) __PYX_ERR(1, 430, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":430
+  /* "src/_squish/voronoi_dcel.pyx":431
  * 		# Use SciPy to compute the Voronoi set.
  * 		self.scipy_vor = scipy.spatial.Voronoi(full_site_arr)
  * 		self.points = self.scipy_vor.points             # <<<<<<<<<<<<<<
  * 		self.vertices = self.scipy_vor.vertices
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 430, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_points); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 430, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_points); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_11 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_11.memview)) __PYX_ERR(1, 430, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_11.memview)) __PYX_ERR(1, 431, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->points, 0);
   __pyx_v_self->points = __pyx_t_11;
   __pyx_t_11.memview = NULL;
   __pyx_t_11.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":431
+  /* "src/_squish/voronoi_dcel.pyx":432
  * 		self.scipy_vor = scipy.spatial.Voronoi(full_site_arr)
  * 		self.points = self.scipy_vor.points
  * 		self.vertices = self.scipy_vor.vertices             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 431, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_vertices); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 431, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_vertices); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_11 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_11.memview)) __PYX_ERR(1, 431, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_11.memview)) __PYX_ERR(1, 432, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->vertices, 0);
   __pyx_v_self->vertices = __pyx_t_11;
   __pyx_t_11.memview = NULL;
   __pyx_t_11.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":410
+  /* "src/_squish/voronoi_dcel.pyx":411
  * 
  * 
  * 	cdef void calculate_voronoi(VoronoiContainer self,             # <<<<<<<<<<<<<<
@@ -10629,7 +10654,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_calculate_voronoi(struct __pyx_o
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/voronoi_dcel.pyx":434
+/* "src/_squish/voronoi_dcel.pyx":435
  * 
  * 
  * 	cdef void generate_dcel(VoronoiContainer self) except *:             # <<<<<<<<<<<<<<
@@ -10726,7 +10751,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_pybuffernd_site_verts.data = NULL;
   __pyx_pybuffernd_site_verts.rcbuffer = &__pyx_pybuffer_site_verts;
 
-  /* "src/voronoi_dcel.pyx":435
+  /* "src/_squish/voronoi_dcel.pyx":436
  * 
  * 	cdef void generate_dcel(VoronoiContainer self) except *:
  * 		cdef INT_T npoints = self.n*9+8             # <<<<<<<<<<<<<<
@@ -10735,16 +10760,16 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
  */
   __pyx_v_npoints = ((__pyx_v_self->n * 9) + 8);
 
-  /* "src/voronoi_dcel.pyx":436
+  /* "src/_squish/voronoi_dcel.pyx":437
  * 	cdef void generate_dcel(VoronoiContainer self) except *:
  * 		cdef INT_T npoints = self.n*9+8
  * 		cdef array.array int_tmplt = array.array('q', [])             # <<<<<<<<<<<<<<
  * 
  * 		cdef np.ndarray[INT_T, ndim=1] offsets = np.zeros(self.n*9+1, dtype=INT)
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 436, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 436, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_u_q);
   __Pyx_GIVEREF(__pyx_n_u_q);
@@ -10752,49 +10777,49 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 436, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_int_tmplt = ((arrayobject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":438
+  /* "src/_squish/voronoi_dcel.pyx":439
  * 		cdef array.array int_tmplt = array.array('q', [])
  * 
  * 		cdef np.ndarray[INT_T, ndim=1] offsets = np.zeros(self.n*9+1, dtype=INT)             # <<<<<<<<<<<<<<
  * 		cdef array.array vert_indices = array.clone(int_tmplt, 0, False)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(((__pyx_v_self->n * 9) + 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(((__pyx_v_self->n * 9) + 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_INT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_INT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 438, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 438, __pyx_L1_error)
+  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 439, __pyx_L1_error)
   __pyx_t_5 = ((PyArrayObject *)__pyx_t_4);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_offsets.rcbuffer->pybuffer, (PyObject*)__pyx_t_5, &__Pyx_TypeInfo_nn___pyx_t_7_squish_INT_T, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack) == -1)) {
       __pyx_v_offsets = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 438, __pyx_L1_error)
+      __PYX_ERR(1, 439, __pyx_L1_error)
     } else {__pyx_pybuffernd_offsets.diminfo[0].strides = __pyx_pybuffernd_offsets.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_offsets.diminfo[0].shape = __pyx_pybuffernd_offsets.rcbuffer->pybuffer.shape[0];
     }
   }
@@ -10802,19 +10827,19 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_v_offsets = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":439
+  /* "src/_squish/voronoi_dcel.pyx":440
  * 
  * 		cdef np.ndarray[INT_T, ndim=1] offsets = np.zeros(self.n*9+1, dtype=INT)
  * 		cdef array.array vert_indices = array.clone(int_tmplt, 0, False)             # <<<<<<<<<<<<<<
  * 
  * 		# Flatten regions into array, so it can be used later.
  */
-  __pyx_t_4 = ((PyObject *)__pyx_f_7cpython_5array_clone(__pyx_v_int_tmplt, 0, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 439, __pyx_L1_error)
+  __pyx_t_4 = ((PyObject *)__pyx_f_7cpython_5array_clone(__pyx_v_int_tmplt, 0, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_vert_indices = ((arrayobject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":443
+  /* "src/_squish/voronoi_dcel.pyx":444
  * 		# Flatten regions into array, so it can be used later.
  * 		cdef INT_T i
  * 		for i in range(self.n*9):             # <<<<<<<<<<<<<<
@@ -10826,34 +10851,34 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
 
-    /* "src/voronoi_dcel.pyx":444
+    /* "src/_squish/voronoi_dcel.pyx":445
  * 		cdef INT_T i
  * 		for i in range(self.n*9):
  * 			verts = self.scipy_vor.regions[self.scipy_vor.point_region[i]]             # <<<<<<<<<<<<<<
  * 			offsets[i+1] = offsets[i] + len(verts) # Build offsets.
  * 			vert_indices.extend(array.array('q', verts))	# Flatten
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 444, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_regions); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 444, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_regions); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 444, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_point_region); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 444, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_point_region); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, __pyx_v_i, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 444, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, __pyx_v_i, __pyx_t_7_squish_INT_T, 1, __Pyx_PyInt_From_npy_int64, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 444, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_XDECREF_SET(__pyx_v_verts, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "src/voronoi_dcel.pyx":445
+    /* "src/_squish/voronoi_dcel.pyx":446
  * 		for i in range(self.n*9):
  * 			verts = self.scipy_vor.regions[self.scipy_vor.point_region[i]]
  * 			offsets[i+1] = offsets[i] + len(verts) # Build offsets.             # <<<<<<<<<<<<<<
@@ -10861,20 +10886,20 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
  * 
  */
     __pyx_t_9 = __pyx_v_i;
-    __pyx_t_10 = PyObject_Length(__pyx_v_verts); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 445, __pyx_L1_error)
+    __pyx_t_10 = PyObject_Length(__pyx_v_verts); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 446, __pyx_L1_error)
     __pyx_t_11 = (__pyx_v_i + 1);
     *__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_11, __pyx_pybuffernd_offsets.diminfo[0].strides) = ((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_offsets.diminfo[0].strides)) + __pyx_t_10);
 
-    /* "src/voronoi_dcel.pyx":446
+    /* "src/_squish/voronoi_dcel.pyx":447
  * 			verts = self.scipy_vor.regions[self.scipy_vor.point_region[i]]
  * 			offsets[i+1] = offsets[i] + len(verts) # Build offsets.
  * 			vert_indices.extend(array.array('q', verts))	# Flatten             # <<<<<<<<<<<<<<
  * 
  * 		# Get vertices of original N sites.
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_vert_indices), __pyx_n_s_extend); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 446, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_vert_indices), __pyx_n_s_extend); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 446, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_n_u_q);
     __Pyx_GIVEREF(__pyx_n_u_q);
@@ -10882,7 +10907,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
     __Pyx_INCREF(__pyx_v_verts);
     __Pyx_GIVEREF(__pyx_v_verts);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_verts);
-    __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 446, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -10898,22 +10923,22 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
     __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_1, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 446, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
 
-  /* "src/voronoi_dcel.pyx":449
+  /* "src/_squish/voronoi_dcel.pyx":450
  * 
  * 		# Get vertices of original N sites.
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)             # <<<<<<<<<<<<<<
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 449, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 449, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -10928,16 +10953,16 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   }
   __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, ((PyObject *)__pyx_v_vert_indices)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_vert_indices));
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 449, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 449, __pyx_L1_error)
+  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 450, __pyx_L1_error)
   __pyx_t_12 = ((PyArrayObject *)__pyx_t_3);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_vert_indices_np.rcbuffer->pybuffer, (PyObject*)__pyx_t_12, &__Pyx_TypeInfo_nn___pyx_t_7_squish_INT_T, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) {
       __pyx_v_vert_indices_np = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_vert_indices_np.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 449, __pyx_L1_error)
+      __PYX_ERR(1, 450, __pyx_L1_error)
     } else {__pyx_pybuffernd_vert_indices_np.diminfo[0].strides = __pyx_pybuffernd_vert_indices_np.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_vert_indices_np.diminfo[0].shape = __pyx_pybuffernd_vert_indices_np.rcbuffer->pybuffer.shape[0];
     }
   }
@@ -10945,50 +10970,50 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_v_vert_indices_np = ((PyArrayObject *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "src/voronoi_dcel.pyx":450
+  /* "src/_squish/voronoi_dcel.pyx":451
  * 		# Get vertices of original N sites.
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(             # <<<<<<<<<<<<<<
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 450, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_unique); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 450, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_unique); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/voronoi_dcel.pyx":457
+  /* "src/_squish/voronoi_dcel.pyx":458
  * 			))[0] + offsets[self.n],
  * 			side='right'	# If on index == offset_number, should be part of the next site.
  * 		) - 1)	# Subtract by one to get actual site number.             # <<<<<<<<<<<<<<
  * 
  * 		cdef INT_T border_num = len(border_sites)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 450, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "src/voronoi_dcel.pyx":450
+  /* "src/_squish/voronoi_dcel.pyx":451
  * 		# Get vertices of original N sites.
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(             # <<<<<<<<<<<<<<
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_searchsorted); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 450, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_searchsorted); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/voronoi_dcel.pyx":451
+  /* "src/_squish/voronoi_dcel.pyx":452
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted             # <<<<<<<<<<<<<<
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  * 				vert_indices_np[offsets[self.n]:], 	# Rest of the verts to check.
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 451, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_asarray); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 451, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_asarray); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   __pyx_t_13 = NULL;
@@ -11003,29 +11028,29 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   }
   __pyx_t_2 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_13, ((PyObject *)__pyx_v_offsets)) : __Pyx_PyObject_CallOneArg(__pyx_t_14, ((PyObject *)__pyx_v_offsets));
   __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 451, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-  /* "src/voronoi_dcel.pyx":452
+  /* "src/_squish/voronoi_dcel.pyx":453
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.             # <<<<<<<<<<<<<<
  * 				vert_indices_np[offsets[self.n]:], 	# Rest of the verts to check.
  * 				np.unique(vert_indices_np[:offsets[self.n]])	# Bound verts
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 452, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_nonzero); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 452, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_nonzero); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 452, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_isin); if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 452, __pyx_L1_error)
+  __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_isin); if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_17);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-  /* "src/voronoi_dcel.pyx":453
+  /* "src/_squish/voronoi_dcel.pyx":454
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  * 				vert_indices_np[offsets[self.n]:], 	# Rest of the verts to check.             # <<<<<<<<<<<<<<
@@ -11033,34 +11058,34 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
  * 			))[0] + offsets[self.n],
  */
   __pyx_t_6 = __pyx_v_self->n;
-  __pyx_t_16 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 453, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 454, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_18 = PySlice_New(__pyx_t_16, Py_None, Py_None); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 453, __pyx_L1_error)
+  __pyx_t_18 = PySlice_New(__pyx_t_16, Py_None, Py_None); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 454, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_18);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-  __pyx_t_16 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_vert_indices_np), __pyx_t_18); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 453, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_vert_indices_np), __pyx_t_18); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 454, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-  /* "src/voronoi_dcel.pyx":454
+  /* "src/_squish/voronoi_dcel.pyx":455
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  * 				vert_indices_np[offsets[self.n]:], 	# Rest of the verts to check.
  * 				np.unique(vert_indices_np[:offsets[self.n]])	# Bound verts             # <<<<<<<<<<<<<<
  * 			))[0] + offsets[self.n],
  * 			side='right'	# If on index == offset_number, should be part of the next site.
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_np); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 454, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_np); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
-  __pyx_t_20 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_unique); if (unlikely(!__pyx_t_20)) __PYX_ERR(1, 454, __pyx_L1_error)
+  __pyx_t_20 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_unique); if (unlikely(!__pyx_t_20)) __PYX_ERR(1, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
   __pyx_t_6 = __pyx_v_self->n;
-  __pyx_t_19 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 454, __pyx_L1_error)
+  __pyx_t_19 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
-  __pyx_t_21 = PySlice_New(Py_None, __pyx_t_19, Py_None); if (unlikely(!__pyx_t_21)) __PYX_ERR(1, 454, __pyx_L1_error)
+  __pyx_t_21 = PySlice_New(Py_None, __pyx_t_19, Py_None); if (unlikely(!__pyx_t_21)) __PYX_ERR(1, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_21);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_vert_indices_np), __pyx_t_21); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 454, __pyx_L1_error)
+  __pyx_t_19 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_vert_indices_np), __pyx_t_21); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
   __pyx_t_21 = NULL;
@@ -11076,7 +11101,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_t_18 = (__pyx_t_21) ? __Pyx_PyObject_Call2Args(__pyx_t_20, __pyx_t_21, __pyx_t_19) : __Pyx_PyObject_CallOneArg(__pyx_t_20, __pyx_t_19);
   __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 454, __pyx_L1_error)
+  if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_18);
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
   __pyx_t_20 = NULL;
@@ -11094,7 +11119,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_17)) {
     PyObject *__pyx_temp[3] = {__pyx_t_20, __pyx_t_16, __pyx_t_18};
-    __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_17, __pyx_temp+1-__pyx_t_22, 2+__pyx_t_22); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 452, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_17, __pyx_temp+1-__pyx_t_22, 2+__pyx_t_22); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 453, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -11104,7 +11129,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_17)) {
     PyObject *__pyx_temp[3] = {__pyx_t_20, __pyx_t_16, __pyx_t_18};
-    __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_17, __pyx_temp+1-__pyx_t_22, 2+__pyx_t_22); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 452, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_17, __pyx_temp+1-__pyx_t_22, 2+__pyx_t_22); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 453, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -11112,7 +11137,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   } else
   #endif
   {
-    __pyx_t_19 = PyTuple_New(2+__pyx_t_22); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 452, __pyx_L1_error)
+    __pyx_t_19 = PyTuple_New(2+__pyx_t_22); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 453, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_19);
     if (__pyx_t_20) {
       __Pyx_GIVEREF(__pyx_t_20); PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_20); __pyx_t_20 = NULL;
@@ -11123,7 +11148,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
     PyTuple_SET_ITEM(__pyx_t_19, 1+__pyx_t_22, __pyx_t_18);
     __pyx_t_16 = 0;
     __pyx_t_18 = 0;
-    __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_t_19, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 452, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_t_19, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 453, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
   }
@@ -11141,36 +11166,36 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_t_14 = (__pyx_t_17) ? __Pyx_PyObject_Call2Args(__pyx_t_15, __pyx_t_17, __pyx_t_13) : __Pyx_PyObject_CallOneArg(__pyx_t_15, __pyx_t_13);
   __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-  if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 452, __pyx_L1_error)
+  if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
 
-  /* "src/voronoi_dcel.pyx":455
+  /* "src/_squish/voronoi_dcel.pyx":456
  * 				vert_indices_np[offsets[self.n]:], 	# Rest of the verts to check.
  * 				np.unique(vert_indices_np[:offsets[self.n]])	# Bound verts
  * 			))[0] + offsets[self.n],             # <<<<<<<<<<<<<<
  * 			side='right'	# If on index == offset_number, should be part of the next site.
  * 		) - 1)	# Subtract by one to get actual site number.
  */
-  __pyx_t_15 = __Pyx_GetItemInt(__pyx_t_14, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_GetItemInt(__pyx_t_14, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
   __pyx_t_6 = __pyx_v_self->n;
-  __pyx_t_14 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
-  __pyx_t_13 = PyNumber_Add(__pyx_t_15, __pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_13 = PyNumber_Add(__pyx_t_15, __pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-  /* "src/voronoi_dcel.pyx":450
+  /* "src/_squish/voronoi_dcel.pyx":451
  * 		# Get vertices of original N sites.
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(             # <<<<<<<<<<<<<<
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  */
-  __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 450, __pyx_L1_error)
+  __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_2);
@@ -11179,38 +11204,38 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_t_2 = 0;
   __pyx_t_13 = 0;
 
-  /* "src/voronoi_dcel.pyx":456
+  /* "src/_squish/voronoi_dcel.pyx":457
  * 				np.unique(vert_indices_np[:offsets[self.n]])	# Bound verts
  * 			))[0] + offsets[self.n],
  * 			side='right'	# If on index == offset_number, should be part of the next site.             # <<<<<<<<<<<<<<
  * 		) - 1)	# Subtract by one to get actual site number.
  * 
  */
-  __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 456, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_side, __pyx_n_u_right) < 0) __PYX_ERR(1, 456, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_side, __pyx_n_u_right) < 0) __PYX_ERR(1, 457, __pyx_L1_error)
 
-  /* "src/voronoi_dcel.pyx":450
+  /* "src/_squish/voronoi_dcel.pyx":451
  * 		# Get vertices of original N sites.
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(             # <<<<<<<<<<<<<<
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_14, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 450, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_14, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-  /* "src/voronoi_dcel.pyx":457
+  /* "src/_squish/voronoi_dcel.pyx":458
  * 			))[0] + offsets[self.n],
  * 			side='right'	# If on index == offset_number, should be part of the next site.
  * 		) - 1)	# Subtract by one to get actual site number.             # <<<<<<<<<<<<<<
  * 
  * 		cdef INT_T border_num = len(border_sites)
  */
-  __pyx_t_13 = __Pyx_PyInt_SubtractObjC(__pyx_t_2, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 457, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyInt_SubtractObjC(__pyx_t_2, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 458, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -11226,24 +11251,24 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_2, __pyx_t_13) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_13);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 450, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":450
+  /* "src/_squish/voronoi_dcel.pyx":451
  * 		# Get vertices of original N sites.
  * 		cdef np.ndarray[INT_T, ndim=1] vert_indices_np = np.asarray(vert_indices)
  * 		cdef np.ndarray[INT_T, ndim=1] border_sites = np.unique(np.searchsorted(             # <<<<<<<<<<<<<<
  * 			np.asarray(offsets),	# Check indices where below matches would be inserted
  * 			np.nonzero(np.isin(		# Indices of other verts being in bound verts.
  */
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 450, __pyx_L1_error)
+  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 451, __pyx_L1_error)
   __pyx_t_23 = ((PyArrayObject *)__pyx_t_3);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_border_sites.rcbuffer->pybuffer, (PyObject*)__pyx_t_23, &__Pyx_TypeInfo_nn___pyx_t_7_squish_INT_T, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) {
       __pyx_v_border_sites = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_border_sites.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 450, __pyx_L1_error)
+      __PYX_ERR(1, 451, __pyx_L1_error)
     } else {__pyx_pybuffernd_border_sites.diminfo[0].strides = __pyx_pybuffernd_border_sites.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_border_sites.diminfo[0].shape = __pyx_pybuffernd_border_sites.rcbuffer->pybuffer.shape[0];
     }
   }
@@ -11251,31 +11276,31 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_v_border_sites = ((PyArrayObject *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "src/voronoi_dcel.pyx":459
+  /* "src/_squish/voronoi_dcel.pyx":460
  * 		) - 1)	# Subtract by one to get actual site number.
  * 
  * 		cdef INT_T border_num = len(border_sites)             # <<<<<<<<<<<<<<
  * 
  * 		# Build sites array.
  */
-  __pyx_t_10 = PyObject_Length(((PyObject *)__pyx_v_border_sites)); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 459, __pyx_L1_error)
+  __pyx_t_10 = PyObject_Length(((PyObject *)__pyx_v_border_sites)); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 460, __pyx_L1_error)
   __pyx_v_border_num = __pyx_t_10;
 
-  /* "src/voronoi_dcel.pyx":463
+  /* "src/_squish/voronoi_dcel.pyx":464
  * 		# Build sites array.
  * 		# [Site Index, Edge Index/Offset, Edge Count]
  * 		self.sites = np.empty((self.n+border_num, 3), dtype=INT)             # <<<<<<<<<<<<<<
  * 		self.sites.base[:self.n, 0] = np.arange(self.n, dtype=INT)
  * 		self.sites.base[self.n:, 0] = border_sites
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + __pyx_v_border_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + __pyx_v_border_num)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_3);
@@ -11283,71 +11308,71 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_int_3);
   PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_int_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_13);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_13);
   __pyx_t_13 = 0;
-  __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_INT); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_INT); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(1, 463, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-  __pyx_t_24 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_INT_T(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_24.memview)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_t_24 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_INT_T(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_24.memview)) __PYX_ERR(1, 464, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->sites, 0);
   __pyx_v_self->sites = __pyx_t_24;
   __pyx_t_24.memview = NULL;
   __pyx_t_24.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":464
+  /* "src/_squish/voronoi_dcel.pyx":465
  * 		# [Site Index, Edge Index/Offset, Edge Count]
  * 		self.sites = np.empty((self.n+border_num, 3), dtype=INT)
  * 		self.sites.base[:self.n, 0] = np.arange(self.n, dtype=INT)             # <<<<<<<<<<<<<<
  * 		self.sites.base[self.n:, 0] = border_sites
  * 		self.sites.base[:self.n+1, 1] = offsets[:self.n+1]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_arange); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_arange); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_INT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_INT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 464, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 464, __pyx_L1_error)}
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->sites, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 465, __pyx_L1_error)}
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->sites, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_base); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_base); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_13 = PySlice_New(Py_None, __pyx_t_2, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_13 = PySlice_New(Py_None, __pyx_t_2, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 464, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_13);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_13);
@@ -11355,30 +11380,30 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_int_0);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_int_0);
   __pyx_t_13 = 0;
-  if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_t_2, __pyx_t_4) < 0)) __PYX_ERR(1, 464, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_t_2, __pyx_t_4) < 0)) __PYX_ERR(1, 465, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":465
+  /* "src/_squish/voronoi_dcel.pyx":466
  * 		self.sites = np.empty((self.n+border_num, 3), dtype=INT)
  * 		self.sites.base[:self.n, 0] = np.arange(self.n, dtype=INT)
  * 		self.sites.base[self.n:, 0] = border_sites             # <<<<<<<<<<<<<<
  * 		self.sites.base[:self.n+1, 1] = offsets[:self.n+1]
  * 		for i in range(self.n):
  */
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 465, __pyx_L1_error)}
-  __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_self->sites, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 465, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 466, __pyx_L1_error)}
+  __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_self->sites, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_base); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_base); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PySlice_New(__pyx_t_4, Py_None, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_3 = PySlice_New(__pyx_t_4, Py_None, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
@@ -11386,37 +11411,37 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_int_0);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_int_0);
   __pyx_t_3 = 0;
-  if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_t_4, ((PyObject *)__pyx_v_border_sites)) < 0)) __PYX_ERR(1, 465, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_t_4, ((PyObject *)__pyx_v_border_sites)) < 0)) __PYX_ERR(1, 466, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":466
+  /* "src/_squish/voronoi_dcel.pyx":467
  * 		self.sites.base[:self.n, 0] = np.arange(self.n, dtype=INT)
  * 		self.sites.base[self.n:, 0] = border_sites
  * 		self.sites.base[:self.n+1, 1] = offsets[:self.n+1]             # <<<<<<<<<<<<<<
  * 		for i in range(self.n):
  * 			self.sites[i, 2] = self.sites[i+1, 1] - self.sites[i, 1]
  */
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + 1)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + 1)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = PySlice_New(Py_None, __pyx_t_4, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_2 = PySlice_New(Py_None, __pyx_t_4, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_offsets), __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_offsets), __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 466, __pyx_L1_error)}
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->sites, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 466, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 467, __pyx_L1_error)}
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->sites, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_base); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_base); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_13 = PySlice_New(Py_None, __pyx_t_2, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_13 = PySlice_New(Py_None, __pyx_t_2, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_13);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_13);
@@ -11424,12 +11449,12 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_int_1);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_int_1);
   __pyx_t_13 = 0;
-  if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_t_2, __pyx_t_4) < 0)) __PYX_ERR(1, 466, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_t_2, __pyx_t_4) < 0)) __PYX_ERR(1, 467, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":467
+  /* "src/_squish/voronoi_dcel.pyx":468
  * 		self.sites.base[self.n:, 0] = border_sites
  * 		self.sites.base[:self.n+1, 1] = offsets[:self.n+1]
  * 		for i in range(self.n):             # <<<<<<<<<<<<<<
@@ -11441,26 +11466,26 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
 
-    /* "src/voronoi_dcel.pyx":468
+    /* "src/_squish/voronoi_dcel.pyx":469
  * 		self.sites.base[:self.n+1, 1] = offsets[:self.n+1]
  * 		for i in range(self.n):
  * 			self.sites[i, 2] = self.sites[i+1, 1] - self.sites[i, 1]             # <<<<<<<<<<<<<<
  * 
  * 		cdef INT_T edge_count = offsets[self.n]
  */
-    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 468, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 469, __pyx_L1_error)}
     __pyx_t_9 = (__pyx_v_i + 1);
     __pyx_t_25 = 1;
-    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 468, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 469, __pyx_L1_error)}
     __pyx_t_11 = __pyx_v_i;
     __pyx_t_26 = 1;
-    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 468, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 469, __pyx_L1_error)}
     __pyx_t_27 = __pyx_v_i;
     __pyx_t_28 = 2;
     *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_27 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_28)) )) = ((*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_9 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_25)) ))) - (*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_11 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_26)) ))));
   }
 
-  /* "src/voronoi_dcel.pyx":470
+  /* "src/_squish/voronoi_dcel.pyx":471
  * 			self.sites[i, 2] = self.sites[i+1, 1] - self.sites[i, 1]
  * 
  * 		cdef INT_T edge_count = offsets[self.n]             # <<<<<<<<<<<<<<
@@ -11470,7 +11495,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __pyx_t_6 = __pyx_v_self->n;
   __pyx_v_edge_count = (*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_offsets.diminfo[0].strides));
 
-  /* "src/voronoi_dcel.pyx":472
+  /* "src/_squish/voronoi_dcel.pyx":473
  * 		cdef INT_T edge_count = offsets[self.n]
  * 		cdef INT_T diff
  * 		for i in range(border_num):             # <<<<<<<<<<<<<<
@@ -11482,7 +11507,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
 
-    /* "src/voronoi_dcel.pyx":473
+    /* "src/_squish/voronoi_dcel.pyx":474
  * 		cdef INT_T diff
  * 		for i in range(border_num):
  * 			diff = offsets[border_sites[i]+1] - offsets[border_sites[i]]             # <<<<<<<<<<<<<<
@@ -11495,7 +11520,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
     __pyx_t_29 = (*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_border_sites.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_border_sites.diminfo[0].strides));
     __pyx_v_diff = ((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_offsets.diminfo[0].strides)) - (*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_offsets.diminfo[0].strides)));
 
-    /* "src/voronoi_dcel.pyx":474
+    /* "src/_squish/voronoi_dcel.pyx":475
  * 		for i in range(border_num):
  * 			diff = offsets[border_sites[i]+1] - offsets[border_sites[i]]
  * 			edge_count += diff             # <<<<<<<<<<<<<<
@@ -11504,19 +11529,19 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
  */
     __pyx_v_edge_count = (__pyx_v_edge_count + __pyx_v_diff);
 
-    /* "src/voronoi_dcel.pyx":475
+    /* "src/_squish/voronoi_dcel.pyx":476
  * 			diff = offsets[border_sites[i]+1] - offsets[border_sites[i]]
  * 			edge_count += diff
  * 			self.sites[self.n+i, 2] = diff             # <<<<<<<<<<<<<<
  * 			if i < border_num - 1:
  * 				self.sites[self.n+i+1, 1] = self.sites[self.n+i, 1] + diff
  */
-    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 475, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 476, __pyx_L1_error)}
     __pyx_t_27 = (__pyx_v_self->n + __pyx_v_i);
     __pyx_t_26 = 2;
     *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_27 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_26)) )) = __pyx_v_diff;
 
-    /* "src/voronoi_dcel.pyx":476
+    /* "src/_squish/voronoi_dcel.pyx":477
  * 			edge_count += diff
  * 			self.sites[self.n+i, 2] = diff
  * 			if i < border_num - 1:             # <<<<<<<<<<<<<<
@@ -11526,22 +11551,22 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
     __pyx_t_30 = ((__pyx_v_i < (__pyx_v_border_num - 1)) != 0);
     if (__pyx_t_30) {
 
-      /* "src/voronoi_dcel.pyx":477
+      /* "src/_squish/voronoi_dcel.pyx":478
  * 			self.sites[self.n+i, 2] = diff
  * 			if i < border_num - 1:
  * 				self.sites[self.n+i+1, 1] = self.sites[self.n+i, 1] + diff             # <<<<<<<<<<<<<<
  * 
  * 		# Build edges array
  */
-      if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 477, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 478, __pyx_L1_error)}
       __pyx_t_27 = (__pyx_v_self->n + __pyx_v_i);
       __pyx_t_26 = 1;
-      if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 477, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 478, __pyx_L1_error)}
       __pyx_t_29 = ((__pyx_v_self->n + __pyx_v_i) + 1);
       __pyx_t_25 = 1;
       *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_29 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_25)) )) = ((*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_27 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_26)) ))) + __pyx_v_diff);
 
-      /* "src/voronoi_dcel.pyx":476
+      /* "src/_squish/voronoi_dcel.pyx":477
  * 			edge_count += diff
  * 			self.sites[self.n+i, 2] = diff
  * 			if i < border_num - 1:             # <<<<<<<<<<<<<<
@@ -11551,21 +11576,21 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
     }
   }
 
-  /* "src/voronoi_dcel.pyx":481
+  /* "src/_squish/voronoi_dcel.pyx":482
  * 		# Build edges array
  * 		# [Origin Index, Site Index, Next Index, Prev Index, Twin Index]
  * 		self.edges = np.empty((edge_count, 5), dtype=INT)             # <<<<<<<<<<<<<<
  * 		cdef np.ndarray[INT_T, ndim=1] site_verts
  * 		cdef INT_T j, site_i, edge_i, edge_offset, vert_num, twin_index, prev_res
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_edge_count); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_edge_count); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4);
@@ -11573,42 +11598,42 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   __Pyx_GIVEREF(__pyx_int_5);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_5);
   __pyx_t_4 = 0;
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_INT); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_INT); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_13) < 0) __PYX_ERR(1, 481, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_13) < 0) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-  __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_24 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_INT_T(__pyx_t_13, PyBUF_WRITABLE); if (unlikely(!__pyx_t_24.memview)) __PYX_ERR(1, 481, __pyx_L1_error)
+  __pyx_t_24 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_INT_T(__pyx_t_13, PyBUF_WRITABLE); if (unlikely(!__pyx_t_24.memview)) __PYX_ERR(1, 482, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->edges, 0);
   __pyx_v_self->edges = __pyx_t_24;
   __pyx_t_24.memview = NULL;
   __pyx_t_24.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":485
+  /* "src/_squish/voronoi_dcel.pyx":486
  * 		cdef INT_T j, site_i, edge_i, edge_offset, vert_num, twin_index, prev_res
  * 
  * 		edge_indices = dict()             # <<<<<<<<<<<<<<
  * 
  * 		for i in range(self.n + border_num):
  */
-  __pyx_t_13 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 485, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __pyx_v_edge_indices = ((PyObject*)__pyx_t_13);
   __pyx_t_13 = 0;
 
-  /* "src/voronoi_dcel.pyx":487
+  /* "src/_squish/voronoi_dcel.pyx":488
  * 		edge_indices = dict()
  * 
  * 		for i in range(self.n + border_num):             # <<<<<<<<<<<<<<
@@ -11620,31 +11645,31 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
   for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_i = __pyx_t_8;
 
-    /* "src/voronoi_dcel.pyx":488
+    /* "src/_squish/voronoi_dcel.pyx":489
  * 
  * 		for i in range(self.n + border_num):
  * 			site_i = self.sites[i, 0]             # <<<<<<<<<<<<<<
  * 			edge_offset = self.sites[i, 1]
  * 			site_verts = vert_indices_np[offsets[site_i]:offsets[site_i+1]]
  */
-    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 488, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 489, __pyx_L1_error)}
     __pyx_t_27 = __pyx_v_i;
     __pyx_t_26 = 0;
     __pyx_v_site_i = (*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_27 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_26)) )));
 
-    /* "src/voronoi_dcel.pyx":489
+    /* "src/_squish/voronoi_dcel.pyx":490
  * 		for i in range(self.n + border_num):
  * 			site_i = self.sites[i, 0]
  * 			edge_offset = self.sites[i, 1]             # <<<<<<<<<<<<<<
  * 			site_verts = vert_indices_np[offsets[site_i]:offsets[site_i+1]]
  * 
  */
-    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 489, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 490, __pyx_L1_error)}
     __pyx_t_27 = __pyx_v_i;
     __pyx_t_26 = 1;
     __pyx_v_edge_offset = (*((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->sites.data + __pyx_t_27 * __pyx_v_self->sites.strides[0]) )) + __pyx_t_26)) )));
 
-    /* "src/voronoi_dcel.pyx":490
+    /* "src/_squish/voronoi_dcel.pyx":491
  * 			site_i = self.sites[i, 0]
  * 			edge_offset = self.sites[i, 1]
  * 			site_verts = vert_indices_np[offsets[site_i]:offsets[site_i+1]]             # <<<<<<<<<<<<<<
@@ -11652,19 +11677,19 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
  * 			# Scipy outputs sorted vertices, but reverse if not counterclockwise.
  */
     __pyx_t_27 = __pyx_v_site_i;
-    __pyx_t_13 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 490, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 491, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
     __pyx_t_27 = (__pyx_v_site_i + 1);
-    __pyx_t_3 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 490, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_offsets.diminfo[0].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 491, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = PySlice_New(__pyx_t_13, __pyx_t_3, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 490, __pyx_L1_error)
+    __pyx_t_4 = PySlice_New(__pyx_t_13, __pyx_t_3, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 491, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_vert_indices_np), __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 490, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(((PyObject *)__pyx_v_vert_indices_np), __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 491, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 490, __pyx_L1_error)
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 491, __pyx_L1_error)
     __pyx_t_31 = ((PyArrayObject *)__pyx_t_3);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -11681,20 +11706,20 @@ static void __pyx_f_7_squish_16VoronoiContainer_generate_dcel(struct __pyx_obj_7
         __pyx_t_32 = __pyx_t_33 = __pyx_t_34 = 0;
       }
       __pyx_pybuffernd_site_verts.diminfo[0].strides = __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_verts.diminfo[0].shape = __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.shape[0];
-      if (unlikely(__pyx_t_22 < 0)) __PYX_ERR(1, 490, __pyx_L1_error)
+      if (unlikely(__pyx_t_22 < 0)) __PYX_ERR(1, 491, __pyx_L1_error)
     }
     __pyx_t_31 = 0;
     __Pyx_XDECREF_SET(__pyx_v_site_verts, ((PyArrayObject *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "src/voronoi_dcel.pyx":493
+    /* "src/_squish/voronoi_dcel.pyx":494
  * 
  * 			# Scipy outputs sorted vertices, but reverse if not counterclockwise.
  * 			if not VoronoiContainer.sign(self.points[site_i],             # <<<<<<<<<<<<<<
  * 					self.vertices[site_verts[0]], self.vertices[site_verts[1]]):
  * 				site_verts = np.flip(site_verts)
  */
-    if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 493, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 494, __pyx_L1_error)}
     __pyx_t_35.data = __pyx_v_self->points.data;
     __pyx_t_35.memview = __pyx_v_self->points.memview;
     __PYX_INC_MEMVIEW(&__pyx_t_35, 0);
@@ -11708,9 +11733,9 @@ __pyx_t_35.shape[0] = __pyx_v_self->points.shape[1];
 __pyx_t_35.strides[0] = __pyx_v_self->points.strides[1];
     __pyx_t_35.suboffsets[0] = -1;
 
-if (unlikely(!__pyx_v_self->vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 494, __pyx_L1_error)}
+if (unlikely(!__pyx_v_self->vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 495, __pyx_L1_error)}
 
-    /* "src/voronoi_dcel.pyx":494
+    /* "src/_squish/voronoi_dcel.pyx":495
  * 			# Scipy outputs sorted vertices, but reverse if not counterclockwise.
  * 			if not VoronoiContainer.sign(self.points[site_i],
  * 					self.vertices[site_verts[0]], self.vertices[site_verts[1]]):             # <<<<<<<<<<<<<<
@@ -11731,7 +11756,7 @@ __pyx_t_36.shape[0] = __pyx_v_self->vertices.shape[1];
 __pyx_t_36.strides[0] = __pyx_v_self->vertices.strides[1];
     __pyx_t_36.suboffsets[0] = -1;
 
-if (unlikely(!__pyx_v_self->vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 494, __pyx_L1_error)}
+if (unlikely(!__pyx_v_self->vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 495, __pyx_L1_error)}
     __pyx_t_26 = 1;
     __pyx_t_37.data = __pyx_v_self->vertices.data;
     __pyx_t_37.memview = __pyx_v_self->vertices.memview;
@@ -11748,7 +11773,7 @@ __pyx_t_37.strides[0] = __pyx_v_self->vertices.strides[1];
 
 __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36, __pyx_t_37) != 0)) != 0);
 
-    /* "src/voronoi_dcel.pyx":493
+    /* "src/_squish/voronoi_dcel.pyx":494
  * 
  * 			# Scipy outputs sorted vertices, but reverse if not counterclockwise.
  * 			if not VoronoiContainer.sign(self.points[site_i],             # <<<<<<<<<<<<<<
@@ -11766,16 +11791,16 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
     __pyx_t_37.data = NULL;
     if (__pyx_t_30) {
 
-      /* "src/voronoi_dcel.pyx":495
+      /* "src/_squish/voronoi_dcel.pyx":496
  * 			if not VoronoiContainer.sign(self.points[site_i],
  * 					self.vertices[site_verts[0]], self.vertices[site_verts[1]]):
  * 				site_verts = np.flip(site_verts)             # <<<<<<<<<<<<<<
  * 
  * 			vert_num = offsets[site_i+1] - offsets[site_i]
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 495, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 496, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_flip); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 495, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_flip); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 496, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_4 = NULL;
@@ -11790,10 +11815,10 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
       }
       __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_4, ((PyObject *)__pyx_v_site_verts)) : __Pyx_PyObject_CallOneArg(__pyx_t_13, ((PyObject *)__pyx_v_site_verts));
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 495, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 496, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 495, __pyx_L1_error)
+      if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 496, __pyx_L1_error)
       __pyx_t_31 = ((PyArrayObject *)__pyx_t_3);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -11810,13 +11835,13 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
           __pyx_t_34 = __pyx_t_33 = __pyx_t_32 = 0;
         }
         __pyx_pybuffernd_site_verts.diminfo[0].strides = __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_verts.diminfo[0].shape = __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_22 < 0)) __PYX_ERR(1, 495, __pyx_L1_error)
+        if (unlikely(__pyx_t_22 < 0)) __PYX_ERR(1, 496, __pyx_L1_error)
       }
       __pyx_t_31 = 0;
       __Pyx_DECREF_SET(__pyx_v_site_verts, ((PyArrayObject *)__pyx_t_3));
       __pyx_t_3 = 0;
 
-      /* "src/voronoi_dcel.pyx":493
+      /* "src/_squish/voronoi_dcel.pyx":494
  * 
  * 			# Scipy outputs sorted vertices, but reverse if not counterclockwise.
  * 			if not VoronoiContainer.sign(self.points[site_i],             # <<<<<<<<<<<<<<
@@ -11825,7 +11850,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
  */
     }
 
-    /* "src/voronoi_dcel.pyx":497
+    /* "src/_squish/voronoi_dcel.pyx":498
  * 				site_verts = np.flip(site_verts)
  * 
  * 			vert_num = offsets[site_i+1] - offsets[site_i]             # <<<<<<<<<<<<<<
@@ -11836,7 +11861,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
     __pyx_t_29 = __pyx_v_site_i;
     __pyx_v_vert_num = ((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_offsets.diminfo[0].strides)) - (*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_offsets.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_offsets.diminfo[0].strides)));
 
-    /* "src/voronoi_dcel.pyx":499
+    /* "src/_squish/voronoi_dcel.pyx":500
  * 			vert_num = offsets[site_i+1] - offsets[site_i]
  * 
  * 			for j in range(vert_num):             # <<<<<<<<<<<<<<
@@ -11848,7 +11873,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
     for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_27; __pyx_t_11+=1) {
       __pyx_v_j = __pyx_t_11;
 
-      /* "src/voronoi_dcel.pyx":500
+      /* "src/_squish/voronoi_dcel.pyx":501
  * 
  * 			for j in range(vert_num):
  * 				edge_i = edge_offset+j             # <<<<<<<<<<<<<<
@@ -11857,7 +11882,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
  */
       __pyx_v_edge_i = (__pyx_v_edge_offset + __pyx_v_j);
 
-      /* "src/voronoi_dcel.pyx":501
+      /* "src/_squish/voronoi_dcel.pyx":502
  * 			for j in range(vert_num):
  * 				edge_i = edge_offset+j
  * 				self.edges[edge_i, 0] = site_verts[j]             # <<<<<<<<<<<<<<
@@ -11865,48 +11890,48 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
  * 				# Add vert_num because of C modulo to get always positive.
  */
       __pyx_t_9 = __pyx_v_j;
-      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 501, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 502, __pyx_L1_error)}
       __pyx_t_38 = __pyx_v_edge_i;
       __pyx_t_26 = 0;
       *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->edges.data + __pyx_t_38 * __pyx_v_self->edges.strides[0]) )) + __pyx_t_26)) )) = (*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides));
 
-      /* "src/voronoi_dcel.pyx":502
+      /* "src/_squish/voronoi_dcel.pyx":503
  * 				edge_i = edge_offset+j
  * 				self.edges[edge_i, 0] = site_verts[j]
  * 				self.edges[edge_i, 1] = i             # <<<<<<<<<<<<<<
  * 				# Add vert_num because of C modulo to get always positive.
  * 				self.edges[edge_i, 2] = (j+vert_num+1) % vert_num + edge_offset
  */
-      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 502, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 503, __pyx_L1_error)}
       __pyx_t_9 = __pyx_v_edge_i;
       __pyx_t_26 = 1;
       *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->edges.data + __pyx_t_9 * __pyx_v_self->edges.strides[0]) )) + __pyx_t_26)) )) = __pyx_v_i;
 
-      /* "src/voronoi_dcel.pyx":504
+      /* "src/_squish/voronoi_dcel.pyx":505
  * 				self.edges[edge_i, 1] = i
  * 				# Add vert_num because of C modulo to get always positive.
  * 				self.edges[edge_i, 2] = (j+vert_num+1) % vert_num + edge_offset             # <<<<<<<<<<<<<<
  * 				self.edges[edge_i, 3] = (j+vert_num-1) % vert_num + edge_offset
  * 
  */
-      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 504, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 505, __pyx_L1_error)}
       __pyx_t_9 = __pyx_v_edge_i;
       __pyx_t_26 = 2;
       *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->edges.data + __pyx_t_9 * __pyx_v_self->edges.strides[0]) )) + __pyx_t_26)) )) = ((((__pyx_v_j + __pyx_v_vert_num) + 1) % __pyx_v_vert_num) + __pyx_v_edge_offset);
 
-      /* "src/voronoi_dcel.pyx":505
+      /* "src/_squish/voronoi_dcel.pyx":506
  * 				# Add vert_num because of C modulo to get always positive.
  * 				self.edges[edge_i, 2] = (j+vert_num+1) % vert_num + edge_offset
  * 				self.edges[edge_i, 3] = (j+vert_num-1) % vert_num + edge_offset             # <<<<<<<<<<<<<<
  * 
  * 				# Get reversed tuple to theck for twin.
  */
-      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 505, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 506, __pyx_L1_error)}
       __pyx_t_9 = __pyx_v_edge_i;
       __pyx_t_26 = 3;
       *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->edges.data + __pyx_t_9 * __pyx_v_self->edges.strides[0]) )) + __pyx_t_26)) )) = ((((__pyx_v_j + __pyx_v_vert_num) - 1) % __pyx_v_vert_num) + __pyx_v_edge_offset);
 
-      /* "src/voronoi_dcel.pyx":509
+      /* "src/_squish/voronoi_dcel.pyx":510
  * 				# Get reversed tuple to theck for twin.
  * 				twin_index = edge_indices.get(
  * 					(site_verts[(j+1) % vert_num], site_verts[j]             # <<<<<<<<<<<<<<
@@ -11914,12 +11939,12 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
  * 
  */
       __pyx_t_9 = ((__pyx_v_j + 1) % __pyx_v_vert_num);
-      __pyx_t_3 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 509, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 510, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_9 = __pyx_v_j;
-      __pyx_t_13 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 509, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 510, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 509, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 510, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
@@ -11928,33 +11953,33 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
       __pyx_t_3 = 0;
       __pyx_t_13 = 0;
 
-      /* "src/voronoi_dcel.pyx":508
+      /* "src/_squish/voronoi_dcel.pyx":509
  * 
  * 				# Get reversed tuple to theck for twin.
  * 				twin_index = edge_indices.get(             # <<<<<<<<<<<<<<
  * 					(site_verts[(j+1) % vert_num], site_verts[j]
  * 				), -1)
  */
-      __pyx_t_13 = __Pyx_PyDict_GetItemDefault(__pyx_v_edge_indices, __pyx_t_4, __pyx_int_neg_1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 508, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyDict_GetItemDefault(__pyx_v_edge_indices, __pyx_t_4, __pyx_int_neg_1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 509, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_9 = __Pyx_PyInt_As_npy_int64(__pyx_t_13); if (unlikely((__pyx_t_9 == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(1, 508, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyInt_As_npy_int64(__pyx_t_13); if (unlikely((__pyx_t_9 == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(1, 509, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __pyx_v_twin_index = __pyx_t_9;
 
-      /* "src/voronoi_dcel.pyx":512
+      /* "src/_squish/voronoi_dcel.pyx":513
  * 				), -1)
  * 
  * 				self.edges[edge_i, 4] = twin_index             # <<<<<<<<<<<<<<
  * 				if twin_index == -1:
  * 					edge_indices[(site_verts[j], site_verts[(j+1) % vert_num])] = \
  */
-      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 512, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 513, __pyx_L1_error)}
       __pyx_t_9 = __pyx_v_edge_i;
       __pyx_t_26 = 4;
       *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->edges.data + __pyx_t_9 * __pyx_v_self->edges.strides[0]) )) + __pyx_t_26)) )) = __pyx_v_twin_index;
 
-      /* "src/voronoi_dcel.pyx":513
+      /* "src/_squish/voronoi_dcel.pyx":514
  * 
  * 				self.edges[edge_i, 4] = twin_index
  * 				if twin_index == -1:             # <<<<<<<<<<<<<<
@@ -11964,17 +11989,17 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
       __pyx_t_30 = ((__pyx_v_twin_index == -1LL) != 0);
       if (__pyx_t_30) {
 
-        /* "src/voronoi_dcel.pyx":515
+        /* "src/_squish/voronoi_dcel.pyx":516
  * 				if twin_index == -1:
  * 					edge_indices[(site_verts[j], site_verts[(j+1) % vert_num])] = \
  * 						j + edge_offset             # <<<<<<<<<<<<<<
  * 				else:
  * 					self.edges[twin_index, 4] = j + edge_offset
  */
-        __pyx_t_13 = __Pyx_PyInt_From_npy_int64((__pyx_v_j + __pyx_v_edge_offset)); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 515, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyInt_From_npy_int64((__pyx_v_j + __pyx_v_edge_offset)); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 516, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
 
-        /* "src/voronoi_dcel.pyx":514
+        /* "src/_squish/voronoi_dcel.pyx":515
  * 				self.edges[edge_i, 4] = twin_index
  * 				if twin_index == -1:
  * 					edge_indices[(site_verts[j], site_verts[(j+1) % vert_num])] = \             # <<<<<<<<<<<<<<
@@ -11982,12 +12007,12 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
  * 				else:
  */
         __pyx_t_9 = __pyx_v_j;
-        __pyx_t_4 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 514, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 515, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_9 = ((__pyx_v_j + 1) % __pyx_v_vert_num);
-        __pyx_t_3 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 514, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyInt_From_npy_int64((*__Pyx_BufPtrStrided1d(__pyx_t_7_squish_INT_T *, __pyx_pybuffernd_site_verts.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_site_verts.diminfo[0].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 515, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 514, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 515, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GIVEREF(__pyx_t_4);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4);
@@ -11995,11 +12020,11 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
         PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
         __pyx_t_4 = 0;
         __pyx_t_3 = 0;
-        if (unlikely(PyDict_SetItem(__pyx_v_edge_indices, __pyx_t_2, __pyx_t_13) < 0)) __PYX_ERR(1, 514, __pyx_L1_error)
+        if (unlikely(PyDict_SetItem(__pyx_v_edge_indices, __pyx_t_2, __pyx_t_13) < 0)) __PYX_ERR(1, 515, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-        /* "src/voronoi_dcel.pyx":513
+        /* "src/_squish/voronoi_dcel.pyx":514
  * 
  * 				self.edges[edge_i, 4] = twin_index
  * 				if twin_index == -1:             # <<<<<<<<<<<<<<
@@ -12009,7 +12034,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
         goto __pyx_L15;
       }
 
-      /* "src/voronoi_dcel.pyx":517
+      /* "src/_squish/voronoi_dcel.pyx":518
  * 						j + edge_offset
  * 				else:
  * 					self.edges[twin_index, 4] = j + edge_offset             # <<<<<<<<<<<<<<
@@ -12017,7 +12042,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
  * 		self.site_cache = np.empty((self.n + border_num, 5), dtype=FLOAT)
  */
       /*else*/ {
-        if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 517, __pyx_L1_error)}
+        if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 518, __pyx_L1_error)}
         __pyx_t_9 = __pyx_v_twin_index;
         __pyx_t_26 = 4;
         *((__pyx_t_7_squish_INT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_INT_T *) ( /* dim=0 */ (__pyx_v_self->edges.data + __pyx_t_9 * __pyx_v_self->edges.strides[0]) )) + __pyx_t_26)) )) = (__pyx_v_j + __pyx_v_edge_offset);
@@ -12026,21 +12051,21 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
     }
   }
 
-  /* "src/voronoi_dcel.pyx":519
+  /* "src/_squish/voronoi_dcel.pyx":520
  * 					self.edges[twin_index, 4] = j + edge_offset
  * 
  * 		self.site_cache = np.empty((self.n + border_num, 5), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 		self.edge_cache = np.empty((edge_count, self.edge_cache_map.size), dtype=FLOAT)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-  __pyx_t_13 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + __pyx_v_border_num)); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyInt_From_npy_int64((__pyx_v_self->n + __pyx_v_border_num)); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_13);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_13);
@@ -12048,46 +12073,46 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
   __Pyx_GIVEREF(__pyx_int_5);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_5);
   __pyx_t_13 = 0;
-  __pyx_t_13 = PyTuple_New(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_13 = PyTuple_New(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 519, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_13, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_13, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_39 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_39.memview)) __PYX_ERR(1, 519, __pyx_L1_error)
+  __pyx_t_39 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_39.memview)) __PYX_ERR(1, 520, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->site_cache, 0);
   __pyx_v_self->site_cache = __pyx_t_39;
   __pyx_t_39.memview = NULL;
   __pyx_t_39.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":520
+  /* "src/_squish/voronoi_dcel.pyx":521
  * 
  * 		self.site_cache = np.empty((self.n + border_num, 5), dtype=FLOAT)
  * 		self.edge_cache = np.empty((edge_count, self.edge_cache_map.size), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_edge_count); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_edge_count); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_13 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->edge_cache_map->size); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->edge_cache_map->size); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4);
@@ -12095,30 +12120,30 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_13);
   __pyx_t_4 = 0;
   __pyx_t_13 = 0;
-  __pyx_t_13 = PyTuple_New(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_13 = PyTuple_New(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 520, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_13, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_13, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_39 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_39.memview)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __pyx_t_39 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_39.memview)) __PYX_ERR(1, 521, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->edge_cache, 0);
   __pyx_v_self->edge_cache = __pyx_t_39;
   __pyx_t_39.memview = NULL;
   __pyx_t_39.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":434
+  /* "src/_squish/voronoi_dcel.pyx":435
  * 
  * 
  * 	cdef void generate_dcel(VoronoiContainer self) except *:             # <<<<<<<<<<<<<<
@@ -12175,7 +12200,7 @@ __pyx_t_30 = ((!(__pyx_f_7_squish_16VoronoiContainer_sign(__pyx_t_35, __pyx_t_36
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/voronoi_dcel.pyx":523
+/* "src/_squish/voronoi_dcel.pyx":524
  * 
  * 
  * 	cdef void common_cache(VoronoiContainer self) except *:             # <<<<<<<<<<<<<<
@@ -12220,29 +12245,29 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("common_cache", 0);
 
-  /* "src/voronoi_dcel.pyx":524
+  /* "src/_squish/voronoi_dcel.pyx":525
  * 
  * 	cdef void common_cache(VoronoiContainer self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 524, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 524, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 524, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 525, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 525, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 525, __pyx_L1_error)}
 
-  /* "src/voronoi_dcel.pyx":525
+  /* "src/_squish/voronoi_dcel.pyx":526
  * 	cdef void common_cache(VoronoiContainer self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		cdef Site xi
  */
-  if (unlikely(!__pyx_v_self->vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 525, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 525, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 525, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 526, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 526, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 526, __pyx_L1_error)}
 
-  /* "src/voronoi_dcel.pyx":524
+  /* "src/_squish/voronoi_dcel.pyx":525
  * 
  * 	cdef void common_cache(VoronoiContainer self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -12251,81 +12276,81 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->sites, __pyx_v_self->edges, __pyx_v_self->points, __pyx_v_self->vertices, __pyx_v_self->site_cache, __pyx_v_self->edge_cache, __pyx_v_self->edge_cache_map);
 
-  /* "src/voronoi_dcel.pyx":531
+  /* "src/_squish/voronoi_dcel.pyx":532
  * 		cdef Vector2D p, q, la, da, Rla
  * 
  * 		cdef FLOAT_T [:] area = np.zeros(self.sites.shape[0], dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 		cdef FLOAT_T [:] perim = np.zeros(self.sites.shape[0], dtype=FLOAT)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 531, __pyx_L1_error)}
-  __pyx_t_1 = PyInt_FromSsize_t((__pyx_v_self->sites.shape[0])); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 531, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 532, __pyx_L1_error)}
+  __pyx_t_1 = PyInt_FromSsize_t((__pyx_v_self->sites.shape[0])); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 531, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(1, 531, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(1, 532, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_area = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":532
+  /* "src/_squish/voronoi_dcel.pyx":533
  * 
  * 		cdef FLOAT_T [:] area = np.zeros(self.sites.shape[0], dtype=FLOAT)
  * 		cdef FLOAT_T [:] perim = np.zeros(self.sites.shape[0], dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
  * 		cdef INT_T i, j
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 532, __pyx_L1_error)}
-  __pyx_t_4 = PyInt_FromSsize_t((__pyx_v_self->sites.shape[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 532, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 533, __pyx_L1_error)}
+  __pyx_t_4 = PyInt_FromSsize_t((__pyx_v_self->sites.shape[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(1, 532, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(1, 532, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(1, 533, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_perim = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "src/voronoi_dcel.pyx":536
+  /* "src/_squish/voronoi_dcel.pyx":537
  * 		cdef INT_T i, j
  * 		cdef FLOAT_T e_area, la_mag
  * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
@@ -12339,7 +12364,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
       __Pyx_FastGIL_Remember();
       #endif
       /*try:*/ {
-        if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 536, __pyx_L4_error)}
+        if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 537, __pyx_L4_error)}
         __pyx_t_6 = (__pyx_v_self->sites.shape[0]);
         if ((1 == 0)) abort();
         {
@@ -12367,7 +12392,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                             __pyx_v_j = ((__pyx_t_7_squish_INT_T)0xbad0bad0);
                             __pyx_v_la_mag = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
 
-                            /* "src/voronoi_dcel.pyx":537
+                            /* "src/_squish/voronoi_dcel.pyx":538
  * 		cdef FLOAT_T e_area, la_mag
  * 		for i in prange(self.sites.shape[0], nogil=True):
  * 			xi = init.Site(i, &info)             # <<<<<<<<<<<<<<
@@ -12376,7 +12401,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                             __pyx_v_xi = __pyx_v_7_squish_init.Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "src/voronoi_dcel.pyx":538
+                            /* "src/_squish/voronoi_dcel.pyx":539
  * 		for i in prange(self.sites.shape[0], nogil=True):
  * 			xi = init.Site(i, &info)
  * 			em = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -12385,7 +12410,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                             __pyx_v_em = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "src/voronoi_dcel.pyx":539
+                            /* "src/_squish/voronoi_dcel.pyx":540
  * 			xi = init.Site(i, &info)
  * 			em = xi.edge(&xi)
  * 			for j in prange(xi.edge_num(&xi)):             # <<<<<<<<<<<<<<
@@ -12412,7 +12437,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                                 __pyx_v_e_area = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
                                                 __pyx_v_la_mag = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
 
-                                                /* "src/voronoi_dcel.pyx":540
+                                                /* "src/_squish/voronoi_dcel.pyx":541
  * 			em = xi.edge(&xi)
  * 			for j in prange(xi.edge_num(&xi)):
  * 				ep = em.next(&em)             # <<<<<<<<<<<<<<
@@ -12421,7 +12446,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 __pyx_v_ep = __pyx_v_em.next((&__pyx_v_em));
 
-                                                /* "src/voronoi_dcel.pyx":541
+                                                /* "src/_squish/voronoi_dcel.pyx":542
  * 			for j in prange(xi.edge_num(&xi)):
  * 				ep = em.next(&em)
  * 				p, q = em.origin(&em), ep.origin(&ep)             # <<<<<<<<<<<<<<
@@ -12433,7 +12458,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                                 __pyx_v_p = __pyx_t_12;
                                                 __pyx_v_q = __pyx_t_13;
 
-                                                /* "src/voronoi_dcel.pyx":542
+                                                /* "src/_squish/voronoi_dcel.pyx":543
  * 				ep = em.next(&em)
  * 				p, q = em.origin(&em), ep.origin(&ep)
  * 				la, da = q.copy.vsub(&q, p), p.copy.vsub(&p, xi.vec(&xi))	# vp - vm, vm - xi             # <<<<<<<<<<<<<<
@@ -12445,7 +12470,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                                 __pyx_v_la = __pyx_t_13;
                                                 __pyx_v_da = __pyx_t_12;
 
-                                                /* "src/voronoi_dcel.pyx":544
+                                                /* "src/_squish/voronoi_dcel.pyx":545
  * 				la, da = q.copy.vsub(&q, p), p.copy.vsub(&p, xi.vec(&xi))	# vp - vm, vm - xi
  * 
  * 				la_mag = la.mag(&la)             # <<<<<<<<<<<<<<
@@ -12454,7 +12479,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 __pyx_v_la_mag = __pyx_v_la.mag((&__pyx_v_la));
 
-                                                /* "src/voronoi_dcel.pyx":545
+                                                /* "src/_squish/voronoi_dcel.pyx":546
  * 
  * 				la_mag = la.mag(&la)
  * 				e_area = la.dot(&la, da.rot(&da))             # <<<<<<<<<<<<<<
@@ -12463,7 +12488,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 __pyx_v_e_area = __pyx_v_la.dot((&__pyx_v_la), __pyx_v_da.rot((&__pyx_v_da)));
 
-                                                /* "src/voronoi_dcel.pyx":546
+                                                /* "src/_squish/voronoi_dcel.pyx":547
  * 				la_mag = la.mag(&la)
  * 				e_area = la.dot(&la, da.rot(&da))
  * 				Rla = la.rot(&la)             # <<<<<<<<<<<<<<
@@ -12472,7 +12497,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 __pyx_v_Rla = __pyx_v_la.rot((&__pyx_v_la));
 
-                                                /* "src/voronoi_dcel.pyx":548
+                                                /* "src/_squish/voronoi_dcel.pyx":549
  * 				Rla = la.rot(&la)
  * 
  * 				em.cache.la(&em, la)             # <<<<<<<<<<<<<<
@@ -12481,7 +12506,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 (void)(__pyx_v_em.cache->la((&__pyx_v_em), __pyx_v_la));
 
-                                                /* "src/voronoi_dcel.pyx":549
+                                                /* "src/_squish/voronoi_dcel.pyx":550
  * 
  * 				em.cache.la(&em, la)
  * 				em.cache.la_mag(&em, la_mag)             # <<<<<<<<<<<<<<
@@ -12490,7 +12515,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 (void)(__pyx_v_em.cache->la_mag((&__pyx_v_em), __pyx_v_la_mag));
 
-                                                /* "src/voronoi_dcel.pyx":550
+                                                /* "src/_squish/voronoi_dcel.pyx":551
  * 				em.cache.la(&em, la)
  * 				em.cache.la_mag(&em, la_mag)
  * 				em.cache.da(&em, da)             # <<<<<<<<<<<<<<
@@ -12499,7 +12524,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 (void)(__pyx_v_em.cache->da((&__pyx_v_em), __pyx_v_da));
 
-                                                /* "src/voronoi_dcel.pyx":551
+                                                /* "src/_squish/voronoi_dcel.pyx":552
  * 				em.cache.la_mag(&em, la_mag)
  * 				em.cache.da(&em, da)
  * 				em.cache.da_mag(&em, da.mag(&da))             # <<<<<<<<<<<<<<
@@ -12508,7 +12533,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 (void)(__pyx_v_em.cache->da_mag((&__pyx_v_em), __pyx_v_da.mag((&__pyx_v_da))));
 
-                                                /* "src/voronoi_dcel.pyx":552
+                                                /* "src/_squish/voronoi_dcel.pyx":553
  * 				em.cache.da(&em, da)
  * 				em.cache.da_mag(&em, da.mag(&da))
  * 				em.cache.xij(&em, Rla.copy.smul(&Rla, -e_area/la.dot(&la, la)))             # <<<<<<<<<<<<<<
@@ -12517,7 +12542,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 (void)(__pyx_v_em.cache->xij((&__pyx_v_em), __pyx_v_Rla.copy.smul((&__pyx_v_Rla), ((-__pyx_v_e_area) / __pyx_v_la.dot((&__pyx_v_la), __pyx_v_la)))));
 
-                                                /* "src/voronoi_dcel.pyx":554
+                                                /* "src/_squish/voronoi_dcel.pyx":555
  * 				em.cache.xij(&em, Rla.copy.smul(&Rla, -e_area/la.dot(&la, la)))
  * 
  * 				if info.edge_cache_map.iF != -1:             # <<<<<<<<<<<<<<
@@ -12527,7 +12552,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                                 __pyx_t_14 = ((__pyx_v_info.edge_cache_map->iF != -1LL) != 0);
                                                 if (__pyx_t_14) {
 
-                                                  /* "src/voronoi_dcel.pyx":555
+                                                  /* "src/_squish/voronoi_dcel.pyx":556
  * 
  * 				if info.edge_cache_map.iF != -1:
  * 					em.cache.F(&em, e_area)             # <<<<<<<<<<<<<<
@@ -12536,7 +12561,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                   (void)(__pyx_v_em.cache->F((&__pyx_v_em), __pyx_v_e_area));
 
-                                                  /* "src/voronoi_dcel.pyx":554
+                                                  /* "src/_squish/voronoi_dcel.pyx":555
  * 				em.cache.xij(&em, Rla.copy.smul(&Rla, -e_area/la.dot(&la, la)))
  * 
  * 				if info.edge_cache_map.iF != -1:             # <<<<<<<<<<<<<<
@@ -12545,7 +12570,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
  */
                                                 }
 
-                                                /* "src/voronoi_dcel.pyx":557
+                                                /* "src/_squish/voronoi_dcel.pyx":558
  * 					em.cache.F(&em, e_area)
  * 
  * 				area[i] += e_area             # <<<<<<<<<<<<<<
@@ -12555,7 +12580,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                                 __pyx_t_15 = __pyx_v_i;
                                                 *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_area.data + __pyx_t_15 * __pyx_v_area.strides[0]) )) += __pyx_v_e_area;
 
-                                                /* "src/voronoi_dcel.pyx":558
+                                                /* "src/_squish/voronoi_dcel.pyx":559
  * 
  * 				area[i] += e_area
  * 				perim[i] += la_mag             # <<<<<<<<<<<<<<
@@ -12565,7 +12590,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                                 __pyx_t_15 = __pyx_v_i;
                                                 *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_perim.data + __pyx_t_15 * __pyx_v_perim.strides[0]) )) += __pyx_v_la_mag;
 
-                                                /* "src/voronoi_dcel.pyx":560
+                                                /* "src/_squish/voronoi_dcel.pyx":561
  * 				perim[i] += la_mag
  * 
  * 				em = em.next(&em)             # <<<<<<<<<<<<<<
@@ -12579,7 +12604,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                                 }
                             }
 
-                            /* "src/voronoi_dcel.pyx":562
+                            /* "src/_squish/voronoi_dcel.pyx":563
  * 				em = em.next(&em)
  * 
  * 			xi.cache.area(&xi, area[i]/2)             # <<<<<<<<<<<<<<
@@ -12589,7 +12614,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                             __pyx_t_11 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->area((&__pyx_v_xi), ((*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_area.data + __pyx_t_11 * __pyx_v_area.strides[0]) ))) / 2.0)));
 
-                            /* "src/voronoi_dcel.pyx":563
+                            /* "src/_squish/voronoi_dcel.pyx":564
  * 
  * 			xi.cache.area(&xi, area[i]/2)
  * 			xi.cache.perim(&xi, perim[i])             # <<<<<<<<<<<<<<
@@ -12599,7 +12624,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
                             __pyx_t_11 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->perim((&__pyx_v_xi), (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_perim.data + __pyx_t_11 * __pyx_v_perim.strides[0]) )))));
 
-                            /* "src/voronoi_dcel.pyx":564
+                            /* "src/_squish/voronoi_dcel.pyx":565
  * 			xi.cache.area(&xi, area[i]/2)
  * 			xi.cache.perim(&xi, perim[i])
  * 			xi.cache.isoparam(&xi, 2*PI*area[i]/(perim[i]*perim[i]))             # <<<<<<<<<<<<<<
@@ -12623,7 +12648,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
         #endif
       }
 
-      /* "src/voronoi_dcel.pyx":536
+      /* "src/_squish/voronoi_dcel.pyx":537
  * 		cdef INT_T i, j
  * 		cdef FLOAT_T e_area, la_mag
  * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
@@ -12649,7 +12674,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
       }
   }
 
-  /* "src/voronoi_dcel.pyx":523
+  /* "src/_squish/voronoi_dcel.pyx":524
  * 
  * 
  * 	cdef void common_cache(VoronoiContainer self) except *:             # <<<<<<<<<<<<<<
@@ -12672,7 +12697,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_common_cache(struct __pyx_obj_7_
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/voronoi_dcel.pyx":568
+/* "src/_squish/voronoi_dcel.pyx":569
  * 
  * 	@staticmethod
  * 	cdef inline Matrix2x2 calc_H(HalfEdge em, HalfEdge ep) nogil:             # <<<<<<<<<<<<<<
@@ -12698,7 +12723,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   __pyx_t_7_squish_FLOAT_T __pyx_t_3;
   __pyx_t_7_squish_FLOAT_T __pyx_t_4;
 
-  /* "src/voronoi_dcel.pyx":574
+  /* "src/_squish/voronoi_dcel.pyx":575
  * 
  * 		# Vectors from xi to xm and xp.
  * 		xmv, xpv = em.cache.xij(&em, NAN_VECTOR), ep.cache.xij(&ep, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -12710,7 +12735,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   __pyx_v_xmv = __pyx_t_1;
   __pyx_v_xpv = __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":575
+  /* "src/_squish/voronoi_dcel.pyx":576
  * 		# Vectors from xi to xm and xp.
  * 		xmv, xpv = em.cache.xij(&em, NAN_VECTOR), ep.cache.xij(&ep, NAN_VECTOR)
  * 		im, mp = xmv.copy.neg(&xmv), xmv.copy.vsub(&xmv, xpv)	# -xmv, xmv - xpv             # <<<<<<<<<<<<<<
@@ -12722,7 +12747,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   __pyx_v_im = __pyx_t_2;
   __pyx_v_mp = __pyx_t_1;
 
-  /* "src/voronoi_dcel.pyx":576
+  /* "src/_squish/voronoi_dcel.pyx":577
  * 		xmv, xpv = em.cache.xij(&em, NAN_VECTOR), ep.cache.xij(&ep, NAN_VECTOR)
  * 		im, mp = xmv.copy.neg(&xmv), xmv.copy.vsub(&xmv, xpv)	# -xmv, xmv - xpv
  * 		im2, mp2 = -(xmv.dot(&xmv, xmv)), xmv.dot(&xmv, xmv) - xpv.dot(&xpv, xpv)             # <<<<<<<<<<<<<<
@@ -12734,7 +12759,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   __pyx_v_im2 = __pyx_t_3;
   __pyx_v_mp2 = __pyx_t_4;
 
-  /* "src/voronoi_dcel.pyx":578
+  /* "src/_squish/voronoi_dcel.pyx":579
  * 		im2, mp2 = -(xmv.dot(&xmv, xmv)), xmv.dot(&xmv, xmv) - xpv.dot(&xpv, xpv)
  * 		# (-xmv*xmv, xmv*xmv - xpv*xpv)
  * 		right = init.Vector2D(im2, mp2)             # <<<<<<<<<<<<<<
@@ -12743,7 +12768,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
  */
   __pyx_v_right = __pyx_v_7_squish_init.Vector2D(__pyx_v_im2, __pyx_v_mp2);
 
-  /* "src/voronoi_dcel.pyx":579
+  /* "src/_squish/voronoi_dcel.pyx":580
  * 		# (-xmv*xmv, xmv*xmv - xpv*xpv)
  * 		right = init.Vector2D(im2, mp2)
  * 		Rpm, Rim = R.vecmul(&R, mp.copy.neg(&mp)), im.rot(&im)	# R*-mp, R*im             # <<<<<<<<<<<<<<
@@ -12755,7 +12780,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   __pyx_v_Rpm = __pyx_t_1;
   __pyx_v_Rim = __pyx_t_2;
 
-  /* "src/voronoi_dcel.pyx":581
+  /* "src/_squish/voronoi_dcel.pyx":582
  * 		Rpm, Rim = R.vecmul(&R, mp.copy.neg(&mp)), im.rot(&im)	# R*-mp, R*im
  * 
  * 		h = init.Matrix2x2(Rpm.x, Rim.x, Rpm.y, Rim.y)	# [Rpm | Rim], h is temporary.             # <<<<<<<<<<<<<<
@@ -12764,7 +12789,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
  */
   __pyx_v_h = __pyx_v_7_squish_init.Matrix2x2(__pyx_v_Rpm.x, __pyx_v_Rim.x, __pyx_v_Rpm.y, __pyx_v_Rim.y);
 
-  /* "src/voronoi_dcel.pyx":582
+  /* "src/_squish/voronoi_dcel.pyx":583
  * 
  * 		h = init.Matrix2x2(Rpm.x, Rim.x, Rpm.y, Rim.y)	# [Rpm | Rim], h is temporary.
  * 		f = h.vecmul(&h, right)	# [Rpm | Rim]*right             # <<<<<<<<<<<<<<
@@ -12773,7 +12798,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
  */
   __pyx_v_f = __pyx_v_h.vecmul((&__pyx_v_h), __pyx_v_right);
 
-  /* "src/voronoi_dcel.pyx":583
+  /* "src/_squish/voronoi_dcel.pyx":584
  * 		h = init.Matrix2x2(Rpm.x, Rim.x, Rpm.y, Rim.y)	# [Rpm | Rim], h is temporary.
  * 		f = h.vecmul(&h, right)	# [Rpm | Rim]*right
  * 		h = R.copy.smul(&R, mp2*(2*mp.dot(&mp, Rim)))	# fp*g, g is a scalar.             # <<<<<<<<<<<<<<
@@ -12782,7 +12807,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
  */
   __pyx_v_h = __pyx_v_7_squish_R.copy.smul((&__pyx_v_7_squish_R), (__pyx_v_mp2 * (2.0 * __pyx_v_mp.dot((&__pyx_v_mp), __pyx_v_Rim))));
 
-  /* "src/voronoi_dcel.pyx":585
+  /* "src/_squish/voronoi_dcel.pyx":586
  * 		h = R.copy.smul(&R, mp2*(2*mp.dot(&mp, Rim)))	# fp*g, g is a scalar.
  * 		# (fp*g - f*gp)/(g**2). f is a column vector, gp = 2*Rpm is a row vector.
  * 		h.self.msub(&h, init.Matrix2x2(             # <<<<<<<<<<<<<<
@@ -12791,7 +12816,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
  */
   (void)(__pyx_v_h.self.msub((&__pyx_v_h), __pyx_v_7_squish_init.Matrix2x2(((__pyx_v_f.x * 2.0) * __pyx_v_Rpm.x), ((__pyx_v_f.x * 2.0) * __pyx_v_Rpm.y), ((__pyx_v_f.y * 2.0) * __pyx_v_Rpm.x), ((__pyx_v_f.y * 2.0) * __pyx_v_Rpm.y))));
 
-  /* "src/voronoi_dcel.pyx":588
+  /* "src/_squish/voronoi_dcel.pyx":589
  * 			f.x*2*Rpm.x, f.x*2*Rpm.y, f.y*2*Rpm.x, f.y*2*Rpm.y
  * 		))
  * 		h.self.sdiv(&h, (2*mp.dot(&mp, Rim))**2)             # <<<<<<<<<<<<<<
@@ -12800,7 +12825,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
  */
   (void)(__pyx_v_h.self.sdiv((&__pyx_v_h), pow((2.0 * __pyx_v_mp.dot((&__pyx_v_mp), __pyx_v_Rim)), 2.0)));
 
-  /* "src/voronoi_dcel.pyx":590
+  /* "src/_squish/voronoi_dcel.pyx":591
  * 		h.self.sdiv(&h, (2*mp.dot(&mp, Rim))**2)
  * 
  * 		return h             # <<<<<<<<<<<<<<
@@ -12810,7 +12835,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   __pyx_r = __pyx_v_h;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":568
+  /* "src/_squish/voronoi_dcel.pyx":569
  * 
  * 	@staticmethod
  * 	cdef inline Matrix2x2 calc_H(HalfEdge em, HalfEdge ep) nogil:             # <<<<<<<<<<<<<<
@@ -12823,7 +12848,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Matrix2x2 __pyx_f_7_squish_16VoronoiContai
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":594
+/* "src/_squish/voronoi_dcel.pyx":595
  * 
  * 	@staticmethod
  * 	cdef inline bint sign(FLOAT_T [::1] ref, FLOAT_T [::1] p, FLOAT_T [::1] q):             # <<<<<<<<<<<<<<
@@ -12844,7 +12869,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_16VoronoiContainer_sign(__Pyx_memviews
   Py_ssize_t __pyx_t_8;
   __Pyx_RefNannySetupContext("sign", 0);
 
-  /* "src/voronoi_dcel.pyx":601
+  /* "src/_squish/voronoi_dcel.pyx":602
  * 		:return: [bool] returns if counterclockwise.
  * 		"""
  * 		return ((q[0] - ref[0])*-(p[1] - ref[1]) + \             # <<<<<<<<<<<<<<
@@ -12856,7 +12881,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_16VoronoiContainer_sign(__Pyx_memviews
   __pyx_t_3 = 1;
   __pyx_t_4 = 1;
 
-  /* "src/voronoi_dcel.pyx":602
+  /* "src/_squish/voronoi_dcel.pyx":603
  * 		"""
  * 		return ((q[0] - ref[0])*-(p[1] - ref[1]) + \
  * 				  (q[1] - ref[1])*(p[0] - ref[0])) >= 0             # <<<<<<<<<<<<<<
@@ -12868,7 +12893,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_16VoronoiContainer_sign(__Pyx_memviews
   __pyx_t_7 = 0;
   __pyx_t_8 = 0;
 
-  /* "src/voronoi_dcel.pyx":601
+  /* "src/_squish/voronoi_dcel.pyx":602
  * 		:return: [bool] returns if counterclockwise.
  * 		"""
  * 		return ((q[0] - ref[0])*-(p[1] - ref[1]) + \             # <<<<<<<<<<<<<<
@@ -12878,7 +12903,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_16VoronoiContainer_sign(__Pyx_memviews
   __pyx_r = (((((*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_q.data) + __pyx_t_1)) ))) - (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_ref.data) + __pyx_t_2)) )))) * (-((*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_p.data) + __pyx_t_3)) ))) - (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_ref.data) + __pyx_t_4)) )))))) + (((*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_q.data) + __pyx_t_5)) ))) - (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_ref.data) + __pyx_t_6)) )))) * ((*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_p.data) + __pyx_t_7)) ))) - (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) __pyx_v_ref.data) + __pyx_t_8)) )))))) >= 0.0);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":594
+  /* "src/_squish/voronoi_dcel.pyx":595
  * 
  * 	@staticmethod
  * 	cdef inline bint sign(FLOAT_T [::1] ref, FLOAT_T [::1] p, FLOAT_T [::1] q):             # <<<<<<<<<<<<<<
@@ -12892,7 +12917,7 @@ static CYTHON_INLINE int __pyx_f_7_squish_16VoronoiContainer_sign(__Pyx_memviews
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":608
+/* "src/_squish/voronoi_dcel.pyx":609
  * 		# return (q - ref).dot(rot.dot(p - ref)) >= 0
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -12908,7 +12933,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_precompute(CYTHON_UNUSED struct 
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/voronoi_dcel.pyx":611
+/* "src/_squish/voronoi_dcel.pyx":612
  * 		pass
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
@@ -12924,7 +12949,7 @@ static void __pyx_f_7_squish_16VoronoiContainer_calc_grad(CYTHON_UNUSED struct _
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/voronoi_dcel.pyx":614
+/* "src/_squish/voronoi_dcel.pyx":615
  * 		pass
  * 
  * 	cdef void get_statistics(self) except *:             # <<<<<<<<<<<<<<
@@ -12952,26 +12977,26 @@ static void __pyx_f_7_squish_16VoronoiContainer_get_statistics(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_statistics", 0);
 
-  /* "src/voronoi_dcel.pyx":615
+  /* "src/_squish/voronoi_dcel.pyx":616
  * 
  * 	cdef void get_statistics(self) except *:
  * 		self.stats = {}             # <<<<<<<<<<<<<<
  * 		cache = self.site_cache[:self.n, :]
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 615, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 616, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats, __pyx_t_1) < 0) __PYX_ERR(1, 615, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats, __pyx_t_1) < 0) __PYX_ERR(1, 616, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":616
+  /* "src/_squish/voronoi_dcel.pyx":617
  * 	cdef void get_statistics(self) except *:
  * 		self.stats = {}
  * 		cache = self.site_cache[:self.n, :]             # <<<<<<<<<<<<<<
  * 
  * 		self.stats["site_areas"] = np.asarray(cache[:, SITE_CACHE_MAP.iarea])
  */
-  if (unlikely(!__pyx_v_self->site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 616, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 617, __pyx_L1_error)}
   __pyx_t_2.data = __pyx_v_self->site_cache.data;
   __pyx_t_2.memview = __pyx_v_self->site_cache.memview;
   __PYX_INC_MEMVIEW(&__pyx_t_2, 0);
@@ -12990,14 +13015,14 @@ static void __pyx_f_7_squish_16VoronoiContainer_get_statistics(struct __pyx_obj_
     0,
     1) < 0))
 {
-    __PYX_ERR(1, 616, __pyx_L1_error)
+    __PYX_ERR(1, 617, __pyx_L1_error)
 }
 
 __pyx_t_2.shape[1] = __pyx_v_self->site_cache.shape[1];
 __pyx_t_2.strides[1] = __pyx_v_self->site_cache.strides[1];
     __pyx_t_2.suboffsets[1] = -1;
 
-__pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 616, __pyx_L1_error)
+__pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 617, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __PYX_XDEC_MEMVIEW(&__pyx_t_2, 1);
   __pyx_t_2.memview = NULL;
@@ -13005,21 +13030,21 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __p
   __pyx_v_cache = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":618
+  /* "src/_squish/voronoi_dcel.pyx":619
  * 		cache = self.site_cache[:self.n, :]
  * 
  * 		self.stats["site_areas"] = np.asarray(cache[:, SITE_CACHE_MAP.iarea])             # <<<<<<<<<<<<<<
  * 		self.stats["site_edge_count"] = np.asarray(self.sites[:self.n, 2])
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.iarea); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.iarea); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_slice__2);
   __Pyx_GIVEREF(__pyx_slice__2);
@@ -13027,7 +13052,7 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __p
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -13043,28 +13068,28 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 618, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_n_u_site_areas, __pyx_t_1) < 0)) __PYX_ERR(1, 618, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_n_u_site_areas, __pyx_t_1) < 0)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":619
+  /* "src/_squish/voronoi_dcel.pyx":620
  * 
  * 		self.stats["site_areas"] = np.asarray(cache[:, SITE_CACHE_MAP.iarea])
  * 		self.stats["site_edge_count"] = np.asarray(self.sites[:self.n, 2])             # <<<<<<<<<<<<<<
  * 
  * 		self.stats["site_isos"] = np.asarray(cache[:, SITE_CACHE_MAP.iisoparam])
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 619, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 619, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 619, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 620, __pyx_L1_error)}
   __pyx_t_7.data = __pyx_v_self->sites.data;
   __pyx_t_7.memview = __pyx_v_self->sites.memview;
   __PYX_INC_MEMVIEW(&__pyx_t_7, 0);
@@ -13083,7 +13108,7 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __p
     0,
     1) < 0))
 {
-    __PYX_ERR(1, 619, __pyx_L1_error)
+    __PYX_ERR(1, 620, __pyx_L1_error)
 }
 
 {
@@ -13092,7 +13117,7 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_2, 2, (PyObject *(*)(char *)) __p
         __pyx_t_7.data += __pyx_tmp_idx * __pyx_tmp_stride;
 }
 
-__pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 619, __pyx_L1_error)
+__pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __PYX_XDEC_MEMVIEW(&__pyx_t_7, 1);
   __pyx_t_7.memview = NULL;
@@ -13110,30 +13135,30 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 619, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 619, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 620, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_n_u_site_edge_count, __pyx_t_1) < 0)) __PYX_ERR(1, 619, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_n_u_site_edge_count, __pyx_t_1) < 0)) __PYX_ERR(1, 620, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":621
+  /* "src/_squish/voronoi_dcel.pyx":622
  * 		self.stats["site_edge_count"] = np.asarray(self.sites[:self.n, 2])
  * 
  * 		self.stats["site_isos"] = np.asarray(cache[:, SITE_CACHE_MAP.iisoparam])             # <<<<<<<<<<<<<<
  * 		self.stats["site_energies"] = np.asarray(cache[:, SITE_CACHE_MAP.ienergy])
  * 		self.stats["avg_radius"] = np.asarray(cache[:, SITE_CACHE_MAP.iavg_radius])
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.iisoparam); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.iisoparam); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_slice__2);
   __Pyx_GIVEREF(__pyx_slice__2);
@@ -13141,7 +13166,7 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -13157,30 +13182,30 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 621, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_n_u_site_isos, __pyx_t_1) < 0)) __PYX_ERR(1, 621, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_n_u_site_isos, __pyx_t_1) < 0)) __PYX_ERR(1, 622, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":622
+  /* "src/_squish/voronoi_dcel.pyx":623
  * 
  * 		self.stats["site_isos"] = np.asarray(cache[:, SITE_CACHE_MAP.iisoparam])
  * 		self.stats["site_energies"] = np.asarray(cache[:, SITE_CACHE_MAP.ienergy])             # <<<<<<<<<<<<<<
  * 		self.stats["avg_radius"] = np.asarray(cache[:, SITE_CACHE_MAP.iavg_radius])
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 622, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 622, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.ienergy); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 622, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.ienergy); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 622, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_slice__2);
   __Pyx_GIVEREF(__pyx_slice__2);
@@ -13188,7 +13213,7 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_5);
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 622, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -13204,30 +13229,30 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 622, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 622, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_n_u_site_energies, __pyx_t_1) < 0)) __PYX_ERR(1, 622, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_n_u_site_energies, __pyx_t_1) < 0)) __PYX_ERR(1, 623, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":623
+  /* "src/_squish/voronoi_dcel.pyx":624
  * 		self.stats["site_isos"] = np.asarray(cache[:, SITE_CACHE_MAP.iisoparam])
  * 		self.stats["site_energies"] = np.asarray(cache[:, SITE_CACHE_MAP.ienergy])
  * 		self.stats["avg_radius"] = np.asarray(cache[:, SITE_CACHE_MAP.iavg_radius])             # <<<<<<<<<<<<<<
  * 
  * 		self.stats["isoparam_avg"] = self.stats["site_areas"] / \
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 623, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 623, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.iavg_radius); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 623, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_7_squish_SITE_CACHE_MAP.iavg_radius); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 623, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_slice__2);
   __Pyx_GIVEREF(__pyx_slice__2);
@@ -13235,7 +13260,7 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 623, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_cache, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -13251,81 +13276,81 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 623, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 623, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_n_u_avg_radius, __pyx_t_1) < 0)) __PYX_ERR(1, 623, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_n_u_avg_radius, __pyx_t_1) < 0)) __PYX_ERR(1, 624, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":625
+  /* "src/_squish/voronoi_dcel.pyx":626
  * 		self.stats["avg_radius"] = np.asarray(cache[:, SITE_CACHE_MAP.iavg_radius])
  * 
  * 		self.stats["isoparam_avg"] = self.stats["site_areas"] / \             # <<<<<<<<<<<<<<
  * 						(PI*self.stats["avg_radius"]**2)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 625, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_u_site_areas); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 625, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_u_site_areas); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":626
+  /* "src/_squish/voronoi_dcel.pyx":627
  * 
  * 		self.stats["isoparam_avg"] = self.stats["site_areas"] / \
  * 						(PI*self.stats["avg_radius"]**2)             # <<<<<<<<<<<<<<
  * 
  * 		edges = np.asarray(self.edges)
  */
-  __pyx_t_1 = PyFloat_FromDouble(M_PI); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 626, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(M_PI); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 626, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_t_4, __pyx_n_u_avg_radius); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 626, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_t_4, __pyx_n_u_avg_radius); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyNumber_Power(__pyx_t_6, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 626, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_Power(__pyx_t_6, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = PyNumber_Multiply(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 626, __pyx_L1_error)
+  __pyx_t_6 = PyNumber_Multiply(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":625
+  /* "src/_squish/voronoi_dcel.pyx":626
  * 		self.stats["avg_radius"] = np.asarray(cache[:, SITE_CACHE_MAP.iavg_radius])
  * 
  * 		self.stats["isoparam_avg"] = self.stats["site_areas"] / \             # <<<<<<<<<<<<<<
  * 						(PI*self.stats["avg_radius"]**2)
  * 
  */
-  __pyx_t_4 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 625, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 625, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_n_u_isoparam_avg, __pyx_t_4) < 0)) __PYX_ERR(1, 625, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_n_u_isoparam_avg, __pyx_t_4) < 0)) __PYX_ERR(1, 626, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":628
+  /* "src/_squish/voronoi_dcel.pyx":629
  * 						(PI*self.stats["avg_radius"]**2)
  * 
  * 		edges = np.asarray(self.edges)             # <<<<<<<<<<<<<<
  * 
  * 		mask = np.nonzero(edges[:, 0] != -1)[0]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 628, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 628, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 628, __pyx_L1_error)}
-  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_self->edges, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 628, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 629, __pyx_L1_error)}
+  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_self->edges, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_INT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_INT_T, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_1 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
@@ -13340,27 +13365,27 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_1, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 628, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_edges = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":630
+  /* "src/_squish/voronoi_dcel.pyx":631
  * 		edges = np.asarray(self.edges)
  * 
  * 		mask = np.nonzero(edges[:, 0] != -1)[0]             # <<<<<<<<<<<<<<
  * 		all_edges = mask[(mask % 2 == 0)]
  * 		caches = edges[all_edges, 4]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_nonzero); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_nonzero); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_edges, __pyx_tuple__3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_edges, __pyx_tuple__3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_PyInt_NeObjC(__pyx_t_5, __pyx_int_neg_1, -1L, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_NeObjC(__pyx_t_5, __pyx_int_neg_1, -1L, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -13376,41 +13401,41 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_5, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 630, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_mask = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "src/voronoi_dcel.pyx":631
+  /* "src/_squish/voronoi_dcel.pyx":632
  * 
  * 		mask = np.nonzero(edges[:, 0] != -1)[0]
  * 		all_edges = mask[(mask % 2 == 0)]             # <<<<<<<<<<<<<<
  * 		caches = edges[all_edges, 4]
  * 
  */
-  __pyx_t_6 = __Pyx_PyInt_RemainderObjC(__pyx_v_mask, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_RemainderObjC(__pyx_v_mask, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 632, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_4 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 632, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_mask, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_mask, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 632, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_all_edges = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "src/voronoi_dcel.pyx":632
+  /* "src/_squish/voronoi_dcel.pyx":633
  * 		mask = np.nonzero(edges[:, 0] != -1)[0]
  * 		all_edges = mask[(mask % 2 == 0)]
  * 		caches = edges[all_edges, 4]             # <<<<<<<<<<<<<<
  * 
  * 		edge_cache = np.asarray(self.edge_cache)
  */
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 632, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_v_all_edges);
   __Pyx_GIVEREF(__pyx_v_all_edges);
@@ -13418,26 +13443,26 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __Pyx_INCREF(__pyx_int_4);
   __Pyx_GIVEREF(__pyx_int_4);
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_int_4);
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_edges, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 632, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_edges, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_v_caches = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":634
+  /* "src/_squish/voronoi_dcel.pyx":635
  * 		caches = edges[all_edges, 4]
  * 
  * 		edge_cache = np.asarray(self.edge_cache)             # <<<<<<<<<<<<<<
  * 
  * 		self.stats["edge_lengths"] = edge_cache[caches, self.edge_cache_map.ila_mag]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 634, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 635, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 634, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 635, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_v_self->edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 634, __pyx_L1_error)}
-  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_self->edge_cache, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 634, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 635, __pyx_L1_error)}
+  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_self->edge_cache, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 635, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -13452,22 +13477,22 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 634, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 635, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_edge_cache = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":636
+  /* "src/_squish/voronoi_dcel.pyx":637
  * 		edge_cache = np.asarray(self.edge_cache)
  * 
  * 		self.stats["edge_lengths"] = edge_cache[caches, self.edge_cache_map.ila_mag]             # <<<<<<<<<<<<<<
  * 
  * 	@property
  */
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->edge_cache_map->ila_mag); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 636, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->edge_cache_map->ila_mag); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 637, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 636, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 637, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_caches);
   __Pyx_GIVEREF(__pyx_v_caches);
@@ -13475,16 +13500,16 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_edge_cache, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 636, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_edge_cache, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 637, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 636, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stats); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 637, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_n_u_edge_lengths, __pyx_t_4) < 0)) __PYX_ERR(1, 636, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_n_u_edge_lengths, __pyx_t_4) < 0)) __PYX_ERR(1, 637, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/voronoi_dcel.pyx":614
+  /* "src/_squish/voronoi_dcel.pyx":615
  * 		pass
  * 
  * 	cdef void get_statistics(self) except *:             # <<<<<<<<<<<<<<
@@ -13512,7 +13537,7 @@ __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_t_7, 1, (PyObject *(*)(char *)) __p
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/voronoi_dcel.pyx":639
+/* "src/_squish/voronoi_dcel.pyx":640
  * 
  * 	@property
  * 	def site_arr(self):             # <<<<<<<<<<<<<<
@@ -13547,7 +13572,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8site_arr___get__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "src/voronoi_dcel.pyx":640
+  /* "src/_squish/voronoi_dcel.pyx":641
  * 	@property
  * 	def site_arr(self):
  * 		return np.asarray(self.points[:self.n], dtype=FLOAT)             # <<<<<<<<<<<<<<
@@ -13555,12 +13580,12 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8site_arr___get__(struct _
  * 	@property
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 640, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 640, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 640, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 641, __pyx_L1_error)}
   __pyx_t_3.data = __pyx_v_self->points.data;
   __pyx_t_3.memview = __pyx_v_self->points.memview;
   __PYX_INC_MEMVIEW(&__pyx_t_3, 0);
@@ -13579,30 +13604,30 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8site_arr___get__(struct _
     0,
     1) < 0))
 {
-    __PYX_ERR(1, 640, __pyx_L1_error)
+    __PYX_ERR(1, 641, __pyx_L1_error)
 }
 
 __pyx_t_3.shape[1] = __pyx_v_self->points.shape[1];
 __pyx_t_3.strides[1] = __pyx_v_self->points.strides[1];
     __pyx_t_3.suboffsets[1] = -1;
 
-__pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_3, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 640, __pyx_L1_error)
+__pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_3, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __PYX_XDEC_MEMVIEW(&__pyx_t_3, 1);
   __pyx_t_3.memview = NULL;
   __pyx_t_3.data = NULL;
-  __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 640, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 640, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 640, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 640, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 640, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -13611,7 +13636,7 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_3, 2, (PyObject *(*)(char *)) __p
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":639
+  /* "src/_squish/voronoi_dcel.pyx":640
  * 
  * 	@property
  * 	def site_arr(self):             # <<<<<<<<<<<<<<
@@ -13634,7 +13659,7 @@ __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_t_3, 2, (PyObject *(*)(char *)) __p
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":643
+/* "src/_squish/voronoi_dcel.pyx":644
  * 
  * 	@property
  * 	def vor_data(self):             # <<<<<<<<<<<<<<
@@ -13664,7 +13689,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8vor_data___get__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "src/voronoi_dcel.pyx":644
+  /* "src/_squish/voronoi_dcel.pyx":645
  * 	@property
  * 	def vor_data(self):
  * 		return self.scipy_vor             # <<<<<<<<<<<<<<
@@ -13672,13 +13697,13 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8vor_data___get__(struct _
  * 	@property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 644, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_scipy_vor); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 645, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":643
+  /* "src/_squish/voronoi_dcel.pyx":644
  * 
  * 	@property
  * 	def vor_data(self):             # <<<<<<<<<<<<<<
@@ -13697,7 +13722,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8vor_data___get__(struct _
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":647
+/* "src/_squish/voronoi_dcel.pyx":648
  * 
  * 	@property
  * 	def gradient(self):             # <<<<<<<<<<<<<<
@@ -13730,7 +13755,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8gradient___get__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "src/voronoi_dcel.pyx":648
+  /* "src/_squish/voronoi_dcel.pyx":649
  * 	@property
  * 	def gradient(self):
  * 		return np.asarray(self.grad, dtype=FLOAT)             # <<<<<<<<<<<<<<
@@ -13738,26 +13763,26 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8gradient___get__(struct _
  * 	def add_sites(self, add):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 648, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 648, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_v_self->grad.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 648, __pyx_L1_error)}
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->grad, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 648, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->grad.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(1, 649, __pyx_L1_error)}
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->grad, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7_squish_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_7_squish_FLOAT_T, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 648, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 648, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 648, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 648, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13766,7 +13791,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8gradient___get__(struct _
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":647
+  /* "src/_squish/voronoi_dcel.pyx":648
  * 
  * 	@property
  * 	def gradient(self):             # <<<<<<<<<<<<<<
@@ -13788,7 +13813,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_8gradient___get__(struct _
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":650
+/* "src/_squish/voronoi_dcel.pyx":651
  * 		return np.asarray(self.grad, dtype=FLOAT)
  * 
  * 	def add_sites(self, add):             # <<<<<<<<<<<<<<
@@ -13822,7 +13847,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_2add_sites(struct __pyx_ob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_sites", 0);
 
-  /* "src/voronoi_dcel.pyx":651
+  /* "src/_squish/voronoi_dcel.pyx":652
  * 
  * 	def add_sites(self, add):
  * 		return (self.site_arr + add) % np.asarray(self.dim, dtype=FLOAT)             # <<<<<<<<<<<<<<
@@ -13830,35 +13855,35 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_2add_sites(struct __pyx_ob
  * 	def iterate(self, FLOAT_T step):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_site_arr); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_site_arr); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_v_add); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_v_add); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_carray_to_py___pyx_t_7_squish_FLOAT_T(__pyx_v_self->dim, 2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_carray_to_py___pyx_t_7_squish_FLOAT_T(__pyx_v_self->dim, 2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 651, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Remainder(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 651, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Remainder(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -13866,7 +13891,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_2add_sites(struct __pyx_ob
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":650
+  /* "src/_squish/voronoi_dcel.pyx":651
  * 		return np.asarray(self.grad, dtype=FLOAT)
  * 
  * 	def add_sites(self, add):             # <<<<<<<<<<<<<<
@@ -13889,7 +13914,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_2add_sites(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":653
+/* "src/_squish/voronoi_dcel.pyx":654
  * 		return (self.site_arr + add) % np.asarray(self.dim, dtype=FLOAT)
  * 
  * 	def iterate(self, FLOAT_T step):             # <<<<<<<<<<<<<<
@@ -13908,7 +13933,7 @@ static PyObject *__pyx_pw_7_squish_16VoronoiContainer_5iterate(PyObject *__pyx_v
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("iterate (wrapper)", 0);
   assert(__pyx_arg_step); {
-    __pyx_v_step = __pyx_PyFloat_AsDouble(__pyx_arg_step); if (unlikely((__pyx_v_step == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(1, 653, __pyx_L3_error)
+    __pyx_v_step = __pyx_PyFloat_AsDouble(__pyx_arg_step); if (unlikely((__pyx_v_step == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(1, 654, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13944,48 +13969,48 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("iterate", 0);
 
-  /* "src/voronoi_dcel.pyx":654
+  /* "src/_squish/voronoi_dcel.pyx":655
  * 
  * 	def iterate(self, FLOAT_T step):
  * 		k1 = self.gradient             # <<<<<<<<<<<<<<
  * 		k2 = self.__class__(self.n, self.w, self.h, self.r,
  * 				self.add_sites(step*k1)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_gradient); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 654, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_gradient); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 655, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_k1 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":655
+  /* "src/_squish/voronoi_dcel.pyx":656
  * 	def iterate(self, FLOAT_T step):
  * 		k1 = self.gradient
  * 		k2 = self.__class__(self.n, self.w, self.h, self.r,             # <<<<<<<<<<<<<<
  * 				self.add_sites(step*k1)
  * 		).gradient
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 655, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 656, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 655, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 656, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 655, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 656, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 655, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 656, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->r); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 655, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->r); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 656, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "src/voronoi_dcel.pyx":656
+  /* "src/_squish/voronoi_dcel.pyx":657
  * 		k1 = self.gradient
  * 		k2 = self.__class__(self.n, self.w, self.h, self.r,
  * 				self.add_sites(step*k1)             # <<<<<<<<<<<<<<
  * 		).gradient
  * 
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_sites); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 656, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add_sites); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 657, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_step); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 656, __pyx_L1_error)
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_step); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 657, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_10 = PyNumber_Multiply(__pyx_t_9, __pyx_v_k1); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 656, __pyx_L1_error)
+  __pyx_t_10 = PyNumber_Multiply(__pyx_t_9, __pyx_v_k1); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 657, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __pyx_t_9 = NULL;
@@ -14001,7 +14026,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   __pyx_t_7 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_9, __pyx_t_10) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_10);
   __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-  if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 656, __pyx_L1_error)
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 657, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_8 = NULL;
@@ -14019,7 +14044,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 5+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 655, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 5+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 656, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14032,7 +14057,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 5+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 655, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 5+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 656, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14043,7 +14068,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   } else
   #endif
   {
-    __pyx_t_10 = PyTuple_New(5+__pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 655, __pyx_L1_error)
+    __pyx_t_10 = PyTuple_New(5+__pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 656, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     if (__pyx_t_8) {
       __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -14063,26 +14088,26 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
     __pyx_t_7 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 655, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 656, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/voronoi_dcel.pyx":657
+  /* "src/_squish/voronoi_dcel.pyx":658
  * 		k2 = self.__class__(self.n, self.w, self.h, self.r,
  * 				self.add_sites(step*k1)
  * 		).gradient             # <<<<<<<<<<<<<<
  * 
  * 		return (step/2)*(k1+k2), k1
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_gradient); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 657, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_gradient); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 658, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_k2 = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "src/voronoi_dcel.pyx":659
+  /* "src/_squish/voronoi_dcel.pyx":660
  * 		).gradient
  * 
  * 		return (step/2)*(k1+k2), k1             # <<<<<<<<<<<<<<
@@ -14090,15 +14115,15 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_step / 2.0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 659, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((__pyx_v_step / 2.0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Add(__pyx_v_k1, __pyx_v_k2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 659, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Add(__pyx_v_k1, __pyx_v_k2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_10 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 659, __pyx_L1_error)
+  __pyx_t_10 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 659, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_10);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_10);
@@ -14110,7 +14135,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":653
+  /* "src/_squish/voronoi_dcel.pyx":654
  * 		return (self.site_arr + add) % np.asarray(self.dim, dtype=FLOAT)
  * 
  * 	def iterate(self, FLOAT_T step):             # <<<<<<<<<<<<<<
@@ -14140,7 +14165,7 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_4iterate(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "src/voronoi_dcel.pyx":679
+/* "src/_squish/voronoi_dcel.pyx":680
  * 		#return higher, k1
  * 
  * 	def hessian(self, d: float) -> np.ndarray:             # <<<<<<<<<<<<<<
@@ -14160,7 +14185,7 @@ static PyArrayObject *__pyx_pw_7_squish_16VoronoiContainer_7hessian(PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("hessian (wrapper)", 0);
   assert(__pyx_arg_d); {
-    __pyx_v_d = __pyx_PyFloat_AsDouble(__pyx_arg_d); if (unlikely((__pyx_v_d == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 679, __pyx_L3_error)
+    __pyx_v_d = __pyx_PyFloat_AsDouble(__pyx_arg_d); if (unlikely((__pyx_v_d == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 680, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14206,23 +14231,23 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("hessian", 0);
 
-  /* "src/voronoi_dcel.pyx":685
+  /* "src/_squish/voronoi_dcel.pyx":686
  * 		:return: 2Nx2N array that represents Hessian.
  * 		"""
  * 		HE = np.zeros((2*self.n, 2*self.n))             # <<<<<<<<<<<<<<
  * 		new_sites = np.copy(self.site_arr)	# Maintain one copy for speed.
  * 		for i in range(self.n):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 685, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 685, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 685, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 685, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 685, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
@@ -14243,25 +14268,25 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 685, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_HE = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":686
+  /* "src/_squish/voronoi_dcel.pyx":687
  * 		"""
  * 		HE = np.zeros((2*self.n, 2*self.n))
  * 		new_sites = np.copy(self.site_arr)	# Maintain one copy for speed.             # <<<<<<<<<<<<<<
  * 		for i in range(self.n):
  * 			for j in range(2):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 686, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 686, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_site_arr); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 686, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_site_arr); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
@@ -14276,31 +14301,31 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 686, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_new_sites = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":687
+  /* "src/_squish/voronoi_dcel.pyx":688
  * 		HE = np.zeros((2*self.n, 2*self.n))
  * 		new_sites = np.copy(self.site_arr)	# Maintain one copy for speed.
  * 		for i in range(self.n):             # <<<<<<<<<<<<<<
  * 			for j in range(2):
  * 				mod = self.w if j == 0 else self.h
  */
-  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 687, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 688, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 687, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 688, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
     __pyx_t_1 = __pyx_t_5; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 687, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 688, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 687, __pyx_L1_error)
+    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 688, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   for (;;) {
@@ -14308,17 +14333,17 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 687, __pyx_L1_error)
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 688, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 687, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 688, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 687, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 688, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 687, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 688, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       }
@@ -14328,7 +14353,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(1, 687, __pyx_L1_error)
+          else __PYX_ERR(1, 688, __pyx_L1_error)
         }
         break;
       }
@@ -14337,7 +14362,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "src/voronoi_dcel.pyx":688
+    /* "src/_squish/voronoi_dcel.pyx":689
  * 		new_sites = np.copy(self.site_arr)	# Maintain one copy for speed.
  * 		for i in range(self.n):
  * 			for j in range(2):             # <<<<<<<<<<<<<<
@@ -14345,29 +14370,29 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  */
     for (__pyx_t_8 = 0; __pyx_t_8 < 2; __pyx_t_8+=1) {
-      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 688, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 689, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":689
+      /* "src/_squish/voronoi_dcel.pyx":690
  * 		for i in range(self.n):
  * 			for j in range(2):
  * 				mod = self.w if j == 0 else self.h             # <<<<<<<<<<<<<<
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  * 				Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  */
-      __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_v_j, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 689, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_v_j, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 690, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 689, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 690, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_9) {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 689, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 690, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_5 = __pyx_t_3;
         __pyx_t_3 = 0;
       } else {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 689, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 690, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_5 = __pyx_t_3;
         __pyx_t_3 = 0;
@@ -14375,49 +14400,49 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       __Pyx_XDECREF_SET(__pyx_v_mod, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":690
+      /* "src/_squish/voronoi_dcel.pyx":691
  * 			for j in range(2):
  * 				mod = self.w if j == 0 else self.h
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod             # <<<<<<<<<<<<<<
  * 				Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  * 				new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
  */
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 690, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 690, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 690, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = PyNumber_Add(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 690, __pyx_L1_error)
+      __pyx_t_4 = PyNumber_Add(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_Remainder(__pyx_t_4, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 690, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Remainder(__pyx_t_4, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 690, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(1, 690, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(1, 691, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":691
+      /* "src/_squish/voronoi_dcel.pyx":692
  * 				mod = self.w if j == 0 else self.h
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  * 				Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)             # <<<<<<<<<<<<<<
  * 				new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
  * 				Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 692, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 692, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 692, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 692, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = PyFloat_FromDouble(__pyx_v_self->r); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_11 = PyFloat_FromDouble(__pyx_v_self->r); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 692, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_12 = NULL;
       __pyx_t_13 = 0;
@@ -14434,7 +14459,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[6] = {__pyx_t_12, __pyx_t_3, __pyx_t_2, __pyx_t_10, __pyx_t_11, __pyx_v_new_sites};
-        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14446,7 +14471,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[6] = {__pyx_t_12, __pyx_t_3, __pyx_t_2, __pyx_t_10, __pyx_t_11, __pyx_v_new_sites};
-        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14456,7 +14481,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       } else
       #endif
       {
-        __pyx_t_14 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 691, __pyx_L1_error)
+        __pyx_t_14 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 692, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
         if (__pyx_t_12) {
           __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_12); __pyx_t_12 = NULL;
@@ -14476,7 +14501,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
         __pyx_t_2 = 0;
         __pyx_t_10 = 0;
         __pyx_t_11 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       }
@@ -14484,49 +14509,49 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       __Pyx_XDECREF_SET(__pyx_v_Ep, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":692
+      /* "src/_squish/voronoi_dcel.pyx":693
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  * 				Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  * 				new_sites[i][j] = (new_sites[i][j] - 2*d) % mod             # <<<<<<<<<<<<<<
  * 				Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  */
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 692, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyFloat_FromDouble((2.0 * __pyx_v_d)); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble((2.0 * __pyx_v_d)); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_14 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 692, __pyx_L1_error)
+      __pyx_t_14 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_Remainder(__pyx_t_14, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Remainder(__pyx_t_14, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 692, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      if (unlikely(PyObject_SetItem(__pyx_t_14, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(1, 692, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_14, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(1, 693, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":693
+      /* "src/_squish/voronoi_dcel.pyx":694
  * 				Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  * 				new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
  * 				Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)             # <<<<<<<<<<<<<<
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  * 
  */
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 693, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 693, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_11 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 693, __pyx_L1_error)
+      __pyx_t_11 = PyFloat_FromDouble(__pyx_v_self->w); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 693, __pyx_L1_error)
+      __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->h); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->r); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 693, __pyx_L1_error)
+      __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->r); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_3 = NULL;
       __pyx_t_13 = 0;
@@ -14543,7 +14568,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_14)) {
         PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_t_4, __pyx_t_11, __pyx_t_10, __pyx_t_2, __pyx_v_new_sites};
-        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 693, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 694, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -14555,7 +14580,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_14)) {
         PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_t_4, __pyx_t_11, __pyx_t_10, __pyx_t_2, __pyx_v_new_sites};
-        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 693, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 694, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -14565,7 +14590,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 693, __pyx_L1_error)
+        __pyx_t_12 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 694, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_3) {
           __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -14585,7 +14610,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
         __pyx_t_11 = 0;
         __pyx_t_10 = 0;
         __pyx_t_2 = 0;
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_12, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 693, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_12, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 694, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
@@ -14593,55 +14618,55 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       __Pyx_XDECREF_SET(__pyx_v_Em, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":694
+      /* "src/_squish/voronoi_dcel.pyx":695
  * 				new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
  * 				Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod             # <<<<<<<<<<<<<<
  * 
  * 				HE[:, 2*i+j] = ((Ep.gradient - Em.gradient)/(2*d)).flatten()
  */
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 694, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 694, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 694, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 694, __pyx_L1_error)
+      __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_Remainder(__pyx_t_12, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 694, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Remainder(__pyx_t_12, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 694, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      if (unlikely(PyObject_SetItem(__pyx_t_12, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(1, 694, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_12, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(1, 695, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":696
+      /* "src/_squish/voronoi_dcel.pyx":697
  * 				new_sites[i][j] = (new_sites[i][j] + d) % mod
  * 
  * 				HE[:, 2*i+j] = ((Ep.gradient - Em.gradient)/(2*d)).flatten()             # <<<<<<<<<<<<<<
  * 
  * 		# Average out discrepencies, since it should be symmetric.
  */
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_Ep, __pyx_n_s_gradient); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_Ep, __pyx_n_s_gradient); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_Em, __pyx_n_s_gradient); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_Em, __pyx_n_s_gradient); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_2 = PyNumber_Subtract(__pyx_t_12, __pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_Subtract(__pyx_t_12, __pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = PyFloat_FromDouble((2.0 * __pyx_v_d)); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_14 = PyFloat_FromDouble((2.0 * __pyx_v_d)); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_12 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_flatten); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_flatten); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_12 = NULL;
@@ -14656,15 +14681,15 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       }
       __pyx_t_5 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_14);
       __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 696, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = PyNumber_Multiply(__pyx_int_2, __pyx_v_i); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_14 = PyNumber_Multiply(__pyx_int_2, __pyx_v_i); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_v_j); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_v_j); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 696, __pyx_L1_error)
+      __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_INCREF(__pyx_slice__2);
       __Pyx_GIVEREF(__pyx_slice__2);
@@ -14672,12 +14697,12 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       __Pyx_GIVEREF(__pyx_t_12);
       PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_12);
       __pyx_t_12 = 0;
-      if (unlikely(PyObject_SetItem(__pyx_v_HE, __pyx_t_14, __pyx_t_5) < 0)) __PYX_ERR(1, 696, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_v_HE, __pyx_t_14, __pyx_t_5) < 0)) __PYX_ERR(1, 697, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
 
-    /* "src/voronoi_dcel.pyx":687
+    /* "src/_squish/voronoi_dcel.pyx":688
  * 		HE = np.zeros((2*self.n, 2*self.n))
  * 		new_sites = np.copy(self.site_arr)	# Maintain one copy for speed.
  * 		for i in range(self.n):             # <<<<<<<<<<<<<<
@@ -14687,25 +14712,25 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":699
+  /* "src/_squish/voronoi_dcel.pyx":700
  * 
  * 		# Average out discrepencies, since it should be symmetric.
  * 		for i in range(2*self.n):             # <<<<<<<<<<<<<<
  * 			for j in range(i, 2*self.n):
  * 				HE[i][j] = (HE[i][j] + HE[j][i])/2
  */
-  __pyx_t_1 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 699, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 700, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 699, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
     __pyx_t_1 = __pyx_t_5; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 699, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 700, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 699, __pyx_L1_error)
+    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 700, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   for (;;) {
@@ -14713,17 +14738,17 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 699, __pyx_L1_error)
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 700, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 699, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 699, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(1, 700, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 699, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       }
@@ -14733,7 +14758,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(1, 699, __pyx_L1_error)
+          else __PYX_ERR(1, 700, __pyx_L1_error)
         }
         break;
       }
@@ -14742,16 +14767,16 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "src/voronoi_dcel.pyx":700
+    /* "src/_squish/voronoi_dcel.pyx":701
  * 		# Average out discrepencies, since it should be symmetric.
  * 		for i in range(2*self.n):
  * 			for j in range(i, 2*self.n):             # <<<<<<<<<<<<<<
  * 				HE[i][j] = (HE[i][j] + HE[j][i])/2
  * 				HE[j][i] = HE[i][j]
  */
-    __pyx_t_5 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->n)); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 700, __pyx_L1_error)
+    __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 701, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     __Pyx_INCREF(__pyx_v_i);
     __Pyx_GIVEREF(__pyx_v_i);
@@ -14759,16 +14784,16 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
     __Pyx_GIVEREF(__pyx_t_5);
     PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_5);
     __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
       __pyx_t_14 = __pyx_t_5; __Pyx_INCREF(__pyx_t_14); __pyx_t_15 = 0;
       __pyx_t_16 = NULL;
     } else {
-      __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 700, __pyx_L1_error)
+      __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 701, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 700, __pyx_L1_error)
+      __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 701, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     for (;;) {
@@ -14776,17 +14801,17 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
         if (likely(PyList_CheckExact(__pyx_t_14))) {
           if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_14)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(1, 700, __pyx_L1_error)
+          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(1, 701, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         } else {
           if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_14)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(1, 700, __pyx_L1_error)
+          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(1, 701, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 700, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         }
@@ -14796,7 +14821,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(1, 700, __pyx_L1_error)
+            else __PYX_ERR(1, 701, __pyx_L1_error)
           }
           break;
         }
@@ -14805,55 +14830,55 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
       __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":701
+      /* "src/_squish/voronoi_dcel.pyx":702
  * 		for i in range(2*self.n):
  * 			for j in range(i, 2*self.n):
  * 				HE[i][j] = (HE[i][j] + HE[j][i])/2             # <<<<<<<<<<<<<<
  * 				HE[j][i] = HE[i][j]
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_j); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_j); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyNumber_Add(__pyx_t_12, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Add(__pyx_t_12, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyInt_TrueDivideObjC(__pyx_t_5, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_TrueDivideObjC(__pyx_t_5, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 701, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_v_j, __pyx_t_2) < 0)) __PYX_ERR(1, 701, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_v_j, __pyx_t_2) < 0)) __PYX_ERR(1, 702, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "src/voronoi_dcel.pyx":702
+      /* "src/_squish/voronoi_dcel.pyx":703
  * 			for j in range(i, 2*self.n):
  * 				HE[i][j] = (HE[i][j] + HE[j][i])/2
  * 				HE[j][i] = HE[i][j]             # <<<<<<<<<<<<<<
  * 
  * 		return HE
  */
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 702, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_j); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 702, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_j); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_j); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 702, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_j); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_i, __pyx_t_5) < 0)) __PYX_ERR(1, 702, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_i, __pyx_t_5) < 0)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/voronoi_dcel.pyx":700
+      /* "src/_squish/voronoi_dcel.pyx":701
  * 		# Average out discrepencies, since it should be symmetric.
  * 		for i in range(2*self.n):
  * 			for j in range(i, 2*self.n):             # <<<<<<<<<<<<<<
@@ -14863,7 +14888,7 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
     }
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-    /* "src/voronoi_dcel.pyx":699
+    /* "src/_squish/voronoi_dcel.pyx":700
  * 
  * 		# Average out discrepencies, since it should be symmetric.
  * 		for i in range(2*self.n):             # <<<<<<<<<<<<<<
@@ -14873,19 +14898,19 @@ static PyArrayObject *__pyx_pf_7_squish_16VoronoiContainer_6hessian(struct __pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/voronoi_dcel.pyx":704
+  /* "src/_squish/voronoi_dcel.pyx":705
  * 				HE[j][i] = HE[i][j]
  * 
  * 		return HE             # <<<<<<<<<<<<<<
  * 
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  if (!(likely(((__pyx_v_HE) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_HE, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 704, __pyx_L1_error)
+  if (!(likely(((__pyx_v_HE) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_HE, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 705, __pyx_L1_error)
   __Pyx_INCREF(__pyx_v_HE);
   __pyx_r = ((PyArrayObject *)__pyx_v_HE);
   goto __pyx_L0;
 
-  /* "src/voronoi_dcel.pyx":679
+  /* "src/_squish/voronoi_dcel.pyx":680
  * 		#return higher, k1
  * 
  * 	def hessian(self, d: float) -> np.ndarray:             # <<<<<<<<<<<<<<
@@ -15243,9 +15268,9 @@ static PyObject *__pyx_pf_7_squish_16VoronoiContainer_10__setstate_cython__(CYTH
   return __pyx_r;
 }
 
-/* "src/energy.pyx":10
- * 	:param sites: [np.ndarray] collection of sites.
- * 	"""
+/* "src/_squish/energy.pyx":14
+ * 	title_str = "Area"
+ * 
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &AREA_EDGE_CACHE_MAP
@@ -15294,29 +15319,29 @@ static int __pyx_pw_7_squish_10AreaEnergy_1__init__(PyObject *__pyx_v_self, PyOb
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(3, 10, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(3, 14, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_h)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(3, 10, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(3, 14, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(3, 10, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(3, 14, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_site_arr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(3, 10, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(3, 14, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(3, 10, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(3, 14, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -15327,21 +15352,21 @@ static int __pyx_pw_7_squish_10AreaEnergy_1__init__(PyObject *__pyx_v_self, PyOb
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 10, __pyx_L3_error)
-    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 10, __pyx_L3_error)
-    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 10, __pyx_L3_error)
-    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 10, __pyx_L3_error)
+    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 14, __pyx_L3_error)
+    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 14, __pyx_L3_error)
+    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 14, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 14, __pyx_L3_error)
     __pyx_v_site_arr = ((PyArrayObject *)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 10, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 14, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_squish.AreaEnergy.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(3, 11, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_r = __pyx_pf_7_squish_10AreaEnergy___init__(((struct __pyx_obj_7_squish_AreaEnergy *)__pyx_v_self), __pyx_v_n, __pyx_v_w, __pyx_v_h, __pyx_v_r, __pyx_v_site_arr);
 
   /* function exit code */
@@ -15377,11 +15402,11 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
   __pyx_pybuffernd_site_arr.rcbuffer = &__pyx_pybuffer_site_arr;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(3, 10, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(3, 14, __pyx_L1_error)
   }
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
-  /* "src/energy.pyx":12
+  /* "src/_squish/energy.pyx":16
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &AREA_EDGE_CACHE_MAP             # <<<<<<<<<<<<<<
@@ -15390,7 +15415,7 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
  */
   __pyx_v_self->__pyx_base.edge_cache_map = (&__pyx_v_7_squish_AREA_EDGE_CACHE_MAP);
 
-  /* "src/energy.pyx":13
+  /* "src/_squish/energy.pyx":17
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &AREA_EDGE_CACHE_MAP
  * 		self.energy = 0.0             # <<<<<<<<<<<<<<
@@ -15399,14 +15424,14 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
  */
   __pyx_v_self->__pyx_base.energy = 0.0;
 
-  /* "src/energy.pyx":15
+  /* "src/_squish/energy.pyx":19
  * 		self.energy = 0.0
  * 
  * 		super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
  * 		self.minimum = (<FLOAT_T>n)*(w*h/(<FLOAT_T>n)-PI*r**2)**2
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(((PyObject *)__pyx_ptype_7_squish_AreaEnergy));
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_7_squish_AreaEnergy));
@@ -15414,19 +15439,19 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self));
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -15443,7 +15468,7 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 15, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 19, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15455,7 +15480,7 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 15, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 19, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15465,7 +15490,7 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
   } else
   #endif
   {
-    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(3, 15, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(3, 19, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -15485,14 +15510,14 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
     __pyx_t_4 = 0;
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 15, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 19, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/energy.pyx":16
+  /* "src/_squish/energy.pyx":20
  * 
  * 		super().__init__(n, w, h, r, site_arr)
  * 		self.minimum = (<FLOAT_T>n)*(w*h/(<FLOAT_T>n)-PI*r**2)**2             # <<<<<<<<<<<<<<
@@ -15501,9 +15526,9 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
  */
   __pyx_v_self->minimum = (((__pyx_t_7_squish_FLOAT_T)__pyx_v_n) * pow((((__pyx_v_w * __pyx_v_h) / ((__pyx_t_7_squish_FLOAT_T)__pyx_v_n)) - (M_PI * pow(__pyx_v_r, 2.0))), 2.0));
 
-  /* "src/energy.pyx":10
- * 	:param sites: [np.ndarray] collection of sites.
- * 	"""
+  /* "src/_squish/energy.pyx":14
+ * 	title_str = "Area"
+ * 
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &AREA_EDGE_CACHE_MAP
@@ -15537,7 +15562,7 @@ static int __pyx_pf_7_squish_10AreaEnergy___init__(struct __pyx_obj_7_squish_Are
   return __pyx_r;
 }
 
-/* "src/energy.pyx":19
+/* "src/_squish/energy.pyx":23
  * 
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -15571,29 +15596,29 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("precompute", 0);
 
-  /* "src/energy.pyx":20
+  /* "src/_squish/energy.pyx":24
  * 
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 20, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 20, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 20, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 24, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 24, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 24, __pyx_L1_error)}
 
-  /* "src/energy.pyx":21
+  /* "src/_squish/energy.pyx":25
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		cdef Site xi
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 21, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 21, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 21, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 25, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 25, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 25, __pyx_L1_error)}
 
-  /* "src/energy.pyx":20
+  /* "src/_squish/energy.pyx":24
  * 
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -15602,7 +15627,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "src/energy.pyx":26
+  /* "src/_squish/energy.pyx":30
  * 		cdef HalfEdge em, e, ep
  * 		cdef Vector2D vdiff
  * 		cdef FLOAT_T A = PI*self.r**2             # <<<<<<<<<<<<<<
@@ -15611,7 +15636,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
   __pyx_v_A = (M_PI * pow(__pyx_v_self->__pyx_base.r, 2.0));
 
-  /* "src/energy.pyx":27
+  /* "src/_squish/energy.pyx":31
  * 		cdef Vector2D vdiff
  * 		cdef FLOAT_T A = PI*self.r**2
  * 		cdef FLOAT_T energy = 0             # <<<<<<<<<<<<<<
@@ -15620,7 +15645,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
   __pyx_v_energy = 0.0;
 
-  /* "src/energy.pyx":30
+  /* "src/_squish/energy.pyx":34
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
@@ -15634,7 +15659,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
       __Pyx_FastGIL_Remember();
       #endif
       /*try:*/ {
-        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 30, __pyx_L4_error)}
+        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 34, __pyx_L4_error)}
         __pyx_t_1 = (__pyx_v_self->__pyx_base.sites.shape[0]);
         if ((1 == 0)) abort();
         {
@@ -15660,7 +15685,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
                             /* Initialize private variables to invalid values */
                             __pyx_v_j = ((__pyx_t_7_squish_INT_T)0xbad0bad0);
 
-                            /* "src/energy.pyx":31
+                            /* "src/_squish/energy.pyx":35
  * 		cdef INT_T i, j
  * 		for i in prange(self.sites.shape[0], nogil=True):
  * 			xi = init.Site(i, &info)             # <<<<<<<<<<<<<<
@@ -15669,7 +15694,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                             __pyx_v_xi = __pyx_v_7_squish_init.Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "src/energy.pyx":32
+                            /* "src/_squish/energy.pyx":36
  * 		for i in prange(self.sites.shape[0], nogil=True):
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -15678,7 +15703,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "src/energy.pyx":33
+                            /* "src/_squish/energy.pyx":37
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)
  * 			xi.cache.energy(&xi,             # <<<<<<<<<<<<<<
@@ -15687,7 +15712,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                             (void)(__pyx_v_xi.cache->energy((&__pyx_v_xi), pow((__pyx_v_xi.cache->area((&__pyx_v_xi), NAN) - __pyx_v_A), 2.0)));
 
-                            /* "src/energy.pyx":36
+                            /* "src/_squish/energy.pyx":40
  * 				(xi.cache.area(&xi, NAN) - A)**2
  * 			)
  * 			if i < self.n:             # <<<<<<<<<<<<<<
@@ -15697,7 +15722,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
                             __pyx_t_4 = ((__pyx_v_i < __pyx_v_self->__pyx_base.n) != 0);
                             if (__pyx_t_4) {
 
-                              /* "src/energy.pyx":37
+                              /* "src/_squish/energy.pyx":41
  * 			)
  * 			if i < self.n:
  * 				energy += xi.cache.energy(&xi, NAN)             # <<<<<<<<<<<<<<
@@ -15706,7 +15731,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                               __pyx_v_energy = (__pyx_v_energy + __pyx_v_xi.cache->energy((&__pyx_v_xi), NAN));
 
-                              /* "src/energy.pyx":36
+                              /* "src/_squish/energy.pyx":40
  * 				(xi.cache.area(&xi, NAN) - A)**2
  * 			)
  * 			if i < self.n:             # <<<<<<<<<<<<<<
@@ -15715,7 +15740,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                             }
 
-                            /* "src/energy.pyx":39
+                            /* "src/_squish/energy.pyx":43
  * 				energy += xi.cache.energy(&xi, NAN)
  * 
  * 			for j in prange(xi.edge_num(&xi)):             # <<<<<<<<<<<<<<
@@ -15739,7 +15764,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
                                             {
                                                 __pyx_v_j = (__pyx_t_7_squish_INT_T)(0 + 1 * __pyx_t_6);
 
-                                                /* "src/energy.pyx":40
+                                                /* "src/_squish/energy.pyx":44
  * 
  * 			for j in prange(xi.edge_num(&xi)):
  * 				em, ep = e.prev(&e), e.next(&e)             # <<<<<<<<<<<<<<
@@ -15751,7 +15776,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
                                                 __pyx_v_em = __pyx_t_8;
                                                 __pyx_v_ep = __pyx_t_9;
 
-                                                /* "src/energy.pyx":41
+                                                /* "src/_squish/energy.pyx":45
  * 			for j in prange(xi.edge_num(&xi)):
  * 				em, ep = e.prev(&e), e.next(&e)
  * 				vdiff = em.origin(&em)             # <<<<<<<<<<<<<<
@@ -15760,7 +15785,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                                                 __pyx_v_vdiff = __pyx_v_em.origin((&__pyx_v_em));
 
-                                                /* "src/energy.pyx":42
+                                                /* "src/_squish/energy.pyx":46
  * 				em, ep = e.prev(&e), e.next(&e)
  * 				vdiff = em.origin(&em)
  * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))             # <<<<<<<<<<<<<<
@@ -15769,7 +15794,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                                                 (void)(__pyx_v_vdiff.self.vsub((&__pyx_v_vdiff), __pyx_v_ep.origin((&__pyx_v_ep))));
 
-                                                /* "src/energy.pyx":43
+                                                /* "src/_squish/energy.pyx":47
  * 				vdiff = em.origin(&em)
  * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
  * 				e.cache.dVdv(&e, R.vecmul(&R, vdiff))             # <<<<<<<<<<<<<<
@@ -15778,7 +15803,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                                                 (void)(__pyx_v_e.cache->dVdv((&__pyx_v_e), __pyx_v_7_squish_R.vecmul((&__pyx_v_7_squish_R), __pyx_v_vdiff)));
 
-                                                /* "src/energy.pyx":44
+                                                /* "src/_squish/energy.pyx":48
  * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
  * 				e.cache.dVdv(&e, R.vecmul(&R, vdiff))
  * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))             # <<<<<<<<<<<<<<
@@ -15787,7 +15812,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
                                                 (void)(__pyx_v_e.cache->H((&__pyx_v_e), __pyx_f_7_squish_16VoronoiContainer_calc_H(__pyx_v_em, __pyx_v_e)));
 
-                                                /* "src/energy.pyx":46
+                                                /* "src/_squish/energy.pyx":50
  * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
  * 				e = e.next(&e)             # <<<<<<<<<<<<<<
@@ -15813,7 +15838,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
         #endif
       }
 
-      /* "src/energy.pyx":30
+      /* "src/_squish/energy.pyx":34
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
@@ -15839,7 +15864,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
       }
   }
 
-  /* "src/energy.pyx":48
+  /* "src/_squish/energy.pyx":52
  * 				e = e.next(&e)
  * 
  * 		self.energy = energy             # <<<<<<<<<<<<<<
@@ -15848,7 +15873,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
  */
   __pyx_v_self->__pyx_base.energy = __pyx_v_energy;
 
-  /* "src/energy.pyx":19
+  /* "src/_squish/energy.pyx":23
  * 
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -15864,7 +15889,7 @@ static void __pyx_f_7_squish_10AreaEnergy_precompute(struct __pyx_obj_7_squish_A
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/energy.pyx":51
+/* "src/_squish/energy.pyx":55
  * 
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
@@ -15905,29 +15930,29 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calc_grad", 0);
 
-  /* "src/energy.pyx":52
+  /* "src/_squish/energy.pyx":56
  * 
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 52, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 52, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 52, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 56, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 56, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 56, __pyx_L1_error)}
 
-  /* "src/energy.pyx":53
+  /* "src/_squish/energy.pyx":57
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		cdef Site xi, xf
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 53, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 53, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 53, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 57, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 57, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 57, __pyx_L1_error)}
 
-  /* "src/energy.pyx":52
+  /* "src/_squish/energy.pyx":56
  * 
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -15936,17 +15961,17 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "src/energy.pyx":60
+  /* "src/_squish/energy.pyx":64
  * 		cdef BitSet edge_set
  * 
  * 		cdef INT_T num_edges = self.edges.shape[0]             # <<<<<<<<<<<<<<
  * 		cdef FLOAT_T A = PI*self.r**2
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 60, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 64, __pyx_L1_error)}
   __pyx_v_num_edges = (__pyx_v_self->__pyx_base.edges.shape[0]);
 
-  /* "src/energy.pyx":61
+  /* "src/_squish/energy.pyx":65
  * 
  * 		cdef INT_T num_edges = self.edges.shape[0]
  * 		cdef FLOAT_T A = PI*self.r**2             # <<<<<<<<<<<<<<
@@ -15955,21 +15980,21 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
   __pyx_v_A = (M_PI * pow(__pyx_v_self->__pyx_base.r, 2.0));
 
-  /* "src/energy.pyx":63
+  /* "src/_squish/energy.pyx":67
  * 		cdef FLOAT_T A = PI*self.r**2
  * 
  * 		cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
  * 		cdef INT_T i, j
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -15977,29 +16002,29 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
   __Pyx_GIVEREF(__pyx_int_2);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_2);
   __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(3, 63, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(3, 63, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(3, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_dedx = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "src/energy.pyx":66
+  /* "src/_squish/energy.pyx":70
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
@@ -16038,7 +16063,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                             /* Initialize private variables to invalid values */
                             __pyx_v_j = ((__pyx_t_7_squish_INT_T)0xbad0bad0);
 
-                            /* "src/energy.pyx":67
+                            /* "src/_squish/energy.pyx":71
  * 		cdef INT_T i, j
  * 		for i in prange(self.n, nogil=True):
  * 			xi = init.Site(i, &info)             # <<<<<<<<<<<<<<
@@ -16047,7 +16072,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                             __pyx_v_xi = __pyx_v_7_squish_init.Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "src/energy.pyx":68
+                            /* "src/_squish/energy.pyx":72
  * 		for i in prange(self.n, nogil=True):
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -16056,7 +16081,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "src/energy.pyx":69
+                            /* "src/_squish/energy.pyx":73
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)
  * 			edge_set = init.BitSet(num_edges)             # <<<<<<<<<<<<<<
@@ -16065,7 +16090,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                             __pyx_v_edge_set = __pyx_v_7_squish_init.BitSet(__pyx_v_num_edges);
 
-                            /* "src/energy.pyx":70
+                            /* "src/_squish/energy.pyx":74
  * 			e = xi.edge(&xi)
  * 			edge_set = init.BitSet(num_edges)
  * 			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.             # <<<<<<<<<<<<<<
@@ -16089,7 +16114,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                             {
                                                 __pyx_v_j = (__pyx_t_7_squish_INT_T)(0 + 1 * __pyx_t_10);
 
-                                                /* "src/energy.pyx":71
+                                                /* "src/_squish/energy.pyx":75
  * 			edge_set = init.BitSet(num_edges)
  * 			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.
  * 				f = e             # <<<<<<<<<<<<<<
@@ -16098,7 +16123,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                 __pyx_v_f = __pyx_v_e;
 
-                                                /* "src/energy.pyx":72
+                                                /* "src/_squish/energy.pyx":76
  * 			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.
  * 				f = e
  * 				while True:	# Circling this vertex.             # <<<<<<<<<<<<<<
@@ -16107,7 +16132,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                 while (1) {
 
-                                                  /* "src/energy.pyx":73
+                                                  /* "src/_squish/energy.pyx":77
  * 				f = e
  * 				while True:	# Circling this vertex.
  * 					if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
@@ -16117,7 +16142,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                                   __pyx_t_12 = ((!(__pyx_v_edge_set.add((&__pyx_v_edge_set), __pyx_v_f.arr_index) != 0)) != 0);
                                                   if (__pyx_t_12) {
 
-                                                    /* "src/energy.pyx":74
+                                                    /* "src/_squish/energy.pyx":78
  * 				while True:	# Circling this vertex.
  * 					if not edge_set.add(&edge_set, f.arr_index):
  * 						xf = f.face(&f)             # <<<<<<<<<<<<<<
@@ -16126,7 +16151,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                     __pyx_v_xf = __pyx_v_f.face((&__pyx_v_f));
 
-                                                    /* "src/energy.pyx":75
+                                                    /* "src/_squish/energy.pyx":79
  * 					if not edge_set.add(&edge_set, f.arr_index):
  * 						xf = f.face(&f)
  * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv             # <<<<<<<<<<<<<<
@@ -16135,7 +16160,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                     __pyx_v_dedxi_p = __pyx_v_f.cache->dVdv((&__pyx_v_f), __pyx_v_7_squish_NAN_VECTOR);
 
-                                                    /* "src/energy.pyx":76
+                                                    /* "src/_squish/energy.pyx":80
  * 						xf = f.face(&f)
  * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
  * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)             # <<<<<<<<<<<<<<
@@ -16144,7 +16169,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                     (void)(__pyx_v_dedxi_p.self.smul((&__pyx_v_dedxi_p), (__pyx_v_xf.cache->area((&__pyx_v_xf), NAN) - __pyx_v_A)));
 
-                                                    /* "src/energy.pyx":77
+                                                    /* "src/_squish/energy.pyx":81
  * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
  * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
  * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))             # <<<<<<<<<<<<<<
@@ -16153,7 +16178,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                     (void)(__pyx_v_dedxi_p.self.matmul((&__pyx_v_dedxi_p), __pyx_v_e.cache->H((&__pyx_v_e), __pyx_v_7_squish_NAN_MATRIX)));
 
-                                                    /* "src/energy.pyx":78
+                                                    /* "src/_squish/energy.pyx":82
  * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
  * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
  * 						dedx[i][0] -= dedxi_p.x             # <<<<<<<<<<<<<<
@@ -16164,7 +16189,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                                     __pyx_t_14 = 0;
                                                     *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_13 * __pyx_v_dedx.strides[0]) )) + __pyx_t_14)) )) -= __pyx_v_dedxi_p.x;
 
-                                                    /* "src/energy.pyx":79
+                                                    /* "src/_squish/energy.pyx":83
  * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
  * 						dedx[i][0] -= dedxi_p.x
  * 						dedx[i][1] -= dedxi_p.y             # <<<<<<<<<<<<<<
@@ -16175,7 +16200,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                                     __pyx_t_14 = 1;
                                                     *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_13 * __pyx_v_dedx.strides[0]) )) + __pyx_t_14)) )) -= __pyx_v_dedxi_p.y;
 
-                                                    /* "src/energy.pyx":73
+                                                    /* "src/_squish/energy.pyx":77
  * 				f = e
  * 				while True:	# Circling this vertex.
  * 					if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
@@ -16184,7 +16209,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                   }
 
-                                                  /* "src/energy.pyx":81
+                                                  /* "src/_squish/energy.pyx":85
  * 						dedx[i][1] -= dedxi_p.y
  * 
  * 					f = f.twin(&f)             # <<<<<<<<<<<<<<
@@ -16193,7 +16218,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                   __pyx_v_f = __pyx_v_f.twin((&__pyx_v_f));
 
-                                                  /* "src/energy.pyx":82
+                                                  /* "src/_squish/energy.pyx":86
  * 
  * 					f = f.twin(&f)
  * 					f = f.next(&f)             # <<<<<<<<<<<<<<
@@ -16202,7 +16227,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                   __pyx_v_f = __pyx_v_f.next((&__pyx_v_f));
 
-                                                  /* "src/energy.pyx":83
+                                                  /* "src/_squish/energy.pyx":87
  * 					f = f.twin(&f)
  * 					f = f.next(&f)
  * 					if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
@@ -16212,7 +16237,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                                   __pyx_t_12 = ((__pyx_v_f.arr_index == __pyx_v_e.arr_index) != 0);
                                                   if (__pyx_t_12) {
 
-                                                    /* "src/energy.pyx":84
+                                                    /* "src/_squish/energy.pyx":88
  * 					f = f.next(&f)
  * 					if f.arr_index == e.arr_index:
  * 						break             # <<<<<<<<<<<<<<
@@ -16221,7 +16246,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
  */
                                                     goto __pyx_L15_break;
 
-                                                    /* "src/energy.pyx":83
+                                                    /* "src/_squish/energy.pyx":87
  * 					f = f.twin(&f)
  * 					f = f.next(&f)
  * 					if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
@@ -16232,7 +16257,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                                 }
                                                 __pyx_L15_break:;
 
-                                                /* "src/energy.pyx":86
+                                                /* "src/_squish/energy.pyx":90
  * 						break
  * 
  * 				e = e.next(&e)             # <<<<<<<<<<<<<<
@@ -16246,7 +16271,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
                                 }
                             }
 
-                            /* "src/energy.pyx":87
+                            /* "src/_squish/energy.pyx":91
  * 
  * 				e = e.next(&e)
  * 			edge_set.free(&edge_set)             # <<<<<<<<<<<<<<
@@ -16267,7 +16292,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
         #endif
       }
 
-      /* "src/energy.pyx":66
+      /* "src/_squish/energy.pyx":70
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
@@ -16286,7 +16311,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
       }
   }
 
-  /* "src/energy.pyx":88
+  /* "src/_squish/energy.pyx":92
  * 				e = e.next(&e)
  * 			edge_set.free(&edge_set)
  * 		self.grad = dedx             # <<<<<<<<<<<<<<
@@ -16297,7 +16322,7 @@ static void __pyx_f_7_squish_10AreaEnergy_calc_grad(struct __pyx_obj_7_squish_Ar
   __PYX_INC_MEMVIEW(&__pyx_v_dedx, 0);
   __pyx_v_self->__pyx_base.grad = __pyx_v_dedx;
 
-  /* "src/energy.pyx":51
+  /* "src/_squish/energy.pyx":55
  * 
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
@@ -16479,9 +16504,9 @@ static PyObject *__pyx_pf_7_squish_10AreaEnergy_4__setstate_cython__(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "src/energy.pyx":100
- * 	:param sites: [np.ndarray] collection of sites.
- * 	"""
+/* "src/_squish/energy.pyx":109
+ * 
+ * 
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
@@ -16530,29 +16555,29 @@ static int __pyx_pw_7_squish_14RadialALEnergy_1__init__(PyObject *__pyx_v_self, 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(3, 100, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(3, 109, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_h)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(3, 100, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(3, 109, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(3, 100, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(3, 109, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_site_arr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(3, 100, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(3, 109, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(3, 100, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(3, 109, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -16563,21 +16588,21 @@ static int __pyx_pw_7_squish_14RadialALEnergy_1__init__(PyObject *__pyx_v_self, 
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 100, __pyx_L3_error)
-    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 100, __pyx_L3_error)
-    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 100, __pyx_L3_error)
-    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 100, __pyx_L3_error)
+    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 109, __pyx_L3_error)
+    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 109, __pyx_L3_error)
+    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 109, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 109, __pyx_L3_error)
     __pyx_v_site_arr = ((PyArrayObject *)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 100, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 109, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_squish.RadialALEnergy.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(3, 101, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(3, 110, __pyx_L1_error)
   __pyx_r = __pyx_pf_7_squish_14RadialALEnergy___init__(((struct __pyx_obj_7_squish_RadialALEnergy *)__pyx_v_self), __pyx_v_n, __pyx_v_w, __pyx_v_h, __pyx_v_r, __pyx_v_site_arr);
 
   /* function exit code */
@@ -16613,11 +16638,11 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
   __pyx_pybuffernd_site_arr.rcbuffer = &__pyx_pybuffer_site_arr;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(3, 100, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(3, 109, __pyx_L1_error)
   }
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
-  /* "src/energy.pyx":103
+  /* "src/_squish/energy.pyx":112
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
  * 		self.energy = 0.0             # <<<<<<<<<<<<<<
@@ -16626,14 +16651,14 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
  */
   __pyx_v_self->__pyx_base.energy = 0.0;
 
-  /* "src/energy.pyx":105
+  /* "src/_squish/energy.pyx":114
  * 		self.energy = 0.0
  * 
  * 		super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(((PyObject *)__pyx_ptype_7_squish_RadialALEnergy));
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_7_squish_RadialALEnergy));
@@ -16641,19 +16666,19 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self));
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -16670,7 +16695,7 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 105, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 114, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16682,7 +16707,7 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 105, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 114, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16692,7 +16717,7 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
   } else
   #endif
   {
-    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(3, 105, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(3, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -16712,16 +16737,16 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
     __pyx_t_4 = 0;
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 105, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/energy.pyx":100
- * 	:param sites: [np.ndarray] collection of sites.
- * 	"""
+  /* "src/_squish/energy.pyx":109
+ * 
+ * 
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
@@ -16755,7 +16780,7 @@ static int __pyx_pf_7_squish_14RadialALEnergy___init__(struct __pyx_obj_7_squish
   return __pyx_r;
 }
 
-/* "src/energy.pyx":108
+/* "src/_squish/energy.pyx":117
  * 
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -16771,29 +16796,29 @@ static void __pyx_f_7_squish_14RadialALEnergy_precompute(struct __pyx_obj_7_squi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("precompute", 0);
 
-  /* "src/energy.pyx":109
+  /* "src/_squish/energy.pyx":118
  * 
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 109, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 109, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 109, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 118, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 118, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 118, __pyx_L1_error)}
 
-  /* "src/energy.pyx":110
+  /* "src/_squish/energy.pyx":119
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		pass
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 110, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 110, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 110, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 119, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 119, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 119, __pyx_L1_error)}
 
-  /* "src/energy.pyx":109
+  /* "src/_squish/energy.pyx":118
  * 
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -16802,7 +16827,7 @@ static void __pyx_f_7_squish_14RadialALEnergy_precompute(struct __pyx_obj_7_squi
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "src/energy.pyx":108
+  /* "src/_squish/energy.pyx":117
  * 
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -16818,7 +16843,7 @@ static void __pyx_f_7_squish_14RadialALEnergy_precompute(struct __pyx_obj_7_squi
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/energy.pyx":115
+/* "src/_squish/energy.pyx":124
  * 
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
@@ -16834,29 +16859,29 @@ static void __pyx_f_7_squish_14RadialALEnergy_calc_grad(struct __pyx_obj_7_squis
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calc_grad", 0);
 
-  /* "src/energy.pyx":116
+  /* "src/_squish/energy.pyx":125
  * 
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 116, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 116, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 116, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 125, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 125, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 125, __pyx_L1_error)}
 
-  /* "src/energy.pyx":117
+  /* "src/_squish/energy.pyx":126
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		pass
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 117, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 117, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 117, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 126, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 126, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 126, __pyx_L1_error)}
 
-  /* "src/energy.pyx":116
+  /* "src/_squish/energy.pyx":125
  * 
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -16865,7 +16890,7 @@ static void __pyx_f_7_squish_14RadialALEnergy_calc_grad(struct __pyx_obj_7_squis
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "src/energy.pyx":115
+  /* "src/_squish/energy.pyx":124
  * 
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
@@ -16994,9 +17019,9 @@ static PyObject *__pyx_pf_7_squish_14RadialALEnergy_4__setstate_cython__(CYTHON_
   return __pyx_r;
 }
 
-/* "src/energy.pyx":131
- * 	:param sites: [np.ndarray] collection of sites.
- * 	"""
+/* "src/_squish/energy.pyx":143
+ * 	attr_str = "radial-t"
+ * 	title_str = "Radial[T]"
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &RADIALT_EDGE_CACHE_MAP
@@ -17045,29 +17070,29 @@ static int __pyx_pw_7_squish_13RadialTEnergy_1__init__(PyObject *__pyx_v_self, P
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(3, 131, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(3, 143, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_h)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(3, 131, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(3, 143, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(3, 131, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(3, 143, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_site_arr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(3, 131, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(3, 143, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(3, 131, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(3, 143, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -17078,21 +17103,21 @@ static int __pyx_pw_7_squish_13RadialTEnergy_1__init__(PyObject *__pyx_v_self, P
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 131, __pyx_L3_error)
-    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 131, __pyx_L3_error)
-    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 131, __pyx_L3_error)
-    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 131, __pyx_L3_error)
+    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 143, __pyx_L3_error)
+    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 143, __pyx_L3_error)
+    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 143, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(3, 143, __pyx_L3_error)
     __pyx_v_site_arr = ((PyArrayObject *)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 131, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 143, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_squish.RadialTEnergy.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(3, 132, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(3, 144, __pyx_L1_error)
   __pyx_r = __pyx_pf_7_squish_13RadialTEnergy___init__(((struct __pyx_obj_7_squish_RadialTEnergy *)__pyx_v_self), __pyx_v_n, __pyx_v_w, __pyx_v_h, __pyx_v_r, __pyx_v_site_arr);
 
   /* function exit code */
@@ -17128,11 +17153,11 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
   __pyx_pybuffernd_site_arr.rcbuffer = &__pyx_pybuffer_site_arr;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(3, 131, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_7_squish_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(3, 143, __pyx_L1_error)
   }
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
-  /* "src/energy.pyx":133
+  /* "src/_squish/energy.pyx":145
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &RADIALT_EDGE_CACHE_MAP             # <<<<<<<<<<<<<<
@@ -17141,7 +17166,7 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
  */
   __pyx_v_self->__pyx_base.edge_cache_map = (&__pyx_v_7_squish_RADIALT_EDGE_CACHE_MAP);
 
-  /* "src/energy.pyx":134
+  /* "src/_squish/energy.pyx":146
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &RADIALT_EDGE_CACHE_MAP
  * 		self.energy = 0.0             # <<<<<<<<<<<<<<
@@ -17150,14 +17175,14 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
  */
   __pyx_v_self->__pyx_base.energy = 0.0;
 
-  /* "src/energy.pyx":136
+  /* "src/_squish/energy.pyx":148
  * 		self.energy = 0.0
  * 
  * 		super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(((PyObject *)__pyx_ptype_7_squish_RadialTEnergy));
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_7_squish_RadialTEnergy));
@@ -17165,19 +17190,19 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self));
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -17194,7 +17219,7 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 136, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 148, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17206,7 +17231,7 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 136, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 148, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17216,7 +17241,7 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
   } else
   #endif
   {
-    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(3, 136, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(3, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -17236,16 +17261,16 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
     __pyx_t_4 = 0;
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 136, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/energy.pyx":131
- * 	:param sites: [np.ndarray] collection of sites.
- * 	"""
+  /* "src/_squish/energy.pyx":143
+ * 	attr_str = "radial-t"
+ * 	title_str = "Radial[T]"
  * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
  * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
  * 		self.edge_cache_map = &RADIALT_EDGE_CACHE_MAP
@@ -17279,7 +17304,7 @@ static int __pyx_pf_7_squish_13RadialTEnergy___init__(struct __pyx_obj_7_squish_
   return __pyx_r;
 }
 
-/* "src/energy.pyx":139
+/* "src/_squish/energy.pyx":151
  * 
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -17328,29 +17353,29 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("precompute", 0);
 
-  /* "src/energy.pyx":140
+  /* "src/_squish/energy.pyx":152
  * 
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 140, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 140, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 140, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 152, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 152, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 152, __pyx_L1_error)}
 
-  /* "src/energy.pyx":141
+  /* "src/_squish/energy.pyx":153
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		cdef Site xi
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 141, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 141, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 141, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 153, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 153, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 153, __pyx_L1_error)}
 
-  /* "src/energy.pyx":140
+  /* "src/_squish/energy.pyx":152
  * 
  * 	cdef void precompute(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -17359,22 +17384,22 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "src/energy.pyx":148
+  /* "src/_squish/energy.pyx":160
  * 
  * 		# All energy has a 2pir_0 term.
  * 		cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], TAU*self.r**2)             # <<<<<<<<<<<<<<
  * 		cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])
  * 		cdef FLOAT_T energy, r0, t, tp, B, lntan, csc
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 148, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_full); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 148, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_full); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 148, __pyx_L1_error)}
-  __pyx_t_2 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 148, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 160, __pyx_L1_error)}
+  __pyx_t_2 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_7_squish_TAU * pow(__pyx_v_self->__pyx_base.r, 2.0))); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 148, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((__pyx_v_7_squish_TAU * pow(__pyx_v_self->__pyx_base.r, 2.0))); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -17391,7 +17416,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 148, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 160, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17401,7 +17426,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 148, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 160, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17409,7 +17434,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(3, 148, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(3, 160, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -17420,31 +17445,31 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
     __pyx_t_2 = 0;
     __pyx_t_4 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 148, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 160, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(3, 148, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(3, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_site_energy = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "src/energy.pyx":149
+  /* "src/_squish/energy.pyx":161
  * 		# All energy has a 2pir_0 term.
  * 		cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], TAU*self.r**2)
  * 		cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])             # <<<<<<<<<<<<<<
  * 		cdef FLOAT_T energy, r0, t, tp, B, lntan, csc
  * 		energy, r0 = 0, self.r
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 149, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(3, 149, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(3, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 149, __pyx_L1_error)}
-  __pyx_t_3 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 149, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 161, __pyx_L1_error)}
+  __pyx_t_3 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
@@ -17459,16 +17484,16 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 149, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(3, 149, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(3, 161, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_avg_radii = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "src/energy.pyx":151
+  /* "src/_squish/energy.pyx":163
  * 		cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])
  * 		cdef FLOAT_T energy, r0, t, tp, B, lntan, csc
  * 		energy, r0 = 0, self.r             # <<<<<<<<<<<<<<
@@ -17480,7 +17505,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   __pyx_v_energy = __pyx_t_9;
   __pyx_v_r0 = __pyx_t_10;
 
-  /* "src/energy.pyx":154
+  /* "src/_squish/energy.pyx":166
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
@@ -17494,7 +17519,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
       __Pyx_FastGIL_Remember();
       #endif
       /*try:*/ {
-        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 154, __pyx_L4_error)}
+        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 166, __pyx_L4_error)}
         __pyx_t_11 = (__pyx_v_self->__pyx_base.sites.shape[0]);
         if ((1 == 0)) abort();
         {
@@ -17525,7 +17550,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                             __pyx_v_t = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
                             __pyx_v_tp = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
 
-                            /* "src/energy.pyx":155
+                            /* "src/_squish/energy.pyx":167
  * 		cdef INT_T i, j
  * 		for i in prange(self.sites.shape[0], nogil=True):
  * 			xi = init.Site(i, &info)             # <<<<<<<<<<<<<<
@@ -17534,7 +17559,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                             __pyx_v_xi = __pyx_v_7_squish_init.Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "src/energy.pyx":156
+                            /* "src/_squish/energy.pyx":168
  * 		for i in prange(self.sites.shape[0], nogil=True):
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -17543,7 +17568,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "src/energy.pyx":157
+                            /* "src/_squish/energy.pyx":169
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)
  * 			for j in prange(xi.edge_num(&xi)):             # <<<<<<<<<<<<<<
@@ -17569,7 +17594,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                 /* Initialize private variables to invalid values */
                                                 __pyx_v_t = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
 
-                                                /* "src/energy.pyx":158
+                                                /* "src/_squish/energy.pyx":170
  * 			e = xi.edge(&xi)
  * 			for j in prange(xi.edge_num(&xi)):
  * 				em = e.prev(&e)             # <<<<<<<<<<<<<<
@@ -17578,7 +17603,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_em = __pyx_v_e.prev((&__pyx_v_e));
 
-                                                /* "src/energy.pyx":159
+                                                /* "src/_squish/energy.pyx":171
  * 			for j in prange(xi.edge_num(&xi)):
  * 				em = e.prev(&e)
  * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))             # <<<<<<<<<<<<<<
@@ -17587,7 +17612,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 (void)(__pyx_v_e.cache->H((&__pyx_v_e), __pyx_f_7_squish_16VoronoiContainer_calc_H(__pyx_v_em, __pyx_v_e)));
 
-                                                /* "src/energy.pyx":160
+                                                /* "src/_squish/energy.pyx":172
  * 				em = e.prev(&e)
  * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 				t = Calc.phi(e)             # <<<<<<<<<<<<<<
@@ -17596,7 +17621,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_t = __pyx_f_7_squish_4Calc_phi(__pyx_v_e);
 
-                                                /* "src/energy.pyx":162
+                                                /* "src/_squish/energy.pyx":174
  * 				t = Calc.phi(e)
  * 
  * 				e.cache.phi(&e, t)             # <<<<<<<<<<<<<<
@@ -17605,7 +17630,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 (void)(__pyx_v_e.cache->phi((&__pyx_v_e), __pyx_v_t));
 
-                                                /* "src/energy.pyx":163
+                                                /* "src/_squish/energy.pyx":175
  * 
  * 				e.cache.phi(&e, t)
  * 				Rnla = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -17614,7 +17639,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_Rnla = __pyx_v_e.cache->la((&__pyx_v_e), __pyx_v_7_squish_NAN_VECTOR);
 
-                                                /* "src/energy.pyx":164
+                                                /* "src/_squish/energy.pyx":176
  * 				e.cache.phi(&e, t)
  * 				Rnla = e.cache.la(&e, NAN_VECTOR)
  * 				Rnla.self.neg(&Rnla)             # <<<<<<<<<<<<<<
@@ -17623,7 +17648,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 (void)(__pyx_v_Rnla.self.neg((&__pyx_v_Rnla)));
 
-                                                /* "src/energy.pyx":165
+                                                /* "src/_squish/energy.pyx":177
  * 				Rnla = e.cache.la(&e, NAN_VECTOR)
  * 				Rnla.self.neg(&Rnla)
  * 				Rnla = Rnla.rot(&Rnla)             # <<<<<<<<<<<<<<
@@ -17632,7 +17657,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_Rnla = __pyx_v_Rnla.rot((&__pyx_v_Rnla));
 
-                                                /* "src/energy.pyx":167
+                                                /* "src/_squish/energy.pyx":179
  * 				Rnla = Rnla.rot(&Rnla)
  * 
  * 				if Rnla.x < 0:             # <<<<<<<<<<<<<<
@@ -17642,7 +17667,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                 __pyx_t_17 = ((__pyx_v_Rnla.x < 0.0) != 0);
                                                 if (__pyx_t_17) {
 
-                                                  /* "src/energy.pyx":168
+                                                  /* "src/_squish/energy.pyx":180
  * 
  * 				if Rnla.x < 0:
  * 					e.cache.B(&e, -<FLOAT_T>acos(<double>(Rnla.y/e.cache.la_mag(&e, NAN))))             # <<<<<<<<<<<<<<
@@ -17651,7 +17676,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                   (void)(__pyx_v_e.cache->B((&__pyx_v_e), (-((__pyx_t_7_squish_FLOAT_T)acos(((double)(__pyx_v_Rnla.y / __pyx_v_e.cache->la_mag((&__pyx_v_e), NAN))))))));
 
-                                                  /* "src/energy.pyx":167
+                                                  /* "src/_squish/energy.pyx":179
  * 				Rnla = Rnla.rot(&Rnla)
  * 
  * 				if Rnla.x < 0:             # <<<<<<<<<<<<<<
@@ -17661,7 +17686,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                   goto __pyx_L14;
                                                 }
 
-                                                /* "src/energy.pyx":170
+                                                /* "src/_squish/energy.pyx":182
  * 					e.cache.B(&e, -<FLOAT_T>acos(<double>(Rnla.y/e.cache.la_mag(&e, NAN))))
  * 				else:
  * 					e.cache.B(&e, <FLOAT_T>acos(<double>(Rnla.y/e.cache.la_mag(&e, NAN))))             # <<<<<<<<<<<<<<
@@ -17673,7 +17698,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                 }
                                                 __pyx_L14:;
 
-                                                /* "src/energy.pyx":172
+                                                /* "src/_squish/energy.pyx":184
  * 					e.cache.B(&e, <FLOAT_T>acos(<double>(Rnla.y/e.cache.la_mag(&e, NAN))))
  * 
  * 				e.cache.i2p(&e, Calc.I2(e, r0, t))             # <<<<<<<<<<<<<<
@@ -17682,7 +17707,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 (void)(__pyx_v_e.cache->i2p((&__pyx_v_e), __pyx_f_7_squish_4Calc_I2(__pyx_v_e, __pyx_v_r0, __pyx_v_t)));
 
-                                                /* "src/energy.pyx":173
+                                                /* "src/_squish/energy.pyx":185
  * 
  * 				e.cache.i2p(&e, Calc.I2(e, r0, t))
  * 				e = e.next(&e)             # <<<<<<<<<<<<<<
@@ -17696,7 +17721,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                 }
                             }
 
-                            /* "src/energy.pyx":176
+                            /* "src/_squish/energy.pyx":188
  * 
  * 			# For looping again to calculate integrals.
  * 			em = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -17705,7 +17730,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                             __pyx_v_em = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "src/energy.pyx":177
+                            /* "src/_squish/energy.pyx":189
  * 			# For looping again to calculate integrals.
  * 			em = xi.edge(&xi)
  * 			for j in prange(xi.edge_num(&xi)):             # <<<<<<<<<<<<<<
@@ -17735,7 +17760,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                 __pyx_v_t = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
                                                 __pyx_v_tp = ((__pyx_t_7_squish_FLOAT_T)__PYX_NAN());
 
-                                                /* "src/energy.pyx":178
+                                                /* "src/_squish/energy.pyx":190
  * 			em = xi.edge(&xi)
  * 			for j in prange(xi.edge_num(&xi)):
  * 				e = em.next(&em)             # <<<<<<<<<<<<<<
@@ -17744,7 +17769,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_e = __pyx_v_em.next((&__pyx_v_em));
 
-                                                /* "src/energy.pyx":179
+                                                /* "src/_squish/energy.pyx":191
  * 			for j in prange(xi.edge_num(&xi)):
  * 				e = em.next(&em)
  * 				B = em.cache.B(&em, NAN)             # <<<<<<<<<<<<<<
@@ -17753,7 +17778,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_B = __pyx_v_em.cache->B((&__pyx_v_em), NAN);
 
-                                                /* "src/energy.pyx":180
+                                                /* "src/_squish/energy.pyx":192
  * 				e = em.next(&em)
  * 				B = em.cache.B(&em, NAN)
  * 				t, tp = em.cache.phi(&em, NAN), e.cache.phi(&e, NAN)             # <<<<<<<<<<<<<<
@@ -17765,7 +17790,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                 __pyx_v_t = __pyx_t_10;
                                                 __pyx_v_tp = __pyx_t_9;
 
-                                                /* "src/energy.pyx":182
+                                                /* "src/_squish/energy.pyx":194
  * 				t, tp = em.cache.phi(&em, NAN), e.cache.phi(&e, NAN)
  * 
  * 				lntan = <FLOAT_T>(log(fabs(tan(<double>((tp+B)/2))))) - \             # <<<<<<<<<<<<<<
@@ -17774,7 +17799,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_lntan = (((__pyx_t_7_squish_FLOAT_T)log(fabs(tan(((double)((__pyx_v_tp + __pyx_v_B) / 2.0)))))) - ((__pyx_t_7_squish_FLOAT_T)log(fabs(tan(((double)((__pyx_v_t + __pyx_v_B) / 2.0)))))));
 
-                                                /* "src/energy.pyx":185
+                                                /* "src/_squish/energy.pyx":197
  * 							<FLOAT_T>(log(fabs(tan(<double>((t+B)/2)))))
  * 
  * 				csc = 1/(<FLOAT_T>(sin(<double>(tp+B)))) - \             # <<<<<<<<<<<<<<
@@ -17783,7 +17808,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 __pyx_v_csc = ((1.0 / ((__pyx_t_7_squish_FLOAT_T)sin(((double)(__pyx_v_tp + __pyx_v_B))))) - (1.0 / ((__pyx_t_7_squish_FLOAT_T)sin(((double)(__pyx_v_t + __pyx_v_B))))));
 
-                                                /* "src/energy.pyx":188
+                                                /* "src/_squish/energy.pyx":200
  * 						1/(<FLOAT_T>(sin(<double>(t+B))))
  * 
  * 				em.cache.lntan(&em, lntan)             # <<<<<<<<<<<<<<
@@ -17792,7 +17817,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 (void)(__pyx_v_em.cache->lntan((&__pyx_v_em), __pyx_v_lntan));
 
-                                                /* "src/energy.pyx":189
+                                                /* "src/_squish/energy.pyx":201
  * 
  * 				em.cache.lntan(&em, lntan)
  * 				em.cache.csc(&em, csc)             # <<<<<<<<<<<<<<
@@ -17801,7 +17826,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
  */
                                                 (void)(__pyx_v_em.cache->csc((&__pyx_v_em), __pyx_v_csc));
 
-                                                /* "src/energy.pyx":191
+                                                /* "src/_squish/energy.pyx":203
  * 				em.cache.csc(&em, csc)
  * 
  * 				avg_radii[i] += (em.cache.F(&em, NAN)/em.cache.la_mag(&em, NAN))*lntan             # <<<<<<<<<<<<<<
@@ -17811,7 +17836,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                                 __pyx_t_18 = __pyx_v_i;
                                                 *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_avg_radii.data + __pyx_t_18 * __pyx_v_avg_radii.strides[0]) )) += ((__pyx_v_em.cache->F((&__pyx_v_em), NAN) / __pyx_v_em.cache->la_mag((&__pyx_v_em), NAN)) * __pyx_v_lntan);
 
-                                                /* "src/energy.pyx":193
+                                                /* "src/_squish/energy.pyx":205
  * 				avg_radii[i] += (em.cache.F(&em, NAN)/em.cache.la_mag(&em, NAN))*lntan
  * 
  * 				em = em.next(&em)             # <<<<<<<<<<<<<<
@@ -17825,7 +17850,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                                 }
                             }
 
-                            /* "src/energy.pyx":195
+                            /* "src/_squish/energy.pyx":207
  * 				em = em.next(&em)
  * 
  * 			site_energy[i] += 2*(xi.cache.area(&xi, NAN) - r0*avg_radii[i])             # <<<<<<<<<<<<<<
@@ -17836,7 +17861,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                             __pyx_t_15 = __pyx_v_i;
                             *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_energy.data + __pyx_t_15 * __pyx_v_site_energy.strides[0]) )) += (2.0 * (__pyx_v_xi.cache->area((&__pyx_v_xi), NAN) - (__pyx_v_r0 * (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_avg_radii.data + __pyx_t_14 * __pyx_v_avg_radii.strides[0]) ))))));
 
-                            /* "src/energy.pyx":197
+                            /* "src/_squish/energy.pyx":209
  * 			site_energy[i] += 2*(xi.cache.area(&xi, NAN) - r0*avg_radii[i])
  * 
  * 			xi.cache.avg_radius(&xi, avg_radii[i]/TAU)             # <<<<<<<<<<<<<<
@@ -17846,7 +17871,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                             __pyx_t_14 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->avg_radius((&__pyx_v_xi), ((*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_avg_radii.data + __pyx_t_14 * __pyx_v_avg_radii.strides[0]) ))) / __pyx_v_7_squish_TAU)));
 
-                            /* "src/energy.pyx":198
+                            /* "src/_squish/energy.pyx":210
  * 
  * 			xi.cache.avg_radius(&xi, avg_radii[i]/TAU)
  * 			xi.cache.energy(&xi, site_energy[i])             # <<<<<<<<<<<<<<
@@ -17856,7 +17881,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                             __pyx_t_14 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->energy((&__pyx_v_xi), (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_energy.data + __pyx_t_14 * __pyx_v_site_energy.strides[0]) )))));
 
-                            /* "src/energy.pyx":199
+                            /* "src/_squish/energy.pyx":211
  * 			xi.cache.avg_radius(&xi, avg_radii[i]/TAU)
  * 			xi.cache.energy(&xi, site_energy[i])
  * 			if i < self.n:             # <<<<<<<<<<<<<<
@@ -17866,7 +17891,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                             __pyx_t_17 = ((__pyx_v_i < __pyx_v_self->__pyx_base.n) != 0);
                             if (__pyx_t_17) {
 
-                              /* "src/energy.pyx":200
+                              /* "src/_squish/energy.pyx":212
  * 			xi.cache.energy(&xi, site_energy[i])
  * 			if i < self.n:
  * 				energy += site_energy[i]             # <<<<<<<<<<<<<<
@@ -17876,7 +17901,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
                               __pyx_t_14 = __pyx_v_i;
                               __pyx_v_energy = (__pyx_v_energy + (*((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_energy.data + __pyx_t_14 * __pyx_v_site_energy.strides[0]) ))));
 
-                              /* "src/energy.pyx":199
+                              /* "src/_squish/energy.pyx":211
  * 			xi.cache.avg_radius(&xi, avg_radii[i]/TAU)
  * 			xi.cache.energy(&xi, site_energy[i])
  * 			if i < self.n:             # <<<<<<<<<<<<<<
@@ -17897,7 +17922,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
         #endif
       }
 
-      /* "src/energy.pyx":154
+      /* "src/_squish/energy.pyx":166
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
@@ -17923,16 +17948,16 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
       }
   }
 
-  /* "src/energy.pyx":202
+  /* "src/_squish/energy.pyx":214
  * 				energy += site_energy[i]
  * 
  * 		self.energy = energy             # <<<<<<<<<<<<<<
  * 
- * 	cdef void calc_grad(self) except *:
+ * 
  */
   __pyx_v_self->__pyx_base.energy = __pyx_v_energy;
 
-  /* "src/energy.pyx":139
+  /* "src/_squish/energy.pyx":151
  * 
  * 
  * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
@@ -17957,8 +17982,8 @@ static void __pyx_f_7_squish_13RadialTEnergy_precompute(struct __pyx_obj_7_squis
   __Pyx_RefNannyFinishContext();
 }
 
-/* "src/energy.pyx":204
- * 		self.energy = energy
+/* "src/_squish/energy.pyx":217
+ * 
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
@@ -17999,29 +18024,29 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calc_grad", 0);
 
-  /* "src/energy.pyx":205
+  /* "src/_squish/energy.pyx":218
  * 
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
  * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 205, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 205, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 205, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 218, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 218, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 218, __pyx_L1_error)}
 
-  /* "src/energy.pyx":206
+  /* "src/_squish/energy.pyx":219
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
  * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
  * 		cdef Site xi
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 206, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 206, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 206, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 219, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 219, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 219, __pyx_L1_error)}
 
-  /* "src/energy.pyx":205
+  /* "src/_squish/energy.pyx":218
  * 
  * 	cdef void calc_grad(self) except *:
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
@@ -18030,17 +18055,17 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
   __pyx_v_info = __pyx_v_7_squish_init.VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "src/energy.pyx":213
+  /* "src/_squish/energy.pyx":226
  * 		cdef BitSet edge_set
  * 
  * 		cdef INT_T num_edges = self.edges.shape[0]             # <<<<<<<<<<<<<<
  * 		cdef FLOAT_T r0 = self.r
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 213, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(3, 226, __pyx_L1_error)}
   __pyx_v_num_edges = (__pyx_v_self->__pyx_base.edges.shape[0]);
 
-  /* "src/energy.pyx":214
+  /* "src/_squish/energy.pyx":227
  * 
  * 		cdef INT_T num_edges = self.edges.shape[0]
  * 		cdef FLOAT_T r0 = self.r             # <<<<<<<<<<<<<<
@@ -18050,21 +18075,21 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
   __pyx_t_1 = __pyx_v_self->__pyx_base.r;
   __pyx_v_r0 = __pyx_t_1;
 
-  /* "src/energy.pyx":216
+  /* "src/_squish/energy.pyx":229
  * 		cdef FLOAT_T r0 = self.r
  * 
  * 		cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
  * 		cdef INT_T i, j
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -18072,29 +18097,29 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
   __Pyx_GIVEREF(__pyx_int_2);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_int_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(3, 216, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_5, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(3, 216, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7_squish_FLOAT_T(__pyx_t_5, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(3, 229, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_dedx = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "src/energy.pyx":219
+  /* "src/_squish/energy.pyx":232
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
@@ -18133,7 +18158,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                             /* Initialize private variables to invalid values */
                             __pyx_v_j = ((__pyx_t_7_squish_INT_T)0xbad0bad0);
 
-                            /* "src/energy.pyx":220
+                            /* "src/_squish/energy.pyx":233
  * 		cdef INT_T i, j
  * 		for i in prange(self.n, nogil=True):
  * 			xi = init.Site(i, &info)             # <<<<<<<<<<<<<<
@@ -18142,7 +18167,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                             __pyx_v_xi = __pyx_v_7_squish_init.Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "src/energy.pyx":221
+                            /* "src/_squish/energy.pyx":234
  * 		for i in prange(self.n, nogil=True):
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
@@ -18151,7 +18176,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "src/energy.pyx":222
+                            /* "src/_squish/energy.pyx":235
  * 			xi = init.Site(i, &info)
  * 			e = xi.edge(&xi)
  * 			edge_set = init.BitSet(num_edges)             # <<<<<<<<<<<<<<
@@ -18160,7 +18185,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                             __pyx_v_edge_set = __pyx_v_7_squish_init.BitSet(__pyx_v_num_edges);
 
-                            /* "src/energy.pyx":224
+                            /* "src/_squish/energy.pyx":237
  * 			edge_set = init.BitSet(num_edges)
  * 
  * 			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.             # <<<<<<<<<<<<<<
@@ -18184,7 +18209,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                             {
                                                 __pyx_v_j = (__pyx_t_7_squish_INT_T)(0 + 1 * __pyx_t_11);
 
-                                                /* "src/energy.pyx":225
+                                                /* "src/_squish/energy.pyx":238
  * 
  * 			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.
  * 				f = e             # <<<<<<<<<<<<<<
@@ -18193,7 +18218,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                 __pyx_v_f = __pyx_v_e;
 
-                                                /* "src/energy.pyx":226
+                                                /* "src/_squish/energy.pyx":239
  * 			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.
  * 				f = e
  * 				while True:	# Circling this vertex.             # <<<<<<<<<<<<<<
@@ -18202,7 +18227,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                 while (1) {
 
-                                                  /* "src/energy.pyx":227
+                                                  /* "src/_squish/energy.pyx":240
  * 				f = e
  * 				while True:	# Circling this vertex.
  * 					fm = f.prev(&f)             # <<<<<<<<<<<<<<
@@ -18211,7 +18236,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                   __pyx_v_fm = __pyx_v_f.prev((&__pyx_v_f));
 
-                                                  /* "src/energy.pyx":228
+                                                  /* "src/_squish/energy.pyx":241
  * 				while True:	# Circling this vertex.
  * 					fm = f.prev(&f)
  * 					if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
@@ -18221,7 +18246,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                   __pyx_t_13 = ((!(__pyx_v_edge_set.add((&__pyx_v_edge_set), __pyx_v_f.arr_index) != 0)) != 0);
                                                   if (__pyx_t_13) {
 
-                                                    /* "src/energy.pyx":229
+                                                    /* "src/_squish/energy.pyx":242
  * 					fm = f.prev(&f)
  * 					if not edge_set.add(&edge_set, f.arr_index):
  * 						dedxi_p = Calc.radialt_edge_grad(f, xi, r0)             # <<<<<<<<<<<<<<
@@ -18230,7 +18255,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                     __pyx_v_dedxi_p = __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_v_f, __pyx_v_xi, __pyx_v_r0);
 
-                                                    /* "src/energy.pyx":230
+                                                    /* "src/_squish/energy.pyx":243
  * 					if not edge_set.add(&edge_set, f.arr_index):
  * 						dedxi_p = Calc.radialt_edge_grad(f, xi, r0)
  * 						dedx[i][0] -= dedxi_p.x             # <<<<<<<<<<<<<<
@@ -18241,7 +18266,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                     __pyx_t_15 = 0;
                                                     *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_14 * __pyx_v_dedx.strides[0]) )) + __pyx_t_15)) )) -= __pyx_v_dedxi_p.x;
 
-                                                    /* "src/energy.pyx":231
+                                                    /* "src/_squish/energy.pyx":244
  * 						dedxi_p = Calc.radialt_edge_grad(f, xi, r0)
  * 						dedx[i][0] -= dedxi_p.x
  * 						dedx[i][1] -= dedxi_p.y             # <<<<<<<<<<<<<<
@@ -18252,7 +18277,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                     __pyx_t_15 = 1;
                                                     *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_14 * __pyx_v_dedx.strides[0]) )) + __pyx_t_15)) )) -= __pyx_v_dedxi_p.y;
 
-                                                    /* "src/energy.pyx":228
+                                                    /* "src/_squish/energy.pyx":241
  * 				while True:	# Circling this vertex.
  * 					fm = f.prev(&f)
  * 					if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
@@ -18261,7 +18286,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                   }
 
-                                                  /* "src/energy.pyx":233
+                                                  /* "src/_squish/energy.pyx":246
  * 						dedx[i][1] -= dedxi_p.y
  * 
  * 					if not edge_set.add(&edge_set, fm.arr_index):             # <<<<<<<<<<<<<<
@@ -18271,7 +18296,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                   __pyx_t_13 = ((!(__pyx_v_edge_set.add((&__pyx_v_edge_set), __pyx_v_fm.arr_index) != 0)) != 0);
                                                   if (__pyx_t_13) {
 
-                                                    /* "src/energy.pyx":234
+                                                    /* "src/_squish/energy.pyx":247
  * 
  * 					if not edge_set.add(&edge_set, fm.arr_index):
  * 						dedxi_p = Calc.radialt_edge_grad(fm, xi, r0)             # <<<<<<<<<<<<<<
@@ -18280,7 +18305,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                     __pyx_v_dedxi_p = __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_v_fm, __pyx_v_xi, __pyx_v_r0);
 
-                                                    /* "src/energy.pyx":235
+                                                    /* "src/_squish/energy.pyx":248
  * 					if not edge_set.add(&edge_set, fm.arr_index):
  * 						dedxi_p = Calc.radialt_edge_grad(fm, xi, r0)
  * 						dedx[i][0] -= dedxi_p.x             # <<<<<<<<<<<<<<
@@ -18291,7 +18316,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                     __pyx_t_15 = 0;
                                                     *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_14 * __pyx_v_dedx.strides[0]) )) + __pyx_t_15)) )) -= __pyx_v_dedxi_p.x;
 
-                                                    /* "src/energy.pyx":236
+                                                    /* "src/_squish/energy.pyx":249
  * 						dedxi_p = Calc.radialt_edge_grad(fm, xi, r0)
  * 						dedx[i][0] -= dedxi_p.x
  * 						dedx[i][1] -= dedxi_p.y             # <<<<<<<<<<<<<<
@@ -18302,7 +18327,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                     __pyx_t_15 = 1;
                                                     *((__pyx_t_7_squish_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_7_squish_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_14 * __pyx_v_dedx.strides[0]) )) + __pyx_t_15)) )) -= __pyx_v_dedxi_p.y;
 
-                                                    /* "src/energy.pyx":233
+                                                    /* "src/_squish/energy.pyx":246
  * 						dedx[i][1] -= dedxi_p.y
  * 
  * 					if not edge_set.add(&edge_set, fm.arr_index):             # <<<<<<<<<<<<<<
@@ -18311,7 +18336,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                   }
 
-                                                  /* "src/energy.pyx":239
+                                                  /* "src/_squish/energy.pyx":252
  * 
  * 
  * 					f = f.twin(&f)             # <<<<<<<<<<<<<<
@@ -18320,7 +18345,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                   __pyx_v_f = __pyx_v_f.twin((&__pyx_v_f));
 
-                                                  /* "src/energy.pyx":240
+                                                  /* "src/_squish/energy.pyx":253
  * 
  * 					f = f.twin(&f)
  * 					f = f.next(&f)             # <<<<<<<<<<<<<<
@@ -18329,7 +18354,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                   __pyx_v_f = __pyx_v_f.next((&__pyx_v_f));
 
-                                                  /* "src/energy.pyx":242
+                                                  /* "src/_squish/energy.pyx":255
  * 					f = f.next(&f)
  * 
  * 					if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
@@ -18339,7 +18364,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                   __pyx_t_13 = ((__pyx_v_f.arr_index == __pyx_v_e.arr_index) != 0);
                                                   if (__pyx_t_13) {
 
-                                                    /* "src/energy.pyx":243
+                                                    /* "src/_squish/energy.pyx":256
  * 
  * 					if f.arr_index == e.arr_index:
  * 						break             # <<<<<<<<<<<<<<
@@ -18348,7 +18373,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
  */
                                                     goto __pyx_L15_break;
 
-                                                    /* "src/energy.pyx":242
+                                                    /* "src/_squish/energy.pyx":255
  * 					f = f.next(&f)
  * 
  * 					if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
@@ -18359,7 +18384,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                                 }
                                                 __pyx_L15_break:;
 
-                                                /* "src/energy.pyx":245
+                                                /* "src/_squish/energy.pyx":258
  * 						break
  * 
  * 				e = e.next(&e)             # <<<<<<<<<<<<<<
@@ -18373,7 +18398,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
                                 }
                             }
 
-                            /* "src/energy.pyx":246
+                            /* "src/_squish/energy.pyx":259
  * 
  * 				e = e.next(&e)
  * 			edge_set.free(&edge_set)             # <<<<<<<<<<<<<<
@@ -18394,7 +18419,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
         #endif
       }
 
-      /* "src/energy.pyx":219
+      /* "src/_squish/energy.pyx":232
  * 
  * 		cdef INT_T i, j
  * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
@@ -18413,7 +18438,7 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
       }
   }
 
-  /* "src/energy.pyx":247
+  /* "src/_squish/energy.pyx":260
  * 				e = e.next(&e)
  * 			edge_set.free(&edge_set)
  * 		self.grad = dedx             # <<<<<<<<<<<<<<
@@ -18424,8 +18449,8 @@ static void __pyx_f_7_squish_13RadialTEnergy_calc_grad(struct __pyx_obj_7_squish
   __PYX_INC_MEMVIEW(&__pyx_v_dedx, 0);
   __pyx_v_self->__pyx_base.grad = __pyx_v_dedx;
 
-  /* "src/energy.pyx":204
- * 		self.energy = energy
+  /* "src/_squish/energy.pyx":217
+ * 
  * 
  * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
  * 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points,
@@ -18559,7 +18584,7 @@ static PyObject *__pyx_pf_7_squish_13RadialTEnergy_4__setstate_cython__(CYTHON_U
   return __pyx_r;
 }
 
-/* "src/energy.pyx":252
+/* "src/_squish/energy.pyx":265
  * cdef class Calc:
  * 	@staticmethod
  * 	cdef inline FLOAT_T phi(HalfEdge e) nogil:             # <<<<<<<<<<<<<<
@@ -18573,7 +18598,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_4Calc_phi(__pyx_t
   __pyx_t_7_squish_FLOAT_T __pyx_r;
   __pyx_t_7_squish_FLOAT_T __pyx_t_1;
 
-  /* "src/energy.pyx":253
+  /* "src/_squish/energy.pyx":266
  * 	@staticmethod
  * 	cdef inline FLOAT_T phi(HalfEdge e) nogil:
  * 		cdef Vector2D da = e.cache.da(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -18582,7 +18607,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_4Calc_phi(__pyx_t
  */
   __pyx_v_da = __pyx_v_e.cache->da((&__pyx_v_e), __pyx_v_7_squish_NAN_VECTOR);
 
-  /* "src/energy.pyx":254
+  /* "src/_squish/energy.pyx":267
  * 	cdef inline FLOAT_T phi(HalfEdge e) nogil:
  * 		cdef Vector2D da = e.cache.da(&e, NAN_VECTOR)
  * 		cdef FLOAT_T angle = <FLOAT_T>acos(<double>(da.x/e.cache.da_mag(&e, NAN)))             # <<<<<<<<<<<<<<
@@ -18591,12 +18616,12 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_4Calc_phi(__pyx_t
  */
   __pyx_v_angle = ((__pyx_t_7_squish_FLOAT_T)acos(((double)(__pyx_v_da.x / __pyx_v_e.cache->da_mag((&__pyx_v_e), NAN)))));
 
-  /* "src/energy.pyx":255
+  /* "src/_squish/energy.pyx":268
  * 		cdef Vector2D da = e.cache.da(&e, NAN_VECTOR)
  * 		cdef FLOAT_T angle = <FLOAT_T>acos(<double>(da.x/e.cache.da_mag(&e, NAN)))
  * 		return angle if da.y >= 0 else TAU - angle             # <<<<<<<<<<<<<<
  * 
- * 	@staticmethod
+ * 
  */
   if (((__pyx_v_da.y >= 0.0) != 0)) {
     __pyx_t_1 = __pyx_v_angle;
@@ -18606,7 +18631,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_4Calc_phi(__pyx_t
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
-  /* "src/energy.pyx":252
+  /* "src/_squish/energy.pyx":265
  * cdef class Calc:
  * 	@staticmethod
  * 	cdef inline FLOAT_T phi(HalfEdge e) nogil:             # <<<<<<<<<<<<<<
@@ -18619,7 +18644,7 @@ static CYTHON_INLINE __pyx_t_7_squish_FLOAT_T __pyx_f_7_squish_4Calc_phi(__pyx_t
   return __pyx_r;
 }
 
-/* "src/energy.pyx":258
+/* "src/_squish/energy.pyx":272
  * 
  * 	@staticmethod
  * 	cdef inline Vector2D I2(HalfEdge e, FLOAT_T r0, FLOAT_T t) nogil:             # <<<<<<<<<<<<<<
@@ -18631,7 +18656,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_I2(__pyx_t
   __pyx_t_7_squish_Vector2D __pyx_v_Rda;
   __pyx_t_7_squish_Vector2D __pyx_r;
 
-  /* "src/energy.pyx":259
+  /* "src/_squish/energy.pyx":273
  * 	@staticmethod
  * 	cdef inline Vector2D I2(HalfEdge e, FLOAT_T r0, FLOAT_T t) nogil:
  * 		cdef Vector2D Rda = e.cache.da(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -18640,7 +18665,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_I2(__pyx_t
  */
   __pyx_v_Rda = __pyx_v_e.cache->da((&__pyx_v_e), __pyx_v_7_squish_NAN_VECTOR);
 
-  /* "src/energy.pyx":260
+  /* "src/_squish/energy.pyx":274
  * 	cdef inline Vector2D I2(HalfEdge e, FLOAT_T r0, FLOAT_T t) nogil:
  * 		cdef Vector2D Rda = e.cache.da(&e, NAN_VECTOR)
  * 		Rda = Rda.rot(&Rda)             # <<<<<<<<<<<<<<
@@ -18649,7 +18674,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_I2(__pyx_t
  */
   __pyx_v_Rda = __pyx_v_Rda.rot((&__pyx_v_Rda));
 
-  /* "src/energy.pyx":261
+  /* "src/_squish/energy.pyx":275
  * 		cdef Vector2D Rda = e.cache.da(&e, NAN_VECTOR)
  * 		Rda = Rda.rot(&Rda)
  * 		Rda.self.sdiv(&Rda, e.cache.da_mag(&e, NAN))             # <<<<<<<<<<<<<<
@@ -18658,17 +18683,17 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_I2(__pyx_t
  */
   (void)(__pyx_v_Rda.self.sdiv((&__pyx_v_Rda), __pyx_v_e.cache->da_mag((&__pyx_v_e), NAN)));
 
-  /* "src/energy.pyx":263
+  /* "src/_squish/energy.pyx":277
  * 		Rda.self.sdiv(&Rda, e.cache.da_mag(&e, NAN))
  * 
  * 		return Rda             # <<<<<<<<<<<<<<
  * 
- * 	@staticmethod
+ * 
  */
   __pyx_r = __pyx_v_Rda;
   goto __pyx_L0;
 
-  /* "src/energy.pyx":258
+  /* "src/_squish/energy.pyx":272
  * 
  * 	@staticmethod
  * 	cdef inline Vector2D I2(HalfEdge e, FLOAT_T r0, FLOAT_T t) nogil:             # <<<<<<<<<<<<<<
@@ -18681,7 +18706,7 @@ static CYTHON_INLINE __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_I2(__pyx_t
   return __pyx_r;
 }
 
-/* "src/energy.pyx":266
+/* "src/_squish/energy.pyx":281
  * 
  * 	@staticmethod
  * 	cdef Vector2D radialt_edge_grad(HalfEdge e, Site xi, FLOAT_T r0) nogil:             # <<<<<<<<<<<<<<
@@ -18719,7 +18744,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_t_7_squish_Matrix2x2 __pyx_t_5;
   int __pyx_t_6;
 
-  /* "src/energy.pyx":274
+  /* "src/_squish/energy.pyx":289
  * 		cdef FLOAT_T t1, t2, lntan, csc, sinB, cosB, sinBp, cosBp, F, A, B
  * 
  * 		xe = e.face(&e)             # <<<<<<<<<<<<<<
@@ -18728,7 +18753,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_xe = __pyx_v_e.face((&__pyx_v_e));
 
-  /* "src/energy.pyx":275
+  /* "src/_squish/energy.pyx":290
  * 
  * 		xe = e.face(&e)
  * 		ep = e.next(&e)             # <<<<<<<<<<<<<<
@@ -18737,7 +18762,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_ep = __pyx_v_e.next((&__pyx_v_e));
 
-  /* "src/energy.pyx":276
+  /* "src/_squish/energy.pyx":291
  * 		xe = e.face(&e)
  * 		ep = e.next(&e)
  * 		F, A, B = e.cache.F(&e, NAN), e.cache.la_mag(&e, NAN), e.cache.B(&e, NAN)             # <<<<<<<<<<<<<<
@@ -18751,7 +18776,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_v_A = __pyx_t_2;
   __pyx_v_B = __pyx_t_3;
 
-  /* "src/energy.pyx":277
+  /* "src/_squish/energy.pyx":292
  * 		ep = e.next(&e)
  * 		F, A, B = e.cache.F(&e, NAN), e.cache.la_mag(&e, NAN), e.cache.B(&e, NAN)
  * 		t1, t2 = e.cache.phi(&e, NAN), ep.cache.phi(&ep, NAN)             # <<<<<<<<<<<<<<
@@ -18763,7 +18788,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_v_t1 = __pyx_t_3;
   __pyx_v_t2 = __pyx_t_2;
 
-  /* "src/energy.pyx":279
+  /* "src/_squish/energy.pyx":294
  * 		t1, t2 = e.cache.phi(&e, NAN), ep.cache.phi(&ep, NAN)
  * 
  * 		lntan, csc = e.cache.lntan(&e, NAN), e.cache.csc(&e, NAN)             # <<<<<<<<<<<<<<
@@ -18775,7 +18800,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_v_lntan = __pyx_t_2;
   __pyx_v_csc = __pyx_t_3;
 
-  /* "src/energy.pyx":281
+  /* "src/_squish/energy.pyx":296
  * 		lntan, csc = e.cache.lntan(&e, NAN), e.cache.csc(&e, NAN)
  * 
  * 		sinB, cosB = <FLOAT_T>(sin(<double>(B))), <FLOAT_T>(cos(<double>(B)))             # <<<<<<<<<<<<<<
@@ -18787,7 +18812,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_v_sinB = __pyx_t_3;
   __pyx_v_cosB = __pyx_t_2;
 
-  /* "src/energy.pyx":282
+  /* "src/_squish/energy.pyx":297
  * 
  * 		sinB, cosB = <FLOAT_T>(sin(<double>(B))), <FLOAT_T>(cos(<double>(B)))
  * 		sinBp, cosBp = <FLOAT_T>(sin(<double>(B-PI_2))), \             # <<<<<<<<<<<<<<
@@ -18796,7 +18821,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_t_2 = ((__pyx_t_7_squish_FLOAT_T)sin(((double)(__pyx_v_B - M_PI_2))));
 
-  /* "src/energy.pyx":283
+  /* "src/_squish/energy.pyx":298
  * 		sinB, cosB = <FLOAT_T>(sin(<double>(B))), <FLOAT_T>(cos(<double>(B)))
  * 		sinBp, cosBp = <FLOAT_T>(sin(<double>(B-PI_2))), \
  * 						<FLOAT_T>(cos(<double>(B-PI_2)))             # <<<<<<<<<<<<<<
@@ -18807,7 +18832,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_v_sinBp = __pyx_t_2;
   __pyx_v_cosBp = __pyx_t_3;
 
-  /* "src/energy.pyx":286
+  /* "src/_squish/energy.pyx":301
  * 
  * 
  * 		ha, hap = e.get_H(&e, xi), ep.get_H(&ep, xi)             # <<<<<<<<<<<<<<
@@ -18819,7 +18844,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_v_ha = __pyx_t_4;
   __pyx_v_hap = __pyx_t_5;
 
-  /* "src/energy.pyx":287
+  /* "src/_squish/energy.pyx":302
  * 
  * 		ha, hap = e.get_H(&e, xi), ep.get_H(&ep, xi)
  * 		hdiff = hap.copy.msub(&hap, ha)             # <<<<<<<<<<<<<<
@@ -18828,7 +18853,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_hdiff = __pyx_v_hap.copy.msub((&__pyx_v_hap), __pyx_v_ha);
 
-  /* "src/energy.pyx":289
+  /* "src/_squish/energy.pyx":304
  * 		hdiff = hap.copy.msub(&hap, ha)
  * 		# If edge is part of differentiated site.
  * 		if xe.index(&xe) == xi.index(&xi):             # <<<<<<<<<<<<<<
@@ -18838,7 +18863,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_t_6 = ((__pyx_v_xe.index((&__pyx_v_xe)) == __pyx_v_xi.index((&__pyx_v_xi))) != 0);
   if (__pyx_t_6) {
 
-    /* "src/energy.pyx":290
+    /* "src/_squish/energy.pyx":305
  * 		# If edge is part of differentiated site.
  * 		if xe.index(&xe) == xi.index(&xi):
  * 			ha.self.msub(&ha, init.Matrix2x2(1.0, 0.0, 0.0, 1.0))             # <<<<<<<<<<<<<<
@@ -18847,7 +18872,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
     (void)(__pyx_v_ha.self.msub((&__pyx_v_ha), __pyx_v_7_squish_init.Matrix2x2(1.0, 0.0, 0.0, 1.0)));
 
-    /* "src/energy.pyx":291
+    /* "src/_squish/energy.pyx":306
  * 		if xe.index(&xe) == xi.index(&xi):
  * 			ha.self.msub(&ha, init.Matrix2x2(1.0, 0.0, 0.0, 1.0))
  * 			hap.self.msub(&hap, init.Matrix2x2(1.0, 0.0, 0.0, 1.0))             # <<<<<<<<<<<<<<
@@ -18856,7 +18881,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
     (void)(__pyx_v_hap.self.msub((&__pyx_v_hap), __pyx_v_7_squish_init.Matrix2x2(1.0, 0.0, 0.0, 1.0)));
 
-    /* "src/energy.pyx":289
+    /* "src/_squish/energy.pyx":304
  * 		hdiff = hap.copy.msub(&hap, ha)
  * 		# If edge is part of differentiated site.
  * 		if xe.index(&xe) == xi.index(&xi):             # <<<<<<<<<<<<<<
@@ -18865,7 +18890,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   }
 
-  /* "src/energy.pyx":293
+  /* "src/_squish/energy.pyx":308
  * 			hap.self.msub(&hap, init.Matrix2x2(1.0, 0.0, 0.0, 1.0))
  * 
  * 		i2ps = ep.cache.i2p(&ep, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -18874,7 +18899,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_i2ps = __pyx_v_ep.cache->i2p((&__pyx_v_ep), __pyx_v_7_squish_NAN_VECTOR);
 
-  /* "src/energy.pyx":294
+  /* "src/_squish/energy.pyx":309
  * 
  * 		i2ps = ep.cache.i2p(&ep, NAN_VECTOR)
  * 		i2ps.self.matmul(&i2ps, hap)             # <<<<<<<<<<<<<<
@@ -18883,7 +18908,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_i2ps.self.matmul((&__pyx_v_i2ps), __pyx_v_hap));
 
-  /* "src/energy.pyx":296
+  /* "src/_squish/energy.pyx":311
  * 		i2ps.self.matmul(&i2ps, hap)
  * 
  * 		q = e.cache.i2p(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -18892,7 +18917,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_q = __pyx_v_e.cache->i2p((&__pyx_v_e), __pyx_v_7_squish_NAN_VECTOR);
 
-  /* "src/energy.pyx":297
+  /* "src/_squish/energy.pyx":312
  * 
  * 		q = e.cache.i2p(&e, NAN_VECTOR)
  * 		q.self.matmul(&q, ha)             # <<<<<<<<<<<<<<
@@ -18901,7 +18926,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_q.self.matmul((&__pyx_v_q), __pyx_v_ha));
 
-  /* "src/energy.pyx":299
+  /* "src/_squish/energy.pyx":314
  * 		q.self.matmul(&q, ha)
  * 
  * 		i2ps.self.vsub(&i2ps, q)             # <<<<<<<<<<<<<<
@@ -18910,7 +18935,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_i2ps.self.vsub((&__pyx_v_i2ps), __pyx_v_q));
 
-  /* "src/energy.pyx":301
+  /* "src/_squish/energy.pyx":316
  * 		i2ps.self.vsub(&i2ps, q)
  * 
  * 		Rda = e.cache.da(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -18919,7 +18944,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_Rda = __pyx_v_e.cache->da((&__pyx_v_e), __pyx_v_7_squish_NAN_VECTOR);
 
-  /* "src/energy.pyx":302
+  /* "src/_squish/energy.pyx":317
  * 
  * 		Rda = e.cache.da(&e, NAN_VECTOR)
  * 		Rda = Rda.rot(&Rda)             # <<<<<<<<<<<<<<
@@ -18928,7 +18953,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_Rda = __pyx_v_Rda.rot((&__pyx_v_Rda));
 
-  /* "src/energy.pyx":304
+  /* "src/_squish/energy.pyx":319
  * 		Rda = Rda.rot(&Rda)
  * 
  * 		fp = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
@@ -18937,7 +18962,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_fp = __pyx_v_e.cache->la((&__pyx_v_e), __pyx_v_7_squish_NAN_VECTOR);
 
-  /* "src/energy.pyx":305
+  /* "src/_squish/energy.pyx":320
  * 
  * 		fp = e.cache.la(&e, NAN_VECTOR)
  * 		fp.self.matmul(&fp, R.copy.matmul(&R, ha))             # <<<<<<<<<<<<<<
@@ -18946,7 +18971,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_fp.self.matmul((&__pyx_v_fp), __pyx_v_7_squish_R.copy.matmul((&__pyx_v_7_squish_R), __pyx_v_ha)));
 
-  /* "src/energy.pyx":306
+  /* "src/_squish/energy.pyx":321
  * 		fp = e.cache.la(&e, NAN_VECTOR)
  * 		fp.self.matmul(&fp, R.copy.matmul(&R, ha))
  * 		fp.self.vadd(&fp, Rda.copy.matmul(&Rda, hdiff))             # <<<<<<<<<<<<<<
@@ -18955,7 +18980,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_fp.self.vadd((&__pyx_v_fp), __pyx_v_Rda.copy.matmul((&__pyx_v_Rda), __pyx_v_hdiff)));
 
-  /* "src/energy.pyx":307
+  /* "src/_squish/energy.pyx":322
  * 		fp.self.matmul(&fp, R.copy.matmul(&R, ha))
  * 		fp.self.vadd(&fp, Rda.copy.matmul(&Rda, hdiff))
  * 		fp.self.smul(&fp, lntan/A)             # <<<<<<<<<<<<<<
@@ -18964,7 +18989,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_fp.self.smul((&__pyx_v_fp), (__pyx_v_lntan / __pyx_v_A)));
 
-  /* "src/energy.pyx":309
+  /* "src/_squish/energy.pyx":324
  * 		fp.self.smul(&fp, lntan/A)
  * 
  * 		gterms = init.Vector2D(             # <<<<<<<<<<<<<<
@@ -18973,7 +18998,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_gterms = __pyx_v_7_squish_init.Vector2D(((__pyx_v_cosBp * __pyx_v_lntan) + (__pyx_v_sinBp * __pyx_v_csc)), ((__pyx_v_cosB * __pyx_v_lntan) + (__pyx_v_sinB * __pyx_v_csc)));
 
-  /* "src/energy.pyx":313
+  /* "src/_squish/energy.pyx":328
  * 			cosB*lntan + sinB*csc
  * 		)
  * 		gterms.self.smul(&gterms, -F/A**2)             # <<<<<<<<<<<<<<
@@ -18982,7 +19007,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_gterms.self.smul((&__pyx_v_gterms), ((-__pyx_v_F) / pow(__pyx_v_A, 2.0))));
 
-  /* "src/energy.pyx":315
+  /* "src/_squish/energy.pyx":330
  * 		gterms.self.smul(&gterms, -F/A**2)
  * 
  * 		gterms = gterms.rot(&gterms)             # <<<<<<<<<<<<<<
@@ -18991,7 +19016,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   __pyx_v_gterms = __pyx_v_gterms.rot((&__pyx_v_gterms));
 
-  /* "src/energy.pyx":316
+  /* "src/_squish/energy.pyx":331
  * 
  * 		gterms = gterms.rot(&gterms)
  * 		gterms.self.matmul(&gterms, hdiff)             # <<<<<<<<<<<<<<
@@ -19000,7 +19025,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_gterms.self.matmul((&__pyx_v_gterms), __pyx_v_hdiff));
 
-  /* "src/energy.pyx":318
+  /* "src/_squish/energy.pyx":333
  * 		gterms.self.matmul(&gterms, hdiff)
  * 
  * 		fp.self.vadd(&fp, gterms)             # <<<<<<<<<<<<<<
@@ -19009,7 +19034,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_fp.self.vadd((&__pyx_v_fp), __pyx_v_gterms));
 
-  /* "src/energy.pyx":320
+  /* "src/_squish/energy.pyx":335
  * 		fp.self.vadd(&fp, gterms)
  * 
  * 		i2ps.self.vadd(&i2ps, fp)             # <<<<<<<<<<<<<<
@@ -19018,7 +19043,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_i2ps.self.vadd((&__pyx_v_i2ps), __pyx_v_fp));
 
-  /* "src/energy.pyx":321
+  /* "src/_squish/energy.pyx":336
  * 
  * 		i2ps.self.vadd(&i2ps, fp)
  * 		i2ps.self.smul(&i2ps, -2*r0)             # <<<<<<<<<<<<<<
@@ -19027,7 +19052,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
  */
   (void)(__pyx_v_i2ps.self.smul((&__pyx_v_i2ps), (-2.0 * __pyx_v_r0)));
 
-  /* "src/energy.pyx":323
+  /* "src/_squish/energy.pyx":338
  * 		i2ps.self.smul(&i2ps, -2*r0)
  * 
  * 		return i2ps             # <<<<<<<<<<<<<<
@@ -19035,7 +19060,7 @@ static __pyx_t_7_squish_Vector2D __pyx_f_7_squish_4Calc_radialt_edge_grad(__pyx_
   __pyx_r = __pyx_v_i2ps;
   goto __pyx_L0;
 
-  /* "src/energy.pyx":266
+  /* "src/_squish/energy.pyx":281
  * 
  * 	@staticmethod
  * 	cdef Vector2D radialt_edge_grad(HalfEdge e, Site xi, FLOAT_T r0) nogil:             # <<<<<<<<<<<<<<
@@ -19708,7 +19733,7 @@ static PyObject *__pyx_f_7_squish___pyx_unpickle_Calc__set_state(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":735
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -19725,7 +19750,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":736
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":736
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -19739,7 +19764,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":735
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -19758,7 +19783,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":738
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -19775,7 +19800,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":739
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":739
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -19789,7 +19814,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":738
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -19808,7 +19833,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":741
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -19825,7 +19850,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":742
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":742
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -19839,7 +19864,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":741
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -19858,7 +19883,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":744
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -19875,7 +19900,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":745
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":745
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -19889,7 +19914,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":744
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -19908,7 +19933,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":747
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -19925,7 +19950,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":748
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":748
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -19939,7 +19964,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":747
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -19958,7 +19983,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":750
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -19972,7 +19997,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("PyDataType_SHAPE", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":751
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -19982,7 +20007,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   __pyx_t_1 = (PyDataType_HASSUBARRAY(__pyx_v_d) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":752
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":752
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):
  *         return <tuple>d.subarray.shape             # <<<<<<<<<<<<<<
@@ -19994,7 +20019,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     __pyx_r = ((PyObject*)__pyx_v_d->subarray->shape);
     goto __pyx_L0;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":751
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -20003,7 +20028,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
  */
   }
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":754
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":754
  *         return <tuple>d.subarray.shape
  *     else:
  *         return ()             # <<<<<<<<<<<<<<
@@ -20017,7 +20042,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     goto __pyx_L0;
   }
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":750
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -20032,7 +20057,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":929
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":929
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -20044,7 +20069,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":930
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":930
  * 
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!             # <<<<<<<<<<<<<<
@@ -20053,7 +20078,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_INCREF(__pyx_v_base);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":931
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":931
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!
  *     PyArray_SetBaseObject(arr, base)             # <<<<<<<<<<<<<<
@@ -20062,7 +20087,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   (void)(PyArray_SetBaseObject(__pyx_v_arr, __pyx_v_base));
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":929
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":929
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -20074,7 +20099,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":933
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":933
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -20089,7 +20114,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":934
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":934
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)             # <<<<<<<<<<<<<<
@@ -20098,7 +20123,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   __pyx_v_base = PyArray_BASE(__pyx_v_arr);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":935
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":935
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -20108,7 +20133,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":936
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":936
  *     base = PyArray_BASE(arr)
  *     if base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -20119,7 +20144,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":935
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":935
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -20128,7 +20153,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":937
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":937
  *     if base is NULL:
  *         return None
  *     return <object>base             # <<<<<<<<<<<<<<
@@ -20140,7 +20165,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_r = ((PyObject *)__pyx_v_base);
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":933
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":933
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -20155,7 +20180,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":941
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":941
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -20179,7 +20204,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_array", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":942
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20195,7 +20220,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":943
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":943
  * cdef inline int import_array() except -1:
  *     try:
  *         __pyx_import_array()             # <<<<<<<<<<<<<<
@@ -20204,7 +20229,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  */
       __pyx_t_4 = _import_array(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(5, 943, __pyx_L3_error)
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":942
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20218,7 +20243,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":944
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":944
  *     try:
  *         __pyx_import_array()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -20233,7 +20258,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":945
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -20249,7 +20274,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":942
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20264,7 +20289,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":941
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":941
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -20287,7 +20312,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":947
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":947
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -20311,7 +20336,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_umath", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":948
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20327,7 +20352,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":949
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":949
  * cdef inline int import_umath() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -20336,7 +20361,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(5, 949, __pyx_L3_error)
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":948
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20350,7 +20375,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":950
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":950
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -20365,7 +20390,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":951
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -20381,7 +20406,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":948
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20396,7 +20421,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":947
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":947
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -20419,7 +20444,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":953
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":953
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -20443,7 +20468,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_ufunc", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":954
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20459,7 +20484,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":955
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":955
  * cdef inline int import_ufunc() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -20468,7 +20493,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(5, 955, __pyx_L3_error)
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":954
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20482,7 +20507,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":956
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":956
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -20497,7 +20522,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":957
+      /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":957
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -20513,7 +20538,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":954
+    /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -20528,7 +20553,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":953
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":953
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -20551,7 +20576,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":967
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":967
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -20564,7 +20589,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_timedelta64_object", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":979
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":979
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyTimedeltaArrType_Type)             # <<<<<<<<<<<<<<
@@ -20574,7 +20599,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyTimedeltaArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":967
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":967
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -20588,7 +20613,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":982
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":982
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -20601,7 +20626,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_datetime64_object", 0);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":994
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":994
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyDatetimeArrType_Type)             # <<<<<<<<<<<<<<
@@ -20611,7 +20636,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyDatetimeArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":982
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":982
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -20625,7 +20650,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":997
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":997
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -20636,7 +20661,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
 static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *__pyx_v_obj) {
   npy_datetime __pyx_r;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1004
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1004
  *     also needed.  That can be found using `get_datetime64_unit`.
  *     """
  *     return (<PyDatetimeScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -20646,7 +20671,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   __pyx_r = ((PyDatetimeScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":997
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":997
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -20659,7 +20684,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1007
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1007
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -20670,7 +20695,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
 static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject *__pyx_v_obj) {
   npy_timedelta __pyx_r;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1011
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1011
  *     returns the int64 value underlying scalar numpy timedelta64 object
  *     """
  *     return (<PyTimedeltaScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -20680,7 +20705,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   __pyx_r = ((PyTimedeltaScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1007
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1007
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -20693,7 +20718,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   return __pyx_r;
 }
 
-/* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1014
+/* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -20704,7 +20729,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
 static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObject *__pyx_v_obj) {
   NPY_DATETIMEUNIT __pyx_r;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1018
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1018
  *     returns the unit part of the dtype for a numpy datetime64 object.
  *     """
  *     return <NPY_DATETIMEUNIT>(<PyDatetimeScalarObject*>obj).obmeta.base             # <<<<<<<<<<<<<<
@@ -20712,7 +20737,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   __pyx_r = ((NPY_DATETIMEUNIT)((PyDatetimeScalarObject *)__pyx_v_obj)->obmeta.base);
   goto __pyx_L0;
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1014
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -35979,6 +36004,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_ASCII, __pyx_k_ASCII, sizeof(__pyx_k_ASCII), 0, 0, 1, 1},
+  {&__pyx_n_u_Area, __pyx_k_Area, sizeof(__pyx_k_Area), 0, 1, 0, 1},
   {&__pyx_n_s_AreaEnergy, __pyx_k_AreaEnergy, sizeof(__pyx_k_AreaEnergy), 0, 0, 1, 1},
   {&__pyx_kp_s_Buffer_view_does_not_expose_stri, __pyx_k_Buffer_view_does_not_expose_stri, sizeof(__pyx_k_Buffer_view_does_not_expose_stri), 0, 0, 1, 0},
   {&__pyx_n_s_Calc, __pyx_k_Calc, sizeof(__pyx_k_Calc), 0, 0, 1, 1},
@@ -36007,6 +36033,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_PickleError, __pyx_k_PickleError, sizeof(__pyx_k_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_RadialALEnergy, __pyx_k_RadialALEnergy, sizeof(__pyx_k_RadialALEnergy), 0, 0, 1, 1},
   {&__pyx_n_s_RadialTEnergy, __pyx_k_RadialTEnergy, sizeof(__pyx_k_RadialTEnergy), 0, 0, 1, 1},
+  {&__pyx_kp_u_Radial_AL, __pyx_k_Radial_AL, sizeof(__pyx_k_Radial_AL), 0, 1, 0, 0},
+  {&__pyx_kp_u_Radial_T, __pyx_k_Radial_T, sizeof(__pyx_k_Radial_T), 0, 1, 0, 0},
   {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
   {&__pyx_kp_s_Unable_to_convert_item_to_object, __pyx_k_Unable_to_convert_item_to_object, sizeof(__pyx_k_Unable_to_convert_item_to_object), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
@@ -36016,9 +36044,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_add_sites, __pyx_k_add_sites, sizeof(__pyx_k_add_sites), 0, 0, 1, 1},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
   {&__pyx_n_s_arange, __pyx_k_arange, sizeof(__pyx_k_arange), 0, 0, 1, 1},
+  {&__pyx_n_u_area, __pyx_k_area, sizeof(__pyx_k_area), 0, 1, 0, 1},
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
   {&__pyx_n_s_asarray, __pyx_k_asarray, sizeof(__pyx_k_asarray), 0, 0, 1, 1},
   {&__pyx_n_s_astype, __pyx_k_astype, sizeof(__pyx_k_astype), 0, 0, 1, 1},
+  {&__pyx_n_s_attr_str, __pyx_k_attr_str, sizeof(__pyx_k_attr_str), 0, 0, 1, 1},
   {&__pyx_n_u_avg_radius, __pyx_k_avg_radius, sizeof(__pyx_k_avg_radius), 0, 1, 0, 1},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
@@ -36088,6 +36118,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
   {&__pyx_n_u_q, __pyx_k_q, sizeof(__pyx_k_q), 0, 1, 0, 1},
   {&__pyx_n_s_r, __pyx_k_r, sizeof(__pyx_k_r), 0, 0, 1, 1},
+  {&__pyx_kp_u_radial_al, __pyx_k_radial_al, sizeof(__pyx_k_radial_al), 0, 1, 0, 0},
+  {&__pyx_kp_u_radial_t, __pyx_k_radial_t, sizeof(__pyx_k_radial_t), 0, 1, 0, 0},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
@@ -36123,6 +36155,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_struct, __pyx_k_struct, sizeof(__pyx_k_struct), 0, 0, 1, 1},
   {&__pyx_n_s_super, __pyx_k_super, sizeof(__pyx_k_super), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_title_str, __pyx_k_title_str, sizeof(__pyx_k_title_str), 0, 0, 1, 1},
   {&__pyx_kp_s_unable_to_allocate_array_data, __pyx_k_unable_to_allocate_array_data, sizeof(__pyx_k_unable_to_allocate_array_data), 0, 0, 1, 0},
   {&__pyx_kp_s_unable_to_allocate_shape_and_str, __pyx_k_unable_to_allocate_shape_and_str, sizeof(__pyx_k_unable_to_allocate_shape_and_str), 0, 0, 1, 0},
   {&__pyx_n_s_unique, __pyx_k_unique, sizeof(__pyx_k_unique), 0, 0, 1, 1},
@@ -36137,7 +36170,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(0, 72, __pyx_L1_error)
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 381, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(2, 2, __pyx_L1_error)
-  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(3, 19, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(5, 945, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(6, 109, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(2, 133, __pyx_L1_error)
@@ -36153,36 +36186,36 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "src/voronoi_dcel.pyx":417
+  /* "src/_squish/voronoi_dcel.pyx":418
  * 		"""
  * 		global SYMM
  * 		cdef np.ndarray[FLOAT_T, ndim=2] symm = np.asarray(SYMM).reshape(9,2)             # <<<<<<<<<<<<<<
  * 		cdef np.ndarray[FLOAT_T, ndim=1] dim = np.asarray(self.dim)
  * 		cdef np.ndarray[FLOAT_T, ndim=2] full_site_arr = np.empty((self.n*9+8, 2), dtype=FLOAT)
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_9, __pyx_int_2); if (unlikely(!__pyx_tuple_)) __PYX_ERR(1, 417, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_9, __pyx_int_2); if (unlikely(!__pyx_tuple_)) __PYX_ERR(1, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "src/voronoi_dcel.pyx":618
+  /* "src/_squish/voronoi_dcel.pyx":619
  * 		cache = self.site_cache[:self.n, :]
  * 
  * 		self.stats["site_areas"] = np.asarray(cache[:, SITE_CACHE_MAP.iarea])             # <<<<<<<<<<<<<<
  * 		self.stats["site_edge_count"] = np.asarray(self.sites[:self.n, 2])
  * 
  */
-  __pyx_slice__2 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__2)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_slice__2 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__2)) __PYX_ERR(1, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__2);
   __Pyx_GIVEREF(__pyx_slice__2);
 
-  /* "src/voronoi_dcel.pyx":630
+  /* "src/_squish/voronoi_dcel.pyx":631
  * 		edges = np.asarray(self.edges)
  * 
  * 		mask = np.nonzero(edges[:, 0] != -1)[0]             # <<<<<<<<<<<<<<
  * 		all_edges = mask[(mask % 2 == 0)]
  * 		caches = edges[all_edges, 4]
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_slice__2, __pyx_int_0); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_slice__2, __pyx_int_0); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
@@ -36262,7 +36295,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":945
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -36273,7 +36306,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "../../../../../../../tmp/pip-build-env-uk8aub_h/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":951
+  /* "../../../../../../../tmp/pip-build-env-m9q1l3sb/overlay/lib/python3.8/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -36650,41 +36683,41 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_7_squish_RadialALEnergy.__pyx_base.precompute = (void (*)(struct __pyx_obj_7_squish_VoronoiContainer *))__pyx_f_7_squish_14RadialALEnergy_precompute;
   __pyx_vtable_7_squish_RadialALEnergy.__pyx_base.calc_grad = (void (*)(struct __pyx_obj_7_squish_VoronoiContainer *))__pyx_f_7_squish_14RadialALEnergy_calc_grad;
   __pyx_type_7_squish_RadialALEnergy.tp_base = __pyx_ptype_7_squish_VoronoiContainer;
-  if (PyType_Ready(&__pyx_type_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 91, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 95, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_7_squish_RadialALEnergy.tp_print = 0;
   #endif
-  if (__Pyx_SetVtable(__pyx_type_7_squish_RadialALEnergy.tp_dict, __pyx_vtabptr_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 91, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialALEnergy, (PyObject *)&__pyx_type_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 91, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 91, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_7_squish_RadialALEnergy.tp_dict, __pyx_vtabptr_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 95, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialALEnergy, (PyObject *)&__pyx_type_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 95, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7_squish_RadialALEnergy) < 0) __PYX_ERR(3, 95, __pyx_L1_error)
   __pyx_ptype_7_squish_RadialALEnergy = &__pyx_type_7_squish_RadialALEnergy;
   __pyx_vtabptr_7_squish_RadialTEnergy = &__pyx_vtable_7_squish_RadialTEnergy;
   __pyx_vtable_7_squish_RadialTEnergy.__pyx_base = *__pyx_vtabptr_7_squish_VoronoiContainer;
   __pyx_vtable_7_squish_RadialTEnergy.__pyx_base.precompute = (void (*)(struct __pyx_obj_7_squish_VoronoiContainer *))__pyx_f_7_squish_13RadialTEnergy_precompute;
   __pyx_vtable_7_squish_RadialTEnergy.__pyx_base.calc_grad = (void (*)(struct __pyx_obj_7_squish_VoronoiContainer *))__pyx_f_7_squish_13RadialTEnergy_calc_grad;
   __pyx_type_7_squish_RadialTEnergy.tp_base = __pyx_ptype_7_squish_VoronoiContainer;
-  if (PyType_Ready(&__pyx_type_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 122, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 131, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_7_squish_RadialTEnergy.tp_print = 0;
   #endif
-  if (__Pyx_SetVtable(__pyx_type_7_squish_RadialTEnergy.tp_dict, __pyx_vtabptr_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 122, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialTEnergy, (PyObject *)&__pyx_type_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 122, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 122, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_7_squish_RadialTEnergy.tp_dict, __pyx_vtabptr_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 131, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialTEnergy, (PyObject *)&__pyx_type_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 131, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7_squish_RadialTEnergy) < 0) __PYX_ERR(3, 131, __pyx_L1_error)
   __pyx_ptype_7_squish_RadialTEnergy = &__pyx_type_7_squish_RadialTEnergy;
   __pyx_vtabptr_7_squish_Calc = &__pyx_vtable_7_squish_Calc;
   __pyx_vtable_7_squish_Calc.phi = (__pyx_t_7_squish_FLOAT_T (*)(__pyx_t_7_squish_HalfEdge))__pyx_f_7_squish_4Calc_phi;
   __pyx_vtable_7_squish_Calc.I2 = (__pyx_t_7_squish_Vector2D (*)(__pyx_t_7_squish_HalfEdge, __pyx_t_7_squish_FLOAT_T, __pyx_t_7_squish_FLOAT_T))__pyx_f_7_squish_4Calc_I2;
   __pyx_vtable_7_squish_Calc.radialt_edge_grad = (__pyx_t_7_squish_Vector2D (*)(__pyx_t_7_squish_HalfEdge, __pyx_t_7_squish_Site, __pyx_t_7_squish_FLOAT_T))__pyx_f_7_squish_4Calc_radialt_edge_grad;
-  if (PyType_Ready(&__pyx_type_7_squish_Calc) < 0) __PYX_ERR(3, 250, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_7_squish_Calc) < 0) __PYX_ERR(3, 263, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_7_squish_Calc.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_7_squish_Calc.tp_dictoffset && __pyx_type_7_squish_Calc.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_7_squish_Calc.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_7_squish_Calc.tp_dict, __pyx_vtabptr_7_squish_Calc) < 0) __PYX_ERR(3, 250, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Calc, (PyObject *)&__pyx_type_7_squish_Calc) < 0) __PYX_ERR(3, 250, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7_squish_Calc) < 0) __PYX_ERR(3, 250, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_7_squish_Calc.tp_dict, __pyx_vtabptr_7_squish_Calc) < 0) __PYX_ERR(3, 263, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Calc, (PyObject *)&__pyx_type_7_squish_Calc) < 0) __PYX_ERR(3, 263, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_7_squish_Calc) < 0) __PYX_ERR(3, 263, __pyx_L1_error)
   __pyx_ptype_7_squish_Calc = &__pyx_type_7_squish_Calc;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;
@@ -37084,7 +37117,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(7, 1, __pyx_L1_error)
   #endif
 
-  /* "src/core.pyx":1
+  /* "src/_squish/core.pyx":1
  * import array, scipy.spatial, numpy as np             # <<<<<<<<<<<<<<
  * from cython.parallel import parallel, prange
  * 
@@ -37102,7 +37135,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/core.pyx":15
+  /* "src/_squish/core.pyx":15
  * #### Constants ####
  * 
  * INT = np.int64             # <<<<<<<<<<<<<<
@@ -37117,7 +37150,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_INT, __pyx_t_2) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/core.pyx":16
+  /* "src/_squish/core.pyx":16
  * 
  * INT = np.int64
  * FLOAT = np.float64             # <<<<<<<<<<<<<<
@@ -37132,7 +37165,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_FLOAT, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/core.pyx":18
+  /* "src/_squish/core.pyx":18
  * FLOAT = np.float64
  * 
  * cdef FLOAT_T TAU = 2*PI             # <<<<<<<<<<<<<<
@@ -37141,7 +37174,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_TAU = (2.0 * M_PI);
 
-  /* "src/core.pyx":22
+  /* "src/_squish/core.pyx":22
  * # not exceed this number. However, we assign a growth rate of 8 edges,
  * # when dynamically allocating.
  * cdef INT_T EDGE_ARR_SIZE = 32             # <<<<<<<<<<<<<<
@@ -37150,7 +37183,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_EDGE_ARR_SIZE = 32;
 
-  /* "src/core.pyx":26
+  /* "src/_squish/core.pyx":26
  * cdef Init init
  * init.IArray, init.FArray, init.BitSet, init.Vector2D, init.Matrix2x2 = \
  * 	init_iarray, init_farray, init_bitset, init_vector2d, init_matrix2x2             # <<<<<<<<<<<<<<
@@ -37163,7 +37196,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_6 = __pyx_f_7_squish_init_vector2d;
   __pyx_t_7 = __pyx_f_7_squish_init_matrix2x2;
 
-  /* "src/core.pyx":25
+  /* "src/_squish/core.pyx":25
  * 
  * cdef Init init
  * init.IArray, init.FArray, init.BitSet, init.Vector2D, init.Matrix2x2 = \             # <<<<<<<<<<<<<<
@@ -37176,7 +37209,7 @@ if (!__Pyx_RefNanny) {
   __pyx_v_7_squish_init.Vector2D = __pyx_t_6;
   __pyx_v_7_squish_init.Matrix2x2 = __pyx_t_7;
 
-  /* "src/core.pyx":34
+  /* "src/_squish/core.pyx":34
  * 
  * VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \
  * 	v_neg_s, v_vadd_s, v_vsub_s, v_vmul_s, v_vdiv_s, v_sadd_s, v_ssub_s, v_smul_s, v_sdiv_s             # <<<<<<<<<<<<<<
@@ -37193,7 +37226,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_15 = __pyx_f_7_squish_v_smul_s;
   __pyx_t_16 = __pyx_f_7_squish_v_sdiv_s;
 
-  /* "src/core.pyx":33
+  /* "src/_squish/core.pyx":33
  * cdef MatrixCopyOps MCO
  * 
  * VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \             # <<<<<<<<<<<<<<
@@ -37210,7 +37243,7 @@ if (!__Pyx_RefNanny) {
   __pyx_v_7_squish_VSO.smul = __pyx_t_15;
   __pyx_v_7_squish_VSO.sdiv = __pyx_t_16;
 
-  /* "src/core.pyx":35
+  /* "src/_squish/core.pyx":35
  * VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \
  * 	v_neg_s, v_vadd_s, v_vsub_s, v_vmul_s, v_vdiv_s, v_sadd_s, v_ssub_s, v_smul_s, v_sdiv_s
  * VSO.matmul = v_matmul_s             # <<<<<<<<<<<<<<
@@ -37219,7 +37252,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_VSO.matmul = __pyx_f_7_squish_v_matmul_s;
 
-  /* "src/core.pyx":38
+  /* "src/_squish/core.pyx":38
  * 
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \
  * 	v_neg_c, v_vadd_c, v_vsub_c, v_vmul_c, v_vdiv_c, v_sadd_c, v_ssub_c, v_smul_c, v_sdiv_c             # <<<<<<<<<<<<<<
@@ -37236,7 +37269,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_24 = __pyx_f_7_squish_v_smul_c;
   __pyx_t_25 = __pyx_f_7_squish_v_sdiv_c;
 
-  /* "src/core.pyx":37
+  /* "src/_squish/core.pyx":37
  * VSO.matmul = v_matmul_s
  * 
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \             # <<<<<<<<<<<<<<
@@ -37253,7 +37286,7 @@ if (!__Pyx_RefNanny) {
   __pyx_v_7_squish_VCO.smul = __pyx_t_24;
   __pyx_v_7_squish_VCO.sdiv = __pyx_t_25;
 
-  /* "src/core.pyx":39
+  /* "src/_squish/core.pyx":39
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \
  * 	v_neg_c, v_vadd_c, v_vsub_c, v_vmul_c, v_vdiv_c, v_sadd_c, v_ssub_c, v_smul_c, v_sdiv_c
  * VCO.matmul = v_matmul_c             # <<<<<<<<<<<<<<
@@ -37262,7 +37295,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_VCO.matmul = __pyx_f_7_squish_v_matmul_c;
 
-  /* "src/core.pyx":42
+  /* "src/_squish/core.pyx":42
  * 
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \
  * 	m_neg_s, m_madd_s, m_msub_s, m_mmul_s, m_mdiv_s, m_sadd_s, m_ssub_s, m_smul_s, m_sdiv_s             # <<<<<<<<<<<<<<
@@ -37279,7 +37312,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_33 = __pyx_f_7_squish_m_smul_s;
   __pyx_t_34 = __pyx_f_7_squish_m_sdiv_s;
 
-  /* "src/core.pyx":41
+  /* "src/_squish/core.pyx":41
  * VCO.matmul = v_matmul_c
  * 
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \             # <<<<<<<<<<<<<<
@@ -37296,7 +37329,7 @@ if (!__Pyx_RefNanny) {
   __pyx_v_7_squish_MSO.smul = __pyx_t_33;
   __pyx_v_7_squish_MSO.sdiv = __pyx_t_34;
 
-  /* "src/core.pyx":43
+  /* "src/_squish/core.pyx":43
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \
  * 	m_neg_s, m_madd_s, m_msub_s, m_mmul_s, m_mdiv_s, m_sadd_s, m_ssub_s, m_smul_s, m_sdiv_s
  * MSO.matmul = m_matmul_s             # <<<<<<<<<<<<<<
@@ -37305,7 +37338,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_MSO.matmul = __pyx_f_7_squish_m_matmul_s;
 
-  /* "src/core.pyx":46
+  /* "src/_squish/core.pyx":46
  * 
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \
  * 	m_neg_c, m_madd_c, m_msub_c, m_mmul_c, m_mdiv_c, m_sadd_c, m_ssub_c, m_smul_c, m_sdiv_c             # <<<<<<<<<<<<<<
@@ -37322,7 +37355,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_42 = __pyx_f_7_squish_m_smul_c;
   __pyx_t_43 = __pyx_f_7_squish_m_sdiv_c;
 
-  /* "src/core.pyx":45
+  /* "src/_squish/core.pyx":45
  * MSO.matmul = m_matmul_s
  * 
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \             # <<<<<<<<<<<<<<
@@ -37339,7 +37372,7 @@ if (!__Pyx_RefNanny) {
   __pyx_v_7_squish_MCO.smul = __pyx_t_42;
   __pyx_v_7_squish_MCO.sdiv = __pyx_t_43;
 
-  /* "src/core.pyx":47
+  /* "src/_squish/core.pyx":47
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \
  * 	m_neg_c, m_madd_c, m_msub_c, m_mmul_c, m_mdiv_c, m_sadd_c, m_ssub_c, m_smul_c, m_sdiv_c
  * MCO.matmul = m_matmul_c             # <<<<<<<<<<<<<<
@@ -37348,7 +37381,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_MCO.matmul = __pyx_f_7_squish_m_matmul_c;
 
-  /* "src/core.pyx":49
+  /* "src/_squish/core.pyx":49
  * MCO.matmul = m_matmul_c
  * 
  * cdef Vector2D NAN_VECTOR = init.Vector2D(NAN, NAN)             # <<<<<<<<<<<<<<
@@ -37357,7 +37390,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_NAN_VECTOR = __pyx_v_7_squish_init.Vector2D(NAN, NAN);
 
-  /* "src/core.pyx":50
+  /* "src/_squish/core.pyx":50
  * 
  * cdef Vector2D NAN_VECTOR = init.Vector2D(NAN, NAN)
  * cdef Matrix2x2 NAN_MATRIX = init.Matrix2x2(NAN, NAN, NAN, NAN)             # <<<<<<<<<<<<<<
@@ -37366,7 +37399,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_NAN_MATRIX = __pyx_v_7_squish_init.Matrix2x2(NAN, NAN, NAN, NAN);
 
-  /* "src/core.pyx":52
+  /* "src/_squish/core.pyx":52
  * cdef Matrix2x2 NAN_MATRIX = init.Matrix2x2(NAN, NAN, NAN, NAN)
  * 
  * cdef FLOAT_T[18] SYMM = [0,0, 1,0, 1,1, 0,1, -1,1, -1,0, -1,-1, 0,-1, 1,-1]             # <<<<<<<<<<<<<<
@@ -37393,7 +37426,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_44[17] = -1.0;
   memcpy(&(__pyx_v_7_squish_SYMM[0]), __pyx_t_44, sizeof(__pyx_v_7_squish_SYMM[0]) * (18));
 
-  /* "src/core.pyx":53
+  /* "src/_squish/core.pyx":53
  * 
  * cdef FLOAT_T[18] SYMM = [0,0, 1,0, 1,1, 0,1, -1,1, -1,0, -1,-1, 0,-1, 1,-1]
  * cdef Matrix2x2 R = init.Matrix2x2(0, -1, 1, 0)             # <<<<<<<<<<<<<<
@@ -37402,7 +37435,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_R = __pyx_v_7_squish_init.Matrix2x2(0.0, -1.0, 1.0, 0.0);
 
-  /* "src/voronoi_dcel.pyx":6
+  /* "src/_squish/voronoi_dcel.pyx":6
  * 
  * init.SiteCacheMap, init.EdgeCacheMap, init.VoronoiInfo, init.Site, init.HalfEdge = \
  * 	init_sitecachemap, init_edgecachemap, init_voronoiinfo, init_site, init_halfedge             # <<<<<<<<<<<<<<
@@ -37415,7 +37448,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_48 = __pyx_f_7_squish_init_site;
   __pyx_t_49 = __pyx_f_7_squish_init_halfedge;
 
-  /* "src/voronoi_dcel.pyx":5
+  /* "src/_squish/voronoi_dcel.pyx":5
  * #### Constants ####
  * 
  * init.SiteCacheMap, init.EdgeCacheMap, init.VoronoiInfo, init.Site, init.HalfEdge = \             # <<<<<<<<<<<<<<
@@ -37428,7 +37461,7 @@ if (!__Pyx_RefNanny) {
   __pyx_v_7_squish_init.Site = __pyx_t_48;
   __pyx_v_7_squish_init.HalfEdge = __pyx_t_49;
 
-  /* "src/voronoi_dcel.pyx":8
+  /* "src/_squish/voronoi_dcel.pyx":8
  * 	init_sitecachemap, init_edgecachemap, init_voronoiinfo, init_site, init_halfedge
  * 
  * cdef SiteCacheMap SITE_CACHE_MAP = init.SiteCacheMap(0, 1, 2, 3, 4)             # <<<<<<<<<<<<<<
@@ -37437,7 +37470,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_SITE_CACHE_MAP = __pyx_v_7_squish_init.SiteCacheMap(0, 1, 2, 3, 4);
 
-  /* "src/voronoi_dcel.pyx":10
+  /* "src/_squish/voronoi_dcel.pyx":10
  * cdef SiteCacheMap SITE_CACHE_MAP = init.SiteCacheMap(0, 1, 2, 3, 4)
  * 
  * cdef EdgeCacheMap AREA_EDGE_CACHE_MAP = init.EdgeCacheMap(0, 4, 6, 8, 10, -1, 12, 13,             # <<<<<<<<<<<<<<
@@ -37446,7 +37479,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_7_squish_AREA_EDGE_CACHE_MAP = __pyx_v_7_squish_init.EdgeCacheMap(0, 4, 6, 8, 10, -1LL, 12, 13, -1LL, -1LL, -1LL, -1LL, -1LL, 14);
 
-  /* "src/voronoi_dcel.pyx":12
+  /* "src/_squish/voronoi_dcel.pyx":12
  * cdef EdgeCacheMap AREA_EDGE_CACHE_MAP = init.EdgeCacheMap(0, 4, 6, 8, 10, -1, 12, 13,
  * 															-1, -1, -1, -1, -1, 14)
  * cdef EdgeCacheMap RADIALT_EDGE_CACHE_MAP = init.EdgeCacheMap(0, 4, 6, 8, -1, 10, 12, 13,             # <<<<<<<<<<<<<<
@@ -37454,6 +37487,66 @@ if (!__Pyx_RefNanny) {
  * 
  */
   __pyx_v_7_squish_RADIALT_EDGE_CACHE_MAP = __pyx_v_7_squish_init.EdgeCacheMap(0, 4, 6, 8, -1LL, 10, 12, 13, 14, 15, 16, 17, 18, 19);
+
+  /* "src/_squish/energy.pyx":11
+ * 	"""
+ * 
+ * 	attr_str = "area"             # <<<<<<<<<<<<<<
+ * 	title_str = "Area"
+ * 
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_7_squish_AreaEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_n_u_area) < 0) __PYX_ERR(3, 11, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_7_squish_AreaEnergy);
+
+  /* "src/_squish/energy.pyx":12
+ * 
+ * 	attr_str = "area"
+ * 	title_str = "Area"             # <<<<<<<<<<<<<<
+ * 
+ * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_7_squish_AreaEnergy->tp_dict, __pyx_n_s_title_str, __pyx_n_u_Area) < 0) __PYX_ERR(3, 12, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_7_squish_AreaEnergy);
+
+  /* "src/_squish/energy.pyx":105
+ * 	"""
+ * 
+ * 	attr_str = "radial-al"             # <<<<<<<<<<<<<<
+ * 	title_str = "Radial[AL]"
+ * 
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_7_squish_RadialALEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_kp_u_radial_al) < 0) __PYX_ERR(3, 105, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_7_squish_RadialALEnergy);
+
+  /* "src/_squish/energy.pyx":106
+ * 
+ * 	attr_str = "radial-al"
+ * 	title_str = "Radial[AL]"             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_7_squish_RadialALEnergy->tp_dict, __pyx_n_s_title_str, __pyx_kp_u_Radial_AL) < 0) __PYX_ERR(3, 106, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_7_squish_RadialALEnergy);
+
+  /* "src/_squish/energy.pyx":141
+ * 	"""
+ * 
+ * 	attr_str = "radial-t"             # <<<<<<<<<<<<<<
+ * 	title_str = "Radial[T]"
+ * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_7_squish_RadialTEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_kp_u_radial_t) < 0) __PYX_ERR(3, 141, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_7_squish_RadialTEnergy);
+
+  /* "src/_squish/energy.pyx":142
+ * 
+ * 	attr_str = "radial-t"
+ * 	title_str = "Radial[T]"             # <<<<<<<<<<<<<<
+ * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
+ */
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_7_squish_RadialTEnergy->tp_dict, __pyx_n_s_title_str, __pyx_kp_u_Radial_T) < 0) __PYX_ERR(3, 142, __pyx_L1_error)
+  PyType_Modified(__pyx_ptype_7_squish_RadialTEnergy);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Calc(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<

@@ -7,6 +7,10 @@ cdef class AreaEnergy(VoronoiContainer):
 	:param r: [float] radius of zero energy circle.
 	:param sites: [np.ndarray] collection of sites.
 	"""
+
+	attr_str = "area"
+	title_str = "Area"
+
 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
 					np.ndarray[FLOAT_T, ndim=2] site_arr):
 		self.edge_cache_map = &AREA_EDGE_CACHE_MAP
@@ -97,6 +101,11 @@ cdef class RadialALEnergy(VoronoiContainer):
 	:param r: [float] radius of zero energy circle.
 	:param sites: [np.ndarray] collection of sites.
 	"""
+
+	attr_str = "radial-al"
+	title_str = "Radial[AL]"
+
+
 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
 					np.ndarray[FLOAT_T, ndim=2] site_arr):
 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
@@ -128,6 +137,9 @@ cdef class RadialTEnergy(VoronoiContainer):
 	:param r: [float] radius of zero energy circle.
 	:param sites: [np.ndarray] collection of sites.
 	"""
+
+	attr_str = "radial-t"
+	title_str = "Radial[T]"
 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
 					np.ndarray[FLOAT_T, ndim=2] site_arr):
 		self.edge_cache_map = &RADIALT_EDGE_CACHE_MAP
@@ -201,6 +213,7 @@ cdef class RadialTEnergy(VoronoiContainer):
 
 		self.energy = energy
 
+
 	cdef void calc_grad(self) except *:
 		cdef VoronoiInfo info = init.VoronoiInfo(self.sites, self.edges, self.points, 
 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
@@ -254,6 +267,7 @@ cdef class Calc:
 		cdef FLOAT_T angle = <FLOAT_T>acos(<double>(da.x/e.cache.da_mag(&e, NAN)))
 		return angle if da.y >= 0 else TAU - angle
 
+
 	@staticmethod
 	cdef inline Vector2D I2(HalfEdge e, FLOAT_T r0, FLOAT_T t) nogil:
 		cdef Vector2D Rda = e.cache.da(&e, NAN_VECTOR)
@@ -261,6 +275,7 @@ cdef class Calc:
 		Rda.self.sdiv(&Rda, e.cache.da_mag(&e, NAN))
 
 		return Rda
+
 
 	@staticmethod 
 	cdef Vector2D radialt_edge_grad(HalfEdge e, Site xi, FLOAT_T r0) nogil:

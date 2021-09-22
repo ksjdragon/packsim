@@ -56,7 +56,7 @@ There are currently three simulation modes, and the configuration changes slight
 Flow
 """"
 
-This mode simulates the relaxing of the objects to its equilibrium. The threshold is the sufficient condition where the gradient is sufficiently close to zero. Specifically, the simulation stops when the L1 norm of the gradient divided by the number of objects is less than the threshold. The `step-size` parameter only represents the **initial** step size. This is because adaptive step size is employed.
+This mode simulates the relaxing of the objects to its equilibrium. The threshold is the sufficient condition where the gradient is sufficiently close to zero. Specifically, the simulation stops when the L1 norm of the gradient divided by the number of objects is less than the threshold. The `step-size` parameter only represents the *initial* step size. If ``accel`` is set to ``true``, then adaptive step size is used to make convergence faster.
 
 
 .. code-block:: json
@@ -67,7 +67,8 @@ This mode simulates the relaxing of the objects to its equilibrium. The threshol
 	  "simulation": {
 	    "mode": "flow",
 	    "step_size": 0.05,
-	    "threshold": 0.0001
+	    "threshold": 0.0001,
+	    "accel": true
 	  },
 	  ...
 	}
@@ -86,6 +87,7 @@ This mode searches for equilibrium until `eq_stop_count` equilibria are found. A
 	    "mode": "search",
 	    "step_size": 0.05,
 	    "threshold": 0.0001,
+	    "accel": true,
 	    "eq_stop_count": 100,
 	    "manifold_step_size": 0.1
 	  },
@@ -107,6 +109,7 @@ This mode simulates the the change in the equilibrium as the width is decreased.
 	    "mode": "shrink",
 	    "step_size": 0.05,
 	    "threshold": 0.0001,
+	    "accel": true,
 	    "width_change": 1,
 	    "width_stop": 0.3
 	  },

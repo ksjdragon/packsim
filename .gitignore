@@ -6,5 +6,7 @@ dist/
 
 src/packsim.c
 *.so
+*.json
 
-
+figures/
+simulations/

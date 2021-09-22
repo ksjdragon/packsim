@@ -243,7 +243,7 @@ def main():
 
 	print(f"Wrote to {fig_folder}.")
 
-def pre():
+if __name__ == '__main__':
 	os.environ["QT_LOGGING_RULES"] = "*=false"
 	SIM_FOLDER = Path(f"simulations/ShrinkEnergyComparison")
 	SIM_FOLDER.mkdir(exist_ok=True)

@@ -5,7 +5,7 @@ import numpy
 ext_modules = [
     Extension(
         "_squish",
-        ["src/_squish.pyx"],
+        ["src/_squish/_squish.pyx"],
         extra_compile_args=['-fopenmp'],
         extra_link_args=['-fopenmp']
     )
