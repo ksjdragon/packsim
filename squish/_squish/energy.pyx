@@ -40,7 +40,7 @@ cdef class AreaEnergy(VoronoiContainer):
 			if i < self.n:
 				energy += xi.cache.energy(&xi, NAN)
 			
-			for j in prange(xi.edge_num(&xi)):
+			for j in range(xi.edge_num(&xi)):
 				em, ep = e.prev(&e), e.next(&e)
 				vdiff = em.origin(&em)
 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
@@ -71,7 +71,7 @@ cdef class AreaEnergy(VoronoiContainer):
 			xi = init.Site(i, &info)
 			e = xi.edge(&xi)
 			edge_set = init.BitSet(num_edges)
-			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.
+			for j in range(xi.edge_num(&xi)):	# Looping through site edges.
 				f = e
 				while True:	# Circling this vertex.
 					if not edge_set.add(&edge_set, f.arr_index):
@@ -166,7 +166,7 @@ cdef class RadialTEnergy(VoronoiContainer):
 		for i in prange(self.sites.shape[0], nogil=True):
 			xi = init.Site(i, &info)
 			e = xi.edge(&xi)
-			for j in prange(xi.edge_num(&xi)):
+			for j in range(xi.edge_num(&xi)):
 				em = e.prev(&e)
 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
 				t = Calc.phi(e)
@@ -186,7 +186,7 @@ cdef class RadialTEnergy(VoronoiContainer):
 
 			# For looping again to calculate integrals.
 			em = xi.edge(&xi)
-			for j in prange(xi.edge_num(&xi)):
+			for j in range(xi.edge_num(&xi)):
 				e = em.next(&em)
 				B = em.cache.B(&em, NAN)
 				t, tp = em.cache.phi(&em, NAN), e.cache.phi(&e, NAN)
@@ -234,7 +234,7 @@ cdef class RadialTEnergy(VoronoiContainer):
 			e = xi.edge(&xi)
 			edge_set = init.BitSet(num_edges)
 
-			for j in prange(xi.edge_num(&xi)):	# Looping through site edges.
+			for j in range(xi.edge_num(&xi)):	# Looping through site edges.
 				f = e
 				while True:	# Circling this vertex.
 					fm = f.prev(&f)

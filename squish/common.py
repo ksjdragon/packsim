@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import List, Union, Optional, Iterator, Generator
 import pickle, numpy as np
 from pathlib import Path
-from _squish import AreaEnergy, RadialALEnergy, RadialTEnergy
+from ._squish import AreaEnergy, RadialALEnergy, RadialTEnergy
 
 OUTPUT_DIR = Path("squish_output")
 OUTPUT_DIR.mkdir(exist_ok=True)

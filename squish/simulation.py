@@ -298,7 +298,7 @@ class Search(Simulation):
 
 		for i in range(self.count):
 			# Get to equilibrium.
-			sim = Flow(self.domain, self.energy, self.thres, self.step_size, self.accel)
+			sim = Flow(self.domain, self.energy, self.step_size, self.thres, self.accel)
 			sim.add_frame(new_sites)
 			sim.run(False, log, log_steps)
 
@@ -382,7 +382,7 @@ class Shrink(Simulation):
 		while width >= self.stop_width:
 			# Get to equilibrium.
 			new_domain = DomainParams(self.domain.n, width, self.domain.h, self.domain.r)
-			sim = Flow(new_domain, self.energy, self.thres, self.step_size, self.accel)
+			sim = Flow(new_domain, self.energy, self.step_size, self.thres, self.accel)
 			sim.add_frame(new_sites)
 			sim.run(False, log, log_steps)
 			new_sites = sim[-1].site_arr

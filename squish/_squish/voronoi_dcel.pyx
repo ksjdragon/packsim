@@ -537,7 +537,7 @@ cdef class VoronoiContainer:
 		for i in prange(self.sites.shape[0], nogil=True):
 			xi = init.Site(i, &info)
 			em = xi.edge(&xi)
-			for j in prange(xi.edge_num(&xi)):
+			for j in range(xi.edge_num(&xi)):
 				ep = em.next(&em)
 				p, q = em.origin(&em), ep.origin(&ep)
 				la, da = q.copy.vsub(&q, p), p.copy.vsub(&p, xi.vec(&xi))	# vp - vm, vm - xi
