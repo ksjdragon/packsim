@@ -1,40 +1,104 @@
 from __future__ import annotations
-from typing import Tuple, List
+from typing import Tuple, List, Optional
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt, numpy as np, os
 from matplotlib.ticker import MaxNLocator, FormatStrFormatter
-import os, math, random, time, pickle, scipy, numpy as np
-from timeit import default_timer as timer
+from scipy.spatial import Voronoi, voronoi_plot_2d
+from multiprocessing import Pool, cpu_count
 
-INT = np.int64
-FLOAT = np.float64
+from .common import DomainParams
 
 SYMM = np.array([[1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1], [0,-1], [1,-1]])
 
+class SimData:
+	"""Stores diagram information for a simulation.
 
-class Diagram():
+	Attributes:
+		path (Path): path to output directory.
+		domains (List[DomainParams]): domain parameters from simulation frames,
+		energies (List[float]): energy from simulation frames.
+		voronois (List[Voronoi]): voronoi information from scipy from simulation frames.
+		stats (List[numpy.ndarray]): statistics from simulation frames.
+
 	"""
-	Class for generating diagrams.
-	:param sim: [Simulation] Simulation class containing dynamics.
-	:param diagrams: [np.ndarray] selects which diagrams to show.
+
+	__slots__ = ['path', 'domains', 'energies', 'voronois', 'stats']
+
+
+	def __init__(self, sim: Simulation) -> None:
+		self.path = sim.path
+		self.domains = list([DomainParams(s.n, s.w, s.h, s.r) for s in sim])
+		self.energies = list([s.energy for s in sim])
+		self.voronois = list([s.vor_data for s in sim])
+		self.stats = list([s.stats for s in sim])
+
+
+	def __len__(self) -> int:
+		return len(self.domains)
+
+
+	def hist(self, stat: str, i: int, bins: int = 10, bounds: Optional[Tuple[float, float]] = None,
+				cumul: bool = False, avg: bool = False) -> Tuple[numpy.ndarray, numpy.ndarray]:
+		"""Generates a histogram from the selected data.
+
+		Arguments:
+			stat (str): name of data to obtain
+			i (int): which frame to select from
+			bins (int): number of bins for the histogram.
+			bounds (Optional[Tuple[float, float]]): upper and lower bounds of the histogram.
+				this will automatically take the minimum and maximum value of not set.
+			cumul (bool): aggregates all data up to frame i if True.
+			avg (bool): will average the data based on number of frames if True.
+
+		Returns:
+			Tuple[numpy.ndarray, numpy.ndarray]: the histogram and its bins.
+
+		"""
+		if cumulative:
+			values = np.concatenate([f[stat] for f in self.stats[:(i+1)]])
+		else:
+			values = self.stats[i][stat]
+
+		if np.var(values) <= 1e-8:
+			hist = np.zeros((bins,))
+			val = np.average(values)
+			hist[(bins+1) // 2 - 1] = len(values)
+			bin_list = np.linspace(0, val, bins//2+1, endpoint=True)
+			bin_list = np.concatenate((bin_list, (bin_list+val)[1:]))
+			return hist, bin_list[not (bins%2):]
+
+		hist, bin_edges = np.histogram(values, bins=bins, range=bounds)
+		bin_list = np.array([(bin_edges[i] + bin_edges[i+1])/2 for i in range(len(bin_edges)-1)])
+
+		if avg and cumulative:
+			return hist / (i+1), bin_list
+
+		return hist, bin_list
+
+
+class Diagram:
+	"""Class for generating diagrams.
+
+	Attributes:
+		sim (SimData): the simulation data that contains all the frames and information.
+		diagrams (numpy.ndarray): array that selects which diagrams to show.
+		cumulative (bool): selects whether or not graph statistics are cumulative.
+
 	"""
 
 	__slots__ = ['sim', 'diagrams', 'cumulative']
 
-	def __init__(self, sim: Simulation, diagrams: np.ndarray, cumulative: bool = True):
-		self.sim = sim
+
+	def __init__(self, sim: Simulation, diagrams: np.ndarray, cumulative: bool = False) -> None:
+		self.sim = SimData(sim)
 		self.diagrams = np.atleast_2d(diagrams)
 		self.cumulative = cumulative
 
 
-	def generate_frame(self, frame: int):
-		"""
-		Generates one frame for the plot.
-		:param frame: [int] frame index to draw.
-		:param scale: [float] how much of the domain to draw.
-		:param area: [bool] set to false to not label areas.
-		:param only: [bool] set to True to only render diagram.
-		"""
+	def generate_frame(self, frame: int, mode: str, fol: str) -> None:
+		if mode not in ["save", "open"]:
+			raise ValueError("Not a valid mode for diagrams!")
+
 		shape = self.diagrams.shape
 		fig, axes = plt.subplots(*shape, figsize=(shape[1]*8, shape[0]*8))
 		if self.diagrams.shape == (1,1):
@@ -49,14 +113,20 @@ class Diagram():
 
 		plt.tight_layout()
 
+		if mode == "save":
+			plt.savefig(self.sim.path / fol / f"img{frame:05}.png")
+			plt.close(fig)
+		elif mode == "show":
+			plt.show()
 
-	def voronoi_plot(self, i: int, ax):
-		n,w,h = self.sim[i].n, self.sim[i].w, self.sim[i].h
+
+	def voronoi_plot(self, i: int, ax: AxesSubplot) -> None:
+		domain = self.sim.domains[i]
+		n,w,h = domain.n, domain.w, domain.h
 		scale = 1.5
 		area = n <= 60
 
-		scipy.spatial.voronoi_plot_2d(self.sim[i].vor_data, ax, show_vertices=False,
-										point_size = 7-n/100)
+		voronoi_plot_2d(self.sim.voronois[i], ax, show_vertices=False, point_size = 7-n/100)
 		ax.plot([-w, 2*w], [0, 0], 'r')
 		ax.plot([-w, 2*w], [h, h], 'r')
 		ax.plot([0,0], [-h, 2*h], 'r')
@@ -68,30 +138,26 @@ class Diagram():
 
 		props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
 
-		# if area:
-		# 	global SYMM
-		# 	for site_index in range(n):
-		# 		for s in np.concatenate(([[0,0]], SYMM)):
-		# 			txt = ax.text(*(site.vec + s*self.sim[i].dim),
-		# 							str(round(site.cache("area"), 3)))
-		# 			txt.set_clip_on(True)
+		if area:
+			global SYMM
+			for j in range(n):
+				for s in np.concatenate(([[0,0]], SYMM)):
+					txt = ax.text(*(self.sim.voronois[i].points[j] + s*self.sim.domains[i].dim),
+									str(round(self.sim.stats[i]["site_areas"][j], 3)))
+					txt.set_clip_on(True)
 
-		ax.text(0.05, 0.95, f'Energy: {self.sim[i].energy}', transform=ax.transAxes, fontsize=14,
+		ax.text(0.05, 0.95, f'Energy: {self.sim.energies[i]}', transform=ax.transAxes, fontsize=14,
 				verticalalignment='top', bbox=props)
 
 
-	def energy_plot(self, i: int, ax):
+	def energy_plot(self, i: int, ax: AxesSubplot) -> None:
 		ax.set_xlim([0, len(self.sim)])
-		try:
-			ax.plot([0, len(self.sim)], [self.sim[i].minimum, self.sim[i].minimum], 'red')
-		except AttributeError:
-			pass
 
-		energies = [self.sim[j].energy for j in range(i+1)]
+		energies = self.sim.energies[:(i+1)]
 		ax.plot(list(range(i+1)), energies)
 		ax.title.set_text('Energy vs. Time')
-		max_value = round(self.sim[0].energy)
-		min_value = round(self.sim[-1].energy)
+		# max_value = round(self.sim[0].energy)
+		# min_value = round(self.sim[-1].energy)
 		#diff = max_value-min_value
 		#ax.set_yticks(np.arange(int(min_value-diff/5), int(max_value+diff/5), diff/25))
 		ax.set_xlabel("Iterations")
@@ -99,10 +165,8 @@ class Diagram():
 		ax.grid()
 
 
-	def site_areas_plot(self, i: int, ax):
-		regular_area = self.sim[i].w*self.sim[i].h/self.sim[i].n
-		y, x = self.sim.generate_bar_info("site_areas", i, self.cumulative,
-										 	avg=True, reg=regular_area)
+	def site_areas_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("site_areas", i, cumul=self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Areas')
@@ -116,9 +180,8 @@ class Diagram():
 		# 		xtick.set_color(color)
 
 
-	def site_edge_count_plot(self, i: int, ax):
-		y, x = self.sim.generate_bar_info("site_edge_count", i, self.cumulative,
-											bounds=(1, 11), avg=True)
+	def site_edge_count_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("site_edge_count", i, bounds=(1, 11), cumul=self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Edges per Site')
@@ -129,13 +192,8 @@ class Diagram():
 		ax.yaxis.set_major_locator(MaxNLocator(integer=True))
 
 
-	def site_isos_plot(self, i: int, ax):
-		regular_area = self.sim[i].w*self.sim[i].h/self.sim[i].n
-		regular_edge = math.sqrt(2*regular_area/(3*math.sqrt(3)))
-		regular_isoparam = 4*math.pi*regular_area/(6*regular_edge)**2
-
-		y, x = self.sim.generate_bar_info("site_isos", i, self.cumulative, bounds=(0,1),
-											avg=True, reg=regular_isoparam)
+	def site_isos_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("site_isos", i, bounds=(0,1), cumul=self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Isoparametric Values')
@@ -149,8 +207,8 @@ class Diagram():
 		# 		xtick.set_color(color)
 
 
-	def site_energies_plot(self, i: int, ax):
-		y, x = self.sim.generate_bar_info("site_energies", i, self.cumulative, avg=True)
+	def site_energies_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("site_energies", i, self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Energies')
@@ -161,8 +219,9 @@ class Diagram():
 		ax.yaxis.set_major_locator(MaxNLocator(integer=True))
 
 
-	def avg_radius_plot(self, i: int, ax):
-		y, x = self.sim.generate_bar_info("avg_radius", i, self.cumulative, avg=True)
+	def avg_radius_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("avg_radius", i, self.cumulative, avg=True)
+
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Average Radii')
 		ax.set_xlabel("Average Radius")
@@ -172,8 +231,8 @@ class Diagram():
 		ax.yaxis.set_major_locator(MaxNLocator(integer=True))
 
 
-	def isoparam_avg_plot(self, i: int, ax):
-		y, x = self.sim.generate_bar_info("isoparam_avg", i, self.cumulative, avg=True)
+	def isoparam_avg_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("isoparam_avg", i, self.cumulative, avg=True)
 
 		ax.bar(x,y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Isoperimetric Averages')
@@ -184,11 +243,8 @@ class Diagram():
 		ax.yaxis.set_major_locator(MaxNLocator(integer=True))
 
 
-	def edge_lengths_plot(self, i: int, ax):
-		regular_area = self.sim[i].w*self.sim[i].h/self.sim[i].n
-		regular_edge = math.sqrt(2*regular_area/(3*math.sqrt(3)))
-		y, x = self.sim.generate_bar_info("edge_lengths", i, self.cumulative,
-											30, avg=True, reg=regular_edge)
+	def edge_lengths_plot(self, i: int, ax: AxesSubplot) -> None:
+		y, x = self.sim.hist("edge_lengths", i, 30, cumul=self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Edge Lengths')
@@ -204,8 +260,8 @@ class Diagram():
 		# 		xtick.set_color(color)
 
 
-	def eigs_plot(self, i: int, ax):
-		eigs = self.sim[i].stats["eigs"]
+	def eigs_plot(self, i: int, ax: AxesSubplot) -> None:
+		eigs = self.sim.stats[i]["eigs"]
 		ax.plot(list(range(len(eigs))), eigs, marker='o', linestyle='dashed', color='C0')
 		ax.plot([0,len(eigs)], [0, 0], color="red")
 		ax.title.set_text('Hessian Eigenvalues')
@@ -213,99 +269,64 @@ class Diagram():
 		ax.set_ylabel("Value")
 
 
-	def render_static(self, i: int, j: int = None, filename = None):
-		"""
-		Renders single frames.
-		:param filename: [str] name of file.
-		:param i: [int] index of frame to start rendering.
-		:param j: [j] index of frame to stop rendering.
-		:param only: [bool] set to True to only render diagram.
-		"""
-		if j is None:
-			j = len(self.sim)-1
+	def render_frames(self, frames: List[int], fol: str = 'frames') -> None:
+		(self.sim.path / fol).mkdir(exist_ok=True)
+		combo_list = []
+		print(cpu_count())
+		for i in range(cpu_count()):
+			combo_list.append((self, frames[:int((i+1)*len(frames)/cpu_count())],
+								fol, len(frames)))
 
-		length = j+1-i
-		if length == 1:
-			if filename is None:
-				path = gen_filepath(self.sim, "png")
-			else:
-				path = f'figures/{filename}.png'
+		with Pool(cpu_count()) as pool:
+			for _ in pool.imap_unordered(render_frame_range, combo_list):
+				pass
 
-			self.generate_frame(i)
-			plt.savefig(path)
-			plt.close()
-
-			print(f'Wrote to \"{path}\"')
-		else:
-			if filename is None:
-				path = gen_filepath(self.sim, "")
-			else:
-				path = f'figures/{filename}'
-
-			os.mkdir(path)
-			for frame in range(i, j+1):
-				self.generate_frame(frame)
-
-				hashes = int(21*i/(j+1))
-				print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
-					f' {i+1}/{j+1} frames rendered.', flush=True, end='\r')
-
-				plt.savefig(f'{path}/img{frame:03}.png')
-				plt.close()
-
-			print(flush=True)
-			print(f'Wrote to folder \"{path}\"', flush=True)
-
-
-	def render_video(self, time = 30, fps = None, filename = None):
-		"""
-		Renders plot(s) into image.
-		:param scale: [float] how much of the domain to draw.
-		:param area: [bool] set to false to not label area.
-		:param filename: [str] name for static image.
-		:param fps: [float] fps for image.
-		:param only: [bool] set to True to only render diagram.
-		"""
-		if fps is None:
-			if type(self.sim) == Flow:
-				fps = min(len(self.sim)/time, 30)
-			else:
-				fps = 5
-
-		step = len(self.sim)/(fps*time) if fps == 30 else 1
-		# Iterate through desired frames.
-		try:
-			os.mkdir("figures/temp")
-		except FileExistsError:
-			pass
-
-		frames = min(len(self.sim), int(fps * time))
-		for j in range(frames):
-			self.generate_frame(int(j*step))
-			hashes = int(21*j/frames)
-			print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
-					f' {j+1}/{frames} frames rendered.', flush=True, end='\r')
-
-			plt.savefig(f'figures/temp/img{j:03}.png')
-			plt.close()
+		# for i, frame in enumerate(frames):
+		# 	self.generate_frame(frame, "save", fol)
+		# 	hashes = int(21*i/len(frames))
+		# 	print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
+		# 			f' {i+1}/{len(frames)} frames rendered.', flush=True, end='\r')
 
 		print(flush=True)
 
 
-		if filename is None:
-			path = gen_filepath(self.sim, "mp4")
-		else:
-			path = f'figures/{filename}.mp4'
+	def render_video(self, time: int, mode: str) -> None:
+		if mode not in ["use_all", "sample"]:
+			raise ValueError("Not a valid mode for videos!")
 
-		# Convert to gif.
+		if mode == "use_all":
+			frames = list(range(len(self.sim)))
+		elif mode == "sample":
+			fps = 30
+			if len(self.sim) < fps*time :
+				frames = list(range(len(self.sim)))
+				fps = len(self.sim)/time
+			else:
+				frames = list(np.round(np.linspace(0, len(self.sim), fps*time)).astype(int))
+				print(frames)
+
+		self.render_frames(frames, 'temp')
+		path = self.sim.path / 'simulation.mp4'
+
 		print("Assembling MP4...", flush=True)
-		os.system(f'ffmpeg -hide_banner -loglevel error -r {fps} -i figures/temp/img%03d.png' + \
-				  f' -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -vf' + \
-				  f' "scale=trunc(iw/2)*2:trunc(ih/2)*2" -f mp4 "{path}"')
+		os.system(f'ffmpeg -hide_banner -loglevel error -r {fps} -i' + \
+				f' \"{self.sim.path}/temp/img%05d.png\"' + \
+				f' -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -vf' + \
+				f' "scale=trunc(iw/2)*2:trunc(ih/2)*2" -f mp4 "{path}"')
 
 		# Remove files.
-		for j in range(frames):
-			os.remove(f'figures/temp/img{j:03}.png')
+		for i in frames:
+			os.remove(self.sim.path / f"temp/img{i:05}.png")
 
-		os.rmdir("figures/temp")
+		os.rmdir(self.sim.path / 'temp')
 		print(f'Wrote to \"{path}\".', flush=True)
+
+
+def render_frame_range(combo: Tuple[Diagram, List[int], str, int]) -> None:
+	self, frames, fol, num_frames = combo
+	for frame in frames:
+		self.generate_frame(frame, "save", fol)
+		i = len(list((self.sim.path / fol).iterdir()))
+		hashes = int(21*i/num_frames)
+		print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
+				f' {i}/{num_frames} frames rendered.', flush=True, end='\r')

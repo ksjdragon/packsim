@@ -144,7 +144,7 @@ It's also possible to visualize the data, but this section is **optional**. It's
 .. note::
 	Rendering as an `mp4` requires ``ffmpeg`` to be installed on your system.
 
-While it's possible to customize the figures that are drawn and outputted, there are already a few preset modes: `animate`, `energy`, `stats`, and `eigs`, which outputs the simulation steps as a video, a video with the graph of energy, compiled statistics, and the eigenvalues, respectively.
+While it's possible to customize the figures that are drawn and outputted, there are already a few preset modes: `animate`, `energy`, `stats`, and `eigs`, which outputs the simulation steps as a video, a video with the graph of energy, compiled statistics, and the eigenvalues, respectively. Lastly, you can optionally specify a time for the video, which is default 30 seconds.
 
 .. code-block:: json
 	:force:
@@ -154,6 +154,7 @@ While it's possible to customize the figures that are drawn and outputted, there
 	  "diagram": {
 	    "filetype": "mp4",
 	    "figures": "animate",
+	    "time": 30
 	  }
 	}
 

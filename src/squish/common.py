@@ -4,6 +4,9 @@ import pickle, numpy as np
 from pathlib import Path
 from _squish import AreaEnergy, RadialALEnergy, RadialTEnergy
 
+OUTPUT_DIR = Path("squish_output")
+OUTPUT_DIR.mkdir(exist_ok=True)
+
 STR_TO_ENERGY = {
 	"area": AreaEnergy,
 	"radial-al": RadialALEnergy,
@@ -11,23 +14,17 @@ STR_TO_ENERGY = {
 }
 
 
-def generate_filepath(sim: SimulationMode, ext: str, fol: str) -> Path:
+def generate_filepath(sim: SimulationMode, fol: Union[str, Path]) -> Path:
 	energy = sim.energy.title_str
 	width, height = round(sim.domain.w, 2), round(sim.domain.h, 2)
 
 	base_path = f"{fol}/{energy}{sim.title_str} - N{sim.domain.n} - {width:.2f}x{height:.2f}"
 
 	i = 1
-	if ext == "folder":
-		real_path = Path(base_path)
-		while real_path.is_dir():
-			real_path = Path(f"{base_path}({i})")
-			i += 1
-	else:
-		real_path = Path(f"{base_path}.{ext}")
-		while real_path.is_file():
-			real_path = Path(f"{base_path}({i}).{ext}")
-			i += 1
+	real_path = Path(base_path)
+	while real_path.is_dir():
+		real_path = Path(f"{base_path}({i})")
+		i += 1
 
 	return real_path
 
@@ -125,10 +122,15 @@ class Simulation:
 		self.frames = []
 
 		if name is None:
-			self.path = generate_filepath(self, "sim", "simulations")
+			self.path = generate_filepath(self, OUTPUT_DIR)
 		else:
-			self.path = Path(f"simulations/{name}.sim")
+			self.path = OUTPUT_DIR / name
 
+		self.path.mkdir()
+
+
+	def __iter__(self) -> Iterator:
+		return iter(self.frames)
 
 	def __getitem__(self, key: int) -> Energy:
 		return self.frames[key]
@@ -149,49 +151,6 @@ class Simulation:
 				raise ValueError("Number of sites provided do not match the array!")
 
 		self.frames.append(self.energy.mode(*self.domain, points % self.domain.dim))
-
-
-	def generate_bar_info(self, stat: str, i: int, cumulative: bool, bins: int = 10,
-							 bounds: Tuple[float] = None, avg: bool = False, reg = None) -> Tuple:
-		"""
-		Gets the bar info for matplotlib from the ith to jth frame.
-		:param stat: [str] name of statistic to obtain.
-		:param i: [int] frame to obtain
-		:param cumulative: [bool] Will obtain all stats up to the ith frame if True.
-		:param bins: [int] number of bins for the bar graph.
-		:param bound: [Tuple[float]] lower and upper bounds for the bins. If not set,
-								automatically take the min and max value.
-		:param avg: [bool] Averages the counts over the number of frames if True.
-		:param mark: If not None, set a specific marker.
-		:return: [Tuple] returns a tuple of labels, values, and colors.
-		"""
-		if cumulative:
-			values = np.concatenate([f.stats[stat] for f in self.frames[:(i+1)]])
-		else:
-			values = self.frames[i].stats[stat]
-
-		#bins = 9
-		if np.var(values) <= 1e-8:
-			hist = np.zeros((bins,))
-			val = np.average(values)
-			hist[(bins+1) // 2 - 1] = len(values)
-			bin_list = np.linspace(0, val, bins//2+1, endpoint=True)
-			bin_list = np.concatenate((bin_list, (bin_list+val)[1:]))
-			return hist, bin_list[not (bins%2):]
-
-		hist, bin_edges = np.histogram(values, bins=bins, range=bounds)
-		bin_list = [(bin_edges[i] + bin_edges[i+1])/2 for i in range(len(bin_edges)-1)]
-
-		if avg and cumulative:
-			return hist / (i+1), bin_list
-
-		return hist, bin_list
-
-		# colors = ["C0"]*bins
-		# if reg >= lb and reg <= ub:
-		# 	colors[int((reg-lb)*bins/diff)] = "C3"
-
-		# return (labels, count, colors)
 
 
 	def get_distinct(self) -> List[int]:
@@ -218,7 +177,14 @@ class Simulation:
 		return distinct_count
 
 
-	def save_frame(self, index: int) -> None:
+	def save(self, info: Dict) -> None:
+		path = self.path / 'data.squish'
+
+		with open(path, 'wb') as out:
+			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
+
+
+	def frame_data(self, index: int) -> None:
 		f = self[index]
 		info = {
 			"arr": f.site_arr,
@@ -226,9 +192,7 @@ class Simulation:
 			"energy": f.attr_str,
 			"stats": f.stats
 		}
-
-		with open(self.path, 'ab') as out:
-			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
+		return info
 
 		# all_info = []
 		# for frame in self.frames:

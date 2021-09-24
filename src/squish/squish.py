@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .common import DomainParams, Energy
 from .simulation import Flow, Search, Shrink
+from .diagram import Diagram
 
 dia_presets = {
 	"animate": [["voronoi"]],
@@ -138,15 +139,21 @@ def config_sim(args):
 		else:
 			dia_params["figures"] = np.asarray(dia_params["figures"])
 
+		if "time" not in dia_params:
+			dia_params["time"] = 30
+
 	sim.add_frame(points)
 	sim.run(save_sim, not args.quiet, args.log_steps)
 
 	if save_diagram:
 		diagram = Diagram(sim, dia_params["figures"])
 		if dia_params["filetype"] == "img":
-			diagram.render_static(0, filename=name)
+			diagram.render_frames()
 		elif dia_params["filetype"] == "mp4":
-			diagram.render_video(filename=name)
+			if mode == "flow":
+				diagram.render_video(dia_params["time"], "sample")
+			else:
+				diagram.render_video(dia_params["time"], "use_all")
 
 
 def loaded_sim(args):

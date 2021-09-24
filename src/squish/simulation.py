@@ -32,29 +32,27 @@ class Flow(Simulation):
 		self.step_size, self.thres, self.accel = step_size, thres, accel
 
 
-	def save_initial(self) -> None:
+	@property
+	def initial_data(self) -> Dict:
 		info = {
 			"mode": self.attr_str,
 			"step_size": self.step_size,
 			"thres": self.thres,
 			"accel": self.accel
 		}
-
-		with open(self.path, 'wb') as out:
-			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
-		print("Created simulation file at:", self.path, flush=True)
+		return info
 
 
 	def run(self, save: bool, log: bool, log_steps: int) -> None:
 		if log: print(f"Find - {self.domain}", flush=True)
-		if save: self.save_initial()
+		if save: self.save(self.initial_data)
 		if len(self) == 0: self.add_frame()
 
 		i, grad_norm = 0, float('inf')
 
 		trial = 2
 		while grad_norm > self.thres:	# Get to threshold.
-			if save: self.save_frame(i)
+			if save: self.save(self.frame_data(i))
 
 			# Iterate and generate next frame using RK-2
 			start = timer()
@@ -124,7 +122,8 @@ class Search(Simulation):
 		self.kernel_step, self.count = kernel_step, count
 
 
-	def save_initial(self) -> None:
+	@property
+	def initial_data(self) -> Dict:
 		info = {
 			"mode": self.attr_str,
 			"step_size": self.step_size,
@@ -133,15 +132,12 @@ class Search(Simulation):
 			"kernel_step": self.kernel_step,
 			"count": self.count
 		}
-
-		with open(self.path, 'wb') as out:
-			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
-		print("Created simulation file at:", self.path, flush=True)
+		return info
 
 
 	def run(self, save: bool, log: bool, log_steps: int) -> None:
 		if log: print(f'Travel - {self.domain}', flush=True)
-		if save: self.save_initial()
+		if save: self.save(self.initial_data)
 
 		if len(self) != 0:
 			new_sites = self[0].site_arr
@@ -156,7 +152,7 @@ class Search(Simulation):
 			sim.run(False, log, log_steps)
 
 			self.frames.append(sim[-1])
-			if save: self.save_frame(i)
+			if save: self.save(self.frame_data(i))
 			if log: print(f'Equilibrium: {i:04}\n', flush=True)
 
 			# Get Hessian,and check nullity. If > 2, perturb.
@@ -205,7 +201,8 @@ class Shrink(Simulation):
 		self.delta, self.stop_width = self.domain.w*delta, self.domain.w*stop_width
 
 
-	def save_initial(self) -> None:
+	@property
+	def initial_data(self) -> Dict:
 		info = {
 			"mode": self.attr_str,
 			"step_size": self.step_size,
@@ -214,15 +211,12 @@ class Shrink(Simulation):
 			"kernel_step": self.kernel_step,
 			"count": self.count
 		}
-
-		with open(self.path, 'wb') as out:
-			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
-		print("Created simulation file at:", self.path, flush=True)
+		return info
 
 
 	def run(self, save: bool, log: bool, log_steps: int) -> None:
 		if log: print(f'Shrink - {self.domain}', flush=True)
-		if save: self.save_initial()
+		if save: self.save(self.initial_data)
 
 		if len(self) != 0:
 			new_sites = self[0].site_arr
@@ -239,7 +233,7 @@ class Shrink(Simulation):
 			new_sites = sim[-1].site_arr
 
 			self.frames.append(sim[-1])
-			if save: self.save_frame(i)
+			if save: self.save(self.frame_data(i))
 
 			if log: print(f'Width: {self.w:.4f}\n')
 
