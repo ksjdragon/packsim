@@ -142,7 +142,7 @@ class Simulation:
 
 	def add_frame(self, points: Optional[numpy.ndarray]) -> None:
 		if points is None:
-			points = np.random.random_sample((self.domain.n, 2))
+			points = np.random.random_sample((self.domain.n, 2)) * self.domain.dim
 		else:
 			if points.shape[1] != 2 or len(points.shape) > 2:
 				raise ValueError("Sites should be 2 dimensional!")

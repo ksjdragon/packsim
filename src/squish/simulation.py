@@ -198,7 +198,7 @@ class Shrink(Simulation):
 					name: Optional[str] = None) -> None:
 		super().__init__(domain, energy, name=name)
 		self.step_size, self.thres, self.accel = step_size, thres, accel
-		self.delta, self.stop_width = self.domain.w*delta, self.domain.w*stop_width
+		self.delta, self.stop_width = self.domain.w*delta/100, self.domain.w*stop_width
 
 
 	@property
@@ -208,8 +208,8 @@ class Shrink(Simulation):
 			"step_size": self.step_size,
 			"thres": self.thres,
 			"accel": self.accel,
-			"kernel_step": self.kernel_step,
-			"count": self.count
+			"delta": self.delta,
+			"stop_width": self.stop_width
 		}
 		return info
 
@@ -225,9 +225,11 @@ class Shrink(Simulation):
 			new_sites = None
 
 		width = self.domain.w
+		i = 0
 		while width >= self.stop_width:
 			# Get to equilibrium.
-			sim = Flow(self.domain, self.energy, self.thres, self.step_size, self.accel)
+			new_domain = DomainParams(self.domain.n, width, self.domain.h, self.domain.r)
+			sim = Flow(new_domain, self.energy, self.thres, self.step_size, self.accel)
 			sim.add_frame(new_sites)
 			sim.run(False, log, log_steps)
 			new_sites = sim[-1].site_arr
@@ -235,6 +237,7 @@ class Shrink(Simulation):
 			self.frames.append(sim[-1])
 			if save: self.save(self.frame_data(i))
 
-			if log: print(f'Width: {self.w:.4f}\n')
+			if log: print(f'Width: {width:.4f}\n')
 
 			width -= self.delta
+			i += 1

@@ -8,7 +8,7 @@ from multiprocessing import Pool, cpu_count
 
 from .common import DomainParams
 
-SYMM = np.array([[1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1], [0,-1], [1,-1]])
+SYMM = np.array([[0,0], [1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1], [0,-1], [1,-1]])
 
 class SimData:
 	"""Stores diagram information for a simulation.
@@ -54,7 +54,7 @@ class SimData:
 			Tuple[numpy.ndarray, numpy.ndarray]: the histogram and its bins.
 
 		"""
-		if cumulative:
+		if cumul:
 			values = np.concatenate([f[stat] for f in self.stats[:(i+1)]])
 		else:
 			values = self.stats[i][stat]
@@ -70,7 +70,7 @@ class SimData:
 		hist, bin_edges = np.histogram(values, bins=bins, range=bounds)
 		bin_list = np.array([(bin_edges[i] + bin_edges[i+1])/2 for i in range(len(bin_edges)-1)])
 
-		if avg and cumulative:
+		if avg and cumul:
 			return hist / (i+1), bin_list
 
 		return hist, bin_list
@@ -122,7 +122,7 @@ class Diagram:
 
 	def voronoi_plot(self, i: int, ax: AxesSubplot) -> None:
 		domain = self.sim.domains[i]
-		n,w,h = domain.n, domain.w, domain.h
+		n, w, h = domain.n, domain.w, domain.h
 		scale = 1.5
 		area = n <= 60
 
@@ -138,13 +138,26 @@ class Diagram:
 
 		props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
 
-		if area:
-			global SYMM
-			for j in range(n):
-				for s in np.concatenate(([[0,0]], SYMM)):
-					txt = ax.text(*(self.sim.voronois[i].points[j] + s*self.sim.domains[i].dim),
-									str(round(self.sim.stats[i]["site_areas"][j], 3)))
+		defects = {5: {"x": [], "y": []}, 7: {"x": [], "y": []}}
+
+		for j in range(n):
+			for s in SYMM:
+				vec = (self.sim.voronois[i].points[j] + s*self.sim.domains[i].dim)
+
+				if area:
+					txt = ax.text(*vec, str(round(self.sim.stats[i]["site_areas"][j], 3)))
 					txt.set_clip_on(True)
+
+				if self.sim.stats[i]["site_edge_count"][j] == 5:
+					defects[5]["x"].append(vec[0])
+					defects[5]["y"].append(vec[1])
+				elif self.sim.stats[i]["site_edge_count"][j] == 7:
+					defects[7]["x"].append(vec[0])
+					defects[7]["y"].append(vec[1])
+
+		ax.scatter(defects[5]["x"], defects[5]["y"], marker="p", color="red")
+		ax.scatter(defects[7]["x"], defects[7]["y"], marker="*", color="red")
+
 
 		ax.text(0.05, 0.95, f'Energy: {self.sim.energies[i]}', transform=ax.transAxes, fontsize=14,
 				verticalalignment='top', bbox=props)
@@ -208,7 +221,7 @@ class Diagram:
 
 
 	def site_energies_plot(self, i: int, ax: AxesSubplot) -> None:
-		y, x = self.sim.hist("site_energies", i, self.cumulative, avg=True)
+		y, x = self.sim.hist("site_energies", i, cumul=self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Energies')
@@ -220,7 +233,7 @@ class Diagram:
 
 
 	def avg_radius_plot(self, i: int, ax: AxesSubplot) -> None:
-		y, x = self.sim.hist("avg_radius", i, self.cumulative, avg=True)
+		y, x = self.sim.hist("avg_radius", i, cumul=self.cumulative, avg=True)
 
 		ax.bar(x, y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Average Radii')
@@ -232,7 +245,7 @@ class Diagram:
 
 
 	def isoparam_avg_plot(self, i: int, ax: AxesSubplot) -> None:
-		y, x = self.sim.hist("isoparam_avg", i, self.cumulative, avg=True)
+		y, x = self.sim.hist("isoparam_avg", i, cumul=self.cumulative, avg=True)
 
 		ax.bar(x,y, width=0.8*(x[1]-x[0]))
 		ax.title.set_text('Site Isoperimetric Averages')
@@ -261,9 +274,13 @@ class Diagram:
 
 
 	def eigs_plot(self, i: int, ax: AxesSubplot) -> None:
-		eigs = self.sim.stats[i]["eigs"]
-		ax.plot(list(range(len(eigs))), eigs, marker='o', linestyle='dashed', color='C0')
-		ax.plot([0,len(eigs)], [0, 0], color="red")
+		try:
+			eigs = self.sim.stats[i]["eigs"]
+			ax.plot(list(range(len(eigs))), eigs, marker='o', linestyle='dashed', color='C0')
+			ax.plot([0,len(eigs)], [0, 0], color="red")
+		except KeyError:
+			ax.text(0.5, 0.5, "Not Computed")
+
 		ax.title.set_text('Hessian Eigenvalues')
 		ax.set_xlabel("")
 		ax.set_ylabel("Value")
@@ -272,7 +289,6 @@ class Diagram:
 	def render_frames(self, frames: List[int], fol: str = 'frames') -> None:
 		(self.sim.path / fol).mkdir(exist_ok=True)
 		combo_list = []
-		print(cpu_count())
 		for i in range(cpu_count()):
 			combo_list.append((self, frames[:int((i+1)*len(frames)/cpu_count())],
 								fol, len(frames)))
@@ -281,14 +297,8 @@ class Diagram:
 			for _ in pool.imap_unordered(render_frame_range, combo_list):
 				pass
 
-		# for i, frame in enumerate(frames):
-		# 	self.generate_frame(frame, "save", fol)
-		# 	hashes = int(21*i/len(frames))
-		# 	print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \
-		# 			f' {i+1}/{len(frames)} frames rendered.', flush=True, end='\r')
-
 		print(flush=True)
-
+		print(f'Wrote to \"{self.sim.path / fol}\".', flush=True)
 
 	def render_video(self, time: int, mode: str) -> None:
 		if mode not in ["use_all", "sample"]:

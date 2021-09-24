@@ -148,7 +148,7 @@ def config_sim(args):
 	if save_diagram:
 		diagram = Diagram(sim, dia_params["figures"])
 		if dia_params["filetype"] == "img":
-			diagram.render_frames()
+			diagram.render_frames(range(len(sim)))
 		elif dia_params["filetype"] == "mp4":
 			if mode == "flow":
 				diagram.render_video(dia_params["time"], "sample")

@@ -8,5 +8,4 @@ src/packsim.c
 *.so
 *.json
 
-figures/
-simulations/
+squish_output/
