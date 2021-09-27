@@ -36,8 +36,9 @@ def get_config_generators(domain: DomainParams, config: Config) -> Tuple[Config,
 	all_sites = np.concatenate((q1, q1-[w,0], q1-[w,h], q1-[0,h]))[2:]
 
 	# Checking 0 < ax + by < v*v to make the sites are within the region.
+	tol = 1e-3
 	vdot = np.matmul(all_sites, v)
-	in_box = all_sites[np.where((0 <= vdot) & (vdot <= v.dot(v)))[0]]
+	in_box = all_sites[np.where((-tol <= vdot) & (vdot <= (v.dot(v)+tol)))[0]]
 	in_box = np.expand_dims(in_box, 0).swapaxes(0,1)	# Used for the next step, getting site*site
 
 	w = in_box[np.argmin(np.squeeze(np.matmul(in_box, in_box.transpose(0,2,1))))].flatten()

@@ -4,6 +4,7 @@ import argparse, pickle, numpy as np, os
 from pathlib import Path
 import matplotlib.pyplot as plt
 
+from squish import Simulation
 
 def main():
 	parser = argparse.ArgumentParser("Graphs convergence graphs for a collection of simulations.")
@@ -16,12 +17,14 @@ def main():
 	data = {}
 
 	for file in Path(args.sims_path).iterdir():
-		with open(file, "rb") as f:
-			all_info, _ = pickle.load(f)
+		sim = Simulation.load(file / "data.squish")
+		sim_info = next(sim)
 
-		step = float(file.name[:-4].split("-")[1])
+		step = sim_info["step_size"]
+		for frame in sim:
+
 		data[step] = {"times": [], "values": [], "diffs": []}
-		for i, frame_info in enumerate(all_info):
+		for i, frame_info in enumerate(sim):
 			data[step]["times"].append(step*i)
 			data[step]["values"].append(np.linalg.norm(frame_info["arr"]))
 			data[step]["diffs"].append(np.linalg.norm(all_info[-1]["arr"] - frame_info["arr"]))

@@ -62,8 +62,14 @@ class Simulation:
 
 		distinct_avg_radii, distinct_count, new_frames = [], [], []
 
+
 		for frame in self.frames:
-			avg_radii = np.sort(frame.stats["avg_radius"])
+			try:
+				stats = frame.stats
+			except AttributeError:
+				stats = frame["stats"]	# When we have a loaded simulations.
+
+			avg_radii = np.sort(stats["avg_radius"])
 			is_in = False
 			for i, dist_radii in enumerate(distinct_avg_radii):
 				if np.allclose(avg_radii, dist_radii, atol=1e-5):
@@ -73,6 +79,7 @@ class Simulation:
 
 			if not is_in:
 				distinct_avg_radii.append(avg_radii)
+				distinct_count.append(1)
 				new_frames.append(frame)
 
 		self.frames = new_frames
@@ -97,7 +104,7 @@ class Simulation:
 		f = self[index]
 		info = {
 			"arr": f.site_arr,
-			"domain": (f.n, f.h, f.w, f.r),
+			"domain": (f.n, f.w, f.h, f.r),
 			"energy": f.energy,
 			"stats": f.stats
 		}
@@ -123,8 +130,13 @@ class Simulation:
 	def load(path: str) -> Tuple[Simulation, Generator]:
 		def frames() -> Dict:
 			with open(path, 'rb') as infile:
+				first = True
 				while True:
 					try:
+						if first:
+							pickle.load(infile)
+							first = False
+							continue
 						yield pickle.load(infile)
 					except EOFError:
 						break
@@ -137,31 +149,6 @@ class Simulation:
 			sim = STR_TO_SIM[sim_info["mode"]](domain, energy, *list(sim_info.values())[3:])
 
 			return sim, frames()
-
-
-	@staticmethod
-	def load_old(filename: str) -> Simulation:
-		"""
-		Loads the points at every point into a file.
-		:param filename: [str] name of the file
-		"""
-		frames = []
-		with open(filename, 'rb') as data:
-			all_info, sim_class = pickle.load(data)
-			if type(sim_class) == str:
-				sim_class = {"flow": Flow, "search": Search, "shrink": Shrink}[sim_class]
-
-			if all_info[0]["params"][0] in [53, 59, 61, 83, 131]:
-				thres = 1e-5
-			else:
-				thres = 1e-6
-			sim = sim_class(DomainParams(*all_info[0]["params"]), Energy("radial-t"), 0.05, thres, True, 0.1, 500)
-			for frame_info in all_info:
-				frames.append(sim.energy.mode(*frame_info["params"], frame_info["arr"]))
-				#frames[-1].stats = frame_info["stats"]
-
-			sim.frames = frames
-		return sim
 
 
 class Flow(Simulation):
@@ -409,3 +396,5 @@ STR_TO_SIM = {
 	"search": Search,
 	"shrink": Shrink
 }
+
+simulation = Simulation

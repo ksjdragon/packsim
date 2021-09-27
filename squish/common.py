@@ -3,7 +3,7 @@ from typing import List, Tuple, Union, Optional, Iterator, Generator
 import pickle, numpy as np
 from math import gcd
 from pathlib import Path
-from ._squish import AreaEnergy, RadialALEnergy, RadialTEnergy
+from ._squish import VoronoiContainer, AreaEnergy, RadialALEnergy, RadialTEnergy
 
 OUTPUT_DIR = Path("squish_output")
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -84,7 +84,7 @@ class Energy:
 			except KeyError:
 				raise ValueError(f"\'{mode}\' is not a valid energy!")
 		else:
-			if mode is not VoronoiContainer and issubclaass(mode, VoronoiContainer):
+			if mode is not VoronoiContainer and issubclass(mode, VoronoiContainer):
 				raise ValueError("Provided class is not a valid energy!")
 			self.mode = mode
 
