@@ -1,6 +1,7 @@
 from __future__ import annotations
-from typing import List, Union, Optional, Iterator, Generator
+from typing import List, Tuple, Union, Optional, Iterator, Generator
 import pickle, numpy as np
+from math import gcd
 from pathlib import Path
 from ._squish import AreaEnergy, RadialALEnergy, RadialTEnergy
 
@@ -27,12 +28,6 @@ def generate_filepath(sim: SimulationMode, fol: Union[str, Path]) -> Path:
 		i += 1
 
 	return real_path
-
-
-def torus_sites(n: int, w: float, h: float, L: Tuple[int, int]) -> numpy.ndarray:
-	dim = np.array([[w, h]])
-	L = np.array(L)
-	return (np.array([1,1])/2 + np.concatenate([(i*dim*L/n) for i in range(n)])) % dim
 
 
 class DomainParams:

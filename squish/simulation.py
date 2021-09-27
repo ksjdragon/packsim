@@ -87,6 +87,12 @@ class Simulation:
 			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
 
 
+	def save_all(self) -> None:
+		self.save(self.initial_data)
+		for i in range(len(self.frames)):
+			self.save(self.frame_data(i))
+
+
 	def frame_data(self, index: int) -> None:
 		f = self[index]
 		info = {
@@ -145,10 +151,13 @@ class Simulation:
 			if type(sim_class) == str:
 				sim_class = {"flow": Flow, "search": Search, "shrink": Shrink}[sim_class]
 
-
-			sim = sim_class(*all_info[0]["params"], "radial-t", 0,0)
+			if all_info[0]["params"][0] in [53, 59, 61, 83, 131]:
+				thres = 1e-5
+			else:
+				thres = 1e-6
+			sim = sim_class(DomainParams(*all_info[0]["params"]), Energy("radial-t"), 0.05, thres, True, 0.1, 500)
 			for frame_info in all_info:
-				frames.append(sim.energy(*frame_info["params"], frame_info["arr"]))
+				frames.append(sim.energy.mode(*frame_info["params"], frame_info["arr"]))
 				#frames[-1].stats = frame_info["stats"]
 
 			sim.frames = frames
