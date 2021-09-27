@@ -2,6 +2,7 @@
 __pycache__/
 build/
 dist/
+temp/
 *.egg-info
 
 src/packsim.c

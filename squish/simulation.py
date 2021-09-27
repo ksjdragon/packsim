@@ -110,21 +110,6 @@ class Simulation:
 		}
 		return info
 
-		# all_info = []
-		# for frame in self.frames:
-		# 	frame_info = dict()
-		# 	frame_info["arr"] = frame.site_arr
-		# 	frame_info["energy"] = {AreaEnergy: "area", RadialALEnergy: "radial-al",
-		# 							RadialTEnergy: "radial-t"}[self.energy]
-		# 	frame_info["params"] = (frame.n, frame.w, frame.h, frame.r)
-		# 	all_info.append(frame_info)
-
-		# class_name = {Flow: "flow", Search: "search", Shrink: "shrink"}[self.__class__]
-
-		# with open(path, 'wb') as output:
-		# 	pickle.dump((all_info, class_name), output, pickle.HIGHEST_PROTOCOL)
-		# print("Wrote to " + path, flush=True)
-
 
 	@staticmethod
 	def load(path: str) -> Tuple[Simulation, Generator]:
