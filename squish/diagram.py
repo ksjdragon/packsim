@@ -26,15 +26,28 @@ class SimData:
 
 
 	def __init__(self, sim: Simulation) -> None:
-		self.path = sim.path
-		self.domains = list([DomainParams(s.n, s.w, s.h, s.r) for s in sim])
-		self.energies = list([s.energy for s in sim])
-		self.voronois = list([s.vor_data for s in sim])
-		self.stats = list([s.stats for s in sim])
+		if sim is not None:
+			self.path = sim.path
+			self.domains = list([DomainParams(s.n, s.w, s.h, s.r) for s in sim])
+			self.energies = list([s.energy for s in sim])
+			self.voronois = list([s.vor_data for s in sim])
+			self.stats = list([s.stats for s in sim])
 
 
 	def __len__(self) -> int:
 		return len(self.domains)
+
+
+	def slice(self, indices: List[int]) -> SimData:
+		new_data = SimData(None)
+		new_data.path = self.path
+
+		new_data.domains = list([self.domains[i] for i in indices])
+		new_data.energies = list([self.energies[i] for i in indices])
+		new_data.voronois = list([self.voronois[i] for i in indices])
+		new_data.stats = list([self.stats[i] for i in indices])
+
+		return new_data
 
 
 	def hist(self, stat: str, i: int, bins: int = 10, bounds: Optional[Tuple[float, float]] = None,
@@ -95,7 +108,7 @@ class Diagram:
 		self.cumulative = cumulative
 
 
-	def generate_frame(self, frame: int, mode: str, fol: str) -> None:
+	def generate_frame(self, frame: int, mode: str, fol: str, name: str = None) -> None:
 		if mode not in ["save", "open"]:
 			raise ValueError("Not a valid mode for diagrams!")
 
@@ -112,9 +125,11 @@ class Diagram:
 				getattr(self, str(diagram) + '_plot')(frame, axes[it.multi_index])
 
 		plt.tight_layout()
+		if name is None:
+			name = f"img{frame:05}.png"
 
 		if mode == "save":
-			plt.savefig(self.sim.path / fol / f"img{frame:05}.png")
+			plt.savefig(self.sim.path / fol / name)
 			plt.close(fig)
 		elif mode == "show":
 			plt.show()
@@ -290,15 +305,20 @@ class Diagram:
 		(self.sim.path / fol).mkdir(exist_ok=True)
 		combo_list = []
 		for i in range(cpu_count()):
-			combo_list.append((self, frames[:int((i+1)*len(frames)/cpu_count())],
-								fol, len(frames)))
+			start, end = int(i*len(frames)/cpu_count()), int((i+1)*len(frames)/cpu_count())
+			new_dia = Diagram(None, self.diagrams, self.cumulative)
+			new_dia.sim = self.sim.slice(frames[start:end])
+			combo_list.append((new_dia, fol, start, len(frames[start:end]), len(frames)))
 
+		# Free up memory, since it's already duplicated to other cores.
+		self.sim = self.sim.slice([])
 		with Pool(cpu_count()) as pool:
 			for _ in pool.imap_unordered(render_frame_range, combo_list):
 				pass
 
 		print(flush=True)
 		print(f'Wrote to \"{self.sim.path / fol}\".', flush=True)
+
 
 	def render_video(self, time: int, mode: str) -> None:
 		if mode not in ["use_all", "sample"]:
@@ -308,12 +328,11 @@ class Diagram:
 			frames = list(range(len(self.sim)))
 		elif mode == "sample":
 			fps = 30
-			if len(self.sim) < fps*time :
+			if len(self.sim) < fps*time:
 				frames = list(range(len(self.sim)))
 				fps = len(self.sim)/time
 			else:
-				frames = list(np.round(np.linspace(0, len(self.sim), fps*time)).astype(int))
-				print(frames)
+				frames = list(np.round(np.linspace(0, len(self.sim)-1, fps*time)).astype(int))
 
 		self.render_frames(frames, 'temp')
 		path = self.sim.path / 'simulation.mp4'
@@ -325,17 +344,17 @@ class Diagram:
 				f' "scale=trunc(iw/2)*2:trunc(ih/2)*2" -f mp4 "{path}"')
 
 		# Remove files.
-		for i in frames:
+		for i in range(len(frames)):
 			os.remove(self.sim.path / f"temp/img{i:05}.png")
 
 		os.rmdir(self.sim.path / 'temp')
 		print(f'Wrote to \"{path}\".', flush=True)
 
 
-def render_frame_range(combo: Tuple[Diagram, List[int], str, int]) -> None:
-	self, frames, fol, num_frames = combo
-	for frame in frames:
-		self.generate_frame(frame, "save", fol)
+def render_frame_range(combo: Tuple[Diagram, str, int, int, int]) -> None:
+	self, fol, offset, length, num_frames = combo
+	for i in range(length):
+		self.generate_frame(i, "save", fol, f"img{i+offset:05}.png")
 		i = len(list((self.sim.path / fol).iterdir()))
 		hashes = int(21*i/num_frames)
 		print(f'Generating frames... |{"#"*hashes}{" "*(20-hashes)}|' + \

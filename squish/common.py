@@ -15,11 +15,12 @@ STR_TO_ENERGY = {
 }
 
 
-def generate_filepath(sim: SimulationMode, fol: Union[str, Path]) -> Path:
+def generate_filepath(sim: SimulationMode, fol: Union[str, Path], prec: int = 2) -> Path:
 	energy = sim.energy.title_str
 	width, height = round(sim.domain.w, 2), round(sim.domain.h, 2)
 
-	base_path = f"{fol}/{energy}{sim.title_str} - N{sim.domain.n} - {width:.2f}x{height:.2f}"
+	base_path = f"{fol}/{energy}{sim.title_str} - " + \
+					f"N{sim.domain.n} - {width:.{prec}f}x{height:.{prec}f}"
 
 	i = 1
 	real_path = Path(base_path)

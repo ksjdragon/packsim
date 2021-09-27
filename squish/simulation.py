@@ -21,12 +21,15 @@ class Simulation:
 
 	__slots__ = ['domain', 'energy', 'path', 'frames']
 
-	def __init__(self, domain: DomainParams, energy: Energy, name: Optional[str] = None) -> None:
+	def __init__(self, domain: DomainParams, energy: Energy, \
+					name: Optional[str, int] = None) -> None:
 		self.domain, self.energy = domain, energy
 		self.frames = []
 
 		if name is None:
 			self.path = generate_filepath(self, OUTPUT_DIR)
+		elif isinstance(name, int):
+			self.path = generate_filepath(self, OUTPUT_DIR, name)
 		else:
 			self.path = OUTPUT_DIR / name
 
@@ -86,16 +89,16 @@ class Simulation:
 		return distinct_count
 
 
-	def save(self, info: Dict) -> None:
+	def save(self, info: Dict, overwrite: bool = False) -> None:
 		self.path.mkdir(exist_ok=True)
 		path = self.path / 'data.squish'
 
-		with open(path, 'ab') as out:
+		with open(path, 'wb' if overwrite else 'ab') as out:
 			pickle.dump(info, out, pickle.HIGHEST_PROTOCOL)
 
 
 	def save_all(self) -> None:
-		self.save(self.initial_data)
+		self.save(self.initial_data, True)
 		for i in range(len(self.frames)):
 			self.save(self.frame_data(i))
 
@@ -175,7 +178,7 @@ class Flow(Simulation):
 
 	def run(self, save: bool, log: bool, log_steps: int) -> None:
 		if log: print(f"Find - {self.domain}", flush=True)
-		if save: self.save(self.initial_data)
+		if save: self.save(self.initial_data, True)
 		if len(self) == 0: self.add_frame()
 
 		i, grad_norm = 0, float('inf')
@@ -212,7 +215,7 @@ class Flow(Simulation):
 									self[i].add_sites(change/shrink_factor))
 					self.step_size /= shrink_factor
 
-				self.step_size = max(10e-4, self.step_size)
+				self.step_size = max(10e-6, self.step_size)
 
 			self.frames.append(new_frame)
 
@@ -269,7 +272,7 @@ class Search(Simulation):
 
 	def run(self, save: bool, log: bool, log_steps: int) -> None:
 		if log: print(f'Travel - {self.domain}', flush=True)
-		if save: self.save(self.initial_data)
+		if save: self.save(self.initial_data, True)
 
 		if len(self) != 0:
 			new_sites = self[0].site_arr
@@ -350,7 +353,7 @@ class Shrink(Simulation):
 
 	def run(self, save: bool, log: bool, log_steps: int) -> None:
 		if log: print(f'Shrink - {self.domain}', flush=True)
-		if save: self.save(self.initial_data)
+		if save: self.save(self.initial_data, True)
 
 		if len(self) != 0:
 			new_sites = self[0].site_arr
@@ -381,5 +384,3 @@ STR_TO_SIM = {
 	"search": Search,
 	"shrink": Shrink
 }
-
-simulation = Simulation
