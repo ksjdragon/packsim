@@ -96,28 +96,28 @@ def config_sim(args):
 		else:
 			points = np.asarray(dmn_params["points"])
 
-	check_params(sim_params, ["mode", "step_size", "threshold", "save_sim", "accel"], {
+	check_params(sim_params, ["mode", "step_size", "threshold", "save_sim", "adaptive"], {
 		"mode": ["flow", "search", "shrink"], "step_size": "positive", "threshold": "positive",
 	})
-	mode, step, thres, accel, save_sim = sim_params["mode"], sim_params["step_size"], \
-									sim_params["threshold"], sim_params["accel"], \
+	mode, step, thres, adaptive, save_sim = sim_params["mode"], sim_params["step_size"], \
+									sim_params["threshold"], sim_params["adaptive"], \
 									sim_params["save_sim"]
 
 	name = sim_params.get("name")
 
 	if mode == "flow":
-		sim = Flow(domain, energy, step, thres, accel, name=name)
+		sim = Flow(domain, energy, step, thres, adaptive, name=name)
 	elif mode == "search":
 		check_params(sim_params, ["manifold_step_size", "eq_stop_count"], {
 			"manifold_step_size": "positive", "eq_stop_count": "positive"
 		})
-		sim = Search(domain, energy, step, thres, accel, sim_params["manifold_step_size"],
+		sim = Search(domain, energy, step, thres, adaptive, sim_params["manifold_step_size"],
 						sim_params["eq_stop_count"], name=name)
 	elif mode == "shrink":
 		check_params(sim_params, ["width_change", "width_stop"], {
 			"width_change": "positive", "width_stop": "positive"
 		})
-		sim = Shrink(domain, energy, step, thres, accel, sim_params["width_change"],
+		sim = Shrink(domain, energy, step, thres, adaptive, sim_params["width_change"],
 						sim_params["width_stop"], name=name)
 
 	save_diagram = False

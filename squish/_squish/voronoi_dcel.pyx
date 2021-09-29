@@ -658,24 +658,7 @@ cdef class VoronoiContainer:
 		).gradient
 
 		return (step/2)*(k1+k2), k1
-		# k1 = self.gradient
 
-		# k2 = self.__class__(self.n, self.w, self.h, self.r,
-		# 		self.add_sites(step*k1/2)
-		# ).gradient
-
-		# lower = step*(-k1+ 2*k2)
-		# k3 = self.__class__(self.n, self.w, self.h, self.r,
-		# 		self.add_sites(lower)
-		# ).gradient
-
-		# higher = (step/6)*(k1+2*k2+k3)
-
-
-		#new_sites = self.add_sites(higher)
-		#error = higher - lower
-		
-		#return higher, k1
 
 	def hessian(self, d: float) -> np.ndarray:
 		"""

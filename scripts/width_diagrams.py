@@ -10,6 +10,7 @@ import squish.ordered as order
 from squish import Simulation, DomainParams
 from squish.common import OUTPUT_DIR
 
+
 def order_process(domain: DomainParams) -> Tuple[float, float, float]:
 	energies = []
 	configs = order.configurations(domain)

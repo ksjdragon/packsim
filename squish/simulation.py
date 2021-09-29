@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 
 import pickle, numpy as np
+from math import log10
 from scipy.linalg import null_space
 from timeit import default_timer as timer
 
@@ -149,18 +150,18 @@ class Flow(Simulation):
 		frames (List[VoronoiContainer]): stores frames of the simulation.
 		step_size (float): size fo step by for each iteration.
 		thres (float): threshold for the stopping condition.
-		accel (bool): set to True if accelerated stepping is desired.
+		adaptive (bool): set to True if adaptive stepping is desired.
 
 	"""
 
-	__slots__ = ['step_size', 'thres', 'accel']
+	__slots__ = ['step_size', 'thres', 'adaptive']
 	attr_str = "flow"
 	title_str = "Flow"
 
 	def __init__(self, domain: DomainParams, energy: Energy, step_size: float, thres: float,
-					accel: bool, name: Optional[str] = None) -> None:
+					adaptive: bool, name: Optional[str] = None) -> None:
 		super().__init__(domain, energy, name=name)
-		self.step_size, self.thres, self.accel = step_size, thres, accel
+		self.step_size, self.thres, self.adaptive = step_size, thres, adaptive
 
 
 	@property
@@ -171,7 +172,7 @@ class Flow(Simulation):
 			"energy": self.energy.attr_str,
 			"step_size": self.step_size,
 			"thres": self.thres,
-			"accel": self.accel
+			"adaptive": self.adaptive
 		}
 		return info
 
@@ -181,49 +182,40 @@ class Flow(Simulation):
 		if save: self.save(self.initial_data, True)
 		if len(self) == 0: self.add_frame()
 
-		i, grad_norm = 0, float('inf')
+		i, stop = 0, False
 
-		trial = 2
-		while grad_norm > self.thres:	# Get to threshold.
-			if save: self.save(self.frame_data(i))
+		while not stop:	# Get to threshold.
+			if save:
+				self.save(self.frame_data(i))
+				frame = self[i]
+			else:
+				frame = self[0]
 
 			# Iterate and generate next frame using RK-2
 			start = timer()
-			change, grad = self[i].iterate(self.step_size)
-			new_frame = self.energy.mode(*self.domain, self[i].add_sites(change))
+			change, grad = frame.iterate(self.step_size)
+
+			new_frame = self.energy.mode(*self.domain, frame.add_sites(change))
 			grad_norm = np.linalg.norm(grad)
 			end = timer()
 
-			if self.accel:
-				if new_frame.energy < self[i].energy:	# If energy decreases.
-					if trial < 10:	# Try increasing step size for 10 times.
-						factor = 1 + .1**trial
+			if self.adaptive:
+				error = change - grad*self.step_size
+				tol = 10**min(-3, -2+log10(grad_norm))
 
-						test_frame = self.energy.mode(*self.domain,
-												self[i].add_sites(change*factor))
-						# If increased step has less energy than original step.
-						if test_frame.energy < new_frame.energy:
-							self.step_size *= factor
-							trial = max(2, trial-1)
-							new_frame = test_frame
-						else:	# Otherwise, increases trials, and use original.
-							trial += 1
-				else:	# Step size too large, decrease and reset trial counter.
-					trial = 2
-					shrink_factor = 1.5
-					new_frame = self.energy.mode(*self.domain,
-									self[i].add_sites(change/shrink_factor))
-					self.step_size /= shrink_factor
+				self.step_size *= (tol/np.linalg.norm(error))**.5
 
-				self.step_size = max(10e-6, self.step_size)
+			if not save:
+				del self.frames[0]
 
 			self.frames.append(new_frame)
+			stop = grad_norm < self.thres
 
 			i += 1
-			if(log and i % log_steps == 0):
-				print(f'Iteration: {i:05} | Energy: {self[i].energy: .5f}' + \
-				 	  f' | Gradient: {grad_norm:.8f} | Step: {self.step_size: .5f} | ' + \
-				 	  f'Time: {end-start: .3f}', flush=True)
+			if (log and i % log_steps == 0) or stop:
+				print(f'Iteration: {i:05} | Energy: {frame.energy: .5f}' + \
+					  f' | Gradient: {grad_norm:.8f} | Step: {self.step_size: .5f} | ' + \
+					  f'Time: {end-start: .3f} |', flush=True)
 
 
 
@@ -237,21 +229,21 @@ class Search(Simulation):
 		frames (List[VoronoiContainer]): stores frames of the simulation.
 		step_size (float): size fo step by for each iteration.
 		thres (float): threshold for the stopping condition.
-		accel (bool): set to True if accelerated stepping is desired.
+		adaptive (bool): set to True if adaptive stepping is desired.
 		kernel_step (float): size to step on manifold if nullity of hessian > 2.
 		count (int): number of equilibria to find.
 
 	"""
 
-	__slots__ = ['step_size', 'thres', 'accel', 'kernel_step', 'count']
+	__slots__ = ['step_size', 'thres', 'adaptive', 'kernel_step', 'count']
 	attr_str = "search"
 	title_str = "Search"
 
 	def __init__(self, domain: DomainParams, energy: Energy, step_size: float, thres: float,
-					accel: bool, kernel_step: float, count: int,
+					adaptive: bool, kernel_step: float, count: int,
 					name: Optional[str] = None) -> None:
 		super().__init__(domain, energy, name=name)
-		self.step_size, self.thres, self.accel = step_size, thres, accel
+		self.step_size, self.thres, self.adaptive = step_size, thres, adaptive
 		self.kernel_step, self.count = kernel_step, count
 
 
@@ -263,7 +255,7 @@ class Search(Simulation):
 			"energy": self.energy.attr_str,
 			"step_size": self.step_size,
 			"thres": self.thres,
-			"accel": self.accel,
+			"adaptive": self.adaptive,
 			"kernel_step": self.kernel_step,
 			"count": self.count
 		}
@@ -282,7 +274,7 @@ class Search(Simulation):
 
 		for i in range(self.count):
 			# Get to equilibrium.
-			sim = Flow(self.domain, self.energy, self.step_size, self.thres, self.accel)
+			sim = Flow(self.domain, self.energy, self.step_size, self.thres, self.adaptive)
 			sim.add_frame(new_sites)
 			sim.run(False, log, log_steps)
 
@@ -317,22 +309,22 @@ class Shrink(Simulation):
 		frames (List[VoronoiContainer]): stores frames of the simulation.
 		step_size (float): size fo step by for each iteration.
 		thres (float): threshold for the stopping condition.
-		accel (bool): set to True if accelerated stepping is desired.
+		adaptive (bool): set to True if adaptive stepping is desired.
 		delta (float): percent to change w each iteration.
 		stop_width (float): percent at which to stop iterating.
 
 	"""
 
-	__slots__ = ['step_size', 'thres', 'accel', 'delta', 'stop_width']
+	__slots__ = ['step_size', 'thres', 'adaptive', 'delta', 'stop_width']
 	attr_str = "shrink"
 	title_str = "Shrink"
 
 
 	def __init__(self, domain: DomainParams, energy: Energy, step_size: float, thres: float,
-					accel: bool, delta: float, stop_width: float,
+					adaptive: bool, delta: float, stop_width: float,
 					name: Optional[str] = None) -> None:
 		super().__init__(domain, energy, name=name)
-		self.step_size, self.thres, self.accel = step_size, thres, accel
+		self.step_size, self.thres, self.adaptive = step_size, thres, adaptive
 		self.delta, self.stop_width = self.domain.w*delta/100, self.domain.w*stop_width
 
 
@@ -344,7 +336,7 @@ class Shrink(Simulation):
 			"energy": self.energy.attr_str,
 			"step_size": self.step_size,
 			"thres": self.thres,
-			"accel": self.accel,
+			"adaptive": self.adaptive,
 			"delta": self.delta,
 			"stop_width": self.stop_width
 		}
@@ -366,7 +358,7 @@ class Shrink(Simulation):
 		while width >= self.stop_width:
 			# Get to equilibrium.
 			new_domain = DomainParams(self.domain.n, width, self.domain.h, self.domain.r)
-			sim = Flow(new_domain, self.energy, self.step_size, self.thres, self.accel)
+			sim = Flow(new_domain, self.energy, self.step_size, self.thres, self.adaptive)
 			sim.add_frame(new_sites)
 			sim.run(False, log, log_steps)
 			new_sites = sim[-1].site_arr
