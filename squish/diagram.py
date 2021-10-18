@@ -6,7 +6,7 @@ from matplotlib.ticker import MaxNLocator, FormatStrFormatter
 from scipy.spatial import Voronoi, voronoi_plot_2d
 from multiprocessing import Pool, cpu_count
 
-from .common import DomainParams
+from .common import DomainParams, OUTPUT_DIR
 
 SYMM = np.array([[0,0], [1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1], [0,-1], [1,-1]])
 
@@ -302,6 +302,8 @@ class Diagram:
 
 
 	def render_frames(self, frames: List[int], fol: str = 'frames') -> None:
+		OUTPUT_DIR.mkdir(exist_ok=True)
+		self.sim.path.mkdir(exist_ok=True)
 		(self.sim.path / fol).mkdir(exist_ok=True)
 		combo_list = []
 		for i in range(cpu_count()):

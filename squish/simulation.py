@@ -5,6 +5,7 @@ import pickle, numpy as np
 from math import log10
 from scipy.linalg import null_space
 from timeit import default_timer as timer
+from pathlib import Path
 
 from .common import DomainParams, Energy, generate_filepath, OUTPUT_DIR
 
@@ -46,7 +47,7 @@ class Simulation:
 		return len(self.frames)
 
 
-	def add_frame(self, points: Optional[numpy.ndarray]) -> None:
+	def add_frame(self, points: Optional[numpy.ndarray] = None) -> None:
 		if points is None:
 			points = np.random.random_sample((self.domain.n, 2)) * self.domain.dim
 		else:
@@ -91,6 +92,7 @@ class Simulation:
 
 
 	def save(self, info: Dict, overwrite: bool = False) -> None:
+		OUTPUT_DIR.mkdir(exist_ok=True)
 		self.path.mkdir(exist_ok=True)
 		path = self.path / 'data.squish'
 
@@ -117,8 +119,9 @@ class Simulation:
 
 	@staticmethod
 	def load(path: str) -> Tuple[Simulation, Generator]:
+		path = Path(path)
 		def frames() -> Dict:
-			with open(path, 'rb') as infile:
+			with open(path / 'data.squish', 'rb') as infile:
 				first = True
 				while True:
 					try:
@@ -130,14 +133,24 @@ class Simulation:
 					except EOFError:
 						break
 
-		with open(path, 'rb') as infile:
+		with open(path / 'data.squish', 'rb') as infile:
 			sim_info = pickle.load(infile)
 
 			domain = DomainParams(*sim_info["domain"])
 			energy = Energy(sim_info["energy"])
 			sim = STR_TO_SIM[sim_info["mode"]](domain, energy, *list(sim_info.values())[3:])
+			sim.path = path
 
 			return sim, frames()
+
+
+	@staticmethod
+	def from_file(path: str) -> Simulation:
+		sim, frames = Simulation.load(path)
+		for frame in frames:
+			sim.frames.append(sim.energy.mode(*frame["domain"], frame["arr"]))
+
+		return sim
 
 
 class Flow(Simulation):
@@ -177,12 +190,13 @@ class Flow(Simulation):
 		return info
 
 
-	def run(self, save: bool, log: bool, log_steps: int) -> None:
+	def run(self, save: bool, log: bool, log_steps: int,
+			new_sites: Optional[numpy.ndarray] = None) -> None:
 		if log: print(f"Find - {self.domain}", flush=True)
-		if save: self.save(self.initial_data, True)
-		if len(self) == 0: self.add_frame()
+		if save and len(self) == 0: self.save(self.initial_data, True)
+		if len(self) == 0: self.add_frame(new_sites)
 
-		i, stop = 0, False
+		i, stop = len(self)-1, False
 
 		while not stop:	# Get to threshold.
 			if save:
@@ -262,17 +276,12 @@ class Search(Simulation):
 		return info
 
 
-	def run(self, save: bool, log: bool, log_steps: int) -> None:
+	def run(self, save: bool, log: bool, log_steps: int,
+			new_sites: Optional[numpy.ndarray] = None) -> None:
 		if log: print(f'Travel - {self.domain}', flush=True)
-		if save: self.save(self.initial_data, True)
+		if save and len(self) == 0: self.save(self.initial_data, True)
 
-		if len(self) != 0:
-			new_sites = self[0].site_arr
-			self.frames = []
-		else:
-			new_sites = None
-
-		for i in range(self.count):
+		for i in range(len(self), self.count):
 			# Get to equilibrium.
 			sim = Flow(self.domain, self.energy, self.step_size, self.thres, self.adaptive)
 			sim.add_frame(new_sites)
@@ -296,7 +305,6 @@ class Search(Simulation):
 				ns = null_space(hess, 10e-4).T
 				vec = ns[random.randint(0, len(ns)-1)].reshape((self.domain.n, 2))	# Random vector.
 				new_sites = self.frames[i].add_sites(self.kernel_step*vec)
-
 
 
 class Shrink(Simulation):
@@ -343,17 +351,12 @@ class Shrink(Simulation):
 		return info
 
 
-	def run(self, save: bool, log: bool, log_steps: int) -> None:
+	def run(self, save: bool, log: bool, log_steps: int,
+			new_sites: Optional[numpy.ndarray] = None) -> None:
 		if log: print(f'Shrink - {self.domain}', flush=True)
-		if save: self.save(self.initial_data, True)
+		if save and len(self) == 0: self.save(self.initial_data, True)
 
-		if len(self) != 0:
-			new_sites = self[0].site_arr
-			self.frames = []
-		else:
-			new_sites = None
-
-		width = self.domain.w
+		width = self.domain.w if len(self.frames) == 0 else self.frames[-1].w
 		i = 0
 		while width >= self.stop_width:
 			# Get to equilibrium.
@@ -370,6 +373,7 @@ class Shrink(Simulation):
 
 			width -= self.delta
 			i += 1
+
 
 STR_TO_SIM = {
 	"flow": Flow,
