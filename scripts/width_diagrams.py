@@ -199,10 +199,12 @@ def main():
 	min_unorder = np.asarray([min(width) for width in unordered_energies])
 	max_unorder = np.asarray([max(width) for width in unordered_energies])
 
+	offset = np.array(order_data["min"])
+	#offset = np.array(min_order)
 
-	min_unorder_off = min_unorder - min_order
-	max_unorder_off = max_unorder - min_order
-	ax.plot(widths, min_order - min_order, color='C1')
+	min_unorder_off = min_unorder - offset
+	max_unorder_off = max_unorder - offset
+	ax.plot(widths, min_order - offset, color='C1')
 	#ax.plot(widths, max_order - offset, color='C1', linestyle='dotted')
 	ax.plot(widths, min_unorder_off, color='C0')
 	ax.plot(widths, max_unorder_off, color='C0', linestyle='dotted')

@@ -5,6 +5,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 
 from squish import Simulation
+from squish.common import OUTPUT_DIR
+
 
 def main():
 	parser = argparse.ArgumentParser("Graphs convergence graphs for a collection of simulations.")
@@ -17,14 +19,11 @@ def main():
 	data = {}
 
 	for file in Path(args.sims_path).iterdir():
-		sim = Simulation.load(file / "data.squish")
-		sim_info = next(sim)
+		sim, frames = Simulation.load(file / "data.squish")
 
-		step = sim_info["step_size"]
-		for frame in sim:
-
+		step = sim.step_size
 		data[step] = {"times": [], "values": [], "diffs": []}
-		for i, frame_info in enumerate(sim):
+		for i, frame_info in enumerate(frames):
 			data[step]["times"].append(step*i)
 			data[step]["values"].append(np.linalg.norm(frame_info["arr"]))
 			data[step]["diffs"].append(np.linalg.norm(all_info[-1]["arr"] - frame_info["arr"]))
@@ -47,7 +46,8 @@ def main():
 	ax[1].set_xlabel("Time")
 	ax[1].set_ylabel("L2 Norm of Difference")
 
-	fig.savefig("figures/Equilibrium Convergence.png")
+	fig.savefig(OUTPUT_DIR / "Equilibrium Convergence.png")
+	print(f"Wrote to {OUTPUT_DIR / 'Equilibrium Convergence.png'}")
 
 
 if __name__ == '__main__':
