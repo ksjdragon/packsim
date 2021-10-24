@@ -156,10 +156,6 @@ def main():
     ax.plot(widths, all_disorder_count)
     axis_settings(ax, widths)
 
-    with open("N83-prob.txt", "w") as f:
-        f.write(", ".join([str(x) for x in widths]) + "\n")
-        f.write(", ".join([str(x) for x in all_disorder_count]))
-
     ax.yaxis.set_major_formatter(mtick.PercentFormatter())
     ax.title.set_text(f"Probability of Disorder - N{domain.n}")
     ax.set_xlabel("Width")
@@ -244,11 +240,6 @@ def main():
     ax.plot(widths, min_unorder_off, color="C0")
     ax.plot(widths, max_unorder_off, color="C0", linestyle="dotted")
     axis_settings(ax, widths)
-
-    with open("N83-od.txt", "w") as f:
-        f.write(", ".join([str(x) for x in widths]) + "\n")
-        f.write(", ".join([str(x) for x in min_unorder_off]) + "\n")
-        f.write(", ".join([str(x) for x in max_unorder_off]))
 
     for i in null_unorder:
         ax.scatter(widths[i], 0, marker="X", color="blue", s=50, zorder=4)
