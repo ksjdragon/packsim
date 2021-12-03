@@ -41,9 +41,21 @@ if USE_CYTHON:
     )
 else:
     ext_modules = [
-        Extension("squish.core", ["squish/core.c"]),
-        Extension("squish.voronoi", ["squish/voronoi.c"]),
-        Extension("squish.energy", ["squish/energy.c"]),
+        Extension(
+            "squish.core",
+            ["squish/core.c"],
+            define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+        ),
+        Extension(
+            "squish.voronoi",
+            ["squish/voronoi.c"],
+            define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+        ),
+        Extension(
+            "squish.energy",
+            ["squish/energy.c"],
+            define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+        ),
     ]
 
 setup(ext_modules=ext_modules, include_dirs=[numpy.get_include()])
