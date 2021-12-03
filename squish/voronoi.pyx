@@ -1,5 +1,4 @@
 import array, scipy.spatial, numpy as np
-from timeit import default_timer as timer
 from cython.parallel import parallel, prange
 
 cimport numpy as np
