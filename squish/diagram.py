@@ -183,8 +183,8 @@ class Diagram:
                     defects[7]["x"].append(vec[0])
                     defects[7]["y"].append(vec[1])
 
-        ax.scatter(defects[5]["x"], defects[5]["y"], marker="p", color="red")
-        ax.scatter(defects[7]["x"], defects[7]["y"], marker="*", color="red")
+        ax.scatter(defects[5]["x"], defects[5]["y"], marker="p", color="C0")
+        ax.scatter(defects[7]["x"], defects[7]["y"], marker="*", color="C0")
 
         ax.text(
             0.05,

@@ -8,28 +8,22 @@ Config = Tuple[int, int]
 
 
 def configurations(domain: DomainParams) -> List[Config]:
-    n, w, h = domain.n, domain.w, domain.h
-    valid = []
-    mults = np.arange(n)
-    configs = np.dstack((np.repeat(mults, n).T, np.tile(mults, n).T))[0][1:]
-    for i in range(len(configs)):
-        eq_x = n if configs[i][0] == 0 else configs[i][0]
-        eq_y = n if configs[i][1] == 0 else configs[i][1]
+    n = domain.n
+    coprimes, valid = [], []
+    for i in range(n):
+        for j in range(i):
+            if gcd(i, j) == 1:
+                coprimes.append((j, i))
 
-        if gcd(eq_x, eq_y) != 1:
-            continue
-
-        vecs = (
-            configs[i]
-            * np.dstack((w * mults, h * mults)).swapaxes(0, 1)
-            / n
-            % domain.dim
-        )
-        vmod2 = np.squeeze(np.matmul(vecs, vecs.transpose(0, 2, 1)))
-        vmodv = np.squeeze(vecs).dot(vecs[1].T).T.flatten()
-
-        if np.all(vmod2 >= vmodv):
-            valid.append(tuple(configs[i]))
+    coprimes = set(coprimes)
+    while len(coprimes) > 0:
+        first = coprimes.pop()
+        valid.append(first)
+        for i in range(2, n):
+            try:
+                coprimes.remove(((first[0] * i) % n, (first[1] * i) % n))
+            except KeyError:
+                pass
 
     return valid
 
@@ -38,11 +32,15 @@ def get_config_generators(
     domain: DomainParams, config: Config
 ) -> Tuple[Config, Config]:
     n, w, h = domain.n, domain.w, domain.h
-    q1 = sites(domain, config)
-    v = q1[1]
-    # Sites to check can ignore 0*v and v itself.
-    all_sites = np.concatenate((q1, q1 - [w, 0], q1 - [w, h], q1 - [0, h]))[2:]
+    q1 = sites(domain, config)[1:]
+    all_sites = np.concatenate(
+        (q1, q1 - np.array([w, 0]), q1 - np.array([0, h]), q1 - domain.dim)
+    )
+    # Sort sites by magnitude and smallest.
+    all_sites = sorted(list(all_sites), key=lambda x: np.linalg.norm(x))
+    v = all_sites[0]  # Smallest vector set to v.
 
+    all_sites = np.array(all_sites[1:])  # Remove v from search set.
     # Checking 0 < ax + by < v*v to make the sites are within the region.
     tol = 1e-3
     vdot = np.matmul(all_sites, v)
@@ -51,11 +49,13 @@ def get_config_generators(
         0, 1
     )  # Used for the next step, getting site*site
 
-    w = in_box[
+    v2 = in_box[
         np.argmin(np.squeeze(np.matmul(in_box, in_box.transpose(0, 2, 1))))
     ].flatten()
 
-    return tuple(v), tuple(w)
+    if np.all(v == v2):
+        print(v, v2, n, w, h, config)
+    return tuple(v), tuple(v2)
 
 
 def sites(domain: DomainParams, config: Config) -> numpy.ndarray:
@@ -92,8 +92,10 @@ def avg_rp(d: float, l: float) -> float:
     return (d / (4 * pi)) * log(tan(0.5 * (atan(l / d) + pi / 2)) ** 2)
 
 
-def circumcenter(v: numpy.ndarray, w: numpy.ndarray) -> Config:
+def circumcenter(v: numpy.ndarray, w: numpy.ndarray) -> numpy.ndarray:
     det = 1 / (2 * rot(v).dot(w))
+    if rot(v).dot(w) == 0:
+        print(v, w)
     v2, w2 = v.dot(v), w.dot(w)
     c = np.empty((2,))
     c[0], c[1] = w[1] * v2 - v[1] * w2, -w[0] * v2 + v[0] * w2

@@ -3,7 +3,8 @@ from typing import List, Tuple, Union, Optional, Iterator, Generator
 import pickle, numpy as np
 from math import gcd
 from pathlib import Path
-from ._squish import VoronoiContainer, AreaEnergy, RadialALEnergy, RadialTEnergy
+from squish.voronoi import VoronoiContainer
+from squish.energy import AreaEnergy, RadialALEnergy, RadialTEnergy
 
 OUTPUT_DIR = Path("squish_output")
 

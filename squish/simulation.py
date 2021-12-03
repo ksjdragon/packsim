@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 
 import pickle, numpy as np
-from math import log10
+from math import log10, sqrt
 from scipy.linalg import null_space
 from timeit import default_timer as timer
 from pathlib import Path
@@ -56,6 +56,22 @@ class Simulation:
                 raise ValueError("Number of sites provided do not match the array!")
 
         self.frames.append(self.energy.mode(*self.domain, points % self.domain.dim))
+
+    def normalize(self) -> None:
+        new_frames = []
+        for frame in self.frames:
+            aspect = frame.w / frame.h
+            new_domain = DomainParams(
+                frame.n, sqrt(frame.n * aspect), sqrt(frame.n / aspect), frame.r
+            )
+
+            new_points = frame.site_arr * np.array(
+                [new_domain.w / frame.w, new_domain.h / frame.h]
+            )
+
+            new_frames.append(self.energy.mode(*new_domain, new_points))
+
+        self.frames = new_frames
 
     def get_distinct(self) -> List[int]:
         """Gets the distinct configurations based on the average radii of the sites.
