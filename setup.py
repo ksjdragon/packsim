@@ -2,30 +2,48 @@ from setuptools import Extension, setup
 import numpy
 
 try:
-	from Cython.Build import cythonize
-	USE_CYTHON = True
+    from Cython.Build import cythonize
+
+    USE_CYTHON = True
 except ImportError:
-	USE_CYTHON = False
+    USE_CYTHON = False
 
 if USE_CYTHON:
-	ext_modules = cythonize([
-		Extension(
-			"_squish",
-			["squish/_squish/_squish.pyx"],
-			extra_compile_args=['-fopenmp'],
-			extra_link_args=['-fopenmp']
-		)
-	],
-	compiler_directives={
-		'language_level': 3, 'boundscheck' : False, 'wraparound': False, 'cdivision' : True
-	})
+    ext_modules = cythonize(
+        [
+            Extension(
+                "squish.core",
+                ["squish/core.pyx"],
+                define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+            ),
+            Extension(
+                "squish.voronoi",
+                ["squish/voronoi.pyx"],
+                extra_compile_args=["-fopenmp"],
+                extra_link_args=["-fopenmp"],
+                define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+            ),
+            Extension(
+                "squish.energy",
+                ["squish/energy.pyx"],
+                extra_compile_args=["-fopenmp"],
+                extra_link_args=["-fopenmp"],
+                define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+            ),
+        ],
+        annotate=False,
+        compiler_directives={
+            "language_level": 3,
+            "boundscheck": False,
+            "wraparound": False,
+            "cdivision": True,
+        },
+    )
 else:
-	ext_modules = [
-	Extension('squish._squish', ["squish/_squish/_squish.c"])
-]
+    ext_modules = [
+        Extension("squish.core", ["squish/core.c"]),
+        Extension("squish.voronoi", ["squish/voronoi.c"]),
+        Extension("squish.energy", ["squish/energy.c"]),
+    ]
 
-#annotate='fullc'
-setup(
-	ext_modules = ext_modules,
-	include_dirs = [numpy.get_include()]
-)
+setup(ext_modules=ext_modules, include_dirs=[numpy.get_include()])
