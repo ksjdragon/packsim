@@ -98,13 +98,13 @@ def do_sim(args, file):
     dmn_params, sim_params = params["domain"], params["simulation"]
 
     overrides = {
-        args.n: "n_objects",
-        args.w: "width",
-        args.h: "height",
-        args.r: "natural_radius",
-        args.energy: "energy",
+        "n_objects": args.n,
+        "width": args.w,
+        "height": args.h,
+        "natural_radius": args.r,
+        "energy": args.energy,
     }
-    for arg, arg_name in overrides.items():
+    for arg_name, arg in overrides.items():
         if arg is not None:
             dmn_params[arg_name] = arg
 
