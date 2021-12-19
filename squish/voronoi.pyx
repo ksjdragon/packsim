@@ -129,16 +129,16 @@ cdef inline Vector2D maxcenter(Site* self, Vector2D val) nogil:
 
 #### EdgeCacheMap Methods ####
 
-cdef inline EdgeCacheMap _EdgeCacheMap(INT_T iH, INT_T ila, INT_T ida, INT_T ixij,
+cdef inline EdgeCacheMap _EdgeCacheMap(INT_T iH, INT_T ila, INT_T ida, INT_T iya,
                                        INT_T idVdv, INT_T ila_mag, INT_T ida_mag,
-                                       INT_T iarea_p, INT_T icalI, INT_T size) nogil:
+                                       INT_T iya_mag, INT_T icalI, INT_T size) nogil:
     cdef EdgeCacheMap ec
-    ec.iH, ec.ila, ec.ida, ec.ixij, ec.idVdv = iH, ila, ida, ixij, idVdv
-    ec.ila_mag, ec.ida_mag, ec.iarea_p, ec.icalI = ila_mag, ida_mag, iarea_p, icalI
+    ec.iH, ec.ila, ec.ida, ec.iya, ec.idVdv = iH, ila, ida, iya, idVdv
+    ec.ila_mag, ec.ida_mag, ec.iya_mag, ec.icalI = ila_mag, ida_mag, iya_mag, icalI
     ec.size = size
 
-    ec.H, ec.la, ec.da, ec.xij, ec.dVdv = H, la, da, xij, dVdv
-    ec.la_mag, ec.da_mag, ec.area_p, ec.calI = la_mag, da_mag, area_p, calI
+    ec.H, ec.la, ec.da, ec.ya, ec.dVdv = H, la, da, ya, dVdv
+    ec.la_mag, ec.da_mag, ec.ya_mag, ec.calI = la_mag, da_mag, ya_mag, calI
 
     return ec
 
@@ -203,21 +203,21 @@ cdef inline Vector2D da(HalfEdge* self, Vector2D val) nogil:
             (self.arr_index, self.cache.ida+1), val.y)
         return val
 
-cdef inline Vector2D xij(HalfEdge* self, Vector2D val) nogil:
+cdef inline Vector2D ya(HalfEdge* self, Vector2D val) nogil:
     if isnan(<double>val.x):
         return _Vector2D(
             self.info.edge_cache.get(&self.info.edge_cache,
-                (self.arr_index, self.cache.ixij)
+                (self.arr_index, self.cache.iya)
             ),
             self.info.edge_cache.get(&self.info.edge_cache,
-                (self.arr_index, self.cache.ixij+1)
+                (self.arr_index, self.cache.iya+1)
             )
         )
     else:
         self.info.edge_cache.set(&self.info.edge_cache,
-            (self.arr_index, self.cache.ixij), val.x)
+            (self.arr_index, self.cache.iya), val.x)
         self.info.edge_cache.set(&self.info.edge_cache,
-            (self.arr_index, self.cache.ixij+1), val.y)
+            (self.arr_index, self.cache.iya+1), val.y)
         return val
 
 cdef inline Vector2D dVdv(HalfEdge* self, Vector2D val) nogil:
@@ -257,14 +257,14 @@ cdef inline FLOAT_T da_mag(HalfEdge* self, FLOAT_T val) nogil:
             (self.arr_index, self.cache.ida_mag), val)
         return val
 
-cdef inline FLOAT_T area_p(HalfEdge* self, FLOAT_T val) nogil:
+cdef inline FLOAT_T ya_mag(HalfEdge* self, FLOAT_T val) nogil:
     if isnan(<double>val):
         return self.info.edge_cache.get(&self.info.edge_cache,
-            (self.arr_index, self.cache.iarea_p)
+            (self.arr_index, self.cache.iya_mag)
         )
     else:
         self.info.edge_cache.set(&self.info.edge_cache,
-            (self.arr_index, self.cache.iarea_p), val)
+            (self.arr_index, self.cache.iya_mag), val)
         return val
 
 cdef inline FLOAT_T calI(HalfEdge* self, FLOAT_T val) nogil:
@@ -536,7 +536,7 @@ cdef class VoronoiContainer:
 
         cdef Site xi
         cdef HalfEdge em, ep
-        cdef Vector2D p, q, la, da, Rla, centroid, cent_part
+        cdef Vector2D p, q, la, da, ya, Rla, centroid, cent_part
 
         cdef FLOAT_T [:] area = np.zeros(self.sites.shape[0], dtype=FLOAT)
         cdef FLOAT_T [:] perim = np.zeros(self.sites.shape[0], dtype=FLOAT)
@@ -556,6 +556,7 @@ cdef class VoronoiContainer:
                 la_mag = la.mag(&la)
                 area_p = la.dot(&la, da.rot(&da))
                 Rla = la.rot(&la)
+                ya = Rla.copy.smul(&Rla, -2*area_p/la.dot(&la, la))
 
                 # Calculating centroid.
                 cent_part = p.copy.vadd(&p, q)
@@ -567,8 +568,8 @@ cdef class VoronoiContainer:
                 em.cache.la_mag(&em, la_mag)
                 em.cache.da(&em, da)
                 em.cache.da_mag(&em, da.mag(&da))
-                em.cache.area_p(&em, area_p)
-                em.cache.xij(&em, Rla.copy.smul(&Rla, -area_p/la.dot(&la, la)))
+                em.cache.ya(&em, ya)
+                em.cache.ya_mag(&em, ya.mag(&ya))
 
                 area[i] += area_p
                 perim[i] += la_mag
@@ -584,29 +585,20 @@ cdef class VoronoiContainer:
 
     @staticmethod
     cdef inline Matrix2x2 calc_H(HalfEdge em, HalfEdge ep) nogil:
-        cdef Vector2D xmv, xpv, im, mp, right, Rpm, Rim, f
-        cdef Matrix2x2 h
-        cdef FLOAT_T im2, mp2
+        cdef Vector2D xj, xk, Rxjk, v
+        cdef Matrix2x2 top
 
-        # Vectors from xi to xm and xp.
-        xmv, xpv = em.cache.xij(&em, NAN_VECTOR), ep.cache.xij(&ep, NAN_VECTOR)
-        im, mp = xmv.copy.neg(&xmv), xmv.copy.vsub(&xmv, xpv)    # -xmv, xmv - xpv
-        im2, mp2 = -(xmv.dot(&xmv, xmv)), xmv.dot(&xmv, xmv) - xpv.dot(&xpv, xpv)
-        # (-xmv*xmv, xmv*xmv - xpv*xpv)
-        right = _Vector2D(im2, mp2)
-        Rpm, Rim = R.vecmul(&R, mp.copy.neg(&mp)), im.rot(&im)    # R*-mp, R*im
+        xj, xk = em.cache.ya(&em, NAN_VECTOR), ep.cache.ya(&ep, NAN_VECTOR)
+        Rxjk = xk.copy.vsub(&xk, xj)
+        Rxjk.self.smul(&Rxjk, 2)
+        Rxjk = Rxjk.rot(&Rxjk)
 
-        h = _Matrix2x2(Rpm.x, Rim.x, Rpm.y, Rim.y)    # [Rpm | Rim], h is temporary.
-        f = h.vecmul(&h, right)    # [Rpm | Rim]*right
-        h = R.copy.smul(&R, mp2*(2*mp.dot(&mp, Rim)))    # fp*g, g is a scalar.
-        # (fp*g - f*gp)/(g**2). f is a column vector, gp = 2*Rpm is a row vector.
-        h.self.msub(&h, _Matrix2x2(
-            f.x*2*Rpm.x, f.x*2*Rpm.y, f.y*2*Rpm.x, f.y*2*Rpm.y
-        ))
-        h.self.sdiv(&h, (2*mp.dot(&mp, Rim))**2)
+        v = ep.cache.da(&ep, NAN_VECTOR)
+        top = R.copy.smul(&R, xj.dot(&xj, xj) - xk.dot(&xk, xk))
+        top.self.msub(&top, _Matrix2x2(v.x*Rxjk.x, v.x*Rxjk.y, v.y*Rxjk.x, v.y*Rxjk.y))
+        top.self.sdiv(&top, -Rxjk.dot(&Rxjk, xj))
 
-        return h
-
+        return _Matrix2x2(top.a, top.c, top.b, top.d)
 
     @staticmethod
     cdef inline bint sign(FLOAT_T [::1] ref, FLOAT_T [::1] p, FLOAT_T [::1] q):
@@ -677,10 +669,10 @@ cdef class VoronoiContainer:
                 self.add_sites(step*k1)
         ).gradient
 
-        return (step/2)*(k1+k2), k1
+        return -(step/2)*(k1+k2), -k1
 
 
-    def hessian(self, d: float) -> np.ndarray:
+    def approx_hessian(self, d: float) -> np.ndarray:
         """
         Obtains the approximate Hessian.
         :param d: [float] small d for approximation.
@@ -707,6 +699,117 @@ cdef class VoronoiContainer:
 
         return HE
 
+    def radialt_hessian(self) -> np.ndarray:
+        HE = np.zeros((2*self.n, 2*self.n))
+        cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+                                             self.vertices, self.site_cache,
+                                             self.edge_cache, self.edge_cache_map)
+        cdef Site xi, xk
+        cdef HalfEdge e, em, ep, fj, fk
+        cdef Vector2D temp1, temp2, dau, dapu
+        cdef Matrix2x2 sigI, sigJ, sigK, p, q, tempm, toI, toJ, toK
+
+        cdef INT_T i, j, k, z
+        for i in range(self.n):
+            xi = _Site(i, &info)
+            ep = xi.edge(&xi)
+            e = ep.prev(&ep)
+            j = 0
+            while j < xi.edge_num(&xi):
+                e.cache.H(&e, VoronoiContainer.calc_H(e, ep))
+                e = e.next(&e)
+                j = j + 1
+
+
+        for i in range(self.n):
+            xi = _Site(i, &info)
+            e = xi.edge(&xi)
+
+            z = 0
+            while z < xi.edge_num(&xi):
+                em, ep = e.prev(&e), e.next(&e)
+                fj, fk = em.twin(&em), e.twin(&e)
+                fj, fk = fj.next(&fj), fk.next(&fk)
+
+                xj, xk = fj.face(&fj), fk.face(&fk)
+                j, k = xj.index(&xj) % self.n, xk.index(&xk) % self.n
+                if k < 0:
+                    k = k + self.n
+                if j < 0:
+                    j = j + self.n
+
+                sigI = e.cache.H(&e, NAN_MATRIX)
+                sigJ = fj.cache.H(&fj, NAN_MATRIX)
+                sigK = fk.cache.H(&fk, NAN_MATRIX)
+
+                ### Calculating of p
+                temp1 = e.cache.la(&e, NAN_VECTOR)
+                temp1 = temp1.rot(&temp1)
+                temp1.self.sdiv(
+                    &temp1,
+                    e.cache.la_mag(&e, NAN) * e.cache.ya_mag(&e, NAN) / 2
+                )
+
+                dau = e.cache.da(&e, NAN_VECTOR)
+                dau.self.sdiv(&dau, e.cache.da_mag(&e, NAN))
+                dapu = ep.cache.da(&ep, NAN_VECTOR)
+                dapu.self.sdiv(&dapu, ep.cache.da_mag(&ep, NAN))
+
+                temp2 = dapu.copy.vsub(&dapu, dau)
+                temp2 = temp2.rot(&temp2)
+
+                p = _Matrix2x2(
+                    temp1.x*temp2.x, temp1.x*temp2.y,
+                    temp1.y*temp2.x, temp1.y*temp2.y
+                )
+
+                ### Calculating of q
+                temp2 = e.cache.la(&e, NAN_VECTOR)
+                temp1 = temp2.rot(&temp2)
+                q = _Matrix2x2(
+                    temp1.x*temp2.x, temp1.x*temp2.y,
+                    temp1.y*temp2.x, temp1.y*temp2.y
+                )
+                q.self.sdiv(&q, e.cache.la_mag(&e, NAN)**2)
+
+                q.self.msub(&q, R)
+                q.self.smul(
+                    &q,
+                    e.cache.calI(&e, NAN) / e.cache.la_mag(&e, NAN)
+                )
+
+                temp2 = em.cache.la(&em, NAN_VECTOR)
+                temp1 = temp2.rot(&temp2)
+                tempm = _Matrix2x2(
+                    temp1.x*temp2.x, temp1.x*temp2.y,
+                    temp1.y*temp2.x, temp1.y*temp2.y
+                )
+                tempm.self.sdiv(&tempm, em.cache.la_mag(&em, NAN)**2)
+
+                tempm = R.copy.msub(&R, tempm)
+                tempm.self.smul(
+                    &tempm,
+                    em.cache.calI(&em, NAN) / em.cache.la_mag(&em, NAN)
+                )
+
+                q.self.madd(&q, tempm)
+
+                # Calculating components that go to the respective sites
+                toI = sigI.copy.mmul(&sigI, p.copy.madd(&p, q))
+                toI.self.msub(&toI, p)
+
+                toJ = sigJ.copy.mmul(&sigJ, p.copy.madd(&p, q))
+                toK = sigK.copy.mmul(&sigK, p.copy.madd(&p, q))
+
+                HE[2*i: 2*(i+1), 2*i: 2*(i+1)] += np.array([[toI.a, toI.b], [toI.c, toI.d]])
+                HE[2*i: 2*(i+1), 2*j: 2*(j+1)] += np.array([[toJ.a, toJ.b], [toJ.c, toJ.d]])
+                HE[2*i: 2*(i+1), 2*k: 2*(k+1)] += np.array([[toK.a, toK.b], [toK.c, toK.d]])
+
+                e = e.next(&e)
+                z = z + 1
+
+
+        return -2*self.r*HE
 
     def site_vert_arr(self): # -> List[np.ndarray]
         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,

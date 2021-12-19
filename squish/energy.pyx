@@ -99,8 +99,8 @@ cdef class AreaEnergy(VoronoiContainer):
 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
-						dedx[i][0] -= dedxi_p.x
-						dedx[i][1] -= dedxi_p.y
+						dedx[i][0] += dedxi_p.x
+						dedx[i][1] += dedxi_p.y
 
 					f = f.twin(&f)
 					f = f.next(&f)
@@ -174,7 +174,7 @@ cdef class RadialTEnergy(VoronoiContainer):
 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
 
 		cdef Site xi
-		cdef HalfEdge e, em, ep
+		cdef HalfEdge e, ep
 		cdef Vector2D la
 
 		# All energy has a 2pir_0 term.
@@ -188,8 +188,8 @@ cdef class RadialTEnergy(VoronoiContainer):
 			e = xi.edge(&xi)
 			j = 0
 			while j < xi.edge_num(&xi):
-				em, ep = e.prev(&e), e.next(&e)
-				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+				ep = e.next(&e)
+				#e.cache.H(&e, VoronoiContainer.calc_H(em, e))
 
 				la = e.cache.la(&e, NAN_VECTOR)
 				sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la
@@ -200,10 +200,7 @@ cdef class RadialTEnergy(VoronoiContainer):
 
 				e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))
 
-				avg_radii[i] += (
-					e.cache.area_p(&e, NAN) * e.cache.calI(&e, NAN)
-					/ e.cache.la_mag(&e, NAN)
-				)
+				avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2
 
 				e = e.next(&e)
 				j = j + 1
@@ -221,11 +218,8 @@ cdef class RadialTEnergy(VoronoiContainer):
 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
 
 		cdef Site xi
-		cdef HalfEdge e, fm, f, fp
-		cdef Vector2D temp1, temp2, temp3, dedxi_p
-		cdef BitSet edge_set
-		
-		cdef INT_T num_edges = self.edges.shape[0]
+		cdef HalfEdge e
+		cdef Vector2D dedxi_p
 
 		cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)
 
@@ -233,70 +227,19 @@ cdef class RadialTEnergy(VoronoiContainer):
 		for i in prange(self.n, nogil=True):
 			xi = _Site(i, &info)
 			e = xi.edge(&xi)
-			edge_set = _BitSet(num_edges)
 
 			j = 0
 			while j < xi.edge_num(&xi):	# Looping through site edges.
-				f = e
-				dedxi_p = _Vector2D(0, 0)
-				# dedx (only x)
-				temp1 = f.cache.la(&f, NAN_VECTOR)
-				temp1 = temp1.rot(&temp1)
-				dedxi_p = temp1.copy.smul(
-					&temp1,
-					f.cache.calI(&f, NAN) / f.cache.la_mag(&f, NAN)
+				dedxi_p = e.cache.ya(&e, NAN_VECTOR)
+				dedxi_p.self.smul(
+					&dedxi_p,
+					e.cache.calI(&e, NAN) / e.cache.ya_mag(&e, NAN)
 				)
 
-				while True:	# Circling this vertex.
-					fm, fp = f.prev(&f), f.next(&f)
-
-					if not edge_set.add(&edge_set, f.arr_index):
-						# ( -rot(dap) ) / |la|
-						temp1 = fp.cache.da(&fp, NAN_VECTOR)
-						temp1 = temp1.rot(&temp1)
-						temp1.self.sdiv(&temp1, -f.cache.la_mag(&f, NAN))
-
-						# la * area_p / |la|^2
-						temp3 = f.cache.la(&f, NAN_VECTOR)
-						temp3.self.smul(
-							&temp3,
-							f.cache.area_p(&f, NAN) / f.cache.la_mag(&f, NAN)**3
-						)
-						# Combine * calI
-						temp1.self.vadd(&temp1, temp3)
-						temp1.self.smul(&temp1, f.cache.calI(&f, NAN))
-
-						# rot(dam) / |lam|
-						temp2 = fm.cache.da(&fm, NAN_VECTOR)
-						temp2 = temp2.rot(&temp2)
-						temp2.self.sdiv(&temp2, fm.cache.la_mag(&fm, NAN))
-
-						# lam * area_pm / |lam|^2
-						temp3 = fm.cache.la(&fm, NAN_VECTOR)
-						temp3.self.smul(
-							&temp3,
-							fm.cache.area_p(&fm, NAN) / fm.cache.la_mag(&fm, NAN)**3
-						)
-						# Combine * calIm
-						temp2.self.vsub(&temp2, temp3)
-						temp2.self.smul(&temp2, fm.cache.calI(&fm, NAN))
-
-						temp1.self.vadd(&temp1, temp2)
-						temp1.self.matmul(&temp1, e.get_H(&e, xi))
-
-						dedxi_p.self.vadd(&dedxi_p, temp1)
-
-					f = f.twin(&f)
-					f = f.next(&f)
-					
-					if f.arr_index == e.arr_index:
-						break
-
-				dedx[i][0] -= -2*self.r*dedxi_p.x
-				dedx[i][1] -= -2*self.r*dedxi_p.y
+				dedx[i][0] += 2*self.r*dedxi_p.x
+				dedx[i][1] += 2*self.r*dedxi_p.y
 
 				e = e.next(&e)
 				j = j + 1
 
-			edge_set.free(&edge_set)
 		self.grad = dedx

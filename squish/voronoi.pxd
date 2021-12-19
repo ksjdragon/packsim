@@ -16,18 +16,18 @@ ctypedef struct SiteCacheMap:
 
 # Psuedo-class that handles caching for edges.
 ctypedef struct EdgeCacheMap:
-    INT_T iH, ila, ida, ixij, idVdv, ila_mag, ida_mag, iarea_p, icalI, size
+    INT_T iH, ila, ida, iya, idVdv, ila_mag, ida_mag, iya_mag, icalI, size
 
     Matrix2x2 (*H)(HalfEdge*, Matrix2x2) nogil
 
     Vector2D (*la)(HalfEdge*, Vector2D) nogil
     Vector2D (*da)(HalfEdge*, Vector2D) nogil
-    Vector2D (*xij)(HalfEdge*, Vector2D) nogil
+    Vector2D (*ya)(HalfEdge*, Vector2D) nogil
     Vector2D (*dVdv)(HalfEdge*, Vector2D) nogil
 
     FLOAT_T (*la_mag)(HalfEdge*, FLOAT_T) nogil
     FLOAT_T (*da_mag)(HalfEdge*, FLOAT_T) nogil
-    FLOAT_T (*area_p)(HalfEdge*, FLOAT_T) nogil
+    FLOAT_T (*ya_mag)(HalfEdge*, FLOAT_T) nogil
     FLOAT_T (*calI)(HalfEdge*, FLOAT_T) nogil
 
 # Psuedo-class to just contain all pertaining info for sites and edges.

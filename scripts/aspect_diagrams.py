@@ -25,14 +25,14 @@ def order_process(domain: DomainParams) -> Tuple[float, float, float]:
 
         isoparams.append(math.pi * rbar ** 2 / area)
 
-    return domain.w, min(energies), max(energies), min(isoparams), max(isoparams)
+    return (domain.w, min(energies), max(energies), min(isoparams), max(isoparams))
 
 
 def get_ordered_energies(orig_domain: DomainParams, widths: np.ndarray) -> Dict:
     data = {}
     domains = []
     for w in widths:
-        aspect = w / orig_domain.h
+        aspect = w
         domains.append(
             DomainParams(
                 orig_domain.n,
@@ -102,7 +102,7 @@ def eq_file_process(file: Path) -> Tuple[float, List[float], List[float]]:
             ]
         )
 
-    return sim.domain.w, alls, distincts
+    return sim.domain.w / sim.domain.h, alls, distincts
 
 
 def get_equilibria_data(filepath: Path) -> Tuple[Dict, numpy.ndarray, DomainParams]:
@@ -132,7 +132,7 @@ def get_equilibria_data(filepath: Path) -> Tuple[Dict, numpy.ndarray, DomainPara
 def axis_settings(ax, widths):
     ax.grid(zorder=0)
     ax.set_xticks([round(w, 2) for w in widths[::2]])
-    ax.set_xticklabels([f"{round(w / 10, 3):.2f}" for w in widths[::2]], rotation=90)
+    ax.set_xticklabels([f"{round(w, 3):.2f}" for w in widths[::2]], rotation=90)
     plt.subplots_adjust(0.07, 0.12, 0.97, 0.9)
 
 
