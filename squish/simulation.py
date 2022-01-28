@@ -59,11 +59,16 @@ class Simulation:
 
     def normalize(self) -> None:
         new_frames = []
+        first = True
         for frame in self.frames:
             aspect = frame.w / frame.h
+
             new_domain = DomainParams(
                 frame.n, sqrt(frame.n * aspect), sqrt(frame.n / aspect), frame.r
             )
+            if first:
+                self.domain = new_domain
+                first = False
 
             new_points = frame.site_arr * np.array(
                 [new_domain.w / frame.w, new_domain.h / frame.h]
