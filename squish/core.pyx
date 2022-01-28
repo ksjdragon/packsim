@@ -18,19 +18,19 @@ cdef MatrixCopyOps MCO
 
 VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \
     v_neg_s, v_vadd_s, v_vsub_s, v_vmul_s, v_vdiv_s, v_sadd_s, v_ssub_s, v_smul_s, v_sdiv_s
-VSO.matmul = v_matmul_s
+VSO.matmul, VSO.rot = v_matmul_s, rot_s
 
 VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \
     v_neg_c, v_vadd_c, v_vsub_c, v_vmul_c, v_vdiv_c, v_sadd_c, v_ssub_c, v_smul_c, v_sdiv_c
-VCO.matmul = v_matmul_c
+VCO.matmul, VCO.rot = v_matmul_c, rot_c
 
 MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \
     m_neg_s, m_madd_s, m_msub_s, m_mmul_s, m_mdiv_s, m_sadd_s, m_ssub_s, m_smul_s, m_sdiv_s
-MSO.matmul = m_matmul_s
+MSO.matmul, MSO.T = m_matmul_s, m_transpose_s
 
 MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \
     m_neg_c, m_madd_c, m_msub_c, m_mmul_c, m_mdiv_c, m_sadd_c, m_ssub_c, m_smul_c, m_sdiv_c
-MCO.matmul = m_matmul_c
+MCO.matmul, MCO.T = m_matmul_c, m_transpose_c
 
 """
 If bound checking is desired, uncomment out ..._valid_indices functions.
@@ -143,7 +143,7 @@ cdef inline Vector2D _Vector2D(FLOAT_T x, FLOAT_T y) nogil:
     vec.x, vec.y = x, y
     vec.self, vec.copy = VSO, VCO
 
-    vec.equals, vec.rot, vec.dot, vec.mag = &v_equals, &rot, &dot, &mag
+    vec.equals, vec.vecmul, vec.dot, vec.mag = &v_equals, &v_vecmul, &dot, &mag
 
     return vec
 
@@ -200,6 +200,10 @@ cdef inline Vector2D* v_matmul_s(Vector2D* self, Matrix2x2 m) nogil:
     self.x, self.y = self.x*m.a + self.y*m.c, self.x*m.b + self.y*m.d
     return self
 
+cdef inline Vector2D* rot_s(Vector2D* self) nogil:
+    self.x, self.y = -self.y, self.x
+    return self
+
 cdef inline Vector2D v_neg_c(Vector2D* self) nogil:
     return _Vector2D(-self.x, -self.y)
 
@@ -232,7 +236,7 @@ cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:
         self.x*m.a + self.y*m.c, self.x*m.b + self.y*m.d
     )
 
-cdef inline Vector2D rot(Vector2D* self) nogil:
+cdef inline Vector2D rot_c(Vector2D* self) nogil:
     return _Vector2D(-self.y, self.x)
 
 cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:
@@ -240,6 +244,9 @@ cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:
 
 cdef inline FLOAT_T mag(Vector2D* self) nogil:
     return <FLOAT_T>sqrt(<double>(self.x*self.x + self.y*self.y))
+
+cdef inline Matrix2x2 v_vecmul(Vector2D* self, Vector2D v) nogil:
+    return _Matrix2x2(self.x*v.x, self.x*v.y, self.y*v.x, self.y*v.y)
 
 
 #### Matrix2x2 Methods ####
@@ -329,6 +336,10 @@ cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
         self.c*m.a + self.d*m.c, self.c*m.b + self.d*m.d
     return self
 
+cdef inline Matrix2x2* m_transpose_s(Matrix2x2* self) nogil:
+    self.b, self.c = self.c, self.b
+    return self
+
 cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:
     return _Matrix2x2(-self.a, -self.b, -self.c, -self.d)
 
@@ -361,3 +372,6 @@ cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:
         self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d,
         self.c*m.a + self.d*m.c, self.c*m.b + self.d*m.d
     )
+
+cdef inline Matrix2x2 m_transpose_c(Matrix2x2* self) nogil:
+    return _Matrix2x2(self.a, self.c, self.b, self.d)

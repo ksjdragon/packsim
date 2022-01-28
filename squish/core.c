@@ -3,6 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
+        "define_macros": [
+            [
+                "NPY_NO_DEPRECATED_API",
+                "NPY_1_7_API_VERSION"
+            ]
+        ],
         "depends": [],
         "name": "squish.core",
         "sources": [
@@ -871,8 +877,8 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "squish/core.pyx",
-  "__init__.pxd",
-  "type.pxd",
+  ".venv/lib/python3.8/site-packages/numpy/__init__.pxd",
+  ".venv/lib/python3.8/site-packages/Cython/Includes/cpython/type.pxd",
 };
 /* ForceInitThreads.proto */
 #ifndef __PYX_FORCE_INIT_THREADS
@@ -887,7 +893,7 @@ static const char *__pyx_f[] = {
 #define __Pyx_FastGilFuncInit()
 
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":690
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":690
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -896,7 +902,7 @@ static const char *__pyx_f[] = {
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":691
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":691
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -905,7 +911,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":692
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":692
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -914,7 +920,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":693
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":693
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -923,7 +929,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":697
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":697
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -932,7 +938,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":698
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":698
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -941,7 +947,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":699
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":699
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -950,7 +956,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":700
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":700
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -959,7 +965,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":704
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":704
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -968,7 +974,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":705
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":705
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -977,7 +983,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":714
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":714
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -986,7 +992,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":715
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":715
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -995,7 +1001,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":716
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":716
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -1004,7 +1010,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":718
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":718
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -1013,7 +1019,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":719
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":719
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -1022,7 +1028,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":720
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":720
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -1031,7 +1037,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":722
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":722
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -1040,7 +1046,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":723
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":723
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -1049,7 +1055,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":725
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":725
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -1058,7 +1064,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":726
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":726
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -1067,7 +1073,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":727
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":727
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -1120,7 +1126,7 @@ static CYTHON_INLINE __pyx_t_double_complex __pyx_t_double_complex_from_parts(do
 
 /*--- Type declarations ---*/
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":729
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":729
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -1129,7 +1135,7 @@ static CYTHON_INLINE __pyx_t_double_complex __pyx_t_double_complex_from_parts(do
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":730
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":730
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -1138,7 +1144,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":731
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":731
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -1147,7 +1153,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":733
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":733
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1306,10 +1312,11 @@ typedef __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_6squish_4core_MatrixCopySclOp)
  * 
  * ctypedef struct VectorSelfOps:             # <<<<<<<<<<<<<<
  *     Vector2D* (*neg)(Vector2D*) nogil
- * 
+ *     Vector2D* (*rot)(Vector2D*) nogil
  */
 struct __pyx_t_6squish_4core_VectorSelfOps {
   __pyx_t_6squish_4core_Vector2D *(*neg)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Vector2D *(*rot)(__pyx_t_6squish_4core_Vector2D *);
   __pyx_t_6squish_4core_VectorSelfVecOp vadd;
   __pyx_t_6squish_4core_VectorSelfVecOp vsub;
   __pyx_t_6squish_4core_VectorSelfVecOp vmul;
@@ -1321,15 +1328,16 @@ struct __pyx_t_6squish_4core_VectorSelfOps {
   __pyx_t_6squish_4core_VectorSelfSclOp sdiv;
 };
 
-/* "squish/core.pxd":67
+/* "squish/core.pxd":68
  * 
  * 
  * ctypedef struct VectorCopyOps:             # <<<<<<<<<<<<<<
  *     Vector2D (*neg)(Vector2D*) nogil
- * 
+ *     Vector2D (*rot)(Vector2D*) nogil
  */
 struct __pyx_t_6squish_4core_VectorCopyOps {
   __pyx_t_6squish_4core_Vector2D (*neg)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Vector2D (*rot)(__pyx_t_6squish_4core_Vector2D *);
   __pyx_t_6squish_4core_VectorCopyVecOp vadd;
   __pyx_t_6squish_4core_VectorCopyVecOp vsub;
   __pyx_t_6squish_4core_VectorCopyVecOp vmul;
@@ -1341,15 +1349,16 @@ struct __pyx_t_6squish_4core_VectorCopyOps {
   __pyx_t_6squish_4core_VectorCopySclOp sdiv;
 };
 
-/* "squish/core.pxd":82
+/* "squish/core.pxd":84
  * 
  * 
  * ctypedef struct MatrixSelfOps:             # <<<<<<<<<<<<<<
  *     Matrix2x2* (*neg)(Matrix2x2*) nogil
- * 
+ *     Matrix2x2* (*T)(Matrix2x2*) nogil
  */
 struct __pyx_t_6squish_4core_MatrixSelfOps {
   __pyx_t_6squish_4core_Matrix2x2 *(*neg)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 *(*T)(__pyx_t_6squish_4core_Matrix2x2 *);
   __pyx_t_6squish_4core_MatrixSelfMatOp madd;
   __pyx_t_6squish_4core_MatrixSelfMatOp msub;
   __pyx_t_6squish_4core_MatrixSelfMatOp mmul;
@@ -1361,15 +1370,16 @@ struct __pyx_t_6squish_4core_MatrixSelfOps {
   __pyx_t_6squish_4core_MatrixSelfSclOp sdiv;
 };
 
-/* "squish/core.pxd":97
+/* "squish/core.pxd":100
  * 
  * 
  * ctypedef struct MatrixCopyOps:             # <<<<<<<<<<<<<<
  *     Matrix2x2 (*neg)(Matrix2x2*) nogil
- * 
+ *     Matrix2x2 (*T)(Matrix2x2*) nogil
  */
 struct __pyx_t_6squish_4core_MatrixCopyOps {
   __pyx_t_6squish_4core_Matrix2x2 (*neg)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 (*T)(__pyx_t_6squish_4core_Matrix2x2 *);
   __pyx_t_6squish_4core_MatrixCopyMatOp madd;
   __pyx_t_6squish_4core_MatrixCopyMatOp msub;
   __pyx_t_6squish_4core_MatrixCopyMatOp mmul;
@@ -1381,7 +1391,7 @@ struct __pyx_t_6squish_4core_MatrixCopyOps {
   __pyx_t_6squish_4core_MatrixCopySclOp sdiv;
 };
 
-/* "squish/core.pxd":112
+/* "squish/core.pxd":116
  * 
  * # Psuedo-class for a 2-dimensional vector. No orientation.
  * ctypedef struct Vector2D:             # <<<<<<<<<<<<<<
@@ -1394,12 +1404,12 @@ struct __pyx_t_6squish_4core_Vector2D {
   __pyx_t_6squish_4core_VectorSelfOps self;
   __pyx_t_6squish_4core_VectorCopyOps copy;
   int (*equals)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
-  __pyx_t_6squish_4core_Vector2D (*rot)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Matrix2x2 (*vecmul)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_FLOAT_T (*dot)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_FLOAT_T (*mag)(__pyx_t_6squish_4core_Vector2D *);
 };
 
-/* "squish/core.pxd":123
+/* "squish/core.pxd":127
  * 
  * # Psuedo-class for a 2x2 matrix.
  * ctypedef struct Matrix2x2:             # <<<<<<<<<<<<<<
@@ -1905,6 +1915,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_ssu
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_smul_s(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_sdiv_s(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_matmul_s(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
+static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_rot_s(__pyx_t_6squish_4core_Vector2D *); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_neg_c(__pyx_t_6squish_4core_Vector2D *); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vadd_c(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vsub_c(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D); /*proto*/
@@ -1915,9 +1926,10 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_ssub
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_smul_c(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sdiv_c(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_matmul_c(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
-static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot(__pyx_t_6squish_4core_Vector2D *); /*proto*/
+static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot_c(__pyx_t_6squish_4core_Vector2D *); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_dot(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_mag(__pyx_t_6squish_4core_Vector2D *); /*proto*/
+static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_v_vecmul(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D); /*proto*/
 static CYTHON_INLINE int __pyx_f_6squish_4core_m_equals(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_m_vecmul(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Vector2D); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_neg_s(__pyx_t_6squish_4core_Matrix2x2 *); /*proto*/
@@ -1930,6 +1942,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_smul_s(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sdiv_s(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_matmul_s(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
+static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_transpose_s(__pyx_t_6squish_4core_Matrix2x2 *); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_neg_c(__pyx_t_6squish_4core_Matrix2x2 *); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_madd_c(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_msub_c(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
@@ -1940,6 +1953,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_ssu
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_smul_c(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sdiv_c(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T); /*proto*/
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_matmul_c(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2); /*proto*/
+static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_transpose_c(__pyx_t_6squish_4core_Matrix2x2 *); /*proto*/
 #define __Pyx_MODULE_NAME "squish.core"
 extern int __pyx_module_is_main_squish__core;
 int __pyx_module_is_main_squish__core = 0;
@@ -2688,7 +2702,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core__Vecto
   __pyx_t_6squish_4core_VectorSelfOps __pyx_t_3;
   __pyx_t_6squish_4core_VectorCopyOps __pyx_t_4;
   int (*__pyx_t_5)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
-  __pyx_t_6squish_4core_Vector2D (*__pyx_t_6)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_6)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_FLOAT_T (*__pyx_t_7)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_FLOAT_T (*__pyx_t_8)(__pyx_t_6squish_4core_Vector2D *);
 
@@ -2709,7 +2723,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core__Vecto
  *     vec.x, vec.y = x, y
  *     vec.self, vec.copy = VSO, VCO             # <<<<<<<<<<<<<<
  * 
- *     vec.equals, vec.rot, vec.dot, vec.mag = &v_equals, &rot, &dot, &mag
+ *     vec.equals, vec.vecmul, vec.dot, vec.mag = &v_equals, &v_vecmul, &dot, &mag
  */
   __pyx_t_3 = __pyx_v_6squish_4core_VSO;
   __pyx_t_4 = __pyx_v_6squish_4core_VCO;
@@ -2719,21 +2733,21 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core__Vecto
   /* "squish/core.pyx":146
  *     vec.self, vec.copy = VSO, VCO
  * 
- *     vec.equals, vec.rot, vec.dot, vec.mag = &v_equals, &rot, &dot, &mag             # <<<<<<<<<<<<<<
+ *     vec.equals, vec.vecmul, vec.dot, vec.mag = &v_equals, &v_vecmul, &dot, &mag             # <<<<<<<<<<<<<<
  * 
  *     return vec
  */
   __pyx_t_5 = (&__pyx_f_6squish_4core_v_equals);
-  __pyx_t_6 = (&__pyx_f_6squish_4core_rot);
+  __pyx_t_6 = (&__pyx_f_6squish_4core_v_vecmul);
   __pyx_t_7 = (&__pyx_f_6squish_4core_dot);
   __pyx_t_8 = (&__pyx_f_6squish_4core_mag);
   __pyx_v_vec.equals = __pyx_t_5;
-  __pyx_v_vec.rot = __pyx_t_6;
+  __pyx_v_vec.vecmul = __pyx_t_6;
   __pyx_v_vec.dot = __pyx_t_7;
   __pyx_v_vec.mag = __pyx_t_8;
 
   /* "squish/core.pyx":148
- *     vec.equals, vec.rot, vec.dot, vec.mag = &v_equals, &rot, &dot, &mag
+ *     vec.equals, vec.vecmul, vec.dot, vec.mag = &v_equals, &v_vecmul, &dot, &mag
  * 
  *     return vec             # <<<<<<<<<<<<<<
  * 
@@ -3298,7 +3312,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_mat
  *     self.x, self.y = self.x*m.a + self.y*m.c, self.x*m.b + self.y*m.d
  *     return self             # <<<<<<<<<<<<<<
  * 
- * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:
+ * cdef inline Vector2D* rot_s(Vector2D* self) nogil:
  */
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
@@ -3319,6 +3333,54 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_mat
 /* "squish/core.pyx":203
  *     return self
  * 
+ * cdef inline Vector2D* rot_s(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
+ *     self.x, self.y = -self.y, self.x
+ *     return self
+ */
+
+static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_rot_s(__pyx_t_6squish_4core_Vector2D *__pyx_v_self) {
+  __pyx_t_6squish_4core_Vector2D *__pyx_r;
+  __pyx_t_6squish_4core_FLOAT_T __pyx_t_1;
+  __pyx_t_6squish_4core_FLOAT_T __pyx_t_2;
+
+  /* "squish/core.pyx":204
+ * 
+ * cdef inline Vector2D* rot_s(Vector2D* self) nogil:
+ *     self.x, self.y = -self.y, self.x             # <<<<<<<<<<<<<<
+ *     return self
+ * 
+ */
+  __pyx_t_1 = (-__pyx_v_self->y);
+  __pyx_t_2 = __pyx_v_self->x;
+  __pyx_v_self->x = __pyx_t_1;
+  __pyx_v_self->y = __pyx_t_2;
+
+  /* "squish/core.pyx":205
+ * cdef inline Vector2D* rot_s(Vector2D* self) nogil:
+ *     self.x, self.y = -self.y, self.x
+ *     return self             # <<<<<<<<<<<<<<
+ * 
+ * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:
+ */
+  __pyx_r = __pyx_v_self;
+  goto __pyx_L0;
+
+  /* "squish/core.pyx":203
+ *     return self
+ * 
+ * cdef inline Vector2D* rot_s(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
+ *     self.x, self.y = -self.y, self.x
+ *     return self
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  return __pyx_r;
+}
+
+/* "squish/core.pyx":207
+ *     return self
+ * 
  * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
  *     return _Vector2D(-self.x, -self.y)
  * 
@@ -3327,7 +3389,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D *__pyx_f_6squish_4core_v_mat
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_neg_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":204
+  /* "squish/core.pyx":208
  * 
  * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:
  *     return _Vector2D(-self.x, -self.y)             # <<<<<<<<<<<<<<
@@ -3337,7 +3399,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_neg_
   __pyx_r = __pyx_f_6squish_4core__Vector2D((-__pyx_v_self->x), (-__pyx_v_self->y));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":203
+  /* "squish/core.pyx":207
  *     return self
  * 
  * cdef inline Vector2D v_neg_c(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -3350,7 +3412,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_neg_
   return __pyx_r;
 }
 
-/* "squish/core.pyx":206
+/* "squish/core.pyx":210
  *     return _Vector2D(-self.x, -self.y)
  * 
  * cdef inline Vector2D v_vadd_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3361,7 +3423,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_neg_
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vadd_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_w) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":207
+  /* "squish/core.pyx":211
  * 
  * cdef inline Vector2D v_vadd_c(Vector2D* self, Vector2D w) nogil:
  *     return _Vector2D(self.x + w.x, self.y + w.y)             # <<<<<<<<<<<<<<
@@ -3371,7 +3433,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vadd
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x + __pyx_v_w.x), (__pyx_v_self->y + __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":206
+  /* "squish/core.pyx":210
  *     return _Vector2D(-self.x, -self.y)
  * 
  * cdef inline Vector2D v_vadd_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3384,7 +3446,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vadd
   return __pyx_r;
 }
 
-/* "squish/core.pyx":209
+/* "squish/core.pyx":213
  *     return _Vector2D(self.x + w.x, self.y + w.y)
  * 
  * cdef inline Vector2D v_vsub_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3395,7 +3457,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vadd
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vsub_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_w) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":210
+  /* "squish/core.pyx":214
  * 
  * cdef inline Vector2D v_vsub_c(Vector2D* self, Vector2D w) nogil:
  *     return _Vector2D(self.x - w.x, self.y - w.y)             # <<<<<<<<<<<<<<
@@ -3405,7 +3467,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vsub
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x - __pyx_v_w.x), (__pyx_v_self->y - __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":209
+  /* "squish/core.pyx":213
  *     return _Vector2D(self.x + w.x, self.y + w.y)
  * 
  * cdef inline Vector2D v_vsub_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3418,7 +3480,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vsub
   return __pyx_r;
 }
 
-/* "squish/core.pyx":212
+/* "squish/core.pyx":216
  *     return _Vector2D(self.x - w.x, self.y - w.y)
  * 
  * cdef inline Vector2D v_vmul_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3429,7 +3491,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vsub
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vmul_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_w) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":213
+  /* "squish/core.pyx":217
  * 
  * cdef inline Vector2D v_vmul_c(Vector2D* self, Vector2D w) nogil:
  *     return _Vector2D(self.x * w.x, self.y * w.y)             # <<<<<<<<<<<<<<
@@ -3439,7 +3501,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vmul
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x * __pyx_v_w.x), (__pyx_v_self->y * __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":212
+  /* "squish/core.pyx":216
  *     return _Vector2D(self.x - w.x, self.y - w.y)
  * 
  * cdef inline Vector2D v_vmul_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3452,7 +3514,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vmul
   return __pyx_r;
 }
 
-/* "squish/core.pyx":215
+/* "squish/core.pyx":219
  *     return _Vector2D(self.x * w.x, self.y * w.y)
  * 
  * cdef inline Vector2D v_vdiv_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3463,7 +3525,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vmul
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vdiv_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_w) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":216
+  /* "squish/core.pyx":220
  * 
  * cdef inline Vector2D v_vdiv_c(Vector2D* self, Vector2D w) nogil:
  *     return _Vector2D(self.x / w.x, self.y / w.y)             # <<<<<<<<<<<<<<
@@ -3473,7 +3535,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vdiv
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x / __pyx_v_w.x), (__pyx_v_self->y / __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":215
+  /* "squish/core.pyx":219
  *     return _Vector2D(self.x * w.x, self.y * w.y)
  * 
  * cdef inline Vector2D v_vdiv_c(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3486,7 +3548,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vdiv
   return __pyx_r;
 }
 
-/* "squish/core.pyx":218
+/* "squish/core.pyx":222
  *     return _Vector2D(self.x / w.x, self.y / w.y)
  * 
  * cdef inline Vector2D v_sadd_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3497,7 +3559,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_vdiv
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sadd_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":219
+  /* "squish/core.pyx":223
  * 
  * cdef inline Vector2D v_sadd_c(Vector2D* self, FLOAT_T s) nogil:
  *     return _Vector2D(self.x + s, self.y + s)             # <<<<<<<<<<<<<<
@@ -3507,7 +3569,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sadd
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x + __pyx_v_s), (__pyx_v_self->y + __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":218
+  /* "squish/core.pyx":222
  *     return _Vector2D(self.x / w.x, self.y / w.y)
  * 
  * cdef inline Vector2D v_sadd_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3520,7 +3582,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sadd
   return __pyx_r;
 }
 
-/* "squish/core.pyx":221
+/* "squish/core.pyx":225
  *     return _Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_ssub_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3531,7 +3593,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sadd
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_ssub_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":222
+  /* "squish/core.pyx":226
  * 
  * cdef inline Vector2D v_ssub_c(Vector2D* self, FLOAT_T s) nogil:
  *     return _Vector2D(self.x + s, self.y + s)             # <<<<<<<<<<<<<<
@@ -3541,7 +3603,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_ssub
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x + __pyx_v_s), (__pyx_v_self->y + __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":221
+  /* "squish/core.pyx":225
  *     return _Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_ssub_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3554,7 +3616,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_ssub
   return __pyx_r;
 }
 
-/* "squish/core.pyx":224
+/* "squish/core.pyx":228
  *     return _Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_smul_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3565,7 +3627,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_ssub
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_smul_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":225
+  /* "squish/core.pyx":229
  * 
  * cdef inline Vector2D v_smul_c(Vector2D* self, FLOAT_T s) nogil:
  *     return _Vector2D(self.x * s, self.y * s)             # <<<<<<<<<<<<<<
@@ -3575,7 +3637,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_smul
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x * __pyx_v_s), (__pyx_v_self->y * __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":224
+  /* "squish/core.pyx":228
  *     return _Vector2D(self.x + s, self.y + s)
  * 
  * cdef inline Vector2D v_smul_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3588,7 +3650,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_smul
   return __pyx_r;
 }
 
-/* "squish/core.pyx":227
+/* "squish/core.pyx":231
  *     return _Vector2D(self.x * s, self.y * s)
  * 
  * cdef inline Vector2D v_sdiv_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3599,7 +3661,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_smul
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sdiv_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":228
+  /* "squish/core.pyx":232
  * 
  * cdef inline Vector2D v_sdiv_c(Vector2D* self, FLOAT_T s) nogil:
  *     return _Vector2D(self.x / s, self.y / s)             # <<<<<<<<<<<<<<
@@ -3609,7 +3671,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sdiv
   __pyx_r = __pyx_f_6squish_4core__Vector2D((__pyx_v_self->x / __pyx_v_s), (__pyx_v_self->y / __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":227
+  /* "squish/core.pyx":231
  *     return _Vector2D(self.x * s, self.y * s)
  * 
  * cdef inline Vector2D v_sdiv_c(Vector2D* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -3622,7 +3684,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sdiv
   return __pyx_r;
 }
 
-/* "squish/core.pyx":230
+/* "squish/core.pyx":234
  *     return _Vector2D(self.x / s, self.y / s)
  * 
  * cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -3633,7 +3695,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_sdiv
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_matmul_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":231
+  /* "squish/core.pyx":235
  * 
  * cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:
  *     return _Vector2D(             # <<<<<<<<<<<<<<
@@ -3643,7 +3705,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_matm
   __pyx_r = __pyx_f_6squish_4core__Vector2D(((__pyx_v_self->x * __pyx_v_m.a) + (__pyx_v_self->y * __pyx_v_m.c)), ((__pyx_v_self->x * __pyx_v_m.b) + (__pyx_v_self->y * __pyx_v_m.d)));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":230
+  /* "squish/core.pyx":234
  *     return _Vector2D(self.x / s, self.y / s)
  * 
  * cdef inline Vector2D v_matmul_c(Vector2D* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -3656,20 +3718,20 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_v_matm
   return __pyx_r;
 }
 
-/* "squish/core.pyx":235
+/* "squish/core.pyx":239
  *     )
  * 
- * cdef inline Vector2D rot(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
+ * cdef inline Vector2D rot_c(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
  *     return _Vector2D(-self.y, self.x)
  * 
  */
 
-static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot(__pyx_t_6squish_4core_Vector2D *__pyx_v_self) {
+static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot_c(__pyx_t_6squish_4core_Vector2D *__pyx_v_self) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":236
+  /* "squish/core.pyx":240
  * 
- * cdef inline Vector2D rot(Vector2D* self) nogil:
+ * cdef inline Vector2D rot_c(Vector2D* self) nogil:
  *     return _Vector2D(-self.y, self.x)             # <<<<<<<<<<<<<<
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:
@@ -3677,10 +3739,10 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot(__
   __pyx_r = __pyx_f_6squish_4core__Vector2D((-__pyx_v_self->y), __pyx_v_self->x);
   goto __pyx_L0;
 
-  /* "squish/core.pyx":235
+  /* "squish/core.pyx":239
  *     )
  * 
- * cdef inline Vector2D rot(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
+ * cdef inline Vector2D rot_c(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
  *     return _Vector2D(-self.y, self.x)
  * 
  */
@@ -3690,7 +3752,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot(__
   return __pyx_r;
 }
 
-/* "squish/core.pyx":238
+/* "squish/core.pyx":242
  *     return _Vector2D(-self.y, self.x)
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3701,7 +3763,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_rot(__
 static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_dot(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_w) {
   __pyx_t_6squish_4core_FLOAT_T __pyx_r;
 
-  /* "squish/core.pyx":239
+  /* "squish/core.pyx":243
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:
  *     return self.x*w.x + self.y*w.y             # <<<<<<<<<<<<<<
@@ -3711,7 +3773,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_dot(__p
   __pyx_r = ((__pyx_v_self->x * __pyx_v_w.x) + (__pyx_v_self->y * __pyx_v_w.y));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":238
+  /* "squish/core.pyx":242
  *     return _Vector2D(-self.y, self.x)
  * 
  * cdef inline FLOAT_T dot(Vector2D* self, Vector2D w) nogil:             # <<<<<<<<<<<<<<
@@ -3724,7 +3786,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_dot(__p
   return __pyx_r;
 }
 
-/* "squish/core.pyx":241
+/* "squish/core.pyx":245
  *     return self.x*w.x + self.y*w.y
  * 
  * cdef inline FLOAT_T mag(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -3735,17 +3797,17 @@ static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_dot(__p
 static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_mag(__pyx_t_6squish_4core_Vector2D *__pyx_v_self) {
   __pyx_t_6squish_4core_FLOAT_T __pyx_r;
 
-  /* "squish/core.pyx":242
+  /* "squish/core.pyx":246
  * 
  * cdef inline FLOAT_T mag(Vector2D* self) nogil:
  *     return <FLOAT_T>sqrt(<double>(self.x*self.x + self.y*self.y))             # <<<<<<<<<<<<<<
  * 
- * 
+ * cdef inline Matrix2x2 v_vecmul(Vector2D* self, Vector2D v) nogil:
  */
   __pyx_r = ((__pyx_t_6squish_4core_FLOAT_T)sqrt(((double)((__pyx_v_self->x * __pyx_v_self->x) + (__pyx_v_self->y * __pyx_v_self->y)))));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":241
+  /* "squish/core.pyx":245
  *     return self.x*w.x + self.y*w.y
  * 
  * cdef inline FLOAT_T mag(Vector2D* self) nogil:             # <<<<<<<<<<<<<<
@@ -3758,7 +3820,41 @@ static CYTHON_INLINE __pyx_t_6squish_4core_FLOAT_T __pyx_f_6squish_4core_mag(__p
   return __pyx_r;
 }
 
-/* "squish/core.pyx":247
+/* "squish/core.pyx":248
+ *     return <FLOAT_T>sqrt(<double>(self.x*self.x + self.y*self.y))
+ * 
+ * cdef inline Matrix2x2 v_vecmul(Vector2D* self, Vector2D v) nogil:             # <<<<<<<<<<<<<<
+ *     return _Matrix2x2(self.x*v.x, self.x*v.y, self.y*v.x, self.y*v.y)
+ * 
+ */
+
+static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_v_vecmul(__pyx_t_6squish_4core_Vector2D *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_v) {
+  __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
+
+  /* "squish/core.pyx":249
+ * 
+ * cdef inline Matrix2x2 v_vecmul(Vector2D* self, Vector2D v) nogil:
+ *     return _Matrix2x2(self.x*v.x, self.x*v.y, self.y*v.x, self.y*v.y)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->x * __pyx_v_v.x), (__pyx_v_self->x * __pyx_v_v.y), (__pyx_v_self->y * __pyx_v_v.x), (__pyx_v_self->y * __pyx_v_v.y));
+  goto __pyx_L0;
+
+  /* "squish/core.pyx":248
+ *     return <FLOAT_T>sqrt(<double>(self.x*self.x + self.y*self.y))
+ * 
+ * cdef inline Matrix2x2 v_vecmul(Vector2D* self, Vector2D v) nogil:             # <<<<<<<<<<<<<<
+ *     return _Matrix2x2(self.x*v.x, self.x*v.y, self.y*v.x, self.y*v.y)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  return __pyx_r;
+}
+
+/* "squish/core.pyx":254
  * #### Matrix2x2 Methods ####
  * 
  * cdef inline Matrix2x2 _Matrix2x2(FLOAT_T a, FLOAT_T b, FLOAT_T c, FLOAT_T d) nogil:             # <<<<<<<<<<<<<<
@@ -3778,7 +3874,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core__Matr
   int (*__pyx_t_7)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
   __pyx_t_6squish_4core_Vector2D (*__pyx_t_8)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Vector2D);
 
-  /* "squish/core.pyx":249
+  /* "squish/core.pyx":256
  * cdef inline Matrix2x2 _Matrix2x2(FLOAT_T a, FLOAT_T b, FLOAT_T c, FLOAT_T d) nogil:
  *     cdef Matrix2x2 matrix
  *     matrix.a, matrix.b, matrix.c, matrix.d = a, b, c, d             # <<<<<<<<<<<<<<
@@ -3794,7 +3890,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core__Matr
   __pyx_v_matrix.c = __pyx_t_3;
   __pyx_v_matrix.d = __pyx_t_4;
 
-  /* "squish/core.pyx":250
+  /* "squish/core.pyx":257
  *     cdef Matrix2x2 matrix
  *     matrix.a, matrix.b, matrix.c, matrix.d = a, b, c, d
  *     matrix.self, matrix.copy = MSO, MCO             # <<<<<<<<<<<<<<
@@ -3806,7 +3902,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core__Matr
   __pyx_v_matrix.self = __pyx_t_5;
   __pyx_v_matrix.copy = __pyx_t_6;
 
-  /* "squish/core.pyx":252
+  /* "squish/core.pyx":259
  *     matrix.self, matrix.copy = MSO, MCO
  * 
  *     matrix.equals, matrix.vecmul = &m_equals, &m_vecmul             # <<<<<<<<<<<<<<
@@ -3818,7 +3914,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core__Matr
   __pyx_v_matrix.equals = __pyx_t_7;
   __pyx_v_matrix.vecmul = __pyx_t_8;
 
-  /* "squish/core.pyx":254
+  /* "squish/core.pyx":261
  *     matrix.equals, matrix.vecmul = &m_equals, &m_vecmul
  * 
  *     return matrix             # <<<<<<<<<<<<<<
@@ -3828,7 +3924,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core__Matr
   __pyx_r = __pyx_v_matrix;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":247
+  /* "squish/core.pyx":254
  * #### Matrix2x2 Methods ####
  * 
  * cdef inline Matrix2x2 _Matrix2x2(FLOAT_T a, FLOAT_T b, FLOAT_T c, FLOAT_T d) nogil:             # <<<<<<<<<<<<<<
@@ -3841,7 +3937,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core__Matr
   return __pyx_r;
 }
 
-/* "squish/core.pyx":256
+/* "squish/core.pyx":263
  *     return matrix
  * 
  * cdef inline bint m_equals(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -3854,7 +3950,7 @@ static CYTHON_INLINE int __pyx_f_6squish_4core_m_equals(__pyx_t_6squish_4core_Ma
   int __pyx_t_1;
   int __pyx_t_2;
 
-  /* "squish/core.pyx":258
+  /* "squish/core.pyx":265
  * cdef inline bint m_equals(Matrix2x2* self, Matrix2x2 m) nogil:
  *     return (
  *         (self.a == m.a) and (self.b == m.b) and (self.c == m.c) and (self.d == m.d)             # <<<<<<<<<<<<<<
@@ -3885,7 +3981,7 @@ static CYTHON_INLINE int __pyx_f_6squish_4core_m_equals(__pyx_t_6squish_4core_Ma
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":256
+  /* "squish/core.pyx":263
  *     return matrix
  * 
  * cdef inline bint m_equals(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -3898,7 +3994,7 @@ static CYTHON_INLINE int __pyx_f_6squish_4core_m_equals(__pyx_t_6squish_4core_Ma
   return __pyx_r;
 }
 
-/* "squish/core.pyx":261
+/* "squish/core.pyx":268
  *     )
  * 
  * cdef inline Vector2D m_vecmul(Matrix2x2* self, Vector2D v) nogil:             # <<<<<<<<<<<<<<
@@ -3909,7 +4005,7 @@ static CYTHON_INLINE int __pyx_f_6squish_4core_m_equals(__pyx_t_6squish_4core_Ma
 static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_m_vecmul(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Vector2D __pyx_v_v) {
   __pyx_t_6squish_4core_Vector2D __pyx_r;
 
-  /* "squish/core.pyx":262
+  /* "squish/core.pyx":269
  * 
  * cdef inline Vector2D m_vecmul(Matrix2x2* self, Vector2D v) nogil:
  *     return _Vector2D(             # <<<<<<<<<<<<<<
@@ -3919,7 +4015,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_m_vecm
   __pyx_r = __pyx_f_6squish_4core__Vector2D(((__pyx_v_self->a * __pyx_v_v.x) + (__pyx_v_self->b * __pyx_v_v.y)), ((__pyx_v_self->c * __pyx_v_v.x) + (__pyx_v_self->d * __pyx_v_v.y)));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":261
+  /* "squish/core.pyx":268
  *     )
  * 
  * cdef inline Vector2D m_vecmul(Matrix2x2* self, Vector2D v) nogil:             # <<<<<<<<<<<<<<
@@ -3932,7 +4028,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Vector2D __pyx_f_6squish_4core_m_vecm
   return __pyx_r;
 }
 
-/* "squish/core.pyx":266
+/* "squish/core.pyx":273
  *     )
  * 
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -3947,7 +4043,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ne
   __pyx_t_6squish_4core_FLOAT_T __pyx_t_3;
   __pyx_t_6squish_4core_FLOAT_T __pyx_t_4;
 
-  /* "squish/core.pyx":267
+  /* "squish/core.pyx":274
  * 
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:
  *     self.a, self.b, self.c, self.d = -self.a, -self.b, -self.c, -self.d             # <<<<<<<<<<<<<<
@@ -3963,7 +4059,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ne
   __pyx_v_self->c = __pyx_t_3;
   __pyx_v_self->d = __pyx_t_4;
 
-  /* "squish/core.pyx":268
+  /* "squish/core.pyx":275
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:
  *     self.a, self.b, self.c, self.d = -self.a, -self.b, -self.c, -self.d
  *     return self             # <<<<<<<<<<<<<<
@@ -3973,7 +4069,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ne
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":266
+  /* "squish/core.pyx":273
  *     )
  * 
  * cdef inline Matrix2x2* m_neg_s(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -3986,7 +4082,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ne
   return __pyx_r;
 }
 
-/* "squish/core.pyx":270
+/* "squish/core.pyx":277
  *     return self
  * 
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -3997,7 +4093,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ne
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_madd_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":271
+  /* "squish/core.pyx":278
  * 
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a += m.a             # <<<<<<<<<<<<<<
@@ -4006,7 +4102,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
  */
   __pyx_v_self->a = (__pyx_v_self->a + __pyx_v_m.a);
 
-  /* "squish/core.pyx":272
+  /* "squish/core.pyx":279
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a += m.a
  *     self.b += m.b             # <<<<<<<<<<<<<<
@@ -4015,7 +4111,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
  */
   __pyx_v_self->b = (__pyx_v_self->b + __pyx_v_m.b);
 
-  /* "squish/core.pyx":273
+  /* "squish/core.pyx":280
  *     self.a += m.a
  *     self.b += m.b
  *     self.c += m.c             # <<<<<<<<<<<<<<
@@ -4024,7 +4120,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
  */
   __pyx_v_self->c = (__pyx_v_self->c + __pyx_v_m.c);
 
-  /* "squish/core.pyx":274
+  /* "squish/core.pyx":281
  *     self.b += m.b
  *     self.c += m.c
  *     self.d += m.d             # <<<<<<<<<<<<<<
@@ -4033,7 +4129,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
  */
   __pyx_v_self->d = (__pyx_v_self->d + __pyx_v_m.d);
 
-  /* "squish/core.pyx":275
+  /* "squish/core.pyx":282
  *     self.c += m.c
  *     self.d += m.d
  *     return self             # <<<<<<<<<<<<<<
@@ -4043,7 +4139,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":270
+  /* "squish/core.pyx":277
  *     return self
  * 
  * cdef inline Matrix2x2* m_madd_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4056,7 +4152,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   return __pyx_r;
 }
 
-/* "squish/core.pyx":277
+/* "squish/core.pyx":284
  *     return self
  * 
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4067,7 +4163,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_msub_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":278
+  /* "squish/core.pyx":285
  * 
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a -= m.a             # <<<<<<<<<<<<<<
@@ -4076,7 +4172,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
  */
   __pyx_v_self->a = (__pyx_v_self->a - __pyx_v_m.a);
 
-  /* "squish/core.pyx":279
+  /* "squish/core.pyx":286
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a -= m.a
  *     self.b -= m.b             # <<<<<<<<<<<<<<
@@ -4085,7 +4181,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
  */
   __pyx_v_self->b = (__pyx_v_self->b - __pyx_v_m.b);
 
-  /* "squish/core.pyx":280
+  /* "squish/core.pyx":287
  *     self.a -= m.a
  *     self.b -= m.b
  *     self.c -= m.c             # <<<<<<<<<<<<<<
@@ -4094,7 +4190,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
  */
   __pyx_v_self->c = (__pyx_v_self->c - __pyx_v_m.c);
 
-  /* "squish/core.pyx":281
+  /* "squish/core.pyx":288
  *     self.b -= m.b
  *     self.c -= m.c
  *     self.d -= m.d             # <<<<<<<<<<<<<<
@@ -4103,7 +4199,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
  */
   __pyx_v_self->d = (__pyx_v_self->d - __pyx_v_m.d);
 
-  /* "squish/core.pyx":282
+  /* "squish/core.pyx":289
  *     self.c -= m.c
  *     self.d -= m.d
  *     return self             # <<<<<<<<<<<<<<
@@ -4113,7 +4209,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":277
+  /* "squish/core.pyx":284
  *     return self
  * 
  * cdef inline Matrix2x2* m_msub_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4126,7 +4222,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
   return __pyx_r;
 }
 
-/* "squish/core.pyx":284
+/* "squish/core.pyx":291
  *     return self
  * 
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4137,7 +4233,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ms
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mmul_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":285
+  /* "squish/core.pyx":292
  * 
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a *= m.a             # <<<<<<<<<<<<<<
@@ -4146,7 +4242,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
  */
   __pyx_v_self->a = (__pyx_v_self->a * __pyx_v_m.a);
 
-  /* "squish/core.pyx":286
+  /* "squish/core.pyx":293
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a *= m.a
  *     self.b *= m.b             # <<<<<<<<<<<<<<
@@ -4155,7 +4251,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
  */
   __pyx_v_self->b = (__pyx_v_self->b * __pyx_v_m.b);
 
-  /* "squish/core.pyx":287
+  /* "squish/core.pyx":294
  *     self.a *= m.a
  *     self.b *= m.b
  *     self.c *= m.c             # <<<<<<<<<<<<<<
@@ -4164,7 +4260,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
  */
   __pyx_v_self->c = (__pyx_v_self->c * __pyx_v_m.c);
 
-  /* "squish/core.pyx":288
+  /* "squish/core.pyx":295
  *     self.b *= m.b
  *     self.c *= m.c
  *     self.d *= m.d             # <<<<<<<<<<<<<<
@@ -4173,7 +4269,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
  */
   __pyx_v_self->d = (__pyx_v_self->d * __pyx_v_m.d);
 
-  /* "squish/core.pyx":289
+  /* "squish/core.pyx":296
  *     self.c *= m.c
  *     self.d *= m.d
  *     return self             # <<<<<<<<<<<<<<
@@ -4183,7 +4279,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":284
+  /* "squish/core.pyx":291
  *     return self
  * 
  * cdef inline Matrix2x2* m_mmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4196,7 +4292,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
   return __pyx_r;
 }
 
-/* "squish/core.pyx":291
+/* "squish/core.pyx":298
  *     return self
  * 
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4207,7 +4303,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mm
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_mdiv_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":292
+  /* "squish/core.pyx":299
  * 
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a /= m.a             # <<<<<<<<<<<<<<
@@ -4216,7 +4312,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
  */
   __pyx_v_self->a = (__pyx_v_self->a / __pyx_v_m.a);
 
-  /* "squish/core.pyx":293
+  /* "squish/core.pyx":300
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a /= m.a
  *     self.b /= m.b             # <<<<<<<<<<<<<<
@@ -4225,7 +4321,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
  */
   __pyx_v_self->b = (__pyx_v_self->b / __pyx_v_m.b);
 
-  /* "squish/core.pyx":294
+  /* "squish/core.pyx":301
  *     self.a /= m.a
  *     self.b /= m.b
  *     self.c /= m.c             # <<<<<<<<<<<<<<
@@ -4234,7 +4330,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
  */
   __pyx_v_self->c = (__pyx_v_self->c / __pyx_v_m.c);
 
-  /* "squish/core.pyx":295
+  /* "squish/core.pyx":302
  *     self.b /= m.b
  *     self.c /= m.c
  *     self.d /= m.d             # <<<<<<<<<<<<<<
@@ -4243,7 +4339,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
  */
   __pyx_v_self->d = (__pyx_v_self->d / __pyx_v_m.d);
 
-  /* "squish/core.pyx":296
+  /* "squish/core.pyx":303
  *     self.c /= m.c
  *     self.d /= m.d
  *     return self             # <<<<<<<<<<<<<<
@@ -4253,7 +4349,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":291
+  /* "squish/core.pyx":298
  *     return self
  * 
  * cdef inline Matrix2x2* m_mdiv_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4266,7 +4362,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
   return __pyx_r;
 }
 
-/* "squish/core.pyx":298
+/* "squish/core.pyx":305
  *     return self
  * 
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4277,7 +4373,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_md
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sadd_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":299
+  /* "squish/core.pyx":306
  * 
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a += s             # <<<<<<<<<<<<<<
@@ -4286,7 +4382,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
  */
   __pyx_v_self->a = (__pyx_v_self->a + __pyx_v_s);
 
-  /* "squish/core.pyx":300
+  /* "squish/core.pyx":307
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a += s
  *     self.b += s             # <<<<<<<<<<<<<<
@@ -4295,7 +4391,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
  */
   __pyx_v_self->b = (__pyx_v_self->b + __pyx_v_s);
 
-  /* "squish/core.pyx":301
+  /* "squish/core.pyx":308
  *     self.a += s
  *     self.b += s
  *     self.c += s             # <<<<<<<<<<<<<<
@@ -4304,7 +4400,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
  */
   __pyx_v_self->c = (__pyx_v_self->c + __pyx_v_s);
 
-  /* "squish/core.pyx":302
+  /* "squish/core.pyx":309
  *     self.b += s
  *     self.c += s
  *     self.d += s             # <<<<<<<<<<<<<<
@@ -4313,7 +4409,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
  */
   __pyx_v_self->d = (__pyx_v_self->d + __pyx_v_s);
 
-  /* "squish/core.pyx":303
+  /* "squish/core.pyx":310
  *     self.c += s
  *     self.d += s
  *     return self             # <<<<<<<<<<<<<<
@@ -4323,7 +4419,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":298
+  /* "squish/core.pyx":305
  *     return self
  * 
  * cdef inline Matrix2x2* m_sadd_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4336,7 +4432,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
   return __pyx_r;
 }
 
-/* "squish/core.pyx":305
+/* "squish/core.pyx":312
  *     return self
  * 
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4347,7 +4443,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sa
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ssub_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":306
+  /* "squish/core.pyx":313
  * 
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a -= s             # <<<<<<<<<<<<<<
@@ -4356,7 +4452,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
  */
   __pyx_v_self->a = (__pyx_v_self->a - __pyx_v_s);
 
-  /* "squish/core.pyx":307
+  /* "squish/core.pyx":314
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a -= s
  *     self.b -= s             # <<<<<<<<<<<<<<
@@ -4365,7 +4461,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
  */
   __pyx_v_self->b = (__pyx_v_self->b - __pyx_v_s);
 
-  /* "squish/core.pyx":308
+  /* "squish/core.pyx":315
  *     self.a -= s
  *     self.b -= s
  *     self.c -= s             # <<<<<<<<<<<<<<
@@ -4374,7 +4470,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
  */
   __pyx_v_self->c = (__pyx_v_self->c - __pyx_v_s);
 
-  /* "squish/core.pyx":309
+  /* "squish/core.pyx":316
  *     self.b -= s
  *     self.c -= s
  *     self.d -= s             # <<<<<<<<<<<<<<
@@ -4383,7 +4479,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
  */
   __pyx_v_self->d = (__pyx_v_self->d - __pyx_v_s);
 
-  /* "squish/core.pyx":310
+  /* "squish/core.pyx":317
  *     self.c -= s
  *     self.d -= s
  *     return self             # <<<<<<<<<<<<<<
@@ -4393,7 +4489,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":305
+  /* "squish/core.pyx":312
  *     return self
  * 
  * cdef inline Matrix2x2* m_ssub_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4406,7 +4502,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
   return __pyx_r;
 }
 
-/* "squish/core.pyx":312
+/* "squish/core.pyx":319
  *     return self
  * 
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4417,7 +4513,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ss
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_smul_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":313
+  /* "squish/core.pyx":320
  * 
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a *= s             # <<<<<<<<<<<<<<
@@ -4426,7 +4522,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
  */
   __pyx_v_self->a = (__pyx_v_self->a * __pyx_v_s);
 
-  /* "squish/core.pyx":314
+  /* "squish/core.pyx":321
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a *= s
  *     self.b *= s             # <<<<<<<<<<<<<<
@@ -4435,7 +4531,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
  */
   __pyx_v_self->b = (__pyx_v_self->b * __pyx_v_s);
 
-  /* "squish/core.pyx":315
+  /* "squish/core.pyx":322
  *     self.a *= s
  *     self.b *= s
  *     self.c *= s             # <<<<<<<<<<<<<<
@@ -4444,7 +4540,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
  */
   __pyx_v_self->c = (__pyx_v_self->c * __pyx_v_s);
 
-  /* "squish/core.pyx":316
+  /* "squish/core.pyx":323
  *     self.b *= s
  *     self.c *= s
  *     self.d *= s             # <<<<<<<<<<<<<<
@@ -4453,7 +4549,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
  */
   __pyx_v_self->d = (__pyx_v_self->d * __pyx_v_s);
 
-  /* "squish/core.pyx":317
+  /* "squish/core.pyx":324
  *     self.c *= s
  *     self.d *= s
  *     return self             # <<<<<<<<<<<<<<
@@ -4463,7 +4559,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":312
+  /* "squish/core.pyx":319
  *     return self
  * 
  * cdef inline Matrix2x2* m_smul_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4476,7 +4572,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
   return __pyx_r;
 }
 
-/* "squish/core.pyx":319
+/* "squish/core.pyx":326
  *     return self
  * 
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4487,7 +4583,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sm
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sdiv_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
 
-  /* "squish/core.pyx":320
+  /* "squish/core.pyx":327
  * 
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a /= s             # <<<<<<<<<<<<<<
@@ -4496,7 +4592,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sd
  */
   __pyx_v_self->a = (__pyx_v_self->a / __pyx_v_s);
 
-  /* "squish/core.pyx":321
+  /* "squish/core.pyx":328
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:
  *     self.a /= s
  *     self.b /= s             # <<<<<<<<<<<<<<
@@ -4505,7 +4601,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sd
  */
   __pyx_v_self->b = (__pyx_v_self->b / __pyx_v_s);
 
-  /* "squish/core.pyx":322
+  /* "squish/core.pyx":329
  *     self.a /= s
  *     self.b /= s
  *     self.c /= s             # <<<<<<<<<<<<<<
@@ -4514,7 +4610,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sd
  */
   __pyx_v_self->c = (__pyx_v_self->c / __pyx_v_s);
 
-  /* "squish/core.pyx":323
+  /* "squish/core.pyx":330
  *     self.b /= s
  *     self.c /= s
  *     self.d /= s             # <<<<<<<<<<<<<<
@@ -4523,7 +4619,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sd
  */
   __pyx_v_self->d = (__pyx_v_self->d / __pyx_v_s);
 
-  /* "squish/core.pyx":324
+  /* "squish/core.pyx":331
  *     self.c /= s
  *     self.d /= s
  *     return self             # <<<<<<<<<<<<<<
@@ -4533,7 +4629,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sd
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":319
+  /* "squish/core.pyx":326
  *     return self
  * 
  * cdef inline Matrix2x2* m_sdiv_s(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4546,7 +4642,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_sd
   return __pyx_r;
 }
 
-/* "squish/core.pyx":326
+/* "squish/core.pyx":333
  *     return self
  * 
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4561,7 +4657,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   __pyx_t_6squish_4core_FLOAT_T __pyx_t_3;
   __pyx_t_6squish_4core_FLOAT_T __pyx_t_4;
 
-  /* "squish/core.pyx":328
+  /* "squish/core.pyx":335
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a, self.b, self.c, self.d = \
  *         self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d, \             # <<<<<<<<<<<<<<
@@ -4571,7 +4667,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   __pyx_t_1 = ((__pyx_v_self->a * __pyx_v_m.a) + (__pyx_v_self->b * __pyx_v_m.c));
   __pyx_t_2 = ((__pyx_v_self->a * __pyx_v_m.b) + (__pyx_v_self->b * __pyx_v_m.d));
 
-  /* "squish/core.pyx":329
+  /* "squish/core.pyx":336
  *     self.a, self.b, self.c, self.d = \
  *         self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d, \
  *         self.c*m.a + self.d*m.c, self.c*m.b + self.d*m.d             # <<<<<<<<<<<<<<
@@ -4581,7 +4677,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   __pyx_t_3 = ((__pyx_v_self->c * __pyx_v_m.a) + (__pyx_v_self->d * __pyx_v_m.c));
   __pyx_t_4 = ((__pyx_v_self->c * __pyx_v_m.b) + (__pyx_v_self->d * __pyx_v_m.d));
 
-  /* "squish/core.pyx":327
+  /* "squish/core.pyx":334
  * 
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:
  *     self.a, self.b, self.c, self.d = \             # <<<<<<<<<<<<<<
@@ -4593,17 +4689,17 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   __pyx_v_self->c = __pyx_t_3;
   __pyx_v_self->d = __pyx_t_4;
 
-  /* "squish/core.pyx":330
+  /* "squish/core.pyx":337
  *         self.a*m.a + self.b*m.c, self.a*m.b + self.b*m.d, \
  *         self.c*m.a + self.d*m.c, self.c*m.b + self.d*m.d
  *     return self             # <<<<<<<<<<<<<<
  * 
- * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:
+ * cdef inline Matrix2x2* m_transpose_s(Matrix2x2* self) nogil:
  */
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "squish/core.pyx":326
+  /* "squish/core.pyx":333
  *     return self
  * 
  * cdef inline Matrix2x2* m_matmul_s(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4616,7 +4712,55 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
   return __pyx_r;
 }
 
-/* "squish/core.pyx":332
+/* "squish/core.pyx":339
+ *     return self
+ * 
+ * cdef inline Matrix2x2* m_transpose_s(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
+ *     self.b, self.c = self.c, self.b
+ *     return self
+ */
+
+static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_transpose_s(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self) {
+  __pyx_t_6squish_4core_Matrix2x2 *__pyx_r;
+  __pyx_t_6squish_4core_FLOAT_T __pyx_t_1;
+  __pyx_t_6squish_4core_FLOAT_T __pyx_t_2;
+
+  /* "squish/core.pyx":340
+ * 
+ * cdef inline Matrix2x2* m_transpose_s(Matrix2x2* self) nogil:
+ *     self.b, self.c = self.c, self.b             # <<<<<<<<<<<<<<
+ *     return self
+ * 
+ */
+  __pyx_t_1 = __pyx_v_self->c;
+  __pyx_t_2 = __pyx_v_self->b;
+  __pyx_v_self->b = __pyx_t_1;
+  __pyx_v_self->c = __pyx_t_2;
+
+  /* "squish/core.pyx":341
+ * cdef inline Matrix2x2* m_transpose_s(Matrix2x2* self) nogil:
+ *     self.b, self.c = self.c, self.b
+ *     return self             # <<<<<<<<<<<<<<
+ * 
+ * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:
+ */
+  __pyx_r = __pyx_v_self;
+  goto __pyx_L0;
+
+  /* "squish/core.pyx":339
+ *     return self
+ * 
+ * cdef inline Matrix2x2* m_transpose_s(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
+ *     self.b, self.c = self.c, self.b
+ *     return self
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  return __pyx_r;
+}
+
+/* "squish/core.pyx":343
  *     return self
  * 
  * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -4627,7 +4771,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 *__pyx_f_6squish_4core_m_ma
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_neg_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":333
+  /* "squish/core.pyx":344
  * 
  * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:
  *     return _Matrix2x2(-self.a, -self.b, -self.c, -self.d)             # <<<<<<<<<<<<<<
@@ -4637,7 +4781,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_neg
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((-__pyx_v_self->a), (-__pyx_v_self->b), (-__pyx_v_self->c), (-__pyx_v_self->d));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":332
+  /* "squish/core.pyx":343
  *     return self
  * 
  * cdef inline Matrix2x2 m_neg_c(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
@@ -4650,7 +4794,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_neg
   return __pyx_r;
 }
 
-/* "squish/core.pyx":335
+/* "squish/core.pyx":346
  *     return _Matrix2x2(-self.a, -self.b, -self.c, -self.d)
  * 
  * cdef inline Matrix2x2 m_madd_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4661,7 +4805,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_neg
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_madd_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":336
+  /* "squish/core.pyx":347
  * 
  * cdef inline Matrix2x2 m_madd_c(Matrix2x2* self, Matrix2x2 m) nogil:
  *     return _Matrix2x2(self.a+m.a, self.b+m.b, self.c+m.c, self.d+m.d)             # <<<<<<<<<<<<<<
@@ -4671,7 +4815,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mad
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a + __pyx_v_m.a), (__pyx_v_self->b + __pyx_v_m.b), (__pyx_v_self->c + __pyx_v_m.c), (__pyx_v_self->d + __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":335
+  /* "squish/core.pyx":346
  *     return _Matrix2x2(-self.a, -self.b, -self.c, -self.d)
  * 
  * cdef inline Matrix2x2 m_madd_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4684,7 +4828,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mad
   return __pyx_r;
 }
 
-/* "squish/core.pyx":338
+/* "squish/core.pyx":349
  *     return _Matrix2x2(self.a+m.a, self.b+m.b, self.c+m.c, self.d+m.d)
  * 
  * cdef inline Matrix2x2 m_msub_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4695,7 +4839,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mad
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_msub_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":339
+  /* "squish/core.pyx":350
  * 
  * cdef inline Matrix2x2 m_msub_c(Matrix2x2* self, Matrix2x2 m) nogil:
  *     return _Matrix2x2(self.a-m.a, self.b-m.b, self.c-m.c, self.d-m.d)             # <<<<<<<<<<<<<<
@@ -4705,7 +4849,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_msu
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a - __pyx_v_m.a), (__pyx_v_self->b - __pyx_v_m.b), (__pyx_v_self->c - __pyx_v_m.c), (__pyx_v_self->d - __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":338
+  /* "squish/core.pyx":349
  *     return _Matrix2x2(self.a+m.a, self.b+m.b, self.c+m.c, self.d+m.d)
  * 
  * cdef inline Matrix2x2 m_msub_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4718,7 +4862,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_msu
   return __pyx_r;
 }
 
-/* "squish/core.pyx":341
+/* "squish/core.pyx":352
  *     return _Matrix2x2(self.a-m.a, self.b-m.b, self.c-m.c, self.d-m.d)
  * 
  * cdef inline Matrix2x2 m_mmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4729,7 +4873,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_msu
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mmul_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":342
+  /* "squish/core.pyx":353
  * 
  * cdef inline Matrix2x2 m_mmul_c(Matrix2x2* self, Matrix2x2 m) nogil:
  *     return _Matrix2x2(self.a*m.a, self.b*m.b, self.c*m.c, self.d*m.d)             # <<<<<<<<<<<<<<
@@ -4739,7 +4883,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mmu
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a * __pyx_v_m.a), (__pyx_v_self->b * __pyx_v_m.b), (__pyx_v_self->c * __pyx_v_m.c), (__pyx_v_self->d * __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":341
+  /* "squish/core.pyx":352
  *     return _Matrix2x2(self.a-m.a, self.b-m.b, self.c-m.c, self.d-m.d)
  * 
  * cdef inline Matrix2x2 m_mmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4752,7 +4896,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mmu
   return __pyx_r;
 }
 
-/* "squish/core.pyx":344
+/* "squish/core.pyx":355
  *     return _Matrix2x2(self.a*m.a, self.b*m.b, self.c*m.c, self.d*m.d)
  * 
  * cdef inline Matrix2x2 m_mdiv_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4763,7 +4907,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mmu
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mdiv_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":345
+  /* "squish/core.pyx":356
  * 
  * cdef inline Matrix2x2 m_mdiv_c(Matrix2x2* self, Matrix2x2 m) nogil:
  *     return _Matrix2x2(self.a/m.a, self.b/m.b, self.c/m.c, self.d/m.d)             # <<<<<<<<<<<<<<
@@ -4773,7 +4917,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mdi
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a / __pyx_v_m.a), (__pyx_v_self->b / __pyx_v_m.b), (__pyx_v_self->c / __pyx_v_m.c), (__pyx_v_self->d / __pyx_v_m.d));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":344
+  /* "squish/core.pyx":355
  *     return _Matrix2x2(self.a*m.a, self.b*m.b, self.c*m.c, self.d*m.d)
  * 
  * cdef inline Matrix2x2 m_mdiv_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4786,7 +4930,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mdi
   return __pyx_r;
 }
 
-/* "squish/core.pyx":347
+/* "squish/core.pyx":358
  *     return _Matrix2x2(self.a/m.a, self.b/m.b, self.c/m.c, self.d/m.d)
  * 
  * cdef inline Matrix2x2 m_sadd_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4797,7 +4941,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mdi
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sadd_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":348
+  /* "squish/core.pyx":359
  * 
  * cdef inline Matrix2x2 m_sadd_c(Matrix2x2* self, FLOAT_T s) nogil:
  *     return _Matrix2x2(self.a+s, self.b+s, self.c+s, self.d+s)             # <<<<<<<<<<<<<<
@@ -4807,7 +4951,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sad
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a + __pyx_v_s), (__pyx_v_self->b + __pyx_v_s), (__pyx_v_self->c + __pyx_v_s), (__pyx_v_self->d + __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":347
+  /* "squish/core.pyx":358
  *     return _Matrix2x2(self.a/m.a, self.b/m.b, self.c/m.c, self.d/m.d)
  * 
  * cdef inline Matrix2x2 m_sadd_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4820,7 +4964,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sad
   return __pyx_r;
 }
 
-/* "squish/core.pyx":350
+/* "squish/core.pyx":361
  *     return _Matrix2x2(self.a+s, self.b+s, self.c+s, self.d+s)
  * 
  * cdef inline Matrix2x2 m_ssub_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4831,7 +4975,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sad
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_ssub_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":351
+  /* "squish/core.pyx":362
  * 
  * cdef inline Matrix2x2 m_ssub_c(Matrix2x2* self, FLOAT_T s) nogil:
  *     return _Matrix2x2(self.a-s, self.b-s, self.c-s, self.d-s)             # <<<<<<<<<<<<<<
@@ -4841,7 +4985,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_ssu
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a - __pyx_v_s), (__pyx_v_self->b - __pyx_v_s), (__pyx_v_self->c - __pyx_v_s), (__pyx_v_self->d - __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":350
+  /* "squish/core.pyx":361
  *     return _Matrix2x2(self.a+s, self.b+s, self.c+s, self.d+s)
  * 
  * cdef inline Matrix2x2 m_ssub_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4854,7 +4998,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_ssu
   return __pyx_r;
 }
 
-/* "squish/core.pyx":353
+/* "squish/core.pyx":364
  *     return _Matrix2x2(self.a-s, self.b-s, self.c-s, self.d-s)
  * 
  * cdef inline Matrix2x2 m_smul_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4865,7 +5009,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_ssu
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_smul_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":354
+  /* "squish/core.pyx":365
  * 
  * cdef inline Matrix2x2 m_smul_c(Matrix2x2* self, FLOAT_T s) nogil:
  *     return _Matrix2x2(self.a*s, self.b*s, self.c*s, self.d*s)             # <<<<<<<<<<<<<<
@@ -4875,7 +5019,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_smu
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a * __pyx_v_s), (__pyx_v_self->b * __pyx_v_s), (__pyx_v_self->c * __pyx_v_s), (__pyx_v_self->d * __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":353
+  /* "squish/core.pyx":364
  *     return _Matrix2x2(self.a-s, self.b-s, self.c-s, self.d-s)
  * 
  * cdef inline Matrix2x2 m_smul_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4888,7 +5032,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_smu
   return __pyx_r;
 }
 
-/* "squish/core.pyx":356
+/* "squish/core.pyx":367
  *     return _Matrix2x2(self.a*s, self.b*s, self.c*s, self.d*s)
  * 
  * cdef inline Matrix2x2 m_sdiv_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4899,7 +5043,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_smu
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sdiv_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_FLOAT_T __pyx_v_s) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":357
+  /* "squish/core.pyx":368
  * 
  * cdef inline Matrix2x2 m_sdiv_c(Matrix2x2* self, FLOAT_T s) nogil:
  *     return _Matrix2x2(self.a/s, self.b/s, self.c/s, self.d/s)             # <<<<<<<<<<<<<<
@@ -4909,7 +5053,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sdi
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2((__pyx_v_self->a / __pyx_v_s), (__pyx_v_self->b / __pyx_v_s), (__pyx_v_self->c / __pyx_v_s), (__pyx_v_self->d / __pyx_v_s));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":356
+  /* "squish/core.pyx":367
  *     return _Matrix2x2(self.a*s, self.b*s, self.c*s, self.d*s)
  * 
  * cdef inline Matrix2x2 m_sdiv_c(Matrix2x2* self, FLOAT_T s) nogil:             # <<<<<<<<<<<<<<
@@ -4922,7 +5066,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sdi
   return __pyx_r;
 }
 
-/* "squish/core.pyx":359
+/* "squish/core.pyx":370
  *     return _Matrix2x2(self.a/s, self.b/s, self.c/s, self.d/s)
  * 
  * cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4933,7 +5077,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_sdi
 static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_matmul_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self, __pyx_t_6squish_4core_Matrix2x2 __pyx_v_m) {
   __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
 
-  /* "squish/core.pyx":360
+  /* "squish/core.pyx":371
  * 
  * cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:
  *     return _Matrix2x2(             # <<<<<<<<<<<<<<
@@ -4943,7 +5087,7 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mat
   __pyx_r = __pyx_f_6squish_4core__Matrix2x2(((__pyx_v_self->a * __pyx_v_m.a) + (__pyx_v_self->b * __pyx_v_m.c)), ((__pyx_v_self->a * __pyx_v_m.b) + (__pyx_v_self->b * __pyx_v_m.d)), ((__pyx_v_self->c * __pyx_v_m.a) + (__pyx_v_self->d * __pyx_v_m.c)), ((__pyx_v_self->c * __pyx_v_m.b) + (__pyx_v_self->d * __pyx_v_m.d)));
   goto __pyx_L0;
 
-  /* "squish/core.pyx":359
+  /* "squish/core.pyx":370
  *     return _Matrix2x2(self.a/s, self.b/s, self.c/s, self.d/s)
  * 
  * cdef inline Matrix2x2 m_matmul_c(Matrix2x2* self, Matrix2x2 m) nogil:             # <<<<<<<<<<<<<<
@@ -4956,7 +5100,37 @@ static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_mat
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":735
+/* "squish/core.pyx":376
+ *     )
+ * 
+ * cdef inline Matrix2x2 m_transpose_c(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
+ *     return _Matrix2x2(self.a, self.c, self.b, self.d)
+ */
+
+static CYTHON_INLINE __pyx_t_6squish_4core_Matrix2x2 __pyx_f_6squish_4core_m_transpose_c(__pyx_t_6squish_4core_Matrix2x2 *__pyx_v_self) {
+  __pyx_t_6squish_4core_Matrix2x2 __pyx_r;
+
+  /* "squish/core.pyx":377
+ * 
+ * cdef inline Matrix2x2 m_transpose_c(Matrix2x2* self) nogil:
+ *     return _Matrix2x2(self.a, self.c, self.b, self.d)             # <<<<<<<<<<<<<<
+ */
+  __pyx_r = __pyx_f_6squish_4core__Matrix2x2(__pyx_v_self->a, __pyx_v_self->c, __pyx_v_self->b, __pyx_v_self->d);
+  goto __pyx_L0;
+
+  /* "squish/core.pyx":376
+ *     )
+ * 
+ * cdef inline Matrix2x2 m_transpose_c(Matrix2x2* self) nogil:             # <<<<<<<<<<<<<<
+ *     return _Matrix2x2(self.a, self.c, self.b, self.d)
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  return __pyx_r;
+}
+
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4973,7 +5147,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":736
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":736
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -4987,7 +5161,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":735
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -5006,7 +5180,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":738
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -5023,7 +5197,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":739
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":739
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -5037,7 +5211,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":738
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -5056,7 +5230,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":741
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -5073,7 +5247,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":742
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":742
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -5087,7 +5261,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":741
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -5106,7 +5280,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":744
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -5123,7 +5297,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":745
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":745
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -5137,7 +5311,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":744
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -5156,7 +5330,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":747
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -5173,7 +5347,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":748
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":748
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -5187,7 +5361,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":747
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -5206,7 +5380,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":750
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -5220,7 +5394,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("PyDataType_SHAPE", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":751
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -5230,7 +5404,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   __pyx_t_1 = (PyDataType_HASSUBARRAY(__pyx_v_d) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":752
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":752
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):
  *         return <tuple>d.subarray.shape             # <<<<<<<<<<<<<<
@@ -5242,7 +5416,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     __pyx_r = ((PyObject*)__pyx_v_d->subarray->shape);
     goto __pyx_L0;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":751
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -5251,7 +5425,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
  */
   }
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":754
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":754
  *         return <tuple>d.subarray.shape
  *     else:
  *         return ()             # <<<<<<<<<<<<<<
@@ -5265,7 +5439,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     goto __pyx_L0;
   }
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":750
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -5280,7 +5454,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":929
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":929
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -5292,7 +5466,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":930
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":930
  * 
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!             # <<<<<<<<<<<<<<
@@ -5301,7 +5475,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_INCREF(__pyx_v_base);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":931
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":931
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!
  *     PyArray_SetBaseObject(arr, base)             # <<<<<<<<<<<<<<
@@ -5310,7 +5484,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   (void)(PyArray_SetBaseObject(__pyx_v_arr, __pyx_v_base));
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":929
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":929
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -5322,7 +5496,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":933
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":933
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -5337,7 +5511,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":934
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":934
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)             # <<<<<<<<<<<<<<
@@ -5346,7 +5520,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   __pyx_v_base = PyArray_BASE(__pyx_v_arr);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":935
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":935
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -5356,7 +5530,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":936
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":936
  *     base = PyArray_BASE(arr)
  *     if base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -5367,7 +5541,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":935
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":935
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -5376,7 +5550,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":937
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":937
  *     if base is NULL:
  *         return None
  *     return <object>base             # <<<<<<<<<<<<<<
@@ -5388,7 +5562,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_r = ((PyObject *)__pyx_v_base);
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":933
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":933
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -5403,7 +5577,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":941
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":941
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -5427,7 +5601,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_array", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":942
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5443,7 +5617,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":943
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":943
  * cdef inline int import_array() except -1:
  *     try:
  *         __pyx_import_array()             # <<<<<<<<<<<<<<
@@ -5452,7 +5626,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  */
       __pyx_t_4 = _import_array(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 943, __pyx_L3_error)
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":942
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5466,7 +5640,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":944
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":944
  *     try:
  *         __pyx_import_array()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -5481,7 +5655,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":945
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -5497,7 +5671,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":942
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5512,7 +5686,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":941
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":941
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -5535,7 +5709,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":947
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":947
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -5559,7 +5733,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_umath", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":948
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5575,7 +5749,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":949
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":949
  * cdef inline int import_umath() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -5584,7 +5758,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 949, __pyx_L3_error)
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":948
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5598,7 +5772,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":950
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":950
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -5613,7 +5787,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":951
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -5629,7 +5803,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":948
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5644,7 +5818,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":947
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":947
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -5667,7 +5841,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":953
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":953
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -5691,7 +5865,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_ufunc", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":954
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5707,7 +5881,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":955
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":955
  * cdef inline int import_ufunc() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -5716,7 +5890,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 955, __pyx_L3_error)
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":954
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5730,7 +5904,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":956
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":956
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -5745,7 +5919,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":957
+      /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":957
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -5761,7 +5935,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":954
+    /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5776,7 +5950,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":953
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":953
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -5799,7 +5973,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":967
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":967
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5812,7 +5986,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_timedelta64_object", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":979
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":979
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyTimedeltaArrType_Type)             # <<<<<<<<<<<<<<
@@ -5822,7 +5996,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyTimedeltaArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":967
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":967
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5836,7 +6010,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":982
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":982
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5849,7 +6023,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_datetime64_object", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":994
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":994
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyDatetimeArrType_Type)             # <<<<<<<<<<<<<<
@@ -5859,7 +6033,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyDatetimeArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":982
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":982
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5873,7 +6047,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":997
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":997
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5884,7 +6058,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
 static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *__pyx_v_obj) {
   npy_datetime __pyx_r;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1004
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1004
  *     also needed.  That can be found using `get_datetime64_unit`.
  *     """
  *     return (<PyDatetimeScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -5894,7 +6068,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   __pyx_r = ((PyDatetimeScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":997
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":997
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5907,7 +6081,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1007
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1007
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5918,7 +6092,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
 static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject *__pyx_v_obj) {
   npy_timedelta __pyx_r;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1011
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1011
  *     returns the int64 value underlying scalar numpy timedelta64 object
  *     """
  *     return (<PyTimedeltaScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -5928,7 +6102,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   __pyx_r = ((PyTimedeltaScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1007
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1007
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5941,7 +6115,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   return __pyx_r;
 }
 
-/* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1014
+/* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5952,7 +6126,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
 static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObject *__pyx_v_obj) {
   NPY_DATETIMEUNIT __pyx_r;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1018
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1018
  *     returns the unit part of the dtype for a numpy datetime64 object.
  *     """
  *     return <NPY_DATETIMEUNIT>(<PyDatetimeScalarObject*>obj).obmeta.base             # <<<<<<<<<<<<<<
@@ -5960,7 +6134,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   __pyx_r = ((NPY_DATETIMEUNIT)((PyDatetimeScalarObject *)__pyx_v_obj)->obmeta.base);
   goto __pyx_L0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1014
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -6043,7 +6217,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":945
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -6054,7 +6228,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":951
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -6308,34 +6482,42 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_core(PyObject *__pyx_pyinit_module
   __pyx_t_6squish_4core_Vector2D *(*__pyx_t_7)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
   __pyx_t_6squish_4core_Vector2D *(*__pyx_t_8)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
   __pyx_t_6squish_4core_Vector2D *(*__pyx_t_9)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Vector2D (*__pyx_t_10)(__pyx_t_6squish_4core_Vector2D *);
-  __pyx_t_6squish_4core_Vector2D (*__pyx_t_11)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
-  __pyx_t_6squish_4core_Vector2D (*__pyx_t_12)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
+  __pyx_t_6squish_4core_Vector2D *(*__pyx_t_10)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Vector2D *(*__pyx_t_11)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_12)(__pyx_t_6squish_4core_Vector2D *);
   __pyx_t_6squish_4core_Vector2D (*__pyx_t_13)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_Vector2D (*__pyx_t_14)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
-  __pyx_t_6squish_4core_Vector2D (*__pyx_t_15)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Vector2D (*__pyx_t_16)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_15)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_16)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_Vector2D (*__pyx_t_17)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
   __pyx_t_6squish_4core_Vector2D (*__pyx_t_18)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_19)(__pyx_t_6squish_4core_Matrix2x2 *);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_20)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_21)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_22)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_23)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_24)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_25)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_26)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_27)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_28)(__pyx_t_6squish_4core_Matrix2x2 *);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_29)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_30)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_31)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_32)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_33)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_34)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_35)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_36)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
-  PyObject *__pyx_t_37 = NULL;
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_19)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_20)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_21)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Vector2D (*__pyx_t_22)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_23)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_24)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_25)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_26)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_27)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_28)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_29)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_30)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_31)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_32)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 *(*__pyx_t_33)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_34)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_35)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_36)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_37)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_38)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_39)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_40)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_41)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_42)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_FLOAT_T);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_43)(__pyx_t_6squish_4core_Matrix2x2 *, __pyx_t_6squish_4core_Matrix2x2);
+  __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_44)(__pyx_t_6squish_4core_Matrix2x2 *);
+  PyObject *__pyx_t_45 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -6454,7 +6636,7 @@ if (!__Pyx_RefNanny) {
  * 
  * VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \
  *     v_neg_s, v_vadd_s, v_vsub_s, v_vmul_s, v_vdiv_s, v_sadd_s, v_ssub_s, v_smul_s, v_sdiv_s             # <<<<<<<<<<<<<<
- * VSO.matmul = v_matmul_s
+ * VSO.matmul, VSO.rot = v_matmul_s, rot_s
  * 
  */
   __pyx_t_1 = __pyx_f_6squish_4core_v_neg_s;
@@ -6472,7 +6654,7 @@ if (!__Pyx_RefNanny) {
  * 
  * VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \             # <<<<<<<<<<<<<<
  *     v_neg_s, v_vadd_s, v_vsub_s, v_vmul_s, v_vdiv_s, v_sadd_s, v_ssub_s, v_smul_s, v_sdiv_s
- * VSO.matmul = v_matmul_s
+ * VSO.matmul, VSO.rot = v_matmul_s, rot_s
  */
   __pyx_v_6squish_4core_VSO.neg = __pyx_t_1;
   __pyx_v_6squish_4core_VSO.vadd = __pyx_t_2;
@@ -6487,152 +6669,164 @@ if (!__Pyx_RefNanny) {
   /* "squish/core.pyx":21
  * VSO.neg, VSO.vadd, VSO.vsub, VSO.vmul, VSO.vdiv, VSO.sadd, VSO.ssub, VSO.smul, VSO.sdiv = \
  *     v_neg_s, v_vadd_s, v_vsub_s, v_vmul_s, v_vdiv_s, v_sadd_s, v_ssub_s, v_smul_s, v_sdiv_s
- * VSO.matmul = v_matmul_s             # <<<<<<<<<<<<<<
+ * VSO.matmul, VSO.rot = v_matmul_s, rot_s             # <<<<<<<<<<<<<<
  * 
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \
  */
-  __pyx_v_6squish_4core_VSO.matmul = __pyx_f_6squish_4core_v_matmul_s;
+  __pyx_t_10 = __pyx_f_6squish_4core_v_matmul_s;
+  __pyx_t_11 = __pyx_f_6squish_4core_rot_s;
+  __pyx_v_6squish_4core_VSO.matmul = __pyx_t_10;
+  __pyx_v_6squish_4core_VSO.rot = __pyx_t_11;
 
   /* "squish/core.pyx":24
  * 
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \
  *     v_neg_c, v_vadd_c, v_vsub_c, v_vmul_c, v_vdiv_c, v_sadd_c, v_ssub_c, v_smul_c, v_sdiv_c             # <<<<<<<<<<<<<<
- * VCO.matmul = v_matmul_c
+ * VCO.matmul, VCO.rot = v_matmul_c, rot_c
  * 
  */
-  __pyx_t_10 = __pyx_f_6squish_4core_v_neg_c;
-  __pyx_t_11 = __pyx_f_6squish_4core_v_vadd_c;
-  __pyx_t_12 = __pyx_f_6squish_4core_v_vsub_c;
-  __pyx_t_13 = __pyx_f_6squish_4core_v_vmul_c;
-  __pyx_t_14 = __pyx_f_6squish_4core_v_vdiv_c;
-  __pyx_t_15 = __pyx_f_6squish_4core_v_sadd_c;
-  __pyx_t_16 = __pyx_f_6squish_4core_v_ssub_c;
-  __pyx_t_17 = __pyx_f_6squish_4core_v_smul_c;
-  __pyx_t_18 = __pyx_f_6squish_4core_v_sdiv_c;
+  __pyx_t_12 = __pyx_f_6squish_4core_v_neg_c;
+  __pyx_t_13 = __pyx_f_6squish_4core_v_vadd_c;
+  __pyx_t_14 = __pyx_f_6squish_4core_v_vsub_c;
+  __pyx_t_15 = __pyx_f_6squish_4core_v_vmul_c;
+  __pyx_t_16 = __pyx_f_6squish_4core_v_vdiv_c;
+  __pyx_t_17 = __pyx_f_6squish_4core_v_sadd_c;
+  __pyx_t_18 = __pyx_f_6squish_4core_v_ssub_c;
+  __pyx_t_19 = __pyx_f_6squish_4core_v_smul_c;
+  __pyx_t_20 = __pyx_f_6squish_4core_v_sdiv_c;
 
   /* "squish/core.pyx":23
- * VSO.matmul = v_matmul_s
+ * VSO.matmul, VSO.rot = v_matmul_s, rot_s
  * 
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \             # <<<<<<<<<<<<<<
  *     v_neg_c, v_vadd_c, v_vsub_c, v_vmul_c, v_vdiv_c, v_sadd_c, v_ssub_c, v_smul_c, v_sdiv_c
- * VCO.matmul = v_matmul_c
+ * VCO.matmul, VCO.rot = v_matmul_c, rot_c
  */
-  __pyx_v_6squish_4core_VCO.neg = __pyx_t_10;
-  __pyx_v_6squish_4core_VCO.vadd = __pyx_t_11;
-  __pyx_v_6squish_4core_VCO.vsub = __pyx_t_12;
-  __pyx_v_6squish_4core_VCO.vmul = __pyx_t_13;
-  __pyx_v_6squish_4core_VCO.vdiv = __pyx_t_14;
-  __pyx_v_6squish_4core_VCO.sadd = __pyx_t_15;
-  __pyx_v_6squish_4core_VCO.ssub = __pyx_t_16;
-  __pyx_v_6squish_4core_VCO.smul = __pyx_t_17;
-  __pyx_v_6squish_4core_VCO.sdiv = __pyx_t_18;
+  __pyx_v_6squish_4core_VCO.neg = __pyx_t_12;
+  __pyx_v_6squish_4core_VCO.vadd = __pyx_t_13;
+  __pyx_v_6squish_4core_VCO.vsub = __pyx_t_14;
+  __pyx_v_6squish_4core_VCO.vmul = __pyx_t_15;
+  __pyx_v_6squish_4core_VCO.vdiv = __pyx_t_16;
+  __pyx_v_6squish_4core_VCO.sadd = __pyx_t_17;
+  __pyx_v_6squish_4core_VCO.ssub = __pyx_t_18;
+  __pyx_v_6squish_4core_VCO.smul = __pyx_t_19;
+  __pyx_v_6squish_4core_VCO.sdiv = __pyx_t_20;
 
   /* "squish/core.pyx":25
  * VCO.neg, VCO.vadd, VCO.vsub, VCO.vmul, VCO.vdiv, VCO.sadd, VCO.ssub, VCO.smul, VCO.sdiv = \
  *     v_neg_c, v_vadd_c, v_vsub_c, v_vmul_c, v_vdiv_c, v_sadd_c, v_ssub_c, v_smul_c, v_sdiv_c
- * VCO.matmul = v_matmul_c             # <<<<<<<<<<<<<<
+ * VCO.matmul, VCO.rot = v_matmul_c, rot_c             # <<<<<<<<<<<<<<
  * 
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \
  */
-  __pyx_v_6squish_4core_VCO.matmul = __pyx_f_6squish_4core_v_matmul_c;
+  __pyx_t_21 = __pyx_f_6squish_4core_v_matmul_c;
+  __pyx_t_22 = __pyx_f_6squish_4core_rot_c;
+  __pyx_v_6squish_4core_VCO.matmul = __pyx_t_21;
+  __pyx_v_6squish_4core_VCO.rot = __pyx_t_22;
 
   /* "squish/core.pyx":28
  * 
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \
  *     m_neg_s, m_madd_s, m_msub_s, m_mmul_s, m_mdiv_s, m_sadd_s, m_ssub_s, m_smul_s, m_sdiv_s             # <<<<<<<<<<<<<<
- * MSO.matmul = m_matmul_s
+ * MSO.matmul, MSO.T = m_matmul_s, m_transpose_s
  * 
  */
-  __pyx_t_19 = __pyx_f_6squish_4core_m_neg_s;
-  __pyx_t_20 = __pyx_f_6squish_4core_m_madd_s;
-  __pyx_t_21 = __pyx_f_6squish_4core_m_msub_s;
-  __pyx_t_22 = __pyx_f_6squish_4core_m_mmul_s;
-  __pyx_t_23 = __pyx_f_6squish_4core_m_mdiv_s;
-  __pyx_t_24 = __pyx_f_6squish_4core_m_sadd_s;
-  __pyx_t_25 = __pyx_f_6squish_4core_m_ssub_s;
-  __pyx_t_26 = __pyx_f_6squish_4core_m_smul_s;
-  __pyx_t_27 = __pyx_f_6squish_4core_m_sdiv_s;
+  __pyx_t_23 = __pyx_f_6squish_4core_m_neg_s;
+  __pyx_t_24 = __pyx_f_6squish_4core_m_madd_s;
+  __pyx_t_25 = __pyx_f_6squish_4core_m_msub_s;
+  __pyx_t_26 = __pyx_f_6squish_4core_m_mmul_s;
+  __pyx_t_27 = __pyx_f_6squish_4core_m_mdiv_s;
+  __pyx_t_28 = __pyx_f_6squish_4core_m_sadd_s;
+  __pyx_t_29 = __pyx_f_6squish_4core_m_ssub_s;
+  __pyx_t_30 = __pyx_f_6squish_4core_m_smul_s;
+  __pyx_t_31 = __pyx_f_6squish_4core_m_sdiv_s;
 
   /* "squish/core.pyx":27
- * VCO.matmul = v_matmul_c
+ * VCO.matmul, VCO.rot = v_matmul_c, rot_c
  * 
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \             # <<<<<<<<<<<<<<
  *     m_neg_s, m_madd_s, m_msub_s, m_mmul_s, m_mdiv_s, m_sadd_s, m_ssub_s, m_smul_s, m_sdiv_s
- * MSO.matmul = m_matmul_s
+ * MSO.matmul, MSO.T = m_matmul_s, m_transpose_s
  */
-  __pyx_v_6squish_4core_MSO.neg = __pyx_t_19;
-  __pyx_v_6squish_4core_MSO.madd = __pyx_t_20;
-  __pyx_v_6squish_4core_MSO.msub = __pyx_t_21;
-  __pyx_v_6squish_4core_MSO.mmul = __pyx_t_22;
-  __pyx_v_6squish_4core_MSO.mdiv = __pyx_t_23;
-  __pyx_v_6squish_4core_MSO.sadd = __pyx_t_24;
-  __pyx_v_6squish_4core_MSO.ssub = __pyx_t_25;
-  __pyx_v_6squish_4core_MSO.smul = __pyx_t_26;
-  __pyx_v_6squish_4core_MSO.sdiv = __pyx_t_27;
+  __pyx_v_6squish_4core_MSO.neg = __pyx_t_23;
+  __pyx_v_6squish_4core_MSO.madd = __pyx_t_24;
+  __pyx_v_6squish_4core_MSO.msub = __pyx_t_25;
+  __pyx_v_6squish_4core_MSO.mmul = __pyx_t_26;
+  __pyx_v_6squish_4core_MSO.mdiv = __pyx_t_27;
+  __pyx_v_6squish_4core_MSO.sadd = __pyx_t_28;
+  __pyx_v_6squish_4core_MSO.ssub = __pyx_t_29;
+  __pyx_v_6squish_4core_MSO.smul = __pyx_t_30;
+  __pyx_v_6squish_4core_MSO.sdiv = __pyx_t_31;
 
   /* "squish/core.pyx":29
  * MSO.neg, MSO.madd, MSO.msub, MSO.mmul, MSO.mdiv, MSO.sadd, MSO.ssub, MSO.smul, MSO.sdiv = \
  *     m_neg_s, m_madd_s, m_msub_s, m_mmul_s, m_mdiv_s, m_sadd_s, m_ssub_s, m_smul_s, m_sdiv_s
- * MSO.matmul = m_matmul_s             # <<<<<<<<<<<<<<
+ * MSO.matmul, MSO.T = m_matmul_s, m_transpose_s             # <<<<<<<<<<<<<<
  * 
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \
  */
-  __pyx_v_6squish_4core_MSO.matmul = __pyx_f_6squish_4core_m_matmul_s;
+  __pyx_t_32 = __pyx_f_6squish_4core_m_matmul_s;
+  __pyx_t_33 = __pyx_f_6squish_4core_m_transpose_s;
+  __pyx_v_6squish_4core_MSO.matmul = __pyx_t_32;
+  __pyx_v_6squish_4core_MSO.T = __pyx_t_33;
 
   /* "squish/core.pyx":32
  * 
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \
  *     m_neg_c, m_madd_c, m_msub_c, m_mmul_c, m_mdiv_c, m_sadd_c, m_ssub_c, m_smul_c, m_sdiv_c             # <<<<<<<<<<<<<<
- * MCO.matmul = m_matmul_c
+ * MCO.matmul, MCO.T = m_matmul_c, m_transpose_c
  * 
  */
-  __pyx_t_28 = __pyx_f_6squish_4core_m_neg_c;
-  __pyx_t_29 = __pyx_f_6squish_4core_m_madd_c;
-  __pyx_t_30 = __pyx_f_6squish_4core_m_msub_c;
-  __pyx_t_31 = __pyx_f_6squish_4core_m_mmul_c;
-  __pyx_t_32 = __pyx_f_6squish_4core_m_mdiv_c;
-  __pyx_t_33 = __pyx_f_6squish_4core_m_sadd_c;
-  __pyx_t_34 = __pyx_f_6squish_4core_m_ssub_c;
-  __pyx_t_35 = __pyx_f_6squish_4core_m_smul_c;
-  __pyx_t_36 = __pyx_f_6squish_4core_m_sdiv_c;
+  __pyx_t_34 = __pyx_f_6squish_4core_m_neg_c;
+  __pyx_t_35 = __pyx_f_6squish_4core_m_madd_c;
+  __pyx_t_36 = __pyx_f_6squish_4core_m_msub_c;
+  __pyx_t_37 = __pyx_f_6squish_4core_m_mmul_c;
+  __pyx_t_38 = __pyx_f_6squish_4core_m_mdiv_c;
+  __pyx_t_39 = __pyx_f_6squish_4core_m_sadd_c;
+  __pyx_t_40 = __pyx_f_6squish_4core_m_ssub_c;
+  __pyx_t_41 = __pyx_f_6squish_4core_m_smul_c;
+  __pyx_t_42 = __pyx_f_6squish_4core_m_sdiv_c;
 
   /* "squish/core.pyx":31
- * MSO.matmul = m_matmul_s
+ * MSO.matmul, MSO.T = m_matmul_s, m_transpose_s
  * 
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \             # <<<<<<<<<<<<<<
  *     m_neg_c, m_madd_c, m_msub_c, m_mmul_c, m_mdiv_c, m_sadd_c, m_ssub_c, m_smul_c, m_sdiv_c
- * MCO.matmul = m_matmul_c
+ * MCO.matmul, MCO.T = m_matmul_c, m_transpose_c
  */
-  __pyx_v_6squish_4core_MCO.neg = __pyx_t_28;
-  __pyx_v_6squish_4core_MCO.madd = __pyx_t_29;
-  __pyx_v_6squish_4core_MCO.msub = __pyx_t_30;
-  __pyx_v_6squish_4core_MCO.mmul = __pyx_t_31;
-  __pyx_v_6squish_4core_MCO.mdiv = __pyx_t_32;
-  __pyx_v_6squish_4core_MCO.sadd = __pyx_t_33;
-  __pyx_v_6squish_4core_MCO.ssub = __pyx_t_34;
-  __pyx_v_6squish_4core_MCO.smul = __pyx_t_35;
-  __pyx_v_6squish_4core_MCO.sdiv = __pyx_t_36;
+  __pyx_v_6squish_4core_MCO.neg = __pyx_t_34;
+  __pyx_v_6squish_4core_MCO.madd = __pyx_t_35;
+  __pyx_v_6squish_4core_MCO.msub = __pyx_t_36;
+  __pyx_v_6squish_4core_MCO.mmul = __pyx_t_37;
+  __pyx_v_6squish_4core_MCO.mdiv = __pyx_t_38;
+  __pyx_v_6squish_4core_MCO.sadd = __pyx_t_39;
+  __pyx_v_6squish_4core_MCO.ssub = __pyx_t_40;
+  __pyx_v_6squish_4core_MCO.smul = __pyx_t_41;
+  __pyx_v_6squish_4core_MCO.sdiv = __pyx_t_42;
 
   /* "squish/core.pyx":33
  * MCO.neg, MCO.madd, MCO.msub, MCO.mmul, MCO.mdiv, MCO.sadd, MCO.ssub, MCO.smul, MCO.sdiv = \
  *     m_neg_c, m_madd_c, m_msub_c, m_mmul_c, m_mdiv_c, m_sadd_c, m_ssub_c, m_smul_c, m_sdiv_c
- * MCO.matmul = m_matmul_c             # <<<<<<<<<<<<<<
+ * MCO.matmul, MCO.T = m_matmul_c, m_transpose_c             # <<<<<<<<<<<<<<
  * 
  * """
  */
-  __pyx_v_6squish_4core_MCO.matmul = __pyx_f_6squish_4core_m_matmul_c;
+  __pyx_t_43 = __pyx_f_6squish_4core_m_matmul_c;
+  __pyx_t_44 = __pyx_f_6squish_4core_m_transpose_c;
+  __pyx_v_6squish_4core_MCO.matmul = __pyx_t_43;
+  __pyx_v_6squish_4core_MCO.T = __pyx_t_44;
 
   /* "squish/core.pyx":1
  * from libc.stdlib cimport calloc, free             # <<<<<<<<<<<<<<
  * from libc.math cimport sqrt
  * from squish.core cimport INT_T, FLOAT_T, Pair, \
  */
-  __pyx_t_37 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_37);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_37) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_37); __pyx_t_37 = 0;
+  __pyx_t_45 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_45)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_45);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_45) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_45); __pyx_t_45 = 0;
 
-  /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":1014
+  /* ".venv/lib/python3.8/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -6644,7 +6838,7 @@ if (!__Pyx_RefNanny) {
 
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_37);
+  __Pyx_XDECREF(__pyx_t_45);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init squish.core", __pyx_clineno, __pyx_lineno, __pyx_filename);

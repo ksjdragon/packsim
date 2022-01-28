@@ -1,4 +1,4 @@
-import array, scipy.spatial, numpy as np
+import array, scipy.spatial, numpy as np, math
 from cython.parallel import parallel, prange
 
 cimport numpy as np
@@ -6,8 +6,8 @@ from cpython cimport array
 from libc.math cimport isnan, NAN, pi as PI
 
 from squish.core cimport INT_T, FLOAT_T, \
-    IArray, FArray, Vector2D, Matrix2x2, \
-    _IArray, _FArray, _Vector2D, _Matrix2x2
+    IArray, FArray, Vector2D, Matrix2x2, BitSet, \
+    _IArray, _FArray, _Vector2D, _Matrix2x2, _BitSet
 
 from squish.voronoi cimport SiteCacheMap, EdgeCacheMap, VoronoiInfo, Site, HalfEdge
 
@@ -554,8 +554,8 @@ cdef class VoronoiContainer:
                 # vp - vm, vm - xi
                 la, da = q.copy.vsub(&q, p), p.copy.vsub(&p, xi.vec(&xi))
                 la_mag = la.mag(&la)
-                area_p = la.dot(&la, da.rot(&da))
-                Rla = la.rot(&la)
+                area_p = la.dot(&la, da.copy.rot(&da))
+                Rla = la.copy.rot(&la)
                 ya = Rla.copy.smul(&Rla, -2*area_p/la.dot(&la, la))
 
                 # Calculating centroid.
@@ -591,14 +591,14 @@ cdef class VoronoiContainer:
         xj, xk = em.cache.ya(&em, NAN_VECTOR), ep.cache.ya(&ep, NAN_VECTOR)
         Rxjk = xk.copy.vsub(&xk, xj)
         Rxjk.self.smul(&Rxjk, 2)
-        Rxjk = Rxjk.rot(&Rxjk)
+        Rxjk.self.rot(&Rxjk)
 
         v = ep.cache.da(&ep, NAN_VECTOR)
         top = R.copy.smul(&R, xj.dot(&xj, xj) - xk.dot(&xk, xk))
         top.self.msub(&top, _Matrix2x2(v.x*Rxjk.x, v.x*Rxjk.y, v.y*Rxjk.x, v.y*Rxjk.y))
         top.self.sdiv(&top, -Rxjk.dot(&Rxjk, xj))
 
-        return _Matrix2x2(top.a, top.c, top.b, top.d)
+        return top
 
     @staticmethod
     cdef inline bint sign(FLOAT_T [::1] ref, FLOAT_T [::1] p, FLOAT_T [::1] q):
@@ -619,6 +619,9 @@ cdef class VoronoiContainer:
         pass
 
     cdef void calc_grad(self) except *:
+        pass
+
+    cdef void calc_hess(self) except *:
         pass
 
     cdef void get_statistics(self) except *:
@@ -660,6 +663,11 @@ cdef class VoronoiContainer:
     def gradient(self):
         return np.asarray(self.grad, dtype=FLOAT)
 
+    @property
+    def hessian(self):
+        self.calc_hess()
+        return np.asarray(self.hess, dtype=FLOAT)
+
     def add_sites(self, add):
         return (self.site_arr + add) % np.asarray(self.dim, dtype=FLOAT)
 
@@ -670,146 +678,6 @@ cdef class VoronoiContainer:
         ).gradient
 
         return -(step/2)*(k1+k2), -k1
-
-
-    def approx_hessian(self, d: float) -> np.ndarray:
-        """
-        Obtains the approximate Hessian.
-        :param d: [float] small d for approximation.
-        :return: 2Nx2N array that represents Hessian.
-        """
-        HE = np.zeros((2*self.n, 2*self.n))
-        new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.
-        for i in range(self.n):
-            for j in range(2):
-                mod = self.w if j == 0 else self.h
-                new_sites[i][j] = (new_sites[i][j] + d) % mod
-                Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
-                new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
-                Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
-                new_sites[i][j] = (new_sites[i][j] + d) % mod
-
-                HE[:, 2*i+j] = ((Ep.gradient - Em.gradient)/(2*d)).flatten()
-
-        # Average out discrepencies, since it should be symmetric.
-        for i in range(2*self.n):
-            for j in range(i, 2*self.n):
-                HE[i][j] = (HE[i][j] + HE[j][i])/2
-                HE[j][i] = HE[i][j]
-
-        return HE
-
-    def radialt_hessian(self) -> np.ndarray:
-        HE = np.zeros((2*self.n, 2*self.n))
-        cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
-                                             self.vertices, self.site_cache,
-                                             self.edge_cache, self.edge_cache_map)
-        cdef Site xi, xk
-        cdef HalfEdge e, em, ep, fj, fk
-        cdef Vector2D temp1, temp2, dau, dapu
-        cdef Matrix2x2 sigI, sigJ, sigK, p, q, tempm, toI, toJ, toK
-
-        cdef INT_T i, j, k, z
-        for i in range(self.n):
-            xi = _Site(i, &info)
-            ep = xi.edge(&xi)
-            e = ep.prev(&ep)
-            j = 0
-            while j < xi.edge_num(&xi):
-                e.cache.H(&e, VoronoiContainer.calc_H(e, ep))
-                e = e.next(&e)
-                j = j + 1
-
-
-        for i in range(self.n):
-            xi = _Site(i, &info)
-            e = xi.edge(&xi)
-
-            z = 0
-            while z < xi.edge_num(&xi):
-                em, ep = e.prev(&e), e.next(&e)
-                fj, fk = em.twin(&em), e.twin(&e)
-                fj, fk = fj.next(&fj), fk.next(&fk)
-
-                xj, xk = fj.face(&fj), fk.face(&fk)
-                j, k = xj.index(&xj) % self.n, xk.index(&xk) % self.n
-                if k < 0:
-                    k = k + self.n
-                if j < 0:
-                    j = j + self.n
-
-                sigI = e.cache.H(&e, NAN_MATRIX)
-                sigJ = fj.cache.H(&fj, NAN_MATRIX)
-                sigK = fk.cache.H(&fk, NAN_MATRIX)
-
-                ### Calculating of p
-                temp1 = e.cache.la(&e, NAN_VECTOR)
-                temp1 = temp1.rot(&temp1)
-                temp1.self.sdiv(
-                    &temp1,
-                    e.cache.la_mag(&e, NAN) * e.cache.ya_mag(&e, NAN) / 2
-                )
-
-                dau = e.cache.da(&e, NAN_VECTOR)
-                dau.self.sdiv(&dau, e.cache.da_mag(&e, NAN))
-                dapu = ep.cache.da(&ep, NAN_VECTOR)
-                dapu.self.sdiv(&dapu, ep.cache.da_mag(&ep, NAN))
-
-                temp2 = dapu.copy.vsub(&dapu, dau)
-                temp2 = temp2.rot(&temp2)
-
-                p = _Matrix2x2(
-                    temp1.x*temp2.x, temp1.x*temp2.y,
-                    temp1.y*temp2.x, temp1.y*temp2.y
-                )
-
-                ### Calculating of q
-                temp2 = e.cache.la(&e, NAN_VECTOR)
-                temp1 = temp2.rot(&temp2)
-                q = _Matrix2x2(
-                    temp1.x*temp2.x, temp1.x*temp2.y,
-                    temp1.y*temp2.x, temp1.y*temp2.y
-                )
-                q.self.sdiv(&q, e.cache.la_mag(&e, NAN)**2)
-
-                q.self.msub(&q, R)
-                q.self.smul(
-                    &q,
-                    e.cache.calI(&e, NAN) / e.cache.la_mag(&e, NAN)
-                )
-
-                temp2 = em.cache.la(&em, NAN_VECTOR)
-                temp1 = temp2.rot(&temp2)
-                tempm = _Matrix2x2(
-                    temp1.x*temp2.x, temp1.x*temp2.y,
-                    temp1.y*temp2.x, temp1.y*temp2.y
-                )
-                tempm.self.sdiv(&tempm, em.cache.la_mag(&em, NAN)**2)
-
-                tempm = R.copy.msub(&R, tempm)
-                tempm.self.smul(
-                    &tempm,
-                    em.cache.calI(&em, NAN) / em.cache.la_mag(&em, NAN)
-                )
-
-                q.self.madd(&q, tempm)
-
-                # Calculating components that go to the respective sites
-                toI = sigI.copy.mmul(&sigI, p.copy.madd(&p, q))
-                toI.self.msub(&toI, p)
-
-                toJ = sigJ.copy.mmul(&sigJ, p.copy.madd(&p, q))
-                toK = sigK.copy.mmul(&sigK, p.copy.madd(&p, q))
-
-                HE[2*i: 2*(i+1), 2*i: 2*(i+1)] += np.array([[toI.a, toI.b], [toI.c, toI.d]])
-                HE[2*i: 2*(i+1), 2*j: 2*(j+1)] += np.array([[toJ.a, toJ.b], [toJ.c, toJ.d]])
-                HE[2*i: 2*(i+1), 2*k: 2*(k+1)] += np.array([[toK.a, toK.b], [toK.c, toK.d]])
-
-                e = e.next(&e)
-                z = z + 1
-
-
-        return -2*self.r*HE
 
     def site_vert_arr(self): # -> List[np.ndarray]
         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,

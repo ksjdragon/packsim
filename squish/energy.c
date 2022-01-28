@@ -1425,10 +1425,11 @@ typedef __pyx_t_6squish_4core_Matrix2x2 (*__pyx_t_6squish_4core_MatrixCopySclOp)
  * 
  * ctypedef struct VectorSelfOps:             # <<<<<<<<<<<<<<
  *     Vector2D* (*neg)(Vector2D*) nogil
- * 
+ *     Vector2D* (*rot)(Vector2D*) nogil
  */
 struct __pyx_t_6squish_4core_VectorSelfOps {
   __pyx_t_6squish_4core_Vector2D *(*neg)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Vector2D *(*rot)(__pyx_t_6squish_4core_Vector2D *);
   __pyx_t_6squish_4core_VectorSelfVecOp vadd;
   __pyx_t_6squish_4core_VectorSelfVecOp vsub;
   __pyx_t_6squish_4core_VectorSelfVecOp vmul;
@@ -1440,15 +1441,16 @@ struct __pyx_t_6squish_4core_VectorSelfOps {
   __pyx_t_6squish_4core_VectorSelfSclOp sdiv;
 };
 
-/* "squish/core.pxd":67
+/* "squish/core.pxd":68
  * 
  * 
  * ctypedef struct VectorCopyOps:             # <<<<<<<<<<<<<<
  *     Vector2D (*neg)(Vector2D*) nogil
- * 
+ *     Vector2D (*rot)(Vector2D*) nogil
  */
 struct __pyx_t_6squish_4core_VectorCopyOps {
   __pyx_t_6squish_4core_Vector2D (*neg)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Vector2D (*rot)(__pyx_t_6squish_4core_Vector2D *);
   __pyx_t_6squish_4core_VectorCopyVecOp vadd;
   __pyx_t_6squish_4core_VectorCopyVecOp vsub;
   __pyx_t_6squish_4core_VectorCopyVecOp vmul;
@@ -1460,15 +1462,16 @@ struct __pyx_t_6squish_4core_VectorCopyOps {
   __pyx_t_6squish_4core_VectorCopySclOp sdiv;
 };
 
-/* "squish/core.pxd":82
+/* "squish/core.pxd":84
  * 
  * 
  * ctypedef struct MatrixSelfOps:             # <<<<<<<<<<<<<<
  *     Matrix2x2* (*neg)(Matrix2x2*) nogil
- * 
+ *     Matrix2x2* (*T)(Matrix2x2*) nogil
  */
 struct __pyx_t_6squish_4core_MatrixSelfOps {
   __pyx_t_6squish_4core_Matrix2x2 *(*neg)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 *(*T)(__pyx_t_6squish_4core_Matrix2x2 *);
   __pyx_t_6squish_4core_MatrixSelfMatOp madd;
   __pyx_t_6squish_4core_MatrixSelfMatOp msub;
   __pyx_t_6squish_4core_MatrixSelfMatOp mmul;
@@ -1480,15 +1483,16 @@ struct __pyx_t_6squish_4core_MatrixSelfOps {
   __pyx_t_6squish_4core_MatrixSelfSclOp sdiv;
 };
 
-/* "squish/core.pxd":97
+/* "squish/core.pxd":100
  * 
  * 
  * ctypedef struct MatrixCopyOps:             # <<<<<<<<<<<<<<
  *     Matrix2x2 (*neg)(Matrix2x2*) nogil
- * 
+ *     Matrix2x2 (*T)(Matrix2x2*) nogil
  */
 struct __pyx_t_6squish_4core_MatrixCopyOps {
   __pyx_t_6squish_4core_Matrix2x2 (*neg)(__pyx_t_6squish_4core_Matrix2x2 *);
+  __pyx_t_6squish_4core_Matrix2x2 (*T)(__pyx_t_6squish_4core_Matrix2x2 *);
   __pyx_t_6squish_4core_MatrixCopyMatOp madd;
   __pyx_t_6squish_4core_MatrixCopyMatOp msub;
   __pyx_t_6squish_4core_MatrixCopyMatOp mmul;
@@ -1500,7 +1504,7 @@ struct __pyx_t_6squish_4core_MatrixCopyOps {
   __pyx_t_6squish_4core_MatrixCopySclOp sdiv;
 };
 
-/* "squish/core.pxd":112
+/* "squish/core.pxd":116
  * 
  * # Psuedo-class for a 2-dimensional vector. No orientation.
  * ctypedef struct Vector2D:             # <<<<<<<<<<<<<<
@@ -1513,12 +1517,12 @@ struct __pyx_t_6squish_4core_Vector2D {
   __pyx_t_6squish_4core_VectorSelfOps self;
   __pyx_t_6squish_4core_VectorCopyOps copy;
   int (*equals)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
-  __pyx_t_6squish_4core_Vector2D (*rot)(__pyx_t_6squish_4core_Vector2D *);
+  __pyx_t_6squish_4core_Matrix2x2 (*vecmul)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_FLOAT_T (*dot)(__pyx_t_6squish_4core_Vector2D *, __pyx_t_6squish_4core_Vector2D);
   __pyx_t_6squish_4core_FLOAT_T (*mag)(__pyx_t_6squish_4core_Vector2D *);
 };
 
-/* "squish/core.pxd":123
+/* "squish/core.pxd":127
  * 
  * # Psuedo-class for a 2x2 matrix.
  * ctypedef struct Matrix2x2:             # <<<<<<<<<<<<<<
@@ -1675,6 +1679,7 @@ struct __pyx_obj_6squish_7voronoi_VoronoiContainer {
   __Pyx_memviewslice site_cache;
   __Pyx_memviewslice edge_cache;
   __Pyx_memviewslice grad;
+  __Pyx_memviewslice hess;
   __Pyx_memviewslice sites;
   __Pyx_memviewslice edges;
   __pyx_t_6squish_7voronoi_EdgeCacheMap *edge_cache_map;
@@ -1686,32 +1691,32 @@ struct __pyx_obj_6squish_7voronoi_VoronoiContainer {
  * cdef EdgeCacheMap RADIALT_ECM = _EdgeCacheMap(0, 4, 6, 8, -1, 10, 11, 12, 13, 14)
  * 
  * cdef class AreaEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
- * 	"""
- * 	Class for formulas relevant to the Area energy.
+ *     """
+ *     Class for formulas relevant to the Area energy.
  */
 struct __pyx_obj_6squish_6energy_AreaEnergy {
   struct __pyx_obj_6squish_7voronoi_VoronoiContainer __pyx_base;
 };
 
 
-/* "squish/energy.pyx":116
+/* "squish/energy.pyx":139
  * 
  * 
  * cdef class RadialALEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
- * 	"""
- * 	Class for formulas relevant to the Area energy.
+ *     """
+ *     Class for formulas relevant to the Area energy.
  */
 struct __pyx_obj_6squish_6energy_RadialALEnergy {
   struct __pyx_obj_6squish_7voronoi_VoronoiContainer __pyx_base;
 };
 
 
-/* "squish/energy.pyx":152
+/* "squish/energy.pyx":178
  * 
  * 
  * cdef class RadialTEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
- * 	"""
- * 	Class for formulas relevant to the Area energy.
+ *     """
+ *     Class for formulas relevant to the Area energy.
  */
 struct __pyx_obj_6squish_6energy_RadialTEnergy {
   struct __pyx_obj_6squish_7voronoi_VoronoiContainer __pyx_base;
@@ -1810,6 +1815,7 @@ struct __pyx_vtabstruct_6squish_7voronoi_VoronoiContainer {
   void (*common_cache)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *);
   void (*precompute)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *);
   void (*calc_grad)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *);
+  void (*calc_hess)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *);
   void (*get_statistics)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *);
   __pyx_t_6squish_4core_Matrix2x2 (*calc_H)(__pyx_t_6squish_7voronoi_HalfEdge, __pyx_t_6squish_7voronoi_HalfEdge);
   int (*sign)(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice);
@@ -1821,8 +1827,8 @@ static struct __pyx_vtabstruct_6squish_7voronoi_VoronoiContainer *__pyx_vtabptr_
  * cdef EdgeCacheMap RADIALT_ECM = _EdgeCacheMap(0, 4, 6, 8, -1, 10, 11, 12, 13, 14)
  * 
  * cdef class AreaEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
- * 	"""
- * 	Class for formulas relevant to the Area energy.
+ *     """
+ *     Class for formulas relevant to the Area energy.
  */
 
 struct __pyx_vtabstruct_6squish_6energy_AreaEnergy {
@@ -1831,12 +1837,12 @@ struct __pyx_vtabstruct_6squish_6energy_AreaEnergy {
 static struct __pyx_vtabstruct_6squish_6energy_AreaEnergy *__pyx_vtabptr_6squish_6energy_AreaEnergy;
 
 
-/* "squish/energy.pyx":116
+/* "squish/energy.pyx":139
  * 
  * 
  * cdef class RadialALEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
- * 	"""
- * 	Class for formulas relevant to the Area energy.
+ *     """
+ *     Class for formulas relevant to the Area energy.
  */
 
 struct __pyx_vtabstruct_6squish_6energy_RadialALEnergy {
@@ -1845,12 +1851,12 @@ struct __pyx_vtabstruct_6squish_6energy_RadialALEnergy {
 static struct __pyx_vtabstruct_6squish_6energy_RadialALEnergy *__pyx_vtabptr_6squish_6energy_RadialALEnergy;
 
 
-/* "squish/energy.pyx":152
+/* "squish/energy.pyx":178
  * 
  * 
  * cdef class RadialTEnergy(VoronoiContainer):             # <<<<<<<<<<<<<<
- * 	"""
- * 	Class for formulas relevant to the Area energy.
+ *     """
+ *     Class for formulas relevant to the Area energy.
  */
 
 struct __pyx_vtabstruct_6squish_6energy_RadialTEnergy {
@@ -2185,6 +2191,53 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
+/* PyIntCompare.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, long intval, long inplace);
+
+/* GetItemInt.proto */
+#define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_GetItemInt_Fast(o, (Py_ssize_t)i, is_list, wraparound, boundscheck) :\
+    (is_list ? (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL) :\
+               __Pyx_GetItemInt_Generic(o, to_py_func(i))))
+#define __Pyx_GetItemInt_List(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_GetItemInt_List_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
+    (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL))
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+                                                              int wraparound, int boundscheck);
+#define __Pyx_GetItemInt_Tuple(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_GetItemInt_Tuple_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
+    (PyErr_SetString(PyExc_IndexError, "tuple index out of range"), (PyObject*)NULL))
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
+                                                              int wraparound, int boundscheck);
+static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
+                                                     int is_list, int wraparound, int boundscheck);
+
+/* ObjectGetItem.proto */
+#if CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject* key);
+#else
+#define __Pyx_PyObject_GetItem(obj, key)  PyObject_GetItem(obj, key)
+#endif
+
+/* PyObjectCallNoArg.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
+#else
+#define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
+#endif
+
+/* PyIntBinop.proto */
+#if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_PyInt_TrueDivideObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check);
+#else
+#define __Pyx_PyInt_TrueDivideObjC(op1, op2, intval, inplace, zerodivision_check)\
+    (inplace ? PyNumber_InPlaceTrueDivide(op1, op2) : PyNumber_TrueDivide(op1, op2))
+#endif
+
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
@@ -2244,35 +2297,6 @@ static CYTHON_UNUSED int __pyx_array_getbuffer(PyObject *__pyx_v_self, Py_buffer
 static PyObject *__pyx_array_get_memview(struct __pyx_array_obj *); /*proto*/
 /* GetAttr.proto */
 static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *, PyObject *);
-
-/* GetItemInt.proto */
-#define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_Fast(o, (Py_ssize_t)i, is_list, wraparound, boundscheck) :\
-    (is_list ? (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL) :\
-               __Pyx_GetItemInt_Generic(o, to_py_func(i))))
-#define __Pyx_GetItemInt_List(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_List_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
-    (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL))
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              int wraparound, int boundscheck);
-#define __Pyx_GetItemInt_Tuple(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_Tuple_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
-    (PyErr_SetString(PyExc_IndexError, "tuple index out of range"), (PyObject*)NULL))
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              int wraparound, int boundscheck);
-static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
-                                                     int is_list, int wraparound, int boundscheck);
-
-/* ObjectGetItem.proto */
-#if CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject* key);
-#else
-#define __Pyx_PyObject_GetItem(obj, key)  PyObject_GetItem(obj, key)
-#endif
 
 /* decode_c_string_utf16.proto */
 static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16(const char *s, Py_ssize_t size, const char *errors) {
@@ -2533,6 +2557,9 @@ static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_6squish_4core_FLOAT_T(cons
 /* ObjectToMemviewSlice.proto */
 static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(PyObject *, int writable_flag);
 
+/* ObjectToMemviewSlice.proto */
+static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_6squish_4core_FLOAT_T(PyObject *, int writable_flag);
+
 /* RealImag.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -2644,6 +2671,9 @@ static CYTHON_INLINE npy_int64 __Pyx_PyInt_As_npy_int64(PyObject *);
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_npy_int64(npy_int64 value);
 
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
+
 /* CIntFromPy.proto */
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
@@ -2652,9 +2682,6 @@ static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
-
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE char __Pyx_PyInt_As_char(PyObject *);
@@ -2673,10 +2700,13 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6squish_6energy_AreaEnergy *__pyx_v_self); /* proto*/
 static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squish_6energy_AreaEnergy *__pyx_v_self); /* proto*/
+static void __pyx_f_6squish_6energy_10AreaEnergy_calc_hess(struct __pyx_obj_6squish_6energy_AreaEnergy *__pyx_v_self); /* proto*/
 static void __pyx_f_6squish_6energy_14RadialALEnergy_precompute(struct __pyx_obj_6squish_6energy_RadialALEnergy *__pyx_v_self); /* proto*/
 static void __pyx_f_6squish_6energy_14RadialALEnergy_calc_grad(struct __pyx_obj_6squish_6energy_RadialALEnergy *__pyx_v_self); /* proto*/
+static void __pyx_f_6squish_6energy_14RadialALEnergy_calc_hess(CYTHON_UNUSED struct __pyx_obj_6squish_6energy_RadialALEnergy *__pyx_v_self); /* proto*/
 static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_6squish_6energy_RadialTEnergy *__pyx_v_self); /* proto*/
 static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6squish_6energy_RadialTEnergy *__pyx_v_self); /* proto*/
+static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6squish_6energy_RadialTEnergy *__pyx_v_self); /* proto*/
 static PyObject *__pyx_array_get_memview(struct __pyx_array_obj *__pyx_v_self); /* proto*/
 static char *__pyx_memoryview_get_item_pointer(struct __pyx_memoryview_obj *__pyx_v_self, PyObject *__pyx_v_index); /* proto*/
 static PyObject *__pyx_memoryview_is_slice(struct __pyx_memoryview_obj *__pyx_v_self, PyObject *__pyx_v_obj); /* proto*/
@@ -2803,16 +2833,17 @@ int __pyx_module_is_main_squish__energy = 0;
 
 /* Implementation of 'squish.energy' */
 static PyObject *__pyx_builtin_super;
+static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_ImportError;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_MemoryError;
 static PyObject *__pyx_builtin_enumerate;
-static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_Ellipsis;
 static PyObject *__pyx_builtin_id;
 static PyObject *__pyx_builtin_IndexError;
 static const char __pyx_k_O[] = "O";
+static const char __pyx_k_T[] = "T";
 static const char __pyx_k_c[] = "c";
 static const char __pyx_k_h[] = "h";
 static const char __pyx_k_n[] = "n";
@@ -2827,6 +2858,7 @@ static const char __pyx_k_sum[] = "sum";
 static const char __pyx_k_Area[] = "Area";
 static const char __pyx_k_area[] = "area";
 static const char __pyx_k_base[] = "base";
+static const char __pyx_k_copy[] = "copy";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_full[] = "full";
 static const char __pyx_k_init[] = "__init__";
@@ -2861,6 +2893,8 @@ static const char __pyx_k_reduce[] = "__reduce__";
 static const char __pyx_k_struct[] = "struct";
 static const char __pyx_k_unpack[] = "unpack";
 static const char __pyx_k_update[] = "update";
+static const char __pyx_k_asarray[] = "asarray";
+static const char __pyx_k_flatten[] = "flatten";
 static const char __pyx_k_float64[] = "float64";
 static const char __pyx_k_fortran[] = "fortran";
 static const char __pyx_k_memview[] = "memview";
@@ -2869,6 +2903,7 @@ static const char __pyx_k_Ellipsis[] = "Ellipsis";
 static const char __pyx_k_Radial_T[] = "Radial[T]";
 static const char __pyx_k_attr_str[] = "attr_str";
 static const char __pyx_k_getstate[] = "__getstate__";
+static const char __pyx_k_gradient[] = "gradient";
 static const char __pyx_k_itemsize[] = "itemsize";
 static const char __pyx_k_pyx_type[] = "__pyx_type";
 static const char __pyx_k_radial_t[] = "radial-t";
@@ -2957,12 +2992,14 @@ static PyObject *__pyx_n_s_RadialALEnergy;
 static PyObject *__pyx_n_s_RadialTEnergy;
 static PyObject *__pyx_kp_u_Radial_AL;
 static PyObject *__pyx_kp_u_Radial_T;
+static PyObject *__pyx_n_s_T;
 static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_kp_s_Unable_to_convert_item_to_object;
 static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_View_MemoryView;
 static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_u_area;
+static PyObject *__pyx_n_s_asarray;
 static PyObject *__pyx_n_s_attr_str;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_c;
@@ -2971,6 +3008,7 @@ static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
+static PyObject *__pyx_n_s_copy;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_s_dtype;
 static PyObject *__pyx_n_s_dtype_is_object;
@@ -2978,6 +3016,7 @@ static PyObject *__pyx_n_s_encode;
 static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_error;
 static PyObject *__pyx_n_s_flags;
+static PyObject *__pyx_n_s_flatten;
 static PyObject *__pyx_n_s_float64;
 static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_fortran;
@@ -2985,6 +3024,7 @@ static PyObject *__pyx_n_u_fortran;
 static PyObject *__pyx_n_s_full;
 static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
+static PyObject *__pyx_n_s_gradient;
 static PyObject *__pyx_n_s_h;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_import;
@@ -3111,7 +3151,7 @@ static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_int_184977713;
 static PyObject *__pyx_int_neg_1;
-static PyObject *__pyx_tuple_;
+static PyObject *__pyx_slice_;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_tuple__4;
@@ -3120,7 +3160,6 @@ static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__7;
 static PyObject *__pyx_tuple__8;
 static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_slice__23;
 static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
@@ -3134,6 +3173,7 @@ static PyObject *__pyx_tuple__19;
 static PyObject *__pyx_tuple__20;
 static PyObject *__pyx_tuple__21;
 static PyObject *__pyx_tuple__22;
+static PyObject *__pyx_tuple__23;
 static PyObject *__pyx_tuple__24;
 static PyObject *__pyx_tuple__25;
 static PyObject *__pyx_tuple__26;
@@ -3147,11 +3187,11 @@ static PyObject *__pyx_codeobj__33;
 /* Late includes */
 
 /* "squish/energy.pyx":33
- * 	title_str = "Area"
+ *     title_str = "Area"
  * 
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &AREA_ECM
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &AREA_ECM
  */
 
 /* Python wrapper */
@@ -3285,28 +3325,28 @@ static int __pyx_pf_6squish_6energy_10AreaEnergy___init__(struct __pyx_obj_6squi
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
   /* "squish/energy.pyx":35
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &AREA_ECM             # <<<<<<<<<<<<<<
- * 		self.energy = 0.0
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &AREA_ECM             # <<<<<<<<<<<<<<
+ *         self.energy = 0.0
  * 
  */
   __pyx_v_self->__pyx_base.edge_cache_map = (&__pyx_v_6squish_6energy_AREA_ECM);
 
   /* "squish/energy.pyx":36
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &AREA_ECM
- * 		self.energy = 0.0             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &AREA_ECM
+ *         self.energy = 0.0             # <<<<<<<<<<<<<<
  * 
- * 		super().__init__(n, w, h, r, site_arr)
+ *         super().__init__(n, w, h, r, site_arr)
  */
   __pyx_v_self->__pyx_base.energy = 0.0;
 
   /* "squish/energy.pyx":38
- * 		self.energy = 0.0
+ *         self.energy = 0.0
  * 
- * 		super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
- * 		self.minimum = (<FLOAT_T>n)*(w*h/(<FLOAT_T>n)-PI*r**2)**2
+ *         super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
+ *         self.minimum = (<FLOAT_T>n)*(w*h/(<FLOAT_T>n)-PI*r**2)**2
  * 
  */
   __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
@@ -3397,8 +3437,8 @@ static int __pyx_pf_6squish_6energy_10AreaEnergy___init__(struct __pyx_obj_6squi
 
   /* "squish/energy.pyx":39
  * 
- * 		super().__init__(n, w, h, r, site_arr)
- * 		self.minimum = (<FLOAT_T>n)*(w*h/(<FLOAT_T>n)-PI*r**2)**2             # <<<<<<<<<<<<<<
+ *         super().__init__(n, w, h, r, site_arr)
+ *         self.minimum = (<FLOAT_T>n)*(w*h/(<FLOAT_T>n)-PI*r**2)**2             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -3408,11 +3448,11 @@ static int __pyx_pf_6squish_6energy_10AreaEnergy___init__(struct __pyx_obj_6squi
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "squish/energy.pyx":33
- * 	title_str = "Area"
+ *     title_str = "Area"
  * 
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &AREA_ECM
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &AREA_ECM
  */
 
   /* function exit code */
@@ -3446,9 +3486,9 @@ static int __pyx_pf_6squish_6energy_10AreaEnergy___init__(struct __pyx_obj_6squi
 /* "squish/energy.pyx":42
  * 
  * 
- * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
 static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6squish_6energy_AreaEnergy *__pyx_v_self) {
@@ -3486,9 +3526,9 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
 
   /* "squish/energy.pyx":43
  * 
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 43, __pyx_L1_error)}
@@ -3496,11 +3536,11 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
   if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 43, __pyx_L1_error)}
 
   /* "squish/energy.pyx":44
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
- * 		cdef Site xi
+ *         cdef Site xi
  */
   if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 44, __pyx_L1_error)}
   if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 44, __pyx_L1_error)}
@@ -3508,19 +3548,19 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
 
   /* "squish/energy.pyx":43
  * 
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
   /* "squish/energy.pyx":50
- * 		cdef Vector2D vdiff
+ *         cdef Vector2D vdiff
  * 
- * 		cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], PI*self.r**2)             # <<<<<<<<<<<<<<
+ *         cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], PI*self.r**2)             # <<<<<<<<<<<<<<
  * 
- * 		cdef INT_T i, j
+ *         cdef INT_T i, j
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3589,10 +3629,10 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
 
   /* "squish/energy.pyx":53
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
   {
       #ifdef WITH_THREAD
@@ -3628,28 +3668,28 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
                             __pyx_v_j = ((__pyx_t_6squish_4core_INT_T)0xbad0bad0);
 
                             /* "squish/energy.pyx":54
- * 		cdef INT_T i, j
- * 		for i in prange(self.sites.shape[0], nogil=True):
- * 			xi = _Site(i, &info)             # <<<<<<<<<<<<<<
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.sites.shape[0], nogil=True):
+ *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
+ *             e = xi.edge(&xi)
  * 
  */
                             __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
 
                             /* "squish/energy.pyx":55
- * 		for i in prange(self.sites.shape[0], nogil=True):
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
+ *         for i in prange(self.sites.shape[0], nogil=True):
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
  * 
- * 			site_energy[i] = (xi.cache.area(&xi, NAN) - site_energy[i])**2
+ *             site_energy[i] = (xi.cache.area(&xi, NAN) - site_energy[i])**2
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
                             /* "squish/energy.pyx":57
- * 			e = xi.edge(&xi)
+ *             e = xi.edge(&xi)
  * 
- * 			site_energy[i] = (xi.cache.area(&xi, NAN) - site_energy[i])**2             # <<<<<<<<<<<<<<
- * 			xi.cache.energy(&xi, site_energy[i])
+ *             site_energy[i] = (xi.cache.area(&xi, NAN) - site_energy[i])**2             # <<<<<<<<<<<<<<
+ *             xi.cache.energy(&xi, site_energy[i])
  * 
  */
                             __pyx_t_12 = __pyx_v_i;
@@ -3658,40 +3698,40 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
 
                             /* "squish/energy.pyx":58
  * 
- * 			site_energy[i] = (xi.cache.area(&xi, NAN) - site_energy[i])**2
- * 			xi.cache.energy(&xi, site_energy[i])             # <<<<<<<<<<<<<<
+ *             site_energy[i] = (xi.cache.area(&xi, NAN) - site_energy[i])**2
+ *             xi.cache.energy(&xi, site_energy[i])             # <<<<<<<<<<<<<<
  * 
- * 			j = 0
+ *             j = 0
  */
                             __pyx_t_12 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->energy((&__pyx_v_xi), (*((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_energy.data + __pyx_t_12 * __pyx_v_site_energy.strides[0]) )))));
 
                             /* "squish/energy.pyx":60
- * 			xi.cache.energy(&xi, site_energy[i])
+ *             xi.cache.energy(&xi, site_energy[i])
  * 
- * 			j = 0             # <<<<<<<<<<<<<<
- * 			while j < xi.edge_num(&xi):
- * 				em, ep = e.prev(&e), e.next(&e)
+ *             j = 0             # <<<<<<<<<<<<<<
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)
  */
                             __pyx_v_j = 0;
 
                             /* "squish/energy.pyx":61
  * 
- * 			j = 0
- * 			while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
- * 				em, ep = e.prev(&e), e.next(&e)
- * 				vdiff = em.origin(&em)
+ *             j = 0
+ *             while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
+ *                 em, ep = e.prev(&e), e.next(&e)
+ *                 vdiff = em.origin(&em)
  */
                             while (1) {
                               __pyx_t_14 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
                               if (!__pyx_t_14) break;
 
                               /* "squish/energy.pyx":62
- * 			j = 0
- * 			while j < xi.edge_num(&xi):
- * 				em, ep = e.prev(&e), e.next(&e)             # <<<<<<<<<<<<<<
- * 				vdiff = em.origin(&em)
- * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
+ *             j = 0
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)             # <<<<<<<<<<<<<<
+ *                 vdiff = em.origin(&em)
+ *                 vdiff.self.vsub(&vdiff, ep.origin(&ep))
  */
                               __pyx_t_15 = __pyx_v_e.prev((&__pyx_v_e));
                               __pyx_t_16 = __pyx_v_e.next((&__pyx_v_e));
@@ -3699,56 +3739,56 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
                               __pyx_v_ep = __pyx_t_16;
 
                               /* "squish/energy.pyx":63
- * 			while j < xi.edge_num(&xi):
- * 				em, ep = e.prev(&e), e.next(&e)
- * 				vdiff = em.origin(&em)             # <<<<<<<<<<<<<<
- * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
- * 				e.cache.dVdv(&e, R.vecmul(&R, vdiff))
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)
+ *                 vdiff = em.origin(&em)             # <<<<<<<<<<<<<<
+ *                 vdiff.self.vsub(&vdiff, ep.origin(&ep))
+ *                 e.cache.dVdv(&e, R.vecmul(&R, vdiff))
  */
                               __pyx_v_vdiff = __pyx_v_em.origin((&__pyx_v_em));
 
                               /* "squish/energy.pyx":64
- * 				em, ep = e.prev(&e), e.next(&e)
- * 				vdiff = em.origin(&em)
- * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))             # <<<<<<<<<<<<<<
- * 				e.cache.dVdv(&e, R.vecmul(&R, vdiff))
- * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+ *                 em, ep = e.prev(&e), e.next(&e)
+ *                 vdiff = em.origin(&em)
+ *                 vdiff.self.vsub(&vdiff, ep.origin(&ep))             # <<<<<<<<<<<<<<
+ *                 e.cache.dVdv(&e, R.vecmul(&R, vdiff))
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  */
                               (void)(__pyx_v_vdiff.self.vsub((&__pyx_v_vdiff), __pyx_v_ep.origin((&__pyx_v_ep))));
 
                               /* "squish/energy.pyx":65
- * 				vdiff = em.origin(&em)
- * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
- * 				e.cache.dVdv(&e, R.vecmul(&R, vdiff))             # <<<<<<<<<<<<<<
- * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+ *                 vdiff = em.origin(&em)
+ *                 vdiff.self.vsub(&vdiff, ep.origin(&ep))
+ *                 e.cache.dVdv(&e, R.vecmul(&R, vdiff))             # <<<<<<<<<<<<<<
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
  */
                               (void)(__pyx_v_e.cache->dVdv((&__pyx_v_e), __pyx_v_6squish_7voronoi_R.vecmul((&__pyx_v_6squish_7voronoi_R), __pyx_v_vdiff)));
 
                               /* "squish/energy.pyx":66
- * 				vdiff.self.vsub(&vdiff, ep.origin(&ep))
- * 				e.cache.dVdv(&e, R.vecmul(&R, vdiff))
- * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))             # <<<<<<<<<<<<<<
+ *                 vdiff.self.vsub(&vdiff, ep.origin(&ep))
+ *                 e.cache.dVdv(&e, R.vecmul(&R, vdiff))
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))             # <<<<<<<<<<<<<<
  * 
- * 				e = e.next(&e)
+ *                 e = e.next(&e)
  */
                               (void)(__pyx_v_e.cache->H((&__pyx_v_e), __pyx_vtabptr_6squish_7voronoi_VoronoiContainer->calc_H(__pyx_v_em, __pyx_v_e)));
 
                               /* "squish/energy.pyx":68
- * 				e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
- * 				e = e.next(&e)             # <<<<<<<<<<<<<<
- * 				j = j + 1
+ *                 e = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 j = j + 1
  * 
  */
                               __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
 
                               /* "squish/energy.pyx":69
  * 
- * 				e = e.next(&e)
- * 				j = j + 1             # <<<<<<<<<<<<<<
+ *                 e = e.next(&e)
+ *                 j = j + 1             # <<<<<<<<<<<<<<
  * 
- * 		self.energy = np.sum(site_energy[:self.n])
+ *         self.energy = np.sum(site_energy[:self.n])
  */
                               __pyx_v_j = (__pyx_v_j + 1);
                             }
@@ -3767,10 +3807,10 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
 
       /* "squish/energy.pyx":53
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
       /*finally:*/ {
         /*normal exit:*/{
@@ -3792,9 +3832,9 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_precompute(struct __pyx_obj_6sq
   }
 
   /* "squish/energy.pyx":71
- * 				j = j + 1
+ *                 j = j + 1
  * 
- * 		self.energy = np.sum(site_energy[:self.n])             # <<<<<<<<<<<<<<
+ *         self.energy = np.sum(site_energy[:self.n])             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -3852,9 +3892,9 @@ __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_t_8, 1, (PyObject *(*)(char *)) __p
   /* "squish/energy.pyx":42
  * 
  * 
- * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
   /* function exit code */
@@ -3876,9 +3916,9 @@ __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_t_8, 1, (PyObject *(*)(char *)) __p
 /* "squish/energy.pyx":74
  * 
  * 
- * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
 static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squish_6energy_AreaEnergy *__pyx_v_self) {
@@ -3913,9 +3953,9 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
 
   /* "squish/energy.pyx":75
  * 
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 75, __pyx_L1_error)}
@@ -3923,11 +3963,11 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
   if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 75, __pyx_L1_error)}
 
   /* "squish/energy.pyx":76
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
- * 		cdef Site xi, xf
+ *         cdef Site xi, xf
  */
   if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 76, __pyx_L1_error)}
   if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 76, __pyx_L1_error)}
@@ -3935,18 +3975,18 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
 
   /* "squish/energy.pyx":75
  * 
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
   /* "squish/energy.pyx":83
- * 		cdef BitSet edge_set
+ *         cdef BitSet edge_set
  * 
- * 		cdef INT_T num_edges = self.edges.shape[0]             # <<<<<<<<<<<<<<
- * 		cdef FLOAT_T A = PI*self.r**2
+ *         cdef INT_T num_edges = self.edges.shape[0]             # <<<<<<<<<<<<<<
+ *         cdef FLOAT_T A = PI*self.r**2
  * 
  */
   if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 83, __pyx_L1_error)}
@@ -3954,19 +3994,19 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
 
   /* "squish/energy.pyx":84
  * 
- * 		cdef INT_T num_edges = self.edges.shape[0]
- * 		cdef FLOAT_T A = PI*self.r**2             # <<<<<<<<<<<<<<
+ *         cdef INT_T num_edges = self.edges.shape[0]
+ *         cdef FLOAT_T A = PI*self.r**2             # <<<<<<<<<<<<<<
  * 
- * 		cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)
+ *         cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)
  */
   __pyx_v_A = (M_PI * pow(__pyx_v_self->__pyx_base.r, 2.0));
 
   /* "squish/energy.pyx":86
- * 		cdef FLOAT_T A = PI*self.r**2
+ *         cdef FLOAT_T A = PI*self.r**2
  * 
- * 		cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
+ *         cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
- * 		cdef INT_T i, j
+ *         cdef INT_T i, j
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4007,10 +4047,10 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
 
   /* "squish/energy.pyx":89
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
   {
       #ifdef WITH_THREAD
@@ -4045,121 +4085,121 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
                             __pyx_v_j = ((__pyx_t_6squish_4core_INT_T)0xbad0bad0);
 
                             /* "squish/energy.pyx":90
- * 		cdef INT_T i, j
- * 		for i in prange(self.n, nogil=True):
- * 			xi = _Site(i, &info)             # <<<<<<<<<<<<<<
- * 			e = xi.edge(&xi)
- * 			edge_set = _BitSet(num_edges)
+ *         cdef INT_T i, j
+ *         for i in prange(self.n, nogil=True):
+ *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
+ *             e = xi.edge(&xi)
+ *             edge_set = _BitSet(num_edges)
  */
                             __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
 
                             /* "squish/energy.pyx":91
- * 		for i in prange(self.n, nogil=True):
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
- * 			edge_set = _BitSet(num_edges)
- * 			j = 0
+ *         for i in prange(self.n, nogil=True):
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
+ *             edge_set = _BitSet(num_edges)
+ *             j = 0
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
                             /* "squish/energy.pyx":92
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
- * 			edge_set = _BitSet(num_edges)             # <<<<<<<<<<<<<<
- * 			j = 0
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
+ *             edge_set = _BitSet(num_edges)             # <<<<<<<<<<<<<<
+ *             j = 0
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
  */
                             __pyx_v_edge_set = __pyx_f_6squish_4core__BitSet(__pyx_v_num_edges);
 
                             /* "squish/energy.pyx":93
- * 			e = xi.edge(&xi)
- * 			edge_set = _BitSet(num_edges)
- * 			j = 0             # <<<<<<<<<<<<<<
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
- * 				f = e
+ *             e = xi.edge(&xi)
+ *             edge_set = _BitSet(num_edges)
+ *             j = 0             # <<<<<<<<<<<<<<
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
+ *                 f = e
  */
                             __pyx_v_j = 0;
 
                             /* "squish/energy.pyx":94
- * 			edge_set = _BitSet(num_edges)
- * 			j = 0
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.             # <<<<<<<<<<<<<<
- * 				f = e
- * 				while True:	# Circling this vertex.
+ *             edge_set = _BitSet(num_edges)
+ *             j = 0
+ *             while j < xi.edge_num(&xi): # Looping through site edges.             # <<<<<<<<<<<<<<
+ *                 f = e
+ *                 while True: # Circling this vertex.
  */
                             while (1) {
                               __pyx_t_9 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
                               if (!__pyx_t_9) break;
 
                               /* "squish/energy.pyx":95
- * 			j = 0
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
- * 				f = e             # <<<<<<<<<<<<<<
- * 				while True:	# Circling this vertex.
- * 					if not edge_set.add(&edge_set, f.arr_index):
+ *             j = 0
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
+ *                 f = e             # <<<<<<<<<<<<<<
+ *                 while True: # Circling this vertex.
+ *                     if not edge_set.add(&edge_set, f.arr_index):
  */
                               __pyx_v_f = __pyx_v_e;
 
                               /* "squish/energy.pyx":96
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
- * 				f = e
- * 				while True:	# Circling this vertex.             # <<<<<<<<<<<<<<
- * 					if not edge_set.add(&edge_set, f.arr_index):
- * 						xf = f.face(&f)
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
+ *                 f = e
+ *                 while True: # Circling this vertex.             # <<<<<<<<<<<<<<
+ *                     if not edge_set.add(&edge_set, f.arr_index):
+ *                         xf = f.face(&f)
  */
                               while (1) {
 
                                 /* "squish/energy.pyx":97
- * 				f = e
- * 				while True:	# Circling this vertex.
- * 					if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
- * 						xf = f.face(&f)
- * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
+ *                 f = e
+ *                 while True: # Circling this vertex.
+ *                     if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
+ *                         xf = f.face(&f)
+ *                         dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)  #dVdv
  */
                                 __pyx_t_9 = ((!(__pyx_v_edge_set.add((&__pyx_v_edge_set), __pyx_v_f.arr_index) != 0)) != 0);
                                 if (__pyx_t_9) {
 
                                   /* "squish/energy.pyx":98
- * 				while True:	# Circling this vertex.
- * 					if not edge_set.add(&edge_set, f.arr_index):
- * 						xf = f.face(&f)             # <<<<<<<<<<<<<<
- * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
- * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
+ *                 while True: # Circling this vertex.
+ *                     if not edge_set.add(&edge_set, f.arr_index):
+ *                         xf = f.face(&f)             # <<<<<<<<<<<<<<
+ *                         dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)  #dVdv
+ *                         dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
  */
                                   __pyx_v_xf = __pyx_v_f.face((&__pyx_v_f));
 
                                   /* "squish/energy.pyx":99
- * 					if not edge_set.add(&edge_set, f.arr_index):
- * 						xf = f.face(&f)
- * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv             # <<<<<<<<<<<<<<
- * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
- * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
+ *                     if not edge_set.add(&edge_set, f.arr_index):
+ *                         xf = f.face(&f)
+ *                         dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)  #dVdv             # <<<<<<<<<<<<<<
+ *                         dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
+ *                         dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
  */
                                   __pyx_v_dedxi_p = __pyx_v_f.cache->dVdv((&__pyx_v_f), __pyx_v_6squish_7voronoi_NAN_VECTOR);
 
                                   /* "squish/energy.pyx":100
- * 						xf = f.face(&f)
- * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
- * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)             # <<<<<<<<<<<<<<
- * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
- * 						dedx[i][0] += dedxi_p.x
+ *                         xf = f.face(&f)
+ *                         dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)  #dVdv
+ *                         dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)             # <<<<<<<<<<<<<<
+ *                         dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
+ *                         dedx[i][0] += dedxi_p.x
  */
                                   (void)(__pyx_v_dedxi_p.self.smul((&__pyx_v_dedxi_p), (__pyx_v_xf.cache->area((&__pyx_v_xf), NAN) - __pyx_v_A)));
 
                                   /* "squish/energy.pyx":101
- * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
- * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
- * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))             # <<<<<<<<<<<<<<
- * 						dedx[i][0] += dedxi_p.x
- * 						dedx[i][1] += dedxi_p.y
+ *                         dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)  #dVdv
+ *                         dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
+ *                         dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))             # <<<<<<<<<<<<<<
+ *                         dedx[i][0] += dedxi_p.x
+ *                         dedx[i][1] += dedxi_p.y
  */
                                   (void)(__pyx_v_dedxi_p.self.matmul((&__pyx_v_dedxi_p), __pyx_v_e.cache->H((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_MATRIX)));
 
                                   /* "squish/energy.pyx":102
- * 						dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
- * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
- * 						dedx[i][0] += dedxi_p.x             # <<<<<<<<<<<<<<
- * 						dedx[i][1] += dedxi_p.y
+ *                         dedxi_p.self.smul(&dedxi_p, xf.cache.area(&xf, NAN) - A)
+ *                         dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
+ *                         dedx[i][0] += dedxi_p.x             # <<<<<<<<<<<<<<
+ *                         dedx[i][1] += dedxi_p.y
  * 
  */
                                   __pyx_t_10 = __pyx_v_i;
@@ -4167,67 +4207,67 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
                                   *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_10 * __pyx_v_dedx.strides[0]) )) + __pyx_t_11)) )) += __pyx_v_dedxi_p.x;
 
                                   /* "squish/energy.pyx":103
- * 						dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
- * 						dedx[i][0] += dedxi_p.x
- * 						dedx[i][1] += dedxi_p.y             # <<<<<<<<<<<<<<
+ *                         dedxi_p.self.matmul(&dedxi_p, e.cache.H(&e, NAN_MATRIX))
+ *                         dedx[i][0] += dedxi_p.x
+ *                         dedx[i][1] += dedxi_p.y             # <<<<<<<<<<<<<<
  * 
- * 					f = f.twin(&f)
+ *                     f = f.twin(&f)
  */
                                   __pyx_t_10 = __pyx_v_i;
                                   __pyx_t_11 = 1;
                                   *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_10 * __pyx_v_dedx.strides[0]) )) + __pyx_t_11)) )) += __pyx_v_dedxi_p.y;
 
                                   /* "squish/energy.pyx":97
- * 				f = e
- * 				while True:	# Circling this vertex.
- * 					if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
- * 						xf = f.face(&f)
- * 						dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)	#dVdv
+ *                 f = e
+ *                 while True: # Circling this vertex.
+ *                     if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
+ *                         xf = f.face(&f)
+ *                         dedxi_p = f.cache.dVdv(&f, NAN_VECTOR)  #dVdv
  */
                                 }
 
                                 /* "squish/energy.pyx":105
- * 						dedx[i][1] += dedxi_p.y
+ *                         dedx[i][1] += dedxi_p.y
  * 
- * 					f = f.twin(&f)             # <<<<<<<<<<<<<<
- * 					f = f.next(&f)
- * 					if f.arr_index == e.arr_index:
+ *                     f = f.twin(&f)             # <<<<<<<<<<<<<<
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:
  */
                                 __pyx_v_f = __pyx_v_f.twin((&__pyx_v_f));
 
                                 /* "squish/energy.pyx":106
  * 
- * 					f = f.twin(&f)
- * 					f = f.next(&f)             # <<<<<<<<<<<<<<
- * 					if f.arr_index == e.arr_index:
- * 						break
+ *                     f = f.twin(&f)
+ *                     f = f.next(&f)             # <<<<<<<<<<<<<<
+ *                     if f.arr_index == e.arr_index:
+ *                         break
  */
                                 __pyx_v_f = __pyx_v_f.next((&__pyx_v_f));
 
                                 /* "squish/energy.pyx":107
- * 					f = f.twin(&f)
- * 					f = f.next(&f)
- * 					if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
- * 						break
+ *                     f = f.twin(&f)
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
+ *                         break
  * 
  */
                                 __pyx_t_9 = ((__pyx_v_f.arr_index == __pyx_v_e.arr_index) != 0);
                                 if (__pyx_t_9) {
 
                                   /* "squish/energy.pyx":108
- * 					f = f.next(&f)
- * 					if f.arr_index == e.arr_index:
- * 						break             # <<<<<<<<<<<<<<
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:
+ *                         break             # <<<<<<<<<<<<<<
  * 
- * 				e = e.next(&e)
+ *                 e = e.next(&e)
  */
                                   goto __pyx_L13_break;
 
                                   /* "squish/energy.pyx":107
- * 					f = f.twin(&f)
- * 					f = f.next(&f)
- * 					if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
- * 						break
+ *                     f = f.twin(&f)
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
+ *                         break
  * 
  */
                                 }
@@ -4235,29 +4275,29 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
                               __pyx_L13_break:;
 
                               /* "squish/energy.pyx":110
- * 						break
+ *                         break
  * 
- * 				e = e.next(&e)             # <<<<<<<<<<<<<<
- * 				j = j + 1
- * 			edge_set.free(&edge_set)
+ *                 e = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 j = j + 1
+ *             edge_set.free(&edge_set)
  */
                               __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
 
                               /* "squish/energy.pyx":111
  * 
- * 				e = e.next(&e)
- * 				j = j + 1             # <<<<<<<<<<<<<<
- * 			edge_set.free(&edge_set)
- * 		self.grad = dedx
+ *                 e = e.next(&e)
+ *                 j = j + 1             # <<<<<<<<<<<<<<
+ *             edge_set.free(&edge_set)
+ *         self.grad = dedx
  */
                               __pyx_v_j = (__pyx_v_j + 1);
                             }
 
                             /* "squish/energy.pyx":112
- * 				e = e.next(&e)
- * 				j = j + 1
- * 			edge_set.free(&edge_set)             # <<<<<<<<<<<<<<
- * 		self.grad = dedx
+ *                 e = e.next(&e)
+ *                 j = j + 1
+ *             edge_set.free(&edge_set)             # <<<<<<<<<<<<<<
+ *         self.grad = dedx
  * 
  */
                             __pyx_v_edge_set.free((&__pyx_v_edge_set));
@@ -4276,10 +4316,10 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
 
       /* "squish/energy.pyx":89
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
       /*finally:*/ {
         /*normal exit:*/{
@@ -4294,9 +4334,9 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
   }
 
   /* "squish/energy.pyx":113
- * 				j = j + 1
- * 			edge_set.free(&edge_set)
- * 		self.grad = dedx             # <<<<<<<<<<<<<<
+ *                 j = j + 1
+ *             edge_set.free(&edge_set)
+ *         self.grad = dedx             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -4307,9 +4347,9 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
   /* "squish/energy.pyx":74
  * 
  * 
- * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
   /* function exit code */
@@ -4323,6 +4363,768 @@ static void __pyx_f_6squish_6energy_10AreaEnergy_calc_grad(struct __pyx_obj_6squ
   __Pyx_AddTraceback("squish.energy.AreaEnergy.calc_grad", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_dedx, 1);
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "squish/energy.pyx":116
+ * 
+ * 
+ *     cdef void calc_hess(self) except *:             # <<<<<<<<<<<<<<
+ *         d = 10e-5
+ *         HE = np.zeros((2*self.n, 2*self.n))
+ */
+
+static void __pyx_f_6squish_6energy_10AreaEnergy_calc_hess(struct __pyx_obj_6squish_6energy_AreaEnergy *__pyx_v_self) {
+  double __pyx_v_d;
+  PyObject *__pyx_v_HE = NULL;
+  PyObject *__pyx_v_new_sites = NULL;
+  PyObject *__pyx_v_i = NULL;
+  PyObject *__pyx_v_j = NULL;
+  PyObject *__pyx_v_mod = NULL;
+  PyObject *__pyx_v_Ep = NULL;
+  PyObject *__pyx_v_Em = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  Py_ssize_t __pyx_t_6;
+  PyObject *(*__pyx_t_7)(PyObject *);
+  long __pyx_t_8;
+  int __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  PyObject *__pyx_t_12 = NULL;
+  int __pyx_t_13;
+  PyObject *__pyx_t_14 = NULL;
+  Py_ssize_t __pyx_t_15;
+  PyObject *(*__pyx_t_16)(PyObject *);
+  __Pyx_memviewslice __pyx_t_17 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("calc_hess", 0);
+
+  /* "squish/energy.pyx":117
+ * 
+ *     cdef void calc_hess(self) except *:
+ *         d = 10e-5             # <<<<<<<<<<<<<<
+ *         HE = np.zeros((2*self.n, 2*self.n))
+ *         new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.
+ */
+  __pyx_v_d = 10e-5;
+
+  /* "squish/energy.pyx":118
+ *     cdef void calc_hess(self) except *:
+ *         d = 10e-5
+ *         HE = np.zeros((2*self.n, 2*self.n))             # <<<<<<<<<<<<<<
+ *         new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.
+ *         for i in range(self.n):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->__pyx_base.n)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->__pyx_base.n)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_4);
+  __pyx_t_2 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_v_HE = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "squish/energy.pyx":119
+ *         d = 10e-5
+ *         HE = np.zeros((2*self.n, 2*self.n))
+ *         new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.             # <<<<<<<<<<<<<<
+ *         for i in range(self.n):
+ *             for j in range(2):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_site_arr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_v_new_sites = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "squish/energy.pyx":120
+ *         HE = np.zeros((2*self.n, 2*self.n))
+ *         new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.
+ *         for i in range(self.n):             # <<<<<<<<<<<<<<
+ *             for j in range(2):
+ *                 mod = self.w if j == 0 else self.h
+ */
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
+    __pyx_t_1 = __pyx_t_5; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
+    __pyx_t_7 = NULL;
+  } else {
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 120, __pyx_L1_error)
+  }
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  for (;;) {
+    if (likely(!__pyx_t_7)) {
+      if (likely(PyList_CheckExact(__pyx_t_1))) {
+        if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+        #else
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        #endif
+      } else {
+        if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+        #else
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        #endif
+      }
+    } else {
+      __pyx_t_5 = __pyx_t_7(__pyx_t_1);
+      if (unlikely(!__pyx_t_5)) {
+        PyObject* exc_type = PyErr_Occurred();
+        if (exc_type) {
+          if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+          else __PYX_ERR(0, 120, __pyx_L1_error)
+        }
+        break;
+      }
+      __Pyx_GOTREF(__pyx_t_5);
+    }
+    __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
+    __pyx_t_5 = 0;
+
+    /* "squish/energy.pyx":121
+ *         new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.
+ *         for i in range(self.n):
+ *             for j in range(2):             # <<<<<<<<<<<<<<
+ *                 mod = self.w if j == 0 else self.h
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ */
+    for (__pyx_t_8 = 0; __pyx_t_8 < 2; __pyx_t_8+=1) {
+      __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_5);
+      __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":122
+ *         for i in range(self.n):
+ *             for j in range(2):
+ *                 mod = self.w if j == 0 else self.h             # <<<<<<<<<<<<<<
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ *                 Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ */
+      __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_v_j, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (__pyx_t_9) {
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.w); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_5 = __pyx_t_3;
+        __pyx_t_3 = 0;
+      } else {
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.h); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_5 = __pyx_t_3;
+        __pyx_t_3 = 0;
+      }
+      __Pyx_XDECREF_SET(__pyx_v_mod, __pyx_t_5);
+      __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":123
+ *             for j in range(2):
+ *                 mod = self.w if j == 0 else self.h
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod             # <<<<<<<<<<<<<<
+ *                 Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ *                 new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
+ */
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_4 = PyNumber_Add(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyNumber_Remainder(__pyx_t_4, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      if (unlikely(PyObject_SetItem(__pyx_t_4, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":124
+ *                 mod = self.w if j == 0 else self.h
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ *                 Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)             # <<<<<<<<<<<<<<
+ *                 new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
+ *                 Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ */
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.w); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.h); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_11 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.r); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_11);
+      __pyx_t_12 = NULL;
+      __pyx_t_13 = 0;
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_12)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_12);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+          __pyx_t_13 = 1;
+        }
+      }
+      #if CYTHON_FAST_PYCALL
+      if (PyFunction_Check(__pyx_t_4)) {
+        PyObject *__pyx_temp[6] = {__pyx_t_12, __pyx_t_3, __pyx_t_2, __pyx_t_10, __pyx_t_11, __pyx_v_new_sites};
+        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+      } else
+      #endif
+      #if CYTHON_FAST_PYCCALL
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
+        PyObject *__pyx_temp[6] = {__pyx_t_12, __pyx_t_3, __pyx_t_2, __pyx_t_10, __pyx_t_11, __pyx_v_new_sites};
+        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+      } else
+      #endif
+      {
+        __pyx_t_14 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 124, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_14);
+        if (__pyx_t_12) {
+          __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_12); __pyx_t_12 = NULL;
+        }
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_14, 0+__pyx_t_13, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_13, __pyx_t_2);
+        __Pyx_GIVEREF(__pyx_t_10);
+        PyTuple_SET_ITEM(__pyx_t_14, 2+__pyx_t_13, __pyx_t_10);
+        __Pyx_GIVEREF(__pyx_t_11);
+        PyTuple_SET_ITEM(__pyx_t_14, 3+__pyx_t_13, __pyx_t_11);
+        __Pyx_INCREF(__pyx_v_new_sites);
+        __Pyx_GIVEREF(__pyx_v_new_sites);
+        PyTuple_SET_ITEM(__pyx_t_14, 4+__pyx_t_13, __pyx_v_new_sites);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = 0;
+        __pyx_t_10 = 0;
+        __pyx_t_11 = 0;
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_Ep, __pyx_t_5);
+      __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":125
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ *                 Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ *                 new_sites[i][j] = (new_sites[i][j] - 2*d) % mod             # <<<<<<<<<<<<<<
+ *                 Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ */
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyFloat_FromDouble((2.0 * __pyx_v_d)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_14 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyNumber_Remainder(__pyx_t_14, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      if (unlikely(PyObject_SetItem(__pyx_t_14, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":126
+ *                 Ep = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ *                 new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
+ *                 Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)             # <<<<<<<<<<<<<<
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ * 
+ */
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_4 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_11 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.w); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_11);
+      __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.h); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->__pyx_base.r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_3 = NULL;
+      __pyx_t_13 = 0;
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_14))) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_14);
+        if (likely(__pyx_t_3)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_14);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_14, function);
+          __pyx_t_13 = 1;
+        }
+      }
+      #if CYTHON_FAST_PYCALL
+      if (PyFunction_Check(__pyx_t_14)) {
+        PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_t_4, __pyx_t_11, __pyx_t_10, __pyx_t_2, __pyx_v_new_sites};
+        __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      } else
+      #endif
+      #if CYTHON_FAST_PYCCALL
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_14)) {
+        PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_t_4, __pyx_t_11, __pyx_t_10, __pyx_t_2, __pyx_v_new_sites};
+        __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      } else
+      #endif
+      {
+        __pyx_t_12 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
+        if (__pyx_t_3) {
+          __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_3); __pyx_t_3 = NULL;
+        }
+        __Pyx_GIVEREF(__pyx_t_4);
+        PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_13, __pyx_t_4);
+        __Pyx_GIVEREF(__pyx_t_11);
+        PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_13, __pyx_t_11);
+        __Pyx_GIVEREF(__pyx_t_10);
+        PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_13, __pyx_t_10);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_12, 3+__pyx_t_13, __pyx_t_2);
+        __Pyx_INCREF(__pyx_v_new_sites);
+        __Pyx_GIVEREF(__pyx_v_new_sites);
+        PyTuple_SET_ITEM(__pyx_t_12, 4+__pyx_t_13, __pyx_v_new_sites);
+        __pyx_t_4 = 0;
+        __pyx_t_11 = 0;
+        __pyx_t_10 = 0;
+        __pyx_t_2 = 0;
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_12, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_Em, __pyx_t_5);
+      __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":127
+ *                 new_sites[i][j] = (new_sites[i][j] - 2*d) % mod
+ *                 Em = self.__class__(self.n, self.w, self.h, self.r, new_sites)
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod             # <<<<<<<<<<<<<<
+ * 
+ *                 HE[:, 2*i+j] = ((Ep.gradient - Em.gradient)/(2*d)).flatten()
+ */
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyNumber_Remainder(__pyx_t_12, __pyx_v_mod); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_v_new_sites, __pyx_v_i); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      if (unlikely(PyObject_SetItem(__pyx_t_12, __pyx_v_j, __pyx_t_5) < 0)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":129
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ * 
+ *                 HE[:, 2*i+j] = ((Ep.gradient - Em.gradient)/(2*d)).flatten()             # <<<<<<<<<<<<<<
+ * 
+ *         # Average out discrepencies, since it should be symmetric.
+ */
+      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_Ep, __pyx_n_s_gradient); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_Em, __pyx_n_s_gradient); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_2 = PyNumber_Subtract(__pyx_t_12, __pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_t_14 = PyFloat_FromDouble((2.0 * __pyx_v_d)); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_12 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_flatten); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __pyx_t_12 = NULL;
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_14))) {
+        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_14);
+        if (likely(__pyx_t_12)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_14);
+          __Pyx_INCREF(__pyx_t_12);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_14, function);
+        }
+      }
+      __pyx_t_5 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_14);
+      __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_t_14 = PyNumber_Multiply(__pyx_int_2, __pyx_v_i); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_12 = PyNumber_Add(__pyx_t_14, __pyx_v_j); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_INCREF(__pyx_slice_);
+      __Pyx_GIVEREF(__pyx_slice_);
+      PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_slice_);
+      __Pyx_GIVEREF(__pyx_t_12);
+      PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_12);
+      __pyx_t_12 = 0;
+      if (unlikely(PyObject_SetItem(__pyx_v_HE, __pyx_t_14, __pyx_t_5) < 0)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    }
+
+    /* "squish/energy.pyx":120
+ *         HE = np.zeros((2*self.n, 2*self.n))
+ *         new_sites = np.copy(self.site_arr)    # Maintain one copy for speed.
+ *         for i in range(self.n):             # <<<<<<<<<<<<<<
+ *             for j in range(2):
+ *                 mod = self.w if j == 0 else self.h
+ */
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "squish/energy.pyx":132
+ * 
+ *         # Average out discrepencies, since it should be symmetric.
+ *         for i in range(2*self.n):             # <<<<<<<<<<<<<<
+ *             for j in range(i, 2*self.n):
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2
+ */
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->__pyx_base.n)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
+    __pyx_t_1 = __pyx_t_5; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
+    __pyx_t_7 = NULL;
+  } else {
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
+  }
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  for (;;) {
+    if (likely(!__pyx_t_7)) {
+      if (likely(PyList_CheckExact(__pyx_t_1))) {
+        if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 132, __pyx_L1_error)
+        #else
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 132, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        #endif
+      } else {
+        if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_5); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 132, __pyx_L1_error)
+        #else
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 132, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        #endif
+      }
+    } else {
+      __pyx_t_5 = __pyx_t_7(__pyx_t_1);
+      if (unlikely(!__pyx_t_5)) {
+        PyObject* exc_type = PyErr_Occurred();
+        if (exc_type) {
+          if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+          else __PYX_ERR(0, 132, __pyx_L1_error)
+        }
+        break;
+      }
+      __Pyx_GOTREF(__pyx_t_5);
+    }
+    __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
+    __pyx_t_5 = 0;
+
+    /* "squish/energy.pyx":133
+ *         # Average out discrepencies, since it should be symmetric.
+ *         for i in range(2*self.n):
+ *             for j in range(i, 2*self.n):             # <<<<<<<<<<<<<<
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2
+ *                 HE[j][i] = HE[i][j]
+ */
+    __pyx_t_5 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->__pyx_base.n)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
+    __Pyx_INCREF(__pyx_v_i);
+    __Pyx_GIVEREF(__pyx_v_i);
+    PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_v_i);
+    __Pyx_GIVEREF(__pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_5);
+    __pyx_t_5 = 0;
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+    if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
+      __pyx_t_14 = __pyx_t_5; __Pyx_INCREF(__pyx_t_14); __pyx_t_15 = 0;
+      __pyx_t_16 = NULL;
+    } else {
+      __pyx_t_15 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 133, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_16 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 133, __pyx_L1_error)
+    }
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    for (;;) {
+      if (likely(!__pyx_t_16)) {
+        if (likely(PyList_CheckExact(__pyx_t_14))) {
+          if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_14)) break;
+          #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
+          #else
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_5);
+          #endif
+        } else {
+          if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_14)) break;
+          #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_15); __Pyx_INCREF(__pyx_t_5); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
+          #else
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_14, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_5);
+          #endif
+        }
+      } else {
+        __pyx_t_5 = __pyx_t_16(__pyx_t_14);
+        if (unlikely(!__pyx_t_5)) {
+          PyObject* exc_type = PyErr_Occurred();
+          if (exc_type) {
+            if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+            else __PYX_ERR(0, 133, __pyx_L1_error)
+          }
+          break;
+        }
+        __Pyx_GOTREF(__pyx_t_5);
+      }
+      __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_5);
+      __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":134
+ *         for i in range(2*self.n):
+ *             for j in range(i, 2*self.n):
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2             # <<<<<<<<<<<<<<
+ *                 HE[j][i] = HE[i][j]
+ *         self.hess = HE
+ */
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_j); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_j); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = PyNumber_Add(__pyx_t_12, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = __Pyx_PyInt_TrueDivideObjC(__pyx_t_5, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      if (unlikely(PyObject_SetItem(__pyx_t_5, __pyx_v_j, __pyx_t_2) < 0)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "squish/energy.pyx":135
+ *             for j in range(i, 2*self.n):
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2
+ *                 HE[j][i] = HE[i][j]             # <<<<<<<<<<<<<<
+ *         self.hess = HE
+ * 
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_j); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_HE, __pyx_v_j); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_i, __pyx_t_5) < 0)) __PYX_ERR(0, 135, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+      /* "squish/energy.pyx":133
+ *         # Average out discrepencies, since it should be symmetric.
+ *         for i in range(2*self.n):
+ *             for j in range(i, 2*self.n):             # <<<<<<<<<<<<<<
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2
+ *                 HE[j][i] = HE[i][j]
+ */
+    }
+    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+
+    /* "squish/energy.pyx":132
+ * 
+ *         # Average out discrepencies, since it should be symmetric.
+ *         for i in range(2*self.n):             # <<<<<<<<<<<<<<
+ *             for j in range(i, 2*self.n):
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2
+ */
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "squish/energy.pyx":136
+ *                 HE[i][j] = (HE[i][j] + HE[j][i])/2
+ *                 HE[j][i] = HE[i][j]
+ *         self.hess = HE             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_t_17 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_v_HE, PyBUF_WRITABLE); if (unlikely(!__pyx_t_17.memview)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __PYX_XDEC_MEMVIEW(&__pyx_v_self->__pyx_base.hess, 0);
+  __pyx_v_self->__pyx_base.hess = __pyx_t_17;
+  __pyx_t_17.memview = NULL;
+  __pyx_t_17.data = NULL;
+
+  /* "squish/energy.pyx":116
+ * 
+ * 
+ *     cdef void calc_hess(self) except *:             # <<<<<<<<<<<<<<
+ *         d = 10e-5
+ *         HE = np.zeros((2*self.n, 2*self.n))
+ */
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_XDECREF(__pyx_t_12);
+  __Pyx_XDECREF(__pyx_t_14);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_17, 1);
+  __Pyx_AddTraceback("squish.energy.AreaEnergy.calc_hess", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_HE);
+  __Pyx_XDECREF(__pyx_v_new_sites);
+  __Pyx_XDECREF(__pyx_v_i);
+  __Pyx_XDECREF(__pyx_v_j);
+  __Pyx_XDECREF(__pyx_v_mod);
+  __Pyx_XDECREF(__pyx_v_Ep);
+  __Pyx_XDECREF(__pyx_v_Em);
   __Pyx_RefNannyFinishContext();
 }
 
@@ -4360,7 +5162,7 @@ static PyObject *__pyx_pf_6squish_6energy_10AreaEnergy_2__reduce_cython__(CYTHON
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4416,7 +5218,7 @@ static PyObject *__pyx_pf_6squish_6energy_10AreaEnergy_4__setstate_cython__(CYTH
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4439,12 +5241,12 @@ static PyObject *__pyx_pf_6squish_6energy_10AreaEnergy_4__setstate_cython__(CYTH
   return __pyx_r;
 }
 
-/* "squish/energy.pyx":130
+/* "squish/energy.pyx":153
  * 
  * 
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         #self.edge_cache_map = &AREA_EDGE_CACHE_MAP
  */
 
 /* Python wrapper */
@@ -4490,29 +5292,29 @@ static int __pyx_pw_6squish_6energy_14RadialALEnergy_1__init__(PyObject *__pyx_v
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(0, 130, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(0, 153, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_h)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(0, 130, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(0, 153, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(0, 130, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(0, 153, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_site_arr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(0, 130, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(0, 153, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 153, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -4523,21 +5325,21 @@ static int __pyx_pw_6squish_6energy_14RadialALEnergy_1__init__(PyObject *__pyx_v
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
-    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
-    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
-    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
+    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L3_error)
+    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L3_error)
+    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L3_error)
     __pyx_v_site_arr = ((PyArrayObject *)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 130, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 153, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("squish.energy.RadialALEnergy.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(0, 154, __pyx_L1_error)
   __pyx_r = __pyx_pf_6squish_6energy_14RadialALEnergy___init__(((struct __pyx_obj_6squish_6energy_RadialALEnergy *)__pyx_v_self), __pyx_v_n, __pyx_v_w, __pyx_v_h, __pyx_v_r, __pyx_v_site_arr);
 
   /* function exit code */
@@ -4573,27 +5375,27 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
   __pyx_pybuffernd_site_arr.rcbuffer = &__pyx_pybuffer_site_arr;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_6squish_4core_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 130, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_6squish_4core_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 153, __pyx_L1_error)
   }
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
-  /* "squish/energy.pyx":133
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
- * 		self.energy = 0.0             # <<<<<<<<<<<<<<
+  /* "squish/energy.pyx":156
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         #self.edge_cache_map = &AREA_EDGE_CACHE_MAP
+ *         self.energy = 0.0             # <<<<<<<<<<<<<<
  * 
- * 		super().__init__(n, w, h, r, site_arr)
+ *         super().__init__(n, w, h, r, site_arr)
  */
   __pyx_v_self->__pyx_base.energy = 0.0;
 
-  /* "squish/energy.pyx":135
- * 		self.energy = 0.0
+  /* "squish/energy.pyx":158
+ *         self.energy = 0.0
  * 
- * 		super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
+ *         super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(((PyObject *)__pyx_ptype_6squish_6energy_RadialALEnergy));
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_6squish_6energy_RadialALEnergy));
@@ -4601,19 +5403,19 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self));
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -4630,7 +5432,7 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -4642,7 +5444,7 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -4652,7 +5454,7 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
   } else
   #endif
   {
-    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -4672,19 +5474,19 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
     __pyx_t_4 = 0;
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "squish/energy.pyx":130
+  /* "squish/energy.pyx":153
  * 
  * 
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		#self.edge_cache_map = &AREA_EDGE_CACHE_MAP
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         #self.edge_cache_map = &AREA_EDGE_CACHE_MAP
  */
 
   /* function exit code */
@@ -4715,12 +5517,12 @@ static int __pyx_pf_6squish_6energy_14RadialALEnergy___init__(struct __pyx_obj_6
   return __pyx_r;
 }
 
-/* "squish/energy.pyx":138
+/* "squish/energy.pyx":161
  * 
  * 
- * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
 static void __pyx_f_6squish_6energy_14RadialALEnergy_precompute(struct __pyx_obj_6squish_6energy_RadialALEnergy *__pyx_v_self) {
@@ -4731,43 +5533,43 @@ static void __pyx_f_6squish_6energy_14RadialALEnergy_precompute(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("precompute", 0);
 
-  /* "squish/energy.pyx":139
+  /* "squish/energy.pyx":162
  * 
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 139, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 139, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 139, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 162, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 162, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 162, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":140
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+  /* "squish/energy.pyx":163
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
- * 		pass
+ *         pass
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 140, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 140, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 140, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 163, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 163, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 163, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":139
+  /* "squish/energy.pyx":162
  * 
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "squish/energy.pyx":138
+  /* "squish/energy.pyx":161
  * 
  * 
- * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
   /* function exit code */
@@ -4778,12 +5580,12 @@ static void __pyx_f_6squish_6energy_14RadialALEnergy_precompute(struct __pyx_obj
   __Pyx_RefNannyFinishContext();
 }
 
-/* "squish/energy.pyx":145
+/* "squish/energy.pyx":168
  * 
  * 
- * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
 static void __pyx_f_6squish_6energy_14RadialALEnergy_calc_grad(struct __pyx_obj_6squish_6energy_RadialALEnergy *__pyx_v_self) {
@@ -4794,43 +5596,43 @@ static void __pyx_f_6squish_6energy_14RadialALEnergy_calc_grad(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calc_grad", 0);
 
-  /* "squish/energy.pyx":146
+  /* "squish/energy.pyx":169
  * 
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 146, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 146, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 146, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 169, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 169, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 169, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":147
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+  /* "squish/energy.pyx":170
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
- * 		pass
+ *         pass
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 147, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 147, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 147, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 170, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 170, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 170, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":146
+  /* "squish/energy.pyx":169
  * 
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "squish/energy.pyx":145
+  /* "squish/energy.pyx":168
  * 
  * 
- * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
   /* function exit code */
@@ -4838,6 +5640,22 @@ static void __pyx_f_6squish_6energy_14RadialALEnergy_calc_grad(struct __pyx_obj_
   __pyx_L1_error:;
   __Pyx_AddTraceback("squish.energy.RadialALEnergy.calc_grad", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "squish/energy.pyx":174
+ *         pass
+ * 
+ *     cdef void calc_hess(self) except *:             # <<<<<<<<<<<<<<
+ *         pass
+ * 
+ */
+
+static void __pyx_f_6squish_6energy_14RadialALEnergy_calc_hess(CYTHON_UNUSED struct __pyx_obj_6squish_6energy_RadialALEnergy *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("calc_hess", 0);
+
+  /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
@@ -4875,7 +5693,7 @@ static PyObject *__pyx_pf_6squish_6energy_14RadialALEnergy_2__reduce_cython__(CY
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4931,7 +5749,7 @@ static PyObject *__pyx_pf_6squish_6energy_14RadialALEnergy_4__setstate_cython__(
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4954,12 +5772,12 @@ static PyObject *__pyx_pf_6squish_6energy_14RadialALEnergy_4__setstate_cython__(
   return __pyx_r;
 }
 
-/* "squish/energy.pyx":164
- * 	attr_str = "radial-t"
- * 	title_str = "Radial[T]"
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &RADIALT_ECM
+/* "squish/energy.pyx":190
+ *     attr_str = "radial-t"
+ *     title_str = "Radial[T]"
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &RADIALT_ECM
  */
 
 /* Python wrapper */
@@ -5005,29 +5823,29 @@ static int __pyx_pw_6squish_6energy_13RadialTEnergy_1__init__(PyObject *__pyx_v_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(0, 164, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(0, 190, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_h)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(0, 164, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(0, 190, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(0, 164, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(0, 190, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_site_arr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(0, 164, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(0, 190, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 164, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 190, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -5038,21 +5856,21 @@ static int __pyx_pw_6squish_6energy_13RadialTEnergy_1__init__(PyObject *__pyx_v_
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
-    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
-    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
-    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
+    __pyx_v_n = __Pyx_PyInt_As_npy_int64(values[0]); if (unlikely((__pyx_v_n == ((npy_int64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 190, __pyx_L3_error)
+    __pyx_v_w = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_w == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 190, __pyx_L3_error)
+    __pyx_v_h = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_h == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 190, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_r == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 190, __pyx_L3_error)
     __pyx_v_site_arr = ((PyArrayObject *)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 164, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 190, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("squish.energy.RadialTEnergy.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(0, 165, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_site_arr), __pyx_ptype_5numpy_ndarray, 1, "site_arr", 0))) __PYX_ERR(0, 191, __pyx_L1_error)
   __pyx_r = __pyx_pf_6squish_6energy_13RadialTEnergy___init__(((struct __pyx_obj_6squish_6energy_RadialTEnergy *)__pyx_v_self), __pyx_v_n, __pyx_v_w, __pyx_v_h, __pyx_v_r, __pyx_v_site_arr);
 
   /* function exit code */
@@ -5088,36 +5906,36 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
   __pyx_pybuffernd_site_arr.rcbuffer = &__pyx_pybuffer_site_arr;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_6squish_4core_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 164, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_site_arr.rcbuffer->pybuffer, (PyObject*)__pyx_v_site_arr, &__Pyx_TypeInfo_nn___pyx_t_6squish_4core_FLOAT_T, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 190, __pyx_L1_error)
   }
   __pyx_pybuffernd_site_arr.diminfo[0].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_site_arr.diminfo[0].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_site_arr.diminfo[1].strides = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_site_arr.diminfo[1].shape = __pyx_pybuffernd_site_arr.rcbuffer->pybuffer.shape[1];
 
-  /* "squish/energy.pyx":166
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &RADIALT_ECM             # <<<<<<<<<<<<<<
- * 		self.energy = 0.0
+  /* "squish/energy.pyx":192
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &RADIALT_ECM             # <<<<<<<<<<<<<<
+ *         self.energy = 0.0
  * 
  */
   __pyx_v_self->__pyx_base.edge_cache_map = (&__pyx_v_6squish_6energy_RADIALT_ECM);
 
-  /* "squish/energy.pyx":167
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &RADIALT_ECM
- * 		self.energy = 0.0             # <<<<<<<<<<<<<<
+  /* "squish/energy.pyx":193
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &RADIALT_ECM
+ *         self.energy = 0.0             # <<<<<<<<<<<<<<
  * 
- * 		super().__init__(n, w, h, r, site_arr)
+ *         super().__init__(n, w, h, r, site_arr)
  */
   __pyx_v_self->__pyx_base.energy = 0.0;
 
-  /* "squish/energy.pyx":169
- * 		self.energy = 0.0
+  /* "squish/energy.pyx":195
+ *         self.energy = 0.0
  * 
- * 		super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
+ *         super().__init__(n, w, h, r, site_arr)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(((PyObject *)__pyx_ptype_6squish_6energy_RadialTEnergy));
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_6squish_6energy_RadialTEnergy));
@@ -5125,19 +5943,19 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
   __Pyx_INCREF(((PyObject *)__pyx_v_self));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_v_self));
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_npy_int64(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -5154,7 +5972,7 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5166,7 +5984,7 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, ((PyObject *)__pyx_v_site_arr)};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_8, 5+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5176,7 +5994,7 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
   } else
   #endif
   {
-    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(5+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -5196,19 +6014,19 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
     __pyx_t_4 = 0;
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "squish/energy.pyx":164
- * 	attr_str = "radial-t"
- * 	title_str = "Radial[T]"
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
- * 		self.edge_cache_map = &RADIALT_ECM
+  /* "squish/energy.pyx":190
+ *     attr_str = "radial-t"
+ *     title_str = "Radial[T]"
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *         self.edge_cache_map = &RADIALT_ECM
  */
 
   /* function exit code */
@@ -5239,12 +6057,12 @@ static int __pyx_pf_6squish_6energy_13RadialTEnergy___init__(struct __pyx_obj_6s
   return __pyx_r;
 }
 
-/* "squish/energy.pyx":172
+/* "squish/energy.pyx":198
  * 
  * 
- * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
 static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_6squish_6energy_RadialTEnergy *__pyx_v_self) {
@@ -5280,53 +6098,53 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("precompute", 0);
 
-  /* "squish/energy.pyx":173
+  /* "squish/energy.pyx":199
  * 
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 173, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 173, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 173, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 199, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 199, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 199, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":174
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+  /* "squish/energy.pyx":200
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
- * 		cdef Site xi
+ *         cdef Site xi
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 174, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 174, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 174, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 200, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 200, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 200, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":173
+  /* "squish/energy.pyx":199
  * 
- * 	cdef void precompute(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "squish/energy.pyx":181
+  /* "squish/energy.pyx":207
  * 
- * 		# All energy has a 2pir_0 term.
- * 		cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], 2*PI*self.r**2)             # <<<<<<<<<<<<<<
- * 		cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])
- * 		cdef FLOAT_T sm, sp
+ *         # All energy has a 2pir_0 term.
+ *         cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], 2*PI*self.r**2)             # <<<<<<<<<<<<<<
+ *         cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])
+ *         cdef FLOAT_T sm, sp
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_full); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_full); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 181, __pyx_L1_error)}
-  __pyx_t_2 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 207, __pyx_L1_error)}
+  __pyx_t_2 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(((2.0 * M_PI) * pow(__pyx_v_self->__pyx_base.r, 2.0))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(((2.0 * M_PI) * pow(__pyx_v_self->__pyx_base.r, 2.0))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -5343,7 +6161,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5353,7 +6171,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5361,7 +6179,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 207, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -5372,31 +6190,31 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
     __pyx_t_2 = 0;
     __pyx_t_4 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_site_energy = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "squish/energy.pyx":182
- * 		# All energy has a 2pir_0 term.
- * 		cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], 2*PI*self.r**2)
- * 		cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])             # <<<<<<<<<<<<<<
- * 		cdef FLOAT_T sm, sp
+  /* "squish/energy.pyx":208
+ *         # All energy has a 2pir_0 term.
+ *         cdef FLOAT_T [:] site_energy = np.full(self.sites.shape[0], 2*PI*self.r**2)
+ *         cdef FLOAT_T [:] avg_radii = np.zeros(self.sites.shape[0])             # <<<<<<<<<<<<<<
+ *         cdef FLOAT_T sm, sp
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 182, __pyx_L1_error)}
-  __pyx_t_3 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 208, __pyx_L1_error)}
+  __pyx_t_3 = PyInt_FromSsize_t((__pyx_v_self->__pyx_base.sites.shape[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
@@ -5411,21 +6229,21 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_avg_radii = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "squish/energy.pyx":186
+  /* "squish/energy.pyx":212
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
   {
       #ifdef WITH_THREAD
@@ -5434,7 +6252,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
       __Pyx_FastGIL_Remember();
       #endif
       /*try:*/ {
-        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 186, __pyx_L4_error)}
+        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 212, __pyx_L4_error)}
         __pyx_t_9 = (__pyx_v_self->__pyx_base.sites.shape[0]);
         if ((1 == 0)) abort();
         {
@@ -5462,163 +6280,163 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
                             __pyx_v_sm = ((__pyx_t_6squish_4core_FLOAT_T)__PYX_NAN());
                             __pyx_v_sp = ((__pyx_t_6squish_4core_FLOAT_T)__PYX_NAN());
 
-                            /* "squish/energy.pyx":187
- * 		cdef INT_T i, j
- * 		for i in prange(self.sites.shape[0], nogil=True):
- * 			xi = _Site(i, &info)             # <<<<<<<<<<<<<<
- * 			e = xi.edge(&xi)
- * 			j = 0
+                            /* "squish/energy.pyx":213
+ *         cdef INT_T i, j
+ *         for i in prange(self.sites.shape[0], nogil=True):
+ *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
+ *             e = xi.edge(&xi)
+ *             j = 0
  */
                             __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "squish/energy.pyx":188
- * 		for i in prange(self.sites.shape[0], nogil=True):
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
- * 			j = 0
- * 			while j < xi.edge_num(&xi):
+                            /* "squish/energy.pyx":214
+ *         for i in prange(self.sites.shape[0], nogil=True):
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
+ *             j = 0
+ *             while j < xi.edge_num(&xi):
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "squish/energy.pyx":189
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
- * 			j = 0             # <<<<<<<<<<<<<<
- * 			while j < xi.edge_num(&xi):
- * 				ep = e.next(&e)
+                            /* "squish/energy.pyx":215
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
+ *             j = 0             # <<<<<<<<<<<<<<
+ *             while j < xi.edge_num(&xi):
+ *                 ep = e.next(&e)
  */
                             __pyx_v_j = 0;
 
-                            /* "squish/energy.pyx":190
- * 			e = xi.edge(&xi)
- * 			j = 0
- * 			while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
- * 				ep = e.next(&e)
- * 				#e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+                            /* "squish/energy.pyx":216
+ *             e = xi.edge(&xi)
+ *             j = 0
+ *             while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
+ *                 ep = e.next(&e)
+ *                 #e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  */
                             while (1) {
                               __pyx_t_12 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
                               if (!__pyx_t_12) break;
 
-                              /* "squish/energy.pyx":191
- * 			j = 0
- * 			while j < xi.edge_num(&xi):
- * 				ep = e.next(&e)             # <<<<<<<<<<<<<<
- * 				#e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+                              /* "squish/energy.pyx":217
+ *             j = 0
+ *             while j < xi.edge_num(&xi):
+ *                 ep = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 #e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
  */
                               __pyx_v_ep = __pyx_v_e.next((&__pyx_v_e));
 
-                              /* "squish/energy.pyx":194
- * 				#e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+                              /* "squish/energy.pyx":220
+ *                 #e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
- * 				la = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
- * 				sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la
- * 				sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la
+ *                 la = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la
+ *                 sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la
  */
                               __pyx_v_la = __pyx_v_e.cache->la((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR);
 
-                              /* "squish/energy.pyx":195
+                              /* "squish/energy.pyx":221
  * 
- * 				la = e.cache.la(&e, NAN_VECTOR)
- * 				sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la             # <<<<<<<<<<<<<<
- * 				sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la
+ *                 la = e.cache.la(&e, NAN_VECTOR)
+ *                 sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la             # <<<<<<<<<<<<<<
+ *                 sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la
  * 
  */
                               __pyx_v_sp = __pyx_v_la.dot((&__pyx_v_la), __pyx_v_ep.cache->da((&__pyx_v_ep), __pyx_v_6squish_7voronoi_NAN_VECTOR));
 
-                              /* "squish/energy.pyx":196
- * 				la = e.cache.la(&e, NAN_VECTOR)
- * 				sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la
- * 				sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la             # <<<<<<<<<<<<<<
+                              /* "squish/energy.pyx":222
+ *                 la = e.cache.la(&e, NAN_VECTOR)
+ *                 sp = la.dot(&la, ep.cache.da(&ep, NAN_VECTOR)) # dap . la
+ *                 sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la             # <<<<<<<<<<<<<<
  * 
- * 				sp = sp / (ep.cache.da_mag(&ep, NAN) * e.cache.la_mag(&e, NAN))
+ *                 sp = sp / (ep.cache.da_mag(&ep, NAN) * e.cache.la_mag(&e, NAN))
  */
                               __pyx_v_sm = __pyx_v_la.dot((&__pyx_v_la), __pyx_v_e.cache->da((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR));
 
-                              /* "squish/energy.pyx":198
- * 				sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la
+                              /* "squish/energy.pyx":224
+ *                 sm = la.dot(&la, e.cache.da(&e, NAN_VECTOR)) # da . la
  * 
- * 				sp = sp / (ep.cache.da_mag(&ep, NAN) * e.cache.la_mag(&e, NAN))             # <<<<<<<<<<<<<<
- * 				sm = sm / (e.cache.da_mag(&e, NAN) * e.cache.la_mag(&e, NAN))
+ *                 sp = sp / (ep.cache.da_mag(&ep, NAN) * e.cache.la_mag(&e, NAN))             # <<<<<<<<<<<<<<
+ *                 sm = sm / (e.cache.da_mag(&e, NAN) * e.cache.la_mag(&e, NAN))
  * 
  */
                               __pyx_v_sp = (__pyx_v_sp / (__pyx_v_ep.cache->da_mag((&__pyx_v_ep), NAN) * __pyx_v_e.cache->la_mag((&__pyx_v_e), NAN)));
 
-                              /* "squish/energy.pyx":199
+                              /* "squish/energy.pyx":225
  * 
- * 				sp = sp / (ep.cache.da_mag(&ep, NAN) * e.cache.la_mag(&e, NAN))
- * 				sm = sm / (e.cache.da_mag(&e, NAN) * e.cache.la_mag(&e, NAN))             # <<<<<<<<<<<<<<
+ *                 sp = sp / (ep.cache.da_mag(&ep, NAN) * e.cache.la_mag(&e, NAN))
+ *                 sm = sm / (e.cache.da_mag(&e, NAN) * e.cache.la_mag(&e, NAN))             # <<<<<<<<<<<<<<
  * 
- * 				e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))
+ *                 e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))
  */
                               __pyx_v_sm = (__pyx_v_sm / (__pyx_v_e.cache->da_mag((&__pyx_v_e), NAN) * __pyx_v_e.cache->la_mag((&__pyx_v_e), NAN)));
 
-                              /* "squish/energy.pyx":201
- * 				sm = sm / (e.cache.da_mag(&e, NAN) * e.cache.la_mag(&e, NAN))
+                              /* "squish/energy.pyx":227
+ *                 sm = sm / (e.cache.da_mag(&e, NAN) * e.cache.la_mag(&e, NAN))
  * 
- * 				e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))             # <<<<<<<<<<<<<<
+ *                 e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))             # <<<<<<<<<<<<<<
  * 
- * 				avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2
+ *                 avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2
  */
                               (void)(__pyx_v_e.cache->calI((&__pyx_v_e), ((__pyx_t_6squish_4core_FLOAT_T)(atanh(((double)__pyx_v_sp)) - atanh(((double)__pyx_v_sm))))));
 
-                              /* "squish/energy.pyx":203
- * 				e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))
+                              /* "squish/energy.pyx":229
+ *                 e.cache.calI(&e, <FLOAT_T>(atanh(<double>sp) - atanh(<double>sm)))
  * 
- * 				avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2             # <<<<<<<<<<<<<<
+ *                 avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2             # <<<<<<<<<<<<<<
  * 
- * 				e = e.next(&e)
+ *                 e = e.next(&e)
  */
                               __pyx_t_13 = __pyx_v_i;
                               *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_avg_radii.data + __pyx_t_13 * __pyx_v_avg_radii.strides[0]) )) += ((__pyx_v_e.cache->ya_mag((&__pyx_v_e), NAN) * __pyx_v_e.cache->calI((&__pyx_v_e), NAN)) / 2.0);
 
-                              /* "squish/energy.pyx":205
- * 				avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2
+                              /* "squish/energy.pyx":231
+ *                 avg_radii[i] += e.cache.ya_mag(&e, NAN) * e.cache.calI(&e, NAN) / 2
  * 
- * 				e = e.next(&e)             # <<<<<<<<<<<<<<
- * 				j = j + 1
+ *                 e = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 j = j + 1
  * 
  */
                               __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
 
-                              /* "squish/energy.pyx":206
+                              /* "squish/energy.pyx":232
  * 
- * 				e = e.next(&e)
- * 				j = j + 1             # <<<<<<<<<<<<<<
+ *                 e = e.next(&e)
+ *                 j = j + 1             # <<<<<<<<<<<<<<
  * 
- * 			site_energy[i] += 2*(xi.cache.area(&xi, NAN) - self.r*avg_radii[i])
+ *             site_energy[i] += 2*(xi.cache.area(&xi, NAN) - self.r*avg_radii[i])
  */
                               __pyx_v_j = (__pyx_v_j + 1);
                             }
 
-                            /* "squish/energy.pyx":208
- * 				j = j + 1
+                            /* "squish/energy.pyx":234
+ *                 j = j + 1
  * 
- * 			site_energy[i] += 2*(xi.cache.area(&xi, NAN) - self.r*avg_radii[i])             # <<<<<<<<<<<<<<
+ *             site_energy[i] += 2*(xi.cache.area(&xi, NAN) - self.r*avg_radii[i])             # <<<<<<<<<<<<<<
  * 
- * 			xi.cache.avg_radius(&xi, avg_radii[i]/(2*PI))
+ *             xi.cache.avg_radius(&xi, avg_radii[i]/(2*PI))
  */
                             __pyx_t_13 = __pyx_v_i;
                             __pyx_t_14 = __pyx_v_i;
                             *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_energy.data + __pyx_t_14 * __pyx_v_site_energy.strides[0]) )) += (2.0 * (__pyx_v_xi.cache->area((&__pyx_v_xi), NAN) - (__pyx_v_self->__pyx_base.r * (*((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_avg_radii.data + __pyx_t_13 * __pyx_v_avg_radii.strides[0]) ))))));
 
-                            /* "squish/energy.pyx":210
- * 			site_energy[i] += 2*(xi.cache.area(&xi, NAN) - self.r*avg_radii[i])
+                            /* "squish/energy.pyx":236
+ *             site_energy[i] += 2*(xi.cache.area(&xi, NAN) - self.r*avg_radii[i])
  * 
- * 			xi.cache.avg_radius(&xi, avg_radii[i]/(2*PI))             # <<<<<<<<<<<<<<
- * 			xi.cache.energy(&xi, site_energy[i])
+ *             xi.cache.avg_radius(&xi, avg_radii[i]/(2*PI))             # <<<<<<<<<<<<<<
+ *             xi.cache.energy(&xi, site_energy[i])
  * 
  */
                             __pyx_t_13 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->avg_radius((&__pyx_v_xi), ((*((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_avg_radii.data + __pyx_t_13 * __pyx_v_avg_radii.strides[0]) ))) / ((__pyx_t_6squish_4core_FLOAT_T)(2.0 * M_PI)))));
 
-                            /* "squish/energy.pyx":211
+                            /* "squish/energy.pyx":237
  * 
- * 			xi.cache.avg_radius(&xi, avg_radii[i]/(2*PI))
- * 			xi.cache.energy(&xi, site_energy[i])             # <<<<<<<<<<<<<<
+ *             xi.cache.avg_radius(&xi, avg_radii[i]/(2*PI))
+ *             xi.cache.energy(&xi, site_energy[i])             # <<<<<<<<<<<<<<
  * 
- * 		self.energy = np.sum(site_energy[:self.n])
+ *         self.energy = np.sum(site_energy[:self.n])
  */
                             __pyx_t_13 = __pyx_v_i;
                             (void)(__pyx_v_xi.cache->energy((&__pyx_v_xi), (*((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_site_energy.data + __pyx_t_13 * __pyx_v_site_energy.strides[0]) )))));
@@ -5635,12 +6453,12 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
         #endif
       }
 
-      /* "squish/energy.pyx":186
+      /* "squish/energy.pyx":212
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
       /*finally:*/ {
         /*normal exit:*/{
@@ -5661,16 +6479,16 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
       }
   }
 
-  /* "squish/energy.pyx":213
- * 			xi.cache.energy(&xi, site_energy[i])
+  /* "squish/energy.pyx":239
+ *             xi.cache.energy(&xi, site_energy[i])
  * 
- * 		self.energy = np.sum(site_energy[:self.n])             # <<<<<<<<<<<<<<
+ *         self.energy = np.sum(site_energy[:self.n])             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_sum); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_sum); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_8.data = __pyx_v_site_energy.data;
@@ -5691,10 +6509,10 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_precompute(struct __pyx_obj_
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 213, __pyx_L1_error)
+    __PYX_ERR(0, 239, __pyx_L1_error)
 }
 
-__pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_6squish_4core_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_6squish_4core_FLOAT_T, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L1_error)
+__pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_6squish_4core_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_6squish_4core_FLOAT_T, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __pyx_t_8.memview = NULL;
@@ -5712,19 +6530,19 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 1, (PyObject *(*)(char *)) __p
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_7);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_15 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_15 == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_15 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_15 == ((npy_float64)-1)) && PyErr_Occurred())) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->__pyx_base.energy = __pyx_t_15;
 
-  /* "squish/energy.pyx":172
+  /* "squish/energy.pyx":198
  * 
  * 
- * 	cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 			self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void precompute(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *             self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
   /* function exit code */
@@ -5744,12 +6562,12 @@ __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_t_8, 1, (PyObject *(*)(char *)) __p
   __Pyx_RefNannyFinishContext();
 }
 
-/* "squish/energy.pyx":216
+/* "squish/energy.pyx":242
  * 
  * 
- * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
 static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6squish_6energy_RadialTEnergy *__pyx_v_self) {
@@ -5777,52 +6595,52 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calc_grad", 0);
 
-  /* "squish/energy.pyx":217
+  /* "squish/energy.pyx":243
  * 
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 217, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 217, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 217, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 243, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 243, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 243, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":218
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+  /* "squish/energy.pyx":244
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
  * 
- * 		cdef Site xi
+ *         cdef Site xi
  */
-  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 218, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 218, __pyx_L1_error)}
-  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 218, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 244, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 244, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 244, __pyx_L1_error)}
 
-  /* "squish/energy.pyx":217
+  /* "squish/energy.pyx":243
  * 
- * 	cdef void calc_grad(self) except *:
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  * 
  */
   __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
 
-  /* "squish/energy.pyx":224
- * 		cdef Vector2D dedxi_p
+  /* "squish/energy.pyx":250
+ *         cdef Vector2D dedxi_p
  * 
- * 		cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
+ *         cdef FLOAT_T [:, ::1] dedx = np.zeros((self.n, 2), dtype=FLOAT)             # <<<<<<<<<<<<<<
  * 
- * 		cdef INT_T i, j
+ *         cdef INT_T i, j
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_npy_int64(__pyx_v_self->__pyx_base.n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -5830,34 +6648,34 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6
   __Pyx_GIVEREF(__pyx_int_2);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_int_2);
   __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 224, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_dedx = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "squish/energy.pyx":227
+  /* "squish/energy.pyx":253
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
   {
       #ifdef WITH_THREAD
@@ -5891,99 +6709,99 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6
                             /* Initialize private variables to invalid values */
                             __pyx_v_j = ((__pyx_t_6squish_4core_INT_T)0xbad0bad0);
 
-                            /* "squish/energy.pyx":228
- * 		cdef INT_T i, j
- * 		for i in prange(self.n, nogil=True):
- * 			xi = _Site(i, &info)             # <<<<<<<<<<<<<<
- * 			e = xi.edge(&xi)
+                            /* "squish/energy.pyx":254
+ *         cdef INT_T i, j
+ *         for i in prange(self.n, nogil=True):
+ *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
+ *             e = xi.edge(&xi)
  * 
  */
                             __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "squish/energy.pyx":229
- * 		for i in prange(self.n, nogil=True):
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)             # <<<<<<<<<<<<<<
+                            /* "squish/energy.pyx":255
+ *         for i in prange(self.n, nogil=True):
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
  * 
- * 			j = 0
+ *             j = 0
  */
                             __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "squish/energy.pyx":231
- * 			e = xi.edge(&xi)
+                            /* "squish/energy.pyx":257
+ *             e = xi.edge(&xi)
  * 
- * 			j = 0             # <<<<<<<<<<<<<<
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
- * 				dedxi_p = e.cache.ya(&e, NAN_VECTOR)
+ *             j = 0             # <<<<<<<<<<<<<<
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
+ *                 dedxi_p = e.cache.ya(&e, NAN_VECTOR)
  */
                             __pyx_v_j = 0;
 
-                            /* "squish/energy.pyx":232
+                            /* "squish/energy.pyx":258
  * 
- * 			j = 0
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.             # <<<<<<<<<<<<<<
- * 				dedxi_p = e.cache.ya(&e, NAN_VECTOR)
- * 				dedxi_p.self.smul(
+ *             j = 0
+ *             while j < xi.edge_num(&xi): # Looping through site edges.             # <<<<<<<<<<<<<<
+ *                 dedxi_p = e.cache.ya(&e, NAN_VECTOR)
+ *                 dedxi_p.self.smul(
  */
                             while (1) {
                               __pyx_t_9 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
                               if (!__pyx_t_9) break;
 
-                              /* "squish/energy.pyx":233
- * 			j = 0
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
- * 				dedxi_p = e.cache.ya(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
- * 				dedxi_p.self.smul(
- * 					&dedxi_p,
+                              /* "squish/energy.pyx":259
+ *             j = 0
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
+ *                 dedxi_p = e.cache.ya(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 dedxi_p.self.smul(
+ *                     &dedxi_p,
  */
                               __pyx_v_dedxi_p = __pyx_v_e.cache->ya((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR);
 
-                              /* "squish/energy.pyx":234
- * 			while j < xi.edge_num(&xi):	# Looping through site edges.
- * 				dedxi_p = e.cache.ya(&e, NAN_VECTOR)
- * 				dedxi_p.self.smul(             # <<<<<<<<<<<<<<
- * 					&dedxi_p,
- * 					e.cache.calI(&e, NAN) / e.cache.ya_mag(&e, NAN)
+                              /* "squish/energy.pyx":260
+ *             while j < xi.edge_num(&xi): # Looping through site edges.
+ *                 dedxi_p = e.cache.ya(&e, NAN_VECTOR)
+ *                 dedxi_p.self.smul(             # <<<<<<<<<<<<<<
+ *                     &dedxi_p,
+ *                     e.cache.calI(&e, NAN) / e.cache.ya_mag(&e, NAN)
  */
                               (void)(__pyx_v_dedxi_p.self.smul((&__pyx_v_dedxi_p), (__pyx_v_e.cache->calI((&__pyx_v_e), NAN) / __pyx_v_e.cache->ya_mag((&__pyx_v_e), NAN))));
 
-                              /* "squish/energy.pyx":239
- * 				)
+                              /* "squish/energy.pyx":265
+ *                 )
  * 
- * 				dedx[i][0] += 2*self.r*dedxi_p.x             # <<<<<<<<<<<<<<
- * 				dedx[i][1] += 2*self.r*dedxi_p.y
+ *                 dedx[i][0] += 2*self.r*dedxi_p.x             # <<<<<<<<<<<<<<
+ *                 dedx[i][1] += 2*self.r*dedxi_p.y
  * 
  */
                               __pyx_t_10 = __pyx_v_i;
                               __pyx_t_11 = 0;
                               *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_10 * __pyx_v_dedx.strides[0]) )) + __pyx_t_11)) )) += ((2.0 * __pyx_v_self->__pyx_base.r) * __pyx_v_dedxi_p.x);
 
-                              /* "squish/energy.pyx":240
+                              /* "squish/energy.pyx":266
  * 
- * 				dedx[i][0] += 2*self.r*dedxi_p.x
- * 				dedx[i][1] += 2*self.r*dedxi_p.y             # <<<<<<<<<<<<<<
+ *                 dedx[i][0] += 2*self.r*dedxi_p.x
+ *                 dedx[i][1] += 2*self.r*dedxi_p.y             # <<<<<<<<<<<<<<
  * 
- * 				e = e.next(&e)
+ *                 e = e.next(&e)
  */
                               __pyx_t_10 = __pyx_v_i;
                               __pyx_t_11 = 1;
                               *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ ((char *) (((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=0 */ (__pyx_v_dedx.data + __pyx_t_10 * __pyx_v_dedx.strides[0]) )) + __pyx_t_11)) )) += ((2.0 * __pyx_v_self->__pyx_base.r) * __pyx_v_dedxi_p.y);
 
-                              /* "squish/energy.pyx":242
- * 				dedx[i][1] += 2*self.r*dedxi_p.y
+                              /* "squish/energy.pyx":268
+ *                 dedx[i][1] += 2*self.r*dedxi_p.y
  * 
- * 				e = e.next(&e)             # <<<<<<<<<<<<<<
- * 				j = j + 1
+ *                 e = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 j = j + 1
  * 
  */
                               __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
 
-                              /* "squish/energy.pyx":243
+                              /* "squish/energy.pyx":269
  * 
- * 				e = e.next(&e)
- * 				j = j + 1             # <<<<<<<<<<<<<<
+ *                 e = e.next(&e)
+ *                 j = j + 1             # <<<<<<<<<<<<<<
  * 
- * 		self.grad = dedx
+ *         self.grad = dedx
  */
                               __pyx_v_j = (__pyx_v_j + 1);
                             }
@@ -6000,12 +6818,12 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6
         #endif
       }
 
-      /* "squish/energy.pyx":227
+      /* "squish/energy.pyx":253
  * 
- * 		cdef INT_T i, j
- * 		for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
- * 			xi = _Site(i, &info)
- * 			e = xi.edge(&xi)
+ *         cdef INT_T i, j
+ *         for i in prange(self.n, nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
  */
       /*finally:*/ {
         /*normal exit:*/{
@@ -6019,21 +6837,23 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6
       }
   }
 
-  /* "squish/energy.pyx":245
- * 				j = j + 1
+  /* "squish/energy.pyx":271
+ *                 j = j + 1
  * 
- * 		self.grad = dedx             # <<<<<<<<<<<<<<
+ *         self.grad = dedx             # <<<<<<<<<<<<<<
+ * 
+ *     cdef void calc_hess(self) except *:
  */
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->__pyx_base.grad, 0);
   __PYX_INC_MEMVIEW(&__pyx_v_dedx, 0);
   __pyx_v_self->__pyx_base.grad = __pyx_v_dedx;
 
-  /* "squish/energy.pyx":216
+  /* "squish/energy.pyx":242
  * 
  * 
- * 	cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
- * 		cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
- * 				self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+ *     cdef void calc_grad(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                 self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
  */
 
   /* function exit code */
@@ -6047,6 +6867,1129 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_grad(struct __pyx_obj_6
   __Pyx_AddTraceback("squish.energy.RadialTEnergy.calc_grad", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_dedx, 1);
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "squish/energy.pyx":273
+ *         self.grad = dedx
+ * 
+ *     cdef void calc_hess(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                                              self.vertices, self.site_cache,
+ */
+
+static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6squish_6energy_RadialTEnergy *__pyx_v_self) {
+  __pyx_t_6squish_7voronoi_VoronoiInfo __pyx_v_info;
+  __pyx_t_6squish_7voronoi_Site __pyx_v_xi;
+  __pyx_t_6squish_7voronoi_Site __pyx_v_xk;
+  __pyx_t_6squish_7voronoi_HalfEdge __pyx_v_em;
+  __pyx_t_6squish_7voronoi_HalfEdge __pyx_v_e;
+  __pyx_t_6squish_7voronoi_HalfEdge __pyx_v_ep;
+  __pyx_t_6squish_7voronoi_HalfEdge __pyx_v_f;
+  __pyx_t_6squish_4core_Vector2D __pyx_v_temp1;
+  __pyx_t_6squish_4core_Vector2D __pyx_v_temp2;
+  __pyx_t_6squish_4core_Matrix2x2 __pyx_v_dsite;
+  __pyx_t_6squish_4core_Matrix2x2 __pyx_v_q;
+  __pyx_t_6squish_4core_Matrix2x2 __pyx_v_tempm;
+  __pyx_t_6squish_4core_BitSet __pyx_v_edge_set;
+  __pyx_t_6squish_4core_INT_T __pyx_v_num_edges;
+  __Pyx_memviewslice __pyx_v_HE = { 0, 0, { 0 }, { 0 }, { 0 } };
+  __pyx_t_6squish_4core_INT_T __pyx_v_i;
+  __pyx_t_6squish_4core_INT_T __pyx_v_j;
+  __pyx_t_6squish_4core_INT_T __pyx_v_k;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  __Pyx_memviewslice __pyx_t_6 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  Py_ssize_t __pyx_t_7;
+  __pyx_t_6squish_4core_INT_T __pyx_t_8;
+  __pyx_t_6squish_4core_INT_T __pyx_t_9;
+  int __pyx_t_10;
+  __pyx_t_6squish_7voronoi_HalfEdge __pyx_t_11;
+  __pyx_t_6squish_7voronoi_HalfEdge __pyx_t_12;
+  __pyx_t_6squish_4core_INT_T __pyx_t_13;
+  __pyx_t_6squish_4core_INT_T __pyx_t_14;
+  __pyx_t_6squish_4core_INT_T __pyx_t_15;
+  __Pyx_memviewslice __pyx_t_16 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("calc_hess", 0);
+
+  /* "squish/energy.pyx":274
+ * 
+ *     cdef void calc_hess(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                                              self.vertices, self.site_cache,
+ *                                              self.edge_cache, self.edge_cache_map)
+ */
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 274, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 274, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 274, __pyx_L1_error)}
+
+  /* "squish/energy.pyx":275
+ *     cdef void calc_hess(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                                              self.vertices, self.site_cache,             # <<<<<<<<<<<<<<
+ *                                              self.edge_cache, self.edge_cache_map)
+ *         cdef Site xi, xk
+ */
+  if (unlikely(!__pyx_v_self->__pyx_base.vertices.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 275, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->__pyx_base.site_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 275, __pyx_L1_error)}
+
+  /* "squish/energy.pyx":276
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                                              self.vertices, self.site_cache,
+ *                                              self.edge_cache, self.edge_cache_map)             # <<<<<<<<<<<<<<
+ *         cdef Site xi, xk
+ *         cdef HalfEdge em, e, ep, f
+ */
+  if (unlikely(!__pyx_v_self->__pyx_base.edge_cache.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 276, __pyx_L1_error)}
+
+  /* "squish/energy.pyx":274
+ * 
+ *     cdef void calc_hess(self) except *:
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,             # <<<<<<<<<<<<<<
+ *                                              self.vertices, self.site_cache,
+ *                                              self.edge_cache, self.edge_cache_map)
+ */
+  __pyx_v_info = __pyx_f_6squish_7voronoi__VoronoiInfo(__pyx_v_self->__pyx_base.sites, __pyx_v_self->__pyx_base.edges, __pyx_v_self->__pyx_base.points, __pyx_v_self->__pyx_base.vertices, __pyx_v_self->__pyx_base.site_cache, __pyx_v_self->__pyx_base.edge_cache, __pyx_v_self->__pyx_base.edge_cache_map);
+
+  /* "squish/energy.pyx":283
+ *         cdef BitSet edge_set
+ * 
+ *         cdef INT_T num_edges = self.edges.shape[0]             # <<<<<<<<<<<<<<
+ * 
+ *         cdef FLOAT_T [:,:] HE = np.zeros((2*self.n, 2*self.n))
+ */
+  if (unlikely(!__pyx_v_self->__pyx_base.edges.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 283, __pyx_L1_error)}
+  __pyx_v_num_edges = (__pyx_v_self->__pyx_base.edges.shape[0]);
+
+  /* "squish/energy.pyx":285
+ *         cdef INT_T num_edges = self.edges.shape[0]
+ * 
+ *         cdef FLOAT_T [:,:] HE = np.zeros((2*self.n, 2*self.n))             # <<<<<<<<<<<<<<
+ * 
+ *         cdef INT_T i, j, k
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->__pyx_base.n)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_PyInt_From_npy_int64((2 * __pyx_v_self->__pyx_base.n)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_4);
+  __pyx_t_2 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_HE = __pyx_t_6;
+  __pyx_t_6.memview = NULL;
+  __pyx_t_6.data = NULL;
+
+  /* "squish/energy.pyx":288
+ * 
+ *         cdef INT_T i, j, k
+ *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
+ */
+  {
+      #ifdef WITH_THREAD
+      PyThreadState *_save;
+      Py_UNBLOCK_THREADS
+      __Pyx_FastGIL_Remember();
+      #endif
+      /*try:*/ {
+        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 288, __pyx_L4_error)}
+        __pyx_t_7 = (__pyx_v_self->__pyx_base.sites.shape[0]);
+        if ((1 == 0)) abort();
+        {
+            #if ((defined(__APPLE__) || defined(__OSX__)) && (defined(__GNUC__) && (__GNUC__ > 2 || (__GNUC__ == 2 && (__GNUC_MINOR__ > 95)))))
+                #undef likely
+                #undef unlikely
+                #define likely(x)   (x)
+                #define unlikely(x) (x)
+            #endif
+            __pyx_t_9 = (__pyx_t_7 - 0 + 1 - 1/abs(1)) / 1;
+            if (__pyx_t_9 > 0)
+            {
+                #ifdef _OPENMP
+                #pragma omp parallel private(__pyx_t_10, __pyx_t_11, __pyx_t_12)
+                #endif /* _OPENMP */
+                {
+                    #ifdef _OPENMP
+                    #pragma omp for lastprivate(__pyx_v_e) lastprivate(__pyx_v_em) lastprivate(__pyx_v_ep) firstprivate(__pyx_v_i) lastprivate(__pyx_v_i) lastprivate(__pyx_v_j) lastprivate(__pyx_v_xi)
+                    #endif /* _OPENMP */
+                    for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_9; __pyx_t_8++){
+                        {
+                            __pyx_v_i = (__pyx_t_6squish_4core_INT_T)(0 + 1 * __pyx_t_8);
+                            /* Initialize private variables to invalid values */
+                            __pyx_v_j = ((__pyx_t_6squish_4core_INT_T)0xbad0bad0);
+
+                            /* "squish/energy.pyx":289
+ *         cdef INT_T i, j, k
+ *         for i in prange(self.sites.shape[0], nogil=True):
+ *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
+ *             e = xi.edge(&xi)
+ * 
+ */
+                            __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
+
+                            /* "squish/energy.pyx":290
+ *         for i in prange(self.sites.shape[0], nogil=True):
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
+ * 
+ *             j = 0
+ */
+                            __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
+
+                            /* "squish/energy.pyx":292
+ *             e = xi.edge(&xi)
+ * 
+ *             j = 0             # <<<<<<<<<<<<<<
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)
+ */
+                            __pyx_v_j = 0;
+
+                            /* "squish/energy.pyx":293
+ * 
+ *             j = 0
+ *             while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
+ *                 em, ep = e.prev(&e), e.next(&e)
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+ */
+                            while (1) {
+                              __pyx_t_10 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
+                              if (!__pyx_t_10) break;
+
+                              /* "squish/energy.pyx":294
+ *             j = 0
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)             # <<<<<<<<<<<<<<
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+ * 
+ */
+                              __pyx_t_11 = __pyx_v_e.prev((&__pyx_v_e));
+                              __pyx_t_12 = __pyx_v_e.next((&__pyx_v_e));
+                              __pyx_v_em = __pyx_t_11;
+                              __pyx_v_ep = __pyx_t_12;
+
+                              /* "squish/energy.pyx":295
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))             # <<<<<<<<<<<<<<
+ * 
+ *                 e = e.next(&e)
+ */
+                              (void)(__pyx_v_e.cache->H((&__pyx_v_e), __pyx_vtabptr_6squish_7voronoi_VoronoiContainer->calc_H(__pyx_v_em, __pyx_v_e)));
+
+                              /* "squish/energy.pyx":297
+ *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
+ * 
+ *                 e = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 j = j + 1
+ * 
+ */
+                              __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
+
+                              /* "squish/energy.pyx":298
+ * 
+ *                 e = e.next(&e)
+ *                 j = j + 1             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+                              __pyx_v_j = (__pyx_v_j + 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #if ((defined(__APPLE__) || defined(__OSX__)) && (defined(__GNUC__) && (__GNUC__ > 2 || (__GNUC__ == 2 && (__GNUC_MINOR__ > 95)))))
+            #undef likely
+            #undef unlikely
+            #define likely(x)   __builtin_expect(!!(x), 1)
+            #define unlikely(x) __builtin_expect(!!(x), 0)
+        #endif
+      }
+
+      /* "squish/energy.pyx":288
+ * 
+ *         cdef INT_T i, j, k
+ *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
+ */
+      /*finally:*/ {
+        /*normal exit:*/{
+          #ifdef WITH_THREAD
+          __Pyx_FastGIL_Forget();
+          Py_BLOCK_THREADS
+          #endif
+          goto __pyx_L5;
+        }
+        __pyx_L4_error: {
+          #ifdef WITH_THREAD
+          __Pyx_FastGIL_Forget();
+          Py_BLOCK_THREADS
+          #endif
+          goto __pyx_L1_error;
+        }
+        __pyx_L5:;
+      }
+  }
+
+  /* "squish/energy.pyx":301
+ * 
+ * 
+ *         for i in range(self.n):             # <<<<<<<<<<<<<<
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
+ */
+  __pyx_t_9 = __pyx_v_self->__pyx_base.n;
+  __pyx_t_8 = __pyx_t_9;
+  for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_8; __pyx_t_13+=1) {
+    __pyx_v_i = __pyx_t_13;
+
+    /* "squish/energy.pyx":302
+ * 
+ *         for i in range(self.n):
+ *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
+ *             e = xi.edge(&xi)
+ *             edge_set = _BitSet(num_edges)
+ */
+    __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
+
+    /* "squish/energy.pyx":303
+ *         for i in range(self.n):
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
+ *             edge_set = _BitSet(num_edges)
+ * 
+ */
+    __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
+
+    /* "squish/energy.pyx":304
+ *             xi = _Site(i, &info)
+ *             e = xi.edge(&xi)
+ *             edge_set = _BitSet(num_edges)             # <<<<<<<<<<<<<<
+ * 
+ *             j = 0
+ */
+    __pyx_v_edge_set = __pyx_f_6squish_4core__BitSet(__pyx_v_num_edges);
+
+    /* "squish/energy.pyx":306
+ *             edge_set = _BitSet(num_edges)
+ * 
+ *             j = 0             # <<<<<<<<<<<<<<
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)
+ */
+    __pyx_v_j = 0;
+
+    /* "squish/energy.pyx":307
+ * 
+ *             j = 0
+ *             while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
+ *                 em, ep = e.prev(&e), e.next(&e)
+ * 
+ */
+    while (1) {
+      __pyx_t_10 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
+      if (!__pyx_t_10) break;
+
+      /* "squish/energy.pyx":308
+ *             j = 0
+ *             while j < xi.edge_num(&xi):
+ *                 em, ep = e.prev(&e), e.next(&e)             # <<<<<<<<<<<<<<
+ * 
+ *                 # Calculating of p
+ */
+      __pyx_t_12 = __pyx_v_e.prev((&__pyx_v_e));
+      __pyx_t_11 = __pyx_v_e.next((&__pyx_v_e));
+      __pyx_v_em = __pyx_t_12;
+      __pyx_v_ep = __pyx_t_11;
+
+      /* "squish/energy.pyx":311
+ * 
+ *                 # Calculating of p
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 temp1.self.rot(&temp1)
+ *                 temp1.self.sdiv(
+ */
+      __pyx_v_temp1 = __pyx_v_em.cache->la((&__pyx_v_em), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":312
+ *                 # Calculating of p
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)
+ *                 temp1.self.rot(&temp1)             # <<<<<<<<<<<<<<
+ *                 temp1.self.sdiv(
+ *                     &temp1,
+ */
+      (void)(__pyx_v_temp1.self.rot((&__pyx_v_temp1)));
+
+      /* "squish/energy.pyx":313
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)
+ *                 temp1.self.rot(&temp1)
+ *                 temp1.self.sdiv(             # <<<<<<<<<<<<<<
+ *                     &temp1,
+ *                     em.cache.la_mag(&em, NAN) * em.cache.ya_mag(&em, NAN) / 2
+ */
+      (void)(__pyx_v_temp1.self.sdiv((&__pyx_v_temp1), ((__pyx_v_em.cache->la_mag((&__pyx_v_em), NAN) * __pyx_v_em.cache->ya_mag((&__pyx_v_em), NAN)) / 2.0)));
+
+      /* "squish/energy.pyx":317
+ *                     em.cache.la_mag(&em, NAN) * em.cache.ya_mag(&em, NAN) / 2
+ *                 )
+ *                 temp2 = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 temp2.self.rot(&temp2)
+ *                 temp2.self.sdiv(
+ */
+      __pyx_v_temp2 = __pyx_v_e.cache->la((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":318
+ *                 )
+ *                 temp2 = e.cache.la(&e, NAN_VECTOR)
+ *                 temp2.self.rot(&temp2)             # <<<<<<<<<<<<<<
+ *                 temp2.self.sdiv(
+ *                     &temp2,
+ */
+      (void)(__pyx_v_temp2.self.rot((&__pyx_v_temp2)));
+
+      /* "squish/energy.pyx":319
+ *                 temp2 = e.cache.la(&e, NAN_VECTOR)
+ *                 temp2.self.rot(&temp2)
+ *                 temp2.self.sdiv(             # <<<<<<<<<<<<<<
+ *                     &temp2,
+ *                     e.cache.la_mag(&e, NAN) * e.cache.ya_mag(&e, NAN) / 2
+ */
+      (void)(__pyx_v_temp2.self.sdiv((&__pyx_v_temp2), ((__pyx_v_e.cache->la_mag((&__pyx_v_e), NAN) * __pyx_v_e.cache->ya_mag((&__pyx_v_e), NAN)) / 2.0)));
+
+      /* "squish/energy.pyx":324
+ *                 )
+ * 
+ *                 temp1.self.vsub(&temp1, temp2)  # (lm/Am - l/A)             # <<<<<<<<<<<<<<
+ * 
+ *                 temp2 = e.cache.da(&e, NAN_VECTOR) # rot(d) / |d|
+ */
+      (void)(__pyx_v_temp1.self.vsub((&__pyx_v_temp1), __pyx_v_temp2));
+
+      /* "squish/energy.pyx":326
+ *                 temp1.self.vsub(&temp1, temp2)  # (lm/Am - l/A)
+ * 
+ *                 temp2 = e.cache.da(&e, NAN_VECTOR) # rot(d) / |d|             # <<<<<<<<<<<<<<
+ *                 temp2.self.sdiv(&temp2, e.cache.da_mag(&e, NAN))
+ *                 temp2.self.rot(&temp2)
+ */
+      __pyx_v_temp2 = __pyx_v_e.cache->da((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":327
+ * 
+ *                 temp2 = e.cache.da(&e, NAN_VECTOR) # rot(d) / |d|
+ *                 temp2.self.sdiv(&temp2, e.cache.da_mag(&e, NAN))             # <<<<<<<<<<<<<<
+ *                 temp2.self.rot(&temp2)
+ * 
+ */
+      (void)(__pyx_v_temp2.self.sdiv((&__pyx_v_temp2), __pyx_v_e.cache->da_mag((&__pyx_v_e), NAN)));
+
+      /* "squish/energy.pyx":328
+ *                 temp2 = e.cache.da(&e, NAN_VECTOR) # rot(d) / |d|
+ *                 temp2.self.sdiv(&temp2, e.cache.da_mag(&e, NAN))
+ *                 temp2.self.rot(&temp2)             # <<<<<<<<<<<<<<
+ * 
+ *                 dsite = temp1.vecmul(&temp1, temp2)
+ */
+      (void)(__pyx_v_temp2.self.rot((&__pyx_v_temp2)));
+
+      /* "squish/energy.pyx":330
+ *                 temp2.self.rot(&temp2)
+ * 
+ *                 dsite = temp1.vecmul(&temp1, temp2)             # <<<<<<<<<<<<<<
+ * 
+ *                 HE[2*i, 2*i] -= dsite.a
+ */
+      __pyx_v_dsite = __pyx_v_temp1.vecmul((&__pyx_v_temp1), __pyx_v_temp2);
+
+      /* "squish/energy.pyx":332
+ *                 dsite = temp1.vecmul(&temp1, temp2)
+ * 
+ *                 HE[2*i, 2*i] -= dsite.a             # <<<<<<<<<<<<<<
+ *                 HE[2*i, 2*i+1] -= dsite.b
+ *                 HE[2*i+1, 2*i] -= dsite.c
+ */
+      __pyx_t_14 = (2 * __pyx_v_i);
+      __pyx_t_15 = (2 * __pyx_v_i);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.a;
+
+      /* "squish/energy.pyx":333
+ * 
+ *                 HE[2*i, 2*i] -= dsite.a
+ *                 HE[2*i, 2*i+1] -= dsite.b             # <<<<<<<<<<<<<<
+ *                 HE[2*i+1, 2*i] -= dsite.c
+ *                 HE[2*i+1, 2*i+1] -= dsite.d
+ */
+      __pyx_t_15 = (2 * __pyx_v_i);
+      __pyx_t_14 = ((2 * __pyx_v_i) + 1);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.b;
+
+      /* "squish/energy.pyx":334
+ *                 HE[2*i, 2*i] -= dsite.a
+ *                 HE[2*i, 2*i+1] -= dsite.b
+ *                 HE[2*i+1, 2*i] -= dsite.c             # <<<<<<<<<<<<<<
+ *                 HE[2*i+1, 2*i+1] -= dsite.d
+ * 
+ */
+      __pyx_t_14 = ((2 * __pyx_v_i) + 1);
+      __pyx_t_15 = (2 * __pyx_v_i);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.c;
+
+      /* "squish/energy.pyx":335
+ *                 HE[2*i, 2*i+1] -= dsite.b
+ *                 HE[2*i+1, 2*i] -= dsite.c
+ *                 HE[2*i+1, 2*i+1] -= dsite.d             # <<<<<<<<<<<<<<
+ * 
+ *                 # Calculating of q
+ */
+      __pyx_t_15 = ((2 * __pyx_v_i) + 1);
+      __pyx_t_14 = ((2 * __pyx_v_i) + 1);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.d;
+
+      /* "squish/energy.pyx":338
+ * 
+ *                 # Calculating of q
+ *                 temp2 = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 temp1 = temp2.copy.rot(&temp2)
+ *                 q = temp1.vecmul(&temp1, temp2)
+ */
+      __pyx_v_temp2 = __pyx_v_e.cache->la((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":339
+ *                 # Calculating of q
+ *                 temp2 = e.cache.la(&e, NAN_VECTOR)
+ *                 temp1 = temp2.copy.rot(&temp2)             # <<<<<<<<<<<<<<
+ *                 q = temp1.vecmul(&temp1, temp2)
+ *                 q.self.sdiv(&q, e.cache.la_mag(&e, NAN)**2)
+ */
+      __pyx_v_temp1 = __pyx_v_temp2.copy.rot((&__pyx_v_temp2));
+
+      /* "squish/energy.pyx":340
+ *                 temp2 = e.cache.la(&e, NAN_VECTOR)
+ *                 temp1 = temp2.copy.rot(&temp2)
+ *                 q = temp1.vecmul(&temp1, temp2)             # <<<<<<<<<<<<<<
+ *                 q.self.sdiv(&q, e.cache.la_mag(&e, NAN)**2)
+ * 
+ */
+      __pyx_v_q = __pyx_v_temp1.vecmul((&__pyx_v_temp1), __pyx_v_temp2);
+
+      /* "squish/energy.pyx":341
+ *                 temp1 = temp2.copy.rot(&temp2)
+ *                 q = temp1.vecmul(&temp1, temp2)
+ *                 q.self.sdiv(&q, e.cache.la_mag(&e, NAN)**2)             # <<<<<<<<<<<<<<
+ * 
+ *                 q.self.msub(&q, R)
+ */
+      (void)(__pyx_v_q.self.sdiv((&__pyx_v_q), pow(__pyx_v_e.cache->la_mag((&__pyx_v_e), NAN), 2.0)));
+
+      /* "squish/energy.pyx":343
+ *                 q.self.sdiv(&q, e.cache.la_mag(&e, NAN)**2)
+ * 
+ *                 q.self.msub(&q, R)             # <<<<<<<<<<<<<<
+ *                 q.self.smul(
+ *                     &q,
+ */
+      (void)(__pyx_v_q.self.msub((&__pyx_v_q), __pyx_v_6squish_7voronoi_R));
+
+      /* "squish/energy.pyx":344
+ * 
+ *                 q.self.msub(&q, R)
+ *                 q.self.smul(             # <<<<<<<<<<<<<<
+ *                     &q,
+ *                     e.cache.calI(&e, NAN) / e.cache.la_mag(&e, NAN)
+ */
+      (void)(__pyx_v_q.self.smul((&__pyx_v_q), (__pyx_v_e.cache->calI((&__pyx_v_e), NAN) / __pyx_v_e.cache->la_mag((&__pyx_v_e), NAN))));
+
+      /* "squish/energy.pyx":349
+ *                 )
+ * 
+ *                 temp1 = e.cache.la(&e, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 temp1.self.rot(&temp1)
+ *                 tempm = temp1.vecmul(&temp1, temp1)
+ */
+      __pyx_v_temp1 = __pyx_v_e.cache->la((&__pyx_v_e), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":350
+ * 
+ *                 temp1 = e.cache.la(&e, NAN_VECTOR)
+ *                 temp1.self.rot(&temp1)             # <<<<<<<<<<<<<<
+ *                 tempm = temp1.vecmul(&temp1, temp1)
+ *                 tempm.self.smul(
+ */
+      (void)(__pyx_v_temp1.self.rot((&__pyx_v_temp1)));
+
+      /* "squish/energy.pyx":351
+ *                 temp1 = e.cache.la(&e, NAN_VECTOR)
+ *                 temp1.self.rot(&temp1)
+ *                 tempm = temp1.vecmul(&temp1, temp1)             # <<<<<<<<<<<<<<
+ *                 tempm.self.smul(
+ *                     &tempm,
+ */
+      __pyx_v_tempm = __pyx_v_temp1.vecmul((&__pyx_v_temp1), __pyx_v_temp1);
+
+      /* "squish/energy.pyx":352
+ *                 temp1.self.rot(&temp1)
+ *                 tempm = temp1.vecmul(&temp1, temp1)
+ *                 tempm.self.smul(             # <<<<<<<<<<<<<<
+ *                     &tempm,
+ *                     ep.cache.da_mag(&ep, NAN) - e.cache.da_mag(&e, NAN)
+ */
+      (void)(__pyx_v_tempm.self.smul((&__pyx_v_tempm), (__pyx_v_ep.cache->da_mag((&__pyx_v_ep), NAN) - __pyx_v_e.cache->da_mag((&__pyx_v_e), NAN))));
+
+      /* "squish/energy.pyx":356
+ *                     ep.cache.da_mag(&ep, NAN) - e.cache.da_mag(&e, NAN)
+ *                 )
+ *                 tempm.self.sdiv(             # <<<<<<<<<<<<<<
+ *                     &tempm,
+ *                     e.cache.la_mag(&e, NAN)**3 * e.cache.ya_mag(&e, NAN) / 2
+ */
+      (void)(__pyx_v_tempm.self.sdiv((&__pyx_v_tempm), ((pow(__pyx_v_e.cache->la_mag((&__pyx_v_e), NAN), 3.0) * __pyx_v_e.cache->ya_mag((&__pyx_v_e), NAN)) / 2.0)));
+
+      /* "squish/energy.pyx":361
+ *                 )
+ * 
+ *                 q.self.madd(&q, tempm)             # <<<<<<<<<<<<<<
+ * 
+ *                 # Minus portion
+ */
+      (void)(__pyx_v_q.self.madd((&__pyx_v_q), __pyx_v_tempm));
+
+      /* "squish/energy.pyx":364
+ * 
+ *                 # Minus portion
+ *                 temp2 = em.cache.la(&em, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 temp1 = temp2.copy.rot(&temp2)
+ *                 tempm = temp1.vecmul(&temp1, temp2)
+ */
+      __pyx_v_temp2 = __pyx_v_em.cache->la((&__pyx_v_em), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":365
+ *                 # Minus portion
+ *                 temp2 = em.cache.la(&em, NAN_VECTOR)
+ *                 temp1 = temp2.copy.rot(&temp2)             # <<<<<<<<<<<<<<
+ *                 tempm = temp1.vecmul(&temp1, temp2)
+ *                 tempm.self.sdiv(&tempm, em.cache.la_mag(&em, NAN)**2)
+ */
+      __pyx_v_temp1 = __pyx_v_temp2.copy.rot((&__pyx_v_temp2));
+
+      /* "squish/energy.pyx":366
+ *                 temp2 = em.cache.la(&em, NAN_VECTOR)
+ *                 temp1 = temp2.copy.rot(&temp2)
+ *                 tempm = temp1.vecmul(&temp1, temp2)             # <<<<<<<<<<<<<<
+ *                 tempm.self.sdiv(&tempm, em.cache.la_mag(&em, NAN)**2)
+ * 
+ */
+      __pyx_v_tempm = __pyx_v_temp1.vecmul((&__pyx_v_temp1), __pyx_v_temp2);
+
+      /* "squish/energy.pyx":367
+ *                 temp1 = temp2.copy.rot(&temp2)
+ *                 tempm = temp1.vecmul(&temp1, temp2)
+ *                 tempm.self.sdiv(&tempm, em.cache.la_mag(&em, NAN)**2)             # <<<<<<<<<<<<<<
+ * 
+ *                 tempm = R.copy.msub(&R, tempm)
+ */
+      (void)(__pyx_v_tempm.self.sdiv((&__pyx_v_tempm), pow(__pyx_v_em.cache->la_mag((&__pyx_v_em), NAN), 2.0)));
+
+      /* "squish/energy.pyx":369
+ *                 tempm.self.sdiv(&tempm, em.cache.la_mag(&em, NAN)**2)
+ * 
+ *                 tempm = R.copy.msub(&R, tempm)             # <<<<<<<<<<<<<<
+ *                 tempm.self.smul(
+ *                     &tempm,
+ */
+      __pyx_v_tempm = __pyx_v_6squish_7voronoi_R.copy.msub((&__pyx_v_6squish_7voronoi_R), __pyx_v_tempm);
+
+      /* "squish/energy.pyx":370
+ * 
+ *                 tempm = R.copy.msub(&R, tempm)
+ *                 tempm.self.smul(             # <<<<<<<<<<<<<<
+ *                     &tempm,
+ *                     em.cache.calI(&em, NAN) / em.cache.la_mag(&em, NAN)
+ */
+      (void)(__pyx_v_tempm.self.smul((&__pyx_v_tempm), (__pyx_v_em.cache->calI((&__pyx_v_em), NAN) / __pyx_v_em.cache->la_mag((&__pyx_v_em), NAN))));
+
+      /* "squish/energy.pyx":375
+ *                 )
+ * 
+ *                 q.self.madd(&q, tempm)             # <<<<<<<<<<<<<<
+ * 
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)
+ */
+      (void)(__pyx_v_q.self.madd((&__pyx_v_q), __pyx_v_tempm));
+
+      /* "squish/energy.pyx":377
+ *                 q.self.madd(&q, tempm)
+ * 
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)             # <<<<<<<<<<<<<<
+ *                 temp1.self.rot(&temp1)
+ *                 tempm = temp1.vecmul(&temp1, temp1)
+ */
+      __pyx_v_temp1 = __pyx_v_em.cache->la((&__pyx_v_em), __pyx_v_6squish_7voronoi_NAN_VECTOR);
+
+      /* "squish/energy.pyx":378
+ * 
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)
+ *                 temp1.self.rot(&temp1)             # <<<<<<<<<<<<<<
+ *                 tempm = temp1.vecmul(&temp1, temp1)
+ *                 tempm.self.smul(
+ */
+      (void)(__pyx_v_temp1.self.rot((&__pyx_v_temp1)));
+
+      /* "squish/energy.pyx":379
+ *                 temp1 = em.cache.la(&em, NAN_VECTOR)
+ *                 temp1.self.rot(&temp1)
+ *                 tempm = temp1.vecmul(&temp1, temp1)             # <<<<<<<<<<<<<<
+ *                 tempm.self.smul(
+ *                     &tempm,
+ */
+      __pyx_v_tempm = __pyx_v_temp1.vecmul((&__pyx_v_temp1), __pyx_v_temp1);
+
+      /* "squish/energy.pyx":380
+ *                 temp1.self.rot(&temp1)
+ *                 tempm = temp1.vecmul(&temp1, temp1)
+ *                 tempm.self.smul(             # <<<<<<<<<<<<<<
+ *                     &tempm,
+ *                     e.cache.da_mag(&e, NAN) - em.cache.da_mag(&em, NAN)
+ */
+      (void)(__pyx_v_tempm.self.smul((&__pyx_v_tempm), (__pyx_v_e.cache->da_mag((&__pyx_v_e), NAN) - __pyx_v_em.cache->da_mag((&__pyx_v_em), NAN))));
+
+      /* "squish/energy.pyx":384
+ *                     e.cache.da_mag(&e, NAN) - em.cache.da_mag(&em, NAN)
+ *                 )
+ *                 tempm.self.sdiv(             # <<<<<<<<<<<<<<
+ *                     &tempm,
+ *                     em.cache.la_mag(&em, NAN)**3 * em.cache.ya_mag(&em, NAN) / 2
+ */
+      (void)(__pyx_v_tempm.self.sdiv((&__pyx_v_tempm), ((pow(__pyx_v_em.cache->la_mag((&__pyx_v_em), NAN), 3.0) * __pyx_v_em.cache->ya_mag((&__pyx_v_em), NAN)) / 2.0)));
+
+      /* "squish/energy.pyx":389
+ *                 )
+ * 
+ *                 q.self.msub(&q, tempm)             # <<<<<<<<<<<<<<
+ * 
+ *                 # Add p to q, so p = p, q = p+q
+ */
+      (void)(__pyx_v_q.self.msub((&__pyx_v_q), __pyx_v_tempm));
+
+      /* "squish/energy.pyx":392
+ * 
+ *                 # Add p to q, so p = p, q = p+q
+ *                 q.self.madd(&q, dsite)             # <<<<<<<<<<<<<<
+ * 
+ *                 f = e
+ */
+      (void)(__pyx_v_q.self.madd((&__pyx_v_q), __pyx_v_dsite));
+
+      /* "squish/energy.pyx":394
+ *                 q.self.madd(&q, dsite)
+ * 
+ *                 f = e             # <<<<<<<<<<<<<<
+ *                 while True:
+ *                     xk = f.face(&f)
+ */
+      __pyx_v_f = __pyx_v_e;
+
+      /* "squish/energy.pyx":395
+ * 
+ *                 f = e
+ *                 while True:             # <<<<<<<<<<<<<<
+ *                     xk = f.face(&f)
+ *                     k = xk.index(&xk) % self.n
+ */
+      while (1) {
+
+        /* "squish/energy.pyx":396
+ *                 f = e
+ *                 while True:
+ *                     xk = f.face(&f)             # <<<<<<<<<<<<<<
+ *                     k = xk.index(&xk) % self.n
+ *                     if k < 0:
+ */
+        __pyx_v_xk = __pyx_v_f.face((&__pyx_v_f));
+
+        /* "squish/energy.pyx":397
+ *                 while True:
+ *                     xk = f.face(&f)
+ *                     k = xk.index(&xk) % self.n             # <<<<<<<<<<<<<<
+ *                     if k < 0:
+ *                         k = k + self.n
+ */
+        __pyx_v_k = (__pyx_v_xk.index((&__pyx_v_xk)) % __pyx_v_self->__pyx_base.n);
+
+        /* "squish/energy.pyx":398
+ *                     xk = f.face(&f)
+ *                     k = xk.index(&xk) % self.n
+ *                     if k < 0:             # <<<<<<<<<<<<<<
+ *                         k = k + self.n
+ * 
+ */
+        __pyx_t_10 = ((__pyx_v_k < 0) != 0);
+        if (__pyx_t_10) {
+
+          /* "squish/energy.pyx":399
+ *                     k = xk.index(&xk) % self.n
+ *                     if k < 0:
+ *                         k = k + self.n             # <<<<<<<<<<<<<<
+ * 
+ *                     if not edge_set.add(&edge_set, f.arr_index):
+ */
+          __pyx_v_k = (__pyx_v_k + __pyx_v_self->__pyx_base.n);
+
+          /* "squish/energy.pyx":398
+ *                     xk = f.face(&f)
+ *                     k = xk.index(&xk) % self.n
+ *                     if k < 0:             # <<<<<<<<<<<<<<
+ *                         k = k + self.n
+ * 
+ */
+        }
+
+        /* "squish/energy.pyx":401
+ *                         k = k + self.n
+ * 
+ *                     if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
+ *                         tempm = q.copy.matmul(&q, f.cache.H(&f, NAN_MATRIX))
+ * 
+ */
+        __pyx_t_10 = ((!(__pyx_v_edge_set.add((&__pyx_v_edge_set), __pyx_v_f.arr_index) != 0)) != 0);
+        if (__pyx_t_10) {
+
+          /* "squish/energy.pyx":402
+ * 
+ *                     if not edge_set.add(&edge_set, f.arr_index):
+ *                         tempm = q.copy.matmul(&q, f.cache.H(&f, NAN_MATRIX))             # <<<<<<<<<<<<<<
+ * 
+ *                         HE[2*i, 2*k] += tempm.a
+ */
+          __pyx_v_tempm = __pyx_v_q.copy.matmul((&__pyx_v_q), __pyx_v_f.cache->H((&__pyx_v_f), __pyx_v_6squish_7voronoi_NAN_MATRIX));
+
+          /* "squish/energy.pyx":404
+ *                         tempm = q.copy.matmul(&q, f.cache.H(&f, NAN_MATRIX))
+ * 
+ *                         HE[2*i, 2*k] += tempm.a             # <<<<<<<<<<<<<<
+ *                         HE[2*i, 2*k+1] += tempm.b
+ *                         HE[2*i+1, 2*k] += tempm.c
+ */
+          __pyx_t_14 = (2 * __pyx_v_i);
+          __pyx_t_15 = (2 * __pyx_v_k);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.a;
+
+          /* "squish/energy.pyx":405
+ * 
+ *                         HE[2*i, 2*k] += tempm.a
+ *                         HE[2*i, 2*k+1] += tempm.b             # <<<<<<<<<<<<<<
+ *                         HE[2*i+1, 2*k] += tempm.c
+ *                         HE[2*i+1, 2*k+1] += tempm.d
+ */
+          __pyx_t_15 = (2 * __pyx_v_i);
+          __pyx_t_14 = ((2 * __pyx_v_k) + 1);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.b;
+
+          /* "squish/energy.pyx":406
+ *                         HE[2*i, 2*k] += tempm.a
+ *                         HE[2*i, 2*k+1] += tempm.b
+ *                         HE[2*i+1, 2*k] += tempm.c             # <<<<<<<<<<<<<<
+ *                         HE[2*i+1, 2*k+1] += tempm.d
+ * 
+ */
+          __pyx_t_14 = ((2 * __pyx_v_i) + 1);
+          __pyx_t_15 = (2 * __pyx_v_k);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.c;
+
+          /* "squish/energy.pyx":407
+ *                         HE[2*i, 2*k+1] += tempm.b
+ *                         HE[2*i+1, 2*k] += tempm.c
+ *                         HE[2*i+1, 2*k+1] += tempm.d             # <<<<<<<<<<<<<<
+ * 
+ *                     f = f.twin(&f)
+ */
+          __pyx_t_15 = ((2 * __pyx_v_i) + 1);
+          __pyx_t_14 = ((2 * __pyx_v_k) + 1);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.d;
+
+          /* "squish/energy.pyx":401
+ *                         k = k + self.n
+ * 
+ *                     if not edge_set.add(&edge_set, f.arr_index):             # <<<<<<<<<<<<<<
+ *                         tempm = q.copy.matmul(&q, f.cache.H(&f, NAN_MATRIX))
+ * 
+ */
+        }
+
+        /* "squish/energy.pyx":409
+ *                         HE[2*i+1, 2*k+1] += tempm.d
+ * 
+ *                     f = f.twin(&f)             # <<<<<<<<<<<<<<
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:
+ */
+        __pyx_v_f = __pyx_v_f.twin((&__pyx_v_f));
+
+        /* "squish/energy.pyx":410
+ * 
+ *                     f = f.twin(&f)
+ *                     f = f.next(&f)             # <<<<<<<<<<<<<<
+ *                     if f.arr_index == e.arr_index:
+ *                         break
+ */
+        __pyx_v_f = __pyx_v_f.next((&__pyx_v_f));
+
+        /* "squish/energy.pyx":411
+ *                     f = f.twin(&f)
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
+ *                         break
+ * 
+ */
+        __pyx_t_10 = ((__pyx_v_f.arr_index == __pyx_v_e.arr_index) != 0);
+        if (__pyx_t_10) {
+
+          /* "squish/energy.pyx":412
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:
+ *                         break             # <<<<<<<<<<<<<<
+ * 
+ *                 e = e.next(&e)
+ */
+          goto __pyx_L19_break;
+
+          /* "squish/energy.pyx":411
+ *                     f = f.twin(&f)
+ *                     f = f.next(&f)
+ *                     if f.arr_index == e.arr_index:             # <<<<<<<<<<<<<<
+ *                         break
+ * 
+ */
+        }
+      }
+      __pyx_L19_break:;
+
+      /* "squish/energy.pyx":414
+ *                         break
+ * 
+ *                 e = e.next(&e)             # <<<<<<<<<<<<<<
+ *                 j = j + 1
+ *             edge_set.free(&edge_set)
+ */
+      __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
+
+      /* "squish/energy.pyx":415
+ * 
+ *                 e = e.next(&e)
+ *                 j = j + 1             # <<<<<<<<<<<<<<
+ *             edge_set.free(&edge_set)
+ *         self.hess = -2*self.r*np.asarray(HE, dtype=FLOAT)
+ */
+      __pyx_v_j = (__pyx_v_j + 1);
+    }
+
+    /* "squish/energy.pyx":416
+ *                 e = e.next(&e)
+ *                 j = j + 1
+ *             edge_set.free(&edge_set)             # <<<<<<<<<<<<<<
+ *         self.hess = -2*self.r*np.asarray(HE, dtype=FLOAT)
+ *         self.hess = (
+ */
+    __pyx_v_edge_set.free((&__pyx_v_edge_set));
+  }
+
+  /* "squish/energy.pyx":417
+ *                 j = j + 1
+ *             edge_set.free(&edge_set)
+ *         self.hess = -2*self.r*np.asarray(HE, dtype=FLOAT)             # <<<<<<<<<<<<<<
+ *         self.hess = (
+ *             ( np.asarray(self.hess, dtype=FLOAT)
+ */
+  __pyx_t_1 = PyFloat_FromDouble((-2.0 * __pyx_v_self->__pyx_base.r)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_HE, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_6squish_4core_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_6squish_4core_FLOAT_T, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyNumber_Multiply(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_16 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_16.memview)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __PYX_XDEC_MEMVIEW(&__pyx_v_self->__pyx_base.hess, 0);
+  __pyx_v_self->__pyx_base.hess = __pyx_t_16;
+  __pyx_t_16.memview = NULL;
+  __pyx_t_16.data = NULL;
+
+  /* "squish/energy.pyx":419
+ *         self.hess = -2*self.r*np.asarray(HE, dtype=FLOAT)
+ *         self.hess = (
+ *             ( np.asarray(self.hess, dtype=FLOAT)             # <<<<<<<<<<<<<<
+ *             + np.asarray(self.hess, dtype=FLOAT).T )
+ *             / 2
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_v_self->__pyx_base.hess.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 419, __pyx_L1_error)}
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_self->__pyx_base.hess, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_6squish_4core_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_6squish_4core_FLOAT_T, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "squish/energy.pyx":420
+ *         self.hess = (
+ *             ( np.asarray(self.hess, dtype=FLOAT)
+ *             + np.asarray(self.hess, dtype=FLOAT).T )             # <<<<<<<<<<<<<<
+ *             / 2
+ *         )
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_v_self->__pyx_base.hess.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 420, __pyx_L1_error)}
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_self->__pyx_base.hess, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_6squish_4core_FLOAT_T, (int (*)(char *, PyObject *)) __pyx_memview_set_nn___pyx_t_6squish_4core_FLOAT_T, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_FLOAT); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_T); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = PyNumber_Add(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "squish/energy.pyx":421
+ *             ( np.asarray(self.hess, dtype=FLOAT)
+ *             + np.asarray(self.hess, dtype=FLOAT).T )
+ *             / 2             # <<<<<<<<<<<<<<
+ *         )
+ */
+  __pyx_t_3 = __Pyx_PyInt_TrueDivideObjC(__pyx_t_5, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_16 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_16.memview)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "squish/energy.pyx":418
+ *             edge_set.free(&edge_set)
+ *         self.hess = -2*self.r*np.asarray(HE, dtype=FLOAT)
+ *         self.hess = (             # <<<<<<<<<<<<<<
+ *             ( np.asarray(self.hess, dtype=FLOAT)
+ *             + np.asarray(self.hess, dtype=FLOAT).T )
+ */
+  __PYX_XDEC_MEMVIEW(&__pyx_v_self->__pyx_base.hess, 0);
+  __pyx_v_self->__pyx_base.hess = __pyx_t_16;
+  __pyx_t_16.memview = NULL;
+  __pyx_t_16.data = NULL;
+
+  /* "squish/energy.pyx":273
+ *         self.grad = dedx
+ * 
+ *     cdef void calc_hess(self) except *:             # <<<<<<<<<<<<<<
+ *         cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+ *                                              self.vertices, self.site_cache,
+ */
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_6, 1);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_16, 1);
+  __Pyx_AddTraceback("squish.energy.RadialTEnergy.calc_hess", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_L0:;
+  __PYX_XDEC_MEMVIEW(&__pyx_v_HE, 1);
   __Pyx_RefNannyFinishContext();
 }
 
@@ -6084,7 +8027,7 @@ static PyObject *__pyx_pf_6squish_6energy_13RadialTEnergy_2__reduce_cython__(CYT
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6140,7 +8083,7 @@ static PyObject *__pyx_pf_6squish_6energy_13RadialTEnergy_4__setstate_cython__(C
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6695,7 +8638,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 945, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 945, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -6827,7 +8770,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 951, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 951, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -6959,7 +8902,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  * 
  * cdef extern from *:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 957, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 957, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -7383,7 +9326,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7415,7 +9358,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7542,7 +9485,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7816,7 +9759,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -8060,7 +10003,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8794,7 +10737,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -8850,7 +10793,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10560,7 +12503,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -11608,7 +13551,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -11970,7 +13913,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12519,7 +14462,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -12636,7 +14579,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__20, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__21, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -13674,7 +15617,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13730,7 +15673,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14087,9 +16030,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__23);
-            __Pyx_GIVEREF(__pyx_slice__23);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__23);
+            __Pyx_INCREF(__pyx_slice_);
+            __Pyx_GIVEREF(__pyx_slice_);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice_);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 682, __pyx_L1_error)
@@ -14122,7 +16065,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__23); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice_); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -14262,9 +16205,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__23);
-        __Pyx_GIVEREF(__pyx_slice__23);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__23);
+        __Pyx_INCREF(__pyx_slice_);
+        __Pyx_GIVEREF(__pyx_slice_);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice_);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 696, __pyx_L1_error)
@@ -20281,7 +22224,7 @@ static PyTypeObject __pyx_type_6squish_6energy_AreaEnergy = {
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
-  "\n\tClass for formulas relevant to the Area energy.\n\t:param n: [int] how many sites to generate.\n\t:param w: [float] width of the bounding domain.\n\t:param h: [float] height of the bounding domain.\n\t:param r: [float] radius of zero energy circle.\n\t:param sites: [np.ndarray] collection of sites.\n\t", /*tp_doc*/
+  "\n    Class for formulas relevant to the Area energy.\n    :param n: [int] how many sites to generate.\n    :param w: [float] width of the bounding domain.\n    :param h: [float] height of the bounding domain.\n    :param r: [float] radius of zero energy circle.\n    :param sites: [np.ndarray] collection of sites.\n    ", /*tp_doc*/
   __pyx_tp_traverse_6squish_6energy_AreaEnergy, /*tp_traverse*/
   __pyx_tp_clear_6squish_6energy_AreaEnergy, /*tp_clear*/
   0, /*tp_richcompare*/
@@ -20402,7 +22345,7 @@ static PyTypeObject __pyx_type_6squish_6energy_RadialALEnergy = {
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
-  "\n\tClass for formulas relevant to the Area energy.\n\t:param n: [int] how many sites to generate.\n\t:param w: [float] width of the bounding domain.\n\t:param h: [float] height of the bounding domain.\n\t:param r: [float] radius of zero energy circle.\n\t:param sites: [np.ndarray] collection of sites.\n\t", /*tp_doc*/
+  "\n    Class for formulas relevant to the Area energy.\n    :param n: [int] how many sites to generate.\n    :param w: [float] width of the bounding domain.\n    :param h: [float] height of the bounding domain.\n    :param r: [float] radius of zero energy circle.\n    :param sites: [np.ndarray] collection of sites.\n    ", /*tp_doc*/
   __pyx_tp_traverse_6squish_6energy_RadialALEnergy, /*tp_traverse*/
   __pyx_tp_clear_6squish_6energy_RadialALEnergy, /*tp_clear*/
   0, /*tp_richcompare*/
@@ -20523,7 +22466,7 @@ static PyTypeObject __pyx_type_6squish_6energy_RadialTEnergy = {
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
-  "\n\tClass for formulas relevant to the Area energy.\n\t:param n: [int] how many sites to generate.\n\t:param w: [float] width of the bounding domain.\n\t:param h: [float] height of the bounding domain.\n\t:param r: [float] radius of zero energy circle.\n\t:param sites: [np.ndarray] collection of sites.\n\t", /*tp_doc*/
+  "\n    Class for formulas relevant to the Area energy.\n    :param n: [int] how many sites to generate.\n    :param w: [float] width of the bounding domain.\n    :param h: [float] height of the bounding domain.\n    :param r: [float] radius of zero energy circle.\n    :param sites: [np.ndarray] collection of sites.\n    ", /*tp_doc*/
   __pyx_tp_traverse_6squish_6energy_RadialTEnergy, /*tp_traverse*/
   __pyx_tp_clear_6squish_6energy_RadialTEnergy, /*tp_clear*/
   0, /*tp_richcompare*/
@@ -21350,12 +23293,14 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_RadialTEnergy, __pyx_k_RadialTEnergy, sizeof(__pyx_k_RadialTEnergy), 0, 0, 1, 1},
   {&__pyx_kp_u_Radial_AL, __pyx_k_Radial_AL, sizeof(__pyx_k_Radial_AL), 0, 1, 0, 0},
   {&__pyx_kp_u_Radial_T, __pyx_k_Radial_T, sizeof(__pyx_k_Radial_T), 0, 1, 0, 0},
+  {&__pyx_n_s_T, __pyx_k_T, sizeof(__pyx_k_T), 0, 0, 1, 1},
   {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
   {&__pyx_kp_s_Unable_to_convert_item_to_object, __pyx_k_Unable_to_convert_item_to_object, sizeof(__pyx_k_Unable_to_convert_item_to_object), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
   {&__pyx_n_s_View_MemoryView, __pyx_k_View_MemoryView, sizeof(__pyx_k_View_MemoryView), 0, 0, 1, 1},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
   {&__pyx_n_u_area, __pyx_k_area, sizeof(__pyx_k_area), 0, 1, 0, 1},
+  {&__pyx_n_s_asarray, __pyx_k_asarray, sizeof(__pyx_k_asarray), 0, 0, 1, 1},
   {&__pyx_n_s_attr_str, __pyx_k_attr_str, sizeof(__pyx_k_attr_str), 0, 0, 1, 1},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
@@ -21364,6 +23309,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
+  {&__pyx_n_s_copy, __pyx_k_copy, sizeof(__pyx_k_copy), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_s_dtype, __pyx_k_dtype, sizeof(__pyx_k_dtype), 0, 0, 1, 1},
   {&__pyx_n_s_dtype_is_object, __pyx_k_dtype_is_object, sizeof(__pyx_k_dtype_is_object), 0, 0, 1, 1},
@@ -21371,6 +23317,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
   {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
   {&__pyx_n_s_flags, __pyx_k_flags, sizeof(__pyx_k_flags), 0, 0, 1, 1},
+  {&__pyx_n_s_flatten, __pyx_k_flatten, sizeof(__pyx_k_flatten), 0, 0, 1, 1},
   {&__pyx_n_s_float64, __pyx_k_float64, sizeof(__pyx_k_float64), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_s_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 0, 1, 1},
@@ -21378,6 +23325,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_full, __pyx_k_full, sizeof(__pyx_k_full), 0, 0, 1, 1},
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
+  {&__pyx_n_s_gradient, __pyx_k_gradient, sizeof(__pyx_k_gradient), 0, 0, 1, 1},
   {&__pyx_n_s_h, __pyx_k_h, sizeof(__pyx_k_h), 0, 0, 1, 1},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
@@ -21445,12 +23393,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 120, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(2, 945, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 133, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 148, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 151, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 180, __pyx_L1_error)
   __pyx_builtin_Ellipsis = __Pyx_GetBuiltinName(__pyx_n_s_Ellipsis); if (!__pyx_builtin_Ellipsis) __PYX_ERR(1, 404, __pyx_L1_error)
   __pyx_builtin_id = __Pyx_GetBuiltinName(__pyx_n_s_id); if (!__pyx_builtin_id) __PYX_ERR(1, 613, __pyx_L1_error)
   __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(1, 832, __pyx_L1_error)
@@ -21463,43 +23411,54 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
+  /* "squish/energy.pyx":129
+ *                 new_sites[i][j] = (new_sites[i][j] + d) % mod
+ * 
+ *                 HE[:, 2*i+j] = ((Ep.gradient - Em.gradient)/(2*d)).flatten()             # <<<<<<<<<<<<<<
+ * 
+ *         # Average out discrepencies, since it should be symmetric.
+ */
+  __pyx_slice_ = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 129, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice_);
+  __Pyx_GIVEREF(__pyx_slice_);
+
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple_)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
-
-  /* "(tree fragment)":4
- *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
- */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "(tree fragment)":2
- * def __reduce_cython__(self):
- *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
- * def __setstate_cython__(self, __pyx_state):
+  /* "(tree fragment)":4
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
+ * def __setstate_cython__(self, __pyx_state):
+ *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
+  /* "(tree fragment)":2
+ * def __reduce_cython__(self):
+ *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
+ * def __setstate_cython__(self, __pyx_state):
+ *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
+ */
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+
   /* "(tree fragment)":4
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -21507,18 +23466,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
 
   /* "(tree fragment)":4
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("self.edge_cache_map cannot be converted to a Python object for pickling")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_self_edge_cache_map_cannot_be_co); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
 
   /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
@@ -21527,9 +23486,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(2, 945, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(2, 945, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
   /* "../../../../../.venv2/lib/python3.8/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
@@ -21538,9 +23497,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(2, 951, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(2, 951, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
   /* "View.MemoryView":133
  * 
@@ -21549,9 +23508,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
   /* "View.MemoryView":136
  * 
@@ -21560,9 +23519,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "View.MemoryView":148
  * 
@@ -21571,9 +23530,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
   /* "View.MemoryView":176
  *             self.data = <char *>malloc(self.len)
@@ -21582,9 +23541,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
 
   /* "View.MemoryView":192
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -21593,9 +23552,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -21603,18 +23562,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "View.MemoryView":418
  *     def __setitem__(memoryview self, object index, object value):
@@ -21623,9 +23582,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 418, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "View.MemoryView":495
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -21634,9 +23593,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
   /* "View.MemoryView":520
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -21645,9 +23604,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 520, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
   /* "View.MemoryView":570
  *         if self.view.strides == NULL:
@@ -21656,9 +23615,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 570, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 570, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
   /* "View.MemoryView":577
  *     def suboffsets(self):
@@ -21667,12 +23626,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__20 = PyTuple_New(1); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 577, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
+  __pyx_tuple__21 = PyTuple_New(1); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 577, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__20, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  PyTuple_SET_ITEM(__pyx_tuple__21, 0, __pyx_int_neg_1);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -21680,29 +23639,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
-
-  /* "View.MemoryView":682
- *         if item is Ellipsis:
- *             if not seen_ellipsis:
- *                 result.extend([slice(None)] * (ndim - len(tup) + 1))             # <<<<<<<<<<<<<<
- *                 seen_ellipsis = True
- *             else:
- */
-  __pyx_slice__23 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__23)) __PYX_ERR(1, 682, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__23);
-  __Pyx_GIVEREF(__pyx_slice__23);
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
   /* "View.MemoryView":703
  *     for suboffset in suboffsets[:ndim]:
@@ -21878,6 +23826,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_6squish_6energy_AreaEnergy.__pyx_base = *__pyx_vtabptr_6squish_7voronoi_VoronoiContainer;
   __pyx_vtable_6squish_6energy_AreaEnergy.__pyx_base.precompute = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_10AreaEnergy_precompute;
   __pyx_vtable_6squish_6energy_AreaEnergy.__pyx_base.calc_grad = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_10AreaEnergy_calc_grad;
+  __pyx_vtable_6squish_6energy_AreaEnergy.__pyx_base.calc_hess = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_10AreaEnergy_calc_hess;
   __pyx_type_6squish_6energy_AreaEnergy.tp_base = __pyx_ptype_6squish_7voronoi_VoronoiContainer;
   if (PyType_Ready(&__pyx_type_6squish_6energy_AreaEnergy) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
@@ -21891,27 +23840,29 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_6squish_6energy_RadialALEnergy.__pyx_base = *__pyx_vtabptr_6squish_7voronoi_VoronoiContainer;
   __pyx_vtable_6squish_6energy_RadialALEnergy.__pyx_base.precompute = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_14RadialALEnergy_precompute;
   __pyx_vtable_6squish_6energy_RadialALEnergy.__pyx_base.calc_grad = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_14RadialALEnergy_calc_grad;
+  __pyx_vtable_6squish_6energy_RadialALEnergy.__pyx_base.calc_hess = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_14RadialALEnergy_calc_hess;
   __pyx_type_6squish_6energy_RadialALEnergy.tp_base = __pyx_ptype_6squish_7voronoi_VoronoiContainer;
-  if (PyType_Ready(&__pyx_type_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6squish_6energy_RadialALEnergy.tp_print = 0;
   #endif
-  if (__Pyx_SetVtable(__pyx_type_6squish_6energy_RadialALEnergy.tp_dict, __pyx_vtabptr_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialALEnergy, (PyObject *)&__pyx_type_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_6squish_6energy_RadialALEnergy.tp_dict, __pyx_vtabptr_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialALEnergy, (PyObject *)&__pyx_type_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6squish_6energy_RadialALEnergy) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
   __pyx_ptype_6squish_6energy_RadialALEnergy = &__pyx_type_6squish_6energy_RadialALEnergy;
   __pyx_vtabptr_6squish_6energy_RadialTEnergy = &__pyx_vtable_6squish_6energy_RadialTEnergy;
   __pyx_vtable_6squish_6energy_RadialTEnergy.__pyx_base = *__pyx_vtabptr_6squish_7voronoi_VoronoiContainer;
   __pyx_vtable_6squish_6energy_RadialTEnergy.__pyx_base.precompute = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_13RadialTEnergy_precompute;
   __pyx_vtable_6squish_6energy_RadialTEnergy.__pyx_base.calc_grad = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_13RadialTEnergy_calc_grad;
+  __pyx_vtable_6squish_6energy_RadialTEnergy.__pyx_base.calc_hess = (void (*)(struct __pyx_obj_6squish_7voronoi_VoronoiContainer *))__pyx_f_6squish_6energy_13RadialTEnergy_calc_hess;
   __pyx_type_6squish_6energy_RadialTEnergy.tp_base = __pyx_ptype_6squish_7voronoi_VoronoiContainer;
-  if (PyType_Ready(&__pyx_type_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6squish_6energy_RadialTEnergy.tp_print = 0;
   #endif
-  if (__Pyx_SetVtable(__pyx_type_6squish_6energy_RadialTEnergy.tp_dict, __pyx_vtabptr_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialTEnergy, (PyObject *)&__pyx_type_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_6squish_6energy_RadialTEnergy.tp_dict, __pyx_vtabptr_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RadialTEnergy, (PyObject *)&__pyx_type_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6squish_6energy_RadialTEnergy) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
   __pyx_ptype_6squish_6energy_RadialTEnergy = &__pyx_type_6squish_6energy_RadialTEnergy;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;
@@ -22345,10 +24296,10 @@ if (!__Pyx_RefNanny) {
   __pyx_v_6squish_6energy_RADIALT_ECM = __pyx_f_6squish_7voronoi__EdgeCacheMap(0, 4, 6, 8, -1LL, 10, 11, 12, 13, 14);
 
   /* "squish/energy.pyx":30
- * 	"""
+ *     """
  * 
- * 	attr_str = "area"             # <<<<<<<<<<<<<<
- * 	title_str = "Area"
+ *     attr_str = "area"             # <<<<<<<<<<<<<<
+ *     title_str = "Area"
  * 
  */
   if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_AreaEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_n_u_area) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
@@ -22356,52 +24307,52 @@ if (!__Pyx_RefNanny) {
 
   /* "squish/energy.pyx":31
  * 
- * 	attr_str = "area"
- * 	title_str = "Area"             # <<<<<<<<<<<<<<
+ *     attr_str = "area"
+ *     title_str = "Area"             # <<<<<<<<<<<<<<
  * 
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
  */
   if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_AreaEnergy->tp_dict, __pyx_n_s_title_str, __pyx_n_u_Area) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6squish_6energy_AreaEnergy);
 
-  /* "squish/energy.pyx":126
- * 	"""
+  /* "squish/energy.pyx":149
+ *     """
  * 
- * 	attr_str = "radial-al"             # <<<<<<<<<<<<<<
- * 	title_str = "Radial[AL]"
+ *     attr_str = "radial-al"             # <<<<<<<<<<<<<<
+ *     title_str = "Radial[AL]"
  * 
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialALEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_kp_u_radial_al) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialALEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_kp_u_radial_al) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6squish_6energy_RadialALEnergy);
 
-  /* "squish/energy.pyx":127
+  /* "squish/energy.pyx":150
  * 
- * 	attr_str = "radial-al"
- * 	title_str = "Radial[AL]"             # <<<<<<<<<<<<<<
+ *     attr_str = "radial-al"
+ *     title_str = "Radial[AL]"             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialALEnergy->tp_dict, __pyx_n_s_title_str, __pyx_kp_u_Radial_AL) < 0) __PYX_ERR(0, 127, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialALEnergy->tp_dict, __pyx_n_s_title_str, __pyx_kp_u_Radial_AL) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6squish_6energy_RadialALEnergy);
 
-  /* "squish/energy.pyx":162
- * 	"""
+  /* "squish/energy.pyx":188
+ *     """
  * 
- * 	attr_str = "radial-t"             # <<<<<<<<<<<<<<
- * 	title_str = "Radial[T]"
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ *     attr_str = "radial-t"             # <<<<<<<<<<<<<<
+ *     title_str = "Radial[T]"
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialTEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_kp_u_radial_t) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialTEnergy->tp_dict, __pyx_n_s_attr_str, __pyx_kp_u_radial_t) < 0) __PYX_ERR(0, 188, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6squish_6energy_RadialTEnergy);
 
-  /* "squish/energy.pyx":163
+  /* "squish/energy.pyx":189
  * 
- * 	attr_str = "radial-t"
- * 	title_str = "Radial[T]"             # <<<<<<<<<<<<<<
- * 	def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
- * 					np.ndarray[FLOAT_T, ndim=2] site_arr):
+ *     attr_str = "radial-t"
+ *     title_str = "Radial[T]"             # <<<<<<<<<<<<<<
+ *     def __init__(AreaEnergy self, INT_T n, FLOAT_T w, FLOAT_T h, FLOAT_T r,
+ *                     np.ndarray[FLOAT_T, ndim=2] site_arr):
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialTEnergy->tp_dict, __pyx_n_s_title_str, __pyx_kp_u_Radial_T) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6squish_6energy_RadialTEnergy->tp_dict, __pyx_n_s_title_str, __pyx_kp_u_Radial_T) < 0) __PYX_ERR(0, 189, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6squish_6energy_RadialTEnergy);
 
   /* "squish/energy.pyx":1
@@ -23843,6 +25794,311 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
 }
 #endif
 
+/* PyIntCompare */
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, CYTHON_UNUSED long inplace) {
+    if (op1 == op2) {
+        Py_RETURN_TRUE;
+    }
+    #if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_CheckExact(op1))) {
+        const long b = intval;
+        long a = PyInt_AS_LONG(op1);
+        if (a == b) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+    }
+    #endif
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (likely(PyLong_CheckExact(op1))) {
+        int unequal;
+        unsigned long uintval;
+        Py_ssize_t size = Py_SIZE(op1);
+        const digit* digits = ((PyLongObject*)op1)->ob_digit;
+        if (intval == 0) {
+            if (size == 0) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+        } else if (intval < 0) {
+            if (size >= 0)
+                Py_RETURN_FALSE;
+            intval = -intval;
+            size = -size;
+        } else {
+            if (size <= 0)
+                Py_RETURN_FALSE;
+        }
+        uintval = (unsigned long) intval;
+#if PyLong_SHIFT * 4 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 4)) {
+            unequal = (size != 5) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[3] != ((uintval >> (3 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[4] != ((uintval >> (4 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+#if PyLong_SHIFT * 3 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 3)) {
+            unequal = (size != 4) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[3] != ((uintval >> (3 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+#if PyLong_SHIFT * 2 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 2)) {
+            unequal = (size != 3) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+#if PyLong_SHIFT * 1 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 1)) {
+            unequal = (size != 2) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+            unequal = (size != 1) || (((unsigned long) digits[0]) != (uintval & (unsigned long) PyLong_MASK));
+        if (unequal == 0) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+    }
+    #endif
+    if (PyFloat_CheckExact(op1)) {
+        const long b = intval;
+        double a = PyFloat_AS_DOUBLE(op1);
+        if ((double)a == (double)b) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+    }
+    return (
+        PyObject_RichCompare(op1, op2, Py_EQ));
+}
+
+/* GetItemInt */
+  static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
+    PyObject *r;
+    if (!j) return NULL;
+    r = PyObject_GetItem(o, j);
+    Py_DECREF(j);
+    return r;
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyList_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
+        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyTuple_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
+        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
+                                                     CYTHON_NCP_UNUSED int wraparound,
+                                                     CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
+    if (is_list || PyList_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
+        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
+            PyObject *r = PyList_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    }
+    else if (PyTuple_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
+        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
+            PyObject *r = PyTuple_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    } else {
+        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
+        if (likely(m && m->sq_item)) {
+            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
+                Py_ssize_t l = m->sq_length(o);
+                if (likely(l >= 0)) {
+                    i += l;
+                } else {
+                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
+                        return NULL;
+                    PyErr_Clear();
+                }
+            }
+            return m->sq_item(o, i);
+        }
+    }
+#else
+    if (is_list || PySequence_Check(o)) {
+        return PySequence_GetItem(o, i);
+    }
+#endif
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+}
+
+/* ObjectGetItem */
+  #if CYTHON_USE_TYPE_SLOTS
+static PyObject *__Pyx_PyObject_GetIndex(PyObject *obj, PyObject* index) {
+    PyObject *runerr;
+    Py_ssize_t key_value;
+    PySequenceMethods *m = Py_TYPE(obj)->tp_as_sequence;
+    if (unlikely(!(m && m->sq_item))) {
+        PyErr_Format(PyExc_TypeError, "'%.200s' object is not subscriptable", Py_TYPE(obj)->tp_name);
+        return NULL;
+    }
+    key_value = __Pyx_PyIndex_AsSsize_t(index);
+    if (likely(key_value != -1 || !(runerr = PyErr_Occurred()))) {
+        return __Pyx_GetItemInt_Fast(obj, key_value, 0, 1, 1);
+    }
+    if (PyErr_GivenExceptionMatches(runerr, PyExc_OverflowError)) {
+        PyErr_Clear();
+        PyErr_Format(PyExc_IndexError, "cannot fit '%.200s' into an index-sized integer", Py_TYPE(index)->tp_name);
+    }
+    return NULL;
+}
+static PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject* key) {
+    PyMappingMethods *m = Py_TYPE(obj)->tp_as_mapping;
+    if (likely(m && m->mp_subscript)) {
+        return m->mp_subscript(obj, key);
+    }
+    return __Pyx_PyObject_GetIndex(obj, key);
+}
+#endif
+
+/* PyObjectCallNoArg */
+  #if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+#if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(func)) {
+        return __Pyx_PyFunction_FastCall(func, NULL, 0);
+    }
+#endif
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
+#else
+    if (likely(PyCFunction_Check(func)))
+#endif
+    {
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
+            return __Pyx_PyObject_CallMethO(func, NULL);
+        }
+    }
+    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
+}
+#endif
+
+/* PyIntBinop */
+  #if !CYTHON_COMPILING_IN_PYPY
+#if PY_MAJOR_VERSION < 3 || CYTHON_USE_PYLONG_INTERNALS
+#define __Pyx_PyInt_TrueDivideObjC_ZeroDivisionError(operand)\
+    if (unlikely(zerodivision_check && ((operand) == 0))) {\
+        PyErr_SetString(PyExc_ZeroDivisionError, "integer division by zero");\
+        return NULL;\
+    }
+#endif
+static PyObject* __Pyx_PyInt_TrueDivideObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, int inplace, int zerodivision_check) {
+    (void)inplace;
+    (void)zerodivision_check;
+    #if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_CheckExact(op1))) {
+        const long b = intval;
+        long a = PyInt_AS_LONG(op1);
+            __Pyx_PyInt_TrueDivideObjC_ZeroDivisionError(b)
+            if (8 * sizeof(long) <= 53 || likely(labs(a) <= ((PY_LONG_LONG)1 << 53))) {
+                return PyFloat_FromDouble((double)a / (double)b);
+            }
+            return PyInt_Type.tp_as_number->nb_true_divide(op1, op2);
+    }
+    #endif
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (likely(PyLong_CheckExact(op1))) {
+        const long b = intval;
+        long a, x;
+        const digit* digits = ((PyLongObject*)op1)->ob_digit;
+        const Py_ssize_t size = Py_SIZE(op1);
+        if (likely(__Pyx_sst_abs(size) <= 1)) {
+            a = likely(size) ? digits[0] : 0;
+            if (size == -1) a = -a;
+        } else {
+            switch (size) {
+                case -2:
+                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT && 1 * PyLong_SHIFT < 53) {
+                        a = -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+                    }
+                    CYTHON_FALLTHROUGH;
+                case 2:
+                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT && 1 * PyLong_SHIFT < 53) {
+                        a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+                    }
+                    CYTHON_FALLTHROUGH;
+                case -3:
+                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT && 2 * PyLong_SHIFT < 53) {
+                        a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+                    }
+                    CYTHON_FALLTHROUGH;
+                case 3:
+                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT && 2 * PyLong_SHIFT < 53) {
+                        a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+                    }
+                    CYTHON_FALLTHROUGH;
+                case -4:
+                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT && 3 * PyLong_SHIFT < 53) {
+                        a = -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+                    }
+                    CYTHON_FALLTHROUGH;
+                case 4:
+                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT && 3 * PyLong_SHIFT < 53) {
+                        a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+                    }
+                    CYTHON_FALLTHROUGH;
+                default: return PyLong_Type.tp_as_number->nb_true_divide(op1, op2);
+            }
+        }
+                __Pyx_PyInt_TrueDivideObjC_ZeroDivisionError(b)
+                if ((8 * sizeof(long) <= 53 || likely(labs(a) <= ((PY_LONG_LONG)1 << 53)))
+                        || __Pyx_sst_abs(size) <= 52 / PyLong_SHIFT) {
+                    return PyFloat_FromDouble((double)a / (double)b);
+                }
+                return PyLong_Type.tp_as_number->nb_true_divide(op1, op2);
+            return PyLong_FromLong(x);
+        
+    }
+    #endif
+    if (PyFloat_CheckExact(op1)) {
+        const long b = intval;
+        double a = PyFloat_AS_DOUBLE(op1);
+            double result;
+            if (unlikely(zerodivision_check && b == 0)) {
+                PyErr_SetString(PyExc_ZeroDivisionError, "float division by zero");
+                return NULL;
+            }
+            PyFPE_START_PROTECT("divide", return NULL)
+            result = ((double)a) / (double)b;
+            PyFPE_END_PROTECT(result)
+            return PyFloat_FromDouble(result);
+    }
+    return (inplace ? PyNumber_InPlaceTrueDivide : PyNumber_TrueDivide)(op1, op2);
+}
+#endif
+
 /* RaiseException */
   #if PY_MAJOR_VERSION < 3
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb,
@@ -24318,122 +26574,6 @@ return_ne:
 #endif
     return PyObject_GetAttr(o, n);
 }
-
-/* GetItemInt */
-  static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
-    PyObject *r;
-    if (!j) return NULL;
-    r = PyObject_GetItem(o, j);
-    Py_DECREF(j);
-    return r;
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyList_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
-        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyTuple_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
-        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
-                                                     CYTHON_NCP_UNUSED int wraparound,
-                                                     CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
-    if (is_list || PyList_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
-        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
-            PyObject *r = PyList_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    }
-    else if (PyTuple_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
-        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
-            PyObject *r = PyTuple_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    } else {
-        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
-        if (likely(m && m->sq_item)) {
-            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
-                Py_ssize_t l = m->sq_length(o);
-                if (likely(l >= 0)) {
-                    i += l;
-                } else {
-                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
-                        return NULL;
-                    PyErr_Clear();
-                }
-            }
-            return m->sq_item(o, i);
-        }
-    }
-#else
-    if (is_list || PySequence_Check(o)) {
-        return PySequence_GetItem(o, i);
-    }
-#endif
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-}
-
-/* ObjectGetItem */
-  #if CYTHON_USE_TYPE_SLOTS
-static PyObject *__Pyx_PyObject_GetIndex(PyObject *obj, PyObject* index) {
-    PyObject *runerr;
-    Py_ssize_t key_value;
-    PySequenceMethods *m = Py_TYPE(obj)->tp_as_sequence;
-    if (unlikely(!(m && m->sq_item))) {
-        PyErr_Format(PyExc_TypeError, "'%.200s' object is not subscriptable", Py_TYPE(obj)->tp_name);
-        return NULL;
-    }
-    key_value = __Pyx_PyIndex_AsSsize_t(index);
-    if (likely(key_value != -1 || !(runerr = PyErr_Occurred()))) {
-        return __Pyx_GetItemInt_Fast(obj, key_value, 0, 1, 1);
-    }
-    if (PyErr_GivenExceptionMatches(runerr, PyExc_OverflowError)) {
-        PyErr_Clear();
-        PyErr_Format(PyExc_IndexError, "cannot fit '%.200s' into an index-sized integer", Py_TYPE(index)->tp_name);
-    }
-    return NULL;
-}
-static PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject* key) {
-    PyMappingMethods *m = Py_TYPE(obj)->tp_as_mapping;
-    if (likely(m && m->mp_subscript)) {
-        return m->mp_subscript(obj, key);
-    }
-    return __Pyx_PyObject_GetIndex(obj, key);
-}
-#endif
 
 /* decode_c_string */
   static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
@@ -25766,6 +27906,29 @@ __pyx_fail:
     return result;
 }
 
+/* ObjectToMemviewSlice */
+  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_6squish_4core_FLOAT_T(PyObject *obj, int writable_flag) {
+    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
+    __Pyx_BufFmt_StackElem stack[1];
+    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED), (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
+    int retcode;
+    if (obj == Py_None) {
+        result.memview = (struct __pyx_memoryview_obj *) Py_None;
+        return result;
+    }
+    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
+                                                 PyBUF_RECORDS_RO | writable_flag, 2,
+                                                 &__Pyx_TypeInfo_nn___pyx_t_6squish_4core_FLOAT_T, stack,
+                                                 &result, obj);
+    if (unlikely(retcode == -1))
+        goto __pyx_fail;
+    return result;
+__pyx_fail:
+    result.memview = NULL;
+    result.data = NULL;
+    return result;
+}
+
 /* Declarations */
   #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -26375,6 +28538,44 @@ raise_neg_overflow:
     }
 }
 
+/* CIntToPy */
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const long neg_one = (long) -1, const_zero = (long) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(long) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(long) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(long) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(long),
+                                     little, !is_unsigned);
+    }
+}
+
 /* CIntFromPy */
   static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
@@ -26801,44 +29002,6 @@ raise_neg_overflow:
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(int),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const long neg_one = (long) -1, const_zero = (long) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(long) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(long) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(long) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(long),
                                      little, !is_unsigned);
     }
 }

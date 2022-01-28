@@ -66,7 +66,7 @@ cdef class VoronoiContainer:
     cdef readonly INT_T n
     cdef readonly FLOAT_T w, h, r, energy
     cdef FLOAT_T [2] dim
-    cdef FLOAT_T [:, ::1] points, vertices, site_cache, edge_cache, grad
+    cdef FLOAT_T [:, ::1] points, vertices, site_cache, edge_cache, grad, hess
     cdef INT_T [:, ::1] sites, edges
     cdef EdgeCacheMap* edge_cache_map
     cdef dict __dict__
@@ -77,6 +77,7 @@ cdef class VoronoiContainer:
     cdef void common_cache(VoronoiContainer self) except *
     cdef void precompute(self) except *
     cdef void calc_grad(self) except *
+    cdef void calc_hess(self) except *
     cdef void get_statistics(VoronoiContainer self) except *
 
     @staticmethod

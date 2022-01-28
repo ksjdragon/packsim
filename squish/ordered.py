@@ -2,9 +2,19 @@ from __future__ import annotations
 from typing import List, Tuple
 import numpy as np
 from numpy.linalg import norm as mag
-from math import gcd, sqrt, log, tan, atan, pi
+from math import gcd, sqrt, log, tan, atan, atanh, pi
+import cmath
+from fractions import Fraction
 
 Config = Tuple[int, int]
+
+
+def e_hex(domain: DomainParams) -> float:
+    return (
+        2
+        - 2 * domain.r * (6 * 3 ** (-0.25) * sqrt(2) * atanh(0.5))
+        + 2 * pi * domain.r ** 2
+    )
 
 
 def configurations(domain: DomainParams) -> List[Config]:
@@ -24,6 +34,9 @@ def configurations(domain: DomainParams) -> List[Config]:
                 coprimes.remove(((first[0] * i) % n, (first[1] * i) % n))
             except KeyError:
                 pass
+
+    for i in range(len(valid)):
+        valid.append((valid[i][1], valid[i][0]))
 
     return valid
 
@@ -106,3 +119,71 @@ def rot(v: numpy.ndarray) -> numpy.ndarray:
     w = np.copy(v)
     w[0], w[1] = -w[1], w[0]
     return w
+
+
+def divisors(n: int) -> List[int]:
+    divs = [[i, n // i] for i in range(1, int(sqrt(n)) + 1) if n % i == 0]
+    return sorted(set(list(sum(divs, []))))
+
+
+def factorize(n: int) -> Dict[int, int]:
+    primes = [i for i in range(1, n + 1) if len(divisors(i)) == 2]
+    prime_fac = {}
+    for prime in primes:
+        i = 0
+        while n % prime ** (i + 1) == 0:
+            i += 1
+        if i > 0:
+            prime_fac[prime] = i
+
+    return prime_fac
+
+
+def hexagon_alpha(n: int, fraction: bool = False) -> List[int]:
+    if n % 2 == 1:
+        return []
+
+    fac = factorize(n)
+    q = 1
+    for prime in fac:
+        if prime % 3 != 2:
+            q *= prime ** fac[prime]
+
+    divq = divisors(q)
+    ratios, thres = [], 1 / sqrt(3)
+    for g in divq:
+        us = n // (2 * g)
+        divu = divisors(us)
+        for u in divu:
+            d = 2 * g * u * u
+            f = Fraction(n, d)
+            if f <= thres:
+                ratios.append(f)
+            else:
+                ratios.append(Fraction(d, 3 * n))
+
+    ratios = sorted(set(ratios))
+    if fraction:
+        return ratios
+    else:
+        return [float(x) * sqrt(3) for x in ratios]
+
+
+def hexagon_alpha_brute(n: int):
+    w = cmath.rect(1, 2 * pi / 3)
+    divs = divisors(n / 2)
+    ratios, thres = [], 1 / sqrt(3)
+    for a in range(n):
+        for b in range(1, a + 1):
+            if a == 0 and b == 0:
+                continue
+            z2, g = a * a - a * b + b * b, gcd(a - 2 * b, 2 * a - b)
+            if z2 // g in divs:
+                f = Fraction(n, 2 * z2)
+                if f <= thres:
+                    ratios.append(f)
+                else:
+                    ratios.append(Fraction(2 * z2, 3 * n))
+
+    ratios = sorted(set([float(x) * sqrt(3) for x in ratios]))
+    return ratios

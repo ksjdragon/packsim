@@ -51,6 +51,7 @@ ctypedef Matrix2x2 (*MatrixCopySclOp)(Matrix2x2*, FLOAT_T) nogil
 
 ctypedef struct VectorSelfOps:
     Vector2D* (*neg)(Vector2D*) nogil
+    Vector2D* (*rot)(Vector2D*) nogil
 
     VectorSelfVecOp vadd
     VectorSelfVecOp vsub
@@ -66,6 +67,7 @@ ctypedef struct VectorSelfOps:
 
 ctypedef struct VectorCopyOps:
     Vector2D (*neg)(Vector2D*) nogil
+    Vector2D (*rot)(Vector2D*) nogil
 
     VectorCopyVecOp vadd
     VectorCopyVecOp vsub
@@ -81,6 +83,7 @@ ctypedef struct VectorCopyOps:
 
 ctypedef struct MatrixSelfOps:
     Matrix2x2* (*neg)(Matrix2x2*) nogil
+    Matrix2x2* (*T)(Matrix2x2*) nogil
 
     MatrixSelfMatOp madd
     MatrixSelfMatOp msub
@@ -96,6 +99,7 @@ ctypedef struct MatrixSelfOps:
 
 ctypedef struct MatrixCopyOps:
     Matrix2x2 (*neg)(Matrix2x2*) nogil
+    Matrix2x2 (*T)(Matrix2x2*) nogil
 
     MatrixCopyMatOp madd
     MatrixCopyMatOp msub
@@ -115,7 +119,7 @@ ctypedef struct Vector2D:
     VectorCopyOps copy
 
     bint (*equals)(Vector2D*, Vector2D) nogil
-    Vector2D (*rot)(Vector2D*) nogil
+    Matrix2x2 (*vecmul)(Vector2D*, Vector2D) nogil
     FLOAT_T (*dot)(Vector2D*, Vector2D) nogil
     FLOAT_T (*mag)(Vector2D*) nogil
 

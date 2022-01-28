@@ -159,6 +159,7 @@ class Simulation:
         sim, frames = Simulation.load(path)
         for frame in frames:
             sim.frames.append(sim.energy.mode(*frame["domain"], frame["arr"]))
+            sim.frames[-1].stats = frame["stats"]
 
         return sim
 
@@ -238,8 +239,8 @@ class Flow(Simulation):
 
             if self.adaptive:
                 error = change - grad * self.step_size
-                tol = 10 ** min(-3, -2 + log10(grad_norm))
-
+                tol = 10 ** min(-4, -3 + log10(grad_norm))
+                # tol = 10 ** -7
                 self.step_size *= (tol / np.linalg.norm(error)) ** 0.5
 
             if not save:
@@ -315,7 +316,7 @@ class Search(Simulation):
         new_sites: Optional[numpy.ndarray] = None,
     ) -> None:
         if log:
-            print(f"Travel - {self.domain}", flush=True)
+            print(f"Search - {self.domain} - {len(self)}", flush=True)
         if save and len(self) == 0:
             self.save(self.initial_data, True)
 
@@ -328,16 +329,15 @@ class Search(Simulation):
             sim.run(False, log, log_steps)
 
             self.frames.append(sim[-1])
+            # Get Hessian,and check nullity. If > 2, perturb.
+            hess = self.frames[i].hessian
+            eigs = np.sort(np.linalg.eig(hess)[0])
+            self.frames[i].stats["eigs"] = eigs
+
             if save:
                 self.save(self.frame_data(i))
             if log:
                 print(f"Equilibrium: {i:04}\n", flush=True)
-
-            # Get Hessian,and check nullity. If > 2, perturb.
-            hess = self.frames[i].hessian(10e-5)
-            eigs = np.sort(np.linalg.eig(hess)[0])
-            self.frames[i].stats["eigs"] = eigs
-
             zero_eigs = np.count_nonzero(
                 np.isclose(eigs, np.zeros((len(eigs),)), atol=1e-4)
             )

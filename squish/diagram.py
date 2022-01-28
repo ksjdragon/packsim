@@ -1,7 +1,13 @@
 from __future__ import annotations
 from typing import Tuple, List, Optional
 
-import matplotlib.pyplot as plt, numpy as np, os
+import matplotlib as mpl
+import matplotlib.cm as cm
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
+
+import numpy as np, os, math
 from matplotlib.ticker import MaxNLocator, FormatStrFormatter
 from scipy.spatial import Voronoi, voronoi_plot_2d
 from multiprocessing import Pool, cpu_count
@@ -123,18 +129,49 @@ class Diagram:
             raise ValueError("Not a valid mode for diagrams!")
 
         shape = self.diagrams.shape
-        fig, axes = plt.subplots(*shape, figsize=(shape[1] * 8, shape[0] * 8))
+
+        plt.rcParams.update(
+            {
+                "axes.titlesize": 45,
+                "axes.labelsize": 45,
+                "xtick.labelsize": 40,
+                "ytick.labelsize": 40,
+                "xtick.major.width": 2,
+                "ytick.major.width": 2,
+                "xtick.major.size": 5,
+                "ytick.major.size": 5,
+                "xtick.minor.width": 1,
+                "ytick.minor.width": 1,
+                "xtick.minor.size": 3,
+                "ytick.minor.size": 3,
+                "legend.fontsize": 40,
+                "lines.linewidth": 3,
+                "font.family": "cm",
+                "font.size": 40,
+                "text.usetex": True,
+                "text.latex.preamble": r"\usepackage{amsmath}",
+                "figure.constrained_layout.use": True,
+            }
+        )
+
+        fig = plt.figure(figsize=(shape[1] * 15, shape[0] * 15))
+        gs = fig.add_gridspec(shape[0], shape[1])
+        # fig, axes = plt.subplots(*shape, figsize=(shape[1] * 15, shape[0] * 15))
+
         if self.diagrams.shape == (1, 1):
-            getattr(self, str(self.diagrams[0][0]) + "_plot")(frame, axes)
+            ax = fig.add_subplot(gs[0])
+            getattr(self, str(self.diagrams[0][0]) + "_plot")(frame, ax)
         else:
-            axes = np.atleast_2d(axes)
+            # axes = np.atleast_2d(axes)
             it = np.nditer(self.diagrams, flags=["multi_index"])
             for diagram in it:
                 if diagram == "":
                     continue
-                getattr(self, str(diagram) + "_plot")(frame, axes[it.multi_index])
 
-        plt.tight_layout()
+                ax = fig.add_subplot(gs[it.multi_index])
+                getattr(self, str(diagram) + "_plot")(frame, ax)
+
+        # plt.tight_layout()
         if name is None:
             name = f"img{frame:05}.png"
 
@@ -148,28 +185,60 @@ class Diagram:
         domain = self.sim.domains[i]
         n, w, h = domain.n, domain.w, domain.h
         scale = 1.5
-        area = n <= 60
+        area = n <= 50
+
+        offset = (
+            2
+            - 2 * domain.r * (6 * 3 ** (-0.25) * math.sqrt(2) * math.atanh(0.5))
+            + 2 * math.pi * domain.r ** 2
+        )
+
+        # Make color map axis.
+        divider = make_axes_locatable(ax)
+        cax = divider.append_axes("right", size="5%", pad=0.05)
 
         voronoi_plot_2d(
-            self.sim.voronois[i], ax, show_vertices=False, point_size=7 - n / 100
+            self.sim.voronois[i], ax, show_vertices=False, show_points=False
         )
-        ax.plot([-w, 2 * w], [0, 0], "r")
-        ax.plot([-w, 2 * w], [h, h], "r")
-        ax.plot([0, 0], [-h, 2 * h], "r")
-        ax.plot([w, w], [-h, 2 * h], "r")
+
+        # Mark location axis with 3 ticks.
+        ax.set_xticks([0, w / 2, w])
+        ax.set_yticks([0, h / 2, h])
+
+        # Obtain site energies, and make color map.
+        energies = self.sim.stats[i]["site_energies"][:n]
+        norm = mpl.colors.Normalize(vmin=-2, vmax=2, clip=True)
+        mapper = cm.ScalarMappable(norm=norm, cmap=cm.magma)
+        cbar = plt.colorbar(mapper, cax=cax, ticks=np.linspace(-2, 2, 5))
+
+        # Fill polygons with energy colormap.
+        for j, p in enumerate(self.sim.voronois[i].point_region):
+            region = self.sim.voronois[i].regions[p]
+            if not -1 in region:
+                polygon = [self.sim.voronois[i].vertices[k] for k in region]
+                ax.fill(
+                    *zip(*polygon),
+                    color=mapper.to_rgba(energies[j % n] - offset),
+                    zorder=0,
+                )
+
+        line_color, point_color = "white", "lightseagreen"
+
+        # Periodic border
+        ax.plot([-w, 2 * w], [0, 0], line_color, linewidth="4")
+        ax.plot([-w, 2 * w], [h, h], line_color, linewidth="4")
+        ax.plot([0, 0], [-h, 2 * h], line_color, linewidth="4")
+        ax.plot([w, w], [-h, 2 * h], line_color, linewidth="4")
         ax.axis("equal")
-        ax.set_xlim([(1 - scale) * w / 2, (1 + scale) * w / 2])
+        ax.set_xlim([(1 - 0.85 * scale) * w / 2, (1 + 0.85 * scale) * w / 2])
         ax.set_ylim([(1 - scale) * h / 2, (1 + scale) * h / 2])
-        ax.title.set_text("Voronoi Visualization")
+        ax.set_title("Voronoi Tessellation")
 
-        props = dict(boxstyle="round", facecolor="wheat", alpha=0.8)
-
+        # Marking sites and defects.
         defects = {5: {"x": [], "y": []}, 7: {"x": [], "y": []}}
-
         for j in range(n):
             for s in SYMM:
                 vec = self.sim.voronois[i].points[j] + s * self.sim.domains[i].dim
-
                 if area:
                     txt = ax.text(
                         *vec, str(round(self.sim.stats[i]["site_areas"][j], 3))
@@ -182,16 +251,35 @@ class Diagram:
                 elif self.sim.stats[i]["site_edge_count"][j] == 7:
                     defects[7]["x"].append(vec[0])
                     defects[7]["y"].append(vec[1])
+                else:
+                    ax.scatter(
+                        vec[0], vec[1], s=(40 - n / 100), color=point_color, zorder=1
+                    )
 
-        ax.scatter(defects[5]["x"], defects[5]["y"], marker="p", color="C0")
-        ax.scatter(defects[7]["x"], defects[7]["y"], marker="*", color="C0")
+        ax.scatter(
+            defects[5]["x"],
+            defects[5]["y"],
+            marker="p",
+            s=(200 - n / 100),
+            color=point_color,
+            zorder=1,
+        )
+        ax.scatter(
+            defects[7]["x"],
+            defects[7]["y"],
+            marker="*",
+            s=(200 - n / 100),
+            color=point_color,
+            zorder=1,
+        )
 
+        # Make VEE text in top left.
+        props = dict(boxstyle="round", facecolor="white", alpha=0.8, zorder=20)
         ax.text(
-            0.05,
-            0.95,
-            f"Energy: {self.sim.energies[i]}",
+            0.065,
+            0.935,
+            f"VEE: {round(sum(energies)/n - offset, 8)}",
             transform=ax.transAxes,
-            fontsize=14,
             verticalalignment="top",
             bbox=props,
         )
@@ -305,14 +393,32 @@ class Diagram:
     def eigs_plot(self, i: int, ax: AxesSubplot) -> None:
         try:
             eigs = self.sim.stats[i]["eigs"]
+            for i, eig in enumerate(eigs):
+                if eig > 1e-4:
+                    ax.annotate(
+                        f"Coercivity: {eig:.5f}",
+                        xy=(i, eig),
+                        xytext=(50, -50),
+                        textcoords="offset points",
+                        arrowprops={"arrowstyle": "->", "color": "black"},
+                    )
+                    break
+
             ax.plot(
-                list(range(len(eigs))), eigs, marker="o", linestyle="dashed", color="C0"
+                list(range(40)),
+                eigs[:40],
+                marker="o",
+                linestyle="dashed",
+                color="C0",
+                markersize=8,
             )
-            ax.plot([0, len(eigs)], [0, 0], color="red")
+
+            ax.plot([0, 40], [0, 0], color="red")
         except KeyError:
             ax.text(0.5, 0.5, "Not Computed")
 
-        ax.title.set_text("Hessian Eigenvalues")
+        ax.grid()
+        ax.set_title("Sorted Hessian Eigenvalues")
         ax.set_xlabel("")
         ax.set_ylabel("Value")
 
