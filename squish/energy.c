@@ -6969,7 +6969,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
   PyObject *__pyx_t_5 = NULL;
   __Pyx_memviewslice __pyx_t_6 = { 0, 0, { 0 }, { 0 }, { 0 } };
   Py_ssize_t __pyx_t_7;
-  __pyx_t_6squish_4core_INT_T __pyx_t_8;
+  Py_ssize_t __pyx_t_8;
   __pyx_t_6squish_4core_INT_T __pyx_t_9;
   int __pyx_t_10;
   __pyx_t_6squish_7voronoi_HalfEdge __pyx_t_11;
@@ -6977,7 +6977,8 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
   __pyx_t_6squish_4core_INT_T __pyx_t_13;
   __pyx_t_6squish_4core_INT_T __pyx_t_14;
   __pyx_t_6squish_4core_INT_T __pyx_t_15;
-  __Pyx_memviewslice __pyx_t_16 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  __pyx_t_6squish_4core_INT_T __pyx_t_16;
+  __Pyx_memviewslice __pyx_t_17 = { 0, 0, { 0 }, { 0 }, { 0 } };
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -7081,157 +7082,93 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
   /* "squish/energy.pyx":288
  * 
  *         cdef INT_T i, j, k
- *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
+ *         for i in range(self.sites.shape[0]):             # <<<<<<<<<<<<<<
  *             xi = _Site(i, &info)
  *             e = xi.edge(&xi)
  */
-  {
-      #ifdef WITH_THREAD
-      PyThreadState *_save;
-      Py_UNBLOCK_THREADS
-      __Pyx_FastGIL_Remember();
-      #endif
-      /*try:*/ {
-        if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 288, __pyx_L4_error)}
-        __pyx_t_7 = (__pyx_v_self->__pyx_base.sites.shape[0]);
-        if ((1 == 0)) abort();
-        {
-            #if ((defined(__APPLE__) || defined(__OSX__)) && (defined(__GNUC__) && (__GNUC__ > 2 || (__GNUC__ == 2 && (__GNUC_MINOR__ > 95)))))
-                #undef likely
-                #undef unlikely
-                #define likely(x)   (x)
-                #define unlikely(x) (x)
-            #endif
-            __pyx_t_9 = (__pyx_t_7 - 0 + 1 - 1/abs(1)) / 1;
-            if (__pyx_t_9 > 0)
-            {
-                #ifdef _OPENMP
-                #pragma omp parallel private(__pyx_t_10, __pyx_t_11, __pyx_t_12)
-                #endif /* _OPENMP */
-                {
-                    #ifdef _OPENMP
-                    #pragma omp for lastprivate(__pyx_v_e) lastprivate(__pyx_v_em) lastprivate(__pyx_v_ep) firstprivate(__pyx_v_i) lastprivate(__pyx_v_i) lastprivate(__pyx_v_j) lastprivate(__pyx_v_xi)
-                    #endif /* _OPENMP */
-                    for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_9; __pyx_t_8++){
-                        {
-                            __pyx_v_i = (__pyx_t_6squish_4core_INT_T)(0 + 1 * __pyx_t_8);
-                            /* Initialize private variables to invalid values */
-                            __pyx_v_j = ((__pyx_t_6squish_4core_INT_T)0xbad0bad0);
+  if (unlikely(!__pyx_v_self->__pyx_base.sites.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 288, __pyx_L1_error)}
+  __pyx_t_7 = (__pyx_v_self->__pyx_base.sites.shape[0]);
+  __pyx_t_8 = __pyx_t_7;
+  for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
+    __pyx_v_i = __pyx_t_9;
 
-                            /* "squish/energy.pyx":289
+    /* "squish/energy.pyx":289
  *         cdef INT_T i, j, k
- *         for i in prange(self.sites.shape[0], nogil=True):
+ *         for i in range(self.sites.shape[0]):
  *             xi = _Site(i, &info)             # <<<<<<<<<<<<<<
  *             e = xi.edge(&xi)
  * 
  */
-                            __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
+    __pyx_v_xi = __pyx_f_6squish_7voronoi__Site(__pyx_v_i, (&__pyx_v_info));
 
-                            /* "squish/energy.pyx":290
- *         for i in prange(self.sites.shape[0], nogil=True):
+    /* "squish/energy.pyx":290
+ *         for i in range(self.sites.shape[0]):
  *             xi = _Site(i, &info)
  *             e = xi.edge(&xi)             # <<<<<<<<<<<<<<
  * 
  *             j = 0
  */
-                            __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
+    __pyx_v_e = __pyx_v_xi.edge((&__pyx_v_xi));
 
-                            /* "squish/energy.pyx":292
+    /* "squish/energy.pyx":292
  *             e = xi.edge(&xi)
  * 
  *             j = 0             # <<<<<<<<<<<<<<
  *             while j < xi.edge_num(&xi):
  *                 em, ep = e.prev(&e), e.next(&e)
  */
-                            __pyx_v_j = 0;
+    __pyx_v_j = 0;
 
-                            /* "squish/energy.pyx":293
+    /* "squish/energy.pyx":293
  * 
  *             j = 0
  *             while j < xi.edge_num(&xi):             # <<<<<<<<<<<<<<
  *                 em, ep = e.prev(&e), e.next(&e)
  *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  */
-                            while (1) {
-                              __pyx_t_10 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
-                              if (!__pyx_t_10) break;
+    while (1) {
+      __pyx_t_10 = ((__pyx_v_j < __pyx_v_xi.edge_num((&__pyx_v_xi))) != 0);
+      if (!__pyx_t_10) break;
 
-                              /* "squish/energy.pyx":294
+      /* "squish/energy.pyx":294
  *             j = 0
  *             while j < xi.edge_num(&xi):
  *                 em, ep = e.prev(&e), e.next(&e)             # <<<<<<<<<<<<<<
  *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
  */
-                              __pyx_t_11 = __pyx_v_e.prev((&__pyx_v_e));
-                              __pyx_t_12 = __pyx_v_e.next((&__pyx_v_e));
-                              __pyx_v_em = __pyx_t_11;
-                              __pyx_v_ep = __pyx_t_12;
+      __pyx_t_11 = __pyx_v_e.prev((&__pyx_v_e));
+      __pyx_t_12 = __pyx_v_e.next((&__pyx_v_e));
+      __pyx_v_em = __pyx_t_11;
+      __pyx_v_ep = __pyx_t_12;
 
-                              /* "squish/energy.pyx":295
+      /* "squish/energy.pyx":295
  *             while j < xi.edge_num(&xi):
  *                 em, ep = e.prev(&e), e.next(&e)
  *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))             # <<<<<<<<<<<<<<
  * 
  *                 e = e.next(&e)
  */
-                              (void)(__pyx_v_e.cache->H((&__pyx_v_e), __pyx_vtabptr_6squish_7voronoi_VoronoiContainer->calc_H(__pyx_v_em, __pyx_v_e)));
+      (void)(__pyx_v_e.cache->H((&__pyx_v_e), __pyx_vtabptr_6squish_7voronoi_VoronoiContainer->calc_H(__pyx_v_em, __pyx_v_e)));
 
-                              /* "squish/energy.pyx":297
+      /* "squish/energy.pyx":297
  *                 e.cache.H(&e, VoronoiContainer.calc_H(em, e))
  * 
  *                 e = e.next(&e)             # <<<<<<<<<<<<<<
  *                 j = j + 1
  * 
  */
-                              __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
+      __pyx_v_e = __pyx_v_e.next((&__pyx_v_e));
 
-                              /* "squish/energy.pyx":298
+      /* "squish/energy.pyx":298
  * 
  *                 e = e.next(&e)
  *                 j = j + 1             # <<<<<<<<<<<<<<
  * 
  * 
  */
-                              __pyx_v_j = (__pyx_v_j + 1);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        #if ((defined(__APPLE__) || defined(__OSX__)) && (defined(__GNUC__) && (__GNUC__ > 2 || (__GNUC__ == 2 && (__GNUC_MINOR__ > 95)))))
-            #undef likely
-            #undef unlikely
-            #define likely(x)   __builtin_expect(!!(x), 1)
-            #define unlikely(x) __builtin_expect(!!(x), 0)
-        #endif
-      }
-
-      /* "squish/energy.pyx":288
- * 
- *         cdef INT_T i, j, k
- *         for i in prange(self.sites.shape[0], nogil=True):             # <<<<<<<<<<<<<<
- *             xi = _Site(i, &info)
- *             e = xi.edge(&xi)
- */
-      /*finally:*/ {
-        /*normal exit:*/{
-          #ifdef WITH_THREAD
-          __Pyx_FastGIL_Forget();
-          Py_BLOCK_THREADS
-          #endif
-          goto __pyx_L5;
-        }
-        __pyx_L4_error: {
-          #ifdef WITH_THREAD
-          __Pyx_FastGIL_Forget();
-          Py_BLOCK_THREADS
-          #endif
-          goto __pyx_L1_error;
-        }
-        __pyx_L5:;
-      }
+      __pyx_v_j = (__pyx_v_j + 1);
+    }
   }
 
   /* "squish/energy.pyx":301
@@ -7242,9 +7179,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *             e = xi.edge(&xi)
  */
   __pyx_t_9 = __pyx_v_self->__pyx_base.n;
-  __pyx_t_8 = __pyx_t_9;
-  for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_8; __pyx_t_13+=1) {
-    __pyx_v_i = __pyx_t_13;
+  __pyx_t_13 = __pyx_t_9;
+  for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+    __pyx_v_i = __pyx_t_14;
 
     /* "squish/energy.pyx":302
  * 
@@ -7411,9 +7348,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *                 HE[2*i, 2*i+1] -= dsite.b
  *                 HE[2*i+1, 2*i] -= dsite.c
  */
-      __pyx_t_14 = (2 * __pyx_v_i);
       __pyx_t_15 = (2 * __pyx_v_i);
-      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.a;
+      __pyx_t_16 = (2 * __pyx_v_i);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_16 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.a;
 
       /* "squish/energy.pyx":333
  * 
@@ -7422,9 +7359,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *                 HE[2*i+1, 2*i] -= dsite.c
  *                 HE[2*i+1, 2*i+1] -= dsite.d
  */
-      __pyx_t_15 = (2 * __pyx_v_i);
-      __pyx_t_14 = ((2 * __pyx_v_i) + 1);
-      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.b;
+      __pyx_t_16 = (2 * __pyx_v_i);
+      __pyx_t_15 = ((2 * __pyx_v_i) + 1);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_16 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.b;
 
       /* "squish/energy.pyx":334
  *                 HE[2*i, 2*i] -= dsite.a
@@ -7433,9 +7370,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *                 HE[2*i+1, 2*i+1] -= dsite.d
  * 
  */
-      __pyx_t_14 = ((2 * __pyx_v_i) + 1);
-      __pyx_t_15 = (2 * __pyx_v_i);
-      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.c;
+      __pyx_t_15 = ((2 * __pyx_v_i) + 1);
+      __pyx_t_16 = (2 * __pyx_v_i);
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_16 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.c;
 
       /* "squish/energy.pyx":335
  *                 HE[2*i, 2*i+1] -= dsite.b
@@ -7444,9 +7381,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  * 
  *                 # Calculating of q
  */
+      __pyx_t_16 = ((2 * __pyx_v_i) + 1);
       __pyx_t_15 = ((2 * __pyx_v_i) + 1);
-      __pyx_t_14 = ((2 * __pyx_v_i) + 1);
-      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.d;
+      *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_16 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) -= __pyx_v_dsite.d;
 
       /* "squish/energy.pyx":338
  * 
@@ -7772,9 +7709,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *                         HE[2*i, 2*k+1] += tempm.b
  *                         HE[2*i+1, 2*k] += tempm.c
  */
-          __pyx_t_14 = (2 * __pyx_v_i);
-          __pyx_t_15 = (2 * __pyx_v_k);
-          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.a;
+          __pyx_t_15 = (2 * __pyx_v_i);
+          __pyx_t_16 = (2 * __pyx_v_k);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_16 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.a;
 
           /* "squish/energy.pyx":405
  * 
@@ -7783,9 +7720,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *                         HE[2*i+1, 2*k] += tempm.c
  *                         HE[2*i+1, 2*k+1] += tempm.d
  */
-          __pyx_t_15 = (2 * __pyx_v_i);
-          __pyx_t_14 = ((2 * __pyx_v_k) + 1);
-          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.b;
+          __pyx_t_16 = (2 * __pyx_v_i);
+          __pyx_t_15 = ((2 * __pyx_v_k) + 1);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_16 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.b;
 
           /* "squish/energy.pyx":406
  *                         HE[2*i, 2*k] += tempm.a
@@ -7794,9 +7731,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *                         HE[2*i+1, 2*k+1] += tempm.d
  * 
  */
-          __pyx_t_14 = ((2 * __pyx_v_i) + 1);
-          __pyx_t_15 = (2 * __pyx_v_k);
-          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_14 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.c;
+          __pyx_t_15 = ((2 * __pyx_v_i) + 1);
+          __pyx_t_16 = (2 * __pyx_v_k);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_16 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.c;
 
           /* "squish/energy.pyx":407
  *                         HE[2*i, 2*k+1] += tempm.b
@@ -7805,9 +7742,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  * 
  *                     f = f.twin(&f)
  */
-          __pyx_t_15 = ((2 * __pyx_v_i) + 1);
-          __pyx_t_14 = ((2 * __pyx_v_k) + 1);
-          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_15 * __pyx_v_HE.strides[0]) ) + __pyx_t_14 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.d;
+          __pyx_t_16 = ((2 * __pyx_v_i) + 1);
+          __pyx_t_15 = ((2 * __pyx_v_k) + 1);
+          *((__pyx_t_6squish_4core_FLOAT_T *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_HE.data + __pyx_t_16 * __pyx_v_HE.strides[0]) ) + __pyx_t_15 * __pyx_v_HE.strides[1]) )) += __pyx_v_tempm.d;
 
           /* "squish/energy.pyx":401
  *                         k = k + self.n
@@ -7853,7 +7790,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  * 
  *                 e = e.next(&e)
  */
-          goto __pyx_L19_break;
+          goto __pyx_L12_break;
 
           /* "squish/energy.pyx":411
  *                     f = f.twin(&f)
@@ -7864,7 +7801,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  */
         }
       }
-      __pyx_L19_break:;
+      __pyx_L12_break:;
 
       /* "squish/energy.pyx":414
  *                         break
@@ -7931,12 +7868,12 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_16 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_16.memview)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __pyx_t_17 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_17.memview)) __PYX_ERR(0, 417, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->__pyx_base.hess, 0);
-  __pyx_v_self->__pyx_base.hess = __pyx_t_16;
-  __pyx_t_16.memview = NULL;
-  __pyx_t_16.data = NULL;
+  __pyx_v_self->__pyx_base.hess = __pyx_t_17;
+  __pyx_t_17.memview = NULL;
+  __pyx_t_17.data = NULL;
 
   /* "squish/energy.pyx":419
  *         self.hess = -2*self.r*np.asarray(HE, dtype=FLOAT)
@@ -8018,7 +7955,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
   __pyx_t_3 = __Pyx_PyInt_TrueDivideObjC(__pyx_t_5, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_16 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_16.memview)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_17 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_6squish_4core_FLOAT_T(__pyx_t_3, PyBUF_WRITABLE); if (unlikely(!__pyx_t_17.memview)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "squish/energy.pyx":418
@@ -8029,9 +7966,9 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
  *             + np.asarray(self.hess, dtype=FLOAT).T )
  */
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->__pyx_base.hess, 0);
-  __pyx_v_self->__pyx_base.hess = __pyx_t_16;
-  __pyx_t_16.memview = NULL;
-  __pyx_t_16.data = NULL;
+  __pyx_v_self->__pyx_base.hess = __pyx_t_17;
+  __pyx_t_17.memview = NULL;
+  __pyx_t_17.data = NULL;
 
   /* "squish/energy.pyx":273
  *         self.grad = dedx
@@ -8050,7 +7987,7 @@ static void __pyx_f_6squish_6energy_13RadialTEnergy_calc_hess(struct __pyx_obj_6
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __PYX_XDEC_MEMVIEW(&__pyx_t_6, 1);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_16, 1);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_17, 1);
   __Pyx_AddTraceback("squish.energy.RadialTEnergy.calc_hess", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_HE, 1);

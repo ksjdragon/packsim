@@ -217,6 +217,7 @@ class Flow(Simulation):
         log: bool,
         log_steps: int,
         new_sites: Optional[numpy.ndarray] = None,
+        newton: bool = False,
     ) -> None:
         if log:
             print(f"Find - {self.domain}", flush=True)
@@ -239,13 +240,14 @@ class Flow(Simulation):
             change, grad = frame.iterate(self.step_size)
 
             new_frame = self.energy.mode(*self.domain, frame.add_sites(change))
-            grad_norm = np.linalg.norm(grad)
             end = timer()
+
+            grad_norm = np.linalg.norm(grad)
 
             if self.adaptive:
                 error = change - grad * self.step_size
-                tol = 10 ** min(-4, -3 + log10(grad_norm))
-                # tol = 10 ** -7
+                tol = 10 ** min(-5, 2.3 * log10(grad_norm))
+                # tol = 10 ** -10
                 self.step_size *= (tol / np.linalg.norm(error)) ** 0.5
 
             if not save:

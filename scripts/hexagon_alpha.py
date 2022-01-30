@@ -68,7 +68,7 @@ def main():
 
     ax.scatter(alphas, ns, s=5)
 
-    ax.set_xlim(-0.01, 1.1)
+    ax.set_xlim(-0.01, 1.01)
     ax.set_xticks(np.arange(0, 1.01, 0.1))
     ax.set_ylim(0, args.max_n)
 

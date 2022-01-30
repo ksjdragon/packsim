@@ -66,7 +66,8 @@ def main():
     ax2.plot(alphas, all_disorder_count, color="C4")
 
     ax.set_xlim(0.3, 1)
-    ax.set_xticks(np.arange(0.3, 1.01, 0.1))
+    ax.set_xticks([round(w, 2) for w in alphas[::10]])
+    ax.set_xticklabels([f"{round(w, 3):.2f}" for w in alphas[::10]], rotation=90)
 
     start, end = ax.get_ylim()
     # space = np.linspace(0, end, 20)

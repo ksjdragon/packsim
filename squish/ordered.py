@@ -7,14 +7,11 @@ import cmath
 from fractions import Fraction
 
 Config = Tuple[int, int]
+R_HEX = (6 * 3 ** (-0.25) * sqrt(2) * atanh(0.5)) / (2 * pi)
 
 
 def e_hex(domain: DomainParams) -> float:
-    return (
-        2
-        - 2 * domain.r * (6 * 3 ** (-0.25) * sqrt(2) * atanh(0.5))
-        + 2 * pi * domain.r ** 2
-    )
+    return 2 - 2 * domain.r * (2 * pi) * R_HEX + 2 * pi * domain.r ** 2
 
 
 def configurations(domain: DomainParams) -> List[Config]:

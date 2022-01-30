@@ -285,7 +285,7 @@ cdef class RadialTEnergy(VoronoiContainer):
         cdef FLOAT_T [:,:] HE = np.zeros((2*self.n, 2*self.n))
 
         cdef INT_T i, j, k
-        for i in prange(self.sites.shape[0], nogil=True):
+        for i in range(self.sites.shape[0]):
             xi = _Site(i, &info)
             e = xi.edge(&xi)
 

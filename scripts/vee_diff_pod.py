@@ -78,7 +78,7 @@ def main():
             100 * (min_order - min_disorder), all_disorder_count, label=f"N={domain.n}"
         )
 
-    ax.set_ylabel("Probability of Disordered Equilibria")
+    ax.set_ylabel("Perecent of Disordered Equilibria")
     ax.set_xlabel(r"VEE Difference $\left[\times 10^{2}\right]$")
     ax.yaxis.set_major_formatter(mtick.PercentFormatter())
     ax.set_ylim(48, 102)

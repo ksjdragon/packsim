@@ -175,9 +175,7 @@ def do_sim(args, file):
             )
         elif mode == "shrink":
             check_params(
-                sim_params,
-                ["width_change", "width_stop"],
-                {"width_change": "positive", "width_stop": "positive"},
+                sim_params, ["width_change", "width_stop"], {"width_stop": "positive"}
             )
             sim = Shrink(
                 domain,

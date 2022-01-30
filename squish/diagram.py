@@ -13,6 +13,7 @@ from scipy.spatial import Voronoi, voronoi_plot_2d
 from multiprocessing import Pool, cpu_count
 
 from .common import DomainParams, OUTPUT_DIR
+from squish import ordered
 
 SYMM = np.array(
     [[0, 0], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]]
@@ -187,11 +188,7 @@ class Diagram:
         scale = 1.5
         area = n <= 50
 
-        offset = (
-            2
-            - 2 * domain.r * (6 * 3 ** (-0.25) * math.sqrt(2) * math.atanh(0.5))
-            + 2 * math.pi * domain.r ** 2
-        )
+        e_hex = ordered.e_hex(domain)
 
         # Make color map axis.
         divider = make_axes_locatable(ax)
@@ -218,7 +215,7 @@ class Diagram:
                 polygon = [self.sim.voronois[i].vertices[k] for k in region]
                 ax.fill(
                     *zip(*polygon),
-                    color=mapper.to_rgba(energies[j % n] - offset),
+                    color=mapper.to_rgba(energies[j % n] - e_hex),
                     zorder=0,
                 )
 
@@ -278,7 +275,7 @@ class Diagram:
         ax.text(
             0.065,
             0.935,
-            f"VEE: {round(sum(energies)/n - offset, 8)}",
+            f"VEE: {round(sum(energies)/n - e_hex, 8)}",
             transform=ax.transAxes,
             verticalalignment="top",
             bbox=props,

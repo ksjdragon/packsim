@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import List
-import argparse, pickle, numpy as np, math
+import argparse, pickle, numpy as np, math, os
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 import matplotlib.pyplot as plt
@@ -52,7 +52,13 @@ def get_args(
 def get_data(
     path: Path, func: Callable[Any, Any], args: Tuple[Any] = (), regen: bool = False
 ) -> Any:
-    if path.is_file() and not regen:
+    if regen:
+        try:
+            os.remove(path)
+        except FileNotFoundError:
+            pass
+
+    if path.is_file():
         with open(path, "rb") as f:
             return pickle.load(f)
     else:
@@ -69,7 +75,8 @@ def format_data(
     new_data = {}
     new_data[key_name] = np.array([x[0] for x in data])
     for i, col_name in enumerate(col_names):
-        if type(data[0][1][i]) is list:
+        col_value_type = type(data[0][1][i])
+        if col_value_type is list or col_value_type is tuple:
             new_data[col_name] = [np.array(x[1][i]) for x in data]
         else:
             new_data[col_name] = np.array([x[1][i] for x in data])
@@ -145,7 +152,8 @@ def ordered_data_proc(
         else:
             coercivities.append(eigs[0])
 
-    return (alpha, sorted(energies), sorted(coercivities)[::-1])
+    energies, coercivities = list(zip(*sorted(zip(energies, coercivities))))
+    return (alpha, energies, coercivities)
 
 
 def get_simulation_data(filepath: Path) -> Tuple[Dict, numpy.ndarray, DomainParams]:
@@ -189,6 +197,8 @@ def simulation_data_proc(file: Path) -> Tuple[float, List[float], List[float]]:
         alls[1].append(np.var(frame_info["stats"]["avg_radius"]) <= 1e-8)
         alls[2].append(np.count_nonzero(frame_info["stats"]["site_edge_count"] != 6))
 
+    alls = list(zip(*sorted(zip(*alls))))
+
     sim, frames = Simulation.load(file)
     sim.frames = list(frames)
     counts = sim.get_distinct()
@@ -202,5 +212,6 @@ def simulation_data_proc(file: Path) -> Tuple[float, List[float], List[float]]:
         )
 
     distincts.append(counts)
+    distincts = list(zip(*sorted(zip(*distincts))))
 
     return sim.domain.w / sim.domain.h, alls, distincts

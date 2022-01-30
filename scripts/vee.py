@@ -25,10 +25,6 @@ def main():
         sims_path / "package.pkl", get_simulation_data, args=(sims_path,), regen=regen
     )
     domain, alphas = DomainParams(n, 1, 1, r), data["all"]["alpha"]
-
-    if regen:
-        os.remove(OUTPUT_DIR / "OrderedCache" / f"{n}".pkl)
-
     ordered_data = get_data(
         OUTPUT_DIR / "OrderedCache" / f"{n}.pkl",
         get_ordered_data,
@@ -45,10 +41,10 @@ def main():
         min_disorder.append(min(disorder_energies))
         max_disorder.append(max(disorder_energies))
 
-    min_order = []
+    min_order, min_order_coer = [], []
     for i, energies in enumerate(ordered_data["Energy"]):
         min_order.append(energies[0])
-
+        min_order_coer.append(ordered_data["Coercivity"][i][0])
     e_hex = ordered.e_hex(domain)
     min_disorder = np.array(min_disorder) / domain.n - e_hex
     max_disorder = np.array(max_disorder) / domain.n - e_hex
@@ -72,7 +68,13 @@ def main():
         label="Max Disordered",
     )
 
+    ax.scatter(
+        hex_ratios, [0] * len(hex_ratios), color="C2", s=120, marker="H", zorder=50
+    )
+
     ax.set_xlim(0.3, 1)
+    ax.set_xticks([round(w, 2) for w in alphas[::10]])
+    ax.set_xticklabels([f"{round(w, 3):.2f}" for w in alphas[::10]], rotation=90)
 
     # start, end = ax.get_ylim()
     # space = np.linspace(0, end, 20)
