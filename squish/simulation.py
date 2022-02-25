@@ -217,7 +217,6 @@ class Flow(Simulation):
         log: bool,
         log_steps: int,
         new_sites: Optional[numpy.ndarray] = None,
-        newton: bool = False,
     ) -> None:
         if log:
             print(f"Find - {self.domain}", flush=True)
@@ -242,11 +241,11 @@ class Flow(Simulation):
             new_frame = self.energy.mode(*self.domain, frame.add_sites(change))
             end = timer()
 
-            grad_norm = np.linalg.norm(grad)
+            grad_norm = np.linalg.norm(grad) / (self.domain.n ** 0.5)
 
             if self.adaptive:
                 error = change - grad * self.step_size
-                tol = 10 ** min(-5, 2.3 * log10(grad_norm))
+                tol = 10 ** min(-3, -2 + log10(grad_norm))
                 # tol = 10 ** -10
                 self.step_size *= (tol / np.linalg.norm(error)) ** 0.5
 
@@ -393,10 +392,7 @@ class Shrink(Simulation):
     ) -> None:
         super().__init__(domain, energy, name=name)
         self.step_size, self.thres, self.adaptive = step_size, thres, adaptive
-        self.delta, self.stop_width = (
-            self.domain.w * delta / 100,
-            self.domain.w * stop_width,
-        )
+        self.delta, self.stop_width = delta, stop_width
 
     @property
     def initial_data(self) -> Dict:
@@ -425,8 +421,19 @@ class Shrink(Simulation):
             self.save(self.initial_data, True)
 
         width = self.domain.w if len(self.frames) == 0 else self.frames[-1].w
+        if len(self.frames) != 0:
+            new_sites = self.frames[-1].site_arr
+            width = self.frames[-1].w - self.delta
+        else:
+            width = self.domain.w
         i = 0
-        while width >= self.stop_width:
+
+        if delta < 0:
+            cond = width <= self.stop_width
+        if delta > 0:
+            cond = width <= self.stop_width
+
+        while cond:
             # Get to equilibrium.
             new_domain = DomainParams(
                 self.domain.n, width, self.domain.h, self.domain.r

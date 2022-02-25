@@ -2,18 +2,11 @@ import argparse, numpy as np, os
 from pathlib import Path
 import matplotlib.pyplot as plt
 
-from squish import DomainParams, Simulation
+from squish import DomainParams, Simulation, ordered
 from squish.common import OUTPUT_DIR
 from script_tools import RC_SETTINGS, get_data, format_data
 
 NAME = "Perturbations"
-
-
-def toroidal_distance(domain: DomainParams, x: np.ndarray, y: np.ndarray) -> float:
-    dim = np.array([domain.w, domain.h])
-    absdist = np.abs(y - x)
-    wrap = dim * (absdist >= np.array([domain.w, domain.h]) / 2)
-    return np.linalg.norm(wrap - absdist)
 
 
 def main():
@@ -60,8 +53,10 @@ def main():
                 )
 
                 data[delta]["norm"].append(
-                    toroidal_distance(
-                        end_sim.domain, adjusted, end_sim.frames[0].site_arr
+                    np.linalg.norm(
+                        ordered.toroidal_distance(
+                            end_sim.domain, adjusted, end_sim.frames[0].site_arr
+                        )
                     )
                 )
                 data[delta]["time"].append(sim.step_size * i)
@@ -83,7 +78,7 @@ def main():
             label=f"k = {data[delta]['k']}",
         )
 
-    ax.set_title(r"Relaxation of Perturbations")
+    # ax.set_title(r"Relaxation of Perturbations")
 
     ax.set_xlim([0, 60])
     ax.set_yscale("log")

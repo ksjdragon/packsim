@@ -1,4 +1,4 @@
-import numpy as np, os
+import numpy as np, os, csv
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 
@@ -48,6 +48,10 @@ def main():
     gs = fig.add_gridspec(1, 1)
     ax = fig.add_subplot(gs[0])
 
+    my_cool_data = [["VEE", 61, 67, 73, 81, 84, 100]]
+    for vee in np.linspace(0, 0.06, 10000):
+        my_cool_data.append([vee])
+
     for j, package in enumerate(packages):
         data, ordered_data, domain = package
         e_hex = ordered.e_hex(domain)
@@ -66,6 +70,9 @@ def main():
             counts[i] = np.count_nonzero(energies >= vee)
         counts = 100 * counts / len(energies)
 
+        for i, count in enumerate(counts):
+            my_cool_data[i + 1].append(count)
+
         ax.plot(
             100 * vees[: index + 1],
             counts[: index + 1],
@@ -79,6 +86,10 @@ def main():
             linestyle="dotted",
             color=f"C{j}",
         )
+
+    with open("cumulative-vee.csv", "w") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows(my_cool_data)
 
     ax.set_xlim(0, 6.3)
     ax.yaxis.set_major_formatter(mtick.PercentFormatter())

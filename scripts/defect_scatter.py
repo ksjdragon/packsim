@@ -27,14 +27,22 @@ def main():
     defects = np.array(defects)
     energy = 100 * np.array(energy)
 
+    counts = {}
+    for i in range(70):
+        counts[i] = np.count_nonzero(defects == i)
+    print(counts)
+    for k, v in counts.items():
+        if k % 2 == 1 and v > 0:
+            print(k, v)
+
     plt.rcParams.update(RC_SETTINGS)
-    fig = plt.figure(figsize=(18, 15))
+    fig = plt.figure(figsize=(15, 15))
     gs = fig.add_gridspec(1, 1)
     ax = fig.add_subplot(gs[0])
 
     m, b = np.polyfit(defects, energy, 1)
-    ax.scatter(defects, energy, color="C0", marker="*", s=100)
-    ax.plot(np.arange(0, 64), np.arange(0, 64) * m + b, zorder=3, color="C1")
+    ax.scatter(defects, energy, color="C0", marker="*", s=70, zorder=2)
+    ax.plot(np.arange(0, 65), np.arange(0, 65) * m + b, zorder=3, color="C1")
 
     ax.scatter(0, b, color="C2", s=500, marker="*", zorder=50)
 
@@ -49,10 +57,10 @@ def main():
     ax.set_xlim(0, 64)
     ax.set_xticks(np.arange(0, 65, 8))
 
-    ax.set_ylim(0, 3.6)
+    ax.set_ylim(0, 3.7)
     ax.set_yticks(np.arange(0, 3.6, 0.5))
 
-    ax.set_xlabel("Number of Defects")
+    ax.set_xlabel("$\mathrm{D}$")
     ax.set_ylabel(r"VEE $\left[\times 10^{2}\right]$")
     ax.grid(zorder=0)
 

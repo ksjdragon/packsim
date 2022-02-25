@@ -6,7 +6,7 @@ from squish import Simulation, ordered
 from squish.common import OUTPUT_DIR
 from script_tools import RC_SETTINGS, get_data, format_data
 
-NAME = "OrdereredRBar"
+NAME = "OrderedRBar"
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
 
     plt.rcParams.update(RC_SETTINGS)
 
-    fig = plt.figure(figsize=(20, 10))
+    fig = plt.figure(figsize=(18, 14.4))
     gs = fig.add_gridspec(1, 1)
     ax = fig.add_subplot(gs[0])
 
@@ -53,6 +53,8 @@ def main():
         color="black",
     )
 
+    ax.set_ylim(0.51, 0.615)
+    ax.set_yticks(np.arange(0.52, 0.62, 0.03))
     ax.set_ylabel(r"$\bar{r}$")
     ax.grid(zorder=0)
     ax.legend()

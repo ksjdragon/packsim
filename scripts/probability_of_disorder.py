@@ -90,15 +90,15 @@ def main():
 
     ax.set_xlabel("Aspect Ratio")
     ax.set_ylabel(r"VEE $\left[\times 10^{2}\right]$", color="C2")
-    ax2.set_ylabel("Percent of Disordered Equilibria", color="C4")
+    ax2.set_ylabel("POD", color="C4")
 
     # ax.legend(loc=(0.23, 0.5))
     ax.grid(zorder=0)
 
     props = dict(boxstyle="round", facecolor="white", alpha=0.8, zorder=20)
     ax.text(
-        0.873,
-        0.97,
+        0.85,
+        0.92,
         f"N={domain.n}",
         transform=ax.transAxes,
         verticalalignment="top",

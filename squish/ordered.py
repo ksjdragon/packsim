@@ -14,6 +14,13 @@ def e_hex(domain: DomainParams) -> float:
     return 2 - 2 * domain.r * (2 * pi) * R_HEX + 2 * pi * domain.r ** 2
 
 
+def toroidal_distance(domain: DomainParams, x: np.ndarray, y: np.ndarray) -> float:
+    dim = np.array([domain.w, domain.h])
+    absdist = np.abs(y - x)
+    wrap = dim * (absdist >= dim / 2)
+    return np.linalg.norm(wrap - absdist, axis=1)
+
+
 def configurations(domain: DomainParams) -> List[Config]:
     n = domain.n
     coprimes, valid = [], []
@@ -41,30 +48,37 @@ def configurations(domain: DomainParams) -> List[Config]:
 def get_config_generators(
     domain: DomainParams, config: Config
 ) -> Tuple[Config, Config]:
+    # x = sites(domain, config)
+    # x = x[x[:, 1] <= (domain.h / 2)]
+    # mag_x = toroidal_distance(domain, x, np.zeros(x.shape))
+    # x = x[np.argsort(mag_x)]
+    # print(x)
+
+    # return [tuple(x[1]), tuple(x[2])]
+
     n, w, h = domain.n, domain.w, domain.h
-    q1 = sites(domain, config)[1:]
-    all_sites = np.concatenate(
-        (q1, q1 - np.array([w, 0]), q1 - np.array([0, h]), q1 - domain.dim)
+    x = sites(domain, config)[1:]  # Remove 0
+    # Concatenate quadrants 1, 2 and 4.
+    x = np.concatenate(
+        (x, x - np.array([w, 0]), x - np.array([0, h]), x - np.array([w, h]))
     )
-    # Sort sites by magnitude and smallest.
-    all_sites = sorted(list(all_sites), key=lambda x: np.linalg.norm(x))
-    v = all_sites[0]  # Smallest vector set to v.
 
-    all_sites = np.array(all_sites[1:])  # Remove v from search set.
+    # Reduce search space
+    # x = x[(np.abs(x[:, 0]) <= (domain.w / 2)) * (np.abs(x[:, 1]) <= (domain.h / 2))]
+    mag_x = np.linalg.norm(x, axis=1)
+    x = x[np.argsort(mag_x)]  # Sort by magnitude
+
+    v = x[0]
+    x = x[1:]  # Remove v from search set.
     # Checking 0 < ax + by < v*v to make the sites are within the region.
-    tol = 1e-3
-    vdot = np.matmul(all_sites, v)
-    in_box = all_sites[np.where((-tol <= vdot) & (vdot <= (v.dot(v) + tol)))[0]]
-    in_box = np.expand_dims(in_box, 0).swapaxes(
-        0, 1
-    )  # Used for the next step, getting site*site
+    tol = 1e-8
+    vdot = np.matmul(x, v)
+    x = x[(-tol <= vdot) * (vdot <= v.dot(v) + tol)]
+    mag_x = np.linalg.norm(x, axis=1)
+    x = x[np.argsort(mag_x)]
 
-    v2 = in_box[
-        np.argmin(np.squeeze(np.matmul(in_box, in_box.transpose(0, 2, 1))))
-    ].flatten()
+    v2 = x[0]
 
-    if np.all(v == v2):
-        print(v, v2, n, w, h, config)
     return tuple(v), tuple(v2)
 
 
@@ -105,7 +119,8 @@ def avg_rp(d: float, l: float) -> float:
 def circumcenter(v: numpy.ndarray, w: numpy.ndarray) -> numpy.ndarray:
     det = 1 / (2 * rot(v).dot(w))
     if rot(v).dot(w) == 0:
-        print(v, w)
+        pass
+        # print(v, w)
     v2, w2 = v.dot(v), w.dot(w)
     c = np.empty((2,))
     c[0], c[1] = w[1] * v2 - v[1] * w2, -w[0] * v2 + v[0] * w2

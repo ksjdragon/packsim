@@ -9,7 +9,7 @@ from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
 
 import numpy as np, os, math
 from matplotlib.ticker import MaxNLocator, FormatStrFormatter
-from scipy.spatial import Voronoi, voronoi_plot_2d
+from scipy.spatial import Voronoi
 from multiprocessing import Pool, cpu_count
 
 from .common import DomainParams, OUTPUT_DIR
@@ -125,37 +125,13 @@ class Diagram:
         self.diagrams = np.atleast_2d(diagrams)
         self.cumulative = cumulative
 
-    def generate_frame(self, frame: int, mode: str, fol: str, name: str = None) -> None:
+    def generate_frame(
+        self, fig: Figure, frame: int, mode: str, fol: str, name: str = None
+    ) -> None:
         if mode not in ["save", "open"]:
             raise ValueError("Not a valid mode for diagrams!")
 
         shape = self.diagrams.shape
-
-        plt.rcParams.update(
-            {
-                "axes.titlesize": 45,
-                "axes.labelsize": 45,
-                "xtick.labelsize": 40,
-                "ytick.labelsize": 40,
-                "xtick.major.width": 2,
-                "ytick.major.width": 2,
-                "xtick.major.size": 5,
-                "ytick.major.size": 5,
-                "xtick.minor.width": 1,
-                "ytick.minor.width": 1,
-                "xtick.minor.size": 3,
-                "ytick.minor.size": 3,
-                "legend.fontsize": 40,
-                "lines.linewidth": 3,
-                "font.family": "cm",
-                "font.size": 40,
-                "text.usetex": True,
-                "text.latex.preamble": r"\usepackage{amsmath}",
-                "figure.constrained_layout.use": True,
-            }
-        )
-
-        fig = plt.figure(figsize=(shape[1] * 15, shape[0] * 15))
         gs = fig.add_gridspec(shape[0], shape[1])
         # fig, axes = plt.subplots(*shape, figsize=(shape[1] * 15, shape[0] * 15))
 
@@ -178,29 +154,28 @@ class Diagram:
 
         if mode == "save":
             plt.savefig(self.sim.path / fol / name)
-            plt.close(fig)
+            fig.clear()
         elif mode == "show":
             plt.show()
 
     def voronoi_plot(self, i: int, ax: AxesSubplot) -> None:
         domain = self.sim.domains[i]
         n, w, h = domain.n, domain.w, domain.h
+        flip = w <= h
         scale = 1.5
-        area = n <= 50
 
         e_hex = ordered.e_hex(domain)
+        line_color, point_color = "white", "lightseagreen"
 
         # Make color map axis.
         divider = make_axes_locatable(ax)
         cax = divider.append_axes("right", size="5%", pad=0.05)
 
-        voronoi_plot_2d(
-            self.sim.voronois[i], ax, show_vertices=False, show_points=False
-        )
+        vor = self.sim.voronois[i]
 
         # Mark location axis with 3 ticks.
-        ax.set_xticks([0, w / 2, w])
-        ax.set_yticks([0, h / 2, h])
+        ax.set_xticks(np.round([0, w / 2, w], 2))
+        ax.set_yticks(np.round([0, h / 2, h], 2))
 
         # Obtain site energies, and make color map.
         energies = self.sim.stats[i]["site_energies"][:n]
@@ -208,74 +183,77 @@ class Diagram:
         mapper = cm.ScalarMappable(norm=norm, cmap=cm.magma)
         cbar = plt.colorbar(mapper, cax=cax, ticks=np.linspace(-2, 2, 5))
 
+        SYMM = []
+        if flip:
+            dup = int((h // w + 1) // 2 + 1)
+            for i in range(-dup, dup + 1):
+                SYMM += [[i, -1], [i, 0], [i, 1]]
+        else:
+            dup = int((w // h + 1) // 2 + 1)
+            for i in range(-dup, dup + 1):
+                SYMM += [[-1, i], [0, i], [1, i]]
+
+        SYMM = np.array(SYMM) * np.array([w, h])
+
+        regions = [vor.regions[x] for x in vor.point_region[:n]]
+        edges = np.array([len(r) for r in regions])
+
         # Fill polygons with energy colormap.
-        for j, p in enumerate(self.sim.voronois[i].point_region):
-            region = self.sim.voronois[i].regions[p]
-            if not -1 in region:
-                polygon = [self.sim.voronois[i].vertices[k] for k in region]
-                ax.fill(
-                    *zip(*polygon),
-                    color=mapper.to_rgba(energies[j % n] - e_hex),
-                    zorder=0,
+        sizes = [40 - n / 100, 200 - n / 100, 40 - n / 100, 200 - n / 100, 40 - n / 100]
+        markers = [".", "p", ".", "*", "."]
+        for j in range(5):
+            sites = vor.points[np.argwhere(edges == j + 4)]
+            if len(sites) == 0:
+                continue
+            for s in SYMM:
+                ax.scatter(
+                    *(sites + s).T,
+                    marker=markers[j],
+                    s=sizes[j],
+                    color=point_color,
+                    zorder=1,
                 )
 
-        line_color, point_color = "white", "lightseagreen"
+        polygons = []
+        for region in regions:
+            polygon = np.empty((2 * len(SYMM), len(region)), dtype=float)
+            for i, s in enumerate(SYMM):
+                polygon[i * 2 : (i + 1) * 2, :] = (vor.vertices[region] + s).T
+            polygons.append(polygon)
+
+        colors = [mapper.to_rgba(energies[i] - e_hex) for i in range(n)]
+        for col, poly_set in zip(colors, polygons):
+            ax.fill(*poly_set, color=col, edgecolor="black", zorder=0)
+
+        ax.axis("equal")
 
         # Periodic border
-        ax.plot([-w, 2 * w], [0, 0], line_color, linewidth="4")
-        ax.plot([-w, 2 * w], [h, h], line_color, linewidth="4")
-        ax.plot([0, 0], [-h, 2 * h], line_color, linewidth="4")
-        ax.plot([w, w], [-h, 2 * h], line_color, linewidth="4")
-        ax.axis("equal")
-        ax.set_xlim([(1 - 0.85 * scale) * w / 2, (1 + 0.85 * scale) * w / 2])
-        ax.set_ylim([(1 - scale) * h / 2, (1 + scale) * h / 2])
+        if flip:
+            bot, top = (1 - scale) * h / 2, (1 + scale) * h / 2
+            left, right = w / 2 - 0.88 * (top - bot) / 2, w / 2 + 0.88 * (top - bot) / 2
+            ax.plot([left, right], [0, 0], line_color, linewidth="4")
+            ax.plot([left, right], [h, h], line_color, linewidth="4")
+            for i in range(-dup, dup + 2):
+                ax.plot([i * w, i * w], [-h, 2 * h], line_color, linewidth="4")
+        else:
+            left, right = (1 - 0.85 * scale) * w / 2, (1 + 0.85 * scale) * w / 2
+            bot, top = (h / 2 - (scale * w) / 2, h / 2 + (scale * w) / 2)
+
+            ax.plot([0, 0], [bot, top], line_color, linewidth="4")
+            ax.plot([w, w], [bot, top], line_color, linewidth="4")
+            for i in range(-dup, dup + 2):
+                ax.plot([-w, 2 * w], [i * h, i * h], line_color, linewidth="4")
+
+        ax.set_xlim(left, right)
+        ax.set_ylim(bot, top)
         ax.set_title("Voronoi Tessellation")
-
-        # Marking sites and defects.
-        defects = {5: {"x": [], "y": []}, 7: {"x": [], "y": []}}
-        for j in range(n):
-            for s in SYMM:
-                vec = self.sim.voronois[i].points[j] + s * self.sim.domains[i].dim
-                if area:
-                    txt = ax.text(
-                        *vec, str(round(self.sim.stats[i]["site_areas"][j], 3))
-                    )
-                    txt.set_clip_on(True)
-
-                if self.sim.stats[i]["site_edge_count"][j] == 5:
-                    defects[5]["x"].append(vec[0])
-                    defects[5]["y"].append(vec[1])
-                elif self.sim.stats[i]["site_edge_count"][j] == 7:
-                    defects[7]["x"].append(vec[0])
-                    defects[7]["y"].append(vec[1])
-                else:
-                    ax.scatter(
-                        vec[0], vec[1], s=(40 - n / 100), color=point_color, zorder=1
-                    )
-
-        ax.scatter(
-            defects[5]["x"],
-            defects[5]["y"],
-            marker="p",
-            s=(200 - n / 100),
-            color=point_color,
-            zorder=1,
-        )
-        ax.scatter(
-            defects[7]["x"],
-            defects[7]["y"],
-            marker="*",
-            s=(200 - n / 100),
-            color=point_color,
-            zorder=1,
-        )
 
         # Make VEE text in top left.
         props = dict(boxstyle="round", facecolor="white", alpha=0.8, zorder=20)
         ax.text(
             0.065,
             0.935,
-            f"VEE: {round(sum(energies)/n - e_hex, 8)}",
+            f"VEE: {sum(energies)/n - e_hex: .8f}",
             transform=ax.transAxes,
             verticalalignment="top",
             bbox=props,
@@ -283,16 +261,28 @@ class Diagram:
 
     def energy_plot(self, i: int, ax: AxesSubplot) -> None:
         ax.set_xlim([0, len(self.sim)])
+        e_hex = ordered.e_hex(self.sim.domains[i])
 
-        energies = self.sim.energies[: (i + 1)]
-        ax.plot(list(range(i + 1)), energies)
-        ax.title.set_text("Energy vs. Time")
+        vees = np.array(self.sim.energies) / self.sim.domains[i].n - e_hex
+
+        ax.plot(list(range(len(vees))), vees)
+        ax.scatter(
+            i,
+            vees[i],
+            s=250,
+            facecolors="none",
+            edgecolors="C6",
+            linewidth=4,
+            zorder=100,
+        )
+
+        # ax.title.set_text("VEE")
         # max_value = round(self.sim[0].energy)
         # min_value = round(self.sim[-1].energy)
         # diff = max_value-min_value
         # ax.set_yticks(np.arange(int(min_value-diff/5), int(max_value+diff/5), diff/25))
-        ax.set_xlabel("Iterations")
-        ax.set_ylabel("Energy")
+        ax.set_xlabel("Frame")
+        ax.set_ylabel("VEE")
         ax.grid()
 
     def site_areas_plot(self, i: int, ax: AxesSubplot) -> None:
@@ -424,11 +414,8 @@ class Diagram:
         self.sim.path.mkdir(exist_ok=True)
         (self.sim.path / fol).mkdir(exist_ok=True)
         combo_list = []
-        for i in range(cpu_count()):
-            start, end = (
-                int(i * len(frames) / cpu_count()),
-                int((i + 1) * len(frames) / cpu_count()),
-            )
+        for i in range(1):
+            start, end = (int(i * len(frames) / 1), int((i + 1) * len(frames) / 1))
             new_dia = Diagram(None, self.diagrams, self.cumulative)
             new_dia.sim = self.sim.slice(frames[start:end])
             combo_list.append(
@@ -448,10 +435,10 @@ class Diagram:
         if mode not in ["use_all", "sample"]:
             raise ValueError("Not a valid mode for videos!")
 
+        fps = 30
         if mode == "use_all":
             frames = list(range(len(self.sim)))
         elif mode == "sample":
-            fps = 30
             if len(self.sim) < fps * time:
                 frames = list(range(len(self.sim)))
                 fps = len(self.sim) / time
@@ -481,8 +468,36 @@ class Diagram:
 
 def render_frame_range(combo: Tuple[Diagram, str, int, int, int]) -> None:
     self, fol, offset, length, num_frames = combo
+
+    plt.rcParams.update(
+        {
+            "axes.titlesize": 45,
+            "axes.labelsize": 45,
+            "xtick.labelsize": 40,
+            "ytick.labelsize": 40,
+            "xtick.major.width": 2,
+            "ytick.major.width": 2,
+            "xtick.major.size": 5,
+            "ytick.major.size": 5,
+            "xtick.minor.width": 1,
+            "ytick.minor.width": 1,
+            "xtick.minor.size": 3,
+            "ytick.minor.size": 3,
+            "legend.fontsize": 40,
+            "lines.linewidth": 3,
+            "font.family": "cm",
+            "font.size": 40,
+            "text.usetex": True,
+            "text.latex.preamble": r"\usepackage{amsmath}",
+            "figure.constrained_layout.use": True,
+        }
+    )
+
+    # Generate figure here and pass in to prevent matplotlib memory leak.
+    shape = self.diagrams.shape
+    fig = plt.figure(figsize=(shape[1] * 15, shape[0] * 15))
     for i in range(length):
-        self.generate_frame(i, "save", fol, f"img{i+offset:05}.png")
+        self.generate_frame(fig, i, "save", fol, f"img{i+offset:05}.png")
         i = len(list((self.sim.path / fol).iterdir()))
         hashes = int(21 * i / num_frames)
         print(
@@ -491,3 +506,4 @@ def render_frame_range(combo: Tuple[Diagram, str, int, int, int]) -> None:
             flush=True,
             end="\r",
         )
+    plt.close(fig)

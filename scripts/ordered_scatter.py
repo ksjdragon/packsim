@@ -37,8 +37,13 @@ def main():
     e_hex = ordered.e_hex(DomainParams(args.n, 1, 1, args.r))
     for alpha, energies in zip(ordered_data["alpha"], ordered_data["Energy"]):
         ax.scatter(
-            [alpha] * len(energies), 100 * (energies / args.n - e_hex), color="C0"
+            [alpha] * len(energies), 100 * (energies / args.n - e_hex), color="C0", s=25
         )
+
+    hex_ratios = ordered.hexagon_alpha(args.n)
+    ax.scatter(
+        hex_ratios, [0] * len(hex_ratios), color="C2", s=200, marker="H", zorder=10
+    )
 
     ax.set_xlim(0.3, 1)
     ax.set_xticks(np.arange(0.3, 1.01, 0.1))

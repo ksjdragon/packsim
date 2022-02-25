@@ -26,7 +26,7 @@ RC_SETTINGS = {
     "font.family": "cm",
     "font.size": 40,
     "text.usetex": True,
-    "text.latex.preamble": r"\usepackage{amsmath}",
+    "text.latex.preamble": r"\usepackage{amsmath, amsfonts}",
     "figure.constrained_layout.use": True,
 }
 

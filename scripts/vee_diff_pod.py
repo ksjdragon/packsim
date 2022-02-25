@@ -43,7 +43,7 @@ def main():
 
     plt.rcParams.update(RC_SETTINGS)
 
-    fig = plt.figure(figsize=(15, 15))
+    fig = plt.figure(figsize=(20, 9))
     gs = fig.add_gridspec(1, 1)
     ax = fig.add_subplot(gs[0])
 
@@ -78,11 +78,11 @@ def main():
             100 * (min_order - min_disorder), all_disorder_count, label=f"N={domain.n}"
         )
 
-    ax.set_ylabel("Perecent of Disordered Equilibria")
+    ax.set_ylabel("POD")
     ax.set_xlabel(r"VEE Difference $\left[\times 10^{2}\right]$")
     ax.yaxis.set_major_formatter(mtick.PercentFormatter())
     ax.set_ylim(48, 102)
-    ax.set_yticks(np.arange(50, 101, 5))
+    ax.set_yticks(np.arange(50, 101, 10))
 
     ax.grid(zorder=0)
     ax.legend()
