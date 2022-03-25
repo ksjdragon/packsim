@@ -117,11 +117,6 @@ def torus_region(c, verts, height):
     v = np.hstack((v, height * np.ones((len(v), 1))))
     return v, f, v_inds[sd - 1]
 
-    centers = np.array([[c[0], c[1], heights[i]]])
-    v_top = np.hstack((verts, heights[i] * np.ones((len(verts), 1))))
-
-    face_verts = np.concatenate((centers, v_top))
-
 
 def main():
     parser = argparse.ArgumentParser(description="Generates 3D model for equilibrium.")
@@ -136,7 +131,7 @@ def main():
     args = parser.parse_args()
 
     torus = args.torus
-    size = args.size
+    size = args.size * 10
 
     # Get desired frame and load.
     sim, frames = Simulation.load(args.sims_path)

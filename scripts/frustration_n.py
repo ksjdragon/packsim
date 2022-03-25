@@ -102,21 +102,21 @@ def main():
     )
     ax.plot(ns, m0 * ns + b0, color="C0", linestyle="dashed")
 
-    lns2 = ax.plot(
-        ns, 100 * epds, color="C1", alpha=0.5, label=r"$\zeta_1 \times 10^{4}$"
-    )
-
-    lns3 = ax.plot(
-        ns,
-        10 * avg_defects * epds,
-        color="C2",
-        alpha=0.5,
-        label=r"$\mathcal{F} \times 10^{3}$",
-    )
+    #lns2 = ax.plot(
+    #    ns, 100 * epds, color="C1", alpha=0.5, label=r"$\zeta_1 \times 10^{4}$"
+    #)
+    #
+    #lns3 = ax.plot(
+    #    ns,
+    #    10 * avg_defects * epds,
+    #    color="C2",
+    #    alpha=0.5,
+    #    label=r"$\mathcal{F} \times 10^{3}$",
+    #)
     # ax3.plot(ns, 100*(m1 * ns + b1) / 10, color="C2", linestyle="dashed")
     ax.set_xlim(93, 407)
 
-    ax.set_ylim(3, 37)
+    ax.set_ylim(3, 36)
     ax.set_yticks(np.arange(5, 40, 5))
 
     # ax2.set_ylim(-3 * 0.4, 18 + 3 * 0.4)
@@ -131,9 +131,9 @@ def main():
     # labs = [l.get_label() for l in lns]
     ax.grid(zorder=0)
     # ax.legend(lns, labs, loc="lower right")
-    ax.legend()
+    #ax.legend()
     ax.set_xlabel("N")
-    # ax.set_ylabel(r"$\langle \mathrm{D} \rangle$")
+    ax.set_ylabel(r"$\langle \mathrm{D} \rangle$")
     # ax2.set_ylabel("VEE")
     # ax2.set_ylabel(r"$\zeta \left[\times 10^{4} \right]$", color="C1")
     # ax3.set_ylabel(r"Defect Energy $\left[\times 10^{3} \right]$", color="C2")

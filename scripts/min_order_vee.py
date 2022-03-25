@@ -1,5 +1,6 @@
 import numpy as np, os, math
 import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 from multiprocessing import Pool, cpu_count
 
 from squish import Simulation, ordered, DomainParams
@@ -64,17 +65,32 @@ def main():
         data["Config"],
     )
 
-    print(min_order, min_config)
-
     fig = plt.figure(figsize=(20, 15))
     gs = fig.add_gridspec(1, 1)
     ax = fig.add_subplot(gs[0])
 
-    ax.scatter(ns, min_order)
+    pad = 5
+    mov_avgs = np.array(
+        [np.mean(min_order[max(0, i - pad) : i + pad]) for i in range(len(min_order))]
+    )
+
+    ax.scatter(ns, mov_avgs, s=8)
+
+    log_slope, _ = np.polyfit(np.log10(ns), np.log10(mov_avgs), 1)
+    print(log_slope)
+
+    def g(x, k):
+        return k * (x ** log_slope)
+
+    # return a * np.e ** (-b * (x - c))
+    params, covs = curve_fit(g, ns, min_order, p0=[5000])
+    ax.plot(np.arange(500, 5500), g(np.arange(500, 5500), *params), color="C1")
+
+    print(params)
 
     ax.grid(zorder=0)
 
-    # ax.set_xlim(1000, 5000)
+    ax.set_xlim(800, 5200)
 
     ax.set_xlabel("N")
     ax.set_ylabel(r"VEE $\left[\times 10^{2}\right]$")

@@ -17,14 +17,6 @@ def main():
         metavar="path/to/data",
         help="folder that contains simulation files at various step sizes.",
     )
-    parser.add_argument(
-        "-q",
-        "--quiet",
-        dest="quiet",
-        action="store_true",
-        default=False,
-        help="suppress all normal output",
-    )
 
     args = parser.parse_args()
     data = {}

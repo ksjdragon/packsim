@@ -72,20 +72,20 @@ def main():
 
         for i, count in enumerate(counts):
             my_cool_data[i + 1].append(count)
-
-        ax.plot(
-            100 * vees[: index + 1],
-            counts[: index + 1],
-            label=f"N={domain.n}",
-            color=f"C{j}",
-        )
-        ax.plot(
-            100 * vees[index:],
-            counts[index:],
-            label=f"_nolegend_",
-            linestyle="dotted",
-            color=f"C{j}",
-        )
+        ax.plot(100*vees, counts, label=f"N={domain.n}")
+        #ax.plot(
+        #    100 * vees[: index + 1],
+        #    counts[: index + 1],
+        #    label=f"N={domain.n}",
+        #    color=f"C{j}",
+        #)
+        #ax.plot(
+        #    100 * vees[index:],
+        #    counts[index:],
+        #    label=f"_nolegend_",
+        #    linestyle="dotted",
+        #    color=f"C{j}",
+        #)
 
     with open("cumulative-vee.csv", "w") as csvfile:
         writer = csv.writer(csvfile)

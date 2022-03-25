@@ -167,8 +167,6 @@ def main():
     pad = 100
     alpha_prob_dens = {}
     for alpha, avg in alpha_avgs.items():
-        if alpha == 1.0:
-            continue
         mov_avgs = np.array(
             [np.mean(avg[max(0, i - pad) : i + pad]) for i in range(len(avg))]
         )
@@ -183,18 +181,22 @@ def main():
 
         d_avgs = np.gradient(mov_avgs, vees[1] - vees[0])
         a1_prob_dens[n] = d_avgs / (np.sum(d_avgs) * (vees[1] - vees[0]))
-
+    
+    print(list(alpha_prob_dens.keys()))
     for alpha, prob_dens in sorted(alpha_prob_dens.items()):
         if alpha in [0.3, 0.5, 0.7, 0.9, 1.0]:
-            continue
+            # continue
             ax.plot(100 * vees, prob_dens, label=fr"$\alpha={alpha:.1f}$")
+    ax.plot(100*vees, a1_prob_dens[395], zorder=50, label=r"$\alpha = 1.0$", color="black")
+    
+    # Probability densities of alpha=1 across N
 
-    for n, prob_dens in sorted(a1_prob_dens.items()):
-        if n in [255, 315, 335, 355, 375]:
-            ax.plot(100 * vees, prob_dens, label=f"N={n}")
-        if n == 395:
-            ax.plot(100 * vees, prob_dens, label=f"N={n}", color="black")
-            # ax.plot(100 * vees, prob_dens, label=r"$\alpha = 1.0$", zorder=50, color="black")
+    #for n, prob_dens in sorted(a1_prob_dens.items()):
+    #    if n in [255, 315, 335, 355, 375]:
+    #        ax.plot(100 * vees, prob_dens, label=f"N={n}")
+    #    if n == 395:
+    #        ax.plot(100 * vees, prob_dens, label=f"N={n}", color="black")
+    #        # ax.plot(100 * vees, prob_dens, label=r"$\alpha = 1.0$", zorder=50, color="black")
     # ax.plot(100 * vees, avgs[395], zorder=50, color="black")
 
     ax.set_xlim(0, 6.3)
