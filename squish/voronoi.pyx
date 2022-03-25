@@ -650,6 +650,7 @@ cdef class VoronoiContainer:
         edge_cache = np.asarray(self.edge_cache)
 
         self.stats["edge_lengths"] = edge_cache[caches, self.edge_cache_map.ila_mag]
+        self.stats["site_distances"] = edge_cache[caches, self.edge_cache_map.iya_mag]
 
     @property
     def site_arr(self):
@@ -704,3 +705,43 @@ cdef class VoronoiContainer:
             site_verts.append(verts)
 
         return sites, site_verts
+
+    def second_near_neighbor(self):
+        cdef VoronoiInfo info = _VoronoiInfo(self.sites, self.edges, self.points,
+            self.vertices, self.site_cache, self.edge_cache, self.edge_cache_map)
+        
+        cdef INT_T i, j, k    
+        cdef Site xi, xj, xk
+        cdef HalfEdge e, f
+        cdef Vector2D v
+        
+        snn = []
+        for i in range(self.n):
+            xi = _Site(i, &info)
+            e = xi.edge(&xi)
+            first_neighbors = np.empty((xi.edge_num(&xi),), dtype=INT)
+            for j in range(xi.edge_num(&xi)):
+                f = e.twin(&e)
+                xj = f.face(&f)
+                first_neighbors[j] = xj.index(&xj) % self.n
+                e = e.next(&e)
+
+            second_neighbors = set()
+            for j in range(len(first_neighbors)):
+                xj = _Site(first_neighbors[j], &info)
+                e = xj.edge(&xj)
+                for k in range(xj.edge_num(&xj)):
+                    f = e.twin(&e)
+                    xk = f.face(&f)
+                    second_neighbors.add(xk.index(&xk) % self.n)
+                    e = e.next(&e)
+            
+            for j in range(len(first_neighbors)):
+                second_neighbors.remove(first_neighbors[j])
+            second_neighbors.remove(i)
+            
+            snn.append(list(second_neighbors))
+        
+        return snn
+            
+

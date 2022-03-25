@@ -164,7 +164,9 @@ class Simulation:
         sim, frames = Simulation.load(path)
         for frame in frames:
             sim.frames.append(sim.energy.mode(*frame["domain"], frame["arr"]))
-            sim.frames[-1].stats = frame["stats"]
+            for k, v in frame["stats"].items():
+                if k not in sim.frames[-1].stats:
+                    sim.frames[-1].stats[k] = v
 
         return sim
 
