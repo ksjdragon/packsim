@@ -1,5 +1,15 @@
+.. |ss| raw:: html
+
+   <strike>
+
+.. |se| raw:: html
+
+   </strike>
+
 Squish: Soft Packing Simulations
 ================================
+
+   | **NOTE:** The current source code can now be found `here <https://git.kjao.me/kjao/squish>`_. This GitHub repo is only left as an archive. 
 
 **Squish** is a Python library that handles simulations for the flow of 'soft' or 'compressible' objects,
 under some energy in a *periodic* domain. The gradient flow of the objects are simulated and is able to be saved and rendered into diagrams. **Squish** also provides simple to use scripts for basic usage, as well as a simple API for more advanced functionality.
@@ -10,8 +20,8 @@ Resources
 ---------
 
 - `Documentation <https://squish.readthedocs.io>`_: Examples, guides, and **Squish** API.
-- `GitHub repository <https://github.com/ksjdragon/squish>`_: View and download the **Squish** source code.
-- `Issue tracker <https://github.com/ksjdragon/squish/issues>`_: Report issues or request features for **Squish**.
+- |ss| `GitHub repository <https://github.com/ksjdragon/squish>`_: View and download the **Squish** source code. |se|
+- |ss| `Issue tracker <https://github.com/ksjdragon/squish/issues>`_: Report issues or request features for **Squish**. |se|
 
 
 Installation
@@ -28,4 +38,6 @@ This project uses `GNU AGPLv3.0 <https://choosealicense.com/licenses/agpl-3.0/>`
 
 Support and Contribution
 ------------------------
-Feel free to visit our repository on `GitHub <https://github.com/ksjdragon/squish>`_ for source code of this library. Any issues or bugs may be reported at  the `issue tracker <https://github.com/ksjdragon/squish/issues>`_. All contributions to **Squish** are welcome!
+See the note.
+
+|ss| Feel free to visit our repository on `GitHub <https://github.com/ksjdragon/squish>`_ for source code of this library. Any issues or bugs may be reported at  the `issue tracker <https://github.com/ksjdragon/squish/issues>`_. All contributions to **Squish** are welcome! |se|
